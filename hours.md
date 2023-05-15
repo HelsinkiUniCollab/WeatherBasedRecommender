@@ -7,7 +7,7 @@
 | Iisak     |                |                |                |                |                |                |                |        |
 | Sami S    |                |                |                |                |                |                |                |        |
 | Sami M    |                |                |                |                |                |                |                |        |
-| Pia       |                |                |                |                |                |                |                |        |
+| Pia       |   6             |                |                |                |                |                |                |        |
 | Joni      |                |                |                |                |                |                |                |        |
 
 |           |  Monday  22.5  |  Tuesday 23.5  | Wednesday 24.5 |  Thursday 25.5 |  Friday 26.5   | Saturday 27.5  |  Sunday 28.5   | Total  |
