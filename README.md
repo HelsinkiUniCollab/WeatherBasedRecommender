@@ -6,3 +6,4 @@ The purpose of this project is to develop an application that provides users wit
 
 * [Project backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1)
 * [Working hours](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/blob/main/docs/hours.md)
+* [Definition of Done](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/blob/main/docs/dod.md)
