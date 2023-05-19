@@ -26,4 +26,4 @@ jobs:
       - name: Run backend tests
         run: |
           cd recommender-back
-          poetry run coverage run --branch -m pytest
+          poetry run pytest
