@@ -13,7 +13,7 @@ def index():
     return jsonify(data)
 
 @app.route('/weather', methods=['GET'])
-def index():
+def get_weather():
     obs = download_stored_query("fmi::observations::weather::multipointcoverage",
                                 args=["place=Kumpula,Helsinki"])
     airtemperature = query_handler(obs, "Helsinki Kumpula", "Air temperature")
