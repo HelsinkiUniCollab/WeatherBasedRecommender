@@ -1,11 +1,15 @@
 FROM node:alpine
 
-WORKDIR '/app'
+WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm install --only=production
+RUN npm ci --only=production
 
 COPY . .
 
-CMD ["npm","start"]
+RUN npm run build 
+
+RUN npm install -g serve
+
+CMD ["serve", "-s", "-l", "tcp://0.0.0.0:5000", "build"]
