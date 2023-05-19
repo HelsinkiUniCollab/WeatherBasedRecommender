@@ -5,8 +5,6 @@ WORKDIR /usr/src/app
 
 COPY --chown=node:node . .
 
-RUN cd recommender-front
-
 RUN npm install --package-lock-only
 
 RUN npm ci

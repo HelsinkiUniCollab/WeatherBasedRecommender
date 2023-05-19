@@ -24,6 +24,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           file: recommender-front/Dockerfile
-          context: .
+          context: ./recommender-front
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/wbased:latest
