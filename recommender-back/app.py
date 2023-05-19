@@ -1,7 +1,16 @@
-from flask import Flask
+from flask import Flask, jsonify
 from fmiopendata.wfs import download_stored_query
 
 app = Flask(__name__)
+
+@app.route('/', methods=['GET'])
+def index():
+    data = {
+        'message': 'Hello from the backend!',
+        'status': 200
+        }
+    
+    return jsonify(data)
 
 @app.route('/weather', methods=['GET'])
 def index():
