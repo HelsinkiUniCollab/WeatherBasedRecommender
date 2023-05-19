@@ -50,5 +50,6 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(react-leaflet|@react-leaflet/core)/)"
     ]
-  }
+  },
+  "proxy":"http://localhost:5000/"
 }
