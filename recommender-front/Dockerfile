@@ -1,9 +1,16 @@
-FROM node:18
 
-WORKDIR /usr/src/app
+FROM node:18 
 
-COPY --chown=node:node . .
+WORKDIR /app
 
-RUN npm ci
+COPY . .
 
-CMD npm start
+RUN npm ci 
+
+RUN npm run build
+
+ENV NODE_ENV production
+
+EXPOSE 3000
+
+CMD [ "npx", "serve", "build" ]
