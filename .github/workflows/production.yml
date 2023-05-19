@@ -35,13 +35,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.2.0
-      - name: Run frontend tests
       - run: |
           cd recommender-front
           npm ci
       - run: |
           cd recommender-front
           npm run build --if-present
+      - name: Run frontend tests
       - run: |
           cd recommender-front
           npm test
