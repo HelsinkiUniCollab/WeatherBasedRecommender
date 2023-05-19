@@ -5,7 +5,9 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm ci 
+RUN npm install --package-lock-only
+
+RUN npm ci
 
 RUN npm run build
 
