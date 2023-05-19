@@ -1,9 +1,9 @@
 
-FROM node:16 
+FROM node:18 
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY . .
+COPY --chown=node:node . .
 
 RUN npm install --package-lock-only
 
