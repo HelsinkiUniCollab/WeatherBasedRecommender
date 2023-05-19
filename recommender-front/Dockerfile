@@ -1,15 +1,11 @@
-FROM node:alpine
+FROM node:18
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY --chown=node:node . .
 
 RUN npm ci
 
-COPY . .
+ENV REACT_APP_BACKEND_URL="http://localhost:8080/"
 
-RUN npm run build 
-
-RUN npm install -g serve
-
-CMD ["serve", "-s", "-l", "tcp://0.0.0.0:5000", "build"]
+CMD npm start
