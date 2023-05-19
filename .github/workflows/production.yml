@@ -16,12 +16,14 @@ jobs:
         with:
           python-version: 3.8
       - name: Install Poetry
-        working-directory: /recommender-back
-        run: pip install poetry
-      - name: Install dependencies
-        working-directory: /recommender-back
-        run: poetry install
-      - name: Run backend tests
-        working-directory: /recommender-back
         run: |
+          cd recommender-back
+          pip install poetry
+      - name: Install dependencies
+        run: |
+          cd recommender-back
+          poetry install
+      - name: Run backend tests
+        run: |
+          cd recommender-back
           poetry run coverage run --branch -m pytest
