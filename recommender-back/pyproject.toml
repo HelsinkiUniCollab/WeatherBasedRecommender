@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["ruusukivi <ruusukivi@gmail.com>"]
 readme = "README.md"
-packages = [{include = "recommender_back"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
