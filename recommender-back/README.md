@@ -35,3 +35,13 @@ The Flask server will start running, and you can access the API at http://localh
 URL: /
 Method: GET
 Description: Shows 'Hello from the backend!' with statuscode 200.
+
+## Running in a Docker container:
+ 
+1. Build image
+
+`docker build -t recommender-backend .`
+
+2. Run container from image
+
+`docker run -p 5000:5000 recommender-backend`

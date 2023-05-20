@@ -32,3 +32,11 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `docker build -t recommender-frontend .`
+
+Builds Docker image.
+
+### `docker run -p 3000:3000 recommender-frontend`
+
+Run Docker container from image.
