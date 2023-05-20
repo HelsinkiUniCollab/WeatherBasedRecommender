@@ -1,11 +1,11 @@
 
-FROM node:18 
+FROM node:18-alpine 
 
 WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm install -g serve
+RUN npm ci
 
 RUN npm run build
 
