@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 from fmiopendata.wfs import download_stored_query
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -12,7 +14,7 @@ def index():
     
     return jsonify(data)
 
-@app.route('/weather', methods=['GET'])
+@app.route('/api/weather', methods=['GET'])
 def get_weather():
     obs = download_stored_query("fmi::observations::weather::multipointcoverage",
                                 args=["place=Kumpula,Helsinki"])
@@ -21,10 +23,11 @@ def get_weather():
     obs = download_stored_query("urban::observations::airquality::hourly::multipointcoverage",
                                 args=["place=Kumpula,Helsinki"])
     airquality = query_handler(obs, "Helsinki Mäkelänkatu", "Air Quality Index")
-    return {
+    data = {
         "airtemperature": airtemperature,
         "airquality": airquality
     }
+    return jsonify(data)
 
 def query_handler(obs, station, value):
     while True:

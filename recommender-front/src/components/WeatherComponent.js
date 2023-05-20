@@ -6,12 +6,12 @@ const WeatherComponent = () => {
         airquality: null
     });
     useEffect(() => {
-        fetch("/weather").then((res) =>
+        fetch("/api/weather").then((res) =>
             res.json().then((data) => {
                 setData({
                     airtemperature: data.airtemperature,
                     airquality: data.airquality
-                });
+                })
             })
         );
     }, []);
