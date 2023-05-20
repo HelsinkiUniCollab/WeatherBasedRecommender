@@ -7,3 +7,9 @@ The purpose of this project is to develop an application that provides users wit
 * [Project backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1)
 * [Working hours](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/blob/main/docs/hours.md)
 * [Definition of Done](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/blob/main/docs/dod.md)
+
+## Available scripts:
+
+### `docker compose up`
+
+Will compose and run both recommender-backend and recommender-frontend in ports 5000 and 3000 (respectively).
