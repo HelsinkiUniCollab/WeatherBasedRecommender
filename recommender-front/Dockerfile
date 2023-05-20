@@ -1,11 +1,18 @@
-FROM node:alpine
 
-WORKDIR '/app'
+FROM node:18 
 
-COPY package*.json ./
+WORKDIR /usr/src/app
 
-RUN npm install --only=production
+COPY --chown=node:node . .
 
-COPY ./build ./build
+RUN npm install --package-lock-only
 
-CMD ["npm","start"]
+RUN npm ci
+
+RUN npm run build
+
+ENV NODE_ENV production
+
+EXPOSE 3000
+
+CMD [ "npx", "serve", "build" ]
