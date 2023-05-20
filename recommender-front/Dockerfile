@@ -3,11 +3,9 @@ FROM node:18
 
 WORKDIR /usr/src/app
 
-COPY --chown=node:node . .
+COPY . .
 
-RUN npm install --package-lock-only
-
-RUN npm ci
+RUN npm install
 
 RUN npm run build
 
