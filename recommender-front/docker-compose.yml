@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   wbased:
-    image: ${{ secrets.DOCKERHUB_USERNAME }}/wbased:latest
+    image: ${{ secrets.DOCKERHUB_USERNAME2 }}/wbased:latest
     ports:
       - 5000:5000
     container_name: wbased
