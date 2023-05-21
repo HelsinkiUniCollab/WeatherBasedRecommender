@@ -6,12 +6,9 @@ services:
    context: ./recommender-back/
    dockerfile: Dockerfile
   environment:
-   FLASK_APP: app:app
    REQUEST_ORIGIN: http://localhost:3000
   ports:
    - 5000:5000
-  volumes:
-   - .:/WeatherbasedRecommenderSystem
   command:
    flask run --host=0.0.0.0
  
@@ -19,6 +16,7 @@ services:
   build:
    context: ./recommender-front/
    dockerfile: Dockerfile
+  env_file:
+   - ./recommender-front/.env.local
   ports:
    - 3000:3000
-  command: ["npx", "serve", "build"]

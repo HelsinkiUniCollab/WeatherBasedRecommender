@@ -6,7 +6,8 @@ const WeatherComponent = () => {
         airquality: null
     });
     useEffect(() => {
-        fetch("http://localhost:5000/api/weather").then((res) =>
+        const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
+        fetch(`${apiUrl}/api/weather`).then((res) =>
             res.json().then((data) => {
                 setData({
                     airtemperature: data.airtemperature,

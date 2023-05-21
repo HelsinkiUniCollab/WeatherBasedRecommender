@@ -8,8 +8,7 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock*  /app/
 
 RUN pip install poetry \
-  && pip install flask \
-  && poetry config \
+  && poetry config virtualenvs.create false \
   && poetry install --no-dev --no-interaction --no-ansi
 
 COPY . /app
