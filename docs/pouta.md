@@ -1,7 +1,7 @@
 # cPouta production environment
 
 Production environment is updated automatically every time new code is pushed to main.
-Read more here: 
+Read more here: [CI/CD Pipeline](/docs/ci-cd.md)
 
 ## cPouta cloud service
 
