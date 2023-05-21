@@ -1,0 +1,25 @@
+# cPouta production environment
+
+## cPouta cloud service
+
+cPouta is an Infrastructure as a Service (IaaS) cloud provided by [CSC](https://www.csc.fi/)
+The cPouta virtual machines can be connected to external IP addresses, and they can be directly accessed on the internet. 
+
+We use cPouta as a production environment for Weather Based Recommender App. Floating IP allocated to our project is 128.214.253.51.
+
+In order to access cPouta cloud, you need to accept terms in [My CSC portal](https://my.csc.fi/projects/2004807). Make sure you are in Project 2004807 -page. Then scroll down and click cPouta in the right column. Accept the terms.
+
+
+* [What is Pouta](https://docs.csc.fi/cloud/pouta/pouta-what-is/)
+* [Security Guidelines in Pouta](https://docs.csc.fi/cloud/pouta/pouta-what-is/)
+* [Creating a Virtual Machine in Pouta](https://docs.csc.fi/cloud/pouta/launch-vm-from-web-gui/)
+
+## How to access cPouta instance
+
+1. You need to have an access key (pouta.key) in your .shh folder (/home/{user}/.ssh). If you are missing the key, ask from a team member. 
+
+2. Open the connection from your terminal with command:
+`ssh -i .ssh/pouta.key ubuntu@128.214.253.51`
+
+3. When to connect is open you can run commands in the virtual machine. For example, you can check what docker containers are running in which ports:
+`sudo docker pd`
