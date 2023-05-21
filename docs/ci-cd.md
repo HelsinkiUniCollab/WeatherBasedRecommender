@@ -2,7 +2,7 @@
 
 ## CI
 
-[ci.yml](../.github/workflows/ci.yml) is run automatically, when a pull request is opened or code is pushed to the main branch.
+CI pipeline [ci.yml](../.github/workflows/ci.yml) is run automatically, when a pull request is opened or code is pushed to the main branch.
 
 CI makes sure that both frontend and backend tests pass.
 
@@ -19,4 +19,4 @@ Production deployment is done by [cd.yml](../.github//workflows/cd.yml), which i
   * https://hub.docker.com/repository/docker/ruusukivi/wbased-front/general
 
 * [Watchtower](https://containrrr.dev/watchtower/) updates the new images automatically to the instance running in Pouta. No need to do anything manually unless the app is not running in Pouta. 
-  * If the app is not running, log in to the Pouta with SSH and run command `sudo docker compose up -d` (more detailed here [Pouta](/pouta.md))
+  * If the app is not running, log in to the Pouta with SSH and run command `sudo docker compose up -d` (more detailed here [Pouta](/docs/pouta.md))
