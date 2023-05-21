@@ -12,9 +12,9 @@
 
 `$ git push origin <name-of-your-branch>`
 
-Publish branch and open pull request early on-  this helps to avoid merge conflicts.
+Publish a branch and open pull request early on - this helps to avoid merge conflicts.
 
-Add text "Closes" and the issue number at the begining of your pull request comment. When pullrequest is merged, issue is automatically closed. Is there is no issue ready, create task in the sprint backlog.
+Add text "Closes" and the issue number at the beginning of your pull request comment. When a pull request is merged, issue is automatically closed. If there is no issue ready, create a task in the sprint backlog.
 
 `Closes #<issue-number>`
 
