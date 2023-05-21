@@ -1,18 +1,17 @@
 # cPouta production environment
 
-Production environment is updated automatically every time new code is pushed to main.
+Production environment is updated automatically everytime new code is pushed to the main branch.
 Read more here: [CI/CD Pipeline](/docs/ci-cd.md)
 
 ## cPouta cloud service
 
-cPouta is an Infrastructure as a Service (IaaS) cloud provided by [CSC](https://www.csc.fi/)
-The cPouta virtual machines can be connected to external IP addresses, which can be directly accessed on the internet. 
+cPouta is an Infrastructure as a Service (IaaS) cloud provided by [CSC](https://www.csc.fi/).
 
-We use cPouta as a production environment for Weather Based Recommender App. Floating IP allocated to our project is 128.214.253.51.
+The cPouta virtual machines can be connected to external IP addresses, which then can be directly accessed on the internet. Floating IP allocated to our project is 128.214.253.51.
 
-In order to access cPouta cloud, you need to accept terms in [My CSC portal](https://my.csc.fi/projects/2004807). Make sure you are in Project 2004807 -page. Then scroll down and click cPouta in the right column. Accept the terms.
+In order to access cPouta cloud, you need to accept terms in [My CSC portal](https://my.csc.fi/projects/2004807). Make sure you are in project 2004807 page. Then scroll down and click cPouta heading in the right column. Accept the terms.
 
-You can then access [cPouta Dashboard](https://pouta.csc.fi/dashboard/project/instances/)
+You can then access [cPouta Dashboard](https://pouta.csc.fi/dashboard/project/instances/).
 
 ### More information about cPouta
 * [What is Pouta](https://docs.csc.fi/cloud/pouta/pouta-what-is/)
@@ -21,20 +20,20 @@ You can then access [cPouta Dashboard](https://pouta.csc.fi/dashboard/project/in
 
 ## How to access cPouta instance with SSH
 
-1. You need to have an access key (pouta.key) in your .shh folder (/home/{user}/.ssh). If you are missing the key, ask from a team member. 
+1. You need to have an access key (pouta.key) in your .shh folder. If you are missing the key, ask from a team member. 
 
-2. Make sure that you are in .ssh -folder and open the connection from your terminal with command:
+2. Make sure that you are in .ssh -folder  (/home/{user}/.ssh) and open the connection from your terminal with command:
 
 `ssh -i .ssh/pouta.key ubuntu@128.214.253.51`
 
 
 ## Basic Docker commands to be used in Pouta
 
-You can check what docker containers are running in which ports with:
+When you have a SSH connection open to Pouta, you can check which docker containers are running and which ports are allocated to them:
 
 `sudo docker ps`
 
-If application has stopped running, you can start it manually with:
+If the app has stopped running, you can start it manually. These containers should be always running: *ubuntu-wbased-back-1*, u*buntu-wbased-front-1* and *ubuntu-watchtower-1*  To start containers manually run command:
 
 `sudo docker compose up -d`
 
