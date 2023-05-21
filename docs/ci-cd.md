@@ -2,18 +2,21 @@
 
 ## CI
 
-When a pull request is opened or code is pushed to the main, [ci.yml](../.github/workflows/ci.yml) is run automatically.
+[ci.yml](../.github/workflows/ci.yml) is run automatically, when a pull request is opened or code is pushed to the main branch.
 
-CI makes sure both frontend and backend tests pass.
+CI makes sure that both frontend and backend tests pass.
+
+The project does not have a staging environment at this point. Testing is done locally.
 
 ## CD
 
-Production deployment is done by [cd.yml](../.github//workflows/ci.yml) which is run everytime something is pushed to main.
+Production deployment is done by [cd.yml](../.github//workflows/cd.yml), which is run everytime something is pushed to the main branch.
 
-What happens in deployment:
+## What happens in deployment
 
-* Updated Docker images are pushed to Docker Hub to these repositories:
-* * https://hub.docker.com/repository/docker/ruusukivi/wbased-back/general
-* * https://hub.docker.com/repository/docker/ruusukivi/wbased-front/general
+* Updated Docker images are pushed to Docker Hub into these repositories:
+  * https://hub.docker.com/repository/docker/ruusukivi/wbased-back/general
+  * https://hub.docker.com/repository/docker/ruusukivi/wbased-front/general
 
-* [Watchtower](https://containrrr.dev/watchtower/) updates the new images automatically to the instance running in Pouta. No need to do anything manually unless the app is not running in Pouta. App can be started by log in to Pouta with SSH and then running `sudo docker compose up -d`
+* [Watchtower](https://containrrr.dev/watchtower/) updates the new images automatically to the instance running in Pouta. No need to do anything manually unless the app is not running in Pouta. 
+  * If the app is not running, log in to the Pouta with SSH and run command `sudo docker compose up -d` (more detailed here [Pouta](/pouta.md))
