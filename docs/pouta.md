@@ -18,8 +18,27 @@ In order to access cPouta cloud, you need to accept terms in [My CSC portal](htt
 
 1. You need to have an access key (pouta.key) in your .shh folder (/home/{user}/.ssh). If you are missing the key, ask from a team member. 
 
-2. Open the connection from your terminal with command:
+2. Make sure that you are in .ssh -folder and open the connection from your terminal with command:
+
 `ssh -i .ssh/pouta.key ubuntu@128.214.253.51`
 
-3. When to connect is open you can run commands in the virtual machine. For example, you can check what docker containers are running in which ports:
+
+## Basic Docker commands to be used in Pouta
+
+You can check what docker containers are running in which ports with command:
+
 `sudo docker ps`
+
+![Containers running](img/containers.svg)
+
+You can stop a container by
+
+`sudo docker stop <container-id>`
+
+You can check what docker images are downloaded with command:
+
+`sudo docker image ls`
+
+You can start the application manually with:
+
+`sudo docker compose up -d`
