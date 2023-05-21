@@ -2,7 +2,7 @@
 
 ## CI
 
-When pullrequest is openned or code is pushed to main, [ci.yml](../.github/workflows/ci.yml) is run automatically.
+When a pull request is opened or code is pushed to the main, [ci.yml](../.github/workflows/ci.yml) is run automatically.
 
 CI makes sure both frontend and backend tests pass.
 
