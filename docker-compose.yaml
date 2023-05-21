@@ -6,7 +6,8 @@ services:
    context: ./recommender-back/
    dockerfile: Dockerfile
   environment:
-   FLASK_APP: api:api
+   FLASK_APP: app:app
+   REQUEST_ORIGIN: http://localhost:3000
   ports:
    - 5000:5000
   volumes:
