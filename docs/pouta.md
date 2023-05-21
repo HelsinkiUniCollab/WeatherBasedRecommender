@@ -1,5 +1,8 @@
 # cPouta production environment
 
+Production environment is updated automatically every time new code is pushed to main.
+Read more here: 
+
 ## cPouta cloud service
 
 cPouta is an Infrastructure as a Service (IaaS) cloud provided by [CSC](https://www.csc.fi/)
@@ -29,16 +32,7 @@ You can check what docker containers are running in which ports with command:
 
 `sudo docker ps`
 
-![Containers running](img/containers.svg)
-
-You can stop a container by
-
-`sudo docker stop <container-id>`
-
-You can check what docker images are downloaded with command:
-
-`sudo docker image ls`
-
-You can start the application manually with:
+If application has stopped running you  start it manually with:
 
 `sudo docker compose up -d`
+
