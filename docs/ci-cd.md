@@ -2,13 +2,13 @@
 
 ## CI
 
-When pullrequest is openned or code is pushed to main, [ci.yml](../.github/workflow/ci.yml) is run automatically.
+When pullrequest is openned or code is pushed to main, [ci.yml](../.github/workflows/ci.yml) is run automatically.
 
 CI makes sure both frontend and backend tests pass.
 
 ## CD
 
-Production deployment is done by [cd.yml](../.github//workflow/ci.yml) which is run everytime something is pushed to main.
+Production deployment is done by [cd.yml](../.github//workflows/ci.yml) which is run everytime something is pushed to main.
 
 What happens in deployment:
 
