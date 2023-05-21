@@ -5,8 +5,10 @@ The purpose of this project is to develop an application that provides users wit
 ## Documentation
 
 * [Project backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1)
+* [Sprint backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/1)
 * [Working hours](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/blob/main/docs/hours.md)
 * [Definition of Done](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/blob/main/docs/dod.md)
+* [Git Workflow in project](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/blob/main/docs/git-workflow.md)
 
 ## Available scripts:
 
