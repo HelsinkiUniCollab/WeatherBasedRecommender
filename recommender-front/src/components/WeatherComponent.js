@@ -5,19 +5,38 @@ const WeatherComponent = () => {
         airtemperature: null,
         airquality: null
     });
+    const [error, setError] = useState(null);
+
     useEffect(() => {
-        fetch("http://localhost:5000/api/weather").then((res) =>
-            res.json().then((data) => {
+        fetch("/api/weather")
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return res.json();
+            })
+            .then((data) => {
                 setData({
                     airtemperature: data.airtemperature,
                     airquality: data.airquality
-                })
+                });
+                setError(null);
             })
-        );
+            .catch((error) => {
+                setError("Error fetching weather data");
+                console.error(error);
+            });
     }, []);
+
     return (
         <div>
-            <h2>{data.airtemperature} °C {data.airquality} AQI</h2>
+            {error ? (
+                <p>{error}</p>
+            ) : (
+                <h2>
+                    {data.airtemperature} °C {data.airquality} AQI
+                </h2>
+            )}
         </div>
     );
 };
