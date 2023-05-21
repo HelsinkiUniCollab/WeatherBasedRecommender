@@ -1,6 +1,8 @@
 # Git Workflow and branching
 
-## Create a new branch for every new feature. 
+## When you start to do something new
+
+Create a new branch for every new feature. Publish the branch and open a pull request early on - this helps to avoid merge conflicts.
 
 `$ git pull` 
 
@@ -12,17 +14,16 @@
 
 `$ git push origin <name-of-your-branch>`
 
-Publish a branch and open pull request early on - this helps to avoid merge conflicts.
-
-Add text "Closes" and the issue number at the beginning of your pull request comment. When a pull request is merged, issue is automatically closed. If there is no issue ready, create a task in the sprint backlog.
+Add text "Closes" and the issue number at the beginning of your pull request comment. 
 
 `Closes #<issue-number>`
 
-## Reviewing a pullrequest by another team member
+When a pull request is merged, the issue is then automatically closed. Create a task in the sprint backlog, if you are missing a suitable issue.
 
-Always test the changes locally in our own environment before giving a review.
 
-Workflow for fetch the branch.
+## When you review a pullrequest by another team member
+
+Always test the changes locally in our own environment before giving a review. 
 
 `$ git fetch origin` 
 
@@ -30,8 +31,11 @@ Workflow for fetch the branch.
 
 `$ git pull origin <branch-name>`
 
+Make sure you understand what the code does.
+
 If you do some minor fixes, you can make a commit to the same branch.
-If there is a need to make more changes, add comments and choose Request changes in review.
+
+If there is a need to make more changes, add your review comments and choose then *Request changes*.
 
 
 
