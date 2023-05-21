@@ -2,7 +2,7 @@
 
 |         | Monday 15.5. | Tuesday 16.5. | Wednesday 17.5. | Thursday 18.5. | Friday 19.5.            | Saturday 20.5. | Sunday 21.5. | **Total** |
 | ------- | ------------ | ------------- | --------------- | -------------- | ----------------------- | -------------- | ------------ | --------- |
-| Juuso   | 3 Aloitus    | -             | -               | 0.5            | 7:docker + CSC tuotanto | -              | -            | -         |
+| Juuso   | 3 Aloitus    | -             | -               | 0.5            | 7:docker + CSC tuotanto | 0.5              | 3 Learning docker/prod| 14         |
 | Isak    | 3            | 1,5           | -               | -              | -                       | -              | -            | -         |
 | Sami S. | 3            | -             | -               | 6              | 6                       | -              | -            | -         |
 | Sami M. | 3            | -             | -               | -              | 7                       | -              | 3            | 13        |
