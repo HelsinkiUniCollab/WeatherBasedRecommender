@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+ backend:
+  build:
+   context: ./recommender-back/
+   dockerfile: Dockerfile
+  environment:
+   FLASK_APP: api:api
+  ports:
+   - 5000:5000
+  volumes:
+   - .:/WeatherbasedRecommenderSystem
+  command:
+   flask run --host=0.0.0.0
+ 
+ frontend:
+  build:
+   context: ./recommender-front/
+   dockerfile: Dockerfile
+  ports:
+   - 3000:3000
+  command: ["npx", "serve", "build"]
