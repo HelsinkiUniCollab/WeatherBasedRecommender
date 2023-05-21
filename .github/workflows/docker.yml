@@ -27,11 +27,11 @@ jobs:
           file: recommender-front/Dockerfile
           context: ./recommender-front
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/wbased:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/wbased-front:latest
       - name: Build and push backend
         uses: docker/build-push-action@v2
         with:
           context: ./recommender-back
           file: recommender-back/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/wbased:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/wbased-back:latest
