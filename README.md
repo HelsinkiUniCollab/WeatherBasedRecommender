@@ -8,7 +8,7 @@ The purpose of this project is to develop an application that provides users wit
 * [Definition of Done](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/blob/main/docs/dod.md)
 * [Git Workflow in project](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/blob/main/docs/git-workflow.md)
 
-* [Production Enviromenment Pouta](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/blob/main/docs/pouta.md)
+* [Production Environment Pouta](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/blob/main/docs/pouta.md)
 
 ### Backlogs 
 * [Product backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1)

@@ -22,4 +22,4 @@ In order to access cPouta cloud, you need to accept terms in [My CSC portal](htt
 `ssh -i .ssh/pouta.key ubuntu@128.214.253.51`
 
 3. When to connect is open you can run commands in the virtual machine. For example, you can check what docker containers are running in which ports:
-`sudo docker pd`
+`sudo docker ps`
