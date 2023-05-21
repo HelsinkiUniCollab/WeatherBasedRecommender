@@ -1,4 +1,5 @@
-name: production
+# runs frontend and backend tests on every pullrequest and merge to main
+name: ci
 
 on:
   push:
