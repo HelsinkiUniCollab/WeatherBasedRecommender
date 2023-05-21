@@ -33,7 +33,9 @@ When you have a SSH connection open to Pouta, you can check which docker contain
 
 `sudo docker ps`
 
-If the app has stopped running, you can start it manually. These containers should be always running: *ubuntu-wbased-back-1*, u*buntu-wbased-front-1* and *ubuntu-watchtower-1*  To start containers manually run command:
+If the app has stopped running, you can start it manually. These containers should be always running: 
+*ubuntu-wbased-back-1*, u*buntu-wbased-front-1* and *ubuntu-watchtower-1*.  
+To start all these containers manually run command:
 
 `sudo docker compose up -d`
 
