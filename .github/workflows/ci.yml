@@ -1,4 +1,4 @@
-# runs frontend and backend tests on every pullrequest and merge to main
+# runs frontend and backend tests on every pullrequest and when pullrequest is pushed to main
 name: ci
 
 on:
