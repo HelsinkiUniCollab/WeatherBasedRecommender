@@ -6,7 +6,7 @@
 | Isak    | 3            | 1,5           | -               | -              | -                       | -              | -            | -         |
 | Sami S. | 3            | -             | -               | 6              | -                       | -              | -            | -         |
 | Sami M. | 3            | -             | -               | -              | 7                       | -              | -            | -         |
-| Pia     | 6            | -             | -               | 7,5            | 7,5                     | 7,5            | -            | -         |
+| Pia     | 6            | -             | -               | 7,5            | 7,5                     | 7,5            | 4            | 32,5      |
 | Joni    | 3            | -             | -               | 8              | -                       | -              | -            | -         |
 
 |         | Monday 22.5. | Tuesday 23.5. | Wednesday 24.5. | Thursday 25.5. | Friday 26..5. | Saturday 27.5. | Sunday 28.5. | **Total** |
@@ -15,7 +15,7 @@
 | Isak    | -            | -             | -               | -              | -             | -              | -            | -         |
 | Sami S. | -            | -             | -               | -              | -             | -              | -            | -         |
 | Sami M. | -            | -             | -               | -              | -             | -              | -            | -         |
-| Pia     | -            | -             | -               | -              | -             | -              | -            | -         |
+| Pia     | absent       | absent        | absent          | absent         | absent        | absent         | -            | -         |
 | Joni    | -            | -             | -               | -              | -             | -              | -            | -         |
 
 |         | Monday 29.5. | Tuesday 30.5. | Wednesday 31.5. | Thursday 1.6. | Friday 2.6. | Saturday 3.6. | Sunday 4.6. | **Total** |
