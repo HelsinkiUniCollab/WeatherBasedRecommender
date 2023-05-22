@@ -1,5 +1,5 @@
-# deploys updated frontend and backend images to DockerHub and then to Pouta
-name: cd 
+# Deploys updated frontend and backend images to DockerHub and then to Pouta
+name: CD 
 
 on:
   push:

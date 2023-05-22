@@ -1,5 +1,5 @@
-# runs frontend and backend tests on every pullrequest and when pullrequest is pushed to main
-name: ci
+# Runs frontend and backend tests on every pull request and when pull request is pushed to main
+name: CI
 
 on:
   push:
