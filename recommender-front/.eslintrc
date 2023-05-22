@@ -1,3 +1,11 @@
 {
-    "extends": "airbnb"
+    "extends": "airbnb",
+    "rules": {
+        "no-console": "off" // allow printing to console for now
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest": true
+    }
 }
