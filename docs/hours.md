@@ -1,15 +1,15 @@
 # Working hours
 
-|         | Monday 15.5. | Tuesday 16.5. | Wednesday 17.5. | Thursday 18.5. | Friday 19.5.            | Saturday 20.5. | Sunday 21.5. | **Total** |
+|         | Monday 15.5. | Tuesday 16.5. | Wednesday 17.5. | Thursday 18.5. | Friday 19.5.            | Saturday 20.5. | Sunday 21.5. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ----------------------- | -------------- | ------------ | --------- |
-| Juuso   | 3 Aloitus    | -             | -               | 0.5            | 7:docker + CSC tuotanto | 0.5              | 3 Learning docker/prod| 14         |
-| Isak    | 3            | 1,5           | -               | -              | -                       | -              | -            | -         |
+| Juuso   | 3 Aloitus    | -             | -               | 0,5            | 7 Docker, CSC          | 0,5              | 3 Learning Docker| 14         |
+| Isak    | 3            | 1,5           | -               | 0,5            | 7                       | 1,5              | 1,5            | 15         |
 | Sami S. | 3            | -             | -               | 6              | 6                       | -              | -            | -         |
 | Sami M. | 3            | -             | -               | -              | 7                       | -              | 3            | 13        |
 | Pia     | 6            | -             | -               | 7,5            | 7,5                     | 7,5            | 4            | 32,5      |
 | Joni    | 3            | -             | -               | 8              | -                       | 5              | 8            | 24        |
 
-|         | Monday 22.5. | Tuesday 23.5. | Wednesday 24.5. | Thursday 25.5. | Friday 26..5. | Saturday 27.5. | Sunday 28.5. | **Total** |
+|         | Monday 22.5. | Tuesday 23.5. | Wednesday 24.5. | Thursday 25.5. | Friday 26..5. | Saturday 27.5. | Sunday 28.5. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------- | -------------- | ------------ | --------- |
 | Juuso   | -            | -             | -               | -              | -             | -              | -            | -         |
 | Isak    | -            | -             | -               | -              | -             | -              | -            | -         |
@@ -18,7 +18,7 @@
 | Pia     | absent       | absent        | absent          | absent         | absent        | absent         | -            | -         |
 | Joni    | -            | -             | -               | -              | -             | -              | -            | -         |
 
-|         | Monday 29.5. | Tuesday 30.5. | Wednesday 31.5. | Thursday 1.6. | Friday 2.6. | Saturday 3.6. | Sunday 4.6. | **Total** |
+|         | Monday 29.5. | Tuesday 30.5. | Wednesday 31.5. | Thursday 1.6. | Friday 2.6. | Saturday 3.6. | Sunday 4.6. | Total |
 | ------- | ------------ | ------------- | --------------- | ------------- | ----------- | ------------- | ----------- | --------- |
 | Juuso   | -            | -             | -               | -             | -           | -             | -           | -         |
 | Isak    | -            | -             | -               | -             | -           | -             | -           | -         |
@@ -27,7 +27,7 @@
 | Pia     | -            | -             | -               | -             | -           | -             | -           | -         |
 | Joni    | absent       | absent        | absent          | absent        | absent      | absent        | absent      | -         |
 
-|         | Monday 5.6. | Tuesday 6.6. | Wednesday 7.6. | Thursday 8.6. | Friday 9.6. | Saturday 10.6. | Sunday 11.6. | **Total** |
+|         | Monday 5.6. | Tuesday 6.6. | Wednesday 7.6. | Thursday 8.6. | Friday 9.6. | Saturday 10.6. | Sunday 11.6. | Total |
 | ------- | ----------- | ------------ | -------------- | ------------- | ----------- | -------------- | ------------ | --------- |
 | Juuso   | -           | -            | -              | -             | -           | -              | -            | -         |
 | Isak    | -           | -            | -              | -             | -           | -              | -            | -         |
@@ -36,7 +36,7 @@
 | Pia     | -           | -            | -              | -             | -           | -              | -            | -         |
 | Joni    | absent      | absent       | absent         | absent        | absent      | absent         | absent       | -         |
 
-|         | Monday 12.6. | Tuesday 13.6. | Wednesday 14.6. | Thursday 15.6. | Friday 16.6. | Saturday 17.6. | Sunday 18.6. | **Total** |
+|         | Monday 12.6. | Tuesday 13.6. | Wednesday 14.6. | Thursday 15.6. | Friday 16.6. | Saturday 17.6. | Sunday 18.6. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
 | Juuso   | -            | -             | -               | -              | -            | -              | -            | -         |
 | Isak    | -            | -             | -               | -              | -            | -              | -            | -         |
@@ -45,7 +45,7 @@
 | Pia     | -            | -             | -               | -              | -            | -              | -            | -         |
 | Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
 
-|         | Monday 19.6. | Tuesday 20.6. | Wednesday 21.6. | Thursday 22.6. | Friday 23.6. | Saturday 24.6. | Sunday 25.6. | **Total** |
+|         | Monday 19.6. | Tuesday 20.6. | Wednesday 21.6. | Thursday 22.6. | Friday 23.6. | Saturday 24.6. | Sunday 25.6. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
 | Juuso   | -            | -             | -               | -              | -            | -              | -            | -         |
 | Isak    | -            | -             | -               | -              | -            | -              | -            | -         |

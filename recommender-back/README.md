@@ -1,47 +1,48 @@
 # Recommender Backend
 
-Python Flask application for api's used for Weather-based Recommendations.
+Python Flask application for API's used for weather-based recommendations.
 
 ## Installation
 
-1. Navigate to the right project folder
+```bash
+# Navigate to the right project folder
+$ cd recommender-back
 
-`cd recommender-back`
-
-2. Install dependencies using Poetry
-
-`poetry install`
+# Install dependencies using Poetry
+$ poetry install
+```
 Creates a virtual environment and install all the required dependencies defined in the pyproject.toml file.
 
 ## Usage
+```bash
+# Activate the virtual environment:
+$ poetry shell
 
-1. Activate the virtual environment:
-`poetry shell`
-
-2. Start the Flask development server:
-`flask run`
-
+# Start the Flask development server:
+$ flask run
+```
 The Flask server will start running, and you can access the API at http://localhost:5000/.
 
 ## Testing
+```bash
+# Run command inside the virtual enviroment
+$ pytest
+```
 
-1. Run command inside virtual enviroment
-`pytest`
+## Running in a Docker container
+
+```bash 
+# Build image
+$ docker build -t recommender-backend .
+
+# Run container from image
+$ docker run -p 5000:5000 recommender-backend
+```
 
 ## API endpoints
 
-### Endpoint 1:
+### Endpoint 1
 
 URL: /
 Method: GET
-Description: Shows 'Hello from the backend!' with statuscode 200.
-
-## Running in a Docker container:
- 
-1. Build image
-
-`docker build -t recommender-backend .`
-
-2. Run container from image
-
-`docker run -p 5000:5000 recommender-backend`
+Description: Shows 'Hello from the backend!' with statuscode 200

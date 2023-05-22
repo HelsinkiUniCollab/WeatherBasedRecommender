@@ -2,15 +2,15 @@
 
 ## CI
 
-CI pipeline [ci.yml](../.github/workflows/ci.yml) is run automatically, when a pull request is opened or code is pushed to the main branch.
+The CI pipeline, defined in [ci.yml](../.github/workflows/ci.yml) is run automatically, when a pull request is opened or code is pushed to the main branch.
 
-CI makes sure that both frontend and backend tests pass.
+The CI process ensures the successful execution of frontend and backend tests. Currently, testing is performed locally as the project does not have a staging environment.
 
 The project does not have a staging environment at this point. Testing is done locally.
 
 ## CD
 
-Production deployment is done by [cd.yml](../.github//workflows/cd.yml), which is run everytime something is pushed to the main branch.
+Production deployment is done by [cd.yml](../.github//workflows/cd.yml), which deploys to production each time a commit is pushed to the main branch.
 
 ## What happens in deployment
 

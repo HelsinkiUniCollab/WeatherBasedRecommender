@@ -13,11 +13,6 @@ In order to access cPouta cloud, you need to accept terms in [My CSC portal](htt
 
 You can then access [cPouta Dashboard](https://pouta.csc.fi/dashboard/project/instances/).
 
-### More information about cPouta
-* [What is Pouta](https://docs.csc.fi/cloud/pouta/pouta-what-is/)
-* [Security Guidelines in Pouta](https://docs.csc.fi/cloud/pouta/pouta-what-is/)
-* [Creating a Virtual Machine in Pouta](https://docs.csc.fi/cloud/pouta/launch-vm-from-web-gui/)
-
 ## How to access cPouta instance with SSH
 
 1. You need to have an access key (pouta.key) in your .shh folder. If you are missing the key, ask from a team member. 
@@ -25,7 +20,6 @@ You can then access [cPouta Dashboard](https://pouta.csc.fi/dashboard/project/in
 2. Make sure that you are in .ssh -folder  (/home/{user}/.ssh) and open the connection from your terminal with command:
 
 `ssh -i .ssh/pouta.key ubuntu@128.214.253.51`
-
 
 ## Basic Docker commands to be used in Pouta
 
@@ -38,4 +32,10 @@ If the app has stopped running, you can start it manually. These containers shou
 To start all these containers manually run command:
 
 `sudo docker compose up -d`
+
+### More information about cPouta
+
+* [What is Pouta](https://docs.csc.fi/cloud/pouta/pouta-what-is/)
+* [Security Guidelines in Pouta](https://docs.csc.fi/cloud/pouta/pouta-what-is/)
+* [Creating a Virtual Machine in Pouta](https://docs.csc.fi/cloud/pouta/launch-vm-from-web-gui/)
 
