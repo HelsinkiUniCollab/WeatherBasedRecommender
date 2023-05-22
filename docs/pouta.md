@@ -1,9 +1,9 @@
-# cPouta production environment
+# cPouta Production Environment
 
 Production environment is updated automatically everytime new code is pushed to the main branch.
 Read more here: [CI/CD Pipeline](/docs/ci-cd.md)
 
-## cPouta cloud service
+## cPouta Cloud Service
 
 cPouta is an Infrastructure as a Service (IaaS) cloud provided by [CSC](https://www.csc.fi/).
 
