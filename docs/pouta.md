@@ -17,7 +17,7 @@ You can then access [cPouta Dashboard](https://pouta.csc.fi/dashboard/project/in
 
 1. You need to have an access key (pouta.key) in your .shh folder. If you are missing the key, ask from a team member. 
 
-2. Make sure that you are in .ssh -folder  (/home/{user}/.ssh) and open the connection from your terminal with command:
+2. Make sure that you are in .ssh -folder  `(/home/{user}/.ssh)` and open the connection from your terminal with command:
 
 `ssh -i .ssh/pouta.key ubuntu@128.214.253.51`
 

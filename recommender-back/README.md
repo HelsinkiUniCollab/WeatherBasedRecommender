@@ -2,7 +2,7 @@
 
 Python Flask application for API's used for weather-based recommendations.
 
-## Installation
+## Instructions
 
 ```bash
 # Navigate to the right project folder
@@ -13,7 +13,7 @@ $ poetry install
 ```
 Creates a virtual environment and install all the required dependencies defined in the pyproject.toml file.
 
-## Usage
+### Usage
 ```bash
 # Activate the virtual environment:
 $ poetry shell
@@ -23,13 +23,13 @@ $ flask run
 ```
 The Flask server will start running, and you can access the API at http://localhost:5000/.
 
-## Testing
+### Testing
 ```bash
 # Run command inside the virtual enviroment
 $ pytest
 ```
 
-## Docker
+### Docker
 
 ```bash 
 # Build image

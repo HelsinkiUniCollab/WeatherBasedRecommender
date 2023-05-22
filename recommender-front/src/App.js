@@ -4,9 +4,9 @@ import WeatherComponent from "./components/WeatherComponent";
 
 function App() {
   return (
-    <div>
+    <center>
       <h1>
-        Weather Based Recommender App
+        Weather-Based Recommender
       </h1>
       <div>
         <WeatherComponent />
@@ -14,8 +14,7 @@ function App() {
       <div>
         <MapComponent />
       </div>
-    </div>
-    
+    </center>
   );
 }
 

@@ -1,9 +1,8 @@
 # Recommender Frontend
 
-## Available scripts
+This is the frontend of the Weather-Based Recommender application.
 
-
-### Installation
+### Instructions
 
 ```bash
 # Install dependencies
