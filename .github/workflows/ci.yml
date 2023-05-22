@@ -45,3 +45,7 @@ jobs:
         run: |
           cd recommender-front
           npm test
+      - name: Run ESLint
+        run: |
+          cd recommender-front
+          npm run lint
