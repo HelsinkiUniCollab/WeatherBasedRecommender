@@ -1,0 +1,38 @@
+# deploys updated frontend and backend images to DockerHub and then to Pouta
+name: cd 
+
+on:
+  push:
+    branches: [main]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Login to Docker
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Setup .env file
+        run: echo "REACT_APP_BACKEND_URL=${{ secrets.REACT_APP_BACKEND_URL }}" > ./recommender-front/.env.local
+      - name: Build and push frontend
+        uses: docker/build-push-action@v2
+        with:
+          file: recommender-front/Dockerfile
+          context: ./recommender-front
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/wbased-front:latest
+      - name: Build and push backend
+        uses: docker/build-push-action@v2
+        with:
+          context: ./recommender-back
+          file: recommender-back/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/wbased-back:latest
