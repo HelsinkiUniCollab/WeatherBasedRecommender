@@ -14,7 +14,7 @@
 | Juuso   | 3 Back adjst + test| -             | -               | -              | -             | -              | -            | -         |
 | Isak    | 3            | -             | -               | -              | -             | -              | -            | -         |
 | Sami S. | -            | -             | -               | -              | -             | -              | -            | -         |
-| Sami M. | -            | -             | -               | -              | -             | -              | -            | -         |
+| Sami M. | 4            | -             | -               | -              | -             | -              | -            | -         |
 | Pia     | absent       | absent        | absent          | absent         | absent        | absent         | -            | -         |
 | Joni    | -            | -             | -               | -              | -             | -              | -            | -         |
 

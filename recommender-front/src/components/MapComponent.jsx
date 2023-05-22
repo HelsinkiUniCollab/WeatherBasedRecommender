@@ -33,26 +33,29 @@ function MapComponent() {
     <MapContainer center={position} zoom={16} scrollWheelZoom={false} style={{ height: '500px', width: '500px' }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'/>
-        {poiData.map((poi) => {
-          if (!poi.tags.name) return null;
-          const tags = Object.entries(poi.tags)
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
+      {poiData.map((poi) => {
+        if (!poi.tags.name) return null;
+        const tags = Object.entries(poi.tags);
 
-          return (
-            <Marker position={[poi.lat, poi.lon]} key={poi.id} icon={markerIcon}>
-              <Popup>
-                <h2>{poi.tags.name}</h2>
-                <ul>
-                    {tags.map(([key,value]) => (
-                      <li key={key}>
-                          <strong>{key}</strong>: {value}
-                      </li>
-                    ))}
-                </ul>
-              </Popup>
-            </Marker>
-          );
-        })}
+        return (
+          <Marker position={[poi.lat, poi.lon]} key={poi.id} icon={markerIcon}>
+            <Popup>
+              <h2>{poi.tags.name}</h2>
+              <ul>
+                {tags.map(([key, value]) => (
+                  <li key={key}>
+                    <strong>{key}</strong>
+                    :
+                    {value}
+                  </li>
+                ))}
+              </ul>
+            </Popup>
+          </Marker>
+        );
+      })}
     </MapContainer>
   );
 }
