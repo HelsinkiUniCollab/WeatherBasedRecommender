@@ -18,7 +18,7 @@ const WeatherComponent = () => {
     }, []);
     return (
         <div>
-            <h2>{data.airtemperature} °C {data.airquality} AQI</h2>
+            <p><font size="5">{data.airtemperature} °C {data.airquality} AQI</font></p>
         </div>
     );
 };

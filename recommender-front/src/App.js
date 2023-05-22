@@ -15,7 +15,6 @@ function App() {
         <MapComponent />
       </div>
     </center>
-    
   );
 }
 
