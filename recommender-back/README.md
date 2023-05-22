@@ -39,7 +39,7 @@ $ docker build -t recommender-backend .
 $ docker run -p 5000:5000 recommender-backend
 ```
 
-## API endpoints
+## API Endpoints
 
 ### Endpoint 1
 
