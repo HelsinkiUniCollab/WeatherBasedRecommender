@@ -5,20 +5,28 @@ const WeatherComponent = () => {
         airtemperature: null,
         airquality: null
     });
+
     useEffect(() => {
         const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
-        fetch(`${apiUrl}/api/weather`).then((res) =>
-            res.json().then((data) => {
+        fetch(`${apiUrl}/api/weather`)
+            .then((res) => res.json())
+            .then((data) => {
                 setData({
                     airtemperature: data.airtemperature,
                     airquality: data.airquality
-                })
+                });
             })
-        );
+            .catch((error) => {
+                console.error("Error fetching weather data:", error);
+                // Handle the error here (e.g., show an error message)
+            });
     }, []);
+
     return (
         <div>
-            <p><font size="5">{data.airtemperature} °C {data.airquality} AQI</font></p>
+            <p>
+                <font size = "5">{data.airtemperature} °C {data.airquality} AQI</font>
+            </p>
         </div>
     );
 };
