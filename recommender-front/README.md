@@ -2,7 +2,7 @@
 
 This is the frontend of the Weather-Based Recommender application.
 
-### Instructions
+## Instructions
 
 ```bash
 # Install dependencies

@@ -1,6 +1,8 @@
 # Git Workflow
 
-## When you start to do something new
+A Git workflow serves as a guidieline or to effectively utilize Git, ensuring consistency and productivity in accomplishing tasks.
+
+## Doing something new
 
 Create a new branch for every new feature. Publish the branch and open a pull request early on - this helps to avoid merge conflicts.
 
@@ -27,7 +29,7 @@ Add text "Closes" and the issue number at the beginning of your pull request com
 
 When a pull request is merged, the issue is then automatically closed. Create a task in the sprint backlog, if you are missing a suitable issue.
 
-## When you review pull requests
+## Reviewing pull requests
 
 Always test the changes locally in our own environment before giving a review. 
 ```bash
