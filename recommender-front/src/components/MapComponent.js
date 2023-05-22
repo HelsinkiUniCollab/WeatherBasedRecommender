@@ -9,9 +9,14 @@ const MapComponent = () => {
     useEffect(() => {
         async function fetchPoiData() {
           try {
-            const api_url = `https://overpass-api.de/api/interpreter?data=
-              [out:json];node(around:1000,60.2049,24.9649)["tourism"];out;`;
-            const response = await fetch(api_url);
+            const apiUrl = `https://overpass-api.de/api/interpreter?data=
+              [out:json];
+              (
+                node(around:1000,60.2049,24.9649)["tourism"];
+                node(around:1000,60.2049,24.9649)["leisure"];
+              );
+              out;`;
+            const response = await fetch(apiUrl);
             const data = await response.json();
             setPoiData(data.elements);
           } catch (error) {
@@ -27,14 +32,26 @@ const MapComponent = () => {
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'/>
-                {poiData.map((poi) => (
-                    <Marker position={[poi.lat, poi.lon]} key={poi.id} icon={ markerIcon }>
+                {poiData.map((poi) => {
+                  if (!poi.tags.name) return null;
+
+                  const tags = Object.entries(poi.tags)
+
+                  return (
+                    <Marker position={[poi.lat, poi.lon]} key={poi.id} icon={markerIcon}>
                       <Popup>
                       <h2>{poi.tags.name}</h2>
-                      <p>{poi.tags.tourism}</p>
+                      <ul>
+                          {tags.map(([key,value]) => (
+                            <li key={key}>
+                                <strong>{key}</strong>: {value}
+                            </li>
+                          ))}
+                      </ul>
                       </Popup>
                     </Marker>
-                ))}
+                  );
+                })}
         </MapContainer>
     );
 };
