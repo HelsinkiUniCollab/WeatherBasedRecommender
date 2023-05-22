@@ -29,7 +29,7 @@ The Flask server will start running, and you can access the API at http://localh
 $ pytest
 ```
 
-## Running in a Docker container
+## Docker
 
 ```bash 
 # Build image

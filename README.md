@@ -4,6 +4,13 @@ The purpose of this project is to develop an application that provides users wit
 
 Application can be accessed here: [Weather-Based Recommender](http://128.214.253.51:3000/)
 
+## Available scripts
+
+```bash
+# Compose and run frontend and backend in ports 5000 and 3000 (respectively)
+$ docker compose up
+```
+
 ## Documentation
 
 * [Working hours](/docs/hours.md)
@@ -17,11 +24,5 @@ Application can be accessed here: [Weather-Based Recommender](http://128.214.253
 * [Product Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1)
 * [Sprint 0 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/1)
 
-## Available scripts
-
-```bash
-# Compose and run frontend and backend in ports 5000 and 3000 (respectively)
-$ docker compose up
-```
 
 
