@@ -7,18 +7,15 @@ const WeatherComponent = () => {
     });
 
     useEffect(() => {
-        const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
-        fetch(`${apiUrl}/api/weather`)
-            .then((res) => res.json())
-            .then((data) => {
+        const apiUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+        fetch(`${apiUrl}/api/weather`).then((res) =>
                 setData({
                     airtemperature: data.airtemperature,
                     airquality: data.airquality
                 });
             })
             .catch((error) => {
-                console.error("Error fetching weather data:", error);
-                // Handle the error here (e.g., show an error message)
+                console.error("Error fetching weather data: ", error);
             });
     }, []);
 
