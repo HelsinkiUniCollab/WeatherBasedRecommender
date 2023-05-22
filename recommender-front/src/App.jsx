@@ -1,6 +1,7 @@
-import MapComponent from "./components/MapComponent";
+import React from 'react';
+import MapComponent from './components/MapComponent';
 import 'leaflet/dist/leaflet.css';
-import WeatherComponent from "./components/WeatherComponent";
+import WeatherComponent from './components/WeatherComponent';
 
 function App() {
   return (
