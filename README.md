@@ -1,5 +1,8 @@
 # Weather-Based Recommender
 
+[![CI](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/ci.yml/badge.svg)](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/ci.yml)
+[![CD](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/cd.yml/badge.svg?branch=main)](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/cd.yml)
+
 The purpose of this project is to develop an application that provides users with personalized recommendations for points of interest and routes in Helsinki. It takes into consideration the current weather conditions to enhance the generated suggestions. This application is being created as part of the software engineering course at the [University of Helsinki](https://www.helsinki.fi/fi).
 
 Application can be accessed here: [Weather-Based Recommender](http://128.214.253.51:3000/)
