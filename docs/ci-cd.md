@@ -12,7 +12,7 @@ The project does not have a staging environment at this point. Testing is done l
 
 Production deployment is done by [cd.yml](../.github//workflows/cd.yml), which deploys to production each time a commit is pushed to the main branch.
 
-## What happens in deployment
+## Deployment phases
 
 * Updated Docker images are pushed to Docker Hub into these repositories:
   * https://hub.docker.com/repository/docker/ruusukivi/wbased-back/general
