@@ -11,14 +11,9 @@ function MapComponent() {
   useEffect(() => {
     async function fetchPoiData() {
       try {
-        const apiUrl = `https://overpass-api.de/api/interpreter?data=
-          [out:json];
-          (
-            node(around:1000,60.2049,24.9649)["tourism"];
-            node(around:1000,60.2049,24.9649)["leisure"];
-          );
-          out;`;
-        const response = await fetch(apiUrl);
+        const apiURL = `https://overpass-api.de/api/interpreter?data=
+              [out:json];node(around:1000,60.2049,24.9649)["tourism"];out;`;
+        const response = await fetch(apiURL);
         const data = await response.json();
         setPoiData(data.elements);
       } catch (error) {
@@ -33,26 +28,16 @@ function MapComponent() {
     <MapContainer center={position} zoom={16} scrollWheelZoom={false} style={{ height: '500px', width: '500px' }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'/>
-        {poiData.map((poi) => {
-          if (!poi.tags.name) return null;
-          const tags = Object.entries(poi.tags)
-
-          return (
-            <Marker position={[poi.lat, poi.lon]} key={poi.id} icon={markerIcon}>
-              <Popup>
-                <h2>{poi.tags.name}</h2>
-                <ul>
-                    {tags.map(([key,value]) => (
-                      <li key={key}>
-                          <strong>{key}</strong>: {value}
-                      </li>
-                    ))}
-                </ul>
-              </Popup>
-            </Marker>
-          );
-        })}
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
+      {poiData.map((poi) => (
+        <Marker position={[poi.lat, poi.lon]} key={poi.id} icon={markerIcon}>
+          <Popup>
+            <h2>{poi.tags.name}</h2>
+            <p>{poi.tags.tourism}</p>
+          </Popup>
+        </Marker>
+      ))}
     </MapContainer>
   );
 }
