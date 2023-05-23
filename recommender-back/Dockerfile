@@ -13,7 +13,7 @@ RUN pip install poetry \
 
 COPY . /app
 
-ENV FLASK_APP=app:app
+ENV FLASK_APP=src/app:app
 ENV REQUEST_ORIGIN=http://localhost:3000
 
 EXPOSE 5000
