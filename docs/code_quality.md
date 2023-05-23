@@ -33,3 +33,9 @@ npm run lint
 ```
 
 If the command doesn't return anything, it means that there are no linting issues.
+
+To fix lint-issues (most of them), run the following command:
+
+```bash
+npm run lint:fix
+```

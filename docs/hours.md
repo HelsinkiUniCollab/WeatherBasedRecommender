@@ -16,7 +16,7 @@
 | Sami S. | 2            | -             | -               | -              | -             | -              | -            | -         |
 | Sami M. | 4            | -             | -               | -              | -             | -              | -            | -         |
 | Pia     | absent       | absent        | absent          | absent         | absent        | absent         | -            | -         |
-| Joni    | -            | -             | -               | -              | -             | -              | -            | -         |
+| Joni    | 1            | 3             | -               | -              | -             | -              | -            | -         |
 
 |         | Monday 29.5. | Tuesday 30.5. | Wednesday 31.5. | Thursday 1.6. | Friday 2.6. | Saturday 3.6. | Sunday 4.6. | Total |
 | ------- | ------------ | ------------- | --------------- | ------------- | ----------- | ------------- | ----------- | --------- |
