@@ -27,7 +27,7 @@ jobs:
       - name: Run backend tests
         run: |
           cd recommender-back
-          poetry run pytest
+          poetry run invoke test
 
   build_front:
     runs-on: ubuntu-latest

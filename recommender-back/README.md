@@ -15,18 +15,17 @@ Creates a virtual environment and install all the required dependencies defined 
 
 ### Usage
 ```bash
-# Activate the virtual environment:
-$ poetry shell
-
-# Start the Flask development server:
-$ flask run
+# Start the Flask development server
+$ poetry run invoke start
 ```
 The Flask server will start running, and you can access the API at http://localhost:5000/.
 
-### Testing
 ```bash
-# Run command inside the virtual enviroment
-$ pytest
+# Run the tests
+$ poetry run invoke test
+
+# Run the code validators
+$ poetry run invoke pylint
 ```
 
 ### Docker
