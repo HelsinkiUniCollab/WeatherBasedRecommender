@@ -12,7 +12,7 @@
 |         | Monday 22.5. | Tuesday 23.5. | Wednesday 24.5. | Thursday 25.5. | Friday 26..5. | Saturday 27.5. | Sunday 28.5. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------- | -------------- | ------------ | --------- |
 | Juuso   | 3 Back adjst + test| -             | -               | -              | -             | -              | -            | -         |
-| Isak    | 3            | -             | -               | -              | -             | -              | -            | -         |
+| Isak    | 3            | 2,5           | 0,5             | -              | -             | -              | -            | -         |
 | Sami S. | 2            | -             | -               | -              | -             | -              | -            | -         |
 | Sami M. | 4            | -             | -               | -              | -             | -              | -            | -         |
 | Pia     | absent       | absent        | absent          | absent         | absent        | absent         | -            | -         |
