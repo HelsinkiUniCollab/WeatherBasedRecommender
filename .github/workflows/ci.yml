@@ -28,6 +28,10 @@ jobs:
         run: |
           cd recommender-back
           poetry run invoke test
+      - name: Run Pylint
+        run: |
+          cd recommender-back
+          poetry run pylint src --fail-under 8.0 main
 
   build_front:
     runs-on: ubuntu-latest
