@@ -11,6 +11,7 @@ flask = "^2.3.2"
 fmiopendata = {git = "https://github.com/pnuu/fmiopendata.git"}
 flask-cors = "^3.0.10"
 invoke = "^2.1.2"
+overpy = "^0.6"
 
 
 [tool.poetry.group.dev.dependencies]

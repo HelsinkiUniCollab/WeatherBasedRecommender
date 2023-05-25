@@ -1,6 +1,7 @@
 from app import app
 from flask import jsonify
 import apis.weather as weather
+import apis.poi as poi
 
 
 @app.route('/', methods=['GET'])
@@ -25,11 +26,20 @@ def get_weather():
     Handler for the '/api/weather' endpoint.
 
     Returns:
-        The weather data if errors have not occured.
+        The weather data if errors have not occurred.
 
     """
     return weather.get_weather()
 
+@app.route('/api/poi', methods=['GET'])
+def get_poi_data():
+    """
+    Handler for the '/api/poi' endpoint.
+
+    Returns:
+        Poi data if errors have not occurred.
+    """
+    return poi.get_poi_data()
 
 @app.errorhandler(404)
 def not_found_error(error):
