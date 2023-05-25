@@ -11,16 +11,10 @@ function MapComponent() {
   useEffect(() => {
     async function fetchPoiData() {
       try {
-        const apiUrl = `https://overpass-api.de/api/interpreter?data=
-          [out:json];
-          (
-            node(around:1000,60.2049,24.9649)["tourism"];
-            node(around:1000,60.2049,24.9649)["leisure"];
-          );
-          out;`;
-        const response = await fetch(apiUrl);
+        const apiUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+        const response = await fetch(`${apiUrl}/api/poi`);
         const data = await response.json();
-        setPoiData(data.elements);
+        setPoiData(data);
       } catch (error) {
         console.error('Error fetching POI data:', error);
       }
@@ -36,13 +30,12 @@ function MapComponent() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       {poiData.map((poi) => {
-        if (!poi.tags.name) return null;
-        const tags = Object.entries(poi.tags);
+        const tags = Object.entries(poi);
 
         return (
           <Marker position={[poi.lat, poi.lon]} key={poi.id} icon={markerIcon}>
             <Popup>
-              <h2>{poi.tags.name}</h2>
+              <h2>{poi.name}</h2>
               <ul>
                 {tags.map(([key, value]) => (
                   <li key={key}>
