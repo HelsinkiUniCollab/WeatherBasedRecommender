@@ -13,7 +13,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------- | -------------- | ------------ | --------- |
 | Juuso   | 3 Back adjst + test| -             | -               | 5 burndwn skele + reading docs | -             | -              | -            | -         |
 | Isak    | 3            | 2,5           | 0,5             | -              | -             | -              | -            | -         |
-| Sami S. | 2            | -             | 3.5             | -              | -             | -              | -            | -         |
+| Sami S. | 2            | -             | 3.5             | 4              | -             | -              | -            | -         |
 | Sami M. | 4            | -             | -               | 4 Learning react              | -             | -              | -            | -         |
 | Pia     | absent       | absent        | absent          | absent         | absent        | absent         | -            | -         |
 | Joni    | 1            | 3             | -               | -              | -             | -              | -            | -         |
