@@ -13,7 +13,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------- | -------------- | ------------ | --------- |
 | Juuso   | 3 Back adjst + test| -             | -               | 5 burndwn skele + reading docs | 2             | -              | -            | -         |
 | Isak    | 3            | 3             | 0,5             | -              | 1,5             | -              | -            | -         |
-| Sami S. | 2            | -             | 3.5             | 4              | -             | -              | -            | -         |
+| Sami S. | 2            | -             | 3.5             | 4              | -             | -              | 2 Learning about APIs            | 11.5         |
 | Sami M. | 4            | -             | -               | 4 Learning react              | -             | -              | -            | -         |
 | Pia     | absent       | absent        | absent          | absent         | absent        | absent         | 4            | 4         |
 | Joni    | 1            | 3             | -               | 3              | 3             | 3              | 5            | 18         |
