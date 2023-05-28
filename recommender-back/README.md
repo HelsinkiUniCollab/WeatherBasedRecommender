@@ -40,7 +40,7 @@ $ docker run -p 5000:5000 recommender-backend
 
 ## API Endpoints
 
-### Endpoint 1
+### Endpoint for backend health
 
 ```bash
 URL: /
@@ -48,11 +48,18 @@ Method: GET
 Description: Shows 'Hello from the backend!' with statuscode 200
 ```
 
-### Endpoint 2
+### Endpoint for Weather data
 ```bash
 URL: /api/weather
 Method: GET
 Description: Response contains the air temperature and air quality as JSON
+```
+
+### Endpoint for Point of Interest data
+```bash
+URL: /api/poi
+Method: GET
+Description: Response contains the point-of-interest data as JSON
 ```
 
 
