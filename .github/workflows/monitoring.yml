@@ -16,6 +16,7 @@ jobs:
       run: curl -sSf http://128.214.253.51:3000/ || exit 1
 
     - name: Send-Discord-Alert
+
       if: failure()
       env:
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
