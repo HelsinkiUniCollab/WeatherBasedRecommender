@@ -35,9 +35,9 @@ To run the frontend and backend services individually, refer to the instructions
 * [Product Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1)
 
 #### Sprints
-* [Sprint 0 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/1?filterQuery=milestone%3A%22Sprint+0%22+-status%3A%22Product+Backlog%22)
+* [Sprint 0 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/1)
 
-* [Sprint 1 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/1?filterQuery=milestone%3A%22Sprint+1%22+-status%3A%22Product+Backlog%22)
+* [Sprint 1 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/5)
 
 ![sprint0-burndown](https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/assets/1563603/d7125033-704a-41aa-962c-ccf38f6ffbe8)
 
