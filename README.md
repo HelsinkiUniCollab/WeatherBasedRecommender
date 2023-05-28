@@ -33,7 +33,11 @@ To run the frontend and backend services individually, refer to the instructions
 ### Backlogs 
 
 * [Product Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1)
-* [Sprint 0 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/1)
+
+#### Sprints
+* [Sprint 0 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/1?filterQuery=milestone%3A%22Sprint+0%22+-status%3A%22Product+Backlog%22)
+
+* [Sprint 1 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/1?filterQuery=milestone%3A%22Sprint+1%22+-status%3A%22Product+Backlog%22)
 
 
 
