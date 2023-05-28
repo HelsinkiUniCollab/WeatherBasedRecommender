@@ -33,6 +33,116 @@ To start all these containers manually run command:
 
 `sudo docker compose up -d`
 
+## Current Pouta Docker configurations
+
+```
+docker-compose.yml
+
+version: '3.3'
+services:
+  wbased-back:
+    image: ruusukivi/wbased-back:latest
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    restart: unless-stopped
+    networks:
+      - ubuntu_default
+
+  wbased-front:
+    image: ruusukivi/wbased-front:latest
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    networks:
+      - ubuntu_default
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    networks:
+      - ubuntu_default
+
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    command: --label-enable --interval 60
+    networks:
+      - ubuntu_default
+
+networks:
+  ubuntu_default:
+    external: true
+
+nginx.conf
+
+events {}
+
+http {
+  server {
+    listen 80;
+
+    location /api/weather {
+      proxy_pass http://wbased-back:5000;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+      # Add CORS headers
+      add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+      add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type';
+
+      # Handle OPTIONS requests for CORS preflight
+      if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Max-Age' 1728000;
+        add_header 'Content-Type' 'text/plain charset=UTF-8';
+        add_header 'Content-Length' 0;
+        return 204;
+      }
+    }
+
+    location /api/poi {
+      proxy_pass http://wbased-back:5000;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+      # Add CORS headers
+      add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+      add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type' always;
+
+      # Handle OPTIONS requests for CORS preflight
+      if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Max-Age' 1728000 always;
+        add_header 'Content-Type' 'text/plain charset=UTF-8' always;
+        add_header 'Content-Length' 0 always;
+        return 204;
+      }
+    }
+
+    location / {
+      proxy_pass http://wbased-front:3000/;
+    }
+  }
+}
+
+```
+
+**wbased-back**: This is the backend service built using the Docker image `ruusukivi/wbased-back:latest`. It has the `watchtower` label to enable automatic updates. The service is set to restart unless manually stopped and it's connected to the network `ubuntu_default`.
+
+**wbased-front**: This is the frontend service built using the Docker image `ruusukivi/wbased-front:latest`. It also has the `watchtower` label for automatic updates. This service is exposed on port `3000` and it's set to restart unless manually stopped. It's also connected to the network `ubuntu_default`.
+
+**nginx**: This is the reverse proxy server. It uses the `nginx` image and it's configured with a custom nginx configuration file. This service is exposed on port `80` and is also connected to the network `ubuntu_default`. The nginx reverse proxy is set to route all requests coming to `/api/` to the backend service. This means all client requests must go through the reverse proxy, which provides an additional layer of security.
+
+**watchtower**: This service is used to automatically update the Docker containers. It uses the `containrrr/watchtower` image and it has access to the Docker socket, allowing it to monitor the other services. The command `--label-enable --interval 60` tells Watchtower to only update containers with the specific Watchtower label and to check for updates every 60 seconds.
+
+
 ### More information about cPouta
 
 * [What is Pouta](https://docs.csc.fi/cloud/pouta/pouta-what-is/)

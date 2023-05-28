@@ -1,0 +1,25 @@
+name: Application health monitoring
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+
+jobs:
+  monitor-health:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Backend
+        run: curl -sSf http://128.214.253.51/api/weather || exit 1
+
+      - name: Check Frontend
+        run: curl -sSf http://128.214.253.51:3000/ || exit 1
+
+      - name: Send Discord Alert
+        if: failure()
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -X POST -H "Content-Type: application/json" -d '{
+            "content": "❗️ **Health Check Failed!**\n\nThe backend or frontend of the application is down."
+          }' $DISCORD_WEBHOOK_URL
