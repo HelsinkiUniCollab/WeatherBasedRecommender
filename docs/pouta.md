@@ -33,6 +33,67 @@ To start all these containers manually run command:
 
 `sudo docker compose up -d`
 
+## Current Pouta Docker configurations
+
+```
+docker-compose.yml
+
+version: '3.3'
+services:
+  wbased-back:
+    image: ruusukivi/wbased-back:latest
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    restart: unless-stopped
+    networks:
+      - ubuntu_default
+
+  wbased-front:
+    image: ruusukivi/wbased-front:latest
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    networks:
+      - ubuntu_default
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    networks:
+      - ubuntu_default
+
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    command: --label-enable --interval 60
+    networks:
+      - ubuntu_default
+
+networks:
+  ubuntu_default:
+    external: true
+
+nginx.conf
+
+events {}
+
+http {
+  server {
+    listen 80;
+    location /api/ {
+      proxy_pass http://wbased-back:5000/;
+    }
+  }
+}
+```
+
 ### More information about cPouta
 
 * [What is Pouta](https://docs.csc.fi/cloud/pouta/pouta-what-is/)
