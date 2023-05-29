@@ -24,6 +24,9 @@ $ npm test
 
 # Launches tests without the interactive watch mode
 $ CI=true npm test
+
+# Run the code validators
+npm run lint
 ```
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 

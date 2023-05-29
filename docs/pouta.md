@@ -35,7 +35,7 @@ To start all these containers manually run command:
 
 ## Current Pouta Docker configurations
 
-```
+```bash
 docker-compose.yml
 
 version: '3.3'
