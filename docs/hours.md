@@ -12,7 +12,7 @@
 |         | Monday 22.5. | Tuesday 23.5. | Wednesday 24.5. | Thursday 25.5. | Friday 26..5. | Saturday 27.5. | Sunday 28.5. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------- | -------------- | ------------ | --------- |
 | Juuso   | 3 Back adjst + test| -             | -               | 5 burndwn skele + reading docs | 2             | 2              | 2            | 14         |
-| Isak    | 3            | 3             | 0,5             | -              | 1,5             | -              | -            | -         |
+| Isak    | 3            | 3             | 0,5             | -              | 1,5             | 1,5              | 1           | 10,5         |
 | Sami S. | 2            | -             | 3.5             | 4              | -             | -              | 2 Learning about APIs            | 11.5         |
 | Sami M. | 4            | -             | -               | 4 Learning react              | 3             | 3              | -            | 14         |
 | Pia     | absent       | absent        | absent          | absent         | absent        | absent         | 4            | 4         |
