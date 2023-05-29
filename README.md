@@ -29,6 +29,7 @@ To run the frontend and backend services individually, refer to the instructions
 * [Git Workflow](/docs/git-workflow.md)
 * [Production Environment](/docs/pouta.md)
 * [CI/CD Pipeline](/docs/ci-cd.md)
+* [Code Quality](/docs/code_quality.md)
 
 ### Backlogs 
 
