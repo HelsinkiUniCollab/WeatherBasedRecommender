@@ -24,7 +24,7 @@
 | Isak    | -            | -             | -               | -             | -           | -             | -           | -         |
 | Sami S. | -            | -             | -               | -             | -           | -             | -           | -         |
 | Sami M. | -            | -             | -               | -             | -           | -             | -           | -         |
-| Pia     | 4,5 + 3,5 meetings, backlog          | -             | -               | -             | -           | -             | -           | -         |
+| Pia     | 8 meetings + backlog          | -             | -               | -             | -           | -             | -           | -         |
 | Joni    | absent       | absent        | absent          | absent        | absent      | absent        | absent      | -         |
 
 |         | Monday 5.6. | Tuesday 6.6. | Wednesday 7.6. | Thursday 8.6. | Friday 9.6. | Saturday 10.6. | Sunday 11.6. | Total |
