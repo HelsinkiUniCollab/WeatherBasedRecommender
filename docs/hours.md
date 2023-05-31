@@ -23,7 +23,7 @@
 | Juuso   | -            | -             | -               | -             | -           | -             | -           | -         |
 | Isak    | -            | -             | -               | -             | -           | -             | -           | -         |
 | Sami S. | -            | -             | -               | -             | -           | -             | -           | -         |
-| Sami M. | -            | -             | -               | -             | -           | -             | -           | -         |
+| Sami M. | 5.5 meeting + check weather api a little bit            | -             | -               | -             | -           | -             | -           | -         |
 | Pia     | 8 meetings + backlog          | -             | -               | -             | -           | -             | -           | -         |
 | Joni    | absent       | absent        | absent          | absent        | absent      | absent        | absent      | -         |
 
