@@ -1,33 +1,25 @@
+import datetime as dt
 from flask import jsonify
 from fmiopendata.wfs import download_stored_query
 
-
-def get_weather():
+def get_full_weather_info():
     """
-    Retrieves weather information.
+    Retrieves full weather information.
 
     Returns:
-        A JSON response containing the air temperature and air quality data.
+        A JSON response containing the current weather information and forecast.
 
     Raises:
         Exception: If an error occurs during the retrieval process.
     """
     try:
-        obs = download_stored_query('fmi::observations::weather::multipointcoverage',
-                                    args=['place=Kumpula,Helsinki'])
-        airtemperature = query_handler(
-            obs, 'Helsinki Kumpula', 'Air temperature')
+        current = get_current_weather()
+        forecast = get_forecast()
 
-        obs = download_stored_query('urban::observations::airquality::hourly::multipointcoverage',
-                                    args=['place=Kumpula,Helsinki'])
-        airquality = query_handler(
-            obs, 'Helsinki Mäkelänkatu', 'Air Quality Index')
+        data = {**current, **forecast}
 
-        data = {
-            'airtemperature': airtemperature,
-            'airquality': airquality
-        }
         return jsonify(data)
+
     except Exception as error:
         error_data = {
             'message': 'An error occurred',
@@ -36,8 +28,52 @@ def get_weather():
         }
         return jsonify(error_data), 500
 
+def get_current_weather():
+    obs = download_stored_query('fmi::observations::weather::multipointcoverage',
+                                args=['place=Kumpula,Helsinki'])
 
-def query_handler(obs, station, value):
+    current_airtemperature = _current_query_handler(
+            obs, 'Helsinki Kumpula', 'Air temperature')
+    current_windpeed = _current_query_handler(
+            obs, 'Helsinki Kumpula', 'Wind speed')
+    current_pressure = _current_query_handler(
+            obs, 'Helsinki Kumpula', 'Pressure (msl)')
+    current_humidity = _current_query_handler(
+            obs, 'Helsinki Kumpula', 'Relative humidity')
+
+    obs = download_stored_query('urban::observations::airquality::hourly::multipointcoverage',
+                                args=['place=Kumpula,Helsinki'])
+
+    current_airquality = _current_query_handler(
+        obs, 'Helsinki Mäkelänkatu', 'Air Quality Index')
+
+    current = {
+        'current': {
+            'air temperature': current_airtemperature,
+            'air pressure': current_pressure,
+            'humidity': current_humidity,
+            'wind': current_windpeed,
+            'air quality': current_airquality
+        }
+    }
+
+    return current
+
+def get_forecast():
+    current_time = dt.datetime.utcnow()
+    start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
+    end_time = (current_time + dt.timedelta(days=1, hours=1)).strftime('%Y-%m-%dT%H:%M:%SZ')
+
+    forecast_data = download_stored_query('fmi::forecast::harmonie::surface::point::multipointcoverage',
+                                         args=['starttime=' + start_time,
+                                         'endtime=' + end_time,
+                                         'latlon=60.205,24.959'])
+
+    forecast = _forecast_query_handler(forecast_data.data)
+
+    return forecast
+
+def _current_query_handler(obs, station, value):
     """
     Handles the retrieval of specific data from the provided observations.
 
@@ -58,3 +94,25 @@ def query_handler(obs, station, value):
             continue
         break
     return data
+
+def _forecast_query_handler(forecast_obj):
+    forecast_data = {}
+
+    for datetime_obj, weather_info in forecast_obj.items():
+        datetime_obj_utc_plus_3 = datetime_obj + dt.timedelta(hours=3)
+        formatted_datetime = datetime_obj_utc_plus_3.strftime('%d-%m-%Y %H:%M:%S')
+
+        for _, station in weather_info.items():
+            air_temperature = str(station['Air temperature']['value']) # C
+            air_pressure = str(station['Air pressure']['value'])  # hPa
+            humidity = str(station['Humidity']['value'])  # %
+            wind_speed = str(station['Wind speed']['value'])  # m/s
+
+            forecast_data.setdefault('forecast', {})[formatted_datetime] = {
+                'air temperature': air_temperature,
+                'air pressure': air_pressure,
+                'humidity': humidity,
+                'wind': wind_speed
+            }
+
+    return forecast_data

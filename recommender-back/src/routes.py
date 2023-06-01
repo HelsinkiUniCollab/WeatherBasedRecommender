@@ -1,7 +1,6 @@
 from app import app
 from flask import jsonify
-import apis.weather as weather
-import apis.poi as poi
+from apis import weather, poi
 
 
 @app.route('/', methods=['GET'])
@@ -29,7 +28,7 @@ def get_weather():
         The weather data if errors have not occurred.
 
     """
-    return weather.get_weather()
+    return weather.get_full_weather_info()
 
 @app.route('/api/poi', methods=['GET'])
 def get_poi_data():
