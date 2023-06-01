@@ -12,8 +12,8 @@ function WeatherComponent() {
       .then((res) => res.json())
       .then((responseData) => {
         setData({
-          airtemperature: responseData.airtemperature,
-          airquality: responseData.airquality,
+          airtemperature: responseData.current['air temperature'],
+          airquality: responseData.current['air quality'],
         });
       })
       .catch((error) => {

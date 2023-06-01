@@ -6,7 +6,14 @@ import { setupServer } from 'msw/node';
 import WeatherComponent from './WeatherComponent';
 
 const server = setupServer(
-  rest.get('*/api/weather', (req, res, ctx) => res(ctx.json({ airtemperature: 22, airquality: 35 }))),
+  rest.get('*/api/weather', (req, res, ctx) => res(
+    ctx.json({
+      current: {
+        'air temperature': '22',
+        'air quality': '35',
+      },
+    }),
+  )),
 );
 
 beforeAll(() => server.listen());
