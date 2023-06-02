@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
@@ -12,17 +13,19 @@ function MapComponent() {
     async function fetchPoiData() {
       try {
         const apiUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
-        const response = await fetch(`${apiUrl}/api/poi`);
+        const response = await fetch(`${apiUrl}/api/poi_palvelukartat`);
         const data = await response.json();
         setPoiData(data);
+
+      console.log(poiData);
       } catch (error) {
         console.error('Error fetching POI data:', error);
       }
     }
-
     fetchPoiData();
   }, []);
 
+  console.log(poiData);
   return (
     <MapContainer center={position} zoom={16} scrollWheelZoom={false} style={{ height: '500px', width: '500px' }}>
       <TileLayer
@@ -30,21 +33,10 @@ function MapComponent() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       {poiData.map((poi) => {
-        const tags = Object.entries(poi);
-
         return (
-          <Marker position={[poi.lat, poi.lon]} key={poi.id} icon={markerIcon}>
+          <Marker position={[poi.location.coordinates[1], poi.location.coordinates[0]]} key={poi.id} icon={markerIcon}>
             <Popup>
-              <h2>{poi.name}</h2>
-              <ul>
-                {tags.map(([key, value]) => (
-                  <li key={key}>
-                    <strong>{key}</strong>
-                    :
-                    {value}
-                  </li>
-                ))}
-              </ul>
+              <h2>{poi.name.fi}</h2>
             </Popup>
           </Marker>
         );
