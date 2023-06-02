@@ -1,6 +1,7 @@
 from app import app
 from flask import jsonify
 from apis import weather, poi
+import json
 
 
 @app.route('/', methods=['GET'])
@@ -39,6 +40,14 @@ def get_poi_data():
         Poi data if errors have not occurred.
     """
     return poi.get_poi_data()
+
+
+@app.route('/api/poi2', methods=['GET'])
+def get_poi_data2():
+    with open('src/wantedpois.json') as f:
+        data = json.load(f)
+    return jsonify(data)
+
 
 @app.errorhandler(404)
 def not_found_error(error):
