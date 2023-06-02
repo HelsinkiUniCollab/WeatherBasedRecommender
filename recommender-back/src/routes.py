@@ -42,9 +42,9 @@ def get_poi_data():
     return poi.get_poi_data()
 
 
-@app.route('/api/poi2', methods=['GET'])
+@app.route('/api/poi_palvelukartat', methods=['GET'])
 def get_poi_data2():
-    with open('src/wantedpois.json') as f:
+    with open('src/sprint1pois.json') as f:
         data = json.load(f)
     return jsonify(data)
 
