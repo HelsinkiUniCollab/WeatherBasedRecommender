@@ -1,7 +1,6 @@
 from app import app
 from apis import weather
-import numpy as np
-import json
+from apis import poi
 from flask import jsonify
 
 
@@ -32,6 +31,7 @@ def get_weather():
     '''
     return weather.get_full_weather_info()
 
+
 @app.route('/api/poi', methods=['GET'])
 def get_poi_data():
     '''
@@ -40,22 +40,7 @@ def get_poi_data():
     Returns:
         Poi data if errors have not occurred.
     '''
-    with open('src/pois.json') as f:
-        data = json.load(f)
-        weatherdata = weather.get_current_weather()
-        for item in data:
-            lat = float(item['location']['coordinates'][1])
-            lon = float(item['location']['coordinates'][0])
-            smallest = float('inf')
-            nearest = ''
-            for station in weatherdata:
-                dist = abs(weatherdata[station]['Longitude'] - lon)\
-                    + abs(weatherdata[station]['Latitude'] - lat)
-                if dist < smallest:
-                    smallest = dist
-                    nearest = station
-            item['weather'] = weatherdata[nearest]
-        return json.dumps(data)
+    return poi.get_pois_as_json()
 
 
 @app.errorhandler(404)
