@@ -1,9 +1,9 @@
 import json
 from apis import weather
-import copy
 
+#Todo: give category as a parameter to get more accurate data.
 
-def get_pois_as_json():
+def get_pois_as_json(category='sports'):
     """
     Retrieves points of interest (POIs) from a JSON file and enriches them with current weather data.
 
@@ -15,7 +15,7 @@ def get_pois_as_json():
 
     """
     try:
-        with open('src/pois.json') as file:
+        with open(f"src/apis/poi_data/{category}.json") as file:
             data = json.load(file)
             weatherdata = weather.get_current_weather()
             for item in data:
