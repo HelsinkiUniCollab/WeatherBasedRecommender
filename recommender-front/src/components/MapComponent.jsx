@@ -2,7 +2,7 @@ import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
 import React, { useEffect, useState } from 'react';
-import markerIcon from './icon';
+import createMarkerIcon from './icon';
 
 function MapComponent() {
   const position = [60.2049, 24.9649];
@@ -31,6 +31,7 @@ function MapComponent() {
       />
       {poiData.map((poi) => {
         const tags = Object.entries(poi.weather);
+        const markerIcon = createMarkerIcon(1.0);
         return (
           <Marker
             position={[poi.location.coordinates[1], poi.location.coordinates[0]]}
