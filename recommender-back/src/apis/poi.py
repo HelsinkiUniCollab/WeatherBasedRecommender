@@ -1,53 +1,53 @@
-import overpy
-from flask import jsonify
+import json
+from apis import weather
+import copy
 
-api = overpy.Overpass()
 
-def build_list(nodes):
+def get_pois_as_json():
     """
-    Builds a filtered list of POI nodes.
-    
-    Args:
-        nodes (overpy Node): A dictionary of POI nodes.
+    Retrieves points of interest (POIs) from a JSON file and enriches them with current weather data.
 
     Returns:
-        List of filtered POI nodes.
-    """
-    filtered = []
-    for node in nodes:
-        if 'name' in node.tags:
-            node.tags['id'] = node.id
-            node.tags['lat'] = float(node.lat)
-            node.tags['lon'] = float(node.lon)
-            filtered.append(node.tags)
-    return filtered
-
-def get_poi_data():
-    """
-    Fetches POI data from overpass API
-
-    Returns:
-        JSON response containing all information related to a POI node
+        str: JSON string containing the POIs with weather information.
 
     Raises:
-        Exception: If an error occurs during the retrieval process.
+        KeyError: If an error occurs while processing the data.
+
     """
-    query = """
-            (
-            node(around:1000,60.2049,24.9649)["tourism"];
-            node(around:1000,60.2049,24.9649)["leisure"];
-            );
-            out;"""
-
     try:
-        result = api.query(query)
-    except Exception as error:
-        error_data = {
-            'message': 'POI query error',
+        with open('src/pois.json') as file:
+            data = json.load(file)
+            weatherdata = weather.get_current_weather()
+            for item in data:
+                item = find_nearest_stations_weather_data(weatherdata, item)
+            return json.dumps(data)
+    except KeyError as error:
+        return {
+            'message': 'An error occurred',
             'status': 500,
-            'error': str(error)
+            'error': str(error),
         }
-        return jsonify(error_data), 500
 
-    data = build_list(result.nodes)
-    return jsonify(data)
+
+def find_nearest_stations_weather_data(weatherdata, item):
+    """
+    Finds the nearest weather station to a given POI and adds its weather data to the POI.
+
+    Args:
+        weatherdata (dict): A dictionary containing weather data for different stations.
+        item (dict): The POI for which weather data needs to be added.
+
+    Returns:
+        dict: The modified POI with weather information.
+
+    """
+    lat = float(item['location']['coordinates'][1])
+    lon = float(item['location']['coordinates'][0])
+    smallest, nearest = float('inf'), ''
+    for station in weatherdata:
+        dist = abs(weatherdata[station]['Longitude'] - lon)\
+            + abs(weatherdata[station]['Latitude'] - lat)
+        if dist < smallest:
+            smallest, nearest = dist, station
+    item['weather'] = weatherdata[nearest]
+    return item

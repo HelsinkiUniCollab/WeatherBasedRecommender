@@ -1,18 +1,18 @@
 from app import app
+from apis import weather
+from apis import poi
 from flask import jsonify
-from apis import weather, poi
-import json
 
 
 @app.route('/', methods=['GET'])
 def index():
-    """
+    '''
     Handler for the root endpoint.
 
     Returns:
         A JSON response containing a greeting message.
 
-    """
+    '''
     data = {
         'message': 'Hello from the backend!',
         'status': 200
@@ -22,38 +22,32 @@ def index():
 
 @app.route('/api/weather', methods=['GET'])
 def get_weather():
-    """
+    '''
     Handler for the '/api/weather' endpoint.
 
     Returns:
         The weather data if errors have not occurred.
 
-    """
+    '''
     return weather.get_full_weather_info()
+
 
 @app.route('/api/poi', methods=['GET'])
 def get_poi_data():
-    """
+    '''
     Handler for the '/api/poi' endpoint.
 
     Returns:
         Poi data if errors have not occurred.
-    """
-    return poi.get_poi_data()
-
-
-@app.route('/api/poi_palvelukartat', methods=['GET'])
-def get_poi_data2():
-    with open('src/sprint1pois.json') as f:
-        data = json.load(f)
-    return jsonify(data)
+    '''
+    return poi.get_pois_as_json()
 
 
 @app.errorhandler(404)
 def not_found_error(error):
-    """
+    '''
     Error handler for the 404 (Not Found) error.
-    """
+    '''
     error_data = {
         'message': 'Resource not found',
         'status': error.code
@@ -63,9 +57,9 @@ def not_found_error(error):
 
 @app.errorhandler(500)
 def internal_error(error):
-    """
+    '''
     Error handler for the 500 (Internal Server Error) error.
-    """
+    '''
     error_data = {
         'message': 'Internal server error',
         'status': error.code

@@ -2,6 +2,7 @@ import datetime as dt
 from flask import jsonify
 from fmiopendata.wfs import download_stored_query
 
+
 def get_full_weather_info():
     """
     Retrieves full weather information.
@@ -20,7 +21,7 @@ def get_full_weather_info():
 
         return jsonify(data)
 
-    except Exception as error:
+    except KeyError as error:
         error_data = {
             'message': 'An error occurred',
             'status': 500,
@@ -28,82 +29,77 @@ def get_full_weather_info():
         }
         return jsonify(error_data), 500
 
+
 def get_current_weather():
-    obs = download_stored_query('fmi::observations::weather::multipointcoverage',
-                                args=['place=Kumpula,Helsinki'])
-
-    current_airtemperature = _current_query_handler(
-            obs, 'Helsinki Kumpula', 'Air temperature')
-    current_windpeed = _current_query_handler(
-            obs, 'Helsinki Kumpula', 'Wind speed')
-    current_pressure = _current_query_handler(
-            obs, 'Helsinki Kumpula', 'Pressure (msl)')
-    current_humidity = _current_query_handler(
-            obs, 'Helsinki Kumpula', 'Relative humidity')
-
-    obs = download_stored_query('urban::observations::airquality::hourly::multipointcoverage',
-                                args=['place=Kumpula,Helsinki'])
-
-    current_airquality = _current_query_handler(
-        obs, 'Helsinki Mäkelänkatu', 'Air Quality Index')
-
-    current = {
-        'current': {
-            'air temperature': current_airtemperature,
-            'air pressure': current_pressure,
-            'humidity': current_humidity,
-            'wind': current_windpeed,
-            'air quality': current_airquality
-        }
-    }
-
-    return current
-
-def get_forecast():
-    current_time = dt.datetime.utcnow()
-    start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
-    end_time = (current_time + dt.timedelta(days=1, hours=1)).strftime('%Y-%m-%dT%H:%M:%SZ')
-
-    forecast_data = download_stored_query('fmi::forecast::harmonie::surface::point::multipointcoverage',
-                                         args=['starttime=' + start_time,
-                                         'endtime=' + end_time,
-                                         'latlon=60.205,24.959'])
-
-    forecast = _forecast_query_handler(forecast_data.data)
-
-    return forecast
-
-def _current_query_handler(obs, station, value):
     """
-    Handles the retrieval of specific data from the provided observations.
-
-    Args:
-        obs: The observations data object.
-        station: The name of the station.
-        value: The specific value to retrieve.
+    Retrieves the current weather data for various stations.
 
     Returns:
-        The retrieved data as a string.
+        dict: A dictionary containing the current weather data for each station.
     """
-    while True:
-        latest = max(obs.data.keys())
-        data = obs.data[latest][station][value]
-        data = str(data.get('value'))
-        if data in {'nan', 'NaN'}:
-            obs.data.pop(latest)
-            continue
-        break
+
+    obs = download_stored_query('fmi::observations::weather::multipointcoverage',
+                                args=["bbox=24.5,60,25.5,60.5", "timeseries=True"])
+    data = {}
+    for station in obs.location_metadata.keys():
+        weatherdata = {
+            "Latitude": obs.location_metadata[station]["latitude"],
+            "Longitude": obs.location_metadata[station]["longitude"],
+            'Air temperature': str(obs.data[station]["t2m"]["values"][-1]) + " °C",
+            'Wind': str(obs.data[station]["ws_10min"]["values"][-1]) + " m/s",
+            'Air pressure': str(obs.data[station]["p_sea"]["values"][-1]) + " mbar",
+            'Humidity': str(obs.data[station]["rh"]["values"][-1]) + " %"
+        }
+        for value in station:
+            if value in {'nan', 'NaN'}:
+                weatherdata.pop(value)
+        data[station] = weatherdata
     return data
 
+
+def get_forecast():
+    """
+    Retrieves the weather forecast data.
+
+    Returns:
+        dict: A dictionary containing the weather forecast for different time periods.
+    """
+    current_time = dt.datetime.now(dt.timezone.utc)
+    start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
+    end_time = (current_time + dt.timedelta(days=1, hours=1)
+                ).strftime('%Y-%m-%dT%H:%M:%SZ')
+
+    forecast_data = download_stored_query(
+        'fmi::forecast::harmonie::surface::point::multipointcoverage',
+        args=[
+            f'starttime={start_time}',
+            f'endtime={end_time}',
+            'latlon=60.205,24.959',
+        ],
+    )
+
+    return _forecast_query_handler(forecast_data.data)
+
+
 def _forecast_query_handler(forecast_obj):
+    """
+    Handles the forecast data retrieved from the weather API.
+
+    Args:
+        forecast_obj (dict): The forecast data object.
+
+    Returns:
+        dict: A dictionary containing the formatted forecast data.
+    """
     forecast_data = {}
 
     for datetime_obj, weather_info in forecast_obj.items():
         datetime_obj_utc_plus_3 = datetime_obj + dt.timedelta(hours=3)
-        formatted_datetime = datetime_obj_utc_plus_3.strftime('%d-%m-%Y %H:%M:%S')
+        formatted_datetime = datetime_obj_utc_plus_3.strftime(
+            '%d-%m-%Y %H:%M:%S')
 
         for _, station in weather_info.items():
-            air_temperature = str(station['Air temperature']['value']) # C
+            air_temperature = str(station['Air temperature']['value'])  # C
             air_pressure = str(station['Air pressure']['value'])  # hPa
             humidity = str(station['Humidity']['value'])  # %
             wind_speed = str(station['Wind speed']['value'])  # m/s
