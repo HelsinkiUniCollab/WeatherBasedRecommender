@@ -21,10 +21,10 @@
 |         | Monday 29.5. | Tuesday 30.5. | Wednesday 31.5. | Thursday 1.6. | Friday 2.6. | Saturday 3.6. | Sunday 4.6. | Total |
 | ------- | ------------ | ------------- | --------------- | ------------- | ----------- | ------------- | ----------- | --------- |
 | Juuso   | -            | 5.5 Meetings sprint 1 | -               | -             | 4 skeleton for new pois | -             | -           | -         |
-| Isak    | 1,5            | 0,5             | -               | -             | 6,5           | 2             | -           | -         |
+| Isak    | 1,5            | 0,5             | -               | -             | 6,5           | 4             | -           | -         |
 | Sami S. | 5 meetings + checking poi api            | -             | -               | 2 overall learning and checking apis             | -           | -             | -           | -         |
 | Sami M. | 5.5 meeting + check weather api a little bit            | -             | 4 work on weather api               | 4 work on weather api             | -           | -             | -           | -         |
-| Pia     | 8 meetings + backlog          | -             | -               | -             | -           | -             | -           | -         |
+| Pia     | 8 meetings + sprint backlog          | -             | -               | -             | -           | 3 pouta maintainance, responsive map            | -           | -         |
 | Joni    | absent       | absent        | absent          | absent        | absent      | absent        | absent      | -         |
 
 |         | Monday 5.6. | Tuesday 6.6. | Wednesday 7.6. | Thursday 8.6. | Friday 9.6. | Saturday 10.6. | Sunday 11.6. | Total |
