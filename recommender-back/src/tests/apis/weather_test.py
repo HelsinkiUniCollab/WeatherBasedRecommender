@@ -9,7 +9,7 @@ class WeatherTest(unittest.TestCase):
         self.client = app.test_client()
 
     def test_get_weather_error(self):
-        with mock.patch('apis.weather._forecast_query_handler', side_effect=Exception('Test exception')):
+        with mock.patch('apis.weather._forecast_query_handler', side_effect=KeyError('KeyError')):
             error_response = self.client.get('/api/weather')
             error_data = error_response.get_json()
             self.assertEqual(error_response.status_code, 500)
