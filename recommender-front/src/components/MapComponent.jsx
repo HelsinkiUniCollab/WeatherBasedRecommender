@@ -1,4 +1,3 @@
-/* eslint-disable */
 import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
@@ -33,19 +32,27 @@ function MapComponent() {
       {poiData.map((poi) => {
         const tags = Object.entries(poi.weather);
         return (
-          <Marker position={[poi.location.coordinates[1], poi.location.coordinates[0]]} key={poi.id} icon={markerIcon}>
+          <Marker
+            position={[poi.location.coordinates[1], poi.location.coordinates[0]]}
+            key={poi.id}
+            icon={markerIcon}
+          >
             <Popup>
               <h2>{poi.name.fi}</h2>
               <ul>
                 {tags.map(([key, value]) => (
+                  key !== 'Longitude' && key !== 'Latitude' && (
                   <li key={key}>
                     <strong>{key}</strong>
-                    : {value}
+                    :
+                    {' '}
+                    {value}
                   </li>
+                  )
                 ))}
               </ul>
             </Popup>
-            
+
           </Marker>
         );
       })}
