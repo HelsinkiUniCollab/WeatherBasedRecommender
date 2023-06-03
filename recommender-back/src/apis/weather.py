@@ -50,8 +50,8 @@ def get_current_weather():
             'Air pressure': str(obs.data[station]["p_sea"]["values"][-1]) + " mbar",
             'Humidity': str(obs.data[station]["rh"]["values"][-1]) + " %"
         }
-        for value in station:
-            if value in {'nan', 'NaN'}:
+        for value in list(weatherdata):
+            if 'nan' in str(weatherdata[value]):
                 weatherdata.pop(value)
         data[station] = weatherdata
     return data
