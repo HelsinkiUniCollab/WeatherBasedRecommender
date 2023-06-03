@@ -21,6 +21,17 @@ You can then access [cPouta Dashboard](https://pouta.csc.fi/dashboard/project/in
 
 `ssh -i .ssh/pouta.key ubuntu@128.214.253.51`
 
+
+## How to update Ubuntu in Pouta instance
+
+Currently security and other updates to Ubuntu need to be run manually. 
+
+1. Open the terminal application and open SSH access.
+2. Fetch update software list by running the `sudo apt-get update` command
+3. Update Ubuntu software by running the `sudo apt-get upgrade` command
+4. Finally, reboot the Ubuntu box by running the `sudo reboot` command.
+
+
 ## Basic Docker commands to be used in Pouta
 
 When you have a SSH connection open to Pouta, you can check which docker containers are running and which ports are allocated to them:
@@ -28,10 +39,21 @@ When you have a SSH connection open to Pouta, you can check which docker contain
 `sudo docker ps`
 
 If the app has stopped running, you can start it manually. These containers should be always running: 
-*ubuntu-wbased-back-1*, u*buntu-wbased-front-1* and *ubuntu-watchtower-1*.  
-To start all these containers manually run command:
+*ubuntu-nginx-1*, *ubuntu-wbased-back-1*, *ubuntu-wbased-front-1* and *ubuntu-watchtower-1*.  
+
+If the site is not responding, first make sure that all containers are shut down and the start all the containers by running these two commands:
+
+`sudo docker compose down`
 
 `sudo docker compose up -d`
+
+To get a list of all containers, run:
+
+`sudo docker container ls -a`
+
+You can remove unused containers with:
+
+`sudo docker container prune`
 
 ## Current Pouta Docker configurations
 
@@ -64,6 +86,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
+    restart: unless-stopped
     networks:
       - ubuntu_default
 
@@ -138,7 +161,7 @@ http {
 
 **wbased-front**: This is the frontend service built using the Docker image `ruusukivi/wbased-front:latest`. It also has the `watchtower` label for automatic updates. This service is exposed on port `3000` and it's set to restart unless manually stopped. It's also connected to the network `ubuntu_default`.
 
-**nginx**: This is the reverse proxy server. It uses the `nginx` image and it's configured with a custom nginx configuration file. This service is exposed on port `80` and is also connected to the network `ubuntu_default`. The nginx reverse proxy is set to route all requests coming to `/api/` to the backend service. This means all client requests must go through the reverse proxy, which provides an additional layer of security.
+**nginx**: This is the reverse proxy server. It uses the `nginx` image and it's configured with a custom nginx configuration file. This service is exposed on port `80` and is also connected to the network `ubuntu_default`. It's set to restart unless manually stopped. The nginx reverse proxy is set to route all requests coming to `/api/` to the backend service. This means all client requests must go through the reverse proxy, which provides an additional layer of security.
 
 **watchtower**: This service is used to automatically update the Docker containers. It uses the `containrrr/watchtower` image and it has access to the Docker socket, allowing it to monitor the other services. The command `--label-enable --interval 60` tells Watchtower to only update containers with the specific Watchtower label and to check for updates every 60 seconds.
 
