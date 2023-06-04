@@ -57,9 +57,8 @@ You can remove unused containers with:
 
 ## Current Pouta Docker configurations
 
+### docker-compose.yml
 ```bash
-docker-compose.yml
-
 version: '3.3'
 services:
   wbased-back:
@@ -102,51 +101,32 @@ services:
 networks:
   ubuntu_default:
     external: true
+```
 
-nginx.conf
-
+### nginx.conf
+```bash
 events {}
 
 http {
   server {
     listen 80;
 
-    location /api/weather {
+    location /api {
       proxy_pass http://wbased-back:5000;
       proxy_set_header Host $host;
       proxy_set_header X-Real-IP $remote_addr;
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
       # Add CORS headers
-      add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-      add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type';
-
-      # Handle OPTIONS requests for CORS preflight
-      if ($request_method = 'OPTIONS') {
-        add_header 'Access-Control-Max-Age' 1728000;
-        add_header 'Content-Type' 'text/plain charset=UTF-8';
-        add_header 'Content-Length' 0;
-        return 204;
-      }
-    }
-
-    location /api/poi {
-      proxy_pass http://wbased-back:5000;
-      proxy_set_header Host $host;
-      proxy_set_header X-Real-IP $remote_addr;
-      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-
-      # Add CORS headers
-      add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
-      add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type' always;
-
-      # Handle OPTIONS requests for CORS preflight
       if ($request_method = 'OPTIONS') {
         add_header 'Access-Control-Max-Age' 1728000 always;
         add_header 'Content-Type' 'text/plain charset=UTF-8' always;
         add_header 'Content-Length' 0 always;
         return 204;
       }
+
+      add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+      add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type' always;
     }
 
     location / {
@@ -156,7 +136,6 @@ http {
 }
 
 ```
-
 **wbased-back**: This is the backend service built using the Docker image `ruusukivi/wbased-back:latest`. It has the `watchtower` label to enable automatic updates. The service is set to restart unless manually stopped and it's connected to the network `ubuntu_default`.
 
 **wbased-front**: This is the frontend service built using the Docker image `ruusukivi/wbased-front:latest`. It also has the `watchtower` label for automatic updates. This service is exposed on port `3000` and it's set to restart unless manually stopped. It's also connected to the network `ubuntu_default`.
