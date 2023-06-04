@@ -20,7 +20,7 @@
 
 |         | Monday 29.5. | Tuesday 30.5. | Wednesday 31.5. | Thursday 1.6. | Friday 2.6. | Saturday 3.6. | Sunday 4.6. | Total |
 | ------- | ------------ | ------------- | --------------- | ------------- | ----------- | ------------- | ----------- | --------- |
-| Juuso   | -            | 5.5 Meetings sprint 1 | -               | -             | 4 skeleton for new pois | -             | -           | -         |
+| Juuso   | -            | 5.5 Meetings sprint 1 | -               | -             | 4 skeleton for new pois | 4 adaptive marker + local bugs| -           | 13.5       |
 | Isak    | 1,5            | 0,5             | -               | -             | 6,5           | 4             | -           | -         |
 | Sami S. | 5 meetings + checking poi api            | -             | -               | 2 overall learning and checking apis             | -           | 4 work on pois/api             | -           | -         |
 | Sami M. | 5.5 meeting + check weather api a little bit            | -             | 4 work on weather api               | 4 work on weather api             | -           | -             | -           | -         |
