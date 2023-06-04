@@ -81,11 +81,14 @@ services:
 
   nginx:
     image: nginx:latest
+    depends_on:
+      - wbased-back
+      - wbased-front
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
-    restart: unless-stopped
+    restart: always
     networks:
       - ubuntu_default
 
