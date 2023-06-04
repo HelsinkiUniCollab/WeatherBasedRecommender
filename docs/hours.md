@@ -22,7 +22,7 @@
 | ------- | ------------ | ------------- | --------------- | ------------- | ----------- | ------------- | ----------- | --------- |
 | Juuso   | -            | 5.5 Meetings sprint 1 | -               | -             | 4 skeleton for new pois | -             | -           | -         |
 | Isak    | 1,5            | 0,5             | -               | -             | 6,5           | 4             | -           | -         |
-| Sami S. | 5 meetings + checking poi api            | -             | -               | 2 overall learning and checking apis             | -           | -             | -           | -         |
+| Sami S. | 5 meetings + checking poi api            | -             | -               | 2 overall learning and checking apis             | -           | 4 work on pois/api             | -           | -         |
 | Sami M. | 5.5 meeting + check weather api a little bit            | -             | 4 work on weather api               | 4 work on weather api             | -           | -             | -           | -         |
 | Pia     | 8 meetings + sprint backlog          | -             | -               | -             | -           | 3 pouta maintainance, responsive map            | -           | -         |
 | Joni    | absent       | absent        | absent          | absent        | absent      | absent        | absent      | -         |
