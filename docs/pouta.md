@@ -88,7 +88,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
-    restart: always
+    restart: unless-stopped
     networks:
       - ubuntu_default
 
