@@ -2,7 +2,7 @@ import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
 import React, { useEffect, useState } from 'react';
-import markerIcon from './icon';
+import createMarkerIcon from './icon';
 
 function MapComponent() {
   const position = [60.2049, 24.9649];
@@ -24,13 +24,14 @@ function MapComponent() {
 
   console.log(poiData);
   return (
-    <MapContainer center={position} zoom={16} scrollWheelZoom={false} style={{ height: '500px', width: '500px' }}>
+    <MapContainer center={position} zoom={14} scrollWheelZoom={false} style={{ height: '85vh', minHeight: '100px' }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       {poiData.map((poi) => {
         const tags = Object.entries(poi.weather);
+        const markerIcon = createMarkerIcon(1.0);
         return (
           <Marker
             position={[poi.location.coordinates[1], poi.location.coordinates[0]]}
