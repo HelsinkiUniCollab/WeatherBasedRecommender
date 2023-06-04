@@ -43,8 +43,6 @@ def get_current_weather():
     data = {}
     for station in obs.location_metadata.keys():
         weatherdata = {
-            "Latitude": obs.location_metadata[station]["latitude"],
-            "Longitude": obs.location_metadata[station]["longitude"],
             'Air temperature': str(obs.data[station]["t2m"]["values"][-1]) + " °C",
             'Wind': str(obs.data[station]["ws_10min"]["values"][-1]) + " m/s",
             'Air pressure': str(obs.data[station]["p_sea"]["values"][-1]) + " mbar",
@@ -53,7 +51,10 @@ def get_current_weather():
         for value in list(weatherdata):
             if 'nan' in str(weatherdata[value]):
                 weatherdata.pop(value)
-        data[station] = weatherdata
+        if weatherdata:
+            weatherdata["Latitude"] =  obs.location_metadata[station]["latitude"]
+            weatherdata["Longitude"] = obs.location_metadata[station]["longitude"]
+            data[station] = weatherdata
     return data
 
 
