@@ -5,8 +5,7 @@ import createMarkerIcon from '../../utils/Icon';
 function MarkersComponent({ poiData }) {
   return poiData.map((poi) => {
     const tags = Object.entries(poi.weather);
-    const markerIcon = createMarkerIcon(1.0);
-
+    const markerIcon = createMarkerIcon(poi.score);
     return (
       <Marker
         position={[poi.location.coordinates[1], poi.location.coordinates[0]]}

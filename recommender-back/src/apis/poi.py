@@ -1,5 +1,6 @@
 import json
 from apis import weather
+from apis import helpers
 import copy
 
 
@@ -20,6 +21,7 @@ def get_pois_as_json():
             weatherdata = weather.get_current_weather()
             for item in data:
                 item = find_nearest_stations_weather_data(weatherdata, item)
+                item = add_score_to_poi(item)
             return json.dumps(data)
     except KeyError as error:
         return {
@@ -51,3 +53,20 @@ def find_nearest_stations_weather_data(weatherdata, item):
             smallest, nearest = dist, station
     item['weather'] = weatherdata[nearest]
     return item
+
+def add_score_to_poi(item):
+    """
+    Adds a score to the POI data.
+
+    Args:
+        item (dict): The POI for which the score needs to be added.
+
+    Returns:
+        dict: The modified POI with the score.
+
+    """
+    poi = helpers.PointOfInterest(**item)
+    score = poi.calculate_score()
+    item['score'] = score
+    return item
+
