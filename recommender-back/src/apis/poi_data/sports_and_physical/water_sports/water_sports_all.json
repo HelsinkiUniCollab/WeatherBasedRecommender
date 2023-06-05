@@ -1,0 +1,3612 @@
+[
+  {
+    "id": 50401,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Allas Sea Pool / Merikylpylä",
+      "sv": "Allas Sea Pool / Friluftsbad"
+    },
+    "street_address": {
+      "fi": "Katajanokanlaituri 2",
+      "sv": "Skatuddskajen 2",
+      "en": "Katajanokanlaituri 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      686
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.957443,
+        60.167084
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.957443,
+        60.167084
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 64367,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Allas Sea Pool / Merikylpylä",
+      "sv": "Allas Sea Pool / Friluftsbad"
+    },
+    "street_address": {
+      "fi": "Katajanokanlaituri 2",
+      "sv": "Skatuddskajen 2",
+      "en": "Katajanokanlaituri 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.957447,
+        60.16701
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.957447,
+        60.16701
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41795,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Allergiatalo / Uima-allas",
+      "sv": "Allergihus / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Paciuksenkatu 19",
+      "sv": "Paciusgatan 19",
+      "en": "Paciuksenkatu 19"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.894058,
+        60.193943
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.894058,
+        60.193943
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 70874,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Aurinkolahden talviuintipaikka (Kahvila Kampela)",
+      "sv": "Solviks vinterbadplats (Kahvila Kampela)"
+    },
+    "street_address": {
+      "fi": "Urheilukalastajan kuja 1",
+      "sv": "Urheilukalastajan kuja 1",
+      "en": "Urheilukalastajan kuja 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.159796,
+        60.202023
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.159796,
+        60.202023
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40258,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Aurinkolahden uimaranta",
+      "sv": "Solviks badstrand",
+      "en": "Aurinkolahti beach"
+    },
+    "street_address": {
+      "fi": "Urheilukalastajankuja 1",
+      "sv": "Sportfiskargränden 1",
+      "en": "Urheilukalastajankuja 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.158377,
+        60.202236
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.158377,
+        60.202236
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 7,
+      "wheelchair": 7,
+      "reduced_mobility": 5,
+      "visually_impaired": 4
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40975,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Fit Haaga / Uima-allas",
+      "sv": "Fit Haga / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Nuijamiestentie 10",
+      "sv": "Klubbekrigarvägen 10",
+      "en": "Nuijamiestentie 10"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.906752,
+        60.21813
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.906752,
+        60.21813
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42057,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Forever Töölö / Uima-allas",
+      "sv": "Forever Tölö / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Mannerheimintie 50",
+      "sv": "Mannerheimvägen 50",
+      "en": "Mannerheimintie 50"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.927156,
+        60.180023
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.927156,
+        60.180023
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45943,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Fressi Clubhouse / Uima-allas",
+      "sv": "Fressi Clubhouse / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Tyynylaavantie 20",
+      "sv": "Kuddlavevägen 20",
+      "en": "Tyynylaavantie 20"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.136007,
+        60.206936
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.136007,
+        60.206936
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41907,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Furuvikin uimaranta",
+      "sv": "Furuviks badstrand",
+      "en": "Furuvik beach"
+    },
+    "street_address": {
+      "fi": "Furuvikintie 9",
+      "sv": "Furuviksvägen 9",
+      "en": "Furuvikintie 9"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.060429,
+        60.159576
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.060429,
+        60.159576
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 64529,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Furuvik Rantasauna"
+    },
+    "street_address": {
+      "fi": "Furuvikintie 5",
+      "sv": "Furuviksvägen 5",
+      "en": "Furuvikintie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.060226,
+        60.159657
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.060226,
+        60.159657
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40064,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Fysios Mehiläinen Helsinki Pikku-Huopalahti / Uima-allas",
+      "sv": "Fysios Mehiläinen Helsinki Pikku-Huopalahti / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Taavetti Laitisen katu 4",
+      "sv": "Taavetti Laitinens gata 4",
+      "en": "Taavetti Laitisen katu 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.896778,
+        60.198246
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.896778,
+        60.198246
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41915,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helsingin Suomalaisen Yhteiskoulun uimahalli",
+      "sv": "Helsingfors Finska Samskolans simhall"
+    },
+    "street_address": {
+      "fi": "Isonnevantie 8",
+      "sv": "Stormyrvägen 8",
+      "en": "Isonnevantie 8"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.890491,
+        60.21213
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.890491,
+        60.21213
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40731,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Helsingin urheilutalo / Urheiluhallit Kallio / Uimahalli",
+      "sv": "Helsingfors idrottscenter / Urheiluhallit Kallio / Simhall"
+    },
+    "street_address": {
+      "fi": "Helsinginkatu 25",
+      "sv": "Helsingegatan 25",
+      "en": "Helsinginkatu 25"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      2221,
+      2226,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.947071,
+        60.186836
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.947071,
+        60.186836
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39910,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Hevossalmen uimaranta",
+      "sv": "Hästnässunds badstrand",
+      "en": "Hevossalmi beach"
+    },
+    "street_address": {
+      "fi": "Vuorilahdenpolku 6",
+      "sv": "Bergviksstigen 6",
+      "en": "Vuorilahdenpolku 6"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.04084,
+        60.162613
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.04084,
+        60.162613
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40142,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Hietarannan uimaranta",
+      "sv": "Sandstrands badstrand",
+      "en": "Hietaranta beach"
+    },
+    "street_address": {
+      "fi": "Hiekkarannantie 11",
+      "sv": "Sandstrandsvägen 11",
+      "en": "Hiekkarannantie 11"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.907427,
+        60.173553
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.907427,
+        60.173553
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 4,
+      "wheelchair": 4,
+      "reduced_mobility": 4,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40358,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Iiris-keskus / Uima-allasosasto"
+    },
+    "street_address": {
+      "fi": "Marjaniementie 74",
+      "sv": "Maruddsvägen 74",
+      "en": "Marjaniementie 74"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.074524,
+        60.208168
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.074524,
+        60.208168
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 70737,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Iso Kallahden talviuintipaikka (Vuosaari-Seura)",
+      "sv": "Stora Kallviks vinterbadplats (Vuosaari-Seura)"
+    },
+    "street_address": {
+      "fi": "Harbonkatu 13",
+      "sv": "Harbogatan 13",
+      "en": "Harbonkatu 13"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.129696,
+        60.198277
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.129696,
+        60.198277
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40950,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Ison Kallahden uimaranta",
+      "sv": "Stora Kallviks badstrand",
+      "en": "Iso Kallahti beach"
+    },
+    "street_address": {
+      "fi": "Kallahdenraitti 3",
+      "sv": "Kallahdenraitti 3",
+      "en": "Kallahdenraitti 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.13126,
+        60.198704
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.13126,
+        60.198704
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "wheelchair": 9,
+      "reduced_mobility": 6,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41835,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Itäkeskuksen uimahalli",
+      "sv": "Östra centrums simhall",
+      "en": "Itäkeskus swimming hall"
+    },
+    "street_address": {
+      "fi": "Olavinlinnantie 6",
+      "sv": "Olofsborgsvägen 6",
+      "en": "Olavinlinnantie 6"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2218,
+      2219,
+      2221,
+      2226,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.076294,
+        60.212757
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.076294,
+        60.212757
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 4
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40838,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Jakomäen uimahalli",
+      "sv": "Jakobacka simhall",
+      "en": "Jakomäki swimming hall"
+    },
+    "street_address": {
+      "fi": "Somerikkopolku 6",
+      "sv": "Klapperstensstigen 6",
+      "en": "Somerikkopolku 6"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2219,
+      2221,
+      2226,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.08058,
+        60.259853
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.08058,
+        60.259853
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 5,
+      "stroller": 1,
+      "wheelchair": 5,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 9
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40150,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Kallahdenniemen uimaranta",
+      "sv": "Kallviksuddens badstrand",
+      "en": "Kallahdenniemi beach"
+    },
+    "street_address": {
+      "fi": "Kallvikinniementie 39",
+      "sv": "Kallviksuddsvägen 39",
+      "en": "Kallvikinniementie 39"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.143894,
+        60.186794
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.143894,
+        60.186794
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 5,
+      "wheelchair": 5,
+      "reduced_mobility": 5,
+      "visually_impaired": 3
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40425,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Kampin liikuntakeskus / Uima-allas",
+      "sv": "Kampens idrottscentrum / Simbassäng",
+      "en": "Kamppi liikuntakeskus / Swimming pool"
+    },
+    "street_address": {
+      "fi": "Malminkatu 3",
+      "sv": "Malmgatan 3",
+      "en": "Malminkatu 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2221,
+      2226,
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.9268,
+        60.168224
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.9268,
+        60.168224
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 6,
+      "wheelchair": 6,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 10
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41659,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Katajanokan talviuintipaikka (KJS)",
+      "sv": "Skatudden vinterbadplats (KJS)",
+      "en": "Katajanokka winter swimming place (KJS)"
+    },
+    "street_address": {
+      "fi": "Kanavaranta 4",
+      "sv": "Kanalkajen 4",
+      "en": "Kanavaranta 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.963911,
+        60.169167
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.963911,
+        60.169167
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41701,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Helsingfors stad",
+        "en": "municipal service, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Kinaporin palvelukeskus / Uima-allas",
+      "sv": "Kinaporin palvelukeskus / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Kinaporinkatu 9 A",
+      "sv": "Kinaborgsgatan 9 A",
+      "en": "Kinaporinkatu 9 A"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.962646,
+        60.189007
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.962646,
+        60.189007
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41031,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Kivinokan uimaranta",
+      "sv": "Stenuddens badstrand",
+      "en": "Kivinokka beach"
+    },
+    "street_address": {
+      "fi": "Kivinokan ulkoilupuisto",
+      "sv": "Stenuddens friluftspark",
+      "en": "Kivinokan ulkoilupuisto"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.006056,
+        60.195038
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.006056,
+        60.195038
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41186,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Helsingfors stad",
+        "en": "municipal service, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Kontulan palvelukeskus / Uima-allas",
+      "sv": "Gårdsbacka servicenter / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Kontukuja 5",
+      "sv": "Gårdsgränden 5",
+      "en": "Kontukuja 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.08555,
+        60.24346
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.08555,
+        60.24346
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42127,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Kontulan uimahalli / Urheiluhallit Kontula",
+      "sv": "Gårdsbacka simhall / Urheiluhallit Kontula"
+    },
+    "street_address": {
+      "fi": "Ostostie 4",
+      "sv": "Köpvägen 4",
+      "en": "Ostostie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2219,
+      2221,
+      2226,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.085222,
+        60.23733
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.085222,
+        60.23733
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 5,
+      "stroller": 1,
+      "wheelchair": 5,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 8
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 72033,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Kruunuvuorenrannan talviuintipaikka (Laajasalo-Degerö Seura)"
+    },
+    "street_address": {
+      "fi": "Saaristolaivastokatu",
+      "sv": "Saaristolaivastokatu",
+      "en": "Saaristolaivastokatu"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.01157,
+        60.16503
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.01157,
+        60.16503
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40823,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Kumpulan maauimala",
+      "sv": "Gumtäkts friluftsbad",
+      "en": "Kumpula outdoor swimming pool"
+    },
+    "street_address": {
+      "fi": "Allastie 1",
+      "sv": "Bassängvägen 1",
+      "en": "Allastie 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      686
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.95811,
+        60.2086
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.95811,
+        60.2086
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "wheelchair": 9,
+      "hearing_aid": 1,
+      "reduced_mobility": 3,
+      "visually_impaired": 5
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41981,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Kuntoutuskeskus Synapsia / Uima-allas",
+      "sv": "Rehabiliteringscenter Synapsia / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Nordenskiöldinkatu 18 B",
+      "sv": "Nordenskiöldsgatan 18 B",
+      "en": "Nordenskiöldinkatu 18 B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.920994,
+        60.191082
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.920994,
+        60.191082
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40802,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Laajasalon uimaranta",
+      "sv": "Degerö badstrand",
+      "en": "Laajasalo beach"
+    },
+    "street_address": {
+      "fi": "Reposalmentie 4",
+      "sv": "Rävsundsvägen 4",
+      "en": "Reposalmentie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.063578,
+        60.1771
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.063578,
+        60.1771
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "wheelchair": 9,
+      "reduced_mobility": 6,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41922,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Lauttasaaren uimahalli (Lauttasaaren yhteiskoulu)",
+      "sv": "Drumsö simhall (Högstadie- och gymnasieskolan Lauttasaaren yhteiskoulu)"
+    },
+    "street_address": {
+      "fi": "Isokaari 19",
+      "sv": "Storsvängen 19",
+      "en": "Isokaari 19"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.862226,
+        60.158314
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.862226,
+        60.158314
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40098,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Lauttasaaren uimaranta",
+      "sv": "Drumsö badstrand",
+      "en": "Lauttasaari beach"
+    },
+    "street_address": {
+      "fi": "Kuikkarinne 1a",
+      "sv": "Doppingbrinken 1a",
+      "en": "Kuikkarinne 1a"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.871897,
+        60.155067
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.871897,
+        60.155067
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 5,
+      "wheelchair": 5,
+      "reduced_mobility": 5,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40617,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Uima-allastila",
+      "sv": "Sportkvarnen / Simbassäng",
+      "en": "Liikuntamylly / Swimming pool space"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.07741,
+        60.224518
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.07741,
+        60.224518
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40076,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Luukin ulkoilualue / Kaitalammen uimapaikka 1",
+      "sv": "Luks friluftsområde / Kaitalampivikens badplats 1"
+    },
+    "street_address": {
+      "fi": "Luukin ulkoilualue",
+      "sv": "Luukin ulkoilualue",
+      "en": "Luukin ulkoilualue"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.66377,
+        60.31968
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.66377,
+        60.31968
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 64368,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Löyly Helsinki"
+    },
+    "street_address": {
+      "fi": "Hernesaarenranta 4",
+      "sv": "Ärtholmsstranden 4",
+      "en": "Hernesaarenranta 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.930717,
+        60.1521
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.930717,
+        60.1521
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40808,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Malmin uimahalli / Urheiluhallit Malmi",
+      "sv": "Malms simhall / Urheiluhallit Malmi"
+    },
+    "street_address": {
+      "fi": "Pekanraitti 14",
+      "sv": "Pehrstået 14",
+      "en": "Pekanraitti 14"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2219,
+      2221,
+      2226,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.016434,
+        60.25114
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.016434,
+        60.25114
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40386,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Marjaniemen uimaranta",
+      "sv": "Marudds badstrand",
+      "en": "Marjaniemi beach"
+    },
+    "street_address": {
+      "fi": "Kivalontie 2",
+      "sv": "Kivalovägen 2",
+      "en": "Kivalontie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.076632,
+        60.198677
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.076632,
+        60.198677
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "stroller": 1,
+      "wheelchair": 9,
+      "reduced_mobility": 6,
+      "visually_impaired": 5
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41594,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Marjaniemen talviuintipaikka (Meriuimarit)",
+      "sv": "Marudds vinterbadplats (Meriuimarit)",
+      "en": "Marjaniemi winter swimming place (Meriuimarit)"
+    },
+    "street_address": {
+      "fi": "Kivalontie 2",
+      "sv": "Kivalovägen 2",
+      "en": "Kivalontie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.077105,
+        60.198612
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.077105,
+        60.198612
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41601,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Munkkiniemen uimaranta",
+      "sv": "Munksnäs badstrand",
+      "en": "Munkkiniemi beach"
+    },
+    "street_address": {
+      "fi": "Munkkiniemenranta 44",
+      "sv": "Munksnässtrand 44",
+      "en": "Munkkiniemenranta 44"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.856968,
+        60.201145
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.856968,
+        60.201145
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 4,
+      "wheelchair": 4,
+      "reduced_mobility": 4,
+      "visually_impaired": 3
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41264,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Munkkiniemen talviuintipaikka (Munkkiniemen Avantouimarit ry)",
+      "sv": "Munksnäs vinterbadplats (Munkkiniemen Avantouimarit rf)",
+      "en": "Munkkiniemi winter swimming place (Munkkiniemen Avantouimarit ry)"
+    },
+    "street_address": {
+      "fi": "Munkkiniemenranta 44",
+      "sv": "Munksnässtrand 44",
+      "en": "Munkkiniemenranta 44"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.857698,
+        60.20044
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.857698,
+        60.20044
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41470,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Mustasaari / Uimaranta",
+      "sv": "Svartholmen / Badstrand"
+    },
+    "street_address": {
+      "fi": "Mustasaari",
+      "sv": "Svartholmen (Drumsö)",
+      "en": "Mustasaari"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.867466,
+        60.172016
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.867466,
+        60.172016
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40559,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Mustikkamaan uimaranta",
+      "sv": "Blåbärslandets badstrand",
+      "en": "Mustikkamaa beach"
+    },
+    "street_address": {
+      "fi": "Mustikkamaanpolku 2",
+      "sv": "Blåbärslandsstigen 2",
+      "en": "Mustikkamaanpolku 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.99305,
+        60.17906
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.99305,
+        60.17906
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 7,
+      "stroller": 1,
+      "wheelchair": 7,
+      "reduced_mobility": 8,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41783,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Mäkelänrinteen uintikeskus / Urheiluhallit Mäkelänrinne",
+      "sv": "Backasbrinkens simcenter / Urheiluhallit Mäkelänrinne"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 49",
+      "sv": "Backasgatan 49",
+      "en": "Mäkelänkatu 49"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2221,
+      2226,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.947802,
+        60.19969
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.947802,
+        60.19969
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41758,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Naulakallion erityiskoulu / Uima-allas",
+      "sv": "Specialskolan Naulakallion koulu / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Naulakalliontie 13",
+      "sv": "Spikbergsvägen 13",
+      "en": "Naulakalliontie 13"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.116446,
+        60.233685
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.116446,
+        60.233685
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42135,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Oltermannikeskus / Uima-allas",
+      "sv": "Tjänstcentrum Oltermanni / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Oltermannintie 8",
+      "sv": "Åldermansvägen 8",
+      "en": "Oltermannintie 8"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.946291,
+        60.223846
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.946291,
+        60.223846
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41268,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Oppimis- ja ohjauskeskus Valteri, Ruskis / Uima-allas",
+      "sv": "Inlärning- och ledningcentern Valteri, Ruskis / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Tenholantie 11",
+      "sv": "Tenalavägen 11",
+      "en": "Tenholantie 11"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.907259,
+        60.20337
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.907259,
+        60.20337
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41717,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Ouritsaaren talviuintipaikka (TUK)",
+      "sv": "Örarna vinterbadplats (TUK)",
+      "en": "Ourit winter swimming place (TUK)"
+    },
+    "street_address": {
+      "fi": "Hietaniemi",
+      "sv": "Sandudd",
+      "en": "Hietaniemi"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.899061,
+        60.171577
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.899061,
+        60.171577
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40921,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Pakilan uimaranta",
+      "sv": "Baggböle badstrand",
+      "en": "Pakila beach"
+    },
+    "street_address": {
+      "fi": "Pakilan rantatie 7",
+      "sv": "Baggböle strandväg 7",
+      "en": "Pakilan rantatie 7"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.972338,
+        60.24621
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.972338,
+        60.24621
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41977,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Pihlajasaaren uimaranta",
+      "sv": "Rönnskärs badstrand",
+      "en": "Pihlajasaari beach"
+    },
+    "street_address": {
+      "fi": "Läntinen Pihlajasaari",
+      "sv": "Västerrönnskär",
+      "en": "Läntinen Pihlajasaari"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.915442,
+        60.140102
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.915442,
+        60.140102
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 72464,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Pikku Leikosaari / Tulipaikka",
+      "sv": "Lilla Lekholmen / Eldplats"
+    },
+    "street_address": {
+      "fi": "Pikku Leikosaari",
+      "sv": "Pikku Leikosaari",
+      "en": "Pikku Leikosaari"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.145563,
+        60.169365
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.145563,
+        60.169365
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41960,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Pikkukosken uimaranta",
+      "sv": "Lillforsens badstrand",
+      "en": "Pikkukoski beach"
+    },
+    "street_address": {
+      "fi": "Pikkukoskentie 23",
+      "sv": "Lillforsvägen 23",
+      "en": "Pikkukoskentie 23"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.98233,
+        60.22768
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.98233,
+        60.22768
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 5,
+      "wheelchair": 6,
+      "reduced_mobility": 5,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40088,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Pikkukosken talviuintipaikka (Uintiseura Kuhat)",
+      "sv": "Lillforsens vinterbadplats (Simförening Kuhat)",
+      "en": "Pikkukoski winter swimming place (Uintiseura Kuhat)"
+    },
+    "street_address": {
+      "fi": "Pikkukoskentie 21",
+      "sv": "Lillforsvägen 21",
+      "en": "Pikkukoskentie 21"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.983335,
+        60.22809
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.983335,
+        60.22809
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40476,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Pirkkolan liikuntapuisto / Uimapaikka (Plotti)",
+      "sv": "Britas idrottspark / Badplats (Plotti)",
+      "en": "Pirkkola sports park / Local exercise place (Plotti)"
+    },
+    "street_address": {
+      "fi": "Plotinrinne 7",
+      "sv": "Plottbrinken 7",
+      "en": "Plotinrinne 7"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.915615,
+        60.232063
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.915615,
+        60.232063
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 5,
+      "wheelchair": 5,
+      "reduced_mobility": 5,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40774,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Pirkkolan liikuntapuiston uimahalli",
+      "sv": "Britas idrottsparks simhall",
+      "en": "Pirkkola sports park swimming hall"
+    },
+    "street_address": {
+      "fi": "Pirkkolan metsätie 6",
+      "sv": "Britas skogsväg 6",
+      "en": "Pirkkolan metsätie 6"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2218,
+      2219,
+      2221,
+      2224,
+      2226,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.910685,
+        60.232086
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.910685,
+        60.232086
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 5,
+      "wheelchair": 5,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 11
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40798,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Porvariskuninkaanpuiston uimaranta",
+      "sv": "Borgarekungen parks badstrand",
+      "en": "Porvariskuninkaanpuisto beach"
+    },
+    "street_address": {
+      "fi": "Kuninkaansormuksenpolku 8",
+      "sv": "Konungens rings stig 8",
+      "en": "Kuninkaansormuksenpolku 8"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.087543,
+        60.159657
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.087543,
+        60.159657
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40020,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Puotilan uimaranta",
+      "sv": "Botby gårds badstrand",
+      "en": "Puotila beach"
+    },
+    "street_address": {
+      "fi": "Meripellontie / Puotilantie 7a",
+      "sv": "Meripellontie / Puotilantie 7a",
+      "en": "Meripellontie / Puotilantie 7a"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.10996,
+        60.209244
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.10996,
+        60.209244
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40606,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Rajasaaren talviuintipaikka (HKK-talviuimarit)",
+      "sv": "Råholmens vinterbadplats (HKK-Vintersimmaren)",
+      "en": "Rajasaari winter swimming place (HKK-talviuimarit)"
+    },
+    "street_address": {
+      "fi": "Rajasaarenpenger 8",
+      "sv": "Råholmsbanken 8",
+      "en": "Rajasaarenpenger 8"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.908834,
+        60.180626
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.908834,
+        60.180626
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40157,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Rastilan uimaranta",
+      "sv": "Rastböle badstrand",
+      "en": "Rastila beach"
+    },
+    "street_address": {
+      "fi": "Vuoraitti 2",
+      "sv": "Norstråket 2",
+      "en": "Vuoraitti 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.115517,
+        60.207695
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.115517,
+        60.207695
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 8,
+      "wheelchair": 9,
+      "reduced_mobility": 7,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41188,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Rastilan talviuintipaikka (Suomen Latu)",
+      "sv": "Rastböles vinterbadplats (Suomen Latu)",
+      "en": "Rastila winter swimming place (Suomen latu)"
+    },
+    "street_address": {
+      "fi": "Vuoraitti 2",
+      "sv": "Norstråket 2",
+      "en": "Vuoraitti 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.115988,
+        60.20767
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.115988,
+        60.20767
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40818,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Rinnekodit Kotikallion hoivakoti / Uima-allas",
+      "sv": "Åldersdomshem Rinnekodit Kotikallio / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Kyläkirkontie 6-10",
+      "sv": "Bykyrkovägen 6-10",
+      "en": "Kyläkirkontie 6-10"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.841896,
+        60.222908
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.841896,
+        60.222908
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41919,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Ruskeasuon Folkhälsan-senioritalo / Uima-allas",
+      "sv": "Folkhälsanhuset i Brunakärr / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Mannerheimintie 97",
+      "sv": "Mannerheimvägen 97",
+      "en": "Mannerheimintie 97"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.901905,
+        60.19821
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.901905,
+        60.19821
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 71781,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Sarvaston venesataman talviuintipaikka (Satamakahvila Messi, Top Boat)",
+      "sv": "Fladans vinterbad"
+    },
+    "street_address": {
+      "fi": "Isonsarvastontie 4",
+      "sv": "Storfladavägen 4",
+      "en": "Isonsarvastontie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.05989,
+        60.16777
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.05989,
+        60.16777
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 58447,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Helsingfors stad",
+        "en": "municipal service, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Seikkailutalo / Uima- ja melontaranta",
+      "sv": "Seikkailutalo / Bad- och paddlingsplats"
+    },
+    "street_address": {
+      "fi": "Kallvikinniementie 10",
+      "sv": "Kallviksuddsvägen 10",
+      "en": "Kallvikinniementie 10"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.133732,
+        60.199978
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.133732,
+        60.199978
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40993,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Seurasaaren uimala",
+      "sv": "Fölisöns badhus",
+      "en": "Seurasaari baths"
+    },
+    "street_address": {
+      "fi": "Seurasaari",
+      "sv": "Fölisön",
+      "en": "Seurasaari"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.879047,
+        60.182514
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.879047,
+        60.182514
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40084,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Seurasaaren talviuintipaikka (Seurasaaren uimarit)",
+      "sv": "Fölisö / Vinterbadplats (Seurasaaren uimarit)",
+      "en": "Seurasaari winter swimming place (Seurasaaren uimarit)"
+    },
+    "street_address": {
+      "fi": "Seurasaari",
+      "sv": "Fölisön",
+      "en": "Seurasaari"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.879063,
+        60.18229
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.879063,
+        60.18229
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40297,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Siltamäen uimahalli / Urheiluhallit Siltamäki",
+      "sv": "Brobacka simhall / Urheiluhallit Siltamäki"
+    },
+    "street_address": {
+      "fi": "Jousimiehentie 3",
+      "sv": "Skyttens väg 3",
+      "en": "Jousimiehentie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2221,
+      2226,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.989565,
+        60.274673
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.989565,
+        60.274673
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41392,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Helsingfors stad",
+        "en": "municipal service, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Sofianlehto / Uima-allas",
+      "sv": "Sofianlehto / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Sofianlehdonkatu 8, B-rakennus",
+      "sv": "Sofielundsgatan 8, B-byggnad",
+      "en": "Sofianlehdonkatu 8, B-building"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948345,
+        60.204586
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948345,
+        60.204586
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41730,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Soutustadion / Talviuintipaikka (SMARK)",
+      "sv": "Roddstadion / Vinterbadplats (SMARK)",
+      "en": "Soutustadion winter swimming place (SMARK)"
+    },
+    "street_address": {
+      "fi": "Merikannontie 4",
+      "sv": "Merikantovägen 4",
+      "en": "Merikannontie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.912117,
+        60.17917
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.912117,
+        60.17917
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 58015,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Suomenlinnan uimaranta",
+      "sv": "Sveaborgs badstrand",
+      "en": "Suomenlinna beach"
+    },
+    "street_address": {
+      "fi": "Susisaari",
+      "sv": "Vargön",
+      "en": "Susisaari"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.984264,
+        60.14149
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.984264,
+        60.14149
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41047,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Uimastadion / Maauimala",
+      "sv": "Simstadion / Friluftsbad",
+      "en": "Swimming Stadium / Outdoor swimming pool"
+    },
+    "street_address": {
+      "fi": "Hammarskjöldintie 5",
+      "sv": "Hammarskjöldsvägen 5",
+      "en": "Hammarskjöldintie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      686
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.930887,
+        60.18866
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.930887,
+        60.18866
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 7,
+      "stroller": 1,
+      "wheelchair": 7,
+      "hearing_aid": 1,
+      "reduced_mobility": 3,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41326,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Tapaninvainion uimaranta",
+      "sv": "Staffansslättens badstrand",
+      "en": "Tapaninvainio beach"
+    },
+    "street_address": {
+      "fi": "Jokipolku 6",
+      "sv": "Åstigen 6",
+      "en": "Jokipolku 6"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.977264,
+        60.257153
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.977264,
+        60.257153
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41489,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Toivolan koulu / Uima-allas",
+      "sv": "Toivola specialskola / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Mikkolankuja 3",
+      "sv": "Mickelsgränden 3",
+      "en": "Mikkolankuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.966743,
+        60.240547
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.966743,
+        60.240547
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41791,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Tuorinniemen uimaranta",
+      "sv": "Torsnäs badstrand",
+      "en": "Tuorinniemi beach"
+    },
+    "street_address": {
+      "fi": "Neitojenpolku 6",
+      "sv": "Fröknarnas stig 6",
+      "en": "Neitojenpolku 6"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      689
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.038622,
+        60.185925
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.038622,
+        60.185925
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 4,
+      "wheelchair": 4,
+      "reduced_mobility": 4,
+      "visually_impaired": 3
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41331,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Tuorinniemen talviuintipaikka (Herttoniemen hylkeet)",
+      "sv": "Tornäs vinterbad (Herttoniemen hylkeet)",
+      "en": "Tuorinniemi winter swimming place (Herttoniemen hylkeet)"
+    },
+    "street_address": {
+      "fi": "Neitojenpolku 6",
+      "sv": "Fröknarnas stig 6",
+      "en": "Neitojenpolku 6"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.040213,
+        60.18584
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.040213,
+        60.18584
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40431,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Töölön uimahalli / Urheiluhallit Töölö",
+      "sv": "Tölö Simhall / Urheiluhallit Töölö"
+    },
+    "street_address": {
+      "fi": "Topeliuksenkatu 41a",
+      "sv": "Topeliusgatan 41a",
+      "en": "Topeliuksenkatu 41a"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2219,
+      2221,
+      2225,
+      2226,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.911722,
+        60.18995
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.911722,
+        60.18995
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40356,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Uunisaaren uimaranta",
+      "sv": "Ugnsholmens badstrand",
+      "en": "Uunisaari beach"
+    },
+    "street_address": {
+      "fi": "Uunisaari",
+      "sv": "Uunisaari",
+      "en": "Uunisaari"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.952026,
+        60.152744
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.952026,
+        60.152744
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "stroller": 1,
+      "wheelchair": 9,
+      "reduced_mobility": 5,
+      "visually_impaired": 4
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41582,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Uunisaaren talviuintipaikka (Uunisaaren talviuintiseura)",
+      "sv": "Ugnsholmen vinterbadplats (Uunisaaren talviuintiseura)",
+      "en": "Uunisaari winter swimming place (Uunisaaren talviuintiseura)"
+    },
+    "street_address": {
+      "fi": "Uunisaari",
+      "sv": "Uunisaari",
+      "en": "Uunisaari"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.953278,
+        60.153484
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.953278,
+        60.153484
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 72031,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Vartiokylän talviuintipaikka (Vartiokylän ranta- ja venekerho)"
+    },
+    "street_address": {
+      "fi": "Varjakanvalkama 21 A",
+      "sv": "Väringshamnen 21 A",
+      "en": "Varjakanvalkama 21 A"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.118338,
+        60.21485
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.118338,
+        60.21485
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42212,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Vaskiniemen talviuintipaikka (Suomen Saunaseura)",
+      "sv": "Kopparuddens vinterbad (Finska saunasällskapet)",
+      "en": "Vaskiniemi winter swimming place (Suomen Saunaseura)"
+    },
+    "street_address": {
+      "fi": "Vaskiniementie",
+      "sv": "Kopparuddsvägen",
+      "en": "Vaskiniementie"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.853222,
+        60.16072
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.853222,
+        60.16072
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40677,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Veijarivuoren uimaranta",
+      "sv": "Skojarbergets badstrand",
+      "en": "Veijarivuori beach"
+    },
+    "street_address": {
+      "fi": "Itälahdenkatu 2b",
+      "sv": "Österviksgatan 2b",
+      "en": "Itälahdenkatu 2b"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.882439,
+        60.14637
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.882439,
+        60.14637
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40701,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Veijarivuoren puiston talviuintipaikka (Humaus ry)",
+      "sv": "Skojarbergsparkens Vinterbadplats (Humaus ry)",
+      "en": "Veijarivuori park winter swimming place"
+    },
+    "street_address": {
+      "fi": "Lauttasaari, Itälahti, Veijarivuoren puisto",
+      "sv": "Lauttasaari, Itälahti, Veijarivuoren puisto",
+      "en": "Lauttasaari, Itälahti, Veijarivuoren puisto"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      687
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.890232,
+        60.146763
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.890232,
+        60.146763
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42088,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Vuosaaren uimahalli / Urheiluhallit Vuosaari",
+      "sv": "Nordsjö simhall / Urheiluhallit Vuosaari"
+    },
+    "street_address": {
+      "fi": "Vuosaarentie 5",
+      "sv": "Nordsjövägen 5",
+      "en": "Vuosaarentie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2221,
+      2226,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.141024,
+        60.208847
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.141024,
+        60.208847
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40996,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Vuotekno oy Vuosaaren telakka/ Uima-allas",
+      "sv": "Vuotekno oy Nordsjös dock / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Ruusuniementie 4",
+      "sv": "Rosenuddsvägen 4",
+      "en": "Ruusuniementie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.179749,
+        60.211514
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.179749,
+        60.211514
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41102,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Yrjönkadun uimahalli",
+      "sv": "Georgsgatans simhall",
+      "en": "Yrjönkatu swimming hall"
+    },
+    "street_address": {
+      "fi": "Yrjönkatu 21 b",
+      "sv": "Georgsgatan 21 b",
+      "en": "Yrjönkatu 21 b"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2168,
+      749,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.93896,
+        60.16835
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.93896,
+        60.16835
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 10,
+      "stroller": 1,
+      "wheelchair": 10,
+      "hearing_aid": 1,
+      "reduced_mobility": 5,
+      "visually_impaired": 8
+    },
+    "object_type": "unit"
+  }
+]
