@@ -1,10 +1,11 @@
 import json
 from apis import weather
 from apis import helpers
-import copy
 
 
-def get_pois_as_json():
+#Todo: give category as a parameter to get more accurate data.
+
+def get_pois_as_json(category=['open_air_water','fitness_parks']):
     """
     Retrieves points of interest (POIs) from a JSON file and enriches them with current weather data.
 
@@ -15,13 +16,16 @@ def get_pois_as_json():
         KeyError: If an error occurs while processing the data.
 
     """
+    paths = [
+        f"src/apis/poi_data/sports_and_physical/water_sports/{category[0]}.json",
+        f"src/apis/poi_data/sports_and_physical/outdoor_sports/neighborhood_sports/{category[1]}.json"
+        ]
     try:
         with open('src/pois.json') as file:
             data = json.load(file)
             weatherdata = weather.get_current_weather()
             for item in data:
                 item = find_nearest_stations_weather_data(weatherdata, item)
-                item = add_score_to_poi(item)
             return json.dumps(data)
     except KeyError as error:
         return {
@@ -53,20 +57,3 @@ def find_nearest_stations_weather_data(weatherdata, item):
             smallest, nearest = dist, station
     item['weather'] = weatherdata[nearest]
     return item
-
-def add_score_to_poi(item):
-    """
-    Adds a score to the POI data.
-
-    Args:
-        item (dict): The POI for which the score needs to be added.
-
-    Returns:
-        dict: The modified POI with the score.
-
-    """
-    poi = helpers.PointOfInterest(**item)
-    score = poi.calculate_score()
-    item['score'] = score
-    return item
-
