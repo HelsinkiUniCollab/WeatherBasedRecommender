@@ -7,5 +7,9 @@
         "browser": true,
         "es6": true,
         "jest": true
+    },
+    "globals": {
+        "Helmet": true,
+        "HelmetProvider": true
     }
 }

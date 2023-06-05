@@ -2,7 +2,7 @@ from invoke import task
 
 @task
 def start(ctx):
-    ctx.run("poetry run flask --app src/app run", pty=True)
+    ctx.run("poetry run flask --app src/app --debug run", pty=True)
 
 @task
 def test(ctx):
