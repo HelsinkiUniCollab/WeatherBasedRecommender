@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import MarkersComponent from './MarkersComponent';
 import '../../assets/style.css';
 
-function MapComponent() {
+function MapComponent({ accessibility }) {
   const position = [60.2049, 24.9649];
   const [poiData, setPoiData] = useState([]);
 
@@ -11,7 +11,7 @@ function MapComponent() {
     async function fetchPoiData() {
       try {
         const apiUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
-        const response = await fetch(`${apiUrl}/api/poi`);
+        const response = await fetch(`${apiUrl}/api/poi/${accessibility}`);
         const data = await response.json();
         setPoiData(data);
       } catch (error) {
@@ -19,7 +19,7 @@ function MapComponent() {
       }
     }
     fetchPoiData();
-  }, []);
+  }, [accessibility]);
 
   return (
     <MapContainer id="map" center={position} zoom={14} scrollWheelZoom={false}>
