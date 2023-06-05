@@ -33,7 +33,7 @@
 | Isak    | -           | -            | -              | -             | -           | -              | -            | -         |
 | Sami S. | -           | -            | -              | -             | -           | -              | -            | -         |
 | Sami M. | -           | -            | -              | -             | -           | -              | -            | -         |
-| Pia     | -           | -            | -              | -             | -           | -              | -            | -         |
+| Pia     | 1 daily, pull review           | -            | -              | -             | -           | -              | -            | -         |
 | Joni    | absent      | absent       | absent         | absent        | absent      | absent         | absent       | -         |
 
 |         | Monday 12.6. | Tuesday 13.6. | Wednesday 14.6. | Thursday 15.6. | Friday 16.6. | Saturday 17.6. | Sunday 18.6. | Total |
