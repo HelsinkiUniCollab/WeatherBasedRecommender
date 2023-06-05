@@ -31,8 +31,7 @@ def get_weather():
     '''
     return weather.get_full_weather_info()
 
-
-@app.route('/api/poi', methods=['GET'])
+@app.route('/api/poi/', methods=['GET'])
 def get_poi_data():
     '''
     Handler for the '/api/poi' endpoint.
@@ -41,6 +40,16 @@ def get_poi_data():
         Poi data if errors have not occurred.
     '''
     return poi.get_pois_as_json()
+
+@app.route('/api/poi/<accessibility>', methods=['GET'])
+def get_poi_acessible_poi_data(accessibility):
+    '''
+    Handler for the '/api/poi' endpoint.
+
+    Returns:
+        Poi data if errors have not occurred.
+    '''
+    return poi.get_pois_as_json(accessibility)
 
 
 @app.errorhandler(404)

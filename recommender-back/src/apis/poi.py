@@ -3,7 +3,7 @@ from apis import weather
 import copy
 
 
-def get_pois_as_json():
+def get_pois_as_json(accessibility = False):
     """
     Retrieves points of interest (POIs) from a JSON file and enriches them with current weather data.
 
@@ -18,9 +18,12 @@ def get_pois_as_json():
         with open('src/pois.json') as file:
             data = json.load(file)
             weatherdata = weather.get_current_weather()
+            updated_data = []
             for item in data:
                 item = find_nearest_stations_weather_data(weatherdata, item)
-            return json.dumps(data)
+                if accessibility not in item["accessibility_shortcoming_count"]:
+                    updated_data.append(item)
+        return json.dumps(updated_data)
     except KeyError as error:
         return {
             'message': 'An error occurred',
