@@ -3,7 +3,7 @@ from apis import weather
 
 #Todo: give category as a parameter to get more accurate data.
 
-def get_pois_as_json(category=['open_air_water','fitness_parks']):
+def get_pois_as_json(accessibility = False, category=None):
     """
     Retrieves points of interest (POIs) from a JSON file and enriches them with current weather data.
 
@@ -14,6 +14,8 @@ def get_pois_as_json(category=['open_air_water','fitness_parks']):
         KeyError: If an error occurs while processing the data.
 
     """
+    if category is None:
+        category = ['open_air_water', 'fitness_parks']
     paths = [
         f"src/apis/poi_data/sports_and_physical/water_sports/{category[0]}.json",
         f"src/apis/poi_data/sports_and_physical/outdoor_sports/neighborhood_sports/{category[1]}.json"
@@ -21,9 +23,12 @@ def get_pois_as_json(category=['open_air_water','fitness_parks']):
     try:
         data = merge_json(paths)
         weatherdata = weather.get_current_weather()
+        updated_data = []
         for item in data:
             item = find_nearest_stations_weather_data(weatherdata, item)
-        return json.dumps(data)
+            if accessibility not in item["accessibility_shortcoming_count"]:
+                updated_data.append(item)
+        return json.dumps(updated_data)
     except KeyError as error:
         return {
             'message': 'An error occurred',
