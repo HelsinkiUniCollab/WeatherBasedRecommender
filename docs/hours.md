@@ -29,9 +29,9 @@
 
 |         | Monday 5.6. | Tuesday 6.6. | Wednesday 7.6. | Thursday 8.6. | Friday 9.6. | Saturday 10.6. | Sunday 11.6. | Total |
 | ------- | ----------- | ------------ | -------------- | ------------- | ----------- | -------------- | ------------ | --------- |
-| Juuso   | -           | -            | -              | -             | -           | -              | -            | -         |
+| Juuso   | 4 MVP for scoring pois | -            | -              | -             | -           | -              | -            | -         |
 | Isak    | -           | -            | -              | -             | -           | -              | -            | -         |
-| Sami S. | -           | -            | -              | -             | -           | -              | -            | -         |
+| Sami S. | 4.5 poi-categories, future apis           | -            | -              | -             | -           | -              | -            | -         |
 | Sami M. | -           | -            | -              | -             | -           | -              | -            | -         |
 | Pia     | 1 daily, pull review           | -            | -              | -             | -           | -              | -            | -         |
 | Joni    | absent      | absent       | absent         | absent        | absent      | absent         | absent       | -         |
