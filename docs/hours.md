@@ -31,7 +31,7 @@
 | ------- | ----------- | ------------ | -------------- | ------------- | ----------- | -------------- | ------------ | --------- |
 | Juuso   | 4 MVP for scoring pois | -            | -              | -             | -           | -              | -            | -         |
 | Isak    | -           | -            | -              | -             | -           | -              | -            | -         |
-| Sami S. | -           | -            | -              | -             | -           | -              | -            | -         |
+| Sami S. | 4.5 poi-categories, future apis           | -            | -              | -             | -           | -              | -            | -         |
 | Sami M. | -           | -            | -              | -             | -           | -              | -            | -         |
 | Pia     | 1 daily, pull review           | -            | -              | -             | -           | -              | -            | -         |
 | Joni    | absent      | absent       | absent         | absent        | absent      | absent         | absent       | -         |
