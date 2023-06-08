@@ -3,7 +3,7 @@ from apis.helpers import PointOfInterest
 
 
 class PointOfInterestTest(unittest.TestCase):
-    def test_calculate_score_with_valid_data(self):
+    def test_calculate_score_with_valid_data_hot(self):
         poi_data = {
             'id': 1,
             'name': 'POI 1',
@@ -11,6 +11,15 @@ class PointOfInterestTest(unittest.TestCase):
         }
         poi = PointOfInterest(**poi_data)
         self.assertAlmostEqual(poi.score, 1.0)
+
+    def test_calculate_score_with_valid_data_nothot(self):
+        poi_data = {
+            'id': 1,
+            'name': 'POI 1',
+            'weather': {'Air temperature': '10 °C', 'Humidity': '10%'}
+        }
+        poi = PointOfInterest(**poi_data)
+        self.assertAlmostEqual(poi.score, 0.0)
 
     def test_calculate_score_with_invalid_data(self):
         poi_data = {
