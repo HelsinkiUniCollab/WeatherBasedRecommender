@@ -24,12 +24,10 @@ function App() {
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         </Helmet>
         <HeaderComponent
-          id="clearer"
           accessibility={accessibility}
           handleChange={handleOptionChange}
         />
         <MapComponent
-          id="clearer"
           accessibility={accessibility}
         />
       </HelmetProvider>
