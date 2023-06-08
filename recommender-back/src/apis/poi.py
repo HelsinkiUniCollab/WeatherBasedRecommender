@@ -25,8 +25,11 @@ def get_pois_as_json(accessibility = False, category=None):
     try:
         data = merge_json(paths)
         weatherdata = weather.get_current_weather()
+        updated_data = []
         for item in data:
             item = find_nearest_stations_weather_data(weatherdata, item)
+            if accessibility not in item["accessibility_shortcoming_count"]:
+                updated_data.append(item)
             item = add_score_to_poi(item)
         return json.dumps(data)
     except KeyError as error:
