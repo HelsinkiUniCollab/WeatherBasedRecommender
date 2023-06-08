@@ -5,7 +5,11 @@ html, body {
     margin: 0;
   }
   
+  #clearer{
+    clear:both;
+  }
   #map {
     width: 100vw;
     height: 100vh;
+   position: relative !important;
   }
