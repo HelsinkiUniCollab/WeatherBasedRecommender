@@ -15,16 +15,13 @@ class PointOfInterest:
 
 
     def calculate_score(self):
-        temperature_str = self.weather['Air temperature']
-        humidity_str = self.weather['Humidity']
+        temperature_str = self.weather.get('Air temperature')
+        humidity_str = self.weather.get('Humidity')
 
-        temperature = float(temperature_str.split()[0])
-        humidity = float(humidity_str.split()[0])
-
-        # Calculate the score based on humidity and temperature
-        # We will change this logik; this is an MVP
-
-        if humidity is None or temperature is None:
+        try:
+            temperature = float(temperature_str.split()[0])
+            humidity = float(humidity_str.split('%')[0])
+        except (AttributeError, ValueError):
             return -float('inf')
 
         suitable_temperature_range = (25, 35)

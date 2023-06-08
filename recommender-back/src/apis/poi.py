@@ -31,7 +31,7 @@ def get_pois_as_json(accessibility = False, category=None):
             if accessibility not in item["accessibility_shortcoming_count"]:
                 updated_data.append(item)
             item = add_score_to_poi(item)
-        return json.dumps(data)
+        return json.dumps(updated_data)
     except KeyError as error:
         return {
             'message': 'An error occurred',
