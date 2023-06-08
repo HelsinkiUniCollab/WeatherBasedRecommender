@@ -27,6 +27,7 @@ def get_pois_as_json(accessibility = False, category=None):
         weatherdata = weather.get_current_weather()
         for item in data:
             item = find_nearest_stations_weather_data(weatherdata, item)
+            item = add_score_to_poi(item)
         return json.dumps(data)
     except KeyError as error:
         return {
@@ -57,4 +58,36 @@ def find_nearest_stations_weather_data(weatherdata, item):
         if dist < smallest:
             smallest, nearest = dist, station
     item['weather'] = weatherdata[nearest]
+    return item
+
+def merge_json(paths):
+    """
+    Merges json files together.
+
+    Args:
+        paths: list of file paths
+
+    Returns:
+        List: json files merged together as a list.
+    """
+    merged = []
+    for path in paths:
+        with open(path, 'r') as json_file:
+            data = json.load(json_file)
+            merged = merged + data
+
+    return merged
+
+def add_score_to_poi(item):
+    """
+    Adds a score to the POI data.
+    Args:
+        item (dict): The POI for which the score needs to be added.
+
+    Returns:
+        dict: The modified POI with the score.
+
+    """
+    poi = helpers.PointOfInterest(**item)
+    item['score'] = poi.score
     return item

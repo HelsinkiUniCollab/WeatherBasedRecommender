@@ -11,6 +11,8 @@ class PointOfInterest:
         self.accessibility_shortcoming_count = kwargs.get('accessibility_shortcoming_count')
         self.object_type = kwargs.get('object_type')
         self.weather = kwargs.get('weather')
+        self.score = self.calculate_score()
+
 
     def calculate_score(self):
         temperature_str = self.weather['Air temperature']
@@ -20,7 +22,7 @@ class PointOfInterest:
         humidity = float(humidity_str.split()[0])
 
         # Calculate the score based on humidity and temperature
-        # You can define your own scoring logic here
+        # We will change this logik; this is an MVP
 
         if humidity is None or temperature is None:
             return -float('inf')
@@ -40,5 +42,4 @@ class PointOfInterest:
 
         score = (temperature_score + humidity_score) / 2
         return score
-
 
