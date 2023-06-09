@@ -33,7 +33,7 @@
 | Isak    | 8           | 2,5            | 0,5              | 0,5             | 3           | -              | -            | 14,5         |
 | Sami S. | 4.5 poi-categories, future apis           | -            | -              | -             | -           | -              | -            | -         |
 | Sami M. | 4.5 research grid + grib format           | 2 weather api work            | 2 weather api work              | -             | -           | -              | -            | -         |
-| Pia     | 1 daily, pull review           | -            | -              | -             | -           | -              | -            | -         |
+| Pia     | 1 daily, pull review           | -            | -              | 7,5 frontend, docu            | -           | -              | -            | -         |
 | Joni    | absent      | absent       | absent         | absent        | absent      | absent         | absent       | -         |
 
 |         | Monday 12.6. | Tuesday 13.6. | Wednesday 14.6. | Thursday 15.6. | Friday 16.6. | Saturday 17.6. | Sunday 18.6. | Total |
