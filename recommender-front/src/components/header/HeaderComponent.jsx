@@ -1,5 +1,4 @@
 import React from 'react';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -17,23 +16,22 @@ function HeaderComponent({ accessibility, handleChange }) {
       align="center"
       alignItems="center"
     >
-      <Grid xs={5} sm={5} md={5} mx={3} my={1}>
-        <Typography variant="h6">Weather-Based Recommender</Typography>
+      <Grid item xs={4} sm={4} md={4} mx={4} my={3}>
+        <Typography variant="h5">Weather-Based Recommender</Typography>
       </Grid>
-      <Grid xs={5} sm={4} md={3} lg={2} mx={3} my={1}>
+      <Grid item xs={4} sm={4} md={4} lg={4} mx={3} my={1}>
         <FormControl fullWidth>
-          <InputLabel>Mobility issues</InputLabel>
-          <Select value={accessibility} onChange={handleChange}>
-            <MenuItem value="">No mobility issues</MenuItem>
-            <MenuItem value="rollator">Rollator</MenuItem>
-            <MenuItem value="stroller">Stroller</MenuItem>
-            <MenuItem value="wheelchair">Wheelchair</MenuItem>
-            <MenuItem value="reduced_mobility">Reduced mobility</MenuItem>
-            <MenuItem value="visually_impaired">Visually impaired</MenuItem>
+          <Select displayEmpty value={accessibility} onChange={handleChange}>
+            <MenuItem value="">All attractions</MenuItem>
+            <MenuItem value="rollator">Rollator-accessible</MenuItem>
+            <MenuItem value="stroller">Stroller-accessible</MenuItem>
+            <MenuItem value="wheelchair">Wheelchair-accessible</MenuItem>
+            <MenuItem value="reduced_mobility">Reduced mobility-friendly</MenuItem>
+            <MenuItem value="visually_impaired">Visually impaired-friendly</MenuItem>
           </Select>
         </FormControl>
       </Grid>
-      <Grid xs={12} sm={11} md={10} lg={9} mx={5}>
+      <Grid item xs={12} sm={11} md={10} lg={9} mx={5}>
         <Typography gutterBottom>Time</Typography>
         <Slider
           defaultValue={0}

@@ -25,7 +25,6 @@ html, body {
     top: 0;
     width: 100%;
     z-index: 1;
-    background-color: #f0f0f0;
   }
   
   .map-container {
