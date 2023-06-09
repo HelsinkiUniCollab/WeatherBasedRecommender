@@ -2,9 +2,6 @@ import json
 from apis import weather
 from apis import helpers
 
-
-#Todo: give category as a parameter to get more accurate data.
-
 def get_pois_as_json(accessibility = False, category=None):
     """
     Retrieves points of interest (POIs) from a JSON file and enriches them with current weather data.
