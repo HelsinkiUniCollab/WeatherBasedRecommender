@@ -32,7 +32,7 @@
 | Juuso   | 4 MVP for scoring pois | -            | -              | 4,5             | -           | -              | -            | -         |
 | Isak    | 8           | 2,5            | 0,5              | 0,5             | 3           | -              | -            | 14,5         |
 | Sami S. | 4.5 poi-categories, future apis           | -            | -              | -             | -           | -              | -            | -         |
-| Sami M. | 4.5 research grid + grib format           | 2 weather api work            | 2 weather api work              | -             | -           | -              | -            | -         |
+| Sami M. | 4.5 research grid + grib format           | 2 weather api work            | 2 weather api work              | -             | 5 sunset data           | -              | -            | -         |
 | Pia     | 1 daily, pull review           | -            | -              | 7,5 frontend, docu            | -           | -              | -            | -         |
 | Joni    | absent      | absent       | absent         | absent        | absent      | absent         | absent       | -         |
 
