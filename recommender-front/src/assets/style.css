@@ -7,5 +7,30 @@ html, body {
   
   #map {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 20%);
+  }
+
+  .app-container {
+    display: grid;
+    grid-template-rows: 20% 80%;
+    height: 100vh; 
+  }
+  
+  .header-container {
+    h1 { 
+        font-size: 28px;
+        color: #333;
+    };
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #f0f0f0;
+  }
+  
+  .map-container {
+    width: 100%;
+    position: fixed;
+    top: 20%;
+    bottom: 0;
   }
