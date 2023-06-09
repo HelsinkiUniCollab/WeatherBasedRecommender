@@ -5,6 +5,7 @@ import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
 import 'leaflet/dist/leaflet.css';
 import '@fontsource/roboto/300.css';
+import './assets/style.css';
 
 function App() {
   const [accessibility, setAccessibility] = useState('');
@@ -23,13 +24,19 @@ function App() {
           <meta name="description" content="Weather-Based Recommender" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         </Helmet>
-        <HeaderComponent
-          accessibility={accessibility}
-          handleChange={handleOptionChange}
-        />
-        <MapComponent
-          accessibility={accessibility}
-        />
+        <div className="app-container">
+          <div className="header-container">
+            <HeaderComponent
+              accessibility={accessibility}
+              handleChange={handleOptionChange}
+            />
+          </div>
+          <div className="map-container">
+            <MapComponent
+              accessibility={accessibility}
+            />
+          </div>
+        </div>
       </HelmetProvider>
 
     </ThemeProvider>
