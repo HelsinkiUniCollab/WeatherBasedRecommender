@@ -36,7 +36,7 @@ Remember to send the invitations for course instructor as well.
 
 ### In sprint planning
 
-- Supporting team in recognize what work needs to be done in next sprint based on customer meeting- setting up the sprint backlog and epics and stories - see [epic template](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/4?pane=issue&itemId=29332437)
+- Supporting team in recognize what work needs to be done in next sprint based on customer meeting- setting up the sprint backlog and epics and stories - see [epic template](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/4?pane=issue&itemId=29332437) & https://miro.com/app/board/uXjVMHY7v4k=/
 - Making sure that the face-to-face working days are set for the next sprint.
 
 ### After sprint planning
@@ -55,6 +55,7 @@ Remember to send the invitations for course instructor as well.
 ### At the end of the sprint
 
 - Creating the burndown graph and adding it to the documentation
+- Preparing and documenting retrospective https://miro.com/app/board/uXjVMHY7v4k=/
 
 
 # Role rotation
