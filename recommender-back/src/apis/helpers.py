@@ -1,5 +1,8 @@
+from apis import time_data
+
 class PointOfInterest:
     def __init__(self, **kwargs):
+        self.time = time_data.Time()
         self.id = kwargs.get('id')
         self.contract_type = kwargs.get('contract_type')
         self.name = kwargs.get('name')
@@ -15,6 +18,9 @@ class PointOfInterest:
 
 
     def calculate_score(self):
+        sunrise = self.time.get_sun_data()[0]
+        sunset = self.time.get_sun_data()[1]
+        time = self.time.get_current_time()
         temperature_str = self.weather.get('Air temperature')
         humidity_str = self.weather.get('Humidity')
 
@@ -27,16 +33,20 @@ class PointOfInterest:
         suitable_temperature_range = (25, 35)
         suitable_humidity_range = (40, 60)
 
-        if suitable_temperature_range[0] <= temperature <= suitable_temperature_range[1]:
-            temperature_score = 1.0
-        else:
-            temperature_score = 0.0
+        if time >= sunrise and time <= sunset:
+            if suitable_temperature_range[0] <= temperature <= suitable_temperature_range[1]:
+                temperature_score = 1.0
+            else:
+                temperature_score = 0.0
 
-        if suitable_humidity_range[0] <= humidity <= suitable_humidity_range[1]:
-            humidity_score = 1.0
-        else:
-            humidity_score = 0.0
+            if suitable_humidity_range[0] <= humidity <= suitable_humidity_range[1]:
+                humidity_score = 1.0
+            else:
+                humidity_score = 0.0
 
-        score = (temperature_score + humidity_score) / 2
-        return score
+            score = (temperature_score + humidity_score) / 2
+            return score
+        else:
+            score = 0
+            return score
 

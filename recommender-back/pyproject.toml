@@ -12,6 +12,8 @@ fmiopendata = {git = "https://github.com/pnuu/fmiopendata.git"}
 flask-cors = "^3.0.10"
 invoke = "^2.1.2"
 overpy = "^0.6"
+datetime = "^5.1"
+suntime = "^1.2.5"
 
 
 [tool.poetry.group.dev.dependencies]
