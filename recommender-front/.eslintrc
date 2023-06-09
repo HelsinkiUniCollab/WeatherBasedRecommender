@@ -2,7 +2,8 @@
     "extends": "airbnb",
     "rules": {
         "react/prop-types": 0,
-        "no-console": "off"
+        "no-console": "off",
+        "object-curly-newline": ["error", { "consistent": true }]
     },
     "env": {
         "browser": true,
