@@ -17,10 +17,10 @@ function HeaderComponent({ accessibility, handleChange }) {
       align="center"
       alignItems="center"
     >
-      <Grid xs={5} sm={5} md={5} mx={3} my={1}>
+      <Grid item xs={5} sm={5} md={5} mx={3} my={1}>
         <Typography variant="h5">Weather-Based Recommender</Typography>
       </Grid>
-      <Grid xs={5} sm={4} md={3} lg={2} mx={3} my={1}>
+      <Grid item xs={5} sm={4} md={3} lg={2} mx={3} my={1}>
         <FormControl fullWidth>
           <InputLabel>Mobility issues</InputLabel>
           <Select value={accessibility} onChange={handleChange}>
@@ -33,7 +33,7 @@ function HeaderComponent({ accessibility, handleChange }) {
           </Select>
         </FormControl>
       </Grid>
-      <Grid xs={12} sm={11} md={10} lg={9} mx={5}>
+      <Grid item xs={12} sm={11} md={10} lg={9} mx={5}>
         <Typography gutterBottom>Time</Typography>
         <Slider
           defaultValue={0}
