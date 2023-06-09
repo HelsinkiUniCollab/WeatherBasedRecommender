@@ -1,5 +1,6 @@
 import datetime as dt
 import numpy as np
+import time
 from flask import jsonify
 from fmiopendata.wfs import download_stored_query
 
@@ -98,52 +99,78 @@ def _forecast_query_handler(forecast_obj):
     return forecast_obj
 
 
-def forecast_grid(latitude, longitude):
+class ForecastGrid:
+    def __init__(self):
+        self.data = None
+        self.valid_times = None
+        self.data_levels = None
 
-    latitude = 60.17523
-    longitude = 24.94459
-    now = dt.datetime.utcnow()
+    def update_data(self):
+        # Limit the time to the next 24 hours
+        now = dt.datetime.utcnow()
+        start_time = now.strftime('%Y-%m-%dT00:00:00Z')
+        end_time = (now + dt.timedelta(hours=24)).strftime('%Y-%m-%dT00:00:00Z')
+        bbox = "24.5,60,25.5,60.5"
 
+        model_data = download_stored_query("fmi::forecast::harmonie::surface::grid",
+                                           args=["starttime=" + start_time,
+                                                 "endtime=" + end_time,
+                                                 "bbox=" + bbox])
 
-    # Set start_time to 6 AM of the current day
-    start_time = now.replace(hour=11, minute=0, second=0, microsecond=0).strftime('%Y-%m-%dT%H:%M:%SZ')
+        latest_run = max(model_data.data.keys())
+        self.data = model_data.data[latest_run]
+        self.data.parse(delete=True)
 
-    # Set end_time to 6 AM of the next day
-    end_time = (now + dt.timedelta(days=1)).replace(hour=11, minute=0, second=0, microsecond=0).strftime('%Y-%m-%dT%H:%M:%SZ')
+        self.valid_times = self.data.data.keys()
+        earliest_step = min(self.valid_times)
+        self.data_levels = self.data.data[earliest_step].keys()
 
+    def get_data(self, valid_time, lat, lon):
+        # Find the closest valid time to the specified time
+        closest_valid_time = min(self.valid_times, key=lambda x: abs(x - valid_time))
+        datasets = self.data.data[closest_valid_time]
 
-    model_data = download_stored_query("fmi::forecast::harmonie::surface::grid",
-                                       args=["starttime=" + start_time,
-                                             "endtime=" + end_time,
-                                             "bbox=24.5,60,25.5,60.5"])
+        # Retrieve the data at the specified location
+        lat_index = self.find_nearest_index(self.data.latitudes, lat)
+        lon_index = self.find_nearest_index(self.data.longitudes, lon)
 
-    latest_run = max(model_data.data.keys())
-    data = model_data.data[latest_run]
-    data.parse(delete=True)
+        data = {}
+        for level in self.data_levels:
+            level_data = {}
+            for dataset_name, dataset in datasets[level].items():
+                unit = dataset["units"]
+                data_array = dataset["data"][lat_index, lon_index]
+                level_data[dataset_name] = {"unit": unit, "data": data_array}
+            data[level] = level_data
 
-    valid_times = data.data.keys()
-    print(list(valid_times))
-    return
+        return data
 
-    valid_times = data.data.keys()
-    earliest_step = min(valid_times)
-    data_levels = data.data[earliest_step].keys()
+    @staticmethod
+    def find_nearest_index(array, value):
+        return int((np.abs(array - value)).argmin())
 
-    lon_index, lat_index = np.unravel_index(np.abs(data.longitudes - longitude).argmin(), data.longitudes.shape)
-    lat_index, lon_index = np.unravel_index(np.abs(data.latitudes - latitude).argmin(), data.latitudes.shape)
+# Create an instance of the ForecastGrid class
+#forecast_grid = ForecastGrid()
 
-    for level in data_levels:
-        datasets = data.data[earliest_step][level]
-        for dset in datasets:
-            unit = datasets[dset]["units"]
-            data_array = datasets[dset]["data"]
+# Update the grid data initially
+#forecast_grid.update_data()
 
-            print("Level:", level)
-            print("Dataset name:", dset)
-            print("Data unit:", unit)
-            print("Data array shape:", data_array.shape)
-            specific_data = data_array[lon_index, lat_index]  # Corrected indexing
-            print("Specific data:", specific_data)
+# Example usage: Fetch data for a specific time and location
+specific_time = dt.datetime.utcnow() + dt.timedelta(hours=12)
+latitude = 60.5
+longitude = 25.0
 
-forecast_grid(1,1)
+data = forecast_grid.get_data(specific_time, latitude, longitude)
+print("Forecast data for time:", specific_time)
+print("Latitude:", latitude)
+print("Longitude:", longitude)
+print("Data:", data)
+
+# Update the grid data hourly
+#while True:
+#    forecast_grid.update_data()
+    # Perform any additional processing or analysis here
+    # Sleep for an hour before fetching the new grid data
+#    time.sleep(3600)
+
 
