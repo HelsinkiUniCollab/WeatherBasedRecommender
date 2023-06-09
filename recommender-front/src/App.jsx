@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
+import Grid from '@mui/material/Grid';
 import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
 import 'leaflet/dist/leaflet.css';
@@ -24,19 +25,19 @@ function App() {
           <meta name="description" content="Weather-Based Recommender" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         </Helmet>
-        <div className="app-container">
-          <div className="header-container">
+        <Grid container>
+          <Grid item xs={12} className="header-container">
             <HeaderComponent
               accessibility={accessibility}
               handleChange={handleOptionChange}
             />
-          </div>
-          <div className="map-container">
+          </Grid>
+          <Grid item xs={12} className="map-container">
             <MapComponent
               accessibility={accessibility}
             />
-          </div>
-        </div>
+          </Grid>
+        </Grid>
       </HelmetProvider>
 
     </ThemeProvider>
