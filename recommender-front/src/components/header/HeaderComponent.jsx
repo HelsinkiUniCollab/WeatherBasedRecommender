@@ -18,7 +18,7 @@ function HeaderComponent({ accessibility, handleChange }) {
       alignItems="center"
     >
       <Grid xs={5} sm={5} md={5} mx={3} my={1}>
-        <Typography variant="h4">Weather-Based Recommender</Typography>
+        <Typography variant="h6">Weather-Based Recommender</Typography>
       </Grid>
       <Grid xs={5} sm={4} md={3} lg={2} mx={3} my={1}>
         <FormControl fullWidth>
