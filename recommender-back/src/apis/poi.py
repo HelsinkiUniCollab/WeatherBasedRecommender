@@ -1,5 +1,7 @@
 import json
 from apis import weather
+from apis import helpers
+
 
 #Todo: give category as a parameter to get more accurate data.
 
@@ -28,6 +30,7 @@ def get_pois_as_json(accessibility = False, category=None):
             item = find_nearest_stations_weather_data(weatherdata, item)
             if accessibility not in item["accessibility_shortcoming_count"]:
                 updated_data.append(item)
+            item = add_score_to_poi(item)
         return json.dumps(updated_data)
     except KeyError as error:
         return {
@@ -77,3 +80,17 @@ def merge_json(paths):
             merged = merged + data
 
     return merged
+
+def add_score_to_poi(item):
+    """
+    Adds a score to the POI data.
+    Args:
+        item (dict): The POI for which the score needs to be added.
+
+    Returns:
+        dict: The modified POI with the score.
+
+    """
+    poi = helpers.PointOfInterest(**item)
+    item['score'] = poi.score
+    return item
