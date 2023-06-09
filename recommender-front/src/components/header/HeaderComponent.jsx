@@ -16,10 +16,10 @@ function HeaderComponent({ accessibility, handleChange }) {
       align="center"
       alignItems="center"
     >
-      <Grid item xs={4} sm={4} md={4} mx={4} my={3}>
+      <Grid item xs={4} sm={4} md={4} lg={4}>
         <Typography variant="h5">Weather-Based Recommender</Typography>
       </Grid>
-      <Grid item xs={4} sm={4} md={4} lg={4} mx={3} my={1}>
+      <Grid item xs={4} sm={4} md={4} lg={4}>
         <FormControl fullWidth>
           <Select displayEmpty value={accessibility} onChange={handleChange}>
             <MenuItem value="">All attractions</MenuItem>
