@@ -1,6 +1,8 @@
 import datetime as dt
+import numpy as np
 from flask import jsonify
 from fmiopendata.wfs import download_stored_query
+
 
 
 def get_full_weather_info():
@@ -57,7 +59,6 @@ def get_current_weather():
             data[station] = weatherdata
     return data
 
-
 def get_forecast():
     """
     Retrieves the weather forecast data.
@@ -71,15 +72,15 @@ def get_forecast():
                 ).strftime('%Y-%m-%dT%H:%M:%SZ')
 
     forecast_data = download_stored_query(
-        'fmi::forecast::harmonie::surface::point::multipointcoverage',
+        'fmi::forecast::harmonie::surface::grid',
         args=[
             f'starttime={start_time}',
             f'endtime={end_time}',
-            'latlon=60.205,24.959',
+            "bbox=24.5,60,25.5,60.5"
         ],
     )
 
-    return _forecast_query_handler(forecast_data.data)
+    return _forecast_query_handler(forecast_data)
 
 
 def _forecast_query_handler(forecast_obj):
@@ -92,24 +93,57 @@ def _forecast_query_handler(forecast_obj):
     Returns:
         dict: A dictionary containing the formatted forecast data.
     """
-    forecast_data = {}
+    print(forecast_obj.data)
+    print(forecast_obj.latitudes)
+    return forecast_obj
 
-    for datetime_obj, weather_info in forecast_obj.items():
-        datetime_obj_utc_plus_3 = datetime_obj + dt.timedelta(hours=3)
-        formatted_datetime = datetime_obj_utc_plus_3.strftime(
-            '%d-%m-%Y %H:%M:%S')
 
-        for _, station in weather_info.items():
-            air_temperature = str(station['Air temperature']['value'])  # C
-            air_pressure = str(station['Air pressure']['value'])  # hPa
-            humidity = str(station['Humidity']['value'])  # %
-            wind_speed = str(station['Wind speed']['value'])  # m/s
+def forecast_grid(latitude, longitude):
 
-            forecast_data.setdefault('forecast', {})[formatted_datetime] = {
-                'air temperature': air_temperature,
-                'air pressure': air_pressure,
-                'humidity': humidity,
-                'wind': wind_speed
-            }
+    latitude = 60.17523
+    longitude = 24.94459
+    now = dt.datetime.utcnow()
 
-    return forecast_data
+
+    # Set start_time to 6 AM of the current day
+    start_time = now.replace(hour=11, minute=0, second=0, microsecond=0).strftime('%Y-%m-%dT%H:%M:%SZ')
+
+    # Set end_time to 6 AM of the next day
+    end_time = (now + dt.timedelta(days=1)).replace(hour=11, minute=0, second=0, microsecond=0).strftime('%Y-%m-%dT%H:%M:%SZ')
+
+
+    model_data = download_stored_query("fmi::forecast::harmonie::surface::grid",
+                                       args=["starttime=" + start_time,
+                                             "endtime=" + end_time,
+                                             "bbox=24.5,60,25.5,60.5"])
+
+    latest_run = max(model_data.data.keys())
+    data = model_data.data[latest_run]
+    data.parse(delete=True)
+
+    valid_times = data.data.keys()
+    print(list(valid_times))
+    return
+
+    valid_times = data.data.keys()
+    earliest_step = min(valid_times)
+    data_levels = data.data[earliest_step].keys()
+
+    lon_index, lat_index = np.unravel_index(np.abs(data.longitudes - longitude).argmin(), data.longitudes.shape)
+    lat_index, lon_index = np.unravel_index(np.abs(data.latitudes - latitude).argmin(), data.latitudes.shape)
+
+    for level in data_levels:
+        datasets = data.data[earliest_step][level]
+        for dset in datasets:
+            unit = datasets[dset]["units"]
+            data_array = datasets[dset]["data"]
+
+            print("Level:", level)
+            print("Dataset name:", dset)
+            print("Data unit:", unit)
+            print("Data array shape:", data_array.shape)
+            specific_data = data_array[lon_index, lat_index]  # Corrected indexing
+            print("Specific data:", specific_data)
+
+forecast_grid(1,1)
+
