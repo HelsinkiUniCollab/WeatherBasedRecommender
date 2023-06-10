@@ -104,6 +104,7 @@ class ForecastGrid:
         self.data = None
         self.valid_times = None
         self.data_levels = None
+        self.coordinates = None
 
     def update_data(self):
         # Limit the time to the next 24 hours
@@ -125,14 +126,16 @@ class ForecastGrid:
         earliest_step = min(self.valid_times)
         self.data_levels = self.data.data[earliest_step].keys()
 
+        self.latitudes = self.data.latitudes
+        self.longitudes = self.data.longitudes
+        self.coordinates = np.dstack((self.latitudes, self.longitudes))
+
     def get_data(self, valid_time, lat, lon):
         # Find the closest valid time to the specified time
         closest_valid_time = min(self.valid_times, key=lambda x: abs(x - valid_time))
         datasets = self.data.data[closest_valid_time]
 
-        # Retrieve the data at the specified location
-        lat_index = self.find_nearest_index(self.data.latitudes, lat)
-        lon_index = self.find_nearest_index(self.data.longitudes, lon)
+        lat_index, lon_index = self.find_nearest_index(lat, lon)
 
         data = {}
         for level in self.data_levels:
@@ -145,32 +148,34 @@ class ForecastGrid:
 
         return data
 
-    @staticmethod
-    def find_nearest_index(array, value):
-        return int((np.abs(array - value)).argmin())
-
-# Create an instance of the ForecastGrid class
-#forecast_grid = ForecastGrid()
-
-# Update the grid data initially
-#forecast_grid.update_data()
-
-# Example usage: Fetch data for a specific time and location
-specific_time = dt.datetime.utcnow() + dt.timedelta(hours=12)
-latitude = 60.5
-longitude = 25.0
-
-data = forecast_grid.get_data(specific_time, latitude, longitude)
-print("Forecast data for time:", specific_time)
-print("Latitude:", latitude)
-print("Longitude:", longitude)
-print("Data:", data)
-
-# Update the grid data hourly
-#while True:
-#    forecast_grid.update_data()
-    # Perform any additional processing or analysis here
-    # Sleep for an hour before fetching the new grid data
-#    time.sleep(3600)
+    def find_nearest_index(self, lat, lon):
+        target = np.array([lat, lon])
+        flattened_indices = np.argmin(np.linalg.norm(self.coordinates - target, axis=-1), axis=None)
+        return np.unravel_index(flattened_indices, self.coordinates.shape[:-1])
 
 
+if __name__ == "__main__":
+
+    # Create an instance of the ForecastGrid class
+    forecast_grid = ForecastGrid()
+
+    # Update the grid data initially
+    forecast_grid.update_data()
+
+    # Example usage: Fetch data for a specific time and location
+    specific_time = dt.datetime.utcnow() + dt.timedelta(hours=12)
+    latitude = 60.5
+    longitude = 25.5
+
+    data = forecast_grid.get_data(specific_time, latitude, longitude)
+    print("Forecast data for time:", specific_time)
+    print("Latitude:", latitude)
+    print("Longitude:", longitude)
+    print("Data:", data)
+
+    # Update the grid data hourly
+    #while True:
+    #    forecast_grid.update_data()
+        # Perform any additional processing or analysis here
+        # Sleep for an hour before fetching the new grid data
+    #    time.sleep(3600)
