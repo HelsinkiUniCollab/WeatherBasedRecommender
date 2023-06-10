@@ -108,7 +108,8 @@ class ForecastGrid:
 
     def update_data(self):
         # Limit the time to the next 24 hours
-        now = dt.datetime.utcnow()
+        now = dt.datetime.utcnow() + dt.timedelta(hours=3)
+        print(f"Query for new grind object at time: {now}")
         start_time = now.strftime('%Y-%m-%dT00:00:00Z')
         end_time = (now + dt.timedelta(hours=24)).strftime('%Y-%m-%dT00:00:00Z')
         bbox = "24.5,60,25.5,60.5"
@@ -134,7 +135,8 @@ class ForecastGrid:
         # Find the closest valid time to the specified time
         closest_valid_time = min(self.valid_times, key=lambda x: abs(x - valid_time))
         datasets = self.data.data[closest_valid_time]
-
+        print(f"times avaible: {self.valid_times}")
+        print(f"This time selected from the avaible ones: {closest_valid_time}")
         lat_index, lon_index = self.find_nearest_index(lat, lon)
 
         data = {}
@@ -145,7 +147,6 @@ class ForecastGrid:
                 data_array = dataset["data"][lat_index, lon_index]
                 level_data[dataset_name] = {"unit": unit, "data": data_array}
             data[level] = level_data
-
         return data
 
     def find_nearest_index(self, lat, lon):
@@ -162,10 +163,12 @@ if __name__ == "__main__":
     # Update the grid data initially
     forecast_grid.update_data()
 
-    # Example usage: Fetch data for a specific time and location
-    specific_time = dt.datetime.utcnow() + dt.timedelta(hours=12)
-    latitude = 60.5
-    longitude = 25.5
+    # Example usage: Fetch data for a specific time and location + 3 for local time
+    # This is set now for 3h from now in fin time
+    specific_time = dt.datetime.utcnow() + dt.timedelta(hours=3) + dt.timedelta(hours=3)
+
+    latitude = 60.44
+    longitude = 25.34
 
     data = forecast_grid.get_data(specific_time, latitude, longitude)
     print("Forecast data for time:", specific_time)
