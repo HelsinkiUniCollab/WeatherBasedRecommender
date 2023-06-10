@@ -29,7 +29,7 @@
 
 |         | Monday 5.6. | Tuesday 6.6. | Wednesday 7.6. | Thursday 8.6. | Friday 9.6. | Saturday 10.6. | Sunday 11.6. | Total |
 | ------- | ----------- | ------------ | -------------- | ------------- | ----------- | -------------- | ------------ | --------- |
-| Juuso   | 4 MVP for scoring pois | -            | -              | 4,5             | -           | -              | -            | -         |
+| Juuso   | 4 MVP for scoring pois | -            | -              | 4,5 poi scoring | 6 forecast data ++ | -              | -            | -         |
 | Isak    | 8           | 2,5            | 0,5              | 0,5             | 3           | -              | -            | 14,5         |
 | Sami S. | 4.5 poi-categories, future apis           | -            | -              | -             | -           | -              | -            | -         |
 | Sami M. | 4.5 research grid + grib format           | 2 weather api work            | 2 weather api work              | -             | 5 sunset data           | -              | -            | -         |
