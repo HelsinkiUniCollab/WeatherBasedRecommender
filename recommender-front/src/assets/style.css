@@ -3,39 +3,48 @@ html, body {
   height: 100%;  
   padding: 0;
   margin: 0;
+  overflow: hidden; /* Hides scrollbars */
 }
 
 #map {
   width: 100vw;
-  height: calc(100vh - 20%);
+  height: calc(100vh - 25%); /* Makes sure leaflet copyright is shown*/
 }
 
 .app-container {
   display: grid;
   grid-template-rows: 20% 80%;
   height: 100vh; 
+  overflow: hidden
 }
 
 .header-container {
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
-  width: 100%;
+  left: 50%;
+  width: 95%;
+  height: 20%;
   z-index: 1;
   background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%);
 }
 
-.tools-item {
-  z-index: 3; /* Makes sure dropdown and timeline are visible */
+.dropdown-item {
+  z-index: 3; /* Makes sure dropdownis visible */
+}
+
+.slider-item {
+  z-index: 4; /* Makes sure slider is visible */
 }
 
 .map-container {
   width: 100%;
   position: fixed;
   top: 20%;
-  left: 0;
-  right: 0;
   bottom: 0;
   z-index: 2; /* Makes sure zoom control is visible */
 }
