@@ -107,17 +107,23 @@ class ForecastGrid:
         self.coordinates = None
 
     def update_data(self):
-        # Limit the time to the next 24 hours
-        now = dt.datetime.utcnow() + dt.timedelta(hours=3)
-        print(f"Query for new grind object at time: {now}")
-        start_time = now.strftime('%Y-%m-%dT00:00:00Z')
-        end_time = (now + dt.timedelta(hours=24)).strftime('%Y-%m-%dT00:00:00Z')
+        # Query format needs to be in UTC, which is three hours behind of Finnish time.
+        # The starting point for the datetime objects is the next hour from the current time, rounded up.
+        # For example, if the current time in Finland is 9:10, you would round up to 10:00, substract 3 hours and get first datetime object at 7:00 UTC.
+        current_time = dt.datetime.now(dt.timezone.utc)
+        start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
+        end_time = (current_time + dt.timedelta(days=1, hours=1)
+                   ).strftime('%Y-%m-%dT%H:%M:%SZ')
         bbox = "24.5,60,25.5,60.5"
+        timestep = 60 # minutes
+
+        print(f"Query for new grind object at time: {current_time} UTC")
 
         model_data = download_stored_query("fmi::forecast::harmonie::surface::grid",
-                                           args=["starttime=" + start_time,
-                                                 "endtime=" + end_time,
-                                                 "bbox=" + bbox])
+                                           args=[f"starttime={start_time}",
+                                                 f"endtime={end_time}",
+                                                 f"bbox={bbox}",
+                                                 f"timestep={timestep}"])
 
         latest_run = max(model_data.data.keys())
         self.data = model_data.data[latest_run]
@@ -127,16 +133,17 @@ class ForecastGrid:
         earliest_step = min(self.valid_times)
         self.data_levels = self.data.data[earliest_step].keys()
 
-        self.latitudes = self.data.latitudes
-        self.longitudes = self.data.longitudes
-        self.coordinates = np.dstack((self.latitudes, self.longitudes))
+        self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
 
     def get_data(self, valid_time, lat, lon):
         # Find the closest valid time to the specified time
         closest_valid_time = min(self.valid_times, key=lambda x: abs(x - valid_time))
         datasets = self.data.data[closest_valid_time]
-        print(f"times avaible: {self.valid_times}")
-        print(f"This time selected from the avaible ones: {closest_valid_time}")
+
+        print(f"Times available: {self.valid_times}")
+        print(f"This time selected from the available ones: {closest_valid_time} UTC")
+        print("Forecast data for time:", closest_valid_time, "UTC")
+
         lat_index, lon_index = self.find_nearest_index(lat, lon)
 
         data = {}
@@ -147,6 +154,7 @@ class ForecastGrid:
                 data_array = dataset["data"][lat_index, lon_index]
                 level_data[dataset_name] = {"unit": unit, "data": data_array}
             data[level] = level_data
+
         return data
 
     def find_nearest_index(self, lat, lon):
@@ -165,13 +173,12 @@ if __name__ == "__main__":
 
     # Example usage: Fetch data for a specific time and location + 3 for local time
     # This is set now for 3h from now in fin time
-    specific_time = dt.datetime.utcnow() + dt.timedelta(hours=3) + dt.timedelta(hours=3)
+    specific_time = dt.datetime.utcnow()
 
     latitude = 60.44
     longitude = 25.34
 
     data = forecast_grid.get_data(specific_time, latitude, longitude)
-    print("Forecast data for time:", specific_time)
     print("Latitude:", latitude)
     print("Longitude:", longitude)
     print("Data:", data)
