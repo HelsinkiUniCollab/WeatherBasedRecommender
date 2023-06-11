@@ -1,7 +1,8 @@
-from app import app
+from app import app, cache
 from apis import weather
 from apis import poi
 from flask import jsonify
+from flask_caching import Cache
 
 
 @app.route('/', methods=['GET'])
@@ -30,6 +31,13 @@ def get_weather():
 
     '''
     return weather.get_full_weather_info()
+
+@app.route('/api/forecast', methods=['GET'])
+@cache.cached(timeout=3600)
+def get_forecast():
+    forecastgrid = weather.ForecastGrid()
+    forecastgrid.update_data()
+    return jsonify(forecastgrid.get_data())
 
 @app.route('/api/poi/', methods=['GET'])
 def get_poi_data():

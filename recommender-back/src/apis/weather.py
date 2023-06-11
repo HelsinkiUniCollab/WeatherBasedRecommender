@@ -1,6 +1,5 @@
 import datetime as dt
 import numpy as np
-import time
 from flask import jsonify
 from fmiopendata.wfs import download_stored_query
 
@@ -135,26 +134,29 @@ class ForecastGrid:
 
         self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
 
-    def get_data(self, valid_time, lat, lon):
-        # Find the closest valid time to the specified time
-        closest_valid_time = min(self.valid_times, key=lambda x: abs(x - valid_time))
-        datasets = self.data.data[closest_valid_time]
-
-        print(f"Times available: {self.valid_times}")
-        print(f"This time selected from the available ones: {closest_valid_time} UTC")
-        print("Forecast data for time:", closest_valid_time, "UTC")
-
-        lat_index, lon_index = self.find_nearest_index(lat, lon)
-
+    def get_data(self):
         data = {}
-        for level in self.data_levels:
+        for date_time in self.valid_times:
+            time_str = date_time.strftime('%Y-%m-%d %H:%M:%S')
+
             level_data = {}
-            for dataset_name, dataset in datasets[level].items():
-                unit = dataset["units"]
-                data_array = dataset["data"][lat_index, lon_index]
-                latitude, longitude = self.coordinates[lat_index][lon_index]
-                level_data[dataset_name] = {"Unit": unit, "Data": data_array, "latitude": latitude, "longitude": longitude}
-            data["Forecast"] = level_data
+            for level in self.data_levels:
+                datasets = self.data.data[date_time][level]
+                for dataset_name, dataset in datasets.items():
+                    unit = dataset['units']
+                    data_array = dataset['data']
+
+                    coordinates_data = {}
+                    for (lat_index, lon_index), data_value in np.ndenumerate(data_array):
+                        latitude = self.coordinates[lat_index, lon_index, 0]
+                        longitude = self.coordinates[lat_index, lon_index, 1]
+                        key = str((latitude, longitude))
+
+                        coordinates_data[key] = {'Unit': unit, 'Data': data_value}
+
+                    level_data[dataset_name] = coordinates_data
+
+            data[time_str] = level_data
 
         return data
 
@@ -164,24 +166,24 @@ class ForecastGrid:
         return np.unravel_index(flattened_indices, self.coordinates.shape[:-1])
 
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
 
     # Create an instance of the ForecastGrid class
-    forecast_grid = ForecastGrid()
+#    forecast_grid = ForecastGrid()
 
     # Update the grid data initially
-    forecast_grid.update_data()
+#    forecast_grid.update_data()
 
     # Example usage: Fetch data for a specific time in UTC
-    specific_time = dt.datetime.utcnow()
+#    specific_time = dt.datetime.utcnow()
 
-    latitude = 60.44
-    longitude = 25.34
+#    latitude = 60.44
+#    longitude = 25.34
 
-    data = forecast_grid.get_data(specific_time, latitude, longitude)
-    print("Latitude:", latitude)
-    print("Longitude:", longitude)
-    print("Data:", data)
+#    data = forecast_grid.get_data()
+#    print("Latitude:", latitude)
+#    print("Longitude:", longitude)
+#    print("Data:", data)
 
     # Update the grid data hourly
     #while True:
