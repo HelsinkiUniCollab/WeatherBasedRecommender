@@ -152,8 +152,9 @@ class ForecastGrid:
             for dataset_name, dataset in datasets[level].items():
                 unit = dataset["units"]
                 data_array = dataset["data"][lat_index, lon_index]
-                level_data[dataset_name] = {"unit": unit, "data": data_array}
-            data[level] = level_data
+                latitude, longitude = self.coordinates[lat_index][lon_index]
+                level_data[dataset_name] = {"unit": unit, "data": data_array, "latitude": latitude, "longitude": longitude}
+            data["Forecast"] = level_data
 
         return data
 
