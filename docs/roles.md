@@ -1,61 +1,58 @@
 # Roles
 
-In the team we have 4 rotating roles:
-- chairman for the customer meeting
-- demo coordinator for the customer meeting
-- secretary for the customer meeting
-- scrum master 
+The team has four rotating roles
+- *chairman* for the customer meeting
+- *demo coordinator* for the customer meeting
+- *secretary* for the customer meeting
+- *scrum master* for the sprint
 
-# Responsibilities
+# Responsibilities for each roles
 
-## Chairman  - approx 1-2 hour extra work
+## Chairman  - approx 1-2 hours of extra work
 
-- Sending the *agenda to the client* at least one day prior to the meeting.
-- Facilitating the discussion during the meeting according to the agenda and involving other team members in the conversation.
-- Ensuring that the *next client meeting is scheduled*, booking the venue, and sending out the invitations. Making sure that the room is available for demo rehersing before the meeting starts.
-- *Booking venues* also for the retrospective (retro) and sprint planning sessions, which are typically held after the customer service meeting.
+- Send *the agenda to the client* at least one day prior to the meeting.
+- *Facilitate the discussion* during the meeting according to the agenda. Remember to involve other team members in the conversation.
+- Ensure that *the next client meeting is scheduled*, book the meeting room, and sending out the invitations. Make sure that the room booked is available for demo rehersing before the meeting starts.
+- *Book room* also for the retrospective and sprint planning session, which are typically held after the customer meeting.
+- Remember to *send all the invitations for course instructor as well*.
 
-Remember to send the invitations for course instructor as well.
+## Demo coordinator  - approx 1-2 hours of extra work
 
-## Demo coordinator  - approx 1-2 hour extra work
+- *Plan the demo* and ensure that it effectively showcases what the team has accomplished during the sprint. 
+- *Rehearse the demo* beforehand to ensure a smooth and polished presentation. 
+- Arrive early and *ensure that everything works in the meeting room*.
 
-- Planning the demo and ensuring that it effectively showcases what the team has accomplished during the sprint. 
+## Secretary for the customer meeting  - approx 1-2 hours extra work
 
-- Rehearsing the demo beforehand to ensure a smooth and polished presentation. 
+- *Make notes* on the discussions and decisions taken during the meeting. Pay particular attention to *matters related to requirements*.
+- *Post the memo* to asiakastapaamiset channel on Discord. 
 
-- Arriving early and ensuring that everything works in the meeting room.
-
-## Secretary for the customer meeting  - approx 1-2 hour extra work
-
-- Taking thorough meeting minutes: r the discussions, decisions, and actions taken during the meeting. Pay particular attention to matters related to requirements.
-
-- Posting the meeting minutes on the customer meetings channel on Discord to asiakastapaamiset channel. 
-
-
-## Scrum master  - approx 5 - 10 hour extra work
+## Scrum master  - approx 5 - 10 hours of extra work
 
 ### In sprint planning
 
-- Supporting team in recognize what work needs to be done in next sprint based on customer meeting- setting up the sprint backlog and epics and stories - see [epic template](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/4?pane=issue&itemId=29332437) & https://miro.com/app/board/uXjVMHY7v4k=/
-- Making sure that the face-to-face working days are set for the next sprint.
+- Support team to recognize what work needs to be done in next sprint based on customer meeting. You can utilize the Miro board in the planning and document the planning there: https://miro.com/app/board/uXjVMHY7v4k=/
+- Make sure that the team has decided the face-to-face working days for the sprint.
 
-### After sprint planning
+### After sprint planning 
 
-- Closing the milestone for previous sprint and creating a new milestone for starting sprint https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/milestones
-- Creating a view in backlog for the new sprint https://github.com/orgs/HelsinkiUniCollab/projects/1 
-- Moving all the stories from the previous sprint to Accepted by customer state or back to backlog if customer did not accept.
-- Making sure that the epics and stories in the backlog are detailed enough and tagged for the new sprint with proper milestone tag.
-- Making sure that the backlog is [DEEP](https://www.romanpichler.com/blog/make-the-product-backlog-deep/)
+- Close the milestone for previous sprint and create a new milestone https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/milestones
+- Create a view for the new sprint https://github.com/orgs/HelsinkiUniCollab/projects/1 
+- Move all the stories from the previous sprint to Accepted by customer state or back to backlog if customer did not accept.
+- Set up the sprint backlog with epics and stories needed - see [epic template](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/4?pane=issue&itemId=29332437)
+- Make sure that the epics and stories in the backlog are detailed enough and tagged for the new sprint with proper milestone tag
+- Make sure that the backlog is [DEEP](https://www.romanpichler.com/blog/make-the-product-backlog-deep/)
+- Add a story for preparing next sprint and for Pouta maintance check (we need to do manual security updates) , see i.e. https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/issues/79
 
 ### During sprint
 
-- Making sure that work is proceeding and sprint backlog is up-to-date
-- Making sure that dailys are kept as planned
+- Make sure that things are proceeding as planned and sprint backlog is always up-to-date. Help the team to remember all the needed things.
+- Make sure that dailys are kept as planned.
 
 ### At the end of the sprint
 
-- Creating the burndown graph and adding it to the documentation
-- Preparing and documenting retrospective https://miro.com/app/board/uXjVMHY7v4k=/
+- Create the burndown graph and add it to the documentation
+- Prepare and document the retrospective https://miro.com/app/board/uXjVMHY7v4k=/
 
 
 # Role rotation
@@ -73,10 +70,10 @@ Remember to send the invitations for course instructor as well.
 - scrum master: Pia
 
 ## Sprint 2
-- chairman: 
-- demo coordinator: 
-- secretary: 
-- scrum master: 
+- chairman: Isak
+- demo coordinator: Juuso
+- secretary: Sami M
+- scrum master: Sami S
 
 ## Sprint 3
 
