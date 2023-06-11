@@ -17,10 +17,6 @@ html, body {
   }
   
   .header-container {
-    h1 { 
-        font-size: 28px;
-        color: #333;
-    };
     position: fixed;
     top: 0;
     width: 100%;
@@ -31,6 +27,7 @@ html, body {
   .map-container {
     width: 100%;
     position: fixed;
+    z-index: 9999;
     top: 20%;
     bottom: 0;
   }
