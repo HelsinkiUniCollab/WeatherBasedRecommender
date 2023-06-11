@@ -11,13 +11,7 @@ import './assets/style.css';
 function App() {
   const [accessibility, setAccessibility] = useState('');
   let theme = createTheme({});
-  theme = responsiveFontSizes(theme, {
-    typography: {
-      h1: {
-        fontSize: theme.typography.h5.fontSize,
-      },
-    },
-  });
+  theme = responsiveFontSizes(theme);
 
   const handleOptionChange = (event) => {
     setAccessibility(event.target.value);

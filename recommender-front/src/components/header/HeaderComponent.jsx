@@ -17,9 +17,9 @@ function HeaderComponent({ accessibility, handleChange }) {
       alignItems="center"
     >
       <Grid item xs={4} sm={4} md={4} lg={4}>
-        <Typography variant="h5">Weather-Based Recommender</Typography>
+        <Typography fontWeight="bold">Weather-Based Recommender</Typography>
       </Grid>
-      <Grid item xs={4} sm={4} md={4} lg={4}>
+      <Grid item xs={4} sm={4} md={4} lg={4} className="tools-item">
         <FormControl fullWidth>
           <Select displayEmpty value={accessibility} onChange={handleChange}>
             <MenuItem value="">All attractions</MenuItem>
@@ -31,7 +31,7 @@ function HeaderComponent({ accessibility, handleChange }) {
           </Select>
         </FormControl>
       </Grid>
-      <Grid item xs={12} sm={11} md={10} lg={9} mx={5}>
+      <Grid item xs={12} sm={11} md={10} lg={9} mx={5} className="tools-item">
         <Typography gutterBottom>Time</Typography>
         <Slider
           defaultValue={0}
