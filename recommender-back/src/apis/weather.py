@@ -119,14 +119,14 @@ class ForecastGrid:
 
         print(f"Query for new grind object at time: {current_time} UTC")
 
-        model_data = download_stored_query("fmi::forecast::harmonie::surface::grid",
+        forecast_data = download_stored_query("fmi::forecast::harmonie::surface::grid",
                                            args=[f"starttime={start_time}",
                                                  f"endtime={end_time}",
                                                  f"bbox={bbox}",
                                                  f"timestep={timestep}"])
 
-        latest_run = max(model_data.data.keys())
-        self.data = model_data.data[latest_run]
+        latest_forecast = max(forecast_data.data.keys())
+        self.data = forecast_data.data[latest_forecast]
         self.data.parse(delete=True)
 
         self.valid_times = self.data.data.keys()
@@ -158,8 +158,8 @@ class ForecastGrid:
         return data
 
     def find_nearest_index(self, lat, lon):
-        target = np.array([lat, lon])
-        flattened_indices = np.argmin(np.linalg.norm(self.coordinates - target, axis=-1), axis=None)
+        target_coordinates = np.array([lat, lon])
+        flattened_indices = np.argmin(np.linalg.norm(self.coordinates - target_coordinates, axis=-1), axis=None)
         return np.unravel_index(flattened_indices, self.coordinates.shape[:-1])
 
 
