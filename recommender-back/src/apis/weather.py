@@ -171,8 +171,7 @@ if __name__ == "__main__":
     # Update the grid data initially
     forecast_grid.update_data()
 
-    # Example usage: Fetch data for a specific time and location + 3 for local time
-    # This is set now for 3h from now in fin time
+    # Example usage: Fetch data for a specific time in UTC
     specific_time = dt.datetime.utcnow()
 
     latitude = 60.44
