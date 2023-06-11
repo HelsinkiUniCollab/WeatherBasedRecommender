@@ -11,28 +11,39 @@ function HeaderComponent({ accessibility, handleChange }) {
     <Grid
       container
       spacing={1}
-      my={1}
       justifyContent="center"
-      align="center"
       alignItems="center"
+      my={1}
     >
-      <Grid item xs={4} sm={4} md={4} lg={4}>
-        <Typography variant="h5">Weather-Based Recommender</Typography>
+      <Grid item xs={5} sm={5} md={3} lg={3}>
+        <Typography variant="h1">Weather-Based Recommender</Typography>
       </Grid>
-      <Grid item xs={4} sm={4} md={4} lg={4}>
-        <FormControl fullWidth>
+      <Grid item xs={7} sm={7} md={3} lg={3} className="dropdown-item">
+        <FormControl>
           <Select displayEmpty value={accessibility} onChange={handleChange}>
-            <MenuItem value="">All attractions</MenuItem>
-            <MenuItem value="rollator">Rollator-accessible</MenuItem>
-            <MenuItem value="stroller">Stroller-accessible</MenuItem>
-            <MenuItem value="wheelchair">Wheelchair-accessible</MenuItem>
-            <MenuItem value="reduced_mobility">Reduced mobility-friendly</MenuItem>
-            <MenuItem value="visually_impaired">Visually impaired-friendly</MenuItem>
+            <MenuItem value="">
+              <Typography variant="h2">All attractions</Typography>
+            </MenuItem>
+            <MenuItem value="rollator">
+              <Typography variant="h2">Rollator accessible</Typography>
+            </MenuItem>
+            <MenuItem value="stroller">
+              <Typography variant="h2">Stroller accessible</Typography>
+            </MenuItem>
+            <MenuItem value="wheelchair">
+              <Typography variant="h2">Wheelchair accessible</Typography>
+            </MenuItem>
+            <MenuItem value="reduced_mobility">
+              <Typography variant="h2">Reduced mobility supported</Typography>
+            </MenuItem>
+            <MenuItem value="visually_impaired">
+              <Typography variant="h2">Visually impaired supported</Typography>
+            </MenuItem>
           </Select>
         </FormControl>
       </Grid>
-      <Grid item xs={12} sm={11} md={10} lg={9} mx={5}>
-        <Typography gutterBottom>Time</Typography>
+      <Grid item xs={12} sm={12} md={6} lg={6} className="slider-item">
+        <Typography variant="h2">Time</Typography>
         <Slider
           defaultValue={0}
           step={1}

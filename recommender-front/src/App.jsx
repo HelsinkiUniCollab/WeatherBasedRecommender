@@ -10,14 +10,43 @@ import './assets/style.css';
 
 function App() {
   const [accessibility, setAccessibility] = useState('');
-  let theme = createTheme({});
-  theme = responsiveFontSizes(theme, {
+  let theme = createTheme({
     typography: {
+      // Defines sizes for h1 and h2 in different viewports
       h1: {
-        fontSize: theme.typography.h5.fontSize,
+        fontSize: '16px',
+        '@media (min-width:600px)': {
+          fontSize: '16px',
+        },
+        '@media (min-width:960px)': {
+          fontSize: '24px',
+        },
+        '@media (min-width:1280px)': {
+          fontSize: '32px',
+        },
+        '@media (min-width:1920px)': {
+          fontSize: '40px',
+        },
+      },
+      h2: {
+        fontSize: '12px',
+        '@media (min-width:600px)': {
+          fontSize: '14px',
+        },
+        '@media (min-width:960px)': {
+          fontSize: '16px',
+        },
+        '@media (min-width:1280px)': {
+          fontSize: '18px',
+        },
+        '@media (min-width:1920px)': {
+          fontSize: '22px',
+        },
       },
     },
   });
+
+  theme = responsiveFontSizes(theme);
 
   const handleOptionChange = (event) => {
     setAccessibility(event.target.value);
