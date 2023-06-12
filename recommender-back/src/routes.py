@@ -37,7 +37,9 @@ def get_weather():
 def get_forecast():
     forecastgrid = weather.ForecastGrid()
     forecastgrid.update_data()
-    return jsonify(forecastgrid.get_data())
+    poidata = poi.get_closest_poi_coordinates_data(forecastgrid.get_coordinates(), forecastgrid.get_data())
+    print(poidata)
+    return jsonify(poidata)
 
 @app.route('/api/poi/', methods=['GET'])
 def get_poi_data():
