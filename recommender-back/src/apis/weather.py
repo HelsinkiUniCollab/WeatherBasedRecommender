@@ -109,7 +109,7 @@ class ForecastGrid:
         # Query format needs to be in UTC, which is three hours behind of Finnish time.
         # The starting point for the datetime objects is the next hour from the current time, rounded up.
         # For example, if the current time in Finland is 9:10, you would round up to 10:00, substract 3 hours and get first datetime object at 7:00 UTC.
-        current_time = dt.datetime.now(dt.timezone.utc)
+        current_time = dt.datetime.now(dt.timezone.utc) + dt.timedelta(hours=3)
         start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
         end_time = (current_time + dt.timedelta(days=1, hours=1)
                    ).strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -133,6 +133,7 @@ class ForecastGrid:
         self.data_levels = self.data.data[earliest_step].keys()
 
         self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
+
 
     def get_data(self):
         data = {}
