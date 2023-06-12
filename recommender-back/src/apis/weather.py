@@ -140,26 +140,27 @@ class ForecastGrid:
         for date_time in self.valid_times:
             time_str = date_time.strftime('%Y-%m-%d %H:%M:%S')
 
-            level_data = {}
+            coordinates_data = {}
             for level in self.data_levels:
                 datasets = self.data.data[date_time][level]
                 for dataset_name, dataset in datasets.items():
                     unit = dataset['units']
                     data_array = dataset['data']
 
-                    coordinates_data = {}
                     for (lat_index, lon_index), data_value in np.ndenumerate(data_array):
                         latitude = self.coordinates[lat_index, lon_index, 0]
                         longitude = self.coordinates[lat_index, lon_index, 1]
                         key = str((latitude, longitude))
 
-                        coordinates_data[key] = {'Unit': unit, 'Data': data_value}
+                        if key not in coordinates_data:
+                            coordinates_data[key] = []
 
-                    level_data[dataset_name] = coordinates_data
+                        coordinates_data[key].append({'Dataset': dataset_name, 'Unit': unit, 'Data': data_value})
 
-            data[time_str] = level_data
+            data[time_str] = coordinates_data
 
         return data
+
 
     def find_nearest_index(self, lat, lon):
         target_coordinates = np.array([lat, lon])
