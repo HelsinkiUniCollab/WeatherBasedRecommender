@@ -3,35 +3,6 @@ import numpy as np
 from flask import jsonify
 from fmiopendata.wfs import download_stored_query
 
-
-
-def get_full_weather_info():
-    """
-    Retrieves full weather information.
-
-    Returns:
-        A JSON response containing the current weather information and forecast.
-
-    Raises:
-        Exception: If an error occurs during the retrieval process.
-    """
-    try:
-        current = get_current_weather()
-        forecast = get_forecast()
-
-        data = {**current, **forecast}
-
-        return jsonify(data)
-
-    except KeyError as error:
-        error_data = {
-            'message': 'An error occurred',
-            'status': 500,
-            'error': str(error)
-        }
-        return jsonify(error_data), 500
-
-
 def get_current_weather():
     """
     Retrieves the current weather data for various stations.
@@ -59,45 +30,10 @@ def get_current_weather():
             data[station] = weatherdata
     return data
 
-def get_forecast():
-    """
-    Retrieves the weather forecast data.
-
-    Returns:
-        dict: A dictionary containing the weather forecast for different time periods.
-    """
-    current_time = dt.datetime.now(dt.timezone.utc)
-    start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
-    end_time = (current_time + dt.timedelta(days=1, hours=1)
-                ).strftime('%Y-%m-%dT%H:%M:%SZ')
-
-    forecast_data = download_stored_query(
-        'fmi::forecast::harmonie::surface::grid',
-        args=[
-            f'starttime={start_time}',
-            f'endtime={end_time}',
-            "bbox=24.5,60,25.5,60.5"
-        ],
-    )
-
-    return _forecast_query_handler(forecast_data)
-
-
-def _forecast_query_handler(forecast_obj):
-    """
-    Handles the forecast data retrieved from the weather API.
-
-    Args:
-        forecast_obj (dict): The forecast data object.
-
-    Returns:
-        dict: A dictionary containing the formatted forecast data.
-    """
-    print(forecast_obj.data)
-    print(forecast_obj.latitudes)
-    return forecast_obj
-
 def parse_forecast(forecast):
+    """
+    Parses the wanted data from grid 
+    """
     for value in forecast:
         if value["Dataset"] == "2 metre temperature":
             temperature = value["Data"] - 273.15
@@ -153,6 +89,10 @@ class ForecastGrid:
 
 
     def get_data(self):
+        """Gets all the data from grid
+        Returns:
+            dict containing all the data
+        """
         data = {}
         for date_time in self.valid_times:
             time_str = date_time.strftime('%Y-%m-%d %H:%M:%S')
@@ -172,15 +112,8 @@ class ForecastGrid:
             data[time_str] = coordinates_data
         return data
 
-
-    def find_nearest_index(self, lat, lon):
-        target_coordinates = np.array([lat, lon])
-        flattened_indices = np.argmin(np.linalg.norm(self.coordinates - target_coordinates, axis=-1), axis=None)
-        return np.unravel_index(flattened_indices, self.coordinates.shape[:-1])
-
     def get_coordinates(self):
         """All avaible coords in bbox area
-
         Returns:
             List of list where each sublist is coord pair
         """

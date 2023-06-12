@@ -13,30 +13,32 @@ class PointOfInterest:
         self.weather = kwargs.get('weather')
         self.score = self.calculate_score()
 
-
     def calculate_score(self):
-        temperature_str = self.weather.get('Air temperature')
-        humidity_str = self.weather.get('Humidity')
+        for time, data in self.weather.items():
+            temperature_str = data.get('Air temperature')
+            humidity_str = data.get('Humidity')
 
-        try:
-            temperature = float(temperature_str.split()[0])
-            humidity = float(humidity_str.split('%')[0])
-        except (AttributeError, ValueError):
-            return -float('inf')
+            try:
+                temperature = float(temperature_str.split('°C')[0])
+                humidity = float(humidity_str.split('%')[0])
+            except (TypeError, ValueError):
+                data['score'] = -float('inf')
+                continue
 
-        suitable_temperature_range = (25, 35)
-        suitable_humidity_range = (40, 60)
+            suitable_temperature_range = (15, 30)
+            suitable_humidity_range = (40, 60)
 
-        if suitable_temperature_range[0] <= temperature <= suitable_temperature_range[1]:
-            temperature_score = 1.0
-        else:
-            temperature_score = 0.0
+            if suitable_temperature_range[0] <= temperature <= suitable_temperature_range[1]:
+                temperature_score = 1.0
+            else:
+                temperature_score = 0.0
 
-        if suitable_humidity_range[0] <= humidity <= suitable_humidity_range[1]:
-            humidity_score = 1.0
-        else:
-            humidity_score = 0.0
+            if suitable_humidity_range[0] <= humidity <= suitable_humidity_range[1]:
+                humidity_score = 1.0
+            else:
+                humidity_score = 0.0
 
-        score = (temperature_score + humidity_score) / 2
-        return score
+            score = (temperature_score + humidity_score) / 2
+            data['score'] = score
 
+        return self.weather

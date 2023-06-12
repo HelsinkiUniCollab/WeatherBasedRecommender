@@ -15,6 +15,7 @@ def get_pois(category=None):
         f"src/apis/poi_data/sports_and_physical/outdoor_sports/neighborhood_sports/{category[1]}.json"
         ]
     return merge_json(paths)
+
 def get_pois_as_json(accessibility = False, time=None):
     """
     Retrieves points of interest (POIs) from a JSON file and enriches them with current weather data.
@@ -41,6 +42,7 @@ def get_pois_as_json(accessibility = False, time=None):
             print("success")
             if accessibility not in item["accessibility_shortcoming_count"]:
                 updated_data.append(item)
+            item = add_score_to_poi(item)
         return json.dumps(updated_data)
     except KeyError as error:
         return {
@@ -128,5 +130,4 @@ def add_score_to_poi(item):
 
     """
     poi = helpers.PointOfInterest(**item)
-    item['score'] = poi.score
-    return item
+    return poi
