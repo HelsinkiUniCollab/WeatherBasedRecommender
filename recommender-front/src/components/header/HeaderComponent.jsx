@@ -7,7 +7,17 @@ import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-function HeaderComponent({ accessibility, handleChange }) {
+function HeaderComponent({
+  accessibility, handleChange, times, sliderValue, onChange,
+}) {
+  const hours = [];
+  if (times) {
+    for (let i = 0; i <= times.length; i += 1) {
+      const value = i;
+      const label = times[i]; // Replace with your desired value calculation
+      hours.push({ label, value });
+    }
+  }
   return (
     <Grid
       container
@@ -17,10 +27,10 @@ function HeaderComponent({ accessibility, handleChange }) {
       align="center"
       alignItems="center"
     >
-      <Grid xs={5} sm={5} md={5} mx={3} my={1}>
+      <Grid xs={5} sm={5} md={5} mx={3} my={1} item>
         <Typography variant="h4">Weather-Based Recommender</Typography>
       </Grid>
-      <Grid xs={5} sm={4} md={3} lg={2} mx={3} my={1}>
+      <Grid xs={5} sm={4} md={3} lg={2} mx={3} my={1} item>
         <FormControl fullWidth>
           <InputLabel>Mobility issues</InputLabel>
           <Select value={accessibility} onChange={handleChange}>
@@ -33,15 +43,14 @@ function HeaderComponent({ accessibility, handleChange }) {
           </Select>
         </FormControl>
       </Grid>
-      <Grid xs={12} sm={11} md={10} lg={9} mx={5}>
+      <Grid xs={12} sm={11} md={10} lg={9} mx={5} item>
         <Typography gutterBottom>Time</Typography>
         <Slider
-          defaultValue={0}
-          step={1}
-          valueLabelDisplay="auto"
-          marks
+          value={sliderValue}
+          onChange={onChange}
           min={0}
           max={24}
+          marks={hours}
         />
       </Grid>
     </Grid>
