@@ -97,6 +97,23 @@ def _forecast_query_handler(forecast_obj):
     print(forecast_obj.latitudes)
     return forecast_obj
 
+def parse_forecast(forecast):
+    for value in forecast:
+        if value["Dataset"] == "2 metre temperature":
+            temperature = value["Data"] - 273.15
+        if value["Dataset"] == "2 metre relative humidity":
+            humidity = value["Data"]
+        if value["Dataset"] == "Mean sea level pressure":
+            pressure = value["Data"]
+        if value["Dataset"] == "10 metre wind speed":
+            windspeed = value["Data"]
+    return {
+        'Air temperature': f"{str(temperature)} °C",
+        'Wind': f"{str(windspeed)} m/s",
+        'Air pressure': f"{str(pressure)} mbar",
+        'Humidity': f"{str(humidity)} %",
+    }
+
 
 class ForecastGrid:
     def __init__(self):
@@ -139,26 +156,20 @@ class ForecastGrid:
         data = {}
         for date_time in self.valid_times:
             time_str = date_time.strftime('%Y-%m-%d %H:%M:%S')
-
             coordinates_data = {}
             for level in self.data_levels:
                 datasets = self.data.data[date_time][level]
                 for dataset_name, dataset in datasets.items():
                     unit = dataset['units']
                     data_array = dataset['data']
-
                     for (lat_index, lon_index), data_value in np.ndenumerate(data_array):
                         latitude = self.coordinates[lat_index, lon_index, 0]
                         longitude = self.coordinates[lat_index, lon_index, 1]
                         key = str((latitude, longitude))
-
                         if key not in coordinates_data:
                             coordinates_data[key] = []
-
                         coordinates_data[key].append({'Dataset': dataset_name, 'Unit': unit, 'Data': data_value})
-
             data[time_str] = coordinates_data
-
         return data
 
 
@@ -167,29 +178,18 @@ class ForecastGrid:
         flattened_indices = np.argmin(np.linalg.norm(self.coordinates - target_coordinates, axis=-1), axis=None)
         return np.unravel_index(flattened_indices, self.coordinates.shape[:-1])
 
+    def get_coordinates(self):
+        """All avaible coords in bbox area
 
-#if __name__ == "__main__":
+        Returns:
+            List of list where each sublist is coord pair
+        """
+        unique_coords = []
 
-    # Create an instance of the ForecastGrid class
-#    forecast_grid = ForecastGrid()
+        flattened_coords = [coord for sublist in self.coordinates for coord in sublist]
 
-    # Update the grid data initially
-#    forecast_grid.update_data()
+        for coord in flattened_coords:
+            if list(coord) not in unique_coords:
+                unique_coords.append(list(coord))
 
-    # Example usage: Fetch data for a specific time in UTC
-#    specific_time = dt.datetime.utcnow()
-
-#    latitude = 60.44
-#    longitude = 25.34
-
-#    data = forecast_grid.get_data()
-#    print("Latitude:", latitude)
-#    print("Longitude:", longitude)
-#    print("Data:", data)
-
-    # Update the grid data hourly
-    #while True:
-    #    forecast_grid.update_data()
-        # Perform any additional processing or analysis here
-        # Sleep for an hour before fetching the new grid data
-    #    time.sleep(3600)
+        return unique_coords
