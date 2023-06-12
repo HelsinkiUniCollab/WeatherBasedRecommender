@@ -1,53 +1,53 @@
 import datetime as dt
 import numpy as np
-from flask import jsonify
 from fmiopendata.wfs import download_stored_query
+import eccodes
 
 def get_current_weather():
-    """
+    '''
     Retrieves the current weather data for various stations.
 
     Returns:
         dict: A dictionary containing the current weather data for each station.
-    """
+    '''
 
     obs = download_stored_query('fmi::observations::weather::multipointcoverage',
-                                args=["bbox=24.5,60,25.5,60.5", "timeseries=True"])
+                                args=['bbox=24.5,60,25.5,60.5', 'timeseries=True'])
     data = {}
     for station in obs.location_metadata.keys():
         weatherdata = {
-            'Air temperature': str(obs.data[station]["t2m"]["values"][-1]) + " °C",
-            'Wind': str(obs.data[station]["ws_10min"]["values"][-1]) + " m/s",
-            'Air pressure': str(obs.data[station]["p_sea"]["values"][-1]) + " mbar",
-            'Humidity': str(obs.data[station]["rh"]["values"][-1]) + " %"
+            'Air temperature': str(obs.data[station]['t2m']['values'][-1]) + ' °C',
+            'Wind': str(obs.data[station]['ws_10min']['values'][-1]) + ' m/s',
+            'Air pressure': str(obs.data[station]['p_sea']['values'][-1]) + ' mbar',
+            'Humidity': str(obs.data[station]['rh']['values'][-1]) + ' %'
         }
         for value in list(weatherdata):
             if 'nan' in str(weatherdata[value]):
                 weatherdata.pop(value)
         if weatherdata:
-            weatherdata["Latitude"] =  obs.location_metadata[station]["latitude"]
-            weatherdata["Longitude"] = obs.location_metadata[station]["longitude"]
+            weatherdata['Latitude'] =  obs.location_metadata[station]['latitude']
+            weatherdata['Longitude'] = obs.location_metadata[station]['longitude']
             data[station] = weatherdata
     return data
 
 def parse_forecast(forecast):
-    """
-    Parses the wanted data from grid 
-    """
+    '''
+    Parses the wanted data from the grid 
+    '''
     for value in forecast:
-        if value["Dataset"] == "2 metre temperature":
-            temperature = value["Data"] - 273.15
-        if value["Dataset"] == "2 metre relative humidity":
-            humidity = value["Data"]
-        if value["Dataset"] == "Mean sea level pressure":
-            pressure = value["Data"]
-        if value["Dataset"] == "10 metre wind speed":
-            windspeed = value["Data"]
+        if value['Dataset'] == '2 metre temperature':
+            temperature = round(value['Data'] - 273.15, 1)
+        elif value['Dataset'] == '2 metre relative humidity':
+            humidity = round(value['Data'], 1)
+        elif value['Dataset'] == 'Mean sea level pressure':
+            pressure = round(value['Data'], 1)
+        elif value['Dataset'] == '10 metre wind speed':
+            windspeed = round(value['Data'], 1)
     return {
-        'Air temperature': f"{str(temperature)} °C",
-        'Wind': f"{str(windspeed)} m/s",
-        'Air pressure': f"{str(pressure)} mbar",
-        'Humidity': f"{str(humidity)} %",
+        'Air temperature': f'{str(temperature)} °C',
+        'Wind': f'{str(windspeed)} m/s',
+        'Air pressure': f'{str(pressure)} mbar',
+        'Humidity': f'{str(humidity)} %'
     }
 
 
@@ -66,16 +66,16 @@ class ForecastGrid:
         start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
         end_time = (current_time + dt.timedelta(days=1, hours=1)
                    ).strftime('%Y-%m-%dT%H:%M:%SZ')
-        bbox = "24.5,60,25.5,60.5"
+        bbox = '24.5,60,25.5,60.5'
         timestep = 60 # minutes
 
-        print(f"Query for new grind object at time: {current_time} UTC")
+        print(f'Query for new grind object at time: {current_time} UTC')
 
-        forecast_data = download_stored_query("fmi::forecast::harmonie::surface::grid",
-                                           args=[f"starttime={start_time}",
-                                                 f"endtime={end_time}",
-                                                 f"bbox={bbox}",
-                                                 f"timestep={timestep}"])
+        forecast_data = download_stored_query('fmi::forecast::harmonie::surface::grid',
+                                           args=[f'starttime={start_time}',
+                                                 f'endtime={end_time}',
+                                                 f'bbox={bbox}',
+                                                 f'timestep={timestep}'])
 
         latest_forecast = max(forecast_data.data.keys())
         self.data = forecast_data.data[latest_forecast]
@@ -89,10 +89,10 @@ class ForecastGrid:
 
 
     def get_data(self):
-        """Gets all the data from grid
+        '''Gets all the data from grid
         Returns:
             dict containing all the data
-        """
+        '''
         data = {}
         for date_time in self.valid_times:
             time_str = date_time.strftime('%Y-%m-%d %H:%M:%S')
@@ -113,10 +113,10 @@ class ForecastGrid:
         return data
 
     def get_coordinates(self):
-        """All avaible coords in bbox area
+        '''All avaible coords in bbox area
         Returns:
             List of list where each sublist is coord pair
-        """
+        '''
         unique_coords = []
 
         flattened_coords = [coord for sublist in self.coordinates for coord in sublist]

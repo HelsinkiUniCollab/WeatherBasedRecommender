@@ -32,14 +32,22 @@ def get_weather():
     '''
     return weather.get_full_weather_info()
 
+
 @app.route('/api/forecast', methods=['GET'])
 @cache.cached(timeout=3600)
 def get_forecast():
+    '''
+    Handler for the '/api/forecast' endpoint.
+
+    Returns:
+        Forecast for the POI's.
+    '''
     forecastgrid = weather.ForecastGrid()
     forecastgrid.update_data()
-    poidata = poi.get_closest_poi_coordinates_data(forecastgrid.get_coordinates(), forecastgrid.get_data())
-    print(poidata)
-    return jsonify(poidata)
+    poi_forecast = poi.get_closest_poi_coordinates_data(
+        forecastgrid.get_coordinates(), forecastgrid.get_data())
+    return jsonify(poi_forecast)
+
 
 @app.route('/api/poi/', methods=['GET'])
 def get_poi_data():
@@ -50,6 +58,7 @@ def get_poi_data():
         Poi data if errors have not occurred.
     '''
     return poi.get_pois_as_json()
+
 
 @app.route('/api/poi/<accessibility>', methods=['GET'])
 def get_poi_acessible_poi_data(accessibility):
