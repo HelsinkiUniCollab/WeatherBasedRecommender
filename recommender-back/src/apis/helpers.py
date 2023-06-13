@@ -1,5 +1,9 @@
+from apis import time_data
+
 class PointOfInterest:
-    def __init__(self, **kwargs):
+    def __init__(self, time, **kwargs):
+        self.sun = time_data.get_sun_data()
+        self.time = time
         self.id = kwargs.get('id')
         self.contract_type = kwargs.get('contract_type')
         self.name = kwargs.get('name')
@@ -14,10 +18,16 @@ class PointOfInterest:
         self.score = self.calculate_score()
 
     def calculate_score(self):
-        for time, data in self.weather.items():
+
+        if self.time is None:
+            self.time = time_data.get_current_time()
+        sunrise = self.sun[0]
+        sunset = self.sun[1]
+        suitable_temperature_range = (20, 30)
+        suitable_humidity_range = (40, 60)
+        for data in self.weather.values():
             temperature_str = data.get('Air temperature')
             humidity_str = data.get('Humidity')
-
             try:
                 temperature = float(temperature_str.split('°C')[0])
                 humidity = float(humidity_str.split('%')[0])
@@ -25,20 +35,21 @@ class PointOfInterest:
                 data['score'] = -float('inf')
                 continue
 
-            suitable_temperature_range = (15, 30)
-            suitable_humidity_range = (40, 60)
+            if self.time >= sunrise and self.time <= sunset:
+                if suitable_temperature_range[0] <= temperature <= suitable_temperature_range[1]:
+                    temperature_score = 1.0
+                else:
+                    temperature_score = 0.0
 
-            if suitable_temperature_range[0] <= temperature <= suitable_temperature_range[1]:
-                temperature_score = 1.0
+                if suitable_humidity_range[0] <= humidity <= suitable_humidity_range[1]:
+                    humidity_score = 1.0
+                else:
+                    humidity_score = 0.0
+
+                score = (temperature_score + humidity_score) / 2
+                data['score'] = score
             else:
-                temperature_score = 0.0
-
-            if suitable_humidity_range[0] <= humidity <= suitable_humidity_range[1]:
-                humidity_score = 1.0
-            else:
-                humidity_score = 0.0
-
-            score = (temperature_score + humidity_score) / 2
-            data['score'] = score
+                data['score'] = 0.0
 
         return self.weather
+    

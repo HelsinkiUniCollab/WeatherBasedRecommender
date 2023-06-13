@@ -2,7 +2,6 @@ import json
 from apis import weather
 from apis import helpers
 import requests
-import json
 
 def get_pois(category=None):
     if category is None:
@@ -32,7 +31,7 @@ def merge_json(paths):
     return merged
 
 
-def get_pois_as_json(accessibility=False):
+def get_pois_as_json(accessibility=False, time=None):
     """
     Retrieves points of interest (POIs) from a JSON file and enriches them with current weather data.
 
@@ -56,7 +55,7 @@ def get_pois_as_json(accessibility=False):
                 weatherdata, forecastdata, item)
             if accessibility not in item["accessibility_shortcoming_count"]:
                 updated_data.append(item)
-            item = helpers.PointOfInterest(**item)
+            item = helpers.PointOfInterest(time, **item)
         return json.dumps(updated_data)
     except KeyError as error:
         return {

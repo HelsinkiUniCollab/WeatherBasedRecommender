@@ -1,5 +1,4 @@
 import React from 'react';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -22,29 +21,39 @@ function HeaderComponent({
     <Grid
       container
       spacing={1}
-      my={1}
       justifyContent="center"
-      align="center"
       alignItems="center"
+      my={1}
     >
-      <Grid xs={5} sm={5} md={5} mx={3} my={1} item>
-        <Typography variant="h4">Weather-Based Recommender</Typography>
+      <Grid item xs={5} sm={5} md={3} lg={3}>
+        <Typography variant="h1">Weather-Based Recommender</Typography>
       </Grid>
-      <Grid xs={5} sm={4} md={3} lg={2} mx={3} my={1} item>
-        <FormControl fullWidth>
-          <InputLabel>Mobility issues</InputLabel>
-          <Select value={accessibility} onChange={handleChange}>
-            <MenuItem value="">No mobility issues</MenuItem>
-            <MenuItem value="rollator">Rollator</MenuItem>
-            <MenuItem value="stroller">Stroller</MenuItem>
-            <MenuItem value="wheelchair">Wheelchair</MenuItem>
-            <MenuItem value="reduced_mobility">Reduced mobility</MenuItem>
-            <MenuItem value="visually_impaired">Visually impaired</MenuItem>
+      <Grid item xs={7} sm={7} md={3} lg={3} className="dropdown-item">
+        <FormControl>
+          <Select displayEmpty value={accessibility} onChange={handleChange}>
+            <MenuItem value="">
+              <Typography variant="h2">All attractions</Typography>
+            </MenuItem>
+            <MenuItem value="rollator">
+              <Typography variant="h2">Rollator accessible</Typography>
+            </MenuItem>
+            <MenuItem value="stroller">
+              <Typography variant="h2">Stroller accessible</Typography>
+            </MenuItem>
+            <MenuItem value="wheelchair">
+              <Typography variant="h2">Wheelchair accessible</Typography>
+            </MenuItem>
+            <MenuItem value="reduced_mobility">
+              <Typography variant="h2">Reduced mobility supported</Typography>
+            </MenuItem>
+            <MenuItem value="visually_impaired">
+              <Typography variant="h2">Visually impaired supported</Typography>
+            </MenuItem>
           </Select>
         </FormControl>
       </Grid>
-      <Grid xs={12} sm={11} md={10} lg={9} mx={5} item>
-        <Typography gutterBottom>Time</Typography>
+      <Grid item xs={12} sm={12} md={6} lg={6} className="slider-item">
+        <Typography variant="h2">Time</Typography>
         <Slider
           value={sliderValue}
           onChange={onChange}
