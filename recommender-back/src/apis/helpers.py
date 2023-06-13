@@ -32,7 +32,7 @@ class PointOfInterest:
         except (AttributeError, ValueError):
             return -float('inf')
 
-        suitable_temperature_range = (25, 35)
+        suitable_temperature_range = (20, 30)
         suitable_humidity_range = (40, 60)
 
         if self.time >= sunrise and self.time <= sunset:
