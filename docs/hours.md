@@ -30,7 +30,7 @@
 |         | Monday 5.6. | Tuesday 6.6. | Wednesday 7.6. | Thursday 8.6. | Friday 9.6. | Saturday 10.6. | Sunday 11.6. | Total |
 | ------- | ----------- | ------------ | -------------- | ------------- | ----------- | -------------- | ------------ | --------- |
 | Juuso   | 4 MVP for scoring pois | -            | -              | 4,5 poi scoring | 6 forecast data ++ | 2.5 structures for storing fore data, debug| -            | 17         |
-| Isak    | 8           | 2,5            | 0,5              | 0,5             | 3           | -              | -            | 14,5         |
+| Isak    | 8           | 2,5            | 0,5              | 0,5             | 3           | -              | 1            | 15,5         |
 | Sami S. | 4.5 poi-categories, future apis           | -            | -              | -             | 5 sunset data           | -              | 4 poi score tests + sunset frontend            | 13.5         |
 | Sami M. | 4.5 research grid + grib format           | 2 weather api work            | 2 weather api work              | 4.5 forecast            | -          | 1 forecast              | 5 forecast + caching            | 19         |
 | Pia     | 1 daily, pull review           | -            | -              | -           | 7,5 frontend, docu            | -              | 4,5 styles           | 13          |
@@ -39,7 +39,7 @@
 |         | Monday 12.6. | Tuesday 13.6. | Wednesday 14.6. | Thursday 15.6. | Friday 16.6. | Saturday 17.6. | Sunday 18.6. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
 | Juuso   | -            | -             | -               | -              | -            | -              | -            | -         |
-| Isak    | -            | -             | -               | -              | -            | -              | -            | -         |
+| Isak    | 8            | 4             | -               | -              | -            | -              | -            | 12         |
 | Sami S. | -            | -             | -               | -              | -            | -              | -            | -         |
 | Sami M. | -            | -             | -               | -              | -            | -              | -            | -         |
 | Pia     | -            | -             | -               | -              | -            | -              | -            | -         |
