@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import MarkersComponent from './MarkersComponent';
 import '../../assets/style.css';
 
-function MapComponent({ poiData, forecastIndex }) {
+function MapComponent({ poiData, time }) {
   const position = [60.2049, 24.9649];
 
   return (
@@ -12,7 +12,7 @@ function MapComponent({ poiData, forecastIndex }) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <MarkersComponent poiData={poiData} forecast={forecastIndex} />
+      <MarkersComponent poiData={poiData} time={time} />
     </MapContainer>
   );
 }

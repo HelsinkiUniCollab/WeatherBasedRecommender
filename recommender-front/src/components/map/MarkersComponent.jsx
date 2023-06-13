@@ -2,11 +2,11 @@ import React from 'react';
 import { Marker, Popup } from 'react-leaflet';
 import createMarkerIcon from '../../utils/Icon';
 
-function MarkersComponent({ poiData, forecast }) {
-  if (poiData && forecast) {
+function MarkersComponent({ poiData, time }) {
+  if (poiData && time) {
     return poiData.map((poi) => {
-      const tags = Object.entries(poi.weather[forecast]);
-      const markerIcon = createMarkerIcon(poi.weather[forecast].score);
+      const tags = Object.entries(poi.weather[time]);
+      const markerIcon = createMarkerIcon(poi.weather[time].score);
       return (
         <Marker
           position={[poi.location.coordinates[1], poi.location.coordinates[0]]}

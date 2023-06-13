@@ -15,7 +15,7 @@ import './assets/style.css';
 function App() {
   const [accessibility, setAccessibility] = useState('');
   const [poiData, setPoiData] = useState([]);
-  const [startTime, setTimes] = useState(0);
+  const [times, setTimes] = useState(0);
   const [selectedValue, setSelectedValue] = useState(0);
 
   let theme = createTheme({
@@ -98,7 +98,7 @@ function App() {
             <HeaderComponent
               accessibility={accessibility}
               handleChange={handleOptionChange}
-              times={startTime}
+              times={times}
               sliderValue={selectedValue}
               onChange={handleSliderChange}
             />
@@ -107,7 +107,7 @@ function App() {
             <MapComponent
               accessibility={accessibility}
               poiData={poiData}
-              forecastIndex={startTime[selectedValue]}
+              time={times[selectedValue]}
             />
           </Grid>
         </Grid>

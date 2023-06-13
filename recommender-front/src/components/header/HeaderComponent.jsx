@@ -13,8 +13,8 @@ function HeaderComponent({
   if (times) {
     for (let i = 0; i <= times.length; i += 1) {
       const value = i;
-      const label = times[i]; // Replace with your desired value calculation
-      hours.push({ label, value });
+      const label = times[i];
+      hours.push({ value, label });
     }
   }
   return (
@@ -52,7 +52,7 @@ function HeaderComponent({
           </Select>
         </FormControl>
       </Grid>
-      <Grid item xs={12} sm={12} md={6} lg={6} className="slider-item">
+      <Grid item xs={12} sm={12} md={12} lg={12} className="slider-item">
         <Typography variant="h2">Time</Typography>
         <Slider
           value={sliderValue}
