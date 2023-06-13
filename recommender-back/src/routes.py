@@ -20,19 +20,6 @@ def index():
     }
     return jsonify(data)
 
-
-@app.route('/api/weather', methods=['GET'])
-def get_weather():
-    '''
-    Handler for the '/api/weather' endpoint.
-
-    Returns:
-        The weather data if errors have not occurred.
-
-    '''
-    return weather.get_full_weather_info()
-
-
 @app.route('/api/forecast', methods=['GET'])
 @cache.cached(timeout=3600)
 def get_forecast():
