@@ -114,7 +114,6 @@ def get_closest_poi_coordinates_data(coordinates, data):
                 nearest = [coordinate[0], coordinate[1]]
         closest_coordinates[(
             f"({nearest[0]}, {nearest[1]})")] = f"{lat}, {lon}"
-        print(f"({nearest[0]}, {nearest[1]}) lat lon: {lat}, {lon}")
         for hour in data:
             for key, value in closest_coordinates.items():
                 forecast = data[hour][key]

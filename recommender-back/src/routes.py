@@ -3,6 +3,7 @@ from apis import weather
 from apis import poi
 from flask import jsonify
 from flask_caching import Cache
+import json
 
 
 @app.route('/', methods=['GET'])
@@ -33,7 +34,7 @@ def get_forecast():
     forecastgrid.update_data()
     poi_forecast = poi.get_closest_poi_coordinates_data(
         forecastgrid.get_coordinates(), forecastgrid.get_data())
-    return jsonify(poi_forecast)
+    return json.dumps(poi_forecast)
 
 
 @app.route('/api/poi/', methods=['GET'])
