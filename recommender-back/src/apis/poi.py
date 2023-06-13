@@ -102,16 +102,19 @@ def get_closest_poi_coordinates_data(coordinates, data):
     pois = get_pois()
     closest_coordinates = {}
     for poi in pois:
-        smallest, nearest = float('inf'), ''
+        smallest = float('inf')
+        nearest = []
         lat = float(poi['location']['coordinates'][1])
         lon = float(poi['location']['coordinates'][0])
         for coordinate in coordinates:
-            dist = abs(coordinate[0] - lon)\
-                + abs(coordinate[1] - lat)
+            dist = abs(coordinate[0] - lat)\
+                + abs(coordinate[1] - lon)
             if dist < smallest:
-                smallest, nearest = dist, coordinate
+                smallest = dist
+                nearest = [coordinate[0], coordinate[1]]
         closest_coordinates[(
             f"({nearest[0]}, {nearest[1]})")] = f"{lat}, {lon}"
+        print(f"({nearest[0]}, {nearest[1]}) lat lon: {lat}, {lon}")
         for hour in data:
             for key, value in closest_coordinates.items():
                 forecast = data[hour][key]
