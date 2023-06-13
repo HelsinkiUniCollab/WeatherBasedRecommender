@@ -55,7 +55,7 @@ def get_pois_as_json(accessibility=False, time=None):
                 weatherdata, forecastdata, item)
             if accessibility not in item["accessibility_shortcoming_count"]:
                 updated_data.append(item)
-            item = helpers.PointOfInterest(time, **item)
+            item = helpers.Recommender(time, **item)
         return json.dumps(updated_data)
     except KeyError as error:
         return {

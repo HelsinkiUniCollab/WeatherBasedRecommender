@@ -1,6 +1,6 @@
 from apis import time_data
 
-class PointOfInterest:
+class Recommender:
     def __init__(self, time, **kwargs):
         self.sun = time_data.get_sun_data()
         self.time = time

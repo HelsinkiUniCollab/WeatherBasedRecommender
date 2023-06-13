@@ -33,6 +33,7 @@ def get_current_weather():
 def parse_forecast(forecast):
     '''
     Parses the wanted data from the grid 
+    Some adjustments are made to change units to match obs station data
     '''
     for value in forecast:
         if value['Dataset'] == '2 metre temperature':
@@ -46,7 +47,7 @@ def parse_forecast(forecast):
     return {
         'Air temperature': f'{str(temperature)} °C',
         'Wind': f'{str(windspeed)} m/s',
-        'Air pressure': f'{str(pressure)} mbar',
+        'Air pressure': f'{str(pressure/100)} mbar',
         'Humidity': f'{str(humidity)} %'
     }
 
@@ -103,6 +104,7 @@ class ForecastGrid:
                     unit = dataset['units']
                     data_array = dataset['data']
                     for (lat_index, lon_index), data_value in np.ndenumerate(data_array):
+                        #print(data_value)
                         latitude = self.coordinates[lat_index, lon_index, 0]
                         longitude = self.coordinates[lat_index, lon_index, 1]
                         key = str((latitude, longitude))
