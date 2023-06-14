@@ -67,7 +67,7 @@ function App() {
   useEffect(() => {
     async function fetchPoiData() {
       try {
-        const apiUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+        const apiUrl = process.env.REACT_APP_BACKEND_URL;
         const response = await fetch(`${apiUrl}/api/poi/${accessibility}`);
         const data = await response.json();
         setPoiData(data);

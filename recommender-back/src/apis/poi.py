@@ -2,6 +2,7 @@ import json
 from apis import weather
 from apis import helpers
 import requests
+import os
 
 def get_pois(category=None):
     if category is None:
@@ -45,7 +46,7 @@ def get_pois_as_json(accessibility=False, time=None):
     try:
         data = get_pois()
         weatherdata = weather.get_current_weather()
-        url = 'http://127.0.0.1:5000/api/forecast'
+        url = os.environ.get('REACT_APP_BACKEND_URL') + '/api/forecast'
         response = requests.get(url)
         forecastdata = response.json()
         updated_data = []

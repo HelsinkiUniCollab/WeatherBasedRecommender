@@ -17,6 +17,7 @@ suntime = "^1.2.5"
 flask-caching = "^2.0.2"
 e = "^1.4.5"
 eccodes = "^1.5.2"
+python-dotenv = "^1.0.0"
 
 
 [tool.poetry.group.dev.dependencies]

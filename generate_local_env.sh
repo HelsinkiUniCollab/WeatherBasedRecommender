@@ -13,4 +13,11 @@ cat > ./recommender-front/.env.local << EOF
 # override the defaults in .env, but are ignored by Git.
 
 REACT_APP_BACKEND_URL=http://localhost:5000
+
+EOF
+
+cat > ./recommender-back/.env << EOF
+# This file contains environment-specific configuration values for the Python backend.
+
+REACT_APP_BACKEND_URL=http://localhost:5000
 EOF
