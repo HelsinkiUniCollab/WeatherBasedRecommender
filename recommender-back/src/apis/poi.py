@@ -1,17 +1,8 @@
-import json
 from apis import weather
 from apis import helpers
+import json
 import requests
 import os
-
-def get_pois(category=None):
-    if category is None:
-        category = ['open_air_water', 'fitness_parks']
-    paths = [
-        f"src/apis/poi_data/sports_and_physical/water_sports/{category[0]}.json",
-        f"src/apis/poi_data/sports_and_physical/outdoor_sports/neighborhood_sports/{category[1]}.json"
-    ]
-    return merge_json(paths)
 
 
 def merge_json(paths):
@@ -44,18 +35,18 @@ def get_pois_as_json(accessibility=False, time=None):
 
     """
     try:
-        data = get_pois()
-        weatherdata = weather.get_current_weather()
+        pois = get_pois()
+        weather_data = weather.get_current_weather()
         url = os.environ.get('REACT_APP_BACKEND_URL') + '/api/forecast'
         response = requests.get(url)
-        forecastdata = response.json()
+        forecast_data = response.json()
         updated_data = []
-        for item in data:
-            item = find_nearest_stations_weather_data(
-                weatherdata, forecastdata, item)
-            if accessibility not in item["accessibility_shortcoming_count"]:
-                updated_data.append(item)
-            item = helpers.Recommender(time, **item)
+        for poi in pois:
+            poi = find_nearest_stations_weather_data(poi, weather_data)
+            poi = find_nearest_coordinate_forecast_data(poi, forecast_data)
+            if accessibility not in poi["accessibility_shortcoming_count"]:
+                updated_data.append(poi)
+            poi = helpers.Recommender(time, **poi)
         return json.dumps(updated_data)
     except KeyError as error:
         return {
@@ -65,38 +56,64 @@ def get_pois_as_json(accessibility=False, time=None):
         }
 
 
-def find_nearest_stations_weather_data(weatherdata, forecastdata, item):
+def find_nearest_stations_weather_data(poi, weather_data):
     """
-    Finds the nearest weather station to a given POI and adds its weather data to the POI.
+    Finds the nearest weather station to a given point of interest (POI) and adds its weather data to the POI.
 
     Args:
-        weatherdata (dict): A dictionary containing weather data for different stations.
-        item (dict): The POI for which weather data needs to be added.
+        poi (dict): The POI for which weather data needs to be added.
+        weather_data (dict): A dictionary containing weather data for different weather stations.
 
     Returns:
         dict: The modified POI with weather information.
 
     """
-    lat = float(item['location']['coordinates'][1])
-    lon = float(item['location']['coordinates'][0])
+    lat = float(poi['location']['coordinates'][1])
+    lon = float(poi['location']['coordinates'][0])
     smallest, nearest = float('inf'), ''
-    for station in weatherdata:
-        dist = abs(weatherdata[station]['Longitude'] - lon)\
-            + abs(weatherdata[station]['Latitude'] - lat)
+    for station in weather_data:
+        dist = abs(weather_data[station]['Longitude'] - lon)\
+            + abs(weather_data[station]['Latitude'] - lat)
         if dist < smallest:
             smallest, nearest = dist, station
-    item['weather'] = {}
-    item['weather']["Current"] = weatherdata[nearest]
-    for hour in forecastdata:
-        data = forecastdata[hour]
-        item["weather"][f'{hour[11:16]}'] = data[f"{lat}, {lon}"]
-    return item
+    poi['weather'] = {}
+    poi['weather']["Current"] = weather_data[nearest]
+    return poi
+
+
+def find_nearest_coordinate_forecast_data(poi, forecast_data):
+    """
+    Finds the closest coordinate forecast data to a given point of interest (POI) by the given hour,
+    and adds it to the POI.
+
+    Args:
+        poi (dict): The POI for which forecast data needs to be added.
+        forecast_data (dict): A dictionary containing forecast data for different coordinates.
+
+    Returns:
+        dict: The modified POI with forecast information.
+
+    """
+    lat = float(poi['location']['coordinates'][1])
+    lon = float(poi['location']['coordinates'][0])
+    for hour in forecast_data:
+        data = forecast_data[hour]
+        poi["weather"][f'{hour[11:16]}'] = data[f"{lat}, {lon}"]
+    return poi
 
 
 def get_closest_poi_coordinates_data(coordinates, data):
     """
-    Finds the nearest coordinates forecast data for all of the POI's coordinates. Used for
-    caching only the nearest coordinates to POI's.
+    Finds the nearest coordinates forecast data for all of the POI's coordinates. Used for caching only
+    the nearest coordinates to the POI's.
+
+    Args:
+        coordinates (list): List of coordinates for the POI.
+        data (dict): A dictionary containing forecast data for different hours and coordinates.
+
+    Returns:
+        dict: A dictionary containing the nearest coordinates forecast data for each hour.
+
     """
     returned_data = {hour: {} for hour in data}
     pois = get_pois()
@@ -117,5 +134,26 @@ def get_closest_poi_coordinates_data(coordinates, data):
         for hour in data:
             for key, value in closest_coordinates.items():
                 forecast = data[hour][key]
-                returned_data[hour][f"{value}"] = weather.parse_forecast(forecast)
+                returned_data[hour][f"{value}"] = weather.parse_forecast(
+                    forecast)
     return returned_data
+
+
+def get_pois(category=None):
+    """
+    Retrieves all points of interest (POIs) from JSON files and merges them together.
+
+    Args:
+        category (list): List of categories of POIs to retrieve. If None, default categories will be used.
+
+    Returns:
+        list: List of all POIs.
+
+    """
+    if category is None:
+        category = ['open_air_water', 'fitness_parks']
+    paths = [
+        f"src/apis/poi_data/sports_and_physical/water_sports/{category[0]}.json",
+        f"src/apis/poi_data/sports_and_physical/outdoor_sports/neighborhood_sports/{category[1]}.json"
+    ]
+    return merge_json(paths)
