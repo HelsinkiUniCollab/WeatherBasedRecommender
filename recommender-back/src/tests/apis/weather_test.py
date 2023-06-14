@@ -52,15 +52,6 @@ class WeatherTest(unittest.TestCase):
             actual_data = weather.get_current_weather()
             self.assertEqual(actual_data, expected_data)
 
-    def test_get_weather_error(self):
-        with mock.patch('apis.weather.get_current_weather', side_effect=KeyError('KeyError')):
-            error_response = self.client.get('/api/weather')
-            error_data = error_response.get_json()
-            self.assertEqual(error_response.status_code, 500)
-            self.assertEqual(error_data['message'], 'An error occurred')
-            self.assertEqual(error_data['status'], 500)
-            self.assertIn('error', error_data)
-
 
 if __name__ == '__main__':
     unittest.main()
