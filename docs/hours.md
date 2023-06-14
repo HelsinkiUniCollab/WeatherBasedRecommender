@@ -40,7 +40,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
 | Juuso   | 7 fore! w/Isak | 6 Finalizing fore and meetings | -               | -              | -            | -              | -            | -         |
 | Isak    | 8            | 4             | -               | -              | -            | -              | -            | 12         |
-| Sami S. | 3 sprint meetings            | 2 pr-review, fore! -branch             | -               | -              | -            | -              | -            | -         |
+| Sami S. | -            | 3 sprint meetings             | 2 pr-review, fore! -branch               | -              | -            | -              | -            | -         |
 | Sami M. | -            | -             | -               | -              | -            | -              | -            | -         |
 | Pia     | -            | -             | -               | -              | -            | -              | -            | -         |
 | Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
