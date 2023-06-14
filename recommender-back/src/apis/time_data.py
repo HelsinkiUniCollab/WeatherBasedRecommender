@@ -13,28 +13,41 @@ def get_sun_data():
     sun = Sun(60.192059,24.945831)
     sunrise = sun.get_local_sunrise_time(date)
     sunset = sun.get_local_sunset_time(date)
-
     str_sunrise = sunrise.strftime('%H:%M')
     str_sunset = sunset.strftime('%H:%M')
-
     return str_sunrise, str_sunset
 
 def get_current_time():
     """
+    Retrieves the current time as a formatted string.
+
     Returns:
-        Sring: Time in formatted string
+        str: The current time in the formatted string.
     """
     time = dt.datetime.now()
-
     return time.strftime('%H:%M')
 
 def utc_to_finnish(datetime):
+    """
+    Converts a UTC datetime object to the corresponding time in the Finnish timezone.
+
+    Args:
+        datetime (datetime): The UTC datetime object to be converted.
+
+    Returns:
+        datetime: The datetime object converted to the Finnish timezone.
+    """
     set_utc = datetime.replace(tzinfo=tz.UTC)
     get_timezone = tz.gettz('Europe/Helsinki')
-    finnish_time = set_utc.astimezone(get_timezone)
-    return finnish_time
+    return set_utc.astimezone(get_timezone)
 
 def get_forecast_times():
+    """
+    Retrieves the current time, start time, and end time for a forecast.
+
+    Returns:
+        Tuple: A tuple containing the current time, start time, and end time as formatted strings.
+    """
     current_time = dt.datetime.now(dt.timezone.utc)
     start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
     end_time = (current_time + dt.timedelta(days=1, hours=1)
