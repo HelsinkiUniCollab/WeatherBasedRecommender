@@ -45,7 +45,6 @@ def get_pois_as_json(accessibility=False, time=None):
     try:
         data = get_pois()
         weatherdata = weather.get_current_weather()
-        # Replace with the desired website URL
         url = 'http://127.0.0.1:5000/api/forecast'
         response = requests.get(url)
         forecastdata = response.json()
