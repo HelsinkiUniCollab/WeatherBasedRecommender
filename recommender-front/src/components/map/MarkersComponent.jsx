@@ -11,8 +11,9 @@ function MarkersComponent({ poiData }) {
         position={[poi.location.coordinates[1], poi.location.coordinates[0]]}
         key={poi.id}
         icon={markerIcon}
+        data-testid={`marker-${poi.id}`}
       >
-        <Popup>
+        <Popup data-testid="popup">
           <h2>{poi.name.fi}</h2>
           <ul>
             {tags.map(([key, value]) => (
