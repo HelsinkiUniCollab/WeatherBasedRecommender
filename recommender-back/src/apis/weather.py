@@ -1,7 +1,7 @@
 import datetime as dt
 import numpy as np
+from apis.utils import utc_to_finnish 
 from fmiopendata.wfs import download_stored_query
-import eccodes
 
 def get_current_weather():
     '''
@@ -60,16 +60,12 @@ class ForecastGrid:
         self.coordinates = None
 
     def update_data(self):
-        # Query format needs to be in UTC, which is three hours behind of Finnish time.
-        # The starting point for the datetime objects is the next hour from the current time, rounded up.
-        # For example, if the current time in Finland is 9:10, you would round up to 10:00, substract 3 hours and get first datetime object at 7:00 UTC.
-
-        current_time = dt.datetime.now(dt.timezone.utc) + dt.timedelta(hours=3)
+        current_time = dt.datetime.now(dt.timezone.utc)
         start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
         end_time = (current_time + dt.timedelta(days=1, hours=1)
                    ).strftime('%Y-%m-%dT%H:%M:%SZ')
         bbox = '24.5,60,25.5,60.5'
-        timestep = 60 # minutes
+        timestep = 60
 
         print(f'Query for new grind object at time: {current_time} UTC')
 
@@ -97,7 +93,8 @@ class ForecastGrid:
         '''
         data = {}
         for date_time in self.valid_times:
-            time_str = date_time.strftime('%Y-%m-%d %H:%M:%S')
+            local_time = utc_to_finnish(date_time)
+            time_str = local_time.strftime('%Y-%m-%d %H:%M:%S')
             coordinates_data = {}
             for level in self.data_levels:
                 datasets = self.data.data[date_time][level]
