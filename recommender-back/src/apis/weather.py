@@ -1,6 +1,6 @@
 import datetime as dt
 import numpy as np
-from apis.utils import utc_to_finnish 
+from apis.time_data import utc_to_finnish, get_forecast_times
 from fmiopendata.wfs import download_stored_query
 
 def get_current_weather():
@@ -60,18 +60,15 @@ class ForecastGrid:
         self.coordinates = None
 
     def update_data(self):
-        current_time = dt.datetime.now(dt.timezone.utc)
-        start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
-        end_time = (current_time + dt.timedelta(days=1, hours=1)
-                   ).strftime('%Y-%m-%dT%H:%M:%SZ')
+        current, start, end = get_forecast_times()
         bbox = '24.5,60,25.5,60.5'
         timestep = 60
 
-        print(f'Query for new grind object at time: {current_time} UTC')
+        print(f'Query for new grind object at time: {current} UTC')
 
         forecast_data = download_stored_query('fmi::forecast::harmonie::surface::grid',
-                                           args=[f'starttime={start_time}',
-                                                 f'endtime={end_time}',
+                                           args=[f'starttime={start}',
+                                                 f'endtime={end}',
                                                  f'bbox={bbox}',
                                                  f'timestep={timestep}'])
 

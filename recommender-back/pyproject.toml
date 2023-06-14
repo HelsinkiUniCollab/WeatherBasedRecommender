@@ -14,6 +14,9 @@ invoke = "^2.1.2"
 overpy = "^0.6"
 datetime = "^5.1"
 suntime = "^1.2.5"
+flask-caching = "^2.0.2"
+e = "^1.4.5"
+eccodes = "^1.5.2"
 
 
 [tool.poetry.group.dev.dependencies]
