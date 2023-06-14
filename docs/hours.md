@@ -38,10 +38,10 @@
 
 |         | Monday 12.6. | Tuesday 13.6. | Wednesday 14.6. | Thursday 15.6. | Friday 16.6. | Saturday 17.6. | Sunday 18.6. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
-| Juuso   | -            | -             | -               | -              | -            | -              | -            | -         |
+| Juuso   | 7 fore! w/Isak | 6 Finalizing fore and meetings | -               | -              | -            | -              | -            | -         |
 | Isak    | 8            | 4             | -               | -              | -            | -              | -            | 12         |
-| Sami S. | -            | -             | -               | -              | -            | -              | -            | -         |
-| Sami M. | -            | -             | -               | -              | -            | -              | -            | -         |
+| Sami S. | -            | 3 sprint meetings             | 2 pr-review, fore! -branch               | -              | -            | -              | -            | -         |
+| Sami M. | -            | 3 meetings | 1 check forecast pr               | 3 work on map and try to fix tests              | -            | -              | -            | -         |
 | Pia     | -            | -             | -               | -              | -            | -              | -            | -         |
 | Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
 
