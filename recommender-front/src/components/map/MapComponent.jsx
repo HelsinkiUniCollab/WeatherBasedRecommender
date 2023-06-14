@@ -5,6 +5,10 @@ import '../../assets/style.css';
 
 function MapComponent({ accessibility }) {
   const position = [60.2049, 24.9649];
+  const minZoom = 12;
+  const maxZoom = 20;
+  const bounds = [[60, 24.6], [60.35, 25.315]];
+  const viscosity = 1;
   const [poiData, setPoiData] = useState([]);
 
   useEffect(() => {
@@ -22,7 +26,16 @@ function MapComponent({ accessibility }) {
   }, [accessibility]);
 
   return (
-    <MapContainer id="map" center={position} zoom={14} scrollWheelZoom={false}>
+    <MapContainer
+      id="map"
+      center={position}
+      scrollWheelZoom={false}
+      zoom={minZoom}
+      minZoom={minZoom}
+      maxZoom={maxZoom}
+      maxBounds={bounds}
+      maxBoundsViscosity={viscosity}
+    >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
