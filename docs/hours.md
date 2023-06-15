@@ -40,7 +40,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
 | Juuso   | 7 fore! w/Isak | 6 Finalizing fore and meetings | 2 Score related fixes (test,sun,..) in fore! | -              | -            | -              | -            | -         |
 | Isak    | 8            | 4             | 2               | -              | -            | -              | -            | 14         |
-| Sami S. | -            | 3 sprint meetings             | 2 pr-review, fore! -branch               | -              | -            | -              | -            | -         |
+| Sami S. | -            | 3 sprint meetings             | 2 pr-review, fore! -branch               | 3.5 product- and sprint backlog              | -            | -              | -            | -         |
 | Sami M. | -            | 3 meetings | 1 check forecast pr               | 3 work on map and try to fix tests              | -            | -              | -            | -         |
 | Pia     | -            | -             | -               | -              | -            | -              | -            | -         |
 | Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
