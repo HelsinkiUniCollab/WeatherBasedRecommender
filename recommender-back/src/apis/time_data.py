@@ -20,6 +20,8 @@ def get_sun_data():
 def get_current_time(plus=None):
     """
     Retrieves the current time as a formatted string.
+    
+    plus; number of hours added to datetime.now()
 
     Returns:
         str: The current time in the formatted string.

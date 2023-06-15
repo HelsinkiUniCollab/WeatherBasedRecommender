@@ -1,4 +1,3 @@
-import datetime as dt
 from apis import time_data
 
 class Recommender:
@@ -23,8 +22,6 @@ class Recommender:
         sunset = self.sun[1]
         suitable_temperature_range = (20, 30)
         suitable_humidity_range = (40, 60)
-        print(sunrise)
-        print(sunset)
         for timeinterval, data in enumerate(self.weather.values()):
             time = time_data.get_current_time(timeinterval)
             temperature_str = data.get('Air temperature')
