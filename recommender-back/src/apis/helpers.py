@@ -1,9 +1,9 @@
+import datetime as dt
 from apis import time_data
 
 class Recommender:
     def __init__(self, time, **kwargs):
         self.sun = time_data.get_sun_data()
-        self.time = time
         self.id = kwargs.get('id')
         self.contract_type = kwargs.get('contract_type')
         self.name = kwargs.get('name')
@@ -19,13 +19,14 @@ class Recommender:
 
     def calculate_score(self):
 
-        if self.time is None:
-            self.time = time_data.get_current_time()
         sunrise = self.sun[0]
         sunset = self.sun[1]
         suitable_temperature_range = (20, 30)
         suitable_humidity_range = (40, 60)
-        for data in self.weather.values():
+        print(sunrise)
+        print(sunset)
+        for timeinterval, data in enumerate(self.weather.values()):
+            time = time_data.get_current_time(timeinterval)
             temperature_str = data.get('Air temperature')
             humidity_str = data.get('Humidity')
             try:
@@ -34,8 +35,8 @@ class Recommender:
             except (TypeError, ValueError):
                 data['score'] = -float('inf')
                 continue
-
-            if self.time >= sunrise and self.time <= sunset:
+               
+            if time >= sunrise and time <= sunset:
                 if suitable_temperature_range[0] <= temperature <= suitable_temperature_range[1]:
                     temperature_score = 1.0
                 else:

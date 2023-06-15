@@ -17,15 +17,19 @@ def get_sun_data():
     str_sunset = sunset.strftime('%H:%M')
     return str_sunrise, str_sunset
 
-def get_current_time():
+def get_current_time(plus=None):
     """
     Retrieves the current time as a formatted string.
 
     Returns:
         str: The current time in the formatted string.
     """
-    time = dt.datetime.now()
-    return time.strftime('%H:%M')
+    if plus is None:
+        time = dt.datetime.now()
+        return time.strftime('%H:%M')
+    else:
+        time = dt.datetime.now() + dt.timedelta(hours=plus)
+        return time.strftime('%H:%M')
 
 def utc_to_finnish(datetime):
     """
