@@ -46,7 +46,7 @@ def get_pois_as_json(accessibility=False, time=None):
             poi = find_nearest_coordinate_forecast_data(poi, forecast_data)
             if accessibility not in poi["accessibility_shortcoming_count"]:
                 updated_data.append(poi)
-            poi = helpers.Recommender(time, **poi)
+            poi = helpers.Recommender(**poi)
         return json.dumps(updated_data)
     except KeyError as error:
         return {
