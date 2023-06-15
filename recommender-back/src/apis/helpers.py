@@ -1,7 +1,7 @@
 from apis import time_data
 
 class Recommender:
-    def __init__(self, time, **kwargs):
+    def __init__(self, **kwargs):
         self.sun = time_data.get_sun_data()
         self.id = kwargs.get('id')
         self.contract_type = kwargs.get('contract_type')
