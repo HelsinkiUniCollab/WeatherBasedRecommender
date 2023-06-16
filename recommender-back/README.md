@@ -48,18 +48,22 @@ Method: GET
 Description: Shows 'Hello from the backend!' with statuscode 200
 ```
 
-### Endpoint for Weather data
+### Endpoint for Weather and Forecast data
 ```bash
-URL: /api/weather
+URL: /api/forecast
 Method: GET
-Description: Response contains the air temperature and air quality as JSON
+Description: Response contains weather data with hourly cycles,
+  including the timestamp, coordinates, and corresponding values for
+  various parameters such as air temperature, wind speed, air pressure,
+  and humidity in JSON.
+
 ```
 
 ### Endpoint for Point of Interest data
 ```bash
 URL: /api/poi
 Method: GET
-Description: Response contains the point-of-interest data as JSON
+Description: Response contains the all the point-of-interest data as JSON
 ```
 
 
