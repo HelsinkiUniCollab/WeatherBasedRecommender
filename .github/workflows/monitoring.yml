@@ -2,7 +2,7 @@ name: Application health monitoring
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/30 * * * *"
 
 jobs:
   monitor-health:
