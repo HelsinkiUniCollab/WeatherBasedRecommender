@@ -2,9 +2,9 @@ import unittest
 from apis.poi import find_nearest_stations_weather_data
 
 
-class NearestStationsWeatherDataTest(unittest.TestCase):
+class POITest(unittest.TestCase):
     def test_find_nearest_stations_weather_data(self):
-        weatherdata = {
+        weather_data = {
             'station1': {
                 'Latitude': 60.1,
                 'Longitude': 24.6,
@@ -27,15 +27,16 @@ class NearestStationsWeatherDataTest(unittest.TestCase):
             'location': {
                 'coordinates': [24.65, 60.15]
             },
-            'weather': {
+            'weather': {'Current': {
                 'Latitude': 60.1,
                 'Longitude': 24.6,
                 'Air temperature': '10.5 °C'
             }
         }
+        }
 
         # Call the function to get the actual result
-        actual_item = find_nearest_stations_weather_data(weatherdata, item)
+        actual_item = find_nearest_stations_weather_data(item, weather_data)
 
         # Assert that the actual result matches the expected result
         self.assertEqual(actual_item, expected_item)

@@ -1,115 +1,124 @@
 import datetime as dt
-from flask import jsonify
+import numpy as np
+from apis.time_data import utc_to_finnish, get_forecast_times
 from fmiopendata.wfs import download_stored_query
 
-
-def get_full_weather_info():
-    """
-    Retrieves full weather information.
-
-    Returns:
-        A JSON response containing the current weather information and forecast.
-
-    Raises:
-        Exception: If an error occurs during the retrieval process.
-    """
-    try:
-        current = get_current_weather()
-        forecast = get_forecast()
-
-        data = {**current, **forecast}
-
-        return jsonify(data)
-
-    except KeyError as error:
-        error_data = {
-            'message': 'An error occurred',
-            'status': 500,
-            'error': str(error)
-        }
-        return jsonify(error_data), 500
-
-
 def get_current_weather():
-    """
+    '''
     Retrieves the current weather data for various stations.
 
     Returns:
         dict: A dictionary containing the current weather data for each station.
-    """
+    '''
 
     obs = download_stored_query('fmi::observations::weather::multipointcoverage',
-                                args=["bbox=24.5,60,25.5,60.5", "timeseries=True"])
+                                args=['bbox=24.5,60,25.5,60.5', 'timeseries=True'])
     data = {}
     for station in obs.location_metadata.keys():
         weatherdata = {
-            'Air temperature': str(obs.data[station]["t2m"]["values"][-1]) + " °C",
-            'Wind': str(obs.data[station]["ws_10min"]["values"][-1]) + " m/s",
-            'Air pressure': str(obs.data[station]["p_sea"]["values"][-1]) + " mbar",
-            'Humidity': str(obs.data[station]["rh"]["values"][-1]) + " %"
+            'Air temperature': str(obs.data[station]['t2m']['values'][-1]) + ' °C',
+            'Wind': str(obs.data[station]['ws_10min']['values'][-1]) + ' m/s',
+            'Air pressure': str(obs.data[station]['p_sea']['values'][-1]) + ' mbar',
+            'Humidity': str(obs.data[station]['rh']['values'][-1]) + ' %'
         }
         for value in list(weatherdata):
             if 'nan' in str(weatherdata[value]):
                 weatherdata.pop(value)
         if weatherdata:
-            weatherdata["Latitude"] =  obs.location_metadata[station]["latitude"]
-            weatherdata["Longitude"] = obs.location_metadata[station]["longitude"]
+            weatherdata['Latitude'] =  obs.location_metadata[station]['latitude']
+            weatherdata['Longitude'] = obs.location_metadata[station]['longitude']
             data[station] = weatherdata
     return data
 
-
-def get_forecast():
-    """
-    Retrieves the weather forecast data.
-
-    Returns:
-        dict: A dictionary containing the weather forecast for different time periods.
-    """
-    current_time = dt.datetime.now(dt.timezone.utc)
-    start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
-    end_time = (current_time + dt.timedelta(days=1, hours=1)
-                ).strftime('%Y-%m-%dT%H:%M:%SZ')
-
-    forecast_data = download_stored_query(
-        'fmi::forecast::harmonie::surface::point::multipointcoverage',
-        args=[
-            f'starttime={start_time}',
-            f'endtime={end_time}',
-            'latlon=60.205,24.959',
-        ],
-    )
-
-    return _forecast_query_handler(forecast_data.data)
+def parse_forecast(forecast):
+    '''
+    Parses the wanted data from the grid 
+    Some adjustments are made to change units to match obs station data
+    '''
+    for value in forecast:
+        if value['Dataset'] == '2 metre temperature':
+            temperature = round(value['Data'] - 273.15, 1)
+        elif value['Dataset'] == '2 metre relative humidity':
+            humidity = round(value['Data'], 1)
+        elif value['Dataset'] == 'Mean sea level pressure':
+            pressure = round(value['Data'] / 100, 1)
+        elif value['Dataset'] == '10 metre wind speed':
+            windspeed = round(value['Data'], 1)
+    return {
+        'Air temperature': f'{str(temperature)} °C',
+        'Wind': f'{str(windspeed)} m/s',
+        'Air pressure': f'{str(pressure)} mbar',
+        'Humidity': f'{str(humidity)} %'
+    }
 
 
-def _forecast_query_handler(forecast_obj):
-    """
-    Handles the forecast data retrieved from the weather API.
+class ForecastGrid:
+    def __init__(self):
+        self.data = None
+        self.valid_times = None
+        self.data_levels = None
+        self.coordinates = None
 
-    Args:
-        forecast_obj (dict): The forecast data object.
+    def update_data(self):
+        current, start, end = get_forecast_times()
+        bbox = '24.5,60,25.5,60.5'
+        timestep = 60
 
-    Returns:
-        dict: A dictionary containing the formatted forecast data.
-    """
-    forecast_data = {}
+        print(f'Query for new grind object at time: {current} UTC')
 
-    for datetime_obj, weather_info in forecast_obj.items():
-        datetime_obj_utc_plus_3 = datetime_obj + dt.timedelta(hours=3)
-        formatted_datetime = datetime_obj_utc_plus_3.strftime(
-            '%d-%m-%Y %H:%M:%S')
+        forecast_data = download_stored_query('fmi::forecast::harmonie::surface::grid',
+                                           args=[f'starttime={start}',
+                                                 f'endtime={end}',
+                                                 f'bbox={bbox}',
+                                                 f'timestep={timestep}'])
 
-        for _, station in weather_info.items():
-            air_temperature = str(station['Air temperature']['value'])  # C
-            air_pressure = str(station['Air pressure']['value'])  # hPa
-            humidity = str(station['Humidity']['value'])  # %
-            wind_speed = str(station['Wind speed']['value'])  # m/s
+        latest_forecast = max(forecast_data.data.keys())
+        self.data = forecast_data.data[latest_forecast]
+        self.data.parse(delete=True)
 
-            forecast_data.setdefault('forecast', {})[formatted_datetime] = {
-                'air temperature': air_temperature,
-                'air pressure': air_pressure,
-                'humidity': humidity,
-                'wind': wind_speed
-            }
+        self.valid_times = self.data.data.keys()
+        earliest_step = min(self.valid_times)
+        self.data_levels = self.data.data[earliest_step].keys()
 
-    return forecast_data
+        self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
+
+
+    def get_data(self):
+        '''Gets all the data from grid
+        Returns:
+            dict containing all the data
+        '''
+        data = {}
+        for date_time in self.valid_times:
+            local_time = utc_to_finnish(date_time)
+            time_str = local_time.strftime('%Y-%m-%d %H:%M:%S')
+            coordinates_data = {}
+            for level in self.data_levels:
+                datasets = self.data.data[date_time][level]
+                for dataset_name, dataset in datasets.items():
+                    unit = dataset['units']
+                    data_array = dataset['data']
+                    for (lat_index, lon_index), data_value in np.ndenumerate(data_array):
+                        latitude = self.coordinates[lat_index, lon_index, 0]
+                        longitude = self.coordinates[lat_index, lon_index, 1]
+                        key = str((latitude, longitude))
+                        if key not in coordinates_data:
+                            coordinates_data[key] = []
+                        coordinates_data[key].append({'Dataset': dataset_name, 'Unit': unit, 'Data': data_value})
+            data[time_str] = coordinates_data
+        return data
+
+    def get_coordinates(self):
+        '''All avaible coords in bbox area
+        Returns:
+            List of list where each sublist is coord pair
+        '''
+        unique_coords = []
+
+        flattened_coords = [coord for sublist in self.coordinates for coord in sublist]
+
+        for coord in flattened_coords:
+            if list(coord) not in unique_coords:
+                unique_coords.append(list(coord))
+
+        return unique_coords

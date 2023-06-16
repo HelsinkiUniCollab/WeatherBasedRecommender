@@ -6,7 +6,17 @@ import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-function HeaderComponent({ accessibility, handleChange }) {
+function HeaderComponent({
+  accessibility, handleChange, times, sliderValue, onChange,
+}) {
+  const hours = [];
+  if (times) {
+    for (let i = 0; i <= times.length; i += 1) {
+      const value = i;
+      const label = times[i];
+      hours.push({ value, label });
+    }
+  }
   return (
     <Grid
       container
@@ -42,15 +52,14 @@ function HeaderComponent({ accessibility, handleChange }) {
           </Select>
         </FormControl>
       </Grid>
-      <Grid item xs={12} sm={12} md={6} lg={6} className="slider-item">
+      <Grid item xs={12} sm={12} md={12} lg={12} className="slider-item">
         <Typography variant="h2">Time</Typography>
         <Slider
-          defaultValue={0}
-          step={1}
-          valueLabelDisplay="auto"
-          marks
+          value={sliderValue}
+          onChange={onChange}
           min={0}
           max={24}
+          marks={hours}
         />
       </Grid>
     </Grid>

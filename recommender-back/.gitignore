@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+poetry.lock
 
 # C extensions
 *.so
@@ -83,7 +84,6 @@ celerybeat-schedule
 .venv
 env/
 venv/
-ENV/
 
 # Spyder project settings
 .spyderproject

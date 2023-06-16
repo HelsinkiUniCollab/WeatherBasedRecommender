@@ -26,10 +26,12 @@ describe('MarkersComponent', () => {
         coordinates: [123, 456],
       },
       weather: {
-        Temperature: '20°C',
-        Humidity: '50%',
-        Longitude: 123,
-        Latitude: 456,
+        Current: {
+          Temperature: '20°C',
+          Humidity: '50%',
+          Longitude: 123,
+          Latitude: 456,
+        },
       },
       score: 7,
     },
@@ -40,19 +42,21 @@ describe('MarkersComponent', () => {
         coordinates: [789, 101],
       },
       weather: {
-        Temperature: '25°C',
-        Humidity: '60%',
-        Longitude: 789,
-        Latitude: 101,
+        Current: {
+          Temperature: '25°C',
+          Humidity: '60%',
+          Longitude: 789,
+          Latitude: 101,
+        },
+        score: 8,
       },
-      score: 8,
     },
   ];
 
   it('renders without crashing', () => {
     render(
       <MapContainer>
-        <MarkersComponent poiData={poiData} />
+        <MarkersComponent poiData={poiData} time="Current" />
       </MapContainer>,
     );
   });
@@ -60,7 +64,7 @@ describe('MarkersComponent', () => {
   it('renders the correct number of markers', () => {
     const { getAllByTestId } = render(
       <MapContainer>
-        <MarkersComponent poiData={poiData} />
+        <MarkersComponent poiData={poiData} time="Current" />
       </MapContainer>,
     );
 
@@ -71,7 +75,7 @@ describe('MarkersComponent', () => {
   it('renders a popup for each marker', () => {
     const { getAllByTestId } = render(
       <MapContainer>
-        <MarkersComponent poiData={poiData} />
+        <MarkersComponent poiData={poiData} time="Current" />
       </MapContainer>,
     );
 
@@ -85,7 +89,7 @@ describe('MarkersComponent', () => {
   it('displays correct values for Temperature and Humidity', () => {
     const { getAllByTestId } = render(
       <MapContainer>
-        <MarkersComponent poiData={poiData} />
+        <MarkersComponent poiData={poiData} time="Current" />
       </MapContainer>,
     );
 
@@ -96,8 +100,8 @@ describe('MarkersComponent', () => {
 
       const { weather } = poiData[index];
 
-      expect(listItems[0]).toHaveTextContent(`Temperature:${weather.Temperature}`);
-      expect(listItems[1]).toHaveTextContent(`Humidity:${weather.Humidity}`);
+      expect(listItems[0]).toHaveTextContent(`Temperature: ${weather.Current.Temperature}`);
+      expect(listItems[1]).toHaveTextContent(`Humidity: ${weather.Current.Humidity}`);
     });
   });
 });
