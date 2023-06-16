@@ -1,0 +1,8283 @@
+[
+  {
+    "id": 58680,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Arcadahallen",
+      "sv": "Arcadahallen"
+    },
+    "street_address": {
+      "fi": "Kyläsaarenkuja 6A",
+      "sv": "Byholmsgränden 6A",
+      "en": "Kyläsaarenkuja 6A"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.968672,
+        60.1998
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.968672,
+        60.1998
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42077,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Arena Center Hakaniemi",
+      "sv": "Arena Center Hagnäs"
+    },
+    "street_address": {
+      "fi": "Sörnäisten rantatie 2",
+      "sv": "Sörnäs strandväg 2",
+      "en": "Sörnäisten rantatie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.952585,
+        60.179405
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.952585,
+        60.179405
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 68256,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Arena Center Kaarela"
+    },
+    "street_address": {
+      "fi": "Kaarelankuja 2a",
+      "sv": "Kårbölegränden 2a",
+      "en": "Kaarelankuja 2a"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.899956,
+        60.23745
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.899956,
+        60.23745
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40526,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Arena Center Myllypuro",
+      "sv": "Arena Center Kvarnbäcken"
+    },
+    "street_address": {
+      "fi": "Alakiventie 2",
+      "sv": "Understensvägen 2",
+      "en": "Alakiventie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      508,
+      737,
+      152,
+      261,
+      742,
+      260,
+      151,
+      507,
+      619
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.07962,
+        60.221012
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.07962,
+        60.221012
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 68255,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Arena Center Padel Kaarela",
+      "sv": "Arena Center Padel Kaarela"
+    },
+    "street_address": {
+      "fi": "Kaarelankuja 2a",
+      "sv": "Kårbölegränden 2a",
+      "en": "Kaarelankuja 2a"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2357
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.899529,
+        60.237362
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.899529,
+        60.237362
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40118,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Arena Center Ruskeasuo",
+      "sv": "Arena Center Brunakärr"
+    },
+    "street_address": {
+      "fi": "Nauvontie 3",
+      "sv": "Naguvägen 3",
+      "en": "Nauvontie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      619
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.90195,
+        60.206547
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.90195,
+        60.206547
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 63926,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Billebeino Padel / Padelhalli",
+      "sv": "Billebeino Padel / Padelhall"
+    },
+    "street_address": {
+      "fi": "Traverssikuja 3",
+      "sv": "Traversgränden 3",
+      "en": "Traverssikuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2357,
+      659
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.945667,
+        60.194298
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.945667,
+        60.194298
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 68989,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "ELIXIA Tali / Squash",
+      "sv": "ELIXIA Tali / Squash"
+    },
+    "street_address": {
+      "fi": "Kutomokuja 4",
+      "sv": "Väverigränden 4",
+      "en": "Kutomokuja 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      621
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.875408,
+        60.212868
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.875408,
+        60.212868
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 46091,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "FinScooter Vallila / Scoottaushalli",
+      "sv": "FinScooter Vallila / Scoothall"
+    },
+    "street_address": {
+      "fi": "Pälkäneentie 13 B",
+      "sv": "Pälkänevägen 13 B",
+      "en": "Pälkäneentie 13 B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      620
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.949842,
+        60.195324
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.949842,
+        60.195324
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40693,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helmi Center / Kuntosali",
+      "sv": "Helmi Center / Gym"
+    },
+    "street_address": {
+      "fi": "Hietakummuntie 1 a",
+      "sv": "Sandkullavägen 1 a",
+      "en": "Hietakummuntie 1 a"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.015343,
+        60.246777
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.015343,
+        60.246777
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41162,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helmi Center / Liikuntahalli",
+      "sv": "Helmi Center / Idrottssal"
+    },
+    "street_address": {
+      "fi": "Latokartanontie 12",
+      "sv": "Ladugårdsvägen 12",
+      "en": "Latokartanontie 12"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.014915,
+        60.246376
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.014915,
+        60.246376
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41879,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helmi Center / Tanssistudio",
+      "sv": "Helmi Center / Dansstudio"
+    },
+    "street_address": {
+      "fi": "Vanha Helsingintie 13 (ent. Latokartanontie 12)",
+      "sv": "Gamla Helsingevägen 13 (ent. Latokartanontie 12)",
+      "en": "Vanha Helsingintie 13 (ent. Latokartanontie 12)"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      630
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.01531,
+        60.24639
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.01531,
+        60.24639
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 62742,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helmi Center / Tatami"
+    },
+    "street_address": {
+      "fi": "Vanha Helsingintie 13 (ent. Latokartanontie 12)",
+      "sv": "Gamla Helsingevägen 13 (ent. Latokartanontie 12)",
+      "en": "Vanha Helsingintie 13 (ent. Latokartanontie 12)"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      609,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.015339,
+        60.246544
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.015339,
+        60.246544
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42199,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helsingin Mailapelikeskus / Golfsimulaattori",
+      "sv": "Helsingin Mailapelikeskus / Golfsimulator"
+    },
+    "street_address": {
+      "fi": "Tapulikaupungintie 4",
+      "sv": "Stapelstadsvägen 4",
+      "en": "Tapulikaupungintie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      636,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.032293,
+        60.270527
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.032293,
+        60.270527
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 56394,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helsingin Mailapelikeskus / Pöytätennistila",
+      "sv": "Helsingin Mailapelikeskus / Utrymme för bordtennis"
+    },
+    "street_address": {
+      "fi": "Tapulikaupungintie 4",
+      "sv": "Stapelstadsvägen 4",
+      "en": "Tapulikaupungintie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      627
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.03236,
+        60.270607
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.03236,
+        60.270607
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 56393,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helsingin Mailapelikeskus / Squash-halli",
+      "sv": "helsingin Mailapelikeskus / Squashhall"
+    },
+    "street_address": {
+      "fi": "Tapulikaupungintie 4",
+      "sv": "Stapelstadsvägen 4",
+      "en": "Tapulikaupungintie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      621
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.032112,
+        60.270535
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.032112,
+        60.270535
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41885,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helsingin Mailapelikeskus / Sulkapallohalli",
+      "sv": "Helsingin Mailapelikeskus / Badmintonhall"
+    },
+    "street_address": {
+      "fi": "Tapulikaupungintie 4",
+      "sv": "Stapelstadsvägen 4",
+      "en": "Tapulikaupungintie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      622
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.032518,
+        60.27099
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.032518,
+        60.27099
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41670,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helsingin Mailapelikeskus / Tennishalli",
+      "sv": "Helsingin Mailapelikeskus/ Tennishall"
+    },
+    "street_address": {
+      "fi": "Tapulikaupungintie 4",
+      "sv": "Stapelstadsvägen 4",
+      "en": "Tapulikaupungintie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.032627,
+        60.27098
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.032627,
+        60.27098
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45647,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helsingin Mailapelikeskus / Ulkotenniskentät",
+      "sv": "Helsingin Mailapelikeskus / Utomhustennisplaner"
+    },
+    "street_address": {
+      "fi": "Tapulikaupungintie 4",
+      "sv": "Stapelstadsvägen 4",
+      "en": "Tapulikaupungintie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      662
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.031687,
+        60.270977
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.031687,
+        60.270977
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40134,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Helsingin petankkihalli",
+      "sv": "Helsingfors petanque-hall"
+    },
+    "street_address": {
+      "fi": "Tallikatu",
+      "sv": "Stallgatan",
+      "en": "Tallikatu"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      618
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.933012,
+        60.194748
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.933012,
+        60.194748
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39961,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Helsingin urheilutalo / Fun Bowling",
+      "sv": "Helsingfors idrottscenter /Fun Bowling"
+    },
+    "street_address": {
+      "fi": "Helsinginkatu 25",
+      "sv": "Helsingegatan 25",
+      "en": "Helsinginkatu 25"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      607,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.94807,
+        60.186733
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.94807,
+        60.186733
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41051,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Helsingin urheilutalo / Urheiluhallit Kallio / Palloiluhalli",
+      "sv": "Helsingfors idrottscenter / Urheiluhallit Kallio / Bollninghall"
+    },
+    "street_address": {
+      "fi": "Helsinginkatu 25",
+      "sv": "Helsingegatan 25",
+      "en": "Helsinginkatu 25"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.947374,
+        60.186893
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.947374,
+        60.186893
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41938,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Helsingin urheilutalo / Urheiluhallit Kallio / Sisäampumarata",
+      "sv": "Helsingfors Idrottscenter / Urheiluhallit Kallio / Inomhusskjutbana"
+    },
+    "street_address": {
+      "fi": "Helsinginkatu 25",
+      "sv": "Helsingegatan 25",
+      "en": "Helsinginkatu 25"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      628
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948002,
+        60.18696
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948002,
+        60.18696
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40731,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Helsingin urheilutalo / Urheiluhallit Kallio / Uimahalli",
+      "sv": "Helsingfors idrottscenter / Urheiluhallit Kallio / Simhall"
+    },
+    "street_address": {
+      "fi": "Helsinginkatu 25",
+      "sv": "Helsingegatan 25",
+      "en": "Helsinginkatu 25"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      2221,
+      2226,
+      693
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.947071,
+        60.186836
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.947071,
+        60.186836
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40029,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Herttoniemenrannan liikuntahalli",
+      "sv": "Hertonäs strands idrottshall",
+      "en": "Herttoniemenranta sports hall"
+    },
+    "street_address": {
+      "fi": "Petter Wetterin tie 5",
+      "sv": "Petter Wetters väg 5",
+      "en": "Petter Wetterin tie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.032381,
+        60.190437
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.032381,
+        60.190437
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 5,
+      "stroller": 1,
+      "wheelchair": 5,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 4
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40997,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Jakomäen liikuntapuisto / Tekonurmikenttä (Kontu, Jakomäki-Areena))",
+      "sv": "Jakomäen liikuntapuisto / Konstgräsplan (Kontu, Jakobacka-Arena))"
+    },
+    "street_address": {
+      "fi": "Huokotie 5",
+      "sv": "Drågvägen 5",
+      "en": "Huokotie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.082672,
+        60.260567
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.082672,
+        60.260567
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 64734,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Jätkäsaaren kuplahalli / Tekonurmikenttä (PPJ)",
+      "sv": "Busholmen bubblahallen / Konstgräsplan (PPJ)"
+    },
+    "street_address": {
+      "fi": "Hyväntoivonkatu 1",
+      "sv": "Godahoppsgatan 1",
+      "en": "Hyväntoivonkatu 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.917246,
+        60.154
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.917246,
+        60.154
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 62958,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Jätkäsaaren liikuntahalli",
+      "sv": "Busholmens idrottshall"
+    },
+    "street_address": {
+      "fi": "Hyväntoivonkatu 1",
+      "sv": "Godahoppsgatan 1",
+      "en": "Hyväntoivonkatu 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.915682,
+        60.154522
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.915682,
+        60.154522
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40592,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Helsingfors stad",
+        "en": "municipal service, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Kontulan skeittihalli",
+      "sv": "Gårdsbacka skateboardhall"
+    },
+    "street_address": {
+      "fi": "Emännänpolku 1",
+      "sv": "Husmorsstigen 1",
+      "en": "Emännänpolku 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      620
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.085957,
+        60.236507
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.085957,
+        60.236507
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40164,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Kulosaaren tenniskentät / Tenniskuplahalli (GVLK)",
+      "sv": "Brändö tennisplaner / Tennisbubblahallen (GVLK)"
+    },
+    "street_address": {
+      "fi": "Lars Sonckin tie 5",
+      "sv": "Lars Soncks väg 5",
+      "en": "Lars Sonckin tie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.013548,
+        60.181812
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.013548,
+        60.181812
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 72581,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Kuntoutuskeskus Synapsia / Kuntosali",
+      "sv": "Rehabiliteringscenter Synapsia / Gym"
+    },
+    "street_address": {
+      "fi": "Nordenskiöldinkatu 18 B",
+      "sv": "Nordenskiöldinkatu 18 B",
+      "en": "Nordenskiöldinkatu 18 B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.921225,
+        60.19086
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.921225,
+        60.19086
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 72583,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Kuntoutuskeskus Synapsia / Liikuntasali",
+      "sv": "Rehabiliteringscenter Synapsia / Idrottssal"
+    },
+    "street_address": {
+      "fi": "Nordenskiöldinkatu 18 B",
+      "sv": "Nordenskiöldsgatan 18 B",
+      "en": "Nordenskiöldinkatu 18 B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.920801,
+        60.19127
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.920801,
+        60.19127
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 72580,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Kuntoutuskeskus Synapsia / Sisäkiipeilyseinä",
+      "sv": "Rehabiliteringscenter Synapsia / Klättervägg inomhus"
+    },
+    "street_address": {
+      "fi": "Nordenskiöldinkatu 18 B",
+      "sv": "Nordenskiöldsgatan 18 B",
+      "en": "Nordenskiöldinkatu 18 B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      629
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.920998,
+        60.191315
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.920998,
+        60.191315
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41981,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Kuntoutuskeskus Synapsia / Uima-allas",
+      "sv": "Rehabiliteringscenter Synapsia / Simbassäng"
+    },
+    "street_address": {
+      "fi": "Nordenskiöldinkatu 18 B",
+      "sv": "Nordenskiöldsgatan 18 B",
+      "en": "Nordenskiöldinkatu 18 B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.920994,
+        60.191082
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.920994,
+        60.191082
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41638,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Käpylän juniorihalli (KäPa)",
+      "sv": "Kottby juniorfotbollshall (KäPa)"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 72",
+      "sv": "Backasgatan 72",
+      "en": "Mäkelänkatu 72"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.94013,
+        60.20693
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.94013,
+        60.20693
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41076,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Käpylän liikuntapuisto / Tekonurmikenttä (KäPa)",
+      "sv": "Kottby idrottspark / Konstgräs (KäPa)"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 70",
+      "sv": "Backasgatan 70",
+      "en": "Mäkelänkatu 70"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.940186,
+        60.20693
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.940186,
+        60.20693
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40319,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Laajasalon Palloiluhallit Oy / Palloilusali",
+      "sv": "Laajasalon Palloiluhallit Oy / Bollspelsal"
+    },
+    "street_address": {
+      "fi": "Sarvastonkaari 23",
+      "sv": "Fladabågen 23",
+      "en": "Sarvastonkaari 23"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.056133,
+        60.174324
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.056133,
+        60.174324
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 72595,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Laajasalon Palloiluhallit Oy / Sisäpadelkenttä",
+      "sv": "Laajasalon Palloiluhallit Oy / Inomhuspadelplan"
+    },
+    "street_address": {
+      "fi": "Sarvastonkaari 23",
+      "sv": "Fladabågen 23",
+      "en": "Sarvastonkaari 23"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      2357
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.056953,
+        60.17448
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.056953,
+        60.17448
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 72594,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Laajasalon Palloiluhallit Oy / Sulkapallohalli",
+      "sv": "Laajasalon Palloiluhallit Oy / Badmintonhall"
+    },
+    "street_address": {
+      "fi": "Sarvastonkaari 23",
+      "sv": "Fladabågen 23",
+      "en": "Sarvastonkaari 23"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      622
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.057152,
+        60.17449
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.057152,
+        60.17449
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40128,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Laajasalon Palloiluhallit Oy / Tennishalli",
+      "sv": "Laajasalon Palloiluhallit Oy / Tennishall"
+    },
+    "street_address": {
+      "fi": "Sarvastonkaari 23",
+      "sv": "Fladabågen 23",
+      "en": "Sarvastonkaari 23"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.056889,
+        60.174652
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.056889,
+        60.174652
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 62904,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Laajasalon Palloiluhallit Oy / Ulkopadelkentät",
+      "sv": "Laajasalon Palloiluhallit Oy / Utomhuspadelplaner"
+    },
+    "street_address": {
+      "fi": "Sarvastonkaari 23",
+      "sv": "Fladabågen 23",
+      "en": "Sarvastonkaari 23"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      2355,
+      659
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.057604,
+        60.17416
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.057604,
+        60.17416
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40733,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Laajasalon Palloiluhallit Oy / Ulkotenniskentät",
+      "sv": "Laajasalon Palloiluhallit Oy / Utomhustennisplaner"
+    },
+    "street_address": {
+      "fi": "Sarvastonkaari 23",
+      "sv": "Fladabågen 23",
+      "en": "Sarvastonkaari 23"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      662
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.057756,
+        60.174923
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.057756,
+        60.174923
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 51284,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Lauttasaaren yhteiskoulu / Kiipeilyseinä"
+    },
+    "street_address": {
+      "fi": "Isokaari 19",
+      "sv": "Storsvängen 19",
+      "en": "Isokaari 19"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      629
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.86338,
+        60.158314
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.86338,
+        60.158314
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45524,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Lauttasaaren yhteiskoulu / Kuntosali",
+      "sv": "Högstadie- och gymnasieskolan Lauttasaaren yhteiskoulu / Gym"
+    },
+    "street_address": {
+      "fi": "Isokaari 19",
+      "sv": "Storsvängen 19",
+      "en": "Isokaari 19"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.86292,
+        60.158722
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.86292,
+        60.158722
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 72636,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Lauttasaaren yhteiskoulu / Liikuntahalli",
+      "sv": "Högstadieskolan Lauttasaaren yhteiskoulu / Idrottshall"
+    },
+    "street_address": {
+      "fi": "Isokaari 19",
+      "sv": "Storsvängen 19",
+      "en": "Isokaari 19"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.862663,
+        60.15797
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.862663,
+        60.15797
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41346,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Lauttasaaren yhteiskoulu / Liikuntasali",
+      "sv": "Högstadieskolan Lauttasaaren yhteiskoulu / Idrottssal"
+    },
+    "street_address": {
+      "fi": "Isokaari 19",
+      "sv": "Storsvängen 19",
+      "en": "Isokaari 19"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.86319,
+        60.158474
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.86319,
+        60.158474
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 68579,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Lehto Areena / Monitoimikenttä"
+    },
+    "street_address": {
+      "fi": "Henrik Forsiuksen tie 2",
+      "sv": "Henrik Forsius väg 2",
+      "en": "Henrik Forsiuksen tie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.015898,
+        60.27373
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.015898,
+        60.27373
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 68578,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Lehto Areena / Salibandyhalli"
+    },
+    "street_address": {
+      "fi": "Henrik Forsiuksen tie 2",
+      "sv": "Henrik Forsius väg 2",
+      "en": "Henrik Forsiuksen tie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.016312,
+        60.273746
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.016312,
+        60.273746
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 68580,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Lehto Areena / Voimistelusali"
+    },
+    "street_address": {
+      "fi": "Henrik Forsiuksen tie 2",
+      "sv": "Henrik Forsius väg 2",
+      "en": "Henrik Forsiuksen tie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.01532,
+        60.273697
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.01532,
+        60.273697
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45927,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly",
+      "sv": "Sportkvarnen",
+      "en": "Liikuntamylly"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      2221,
+      2224
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.077974,
+        60.224438
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.077974,
+        60.224438
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "stroller": 1,
+      "wheelchair": 4,
+      "hearing_aid": 1,
+      "reduced_mobility": 3,
+      "visually_impaired": 5
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41913,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Yleisurheilualue",
+      "sv": "Sportkvarnen / Friidrottsområde",
+      "en": "Liikuntamylly / Athletics area"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.077011,
+        60.224865
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.077011,
+        60.224865
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40583,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Pallopelikentät",
+      "sv": "Sportkvarnen / Bollspelplaner",
+      "en": "Liikuntamylly / Ball play fields"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      2221,
+      2223
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.076967,
+        60.224377
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.076967,
+        60.224377
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40541,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Nyrkkeilytila",
+      "sv": "Sportkvarnen / Boxningområdet",
+      "en": "Liikuntamylly / Boxing space"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      609,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.07752,
+        60.225098
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.07752,
+        60.225098
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41255,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Kiipeilyseinä",
+      "sv": "Sportkvarnen / Klättervägg",
+      "en": "Liikuntamylly / climbing wall"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      629
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.077711,
+        60.224945
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.077711,
+        60.224945
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41540,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Kuntosali",
+      "sv": "Sportkvarnen / Gym",
+      "en": "Liikuntamylly / Gym"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617,
+      2219,
+      2221
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.077791,
+        60.224487
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.077791,
+        60.224487
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 42194,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Liikuntasali",
+      "sv": "Sportkvarnen / Gymnastiksal",
+      "en": "Liikuntamylly / Gymnasium"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617,
+      2218,
+      2221,
+      2225
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.078115,
+        60.224216
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.078115,
+        60.224216
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40623,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Telinevoimistelutila",
+      "sv": "Sportkvarnen / Redskapsgymnastikområde",
+      "en": "Liikuntamylly / Gymnastics space"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      631
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.077404,
+        60.225266
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.077404,
+        60.225266
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41779,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Sisäpalloilukenttä",
+      "sv": "Sportkvarnen / Inomhusbollningplan",
+      "en": "Liikuntamylly / Indoor ball field"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617,
+      2221,
+      2223
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.078018,
+        60.22463
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.078018,
+        60.22463
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40427,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Judo-, paini- ja karatetila",
+      "sv": "Sportkvarnen / Judo-, brottning och karateutrum",
+      "en": "Liikuntamylly / Judo-, wrestling- and karate farm"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.078157,
+        60.224415
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.078157,
+        60.224415
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40617,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Uima-allastila",
+      "sv": "Sportkvarnen / Simbassäng",
+      "en": "Liikuntamylly / Swimming pool space"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      692
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.07741,
+        60.224518
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.07741,
+        60.224518
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41083,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Liikuntamylly / Voimailualue",
+      "sv": "Sportkvarnen / Styrketräningsområde",
+      "en": "Liikuntamylly / Weight training area"
+    },
+    "street_address": {
+      "fi": "Jauhokuja 3",
+      "sv": "Mjölgränden 3",
+      "en": "Jauhokuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      613
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.076515,
+        60.225315
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.076515,
+        60.225315
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40739,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Malmin palloiluhalli (MPH)",
+      "sv": "Malm bollspelhall (MPH)"
+    },
+    "street_address": {
+      "fi": "Siemenkuja 3",
+      "sv": "Frögränden 3",
+      "en": "Siemenkuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.011393,
+        60.255
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.011393,
+        60.255
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 67888,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Helsingfors stad",
+        "en": "municipal service, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Malminkartanon harrastushalli",
+      "sv": "Malmgårds fritidshall"
+    },
+    "street_address": {
+      "fi": "Ruosilantie 18",
+      "sv": "Rosasvägen 18",
+      "en": "Ruosilantie 18"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.85268,
+        60.241894
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.85268,
+        60.241894
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39945,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Mandatum Center / Sulkapallohalli",
+      "sv": "Mandatum Center/ Badmintonhall"
+    },
+    "street_address": {
+      "fi": "Kulosaarentie 2",
+      "sv": "Brändövägen 2",
+      "en": "Kulosaarentie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      622
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.000435,
+        60.1866
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.000435,
+        60.1866
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40507,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Mandatum Center / Tennishalli",
+      "sv": "Mandatum Center / Tennishall"
+    },
+    "street_address": {
+      "fi": "Kulosaarentie 2",
+      "sv": "Brändövägen 2",
+      "en": "Kulosaarentie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.000381,
+        60.1866
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.000381,
+        60.1866
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45121,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Maunulan liikuntahalli / Sisäjousiammuntarata",
+      "sv": "Månsas idrottshall / Inomhusbågskyttebana",
+      "en": "Maunula Sporthall / Archery pole"
+    },
+    "street_address": {
+      "fi": "Maunulanmäki 3-5",
+      "sv": "Månsasbacken 3-5",
+      "en": "Maunulanmäki 3-5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      563,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.930653,
+        60.228752
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.930653,
+        60.228752
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40806,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Maunulan liikuntahalli / Liikuntasali 1",
+      "sv": "Månsas idrottshall / Idrottsal 1",
+      "en": "Maunula sporthall / Gymnasium 1"
+    },
+    "street_address": {
+      "fi": "Maunulanmäki 3-5",
+      "sv": "Månsasbacken 3-5",
+      "en": "Maunulanmäki 3-5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.930656,
+        60.2287
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.930656,
+        60.2287
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 1,
+      "wheelchair": 1,
+      "hearing_aid": 1,
+      "reduced_mobility": 1,
+      "visually_impaired": 3
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40068,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Maunulan liikuntahalli / Liikuntasali 2",
+      "sv": "Månsas idrottshalls / Idrottsal 2",
+      "en": "Maunula sporthall / Gymnasium 2"
+    },
+    "street_address": {
+      "fi": "Maunulanmäki 3-5",
+      "sv": "Månsasbacken 3-5",
+      "en": "Maunulanmäki 3-5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.930529,
+        60.228706
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.930529,
+        60.228706
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 1,
+      "wheelchair": 1,
+      "hearing_aid": 1,
+      "reduced_mobility": 1,
+      "visually_impaired": 3
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 39994,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Maunulan liikuntahalli / Liikuntasali 3",
+      "sv": "Månsas idrottshall / Idrottsal 3",
+      "en": "Maunula Sporthall / Gymnasium 3"
+    },
+    "street_address": {
+      "fi": "Maunulanmäki 3-5",
+      "sv": "Månsasbacken 3-5",
+      "en": "Maunulanmäki 3-5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.930405,
+        60.228695
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.930405,
+        60.228695
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 1,
+      "wheelchair": 1,
+      "hearing_aid": 1,
+      "reduced_mobility": 1,
+      "visually_impaired": 3
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41118,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Maunulan liikuntahalli / Sisäampumarata",
+      "sv": "Månsas idrottshall / Skjutbana",
+      "en": "Maunula sporthall / Shooting range"
+    },
+    "street_address": {
+      "fi": "Maunulanmäki 3-5",
+      "sv": "Månsasbacken 3-5",
+      "en": "Maunulanmäki 3-5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      628
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.930616,
+        60.228752
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.930616,
+        60.228752
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "stroller": 1,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 5
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40075,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Maunulan liikuntahalli / Kuntosali",
+      "sv": "Månsas idrottshall / Gym",
+      "en": "Maunula sports hall / Gym"
+    },
+    "street_address": {
+      "fi": "Maunulanmäki 3-5",
+      "sv": "Månsasbacken 3-5",
+      "en": "Maunulanmäki 3-5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.930462,
+        60.22864
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.930462,
+        60.22864
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "stroller": 1,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 5
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 50138,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Megazone Helsinki / Laserpelikenttä",
+      "sv": "Megazone Helsinki / Laserspelplats"
+    },
+    "street_address": {
+      "fi": "Energiakatu 3",
+      "sv": "Energigatan 3",
+      "en": "Energiakatu 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.903255,
+        60.165745
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.903255,
+        60.165745
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 48319,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Meilahden liikuntakeskus / Sulkapallohalli",
+      "sv": "Meilahden liikuntakeskus / Badmintonhall"
+    },
+    "street_address": {
+      "fi": "Meilahden liikuntapuisto",
+      "sv": "Mejlans idrottspark",
+      "en": "Meilahden liikuntapuisto"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      622
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.89657,
+        60.19022
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.89657,
+        60.19022
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40360,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Meilahden liikuntakeskus / Tennishalli",
+      "sv": "Mejlans Idrottscenter / Tennishall"
+    },
+    "street_address": {
+      "fi": "Zaidankatu 7",
+      "sv": "Zaidagatan 7",
+      "en": "Zaidankatu 7"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.897106,
+        60.190292
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.897106,
+        60.190292
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41444,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Meilahden liikuntakeskus / Tenniskentät",
+      "sv": "Mejlans Idrottscenter / Tennisplaner"
+    },
+    "street_address": {
+      "fi": "Meilahden urheilupuisto",
+      "sv": "Meilahden urheilupuisto",
+      "en": "Meilahden urheilupuisto"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.89735,
+        60.189587
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.89735,
+        60.189587
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41757,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Meilahden liikuntakeskus/ Sisäpalloiluhalli",
+      "sv": "Mejlans Idrottscebter / Inomhusbollspelhall"
+    },
+    "street_address": {
+      "fi": "Zaidankatu 9",
+      "sv": "Zaidagatan 9",
+      "en": "Zaidankatu 9"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.896309,
+        60.19037
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.896309,
+        60.19037
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41262,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Merihaan Pallohalli / Monitoimihalli",
+      "sv": "Havshagen Bollhall / Multianvändningshall"
+    },
+    "street_address": {
+      "fi": "Haapaniemenkatu 14 B",
+      "sv": "Aspnäsgatan 14 B",
+      "en": "Haapaniemenkatu 14 B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.961813,
+        60.179752
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.961813,
+        60.179752
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39947,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Merihaan Pallohalli / Pöytätennis",
+      "sv": "Habshagen Bollhall / Bordtennis"
+    },
+    "street_address": {
+      "fi": "Haapaniemenkatu 14 B",
+      "sv": "Aspnäsgatan 14 B",
+      "en": "Haapaniemenkatu 14 B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      627
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.961327,
+        60.179745
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.961327,
+        60.179745
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42247,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Merihaan Pallohalli / Salibandy",
+      "sv": "Havshagen Bollhall / Innebandy"
+    },
+    "street_address": {
+      "fi": "Haapaniemenkatu 14 B",
+      "sv": "Aspnäsgatan 14 B",
+      "en": "Haapaniemenkatu 14 B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      619
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.961866,
+        60.179752
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.961866,
+        60.179752
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41752,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Merihaan Pallohalli / Squash",
+      "sv": "Havshagen Bollhall / Squash"
+    },
+    "street_address": {
+      "fi": "Haapaniemenkatu 14 B",
+      "sv": "Aspnäsgatan 14 B",
+      "en": "Haapaniemenkatu 14 B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      621
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.96138,
+        60.179745
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.96138,
+        60.179745
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 48317,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Merihaan pallohalli / Sulkapallohalli",
+      "sv": "Merihaan pallohalli / Badmintonhall"
+    },
+    "street_address": {
+      "fi": "Haapaniemenkatu 14 B",
+      "sv": "Aspnäsgatan 14 B",
+      "en": "Haapaniemenkatu 14 B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      622
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.961658,
+        60.179634
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.961658,
+        60.179634
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40384,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Merilahden peruskoulu / Liikuntasali",
+      "sv": "Grundskolan Merilahden peruskoulu / Idrottssal"
+    },
+    "street_address": {
+      "fi": "Kallvikinniementie 1",
+      "sv": "Kallviksuddsvägen 1",
+      "en": "Kallvikinniementie 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.13136,
+        60.201706
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.13136,
+        60.201706
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40338,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Myllypuron Pallomylly",
+      "sv": "Kvarnbäckens Bollkvarn",
+      "en": "Myllypuro Pallomylly"
+    },
+    "street_address": {
+      "fi": "Pikajuoksijankuja 9",
+      "sv": "Sprintergränden 9",
+      "en": "Pikajuoksijankuja 9"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.079926,
+        60.219788
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.079926,
+        60.219788
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "hearing_aid": 1,
+      "reduced_mobility": 1,
+      "visually_impaired": 3
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41329,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Myllypuron liikuntapuisto / Busmo Areena (PK-35)",
+      "sv": "Kvarnbäckens idrottspark / Busmo Arena (PK-35)"
+    },
+    "street_address": {
+      "fi": "Myllytontunpolku 1",
+      "sv": "Kvarntomtensstigen 1",
+      "en": "Myllytontunpolku 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.075584,
+        60.21624
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.075584,
+        60.21624
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39981,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / 1940 (A-sali 2)",
+      "sv": "Olympiastadion / 1940 (A-sal 2)"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1 (1. krs)",
+      "sv": "Paavo Nurmis väg 1 (1. vån.)",
+      "en": "Paavo Nurmen tie 1 (1. floor)"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      630
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.925905,
+        60.186993
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.925905,
+        60.186993
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42231,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / 1952 (A-sali 3)",
+      "sv": "Olympiastadion / 1952 (A-sal 3)"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1 (1. krs)",
+      "sv": "Paavo Nurmis väg 1 (1. vån.)",
+      "en": "Paavo Nurmen tie 1 (1. floor)"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      630
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.925861,
+        60.187107
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.925861,
+        60.187107
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 62975,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / A-suora (55m rata)",
+      "sv": "Olympiastadion / A-bana (55m bana)"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1 (1. krs)",
+      "sv": "Paavo Nurmis väg 1 (1. vån.)",
+      "en": "Paavo Nurmen tie 1 (1. floor)"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      632
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.926151,
+        60.187084
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.926151,
+        60.187084
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 72610,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / Jalkapallostadion",
+      "sv": "Olympiastadion / Fotbollsstadion"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1",
+      "sv": "Paavo Nurmis väg 1",
+      "en": "Paavo Nurmen tie 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      656,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.927185,
+        60.18701
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.927185,
+        60.18701
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 62974,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / Juoksutunneli",
+      "sv": "Olympiastadion / Tunnel för löpning"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1",
+      "sv": "Paavo Nurmis väg 1",
+      "en": "Paavo Nurmen tie 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      632
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.927586,
+        60.186085
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.927586,
+        60.186085
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39974,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / Liikuntasali 1",
+      "sv": "Olympiastadion / Idrottsal 1"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1 (-, 2. krs)",
+      "sv": "Paavo Nurmis väg 1 (-, 2. vån.)",
+      "en": "Paavo Nurmen tie 1 (-, 2. floor)"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.928286,
+        60.187576
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.928286,
+        60.187576
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42092,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / Liikuntasali 2",
+      "sv": "Olympiastadion / Idrottsal 2"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1 (-, 2. krs)",
+      "sv": "Paavo Nurmis väg 1 (-, 2. vån.)",
+      "en": "Paavo Nurmen tie 1 (-, 2. floor)"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.928328,
+        60.18749
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.928328,
+        60.18749
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41020,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / Liikuntasali 3 / Auditorio",
+      "sv": "Olympiastadion / Idrottsal 3 / Auditorium"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1 (-, 2. krs)",
+      "sv": "Paavo Nurmis väg 1 (-, 2. vån.)",
+      "en": "Paavo Nurmen tie 1 (-, 2. floor)"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.92835,
+        60.18741
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.92835,
+        60.18741
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40345,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / Sali 4",
+      "sv": "Olympiastadion / Sal 4"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1 (4. krs)",
+      "sv": "Paavo Nurmis väg 1 (4. vån.)",
+      "en": "Paavo Nurmen tie 1 (4. floor)"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.928547,
+        60.186863
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.928547,
+        60.186863
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40852,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / Sali 5",
+      "sv": "Olympiastadion / Sal 5"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1 (4. krs)",
+      "sv": "Paavo Nurmis väg 1 (4. vån.)",
+      "en": "Paavo Nurmen tie 1 (4. floor)"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.92857,
+        60.186802
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.92857,
+        60.186802
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40204,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / Yleisurheilukenttä",
+      "sv": "Olympiastadion / Friidrottsplan"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1",
+      "sv": "Paavo Nurmis väg 1",
+      "en": "Paavo Nurmen tie 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      664
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.927164,
+        60.187065
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.927164,
+        60.187065
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 72589,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Open Padel Jakomäki / Padelhalli",
+      "sv": "Open Padel Jakomäki / Padelhall"
+    },
+    "street_address": {
+      "fi": "Luiskatie 1",
+      "sv": "Halkvägen 1",
+      "en": "Luiskatie 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2357
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.068571,
+        60.254757
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.068571,
+        60.254757
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 63927,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Padel Arena Center Myllypuro / Padelkentät",
+      "sv": "Padel Arena Center Myllypuro / Padelplaner"
+    },
+    "street_address": {
+      "fi": "Alakiventie 2",
+      "sv": "Understensvägen 2",
+      "en": "Alakiventie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2357,
+      659
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.079786,
+        60.22095
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.079786,
+        60.22095
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 57222,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Padel Viikinranta / Padelhalli 1",
+      "sv": "Padel Viikinranta / Padelhall 1"
+    },
+    "street_address": {
+      "fi": "Jokisuuntie 5",
+      "sv": "Åminnevägen 5",
+      "en": "Jokisuuntie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2357,
+      659
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.98744,
+        60.21829
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.98744,
+        60.21829
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 72596,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Padel Viikinranta / Padelhalli 2",
+      "sv": "Padel Viikinranta / Padelhall 2"
+    },
+    "street_address": {
+      "fi": "Jokisuuntie 2",
+      "sv": "Åminnevägen 2",
+      "en": "Jokisuuntie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      2357
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.987099,
+        60.218555
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.987099,
+        60.218555
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41351,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Pajamäen jalkapallohalli (HJK/PPV)",
+      "sv": "Smedjebacka Fotbollshall (HJK/PPV)"
+    },
+    "street_address": {
+      "fi": "Takkatie 36",
+      "sv": "Spiselvägen 36",
+      "en": "Takkatie 36"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.849491,
+        60.21915
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.849491,
+        60.21915
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40182,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Pakilankenttä / Kuplahalli (Tekonurmi) (HPS)",
+      "sv": "Baggböle bubblahall (Konstgräs) (HPS)"
+    },
+    "street_address": {
+      "fi": "Pilkekuja 10 / Halkosuontie 88",
+      "sv": "Klabbgränden 10 / Halkosuontie 88",
+      "en": "Pilkekuja 10 / Halkosuontie 88"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.930096,
+        60.242153
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.930096,
+        60.242153
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40001,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Pihlajamäen juniorihalli / Tekonurmikenttä (PK-35)",
+      "sv": "Rönnbacka juniorhall / Konstgräsplan (PK-35)"
+    },
+    "street_address": {
+      "fi": "Lucina Hagmanin polku 5",
+      "sv": "Lucina Hagmans stig 5",
+      "en": "Lucina Hagmanin polku 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.999235,
+        60.237125
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.999235,
+        60.237125
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42084,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Pirkkolan palloiluhalli",
+      "sv": "Britas bollhall",
+      "en": "Pirkkola ball hall"
+    },
+    "street_address": {
+      "fi": "Pirkkolan metsätie 6",
+      "sv": "Britas skogsväg 6",
+      "en": "Pirkkolan metsätie 6"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.91071,
+        60.232258
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.91071,
+        60.232258
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 5,
+      "wheelchair": 5,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 11
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 68808,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Pirkkolahalli"
+    },
+    "street_address": {
+      "fi": "Pirkkolan metsätie 8",
+      "sv": "Britas skogsväg 8",
+      "en": "Pirkkolan metsätie 8"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.909485,
+        60.232193
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.909485,
+        60.232193
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41270,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Porolahden peruskoulu (yläaste) / Koripallokenttä",
+      "sv": "Grundskolan Porolahden peruskoulu (hödstadiet) / Basketplan"
+    },
+    "street_address": {
+      "fi": "Satumaanpolku 2",
+      "sv": "Sagolandsstigen 2",
+      "en": "Satumaanpolku 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      657,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.05656,
+        60.19516
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.05656,
+        60.19516
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41374,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Porolahden peruskoulu (yläaste) / Kuntosali",
+      "sv": "Grundskolan Porolahden peruskoulu (högstadiet) / Gym"
+    },
+    "street_address": {
+      "fi": "Satumaanpolku 2",
+      "sv": "Sagolandsstigen 2",
+      "en": "Satumaanpolku 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.057156,
+        60.19518
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.057156,
+        60.19518
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40939,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Porolahden peruskoulu (yläaste) / Liikuntasali 1",
+      "sv": "Grundskolan Porolahden peruskoulu (hödstadiet) / Idrottssal 1"
+    },
+    "street_address": {
+      "fi": "Satumaanpolku 2",
+      "sv": "Sagolandsstigen 2",
+      "en": "Satumaanpolku 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.057667,
+        60.19506
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.057667,
+        60.19506
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40229,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Porolahden peruskoulu (yläaste) / Liikuntasali 2",
+      "sv": "Grundskolan Porolahden peruskoulu (högstadiet) / Idrottssal 2"
+    },
+    "street_address": {
+      "fi": "Satumaanpolku 2",
+      "sv": "Sagolandsstigen 2",
+      "en": "Satumaanpolku 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.05733,
+        60.194973
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.05733,
+        60.194973
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40565,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Porolahden peruskoulu (yläaste) / Pöytätennistila",
+      "sv": "Grundskolan Porolahden peruskoulu (högstadiet) / Bordtennisområde"
+    },
+    "street_address": {
+      "fi": "Satumaanpolku 2",
+      "sv": "Sagolandsstigen 2",
+      "en": "Satumaanpolku 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      627
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.057123,
+        60.19541
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.057123,
+        60.19541
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42144,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Puistolan liikuntahalli",
+      "sv": "Parkstads idrottshall",
+      "en": "Puistola sports hall"
+    },
+    "street_address": {
+      "fi": "Koudantie 2",
+      "sv": "Koutavägen 2",
+      "en": "Koudantie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.055632,
+        60.26723
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.055632,
+        60.26723
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 5,
+      "stroller": 2,
+      "wheelchair": 6,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 5
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 62764,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Puistolan kentät / Tattarisuon jalkapallohalli"
+    },
+    "street_address": {
+      "fi": "Tattarisuontie 32",
+      "sv": "Tattarmossvägen 32",
+      "en": "Tattarisuontie 32"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.04966,
+        60.256413
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.04966,
+        60.256413
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 68816,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Redin skeittihalli",
+      "sv": "Redi skateboardhall"
+    },
+    "street_address": {
+      "fi": "Hermannin rantatie 5",
+      "sv": "Hermanstads strandväg 5",
+      "en": "Hermannin rantatie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      620
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.979885,
+        60.18761
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.979885,
+        60.18761
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 60083,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Ristipellontien liikuntakeskus / Cheerleading-sali (HAC)",
+      "sv": "Ristipellontien liikuntakeskus / Sal för cheerleading (HAC)"
+    },
+    "street_address": {
+      "fi": "Ristipellontie 14",
+      "sv": "Korsåkersvägen 14",
+      "en": "Ristipellontie 14"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.844852,
+        60.24114
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.844852,
+        60.24114
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 67928,
+    "contract_type": {
+      "id": "PRIVATE_SERVICE",
+      "description": {
+        "fi": "yksityinen palvelu",
+        "sv": "privat tjänst",
+        "en": "private service"
+      }
+    },
+    "name": {
+      "fi": "Ruoholahden Palloiluhalli",
+      "en": "Ruoholahden Palloiluhalli"
+    },
+    "street_address": {
+      "fi": "Kellosaarenkatu 3",
+      "sv": "Skällargatan 3",
+      "en": "Kellosaarenkatu 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      616,
+      622,
+      264,
+      155,
+      511
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.911678,
+        60.162518
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.911678,
+        60.162518
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 50018,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Rush Finland / Trampoliinipuisto",
+      "sv": "Rush Finland / Trampolinpark"
+    },
+    "street_address": {
+      "fi": "Valimotie 25",
+      "sv": "Gjuterivägen 25",
+      "en": "Valimotie 25"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.877804,
+        60.221054
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.877804,
+        60.221054
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42081,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Ruskeasuon liikuntapuisto / Liikuntahalli",
+      "sv": "Brunakärrs idrottspark / Idrottshall",
+      "en": "Ruskeasuo sports park / Sporthall"
+    },
+    "street_address": {
+      "fi": "Ratsastie 10",
+      "sv": "Ridvägen 10",
+      "en": "Ratsastie 10"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.910385,
+        60.19848
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.910385,
+        60.19848
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 6,
+      "wheelchair": 6,
+      "hearing_aid": 1,
+      "reduced_mobility": 4,
+      "visually_impaired": 9
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 42210,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Helsingfors stad",
+        "en": "municipal service, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Seikkailutalo / Lentopallokenttä",
+      "sv": "Seikkailutalo / Volleybollplan"
+    },
+    "street_address": {
+      "fi": "Kallvikinniementie 10",
+      "sv": "Kallviksuddsvägen 10",
+      "en": "Kallvikinniementie 10"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      658,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.133394,
+        60.2002
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.133394,
+        60.2002
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42126,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Helsingfors stad",
+        "en": "municipal service, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Seikkailutalo / Pöytätennispöytä",
+      "sv": "Seikkailutalo / Bordtennisbord"
+    },
+    "street_address": {
+      "fi": "Kallvikinniementie 10",
+      "sv": "Kallviksuddsvägen 10",
+      "en": "Kallvikinniementie 10"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617,
+      627
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.13303,
+        60.200256
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.13303,
+        60.200256
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41348,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Helsingfors stad",
+        "en": "municipal service, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Seikkailutalo / Sisäkiipeilyseinä",
+      "sv": "Seikkailutalo / Klättervägg inomhus"
+    },
+    "street_address": {
+      "fi": "Kallvikinniementie 10",
+      "sv": "Kallviksuddsvägen 10",
+      "en": "Kallvikinniementie 10"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      629
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.13312,
+        60.200283
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.13312,
+        60.200283
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 58447,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Helsingfors stad",
+        "en": "municipal service, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Seikkailutalo / Uima- ja melontaranta",
+      "sv": "Seikkailutalo / Bad- och paddlingsplats"
+    },
+    "street_address": {
+      "fi": "Kallvikinniementie 10",
+      "sv": "Kallviksuddsvägen 10",
+      "en": "Kallvikinniementie 10"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      688
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.133732,
+        60.199978
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.133732,
+        60.199978
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 68823,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Smash Center / Golfsimulaattori",
+      "sv": "Smash Center / Golfsimulator"
+    },
+    "street_address": {
+      "fi": "Varikkotie 4",
+      "sv": "Depåvägen 4",
+      "en": "Varikkotie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      636,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.068777,
+        60.209225
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.068777,
+        60.209225
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39939,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Smash Center / Kuntosali",
+      "sv": "Smash Center / Gym"
+    },
+    "street_address": {
+      "fi": "Varikkotie 4",
+      "sv": "Depåvägen 4",
+      "en": "Varikkotie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.068043,
+        60.20914
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.068043,
+        60.20914
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42296,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Smash Center / Padelkenttäalue",
+      "sv": "Smash Center / Padelplanområde"
+    },
+    "street_address": {
+      "fi": "Varikkotie 4",
+      "sv": "Depåvägen 4",
+      "en": "Varikkotie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      2355
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.068073,
+        60.209835
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.068073,
+        60.209835
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45640,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Smash Center / Pöytätennistila",
+      "sv": "Smash Center / Bordtennisområdet"
+    },
+    "street_address": {
+      "fi": "Varikkotie 4",
+      "sv": "Depåvägen 4",
+      "en": "Varikkotie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      627
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.068615,
+        60.20922
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.068615,
+        60.20922
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 68211,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Smash Center / Sisäpadelkentät",
+      "sv": "Smash Center / Padelplaner inomhus"
+    },
+    "street_address": {
+      "fi": "Varikkotie 4",
+      "sv": "Depåvägen 4",
+      "en": "Varikkotie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      2357
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.068743,
+        60.20981
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.068743,
+        60.20981
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40686,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Smash Center / Squash-halli",
+      "sv": "Smash Center / Squash-hall"
+    },
+    "street_address": {
+      "fi": "Varikkotie 4",
+      "sv": "Depåvägen 4",
+      "en": "Varikkotie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      621
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.068636,
+        60.20916
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.068636,
+        60.20916
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41867,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Smash Center / Sulkapallohalli",
+      "sv": "Smash Center / Badmintonhall"
+    },
+    "street_address": {
+      "fi": "Varikkotie 4",
+      "sv": "Depåvägen 4",
+      "en": "Varikkotie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      622
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.069159,
+        60.209187
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.069159,
+        60.209187
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41789,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Smash Center / Tennishalli",
+      "sv": "Smash Center / Tennishall"
+    },
+    "street_address": {
+      "fi": "Varikkotie 4",
+      "sv": "Depåvägen 4",
+      "en": "Varikkotie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.067991,
+        60.209373
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.067991,
+        60.209373
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39980,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Smash Center / Tenniskentät (Janus-halli)",
+      "sv": "Smash Center / Tennisplaner (Janus-hall)"
+    },
+    "street_address": {
+      "fi": "Varikkotie 4",
+      "sv": "Depåvägen 4",
+      "en": "Varikkotie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.06706,
+        60.21018
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.06706,
+        60.21018
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39978,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Smash Center / Tenniskentät (KOLO Areena)",
+      "sv": "Smash Center / Tennisplaner (KOLO Arena)"
+    },
+    "street_address": {
+      "fi": "Ratasmyllyntie 1",
+      "sv": "Hjulkvarnsvägen 1",
+      "en": "Ratasmyllyntie 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.068869,
+        60.209827
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.068869,
+        60.209827
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42162,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Taivallahden tenniskeskus / Tennishalli",
+      "sv": "Edesvikens tenniscenter / Tennishall"
+    },
+    "street_address": {
+      "fi": "Hiekkarannantie 2",
+      "sv": "Sandstrandsvägen 2",
+      "en": "Hiekkarannantie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.913914,
+        60.17501
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.913914,
+        60.17501
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42284,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Talin jalkapallohalli",
+      "sv": "Tal fotbollshall",
+      "en": "Tali football hall"
+    },
+    "street_address": {
+      "fi": "Purotie 8",
+      "sv": "Bäckvägen 8",
+      "en": "Purotie 8"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.868238,
+        60.21403
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.868238,
+        60.21403
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 7,
+      "stroller": 1,
+      "wheelchair": 7,
+      "hearing_aid": 1,
+      "reduced_mobility": 4,
+      "visually_impaired": 7
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 62776,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Talihalli / Padelkenttä",
+      "sv": "Talihalli / Padelplan"
+    },
+    "street_address": {
+      "fi": "Huopalahdentie 28",
+      "sv": "Hoplaksvägen 28",
+      "en": "Huopalahdentie 28"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      2355
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.877756,
+        60.211163
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.877756,
+        60.211163
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 68825,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Talihalli / Pöytätennispöydät",
+      "sv": "Talihalli / Bordtennisborden"
+    },
+    "street_address": {
+      "fi": "Huopalahdentie 28",
+      "sv": "Hoplaksvägen 28",
+      "en": "Huopalahdentie 28"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      627
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.878294,
+        60.210964
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.878294,
+        60.210964
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41719,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Talihalli / Squash-halli",
+      "sv": "Talihalli / Squash-hall"
+    },
+    "street_address": {
+      "fi": "Huopalahdentie 28",
+      "sv": "Hoplaksvägen 28",
+      "en": "Huopalahdentie 28"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      621
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.87815,
+        60.210938
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.87815,
+        60.210938
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41974,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Talihalli / Sulkapallohalli",
+      "sv": "Talihalli / Badmintonhall"
+    },
+    "street_address": {
+      "fi": "Huopalahdentie 28",
+      "sv": "Hoplaksvägen 28",
+      "en": "Huopalahdentie 28"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      622
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.878006,
+        60.210945
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.878006,
+        60.210945
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41556,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Talin Tenniskeskus / Golfin sisäharjoitustila",
+      "sv": "Talin Tenniskeskus / Golf inomhusträningsområdet"
+    },
+    "street_address": {
+      "fi": "Talin urheilupuisto, Kutomokuja 4",
+      "sv": "Talin urheilupuisto, Kutomokuja 4",
+      "en": "Talin urheilupuisto, Kutomokuja 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      636,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.874773,
+        60.212914
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.874773,
+        60.212914
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41882,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Talin Tenniskeskus / Kuntosali",
+      "sv": "Tali Tenniscenter / Gym"
+    },
+    "street_address": {
+      "fi": "Kutomokuja 4",
+      "sv": "Väverigränden 4",
+      "en": "Kutomokuja 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.874758,
+        60.213154
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.874758,
+        60.213154
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40317,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Talin Tenniskeskus / Massatenniskentät",
+      "sv": "Tali Tenniscenter / Massatennisplaner"
+    },
+    "street_address": {
+      "fi": "Talin urheilupuisto, Kutomokuja 4",
+      "sv": "Talin urheilupuisto, Kutomokuja 4",
+      "en": "Talin urheilupuisto, Kutomokuja 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      662
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.877752,
+        60.21236
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.877752,
+        60.21236
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42108,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Talin Tenniskeskus / Sisätenniskentät",
+      "sv": "Tali Tenniscenter / Inomhustennisplaner"
+    },
+    "street_address": {
+      "fi": "Talin urheilupuisto, Kutomokuja 4",
+      "sv": "Talin urheilupuisto, Kutomokuja 4",
+      "en": "Talin urheilupuisto, Kutomokuja 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.87556,
+        60.213017
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.87556,
+        60.213017
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40524,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Talin Tenniskeskus / Sulkapallohalli",
+      "sv": "Tali Tenniscenter / Badmintonhall"
+    },
+    "street_address": {
+      "fi": "Talin urheilupuisto, Kutomokuja 4",
+      "sv": "Talin urheilupuisto, Kutomokuja 4",
+      "en": "Talin urheilupuisto, Kutomokuja 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      622
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.87621,
+        60.213036
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.87621,
+        60.213036
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40770,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Talin Tenniskeskus / Tenniskentät (Hiekkatekonurmi)",
+      "sv": "Tali Tenniscenter / Tennisplaner (Sandkonstgräs)"
+    },
+    "street_address": {
+      "fi": "Talin urheilupuisto, Kutomokuja 4",
+      "sv": "Talin urheilupuisto, Kutomokuja 4",
+      "en": "Talin urheilupuisto, Kutomokuja 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      662
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.875952,
+        60.212296
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.875952,
+        60.212296
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41097,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Helsingin Kiipeilykeskus",
+      "sv": "Mosabacka Idrottscenter / Helsingfors Klättringscenter"
+    },
+    "street_address": {
+      "fi": "Erätie 3",
+      "sv": "Jaktfärdsvägen 3",
+      "en": "Erätie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      629
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.016283,
+        60.265278
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.016283,
+        60.265278
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41811,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Jousiammuntahalli",
+      "sv": "Mosabacka Idrottscenter / Bågskyttehall"
+    },
+    "street_address": {
+      "fi": "Erätie, C rakennus",
+      "sv": "Jaktfärdsvägen, C byggnad",
+      "en": "Erätie, C building"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      563,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.01591,
+        60.265476
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.01591,
+        60.265476
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42017,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Keilahalli",
+      "sv": "Mosabackas Idrottscenter / Bowlinghall"
+    },
+    "street_address": {
+      "fi": "Erätie 3, rakennus B",
+      "sv": "Jaktfärdsvägen 3, byggnad B",
+      "en": "Erätie 3, building B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      607,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.01793,
+        60.265266
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.01793,
+        60.265266
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40473,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Kuntosali",
+      "sv": "Mosabacka Idrottscenter / Gym"
+    },
+    "street_address": {
+      "fi": "Erätie 3",
+      "sv": "Jaktfärdsvägen 3",
+      "en": "Erätie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.017475,
+        60.265285
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.017475,
+        60.265285
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42196,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Liikuntasali 3",
+      "sv": "Mosabacka Idrottscenter / Idrottssal 3"
+    },
+    "street_address": {
+      "fi": "Erätie 3",
+      "sv": "Jaktfärdsvägen 3",
+      "en": "Erätie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.018745,
+        60.26552
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.018745,
+        60.26552
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41442,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Liikuntasali 4",
+      "sv": "Mosabacka Idrottscenter / Idrottssal 4"
+    },
+    "street_address": {
+      "fi": "Erätie 3",
+      "sv": "Jaktfärdsvägen 3",
+      "en": "Erätie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.01923,
+        60.26558
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.01923,
+        60.26558
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39951,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Liikuntasalit 1-2",
+      "sv": "Mosabacka Idrottscenter / Idrottssal 1-2"
+    },
+    "street_address": {
+      "fi": "Erätie 3",
+      "sv": "Jaktfärdsvägen 3",
+      "en": "Erätie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.018917,
+        60.265656
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.018917,
+        60.265656
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41991,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Monitoimihalli",
+      "sv": "Mosabacka Idrottscenter / Multifunktionellsal"
+    },
+    "street_address": {
+      "fi": "Erätie 3, rakennus B",
+      "sv": "Jaktfärdsvägen 3, byggnad B",
+      "en": "Erätie 3, building B"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.0179,
+        60.265446
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.0179,
+        60.265446
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41573,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Mosatila",
+      "sv": "Mosabacka Idrottscenter / Mosatila"
+    },
+    "street_address": {
+      "fi": "Erätie 3",
+      "sv": "Jaktfärdsvägen 3",
+      "en": "Erätie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      630
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.017649,
+        60.265423
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.017649,
+        60.265423
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 56392,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Mosatila",
+      "sv": "Mosabacka Idrottscenter / Mosatila"
+    },
+    "street_address": {
+      "fi": "Erätie 3",
+      "sv": "Jaktfärdsvägen 3",
+      "en": "Erätie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.018013,
+        60.265373
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.018013,
+        60.265373
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42147,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Nyrkkeilysali",
+      "sv": "Mosabacka Idrottscenter / Brottningssal"
+    },
+    "street_address": {
+      "fi": "Erätie 3",
+      "sv": "Jaktfärdsvägen 3",
+      "en": "Erätie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      609,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.017027,
+        60.265232
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.017027,
+        60.265232
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41129,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Tapanilan Urheilukeskus / Salibandyhalli",
+      "sv": "Mosabacka Idrottscenter / Innebandyhall"
+    },
+    "street_address": {
+      "fi": "Erätie 3, rakennus C",
+      "sv": "Jaktfärdsvägen 3, byggnad C",
+      "en": "Erätie 3, building C"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      619
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.016615,
+        60.265156
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.016615,
+        60.265156
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 56716,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "TUPA-harjoitushalli"
+    },
+    "street_address": {
+      "fi": "Teerikukonkuja 3",
+      "sv": "Orrtuppsgränden 3",
+      "en": "Teerikukonkuja 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.02464,
+        60.25501
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.02464,
+        60.25501
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45925,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli",
+      "sv": "Tölö sporthall",
+      "en": "Töölö sports hall"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1c",
+      "sv": "Paavo Nurmis gränd 1c",
+      "en": "Paavo Nurmen kuja 1c"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.925648,
+        60.183926
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.925648,
+        60.183926
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40237,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Telinevoimistelutila",
+      "sv": "Tölö sporthall / Utrymme för redskapsgymnastik",
+      "en": "Töölö Sports hall / Artistic gymnastics area"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      631
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.926277,
+        60.18311
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.926277,
+        60.18311
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 7,
+      "stroller": 1,
+      "wheelchair": 7,
+      "hearing_aid": 1,
+      "reduced_mobility": 4,
+      "visually_impaired": 4
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41621,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Nyrkkeilysali",
+      "sv": "Tölö sporthall / Boxningsal",
+      "en": "Töölö sports hall / Boxing area"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      609,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.92628,
+        60.18336
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.92628,
+        60.18336
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 7,
+      "stroller": 1,
+      "wheelchair": 7,
+      "hearing_aid": 1,
+      "reduced_mobility": 4,
+      "visually_impaired": 4
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40053,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Tanssi- ja koreografiatila",
+      "sv": "Tölö sporthall / Dans- och koreografielokal",
+      "en": "Töölö Sports hall / Dance and choreography area"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      630
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.925175,
+        60.18399
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.925175,
+        60.18399
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "stroller": 1,
+      "wheelchair": 9,
+      "hearing_aid": 1,
+      "reduced_mobility": 5,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41686,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Miekkailusali 1",
+      "sv": "Tölö sporthall / Utrymme för fäktning 1",
+      "en": "Töölö Sports hall / Fencing area 1"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      625,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.925436,
+        60.18385
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.925436,
+        60.18385
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "stroller": 1,
+      "wheelchair": 9,
+      "hearing_aid": 1,
+      "reduced_mobility": 5,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41298,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Miekkailusali 2",
+      "sv": "Tölö sporthall / Utrymme för fäktning 2",
+      "en": "Töölö Sports hall / Fencing area 2"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      625,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.925262,
+        60.183758
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.925262,
+        60.183758
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "stroller": 1,
+      "wheelchair": 9,
+      "hearing_aid": 1,
+      "reduced_mobility": 5,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40628,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Golfin harjoitustila",
+      "sv": "Tölö sporthall / Golf träningslokal",
+      "en": "Töölö sports hall / Golf training space"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      636,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.926579,
+        60.183193
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.926579,
+        60.183193
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "hearing_aid": 1,
+      "visually_impaired": 4
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40619,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Kuntosali",
+      "sv": "Tölö sporthall / Gym",
+      "en": "Töölö sports hall / Gym"
+    },
+    "street_address": {
+      "fi": "Mannerheimintie 17 E",
+      "sv": "Mannerheimvägen 17 E",
+      "en": "Mannerheimintie 17 E"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.924772,
+        60.183804
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.924772,
+        60.183804
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 2,
+      "wheelchair": 2,
+      "hearing_aid": 1,
+      "reduced_mobility": 1,
+      "visually_impaired": 3
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 50040,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Kuntosali- ja voimailualue",
+      "sv": "Tölö sporthall / Gym- och styrketräningslokal",
+      "en": "Töölö sports hall / Gym and weight-traning area"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.926485,
+        60.183228
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.926485,
+        60.183228
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 8,
+      "stroller": 1,
+      "wheelchair": 8,
+      "hearing_aid": 1,
+      "reduced_mobility": 4,
+      "visually_impaired": 5
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40967,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Karatesali",
+      "sv": "Tölö sporthall / Karatesal",
+      "en": "Töölö sports hall / Karate hall"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      609,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.926447,
+        60.182987
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.926447,
+        60.182987
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "stroller": 1,
+      "wheelchair": 9,
+      "hearing_aid": 1,
+      "reduced_mobility": 5,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40618,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Liikuntatilat",
+      "sv": "Tölö sporthall / Idrottområde",
+      "en": "Töölö Sports hall / Sports areas"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.925467,
+        60.183384
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.925467,
+        60.183384
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 7,
+      "stroller": 1,
+      "wheelchair": 7,
+      "hearing_aid": 1,
+      "reduced_mobility": 4,
+      "visually_impaired": 4
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40457,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Liikuntahalli A",
+      "sv": "Tölö sporthall / Idrottshall A",
+      "en": "Töölö sports hall / Sports hall A"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.926014,
+        60.183285
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.926014,
+        60.183285
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "stroller": 1,
+      "wheelchair": 9,
+      "hearing_aid": 1,
+      "reduced_mobility": 5,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40716,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Liikuntahalli B",
+      "sv": "Tölö sporthall / Idrottshall B",
+      "en": "Töölö Sports hall / Sports hall B"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.925018,
+        60.1839
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.925018,
+        60.1839
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "stroller": 1,
+      "wheelchair": 9,
+      "hearing_aid": 1,
+      "reduced_mobility": 5,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40961,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Pöytätennispöydät",
+      "sv": "Tölö sporthall / Bordtennisplaner",
+      "en": "Töölö Sports hall / Table tennis areas"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      627
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.925259,
+        60.183525
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.925259,
+        60.183525
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "stroller": 1,
+      "wheelchair": 9,
+      "hearing_aid": 1,
+      "reduced_mobility": 5,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41840,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Pöytätennistila (inva)",
+      "sv": "Tölö sporthall / Utrymme för bordtennis (inva)",
+      "en": "Töölö Sports hall / Table tennis areas (invalid)"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      627
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.925034,
+        60.183655
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.925034,
+        60.183655
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "stroller": 1,
+      "wheelchair": 9,
+      "hearing_aid": 1,
+      "reduced_mobility": 5,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41393,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Töölön kisahalli / Juoksurata",
+      "sv": "Tölö sporthall / Löpningsbana",
+      "en": "Töölö sports hall / Track"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen kuja 1 D",
+      "sv": "Paavo Nurmis gränd 1 D",
+      "en": "Paavo Nurmen kuja 1 D"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      632
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.92592,
+        60.183033
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.92592,
+        60.183033
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 9,
+      "stroller": 1,
+      "wheelchair": 9,
+      "hearing_aid": 1,
+      "reduced_mobility": 5,
+      "visually_impaired": 6
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41028,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Töölön pallokenttä / Töölön kuplahalli (pallokenttä 7)",
+      "sv": "Tölö bollplan / Tölö bubblahall (bollplan 7)"
+    },
+    "street_address": {
+      "fi": "Urheilukatu 3",
+      "sv": "Idrottsgatan 3",
+      "en": "Urheilukatu 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      615
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.92449,
+        60.18884
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.92449,
+        60.18884
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40570,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "UniSport Kumpula / Palloiluhalli",
+      "sv": "UniSport Gumtäkt / Bollspelhall"
+    },
+    "street_address": {
+      "fi": "Väinö Auerin katu 11",
+      "sv": "Väinö Auers gata 11",
+      "en": "Väinö Auerin katu 11"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.961884,
+        60.205677
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.961884,
+        60.205677
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 65007,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Urhea-halli / Kamppailulajien sali",
+      "sv": "Urhea hall / Sal för kamppssport"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 47",
+      "sv": "Backasgatan 47",
+      "en": "Mäkelänkatu 47"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      609,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948423,
+        60.19926
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948423,
+        60.19926
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 65004,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Urhea-halli / Palloilusali",
+      "sv": "Urhea hall / Bollspelsal"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 47",
+      "sv": "Backasgatan 47",
+      "en": "Mäkelänkatu 47"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948519,
+        60.199192
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948519,
+        60.199192
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 65006,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Urhea-halli / Peilisali",
+      "sv": "Urhea hall / Spegelsal"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 47",
+      "sv": "Backasgatan 47",
+      "en": "Mäkelänkatu 47"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      630
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948265,
+        60.199215
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948265,
+        60.199215
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 65005,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Urhea-halli / Rytmisen voimistelun sali",
+      "sv": "Urhea hall / Utrymme för rytmisk gymnastik"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 47",
+      "sv": "Backasgatan 47",
+      "en": "Mäkelänkatu 47"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      630
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948378,
+        60.199154
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948378,
+        60.199154
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 65011,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Urhea-halli / Taitosali"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 47",
+      "sv": "Backasgatan 47",
+      "en": "Mäkelänkatu 47"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      630
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948471,
+        60.1991
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948471,
+        60.1991
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 65008,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Urhea-halli / Telinevoimistelutila",
+      "sv": "Urhea hall / Utrymme för redskapsgymnastik"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 47",
+      "sv": "Backasgatan 47",
+      "en": "Mäkelänkatu 47"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      631
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948158,
+        60.199177
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948158,
+        60.199177
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 65010,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Urhea-halli / Voimaharjoittelutila",
+      "sv": "Urhea hall / Styrketräningslokal"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 47",
+      "sv": "Backasgatan 47",
+      "en": "Mäkelänkatu 47"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948235,
+        60.199123
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948235,
+        60.199123
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 65012,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Urhea-halli / Yleisharjoittelutila"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 47",
+      "sv": "Backasgatan 47",
+      "en": "Mäkelänkatu 47"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948576,
+        60.19914
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948576,
+        60.19914
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 65009,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Urhea-halli / Yleisurheilun harjoitusalue",
+      "sv": "Urhea hall / Träningsområde för friidrott"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 47",
+      "sv": "Backasgatan 47",
+      "en": "Mäkelänkatu 47"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948547,
+        60.199306
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948547,
+        60.199306
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41631,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Urheiluhallit Mäkelänrinne / Palloiluhalli",
+      "sv": "Urheiluhallit Mäkelänrinne / Bollspelhall"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 49",
+      "sv": "Backasgatan 49",
+      "en": "Mäkelänkatu 49"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.947935,
+        60.199585
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.947935,
+        60.199585
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41411,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Urheiluhallit Pasila / Palloiluhalli",
+      "sv": "Urheiluhallit Pasila / Bollspelhall"
+    },
+    "street_address": {
+      "fi": "Radiokatu 22",
+      "sv": "Radiogatan 22",
+      "en": "Radiokatu 22"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.916752,
+        60.204227
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.916752,
+        60.204227
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 48318,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Urheiluhallit Pasila / Sulkapallohalli",
+      "sv": "Urheiluhallit Pasila / Badmintonhall"
+    },
+    "street_address": {
+      "fi": "Radiokatu 22",
+      "sv": "Radiogatan 22",
+      "en": "Radiokatu 22"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      622
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.916916,
+        60.204178
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.916916,
+        60.204178
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42043,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Urheiluhallit Vuosaari / Judo- ja painisali",
+      "sv": "Urheiluhallit Vuosaari / Judo- och brottningssal"
+    },
+    "street_address": {
+      "fi": "Vuosaarentie 5",
+      "sv": "Nordsjövägen 5",
+      "en": "Vuosaarentie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      609,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.14202,
+        60.208805
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.14202,
+        60.208805
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40158,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Urheiluhallit Vuosaari / Kuntosali 1",
+      "sv": "Urheiluhallit Vuosaari / Gym 1"
+    },
+    "street_address": {
+      "fi": "Vuosaarentie 5",
+      "sv": "Nordsjövägen 5",
+      "en": "Vuosaarentie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617,
+      2219,
+      2221
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.142174,
+        60.20863
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.142174,
+        60.20863
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40853,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Urheiluhallit Vuosaari / Kuntosali 2",
+      "sv": "Urheiluhallit Vuosaari / Gym 2"
+    },
+    "street_address": {
+      "fi": "Vuosaarentie 5",
+      "sv": "Nordsjövägen 5",
+      "en": "Vuosaarentie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      611,
+      617,
+      2219,
+      2221
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.141813,
+        60.208614
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.141813,
+        60.208614
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45543,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Urheiluhallit Vuosaari / Liikuntasali",
+      "sv": "Urheiluhallit Vuosaari / Idrottssal"
+    },
+    "street_address": {
+      "fi": "Vuosaarentie 5",
+      "sv": "Nordsjövägen 5",
+      "en": "Vuosaarentie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      612,
+      617,
+      2221,
+      2225
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.141481,
+        60.208744
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.141481,
+        60.208744
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 64747,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Urheiluhallit Vuosaari / Padelkentät",
+      "sv": "Urheiluhallit Vuosaari / Padelplaner"
+    },
+    "street_address": {
+      "fi": "Vuosaarentie 5",
+      "sv": "Nordsjövägen 5",
+      "en": "Vuosaarentie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      2355,
+      659
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.140675,
+        60.208652
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.140675,
+        60.208652
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41908,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Urheiluhallit Vuosaari / Palloiluhalli",
+      "sv": "Urheiluhallit Vuosaari / Bollspelhall"
+    },
+    "street_address": {
+      "fi": "Vuosaarentie 5",
+      "sv": "Nordsjövägen 5",
+      "en": "Vuosaarentie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616,
+      617
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.141693,
+        60.208813
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.141693,
+        60.208813
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41846,
+    "contract_type": {
+      "id": "SERVICE_BY_MUNICIPAL_GROUP_ENTITY",
+      "description": {
+        "fi": "kunnan konserniyhteisön palvelu, Helsingin konserni",
+        "sv": "tjänst från kommunal koncernsammanslutning, Helsingfors Koncernen",
+        "en": "service by municipal group entity, The Helsinki Group"
+      }
+    },
+    "name": {
+      "fi": "Urheiluhallit Vuosaari / Punttisali",
+      "sv": "Urheiluhallit Vuosaari / Styrketräningssal"
+    },
+    "street_address": {
+      "fi": "Vuosaarentie 5",
+      "sv": "Nordsjövägen 5",
+      "en": "Vuosaarentie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      613
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.14229,
+        60.2088
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.14229,
+        60.2088
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42089,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Varma Tennisklubi Ry / Palloiluhalli",
+      "sv": "Varma Tennisklub Rf / Bollspelhall"
+    },
+    "street_address": {
+      "fi": "Ruosilankuja 12",
+      "sv": "Rosasgränden 12",
+      "en": "Ruosilankuja 12"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.863253,
+        60.236565
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.863253,
+        60.236565
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41587,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Varma Tennisklubi ry / Tenniskuplahalli",
+      "sv": "Varma Tennisklubi ry / Tennisbubblahall"
+    },
+    "street_address": {
+      "fi": "Ruosilankuja 12",
+      "sv": "Rosasgränden 12",
+      "en": "Ruosilankuja 12"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      623
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.862633,
+        60.236366
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.862633,
+        60.236366
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40828,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Viikin monitoimitalo / Palloiluhalli",
+      "sv": "Viks multianvändningshus / Bollspelhall"
+    },
+    "street_address": {
+      "fi": "Maakaari 3",
+      "sv": "Landbågen 3",
+      "en": "Maakaari 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.025955,
+        60.22955
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.025955,
+        60.22955
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 62936,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Woltti Helsinki / Trampoliinipuisto",
+      "sv": "Woltti Helsinki / Trampolinpark"
+    },
+    "street_address": {
+      "fi": "Tallbergin puistotie 10",
+      "sv": "Tallbergs allén 10",
+      "en": "Tallbergin puistotie 10"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      616
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.878803,
+        60.157505
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.878803,
+        60.157505
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  }
+]

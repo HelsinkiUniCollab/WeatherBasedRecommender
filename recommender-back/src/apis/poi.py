@@ -151,9 +151,11 @@ def get_pois(category=None):
 
     """
     if category is None:
-        category = ['open_air_water', 'fitness_parks']
+        category = ['open_air_water', 'fitness_parks', 'athletics_venues', 'sports_halls']
     paths = [
         f"src/apis/poi_data/sports_and_physical/water_sports/{category[0]}.json",
-        f"src/apis/poi_data/sports_and_physical/outdoor_sports/neighborhood_sports/{category[1]}.json"
+        f"src/apis/poi_data/sports_and_physical/outdoor_sports/neighborhood_sports/{category[1]}.json",
+        f"src/apis/poi_data/sports_and_physical/outdoor_sports/{category[2]}.json",
+        f"src/apis/poi_data/sports_and_physical/indoor_sports/{category[3]}.json"
     ]
     return merge_json(paths)
