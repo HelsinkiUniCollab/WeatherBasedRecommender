@@ -11,6 +11,13 @@ RUN pip install poetry \
   && poetry config virtualenvs.create false \
   && poetry install --no-dev --no-interaction --no-ansi
 
+RUN apt-get update && apt-get install -y \
+    libeccodes0 \
+    libeccodes-dev \
+    libeccodes-tools
+
+RUN poetry run pip install --upgrade eccodes
+
 COPY . /app
 
 ENV FLASK_APP=src/app:app
