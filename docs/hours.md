@@ -41,7 +41,7 @@
 | Juuso   | 7 fore! w/Isak | 6 Finalizing fore and meetings | 2 Score related fixes (test,sun,..) in fore! | 0.5 meet    | 3 docs for back and fore merging| -              | -            | -         |
 | Isak    | 8            | 4             | 2               | -              | -            | -              | -            | 14         |
 | Sami S. | -            | 3 sprint meetings             | 2 pr-review, fore! -branch               | 3.5 product- and sprint backlog              | -            | -              | -            | -         |
-| Sami M. | -            | 3 meetings | 1 check forecast pr               | 3 work on map and try to fix tests              | -            | -              | -            | -         |
+| Sami M. | -            | 3 meetings | 1 check forecast pr               | 3 work on map and try to fix tests              | 6.5 docker + live            | -              | -            | -         |
 | Pia     | 1 scrum master stuff            | 4 meetings             | -               | 2 daily, fore              | 6.5 burndown, pullrequest merging, slider            | -              | -            | -         |
 | Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
 
