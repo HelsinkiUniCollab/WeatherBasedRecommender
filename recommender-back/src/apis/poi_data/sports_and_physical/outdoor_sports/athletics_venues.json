@@ -1,0 +1,1573 @@
+[
+  {
+    "id": 40147,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Ala-Malmin liikuntapuisto / Juoksusuora",
+      "sv": "Nedre Malms idrottspark / Träningsområde för friidrott",
+      "en": "Ala-Malmi sports park / Track"
+    },
+    "street_address": {
+      "fi": "Lallintie 12",
+      "sv": "Lallivägen 12",
+      "en": "Lallintie 12"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.021284,
+        60.24773
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.021284,
+        60.24773
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 2,
+      "wheelchair": 2,
+      "reduced_mobility": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 50257,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Ala-Malmin liikuntapuisto / Pituushyppypaikka",
+      "sv": "Nedre Malms idrottspark / Längdhoppstället",
+      "en": "Ala_malmi sports park / Long jump place"
+    },
+    "street_address": {
+      "fi": "Lallintie 12",
+      "sv": "Lallivägen 12",
+      "en": "Lallintie 12"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.02143,
+        60.247696
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.02143,
+        60.247696
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 2,
+      "wheelchair": 2,
+      "reduced_mobility": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41760,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Arabianrannan liikuntapuisto / Yleisurheilun harjoitusalue",
+      "sv": "Arabiastrandens idrottspark / Övningsplats för friidrott",
+      "en": "Arabianranta sports park / Athletics area"
+    },
+    "street_address": {
+      "fi": "Arabianpolku 3",
+      "sv": "Arabiastigen 3",
+      "en": "Arabianpolku 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.97787,
+        60.204807
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.97787,
+        60.204807
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40816,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Brahenkenttä / Pituushyppypaikka",
+      "sv": "Braheplanen / Plats för längdhopp"
+    },
+    "street_address": {
+      "fi": "Helsinginkatu 25a",
+      "sv": "Helsingegatan 25a",
+      "en": "Helsinginkatu 25a"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.949617,
+        60.18824
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.949617,
+        60.18824
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40498,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Eläintarhan urheilukenttä / Urheilukenttä",
+      "sv": "Djurgårdens sportplan / Idrottsplan",
+      "en": "Eläintarha sports field / Sports field"
+    },
+    "street_address": {
+      "fi": "Vauhtitie 6",
+      "sv": "Fartvägen 6",
+      "en": "Vauhtitie 6"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      664
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.930902,
+        60.191273
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.930902,
+        60.191273
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 1,
+      "wheelchair": 1,
+      "reduced_mobility": 1
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40673,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Herttoniemenrannan liikuntapuisto / Yleisurheilun harjoitusalue",
+      "sv": "Hertonäs strands idrottspark / Träningsområde för friidrott",
+      "en": "Herttoniemenranta sports park / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Paasivaarankatu 9",
+      "sv": "Paasivaaragatan 9",
+      "en": "Paasivaarankatu 9"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.030117,
+        60.189983
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.030117,
+        60.189983
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41710,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Herttoniemen liikuntapuisto / Yleisurheilun harjoitusalue",
+      "sv": "Hertonäs idrottspark / Enstaka övningsplats för friidrott",
+      "en": "Herttoniemi sports park / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Siilitie 12",
+      "sv": "Igelkottsvägen 12",
+      "en": "Siilitie 12"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.033266,
+        60.208496
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.033266,
+        60.208496
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41553,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Heteniitynkenttä (Vuosaari) / Urheilukenttä",
+      "sv": "Gjutängsplan (Nordsjö) / Idrottsplan",
+      "en": "Heteniitty sports field (Vuosaari) / Sports field"
+    },
+    "street_address": {
+      "fi": "Heteniityntie 2 a",
+      "sv": "Gjutängsvägen 2 a",
+      "en": "Heteniityntie 2 a"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      664
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.138565,
+        60.216896
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.138565,
+        60.216896
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39971,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Kallahdenkenttä / Juoksusuora ja pituushyppypaikka",
+      "sv": "Kallvikplan / Löparbana och plats för längdhopp",
+      "en": "Kallahti sports field / Track"
+    },
+    "street_address": {
+      "fi": "Kallahdenraitti 3",
+      "sv": "Kallahdenraitti 3",
+      "en": "Kallahdenraitti 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.130484,
+        60.200615
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.130484,
+        60.200615
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40351,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Käpylän liikuntapuisto / Yleisurheilun harjoitusalue",
+      "sv": "Kottby idrottspark / Träningsområde för friidrott",
+      "en": "Käpylä sports park / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 72",
+      "sv": "Backasgatan 72",
+      "en": "Mäkelänkatu 72"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.940838,
+        60.206886
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.940838,
+        60.206886
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41178,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Laajasalon liikuntapuisto / Yleisurheilukenttä",
+      "sv": "Degerö idrottspark / Övningsplats för friidrott",
+      "en": "Laajasalo sports park / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Sarvastonkaari 23",
+      "sv": "Fladabågen 23",
+      "en": "Sarvastonkaari 23"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.059927,
+        60.176033
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.059927,
+        60.176033
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 39926,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Laajasuon liikuntapuisto / Juoksusuora ja pituushyppypaikka",
+      "sv": "Degermyrens idrottspark / Övningsplats för friidrott",
+      "en": "Laajasuo sports park / Track and long jump place"
+    },
+    "street_address": {
+      "fi": "Poutunkuja 8",
+      "sv": "Pouttugränden 8",
+      "en": "Poutunkuja 8"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.897535,
+        60.221943
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.897535,
+        60.221943
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 2,
+      "wheelchair": 2,
+      "reduced_mobility": 2,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40736,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Laajasuon liikuntapuisto / Kuularinki",
+      "sv": "Degermyrens idrottspark / Enstaka övningsplats för friidrott (Kulstötning)",
+      "en": "Laajasuon sports park / Shot put circle"
+    },
+    "street_address": {
+      "fi": "Poutunkuja 8",
+      "sv": "Pouttugränden 8",
+      "en": "Poutunkuja 8"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.897041,
+        60.22262
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.897041,
+        60.22262
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 2,
+      "wheelchair": 2,
+      "reduced_mobility": 2,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40861,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Latokartanon liikuntapuisto / Juoksusuora 80m",
+      "sv": "Ladugårdens idrottspark / Löpbana 80m",
+      "en": "Latokartano sports park / Running track 80 m"
+    },
+    "street_address": {
+      "fi": "Agronominkatu 26",
+      "sv": "Agronomgatan 26",
+      "en": "Agronominkatu 26"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.03629,
+        60.230976
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.03629,
+        60.230976
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42245,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Lauttasaaren liikuntapuisto / Yleisurheilukenttä",
+      "sv": "Drumsö idrottspark / Friidrottsplan",
+      "en": "Lauttasaari sports park / Athletics fiels"
+    },
+    "street_address": {
+      "fi": "Lahnalahdentie 2",
+      "sv": "Braxviksvägen 2",
+      "en": "Lahnalahdentie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      664
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.865711,
+        60.163223
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.865711,
+        60.163223
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41622,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Munkkiniemenkenttä / Yleisurheilun harjoitusalue",
+      "sv": "Munksnäsplanen / Övningsplats för friidrott",
+      "en": "Munkkiniemi sports field / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Kadetintie 2a",
+      "sv": "Kadettvägen 2a",
+      "en": "Kadetintie 2a"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.874336,
+        60.196262
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.874336,
+        60.196262
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "stroller": 1,
+      "wheelchair": 3,
+      "reduced_mobility": 2,
+      "visually_impaired": 1
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 50331,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Myllypuron Pallomylly / Juoksusuora",
+      "sv": "Kvarnbäckens Bollkvarn / Löpningsbana",
+      "en": "Myllypuro Pallomylly / Track"
+    },
+    "street_address": {
+      "fi": "Pikajuoksijankuja 9",
+      "sv": "Sprintergränden 9",
+      "en": "Pikajuoksijankuja 9"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.079943,
+        60.219185
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.079943,
+        60.219185
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40204,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Olympiastadion / Yleisurheilukenttä",
+      "sv": "Olympiastadion / Friidrottsplan"
+    },
+    "street_address": {
+      "fi": "Paavo Nurmen tie 1",
+      "sv": "Paavo Nurmis väg 1",
+      "en": "Paavo Nurmen tie 1"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      664
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.927164,
+        60.187065
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.927164,
+        60.187065
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40882,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Oulunkylän liikuntapuisto / Urheilukenttä",
+      "sv": "Åggelby idrottspark / Friidrottsplan",
+      "en": "Oulunkylä sports park / Sports field"
+    },
+    "street_address": {
+      "fi": "Käskynhaltijantie 11",
+      "sv": "Ståthållarvägen 11",
+      "en": "Käskynhaltijantie 11"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      664
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.961235,
+        60.23502
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.961235,
+        60.23502
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42283,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Pirkkolan liikuntapuisto / Yleisurheilukenttä",
+      "sv": "Britas idrottspark / Friidrottsplan",
+      "en": "Pirkkola sports park / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Plotinrinne 12",
+      "sv": "Plottbrinken 12",
+      "en": "Plotinrinne 12"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.912447,
+        60.233315
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.912447,
+        60.233315
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 4,
+      "stroller": 1,
+      "wheelchair": 4,
+      "reduced_mobility": 3,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40517,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Pitäjänmäen urheilukenttä / Yleisurheilukenttä",
+      "sv": "Sockenbacka idrottsplan / Friidrottsplan",
+      "en": "Pitäjänmäki sports field / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Turkismiehentie 7",
+      "sv": "Skinnhandlarvägen 7",
+      "en": "Turkismiehentie 7"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.860771,
+        60.22558
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.860771,
+        60.22558
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 2,
+      "stroller": 1,
+      "wheelchair": 2,
+      "reduced_mobility": 1,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 39988,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Puistolan liikuntapuisto / Yleisurheilun harjoituspaikka",
+      "sv": "Parkstads idrottspark / Området för friidrottsträning",
+      "en": "Puistola sports park / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Koudantie 2",
+      "sv": "Koutavägen 2",
+      "en": "Koudantie 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.054125,
+        60.265827
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.054125,
+        60.265827
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 1,
+      "wheelchair": 1,
+      "reduced_mobility": 1
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41426,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Puistopolun peruskoulu / Yleisurheilun harjoitusalue",
+      "sv": "Grundskolan puistopolun peruskoulu / Övningsplats för friidrott"
+    },
+    "street_address": {
+      "fi": "Punakiventie 4",
+      "sv": "Rödstensvägen 4",
+      "en": "Punakiventie 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.14129,
+        60.210846
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.14129,
+        60.210846
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41202,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Pukinmäen liikuntapuisto / Kiekon- ja moukarinheittopaikka",
+      "sv": "Bocksbacka idrottspark / Träningsplats för kastgrenar",
+      "en": "Pukinmäki sports park / Discus and hammer throw area"
+    },
+    "street_address": {
+      "fi": "Kenttätie 3",
+      "sv": "Fältvägen 3",
+      "en": "Kenttätie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.994703,
+        60.2504
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.994703,
+        60.2504
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 2,
+      "wheelchair": 2,
+      "reduced_mobility": 2,
+      "visually_impaired": 2
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41258,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Pukinmäen liikuntapuisto / Yleisurheilukenttä",
+      "sv": "Bocksbacka idrottspark / Idrottsplan",
+      "en": "Pukinmäki sports park / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Kenttätie 3",
+      "sv": "Fältvägen 3",
+      "en": "Kenttätie 3"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      664
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.993479,
+        60.250015
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.993479,
+        60.250015
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 41676,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Puotilankenttä / Yleisurheilualue",
+      "sv": "Botbygårdsplanen / Övningsplats för friidrott"
+    },
+    "street_address": {
+      "fi": "Rantakartanontie 14, Puotilan metrokatu 2",
+      "sv": "Strandgårdsvägen 14, Puotilan metrokatu 2",
+      "en": "Rantakartanontie 14, Puotilan metrokatu 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.096695,
+        60.21455
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.096695,
+        60.21455
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40957,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Roihuvuoren liikuntapuisto / Yleisurheilun harjoitusalue",
+      "sv": "Kasbergets idrottspark / Övningsplats för friidrott",
+      "en": "Roihuvuori sports park / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Satumaanpolku 4",
+      "sv": "Sagolandsstigen 4",
+      "en": "Satumaanpolku 4"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.053766,
+        60.194508
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.053766,
+        60.194508
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45899,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Santahaminan ala-asteen koulu / Yleisurheilun harjoitusalue",
+      "sv": "Lågstadieskolan Santahaminan ala-asteen koulu / Träningsområdet för friidrott"
+    },
+    "street_address": {
+      "fi": "Santahaminantie 5",
+      "sv": "Sandhamnsvägen 5",
+      "en": "Santahaminantie 5"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.044203,
+        60.153625
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.044203,
+        60.153625
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45295,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Santahaminan yleisurheilukenttä",
+      "sv": "Sandhamns friidrottplan"
+    },
+    "street_address": {
+      "fi": "Leipurinniementie",
+      "sv": "Bagaruddsvägen",
+      "en": "Leipurinniementie"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      664
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.055891,
+        60.152794
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.055891,
+        60.152794
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45388,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kaupunkiympäristön toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Stadsmiljösektorn, Helsingfors stad",
+        "en": "municipal service, Urban Environment Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Selkämerenpuisto / Yleisurheilukenttä",
+      "sv": "Bottenhavsparken / Övningsplats för friidrott"
+    },
+    "street_address": {
+      "fi": "Messitytönkatu 2",
+      "sv": "Mässflicksgatan 2",
+      "en": "Messitytönkatu 2"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      664
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.913746,
+        60.159763
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.913746,
+        60.159763
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40841,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Siltamäen liikuntapuisto / Yleisurheilun harjoituskenttä",
+      "sv": "Brobacka idrottspark / Övningsplats för friidrott",
+      "en": "Siltamäki sports park / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Pallomäentie 14",
+      "sv": "Bollbackavägen 14",
+      "en": "Pallomäentie 14"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.981852,
+        60.273937
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.981852,
+        60.273937
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 3,
+      "wheelchair": 3,
+      "reduced_mobility": 3,
+      "visually_impaired": 1
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 40655,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Suomenlinnan kenttä",
+      "sv": "Sveaborgs plan",
+      "en": "Suomenlinna sports field"
+    },
+    "street_address": {
+      "fi": "Susisaari, Kirkkokenttä",
+      "sv": "Vargön , Kirkkokenttä",
+      "en": "Susisaari, Kirkkokenttä"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.982193,
+        60.142673
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.982193,
+        60.142673
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 40185,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kasvatuksen ja koulutuksen toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Fostrans- och utbildningssektorn, Helsingfors stad",
+        "en": "municipal service, Education Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Suutarilan ala-asteen koulu / Juoksusuora",
+      "sv": "Lågstadieskolan Suutarilan ala-asteen koulu / Löpningsbana"
+    },
+    "street_address": {
+      "fi": "Seulastentie 11",
+      "sv": "Plejadvägen 11",
+      "en": "Seulastentie 11"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.999422,
+        60.27581
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.999422,
+        60.27581
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 42204,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Talin jalkapallohalli / Juoksusuora",
+      "sv": "Tali fotbollshall / Löpbana",
+      "en": "Tali football hall / Track"
+    },
+    "street_address": {
+      "fi": "Purotie 8",
+      "sv": "Bäckvägen 8",
+      "en": "Purotie 8"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.868448,
+        60.21414
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.868448,
+        60.21414
+      ]
+    },
+    "accessibility_shortcoming_count": {
+      "rollator": 5,
+      "stroller": 1,
+      "wheelchair": 5,
+      "hearing_aid": 1,
+      "reduced_mobility": 2,
+      "visually_impaired": 3
+    },
+    "object_type": "unit"
+  },
+  {
+    "id": 41425,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Torpparinmäenkenttä / Yleisurheilusuora",
+      "sv": "Torparbacksplanen / Friidrottsplats",
+      "en": "Torpparinmäki sports field / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Torpparinmäentie 36",
+      "sv": "Torparbacksvägen 36",
+      "en": "Torpparinmäentie 36"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.952923,
+        60.26603
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.952923,
+        60.26603
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 65009,
+    "contract_type": {
+      "id": "NOT_DISPLAYED",
+      "description": {
+        "fi": null,
+        "sv": null,
+        "en": null
+      }
+    },
+    "name": {
+      "fi": "Urhea-halli / Yleisurheilun harjoitusalue",
+      "sv": "Urhea hall / Träningsområde för friidrott"
+    },
+    "street_address": {
+      "fi": "Mäkelänkatu 47",
+      "sv": "Backasgatan 47",
+      "en": "Mäkelänkatu 47"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      617,
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.948547,
+        60.199306
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        24.948547,
+        60.199306
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  },
+  {
+    "id": 45385,
+    "contract_type": {
+      "id": "MUNICIPAL_SERVICE",
+      "description": {
+        "fi": "kunnallinen palvelu, Kulttuurin ja vapaa-ajan toimiala, Helsingin kaupunki",
+        "sv": "kommunal tjänst, Kultur- och fritidssektorn, Helsingfors stad",
+        "en": "municipal service, Culture and Leisure Division, City of Helsinki"
+      }
+    },
+    "name": {
+      "fi": "Vesalan liikuntapuisto / Yleisurheilualue",
+      "sv": "Ärvings idrottspark / Övningsplats för friidrott",
+      "en": "Vesala sports park / Range of athletics"
+    },
+    "street_address": {
+      "fi": "Kontulankaari 15",
+      "sv": "Gårdsbackabågen 15",
+      "en": "Kontulankaari 15"
+    },
+    "municipality": "helsinki",
+    "service_nodes": [
+      665
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        25.080576,
+        60.243866
+      ]
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        25.080576,
+        60.243866
+      ]
+    },
+    "accessibility_shortcoming_count": {},
+    "object_type": "unit"
+  }
+]
