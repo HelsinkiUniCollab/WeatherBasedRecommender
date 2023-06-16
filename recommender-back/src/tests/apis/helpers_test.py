@@ -7,7 +7,9 @@ class RecommenderTests(unittest.TestCase):
     def setUp(self):
         self.sun = get_sun_data()
         self.sunrise = self.sun[0]
-        self.sunset = self.sun[1]  
+        self.sunset = self.sun[1]
+        print(self.sunrise)
+        print(self.sunset)
         self.weather = {
             "0": {
                 "Air temperature": "25",
@@ -23,7 +25,8 @@ class RecommenderTests(unittest.TestCase):
             }
         }
         
-    def test_calculate_score_with_invalid_humidity(self):
+    @patch('apis.time_data.get_current_time', return_value='12:00')
+    def test_calculate_score_with_invalid_humidity(self, mocked_time):
         self.weather["0"]["Humidity"] = "invalid"
         recommender = Recommender(weather=self.weather)
         expected_scores = {
@@ -35,7 +38,8 @@ class RecommenderTests(unittest.TestCase):
         for data_key, expected_score in expected_scores.items():
             self.assertEqual(recommender.weather[data_key]['score'], expected_score)
 
-    def test_calculate_score_with_invalid_temperature(self):
+    @patch('apis.time_data.get_current_time', return_value='12:00')
+    def test_calculate_score_with_invalid_temperature(self, mocked_time):
         self.weather["0"]["Air temperature"] = "invalid"
         recommender = Recommender(weather=self.weather)
         expected_scores = {
@@ -49,7 +53,8 @@ class RecommenderTests(unittest.TestCase):
                 self.assertEqual(recommender[data_key]['score'], 0)
             self.assertEqual(recommender.weather[data_key]['score'], expected_score)
 
-    def test_calculate_score_within_suitable_time_range(self):
+    @patch('apis.time_data.get_current_time', return_value='12:00')
+    def test_calculate_score_within_suitable_time_range(self, mocked_time):
         recommender = Recommender(weather=self.weather)
         expected_scores = {
             "0": 1.0,
