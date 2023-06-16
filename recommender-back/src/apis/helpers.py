@@ -32,6 +32,8 @@ class Recommender:
             except (TypeError, ValueError):
                 data['score'] = -float('inf')
                 continue
+            except (AttributeError):
+                continue
                
             if time >= sunrise and time <= sunset:
                 if suitable_temperature_range[0] <= temperature <= suitable_temperature_range[1]:
