@@ -43,7 +43,7 @@ def get_pois_as_json(accessibility=False, time=None):
         updated_data = []
         for poi in pois:
             poi = find_nearest_stations_weather_data(poi, weather_data)
-            poi = find_nearest_coordinate_forecast_data(poi, forecast_data)
+            poi = add_forecast_to_poi(poi, forecast_data)
             if accessibility not in poi["accessibility_shortcoming_count"]:
                 updated_data.append(poi)
             poi = helpers.Recommender(**poi)
@@ -81,14 +81,13 @@ def find_nearest_stations_weather_data(poi, weather_data):
     return poi
 
 
-def find_nearest_coordinate_forecast_data(poi, forecast_data):
+def add_forecast_to_poi(poi, forecast_data):
     """
-    Finds the closest coordinate forecast data to a given point of interest (POI) by the given hour,
-    and adds it to the POI.
+    Adds forecast data to the poi
 
     Args:
         poi (dict): The POI for which forecast data needs to be added.
-        forecast_data (dict): A dictionary containing forecast data for different coordinates.
+        forecast_data (dict): A dictionary containing forecast data for wanted coordinates.
 
     Returns:
         dict: The modified POI with forecast information.
