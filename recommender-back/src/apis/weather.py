@@ -41,13 +41,13 @@ def parse_forecast(forecast):
         elif value['Dataset'] == '2 metre relative humidity':
             humidity = round(value['Data'], 1)
         elif value['Dataset'] == 'Mean sea level pressure':
-            pressure = round(value['Data'], 1)
+            pressure = round(value['Data'] / 100, 1)
         elif value['Dataset'] == '10 metre wind speed':
             windspeed = round(value['Data'], 1)
     return {
         'Air temperature': f'{str(temperature)} °C',
         'Wind': f'{str(windspeed)} m/s',
-        'Air pressure': f'{str(pressure/100)} mbar',
+        'Air pressure': f'{str(pressure)} mbar',
         'Humidity': f'{str(humidity)} %'
     }
 
