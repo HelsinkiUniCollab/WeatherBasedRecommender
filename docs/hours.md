@@ -38,7 +38,7 @@
 
 |         | Monday 12.6. | Tuesday 13.6. | Wednesday 14.6. | Thursday 15.6. | Friday 16.6. | Saturday 17.6. | Sunday 18.6. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
-| Juuso   | 7 fore! w/Isak | 6 Finalizing fore and meetings | 2 Score related fixes (test,sun,..) in fore! | -              | -            | -              | -            | -         |
+| Juuso   | 7 fore! w/Isak | 6 Finalizing fore and meetings | 2 Score related fixes (test,sun,..) in fore! | 0.5 meet    | 3 docs for back and fore merging| -              | -            | -         |
 | Isak    | 8            | 4             | 2               | -              | -            | -              | -            | 14         |
 | Sami S. | -            | 3 sprint meetings             | 2 pr-review, fore! -branch               | 3.5 product- and sprint backlog              | -            | -              | -            | -         |
 | Sami M. | -            | 3 meetings | 1 check forecast pr               | 3 work on map and try to fix tests              | -            | -              | -            | -         |
