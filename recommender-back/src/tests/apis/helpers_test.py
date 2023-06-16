@@ -1,59 +1,64 @@
 import unittest
-from apis.helpers import PointOfInterest
+from unittest.mock import patch
+from apis.helpers import Recommender
+from apis.time_data import get_sun_data , get_current_time
 
-
-class PointOfInterestTest(unittest.TestCase):
+class RecommenderTests(unittest.TestCase):
     def setUp(self):
-        self.time = '12:00'
-
-    def test_calculate_score_with_valid_data_hot(self):
-        poi_data = {
-            'id': 1,
-            'name': 'POI 1',
-            'weather': {'Air temperature': '30 °C', 'Humidity': '50%'}
+        self.sun = get_sun_data()
+        self.sunrise = self.sun[0]
+        self.sunset = self.sun[1]  
+        self.weather = {
+            "0": {
+                "Air temperature": "25",
+                "Humidity": "60"
+            },
+            "1": {
+                "Air temperature": "30",
+                "Humidity": "80"
+            },
+            "2": {
+                "Air temperature": "22",
+                "Humidity": "50"
+            }
         }
-        poi = PointOfInterest(self.time,**poi_data)
-        self.assertAlmostEqual(poi.score, 1.0)
-
-    def test_calculate_score_with_valid_data_nothot(self):
-        poi_data = {
-            'id': 1,
-            'name': 'POI 1',
-            'weather': {'Air temperature': '10 °C', 'Humidity': '10%'}
+        
+    def test_calculate_score_with_invalid_humidity(self):
+        self.weather["0"]["Humidity"] = "invalid"
+        recommender = Recommender(weather=self.weather)
+        expected_scores = {
+            "0": -float('inf'),
+            "1": 0.5,
+            "2": 1.0
         }
-        poi = PointOfInterest(self.time,**poi_data)
-        self.assertAlmostEqual(poi.score, 0.0)
 
-    def test_calculate_score_with_invalid_data(self):
-        poi_data = {
-            'id': 2,
-            'name': 'POI 2',
-            'weather': {'Air temperature': None, 'Humidity': '50%'}
+        for data_key, expected_score in expected_scores.items():
+            self.assertEqual(recommender.weather[data_key]['score'], expected_score)
+
+    def test_calculate_score_with_invalid_temperature(self):
+        self.weather["0"]["Air temperature"] = "invalid"
+        recommender = Recommender(weather=self.weather)
+        expected_scores = {
+            "0": -float('inf'),
+            "1": 0.5,
+            "2": 1.0
         }
-        poi = PointOfInterest(self.time,**poi_data)
-        self.assertEqual(poi.score, -float('inf'))
 
-    def test_calculate_score_with_invalid_time(self):
-        self.time = '23:59'
-        poi_data = {
-            'id': 1,
-            'name': 'POI 1',
-            'weather': {'Air temperature': '30 °C', 'Humidity': '50%'}
+        for data_key, expected_score in expected_scores.items():
+            if get_current_time(int(data_key)) > self.sunset and get_current_time(int(data_key)) < self.sunrise:
+                self.assertEqual(recommender[data_key]['score'], 0)
+            self.assertEqual(recommender.weather[data_key]['score'], expected_score)
+
+    def test_calculate_score_within_suitable_time_range(self):
+        recommender = Recommender(weather=self.weather)
+        expected_scores = {
+            "0": 1.0,
+            "1": 0.5,
+            "2": 1.0
         }
-        poi = PointOfInterest(self.time,**poi_data)
-        self.assertAlmostEqual(poi.score, 0.0)
 
-    def test_point_of_interest_initialization(self):
-        poi_data = {
-            'id': 3,
-            'name': 'POI 3',
-            'weather': {'Air temperature': '25 °C', 'Humidity': '45%'}
-        }
-        poi = PointOfInterest(self.time,**poi_data)
-        self.assertEqual(poi.id, 3)
-        self.assertEqual(poi.name, 'POI 3')
-        self.assertEqual(poi.score, 1.0)
-
+        for data_key, expected_score in expected_scores.items():
+            self.assertEqual(recommender.weather[data_key]['score'], expected_score)
 
 if __name__ == '__main__':
     unittest.main()

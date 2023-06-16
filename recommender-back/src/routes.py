@@ -1,7 +1,9 @@
-from app import app
+from app import app, cache
 from apis import weather
 from apis import poi
 from flask import jsonify
+from flask_caching import Cache
+import json
 
 
 @app.route('/', methods=['GET'])
@@ -19,17 +21,21 @@ def index():
     }
     return jsonify(data)
 
-
-@app.route('/api/weather', methods=['GET'])
-def get_weather():
+@app.route('/api/forecast', methods=['GET'])
+@cache.cached(timeout=3600)
+def get_forecast():
     '''
-    Handler for the '/api/weather' endpoint.
+    Handler for the '/api/forecast' endpoint.
 
     Returns:
-        The weather data if errors have not occurred.
-
+        Forecast for the POI's.
     '''
-    return weather.get_full_weather_info()
+    forecastgrid = weather.ForecastGrid()
+    forecastgrid.update_data()
+    poi_forecast = poi.get_closest_poi_coordinates_data(
+        forecastgrid.get_coordinates(), forecastgrid.get_data())
+    return json.dumps(poi_forecast)
+
 
 @app.route('/api/poi/', methods=['GET'])
 def get_poi_data():
@@ -40,6 +46,7 @@ def get_poi_data():
         Poi data if errors have not occurred.
     '''
     return poi.get_pois_as_json()
+
 
 @app.route('/api/poi/<accessibility>', methods=['GET'])
 def get_poi_acessible_poi_data(accessibility):
