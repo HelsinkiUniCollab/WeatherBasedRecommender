@@ -42,7 +42,7 @@
 | Isak    | 8            | 4             | 2               | -              | -            | -              | -            | 14         |
 | Sami S. | -            | 3 sprint meetings             | 2 pr-review, fore! -branch               | 3.5 product- and sprint backlog              | -            | -              | -            | -         |
 | Sami M. | -            | 3 meetings | 1 check forecast pr               | 3 work on map and try to fix tests              | -            | -              | -            | -         |
-| Pia     | -            | -             | -               | -              | -            | -              | -            | -         |
+| Pia     | 1 scrum master            | 4 meetings             | -               | 2 daily, fore              | -            | -              | -            | -         |
 | Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
 
 |         | Monday 19.6. | Tuesday 20.6. | Wednesday 21.6. | Thursday 22.6. | Friday 23.6. | Saturday 24.6. | Sunday 25.6. | Total |
