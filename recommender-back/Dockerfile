@@ -12,9 +12,16 @@ RUN pip install poetry \
   && poetry install --no-dev --no-interaction --no-ansi
 
 RUN apt-get update && apt-get install -y \
-    libeccodes0 \
-    libeccodes-dev \
-    libeccodes-tools
+    build-essential \
+    cmake \
+    wget \
+    git \
+    curl \
+    libaec-dev \
+    gfortran
+
+COPY install_eccodes.sh /app/
+RUN chmod +x /app/install_eccodes.sh && /app/install_eccodes.sh
 
 RUN poetry run pip install --upgrade eccodes
 
