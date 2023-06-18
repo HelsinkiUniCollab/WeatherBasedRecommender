@@ -65,15 +65,10 @@ jobs:
         run: |
           while ! nc -z localhost 5000; do sleep 1; done
 
-      - name: Run Frontend
-        run: |
-          cd recommender-front
-          npm start
-
       - name: Run Cypress tests
         run: |
           cd recommender-front
-          npm run cypress:run
+          npm run test:ci
 
       - name: Stop servers
         run: kill $(jobs -p)
