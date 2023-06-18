@@ -1,38 +1,40 @@
-import React from 'react';
-import { Marker, Popup } from 'react-leaflet';
-import createMarkerIcon from '../../utils/Icon';
+import { useEffect, useRef } from 'react';
+import L from 'leaflet';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'leaflet.markercluster';
+import { useMap } from 'react-leaflet';
+import createMarkers from '../../utils/MarkerUtils';
 
 function MarkersComponent({ poiData, time }) {
-  if (poiData && time) {
-    return poiData.map((poi) => {
-      const tags = Object.entries(poi.weather[time]);
-      const markerIcon = createMarkerIcon(poi.weather[time].score);
-      return (
-        <Marker
-          position={[poi.location.coordinates[1], poi.location.coordinates[0]]}
-          key={poi.id}
-          icon={markerIcon}
-          data-testid={`marker-${poi.id}`}
-        >
-          <Popup data-testid="popup">
-            <h2>{poi.name.fi}</h2>
-            <ul>
-              {tags.map(([key, value]) => (
-                key !== 'Longitude' && key !== 'Latitude' && key !== 'score' && (
-                <li key={key}>
-                  <strong>{key}</strong>
-                  :
-                  {' '}
-                  {value}
-                </li>
-                )
-              ))}
-            </ul>
-          </Popup>
-        </Marker>
-      );
-    });
-  }
+  const map = useMap();
+  const markerClusterGroup = useRef(null);
+
+  useEffect(() => {
+    if (poiData && time) {
+      const markers = createMarkers(poiData, time);
+      const markerGroup = L.markerClusterGroup();
+
+      markers.forEach((marker) => {
+        markerGroup.addLayer(marker);
+      });
+
+      if (markerClusterGroup.current) {
+        map.removeLayer(markerClusterGroup.current);
+      }
+
+      markerClusterGroup.current = markerGroup;
+      map.addLayer(markerGroup);
+    }
+
+    return () => {
+      if (markerClusterGroup.current) {
+        map.removeLayer(markerClusterGroup.current);
+        markerClusterGroup.current = null;
+      }
+    };
+  }, [poiData, time, map]);
+
+  return null;
 }
 
 export default MarkersComponent;
