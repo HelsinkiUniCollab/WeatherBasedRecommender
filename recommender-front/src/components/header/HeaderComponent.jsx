@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
@@ -15,6 +14,7 @@ function HeaderComponent({
       const label = times[i] ? times[i].split(':')[0] : '';
       hours.push({ value, label });
     }
+    hours[0] = 'Now';
   }
   console.log(hours);
   return (

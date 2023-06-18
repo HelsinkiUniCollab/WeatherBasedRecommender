@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 function AccessibilityComponent({ accessibility, handleChange }) {
   return (
     <FormControl>
-      <Select displayEmpty value={accessibility} onChange={handleChange}>
+      <Select displayEmpty value={accessibility} onChange={handleChange} data-testid="accessibility-select">
         <MenuItem value="">
           <Typography variant="h2">All attractions</Typography>
         </MenuItem>
