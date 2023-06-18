@@ -28,6 +28,7 @@
     "lint": "eslint src --ext .jsx",
     "lint:fix": "eslint src --ext .jsx --fix",
     "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "start:ci": "react-scripts start",
     "test:ci": "start-test start:ci http://localhost:3000 cypress:run"
   },
