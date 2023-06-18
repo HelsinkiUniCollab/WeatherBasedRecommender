@@ -16,7 +16,6 @@ function HeaderComponent({
     }
     hours[0] = { value: 0, label: 'Now' };
   }
-  console.log(hours);
   return (
     <Grid
       container
