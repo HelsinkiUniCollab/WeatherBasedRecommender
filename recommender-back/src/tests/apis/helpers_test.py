@@ -8,8 +8,6 @@ class RecommenderTests(unittest.TestCase):
         self.sun = get_sun_data()
         self.sunrise = self.sun[0]
         self.sunset = self.sun[1]
-        print(self.sunrise)
-        print(self.sunset)
         self.weather = {
             "0": {
                 "Air temperature": "25",

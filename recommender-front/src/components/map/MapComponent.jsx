@@ -6,7 +6,7 @@ import '../../assets/style.css';
 function MapComponent({ poiData, time }) {
   const position = [60.2049, 24.9649];
   const minZoom = 12;
-  const maxZoom = 20;
+  const maxZoom = 18;
   const bounds = [[60, 24.6], [60.35, 25.355]];
   const viscosity = 1;
 

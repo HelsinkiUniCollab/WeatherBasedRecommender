@@ -9,6 +9,10 @@ import 'leaflet/dist/leaflet.css';
 import '@fontsource/roboto/300.css';
 import theme from './assets/theme';
 import './assets/style.css';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
 function App() {
   const [accessibility, setAccessibility] = useState('');
