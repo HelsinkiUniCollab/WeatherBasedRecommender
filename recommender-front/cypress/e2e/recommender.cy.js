@@ -36,7 +36,7 @@ describe('Map and POI features', () => {
         expect($lis.eq(0)).to.contain('20.0 °C');
       });
 
-    cy.get('.MuiSlider-root').click(50, 0);
+    cy.get('span.MuiSlider-markLabel[data-index="1"]').click();
 
     cy.get('.leaflet-marker-icon').first().click();
 

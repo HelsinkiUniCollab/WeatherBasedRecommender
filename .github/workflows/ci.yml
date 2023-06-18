@@ -37,22 +37,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Use Node.js 20.2.0
         uses: actions/setup-node@v3
         with:
           node-version: 20.2.0
+
       - name: Install Node
         run: |
           cd recommender-front
           npm ci
+
       - name: Run frontend tests
         run: |
           cd recommender-front
           npm test
+
+      - name: Start application
+        run: npm start &
+        env:
+          CI: true
+
+      - name: Wait for application to start
+        run: sleep 60
+
       - name: Run Cypress tests
         run: |
           cd recommender-front
           npx cypress run
+
       - name: Run ESLint
         run: |
           cd recommender-front
