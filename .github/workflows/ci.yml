@@ -54,7 +54,9 @@ jobs:
           npm test
 
       - name: Start application
-        run: npm start &
+        run: |
+          cd recommender-front
+          npm start
         env:
           CI: true
 
