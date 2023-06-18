@@ -8,12 +8,12 @@ html, body {
 
 #map {
   width: 100vw;
-  height: calc(100vh - 25%); /* Makes sure leaflet copyright is shown*/
+  height: calc(100vh - 22%); /* Makes sure leaflet copyright is shown*/
 }
 
 .app-container {
   display: grid;
-  grid-template-rows: 20% 80%;
+  grid-template-rows: 22% 78%;
   height: 100vh; 
   overflow: hidden
 }
@@ -24,7 +24,7 @@ html, body {
   right: 0;
   left: 50%;
   width: 95%;
-  height: 20%;
+  height: 22%;
   z-index: 1;
   background-color: #ffffff;
   display: flex;
@@ -44,7 +44,7 @@ html, body {
 .map-container {
   width: 100%;
   position: fixed;
-  top: 20%;
+  top: 22%;
   bottom: 0;
   z-index: 2; /* Makes sure zoom control is visible */
 }
