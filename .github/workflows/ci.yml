@@ -16,18 +16,21 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: 3.8
+
       - name: Install Poetry
         run: |
           cd recommender-back
           pip install poetry
+
       - name: Install dependencies
         run: |
           cd recommender-back
           poetry install
+
       - name: Run backend tests
         run: |
-          cd recommender-back
-          poetry run invoke test
+          cd recommender-back && poetry run invoke test
+
       - name: Run Pylint
         run: |
           cd recommender-back
@@ -45,30 +48,16 @@ jobs:
 
       - name: Install Node
         run: |
-          cd recommender-front
-          npm ci
+          cd recommender-front && npm ci
 
       - name: Run frontend tests
         run: |
-          cd recommender-front
-          npm test
-
-      - name: Start application
-        run: |
-          cd recommender-front
-          npm start
-        env:
-          CI: true
-
-      - name: Wait for application to start
-        run: sleep 60
+          cd recommender-front && npm test
 
       - name: Run Cypress tests
         run: |
-          cd recommender-front
-          npx cypress run
+          cd recommender-front && npm run test:ci
 
       - name: Run ESLint
         run: |
-          cd recommender-front
-          npm run lint
+          cd recommender-front && npm run lint

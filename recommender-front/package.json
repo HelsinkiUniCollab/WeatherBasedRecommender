@@ -27,7 +27,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .jsx",
     "lint:fix": "eslint src --ext .jsx --fix",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "start:ci": "react-scripts start",
+    "test:ci": "start-test start:ci http://localhost:3000 cypress:run"
   },
   "eslintConfig": {
     "extends": [
@@ -60,7 +62,8 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "jest": "^27.5.1",
-    "msw": "^1.2.1"
+    "msw": "^1.2.1",
+    "start-server-and-test": "^2.0.0"
   },
   "jest": {
     "transform": {
