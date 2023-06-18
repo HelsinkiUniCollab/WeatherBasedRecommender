@@ -54,9 +54,25 @@ jobs:
         run: |
           cd recommender-front && npm test
 
+      - name: Start backend server
+        run: |
+          cd recommender-back
+          poetry run start-server &
+
+      - name: Start frontend application
+        run: |
+          cd recommender-front
+          npm start &
+
+      - name: Wait for backend and frontend to start
+        run: |
+          while ! nc -z localhost 5000; do sleep 1; done
+          while ! nc -z localhost 3000; do sleep 1; done
+
       - name: Run Cypress tests
         run: |
-          cd recommender-front && npm run test:ci
+          cd recommender-front
+          npm run test:ci
 
       - name: Run ESLint
         run: |
