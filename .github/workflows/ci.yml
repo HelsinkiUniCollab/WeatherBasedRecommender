@@ -58,7 +58,7 @@ jobs:
         run: |
           cd recommender-back
           pip install poetry
-          poetry run start-server &
+          poetry run invoke start &
 
       - name: Start frontend application
         run: |
