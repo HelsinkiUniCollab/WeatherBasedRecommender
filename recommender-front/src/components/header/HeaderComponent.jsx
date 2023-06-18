@@ -14,7 +14,7 @@ function HeaderComponent({
       const label = times[i] ? times[i].split(':')[0] : '';
       hours.push({ value, label });
     }
-    hours[0] = 'Now';
+    hours[0] = { value: 0, label: 'Now' };
   }
   console.log(hours);
   return (
