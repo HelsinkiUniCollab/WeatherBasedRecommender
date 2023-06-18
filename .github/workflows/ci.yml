@@ -57,6 +57,7 @@ jobs:
       - name: Start backend server
         run: |
           cd recommender-back
+          pip install poetry
           poetry run start-server &
 
       - name: Start frontend application
@@ -73,6 +74,9 @@ jobs:
         run: |
           cd recommender-front
           npm run test:ci
+
+      - name: Stop servers
+        run: kill $(jobs -p)
 
       - name: Run ESLint
         run: |
