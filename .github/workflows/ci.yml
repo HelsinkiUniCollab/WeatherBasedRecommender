@@ -61,10 +61,9 @@ jobs:
           poetry install
           poetry run invoke start &
 
-      - name: Wait for backend and frontend to start
+      - name: Wait for backend to start
         run: |
           while ! nc -z localhost 5000; do sleep 1; done
-          while ! nc -z localhost 3000; do sleep 1; done
 
       - name: Run Cypress tests
         run: |
