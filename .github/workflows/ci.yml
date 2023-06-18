@@ -49,6 +49,10 @@ jobs:
         run: |
           cd recommender-front
           npm test
+      - name: Run Cypress tests
+        run: |
+          cd recommender-front
+          npx cypress run
       - name: Run ESLint
         run: |
           cd recommender-front
