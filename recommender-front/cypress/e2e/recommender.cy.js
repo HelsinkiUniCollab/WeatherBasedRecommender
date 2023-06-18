@@ -3,15 +3,15 @@ import mockPOIS from '../mockData';
 describe('Map and POI features', () => {
   beforeEach(() => {
     cy.intercept('GET', 'http://localhost:5000/api/poi/', mockPOIS);
-    cy.visit('http://localhost:3000/');
+    cy.visit('');
   });
 
   it('should display the MapContainer on initial load', () => {
-    cy.get('.leaflet-container').should('be.visible');
+    cy.get('.leaflet-container', { timeout: 10000 }).should('be.visible');
   });
 
   it('should display all POI markers on initial load', () => {
-    cy.get('.leaflet-marker-icon')
+    cy.get('.leaflet-marker-icon', { timeout: 10000 })
       .should('have.length', mockPOIS.length);
   });
 
@@ -21,9 +21,9 @@ describe('Map and POI features', () => {
     // Move one POI closer to another so they are clustered
     clusteredMockPOIs[1].location.coordinates = [24.952, 60.171];
     cy.intercept('GET', 'http://localhost:5000/api/poi/', clusteredMockPOIs);
-    cy.visit('http://localhost:3000/');
+    cy.visit('');
 
-    cy.get('.leaflet-marker-icon')
+    cy.get('.leaflet-marker-icon', { timeout: 10000 })
       .should('have.length', mockPOIS.length - 1);
   });
 
@@ -52,5 +52,7 @@ describe('Map and POI features', () => {
     cy.intercept('GET', 'http://localhost:5000/api/poi/wheelchair', wheelChairMockData);
     cy.get('.MuiSelect-select').click();
     cy.get('[data-value="wheelchair"]').click();
+    cy.get('.leaflet-marker-icon', { timeout: 10000 })
+      .should('have.length', wheelChairMockData.length);
   });
 });
