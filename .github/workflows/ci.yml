@@ -61,11 +61,6 @@ jobs:
           poetry install
           poetry run invoke start &
 
-      - name: Start frontend application
-        run: |
-          cd recommender-front
-          npm start &
-
       - name: Wait for backend and frontend to start
         run: |
           while ! nc -z localhost 5000; do sleep 1; done
