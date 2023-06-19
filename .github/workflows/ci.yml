@@ -20,27 +20,6 @@ jobs:
         run: |
           cd recommender-back
           pip install poetry
-      - name: Install Pygrib
-        run: |
-          cd recommender-back
-          pip install pygrib
-      - name: Install Ecmwflibs
-        run: |
-          cd recommender-back
-          pip install ecmwflibs
-      - name: Install Eccodes-Python
-        run: |
-          cd recommender-back
-          pip install eccodes-python
-      - name: Install Eccodes
-        run: |
-          cd recommender-back
-           conda install eccodes -c conda-forge
-           pip install eccodes==1.5.2
-      - name: Install Cfgirbs
-        run: |
-          cd recommender-back
-           pip install cfgrib
       - name: Install dependencies
         run: |
           cd recommender-back

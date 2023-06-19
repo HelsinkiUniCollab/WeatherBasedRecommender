@@ -76,13 +76,17 @@ class ForecastTest(unittest.TestCase):
     def test_forecast_data_is_parsed_correctly(self):
             data = [{'Dataset': '2 metre temperature', 'Unit': 'K', 'Data': 280.0},
                     {'Dataset': '2 metre relative humidity', 'Unit': '%', 'Data': 64.013},
-                    {'Dataset': '10 metre wind speed', 'Unit': 'm s**-1', 'Data': 1.6543},
-                    {'Dataset': 'Mean sea level pressure', 'Unit': 'Pa', 'Data': 101500.2423}]
+                    {'Dataset': '10 metre U wind component', 'Unit': 'm s**-1', 'Data': 1.223},
+                    {'Dataset': '10 metre V wind component', 'Unit': 'm s**-1', 'Data': -4.7},
+                    {'Dataset': 'surface precipitation amount, rain, convective', 'Unit': 'kg m**-2', 'Data': 0.0231},
+                    {'Dataset': 'Total Cloud Cover', 'Unit': '%', 'Data': 23.2}]
 
             expected_parsed_data = {'Air temperature': '6.9 °C',
-                                    'Wind': '1.7 m/s', 
-                                    'Air pressure': '1015.0 mbar',
-                                    'Humidity': '64.0 %'}
+                                    'Humidity': '64.0 %',
+                                    'WindU': '1.2', 
+                                    'WindV': '-4.7',
+                                    'Precipication': '0.0',
+                                    'Total Cloud Cover': '23.2'}
 
             parsed_data = parse_forecast(data)
 
