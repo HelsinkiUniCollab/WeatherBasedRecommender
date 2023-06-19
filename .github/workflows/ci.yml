@@ -20,6 +20,10 @@ jobs:
         run: |
           cd recommender-back
           pip install poetry
+      - name: Install Eccodes
+        run: |
+          cd recommender-back
+          pip install eccodes
       - name: Install dependencies
         run: |
           cd recommender-back
