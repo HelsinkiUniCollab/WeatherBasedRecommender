@@ -38,17 +38,29 @@ def parse_forecast(forecast):
     for value in forecast:
         if value['Dataset'] == '2 metre temperature':
             temperature = round(value['Data'] - 273.15, 1)
+
         elif value['Dataset'] == '2 metre relative humidity':
             humidity = round(value['Data'], 1)
-        elif value['Dataset'] == 'Mean sea level pressure':
-            pressure = round(value['Data'] / 100, 1)
-        elif value['Dataset'] == '10 metre wind speed':
-            windspeed = round(value['Data'], 1)
+
+        elif value['Dataset'] == '10 metre U wind component':
+            windU = round(value['Data'], 1)
+
+        elif value['Dataset'] == '10 metre V wind component':
+            windV = round(value['Data'], 1)
+        
+        elif value['Dataset'] == 'surface precipitation amount, rain, convective':
+            precipitation = round(value['Data'], 1)
+
+        elif value['Dataset'] == 'Total Cloud Cover':
+            cloudcoverage = round(value['Data'], 1)
+
     return {
         'Air temperature': f'{str(temperature)} °C',
-        'Wind': f'{str(windspeed)} m/s',
-        'Air pressure': f'{str(pressure)} mbar',
-        'Humidity': f'{str(humidity)} %'
+        'Humidity': f'{str(humidity)} %',
+        'WindU': f'{windU}',
+        'WindV': f'{windV}',
+        'Precipication': f'{precipitation}',
+        'Total Cloud Cover': f'{cloudcoverage}',
     }
 
 
