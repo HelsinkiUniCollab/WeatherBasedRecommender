@@ -23,6 +23,7 @@ jobs:
       - name: Install Eccodes
         run: |
           cd recommender-back
+          conda install eccodes -c conda-forge
           pip install eccodes
       - name: Install dependencies
         run: |
