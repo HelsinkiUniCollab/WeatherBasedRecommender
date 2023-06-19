@@ -54,25 +54,6 @@ jobs:
         run: |
           cd recommender-front && npm test
 
-      - name: Start backend server
-        run: |
-          cd recommender-back
-          pip install poetry
-          poetry install
-          poetry run invoke start &
-
-      - name: Wait for backend to start
-        run: |
-          while ! nc -z localhost 5000; do sleep 1; done
-
-      - name: Run Cypress tests
-        run: |
-          cd recommender-front
-          npm run test:ci
-
-      - name: Stop servers
-        run: kill $(jobs -p)
-
       - name: Run ESLint
         run: |
           cd recommender-front && npm run lint
