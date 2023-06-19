@@ -1,7 +1,8 @@
 import unittest
 import numpy as np
+import eccodes
 from datetime import datetime
-from fmiopendata import grid
+from fmiopendata.grid import Grid
 from unittest.mock import MagicMock, PropertyMock, patch
 from apis.weather import ForecastGrid, parse_forecast
 
@@ -9,7 +10,7 @@ class ForecastTest(unittest.TestCase):
     def setUp(self):
         self.forecastgrid = ForecastGrid()
         self.grid_by_datetime = MagicMock()
-        self.mock_grid = MagicMock(spec=grid.Grid)
+        self.mock_grid = MagicMock(spec=Grid)
 
         self.grid_by_datetime.data = {
             datetime(2023, 6, 19, 5, 0): self.mock_grid
