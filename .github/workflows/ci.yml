@@ -31,6 +31,7 @@ jobs:
       - name: Install Eccodes
         run: |
           cd recommender-back
+           conda install eccodes -c conda-forge
            pip install eccodes==1.5.2
       - name: Install Cfgirbs
         run: |
