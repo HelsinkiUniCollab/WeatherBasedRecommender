@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Check Backend
-        run: curl -sSf http://128.214.253.51/api/forecast || exit 1
+        run: curl -sSf http://128.214.253.51/api/poi || exit 1
 
       - name: Check Frontend
         run: curl -sSf http://128.214.253.51:3000/ || exit 1
