@@ -27,7 +27,7 @@ jobs:
       - name: Install Eccodes
         run: |
           cd recommender-back
-           pip install eccodes==1.2.0
+           pip install eccodes==1.5.2
       - name: Install Cfgirbs
         run: |
           cd recommender-back
