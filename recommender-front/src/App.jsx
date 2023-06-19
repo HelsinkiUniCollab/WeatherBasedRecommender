@@ -1,60 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import {
-  createTheme,
-  ThemeProvider,
-  responsiveFontSizes,
-} from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Grid from '@mui/material/Grid';
 import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
 import 'leaflet/dist/leaflet.css';
 import '@fontsource/roboto/300.css';
+import theme from './assets/theme';
 import './assets/style.css';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
 function App() {
   const [accessibility, setAccessibility] = useState('');
   const [poiData, setPoiData] = useState([]);
   const [times, setTimes] = useState(0);
   const [selectedValue, setSelectedValue] = useState(0);
-
-  let theme = createTheme({
-    typography: {
-      // Defines sizes for h1 and h2 in different viewports
-      h1: {
-        fontSize: '16px',
-        '@media (min-width:600px)': {
-          fontSize: '16px',
-        },
-        '@media (min-width:960px)': {
-          fontSize: '24px',
-        },
-        '@media (min-width:1280px)': {
-          fontSize: '32px',
-        },
-        '@media (min-width:1920px)': {
-          fontSize: '40px',
-        },
-      },
-      h2: {
-        fontSize: '12px',
-        '@media (min-width:600px)': {
-          fontSize: '14px',
-        },
-        '@media (min-width:960px)': {
-          fontSize: '16px',
-        },
-        '@media (min-width:1280px)': {
-          fontSize: '18px',
-        },
-        '@media (min-width:1920px)': {
-          fontSize: '22px',
-        },
-      },
-    },
-  });
-
-  theme = responsiveFontSizes(theme);
 
   const handleOptionChange = (event) => {
     setAccessibility(event.target.value);
@@ -82,6 +46,9 @@ function App() {
       setTimes(Object.keys(poiData[0].weather));
     }
   }, [poiData]);
+
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <ThemeProvider theme={theme}>
       <HelmetProvider>
@@ -101,6 +68,7 @@ function App() {
               times={times}
               sliderValue={selectedValue}
               onChange={handleSliderChange}
+              isMobile={isMobile}
             />
           </Grid>
           <Grid item xs={12} className="map-container">
@@ -108,6 +76,7 @@ function App() {
               accessibility={accessibility}
               poiData={poiData}
               time={times[selectedValue]}
+              isMobile={isMobile}
             />
           </Grid>
         </Grid>
