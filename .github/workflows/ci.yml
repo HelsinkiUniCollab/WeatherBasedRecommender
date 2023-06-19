@@ -28,6 +28,10 @@ jobs:
         run: |
           cd recommender-back
           pip install ecmwflibs
+      - name: Install Eccodes-Python
+        run: |
+          cd recommender-back
+          pip install eccodes-python
       - name: Install Eccodes
         run: |
           cd recommender-back
