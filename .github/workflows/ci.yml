@@ -16,18 +16,21 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: 3.8
+
       - name: Install Poetry
         run: |
           cd recommender-back
           pip install poetry
+
       - name: Install dependencies
         run: |
           cd recommender-back
           poetry install
+
       - name: Run backend tests
         run: |
-          cd recommender-back
-          poetry run invoke test
+          cd recommender-back && poetry run invoke test
+
       - name: Run Pylint
         run: |
           cd recommender-back
@@ -37,19 +40,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Use Node.js 20.2.0
         uses: actions/setup-node@v3
         with:
           node-version: 20.2.0
+
       - name: Install Node
         run: |
-          cd recommender-front
-          npm ci
+          cd recommender-front && npm ci
+
       - name: Run frontend tests
         run: |
-          cd recommender-front
-          npm test
+          cd recommender-front && npm test
+
       - name: Run ESLint
         run: |
-          cd recommender-front
-          npm run lint
+          cd recommender-front && npm run lint

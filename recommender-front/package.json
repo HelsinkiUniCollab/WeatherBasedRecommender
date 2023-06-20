@@ -14,6 +14,7 @@
     "leaflet": "^1.9.3",
     "leaflet.markercluster": "^1.5.3",
     "react": "^18.2.0",
+    "cypress": "^12.14.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
     "react-leaflet": "^4.2.1",
@@ -27,7 +28,10 @@
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .jsx",
     "lint:fix": "eslint src --ext .jsx --fix",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "start:ci": "react-scripts start",
+    "test:ci": "start-test start:ci http://localhost:3000 cypress:run"
   },
   "eslintConfig": {
     "extends": [
@@ -54,13 +58,13 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "cypress": "^12.14.0",
     "eslint-plugin-cypress": "^2.13.3",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "jest": "^27.5.1",
-    "msw": "^1.2.1"
+    "msw": "^1.2.1",
+    "start-server-and-test": "^2.0.0"
   },
   "jest": {
     "transform": {
