@@ -8,10 +8,14 @@
     "env": {
         "browser": true,
         "es6": true,
-        "jest": true
+        "jest": true,
+        "cypress/globals": true
     },
     "globals": {
         "Helmet": true,
         "HelmetProvider": true
-    }
+    },
+    "plugins": [
+        "react", "jest", "cypress"
+    ]
 }

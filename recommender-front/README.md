@@ -30,6 +30,19 @@ npm run lint
 ```
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### Cypress tests
+
+For Cypress tests you need to have the frontend running locally.
+API-calls to the backend are intercepted and mock-data is provided so backend is not necessary.
+
+```bash
+# Launches the test runner in a browser window
+$ npm run cypress:open
+
+# Launches tests in terminal window
+$ npx cypress run
+```
+
 ### Building
 
 ```bash
