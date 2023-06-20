@@ -6,8 +6,6 @@ COPY . .
 
 RUN npm ci --only=production --legacy-peer-deps
 
-RUN npm install eslint@latest eslint-plugin-cypress@latest --save-dev
-
 RUN npm run build
 
 RUN npm install -g serve
