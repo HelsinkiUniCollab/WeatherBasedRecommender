@@ -1,8 +1,6 @@
 from app import app, cache
-from apis import weather
-from apis import poi
+from apis import weather, poi
 from flask import jsonify
-from flask_caching import Cache
 import json
 
 
@@ -58,6 +56,11 @@ def get_poi_acessible_poi_data(accessibility):
     '''
     return poi.get_pois_as_json(accessibility)
 
+@app.route('/api/weather', methods=['GET'])
+@cache.cached(timeout=3600)
+def get_weather_helsinki_general():
+    return json.dumps(weather.get_weather_general('fmi::observations::weather::multipointcoverage',
+                                                  'Helsinki'))
 
 @app.errorhandler(404)
 def not_found_error(error):

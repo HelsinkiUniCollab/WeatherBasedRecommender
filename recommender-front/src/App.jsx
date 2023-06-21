@@ -3,6 +3,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Grid from '@mui/material/Grid';
+import Alert from '@mui/material/Alert';
 import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
 import 'leaflet/dist/leaflet.css';
@@ -17,8 +18,10 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 function App() {
   const [accessibility, setAccessibility] = useState('');
   const [poiData, setPoiData] = useState([]);
+  const [weatherData, setWeatherData] = useState({});
   const [times, setTimes] = useState(0);
   const [selectedValue, setSelectedValue] = useState(0);
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleOptionChange = (event) => {
     setAccessibility(event.target.value);
@@ -28,18 +31,25 @@ function App() {
     setSelectedValue(event.target.value);
   };
 
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   useEffect(() => {
-    async function fetchPoiData() {
+    async function fetchData() {
       try {
         const apiUrl = process.env.REACT_APP_BACKEND_URL;
-        const response = await fetch(`${apiUrl}/api/poi/${accessibility}`);
-        const data = await response.json();
-        setPoiData(data);
+        const weatherResponse = await fetch(`${apiUrl}/api/weather`);
+        const weather = await weatherResponse.json();
+        setWeatherData(weather);
+        if (weather['Wind speed'].value < 17) {
+          const poiResponse = await fetch(`${apiUrl}/api/poi/${accessibility}`);
+          const poi = await poiResponse.json();
+          setPoiData(poi);
+        }
       } catch (error) {
-        console.error('Error fetching POI data:', error);
+        console.error('Error fetching data:', error);
       }
     }
-    fetchPoiData();
+    fetchData();
   }, [accessibility]);
   useEffect(() => {
     if (poiData.length > 0) {
@@ -47,7 +57,11 @@ function App() {
     }
   }, [poiData]);
 
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  useEffect(() => {
+    const weather = weatherData;
+    const windSpeed = weather?.['Wind speed']?.value;
+    setShowAlert(windSpeed >= 17);
+  }, [weatherData]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -61,7 +75,7 @@ function App() {
           />
         </Helmet>
         <Grid container>
-          <Grid item xs={12} className="header-container">
+          <Grid item xs={12} className={`header-container${showAlert ? ' disabled' : ''}`}>
             <HeaderComponent
               accessibility={accessibility}
               handleChange={handleOptionChange}
@@ -71,7 +85,13 @@ function App() {
               isMobile={isMobile}
             />
           </Grid>
-          <Grid item xs={12} className="map-container">
+          <Grid item xs={12} className={`map-container${showAlert ? ' disabled' : ''}`}>
+            {showAlert && (
+              <Alert severity="warning" sx={{ marginBottom: '5px' }}>
+                We do not recommend going outside due to strong wind.
+                The application interface has been disabled.
+              </Alert>
+            )}
             <MapComponent
               accessibility={accessibility}
               poiData={poiData}
@@ -82,6 +102,7 @@ function App() {
         </Grid>
       </HelmetProvider>
     </ThemeProvider>
+
   );
 }
 

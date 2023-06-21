@@ -1,5 +1,6 @@
 import datetime as dt
 import numpy as np
+import math
 from apis.time_data import utc_to_finnish, get_forecast_times
 from fmiopendata.wfs import download_stored_query
 
@@ -29,6 +30,18 @@ def get_current_weather():
             weatherdata['Longitude'] = obs.location_metadata[station]['longitude']
             data[station] = weatherdata
     return data
+
+def get_weather_general(query, place):
+    obs = download_stored_query(f'{query}', args=[f'place={place}'])
+    latest_obs = max(obs.data.keys())
+    station = next(iter(obs.location_metadata.keys()))
+    weather_data = obs.data[latest_obs][station]
+
+    for key, value in weather_data.items():
+        if 'value' in value and math.isnan(value['value']):
+            weather_data[key]['value'] = None
+
+    return weather_data
 
 def parse_forecast(forecast):
     '''
