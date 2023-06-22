@@ -39,7 +39,7 @@
 |         | Monday 12.6. | Tuesday 13.6. | Wednesday 14.6. | Thursday 15.6. | Friday 16.6. | Saturday 17.6. | Sunday 18.6. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
 | Juuso   | 7 fore! w/Isak | 6 Finalizing fore and meetings | 2 Score related fixes (test,sun,..) in fore! | 0.5 meet    | 3 docs for back and fore merging| -              | -            | 18.5         |
-| Isak    | 8            | 4             | 2               | -              | -            | -              | -            | 14         |
+| Isak    | 8            | 4             | 2               | -              | -            | -              | 1,5            | 15,5         |
 | Sami S. | -            | 3 sprint meetings             | 2 pr-review, fore! -branch               | 3.5 product- and sprint backlog              | 5 poi-categories, poi apis            | 1.5 poi-info              | 2 poi-info            | 17         |
 | Sami M. | -            | 3 meetings | 1 check forecast pr               | 3 work on map and try to fix tests              | 6.5 docker + live            | -              | 5 mock tests for fore            | 18.5         |
 | Pia     | 1 scrum master stuff            | 4 meetings             | -               | 2 daily, fore              | 6.5 burndown, pullrequest merging, slider            | -              | 4 maintainance, timeslider           | 17,5        |
@@ -48,7 +48,7 @@
 |         | Monday 19.6. | Tuesday 20.6. | Wednesday 21.6. | Thursday 22.6. | Friday 23.6. | Saturday 24.6. | Sunday 25.6. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
 | Juuso   | -            | -             | -               | -              | -            | -              | -            | -         |
-| Isak    | -            | -             | -               | -              | -            | -              | -            | -         |
+| Isak    | 7            | 0,5             | -               | 5              | -            | -              | -            | 12,5         |
 | Sami S. | 5 live, poi-info            | -             | -               | -              | -            | -              | -            | -         |
 | Sami M. | 3 live, fixing tests            | 2 docker package bug hunt             | 6 weather alert + eccodes troubles               | -              | -            | -              | -            | -         |
 | Pia     | -            | -             | -               | 8.5 frontend stuff              | -            | -              | -            | -         |
