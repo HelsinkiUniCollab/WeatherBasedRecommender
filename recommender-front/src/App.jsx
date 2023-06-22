@@ -22,7 +22,7 @@ function App() {
   const [times, setTimes] = useState(0);
   const [selectedValue, setSelectedValue] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
-
+  const [open, setOpen] = useState(false);
   const handleOptionChange = (event) => {
     setAccessibility(event.target.value);
   };
@@ -32,6 +32,14 @@ function App() {
   };
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -82,6 +90,9 @@ function App() {
               times={times}
               sliderValue={selectedValue}
               onChange={handleSliderChange}
+              open={open}
+              handleOpen={handleOpen}
+              handleClose={handleClose}
               isMobile={isMobile}
             />
           </Grid>

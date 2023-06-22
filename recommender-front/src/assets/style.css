@@ -10,7 +10,7 @@ body {
 
 #map {
   width: 100vw;
-  height: calc(100vh - 22%);
+  height: calc(100vh - 23%); 
   /* Makes sure leaflet copyright is shown*/
 }
 
@@ -28,7 +28,7 @@ body {
   right: 0;
   left: 50%;
   width: 95%;
-  height: 22%;
+  height: 23%;
   z-index: 1;
   background-color: #ffffff;
   display: flex;
@@ -51,6 +51,11 @@ body {
   z-index: 4;
   /* Makes sure slider is visible */
 }
+
+.info-item {
+  align-self: flex-start;
+}
+
 
 .map-container {
   width: 100%;

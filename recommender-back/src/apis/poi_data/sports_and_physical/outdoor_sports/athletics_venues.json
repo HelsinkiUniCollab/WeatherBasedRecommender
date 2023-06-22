@@ -1357,7 +1357,12 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "track",
+      "name": "Suomenlinnan kenttä",
+      "url": "https://www.hel.fi/helsinki/fi/kaupunki-ja-hallinto/osallistu-ja-vaikuta/ota-yhteytta/hae-yhteystietoja/toimipistekuvaus?id=40655"
+    }
   },
   {
     "id": 40185,
