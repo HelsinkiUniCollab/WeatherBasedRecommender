@@ -44,10 +44,10 @@ def parse_forecast(forecast):
             humidity = round(value['Data'], 1)
 
         elif value['Dataset'] == '10 metre U wind component':
-            windU = round(value['Data'], 1)
+            windU = value['Data']
 
         elif value['Dataset'] == '10 metre V wind component':
-            windV = round(value['Data'], 1)
+            windV = value['Data']
         
         elif value['Dataset'] == 'surface precipitation amount, rain, convective':
             precipitation = round(value['Data'], 1)

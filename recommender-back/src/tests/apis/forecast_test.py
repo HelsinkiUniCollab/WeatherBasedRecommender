@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 from datetime import datetime
 from unittest.mock import MagicMock, PropertyMock, patch
-from apis.weather import ForecastGrid, parse_forecast
+from apis.weather import ForecastGrid, parse_forecast, calculate_wind_speed_and_direction
 
 class ForecastTest(unittest.TestCase):
     def setUp(self):
@@ -83,8 +83,8 @@ class ForecastTest(unittest.TestCase):
 
             expected_parsed_data = {'Air temperature': '6.9 °C',
                                     'Humidity': '64.0 %',
-                                    'WindU': '1.2', 
-                                    'WindV': '-4.7',
+                                    'Wind speed': '4.9 m/s', 
+                                    'Wind direction': '165.4 °',
                                     'Precipication': '0.0',
                                     'Total Cloud Cover': '23.2'}
 
