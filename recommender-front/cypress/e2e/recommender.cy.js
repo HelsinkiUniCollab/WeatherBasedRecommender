@@ -19,7 +19,7 @@ describe('Map and POI features', () => {
     // Create a copy of the mock POI data
     const clusteredMockPOIs = JSON.parse(JSON.stringify(mockPOIS));
     // Move one POI closer to another so they are clustered
-    clusteredMockPOIs[1].location.latitude = 24.952;
+    clusteredMockPOIs[1].location.longitude = 24.952;
     clusteredMockPOIs[1].location.latitude = 60.171;
     cy.intercept('GET', 'http://localhost:5000/api/poi/', clusteredMockPOIs);
     cy.visit('');
