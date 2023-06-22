@@ -2,7 +2,7 @@ import mockPOIS from '../mockData';
 
 describe('Map and POI features', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://localhost:5000/api/poi/', mockPOIS);
+    cy.intercept('GET', 'http://localhost:5000/api/poi/', mockPOIS).as('getPOIs');
     cy.visit('');
     cy.wait('@getPOIs'); // Odota, että pyyntö mockPOIS-dataan on suoritettu
   });
