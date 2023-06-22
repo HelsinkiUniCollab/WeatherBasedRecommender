@@ -20,30 +20,39 @@ let theme = createTheme({
       fontSize: '16px',
       '@media (min-width:600px)': {
         fontSize: '20px',
+        fontWeight: 'bold',
       },
       '@media (min-width:960px)': {
-        fontSize: '28px',
+        fontSize: '28zpx',
+        fontWeight: 'bold',
       },
       '@media (min-width:1280px)': {
         fontSize: '30px',
+        fontWeight: 'bold',
       },
       '@media (min-width:1920px)': {
         fontSize: '32x',
+        fontWeight: 'bold',
       },
     },
     h2: {
-      fontSize: '12px',
+      fontSize: '14px',
+      fontWeight: 'bold',
       '@media (min-width:600px)': {
         fontSize: '14px',
+        fontWeight: 'bold',
       },
       '@media (min-width:960px)': {
         fontSize: '16px',
+        fontWeight: 'bold',
       },
       '@media (min-width:1280px)': {
         fontSize: '18px',
+        fontWeight: 'bold',
       },
       '@media (min-width:1920px)': {
-        fontSize: '22px',
+        fontSize: '20x',
+        fontWeight: 'bold',
       },
     },
   },

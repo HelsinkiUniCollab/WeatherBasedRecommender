@@ -12,7 +12,7 @@ const createMarkers = (poiData, time) => {
     const marker = L.marker([poi.location.coordinates[1],
       poi.location.coordinates[0]], { icon: markerIcon });
     marker.bindPopup(
-      `<h2>${poi.name.fi}</h2>
+      `<h3>${poi.name.fi}</h3>
         <ul>
           ${tags.map(([key, value]) => (key !== 'Longitude' && key !== 'Latitude' && key !== 'score' ? `<li><strong>${key}</strong>: ${value}</li>` : '')).join('')}
         </ul>`,
