@@ -1,5 +1,5 @@
 import L from 'leaflet';
-import basemarker1 from '../assets/markericon/basemarker1.png';
+import basestar from '../assets/markericon/basestar.png';
 import basemarker2 from '../assets/markericon/basemarker2.png';
 import basemarker3 from '../assets/markericon/basemarker3.png';
 import basemarker4 from '../assets/markericon/basemarker4.png';
@@ -21,7 +21,7 @@ function createMarkerIcon(value) {
   const markerIcons = {
     green1: L.icon({
       ...iconOptions,
-      iconUrl: basemarker1,
+      iconUrl: basestar,
     }),
     green2: L.icon({
       ...iconOptions,

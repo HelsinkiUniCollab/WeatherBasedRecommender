@@ -1,4 +1,5 @@
 import datetime as dt
+import math as math
 import numpy as np
 import math
 from apis.time_data import utc_to_finnish, get_forecast_times
@@ -56,10 +57,10 @@ def parse_forecast(forecast):
             humidity = round(value['Data'], 1)
 
         elif value['Dataset'] == '10 metre U wind component':
-            windU = round(value['Data'], 1)
+            windU = value['Data']
 
         elif value['Dataset'] == '10 metre V wind component':
-            windV = round(value['Data'], 1)
+            windV = value['Data']
         
         elif value['Dataset'] == 'surface precipitation amount, rain, convective':
             precipitation = round(value['Data'], 1)
@@ -67,15 +68,23 @@ def parse_forecast(forecast):
         elif value['Dataset'] == 'Total Cloud Cover':
             cloudcoverage = round(value['Data'], 1)
 
+    wind_speed, wind_direction = calculate_wind_speed_and_direction(windU,windV)
+
     return {
         'Air temperature': f'{str(temperature)} °C',
         'Humidity': f'{str(humidity)} %',
-        'WindU': f'{windU}',
-        'WindV': f'{windV}',
+        'Wind speed': f'{wind_speed} m/s',
+        'Wind direction': f'{wind_direction} °',
         'Precipication': f'{precipitation}',
         'Total Cloud Cover': f'{cloudcoverage}',
     }
 
+
+def calculate_wind_speed_and_direction(WindU, WindV):
+    wind_speed = math.sqrt(WindU**2 + WindV**2)
+    wind_direction = math.atan2(WindU, WindV) * (180 / math.pi)
+    wind_direction = (wind_direction + 360) % 360 
+    return (round(wind_speed, 1), round(wind_direction, 1))
 
 class ForecastGrid:
     def __init__(self):
@@ -106,7 +115,7 @@ class ForecastGrid:
         self.data_levels = self.data.data[earliest_step].keys()
 
         self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
-
+        print('got it')
 
     def get_data(self):
         '''Gets all the data from grid
