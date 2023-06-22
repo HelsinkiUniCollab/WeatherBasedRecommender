@@ -204,7 +204,15 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "name": "Furuvikin uimaranta",
+      "name:en": "Furuvik's swimming beach",
+      "name:fi": "Furuvikin uimaranta",
+      "name:sv": "Furuviks badstrand",
+      "natural": "beach",
+      "sport": "swimming"
+    }
   },
   {
     "id": 64529,
@@ -284,7 +292,11 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "name": "Hevossalmen uimaranta",
+      "natural": "beach"
+    }
   },
   {
     "id": 40142,
@@ -416,7 +428,19 @@
       "reduced_mobility": 6,
       "visually_impaired": 2
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "13",
+      "addr:postcode": "00980",
+      "addr:street": "Kallvikinniementie",
+      "alt_name": "Kallahden kainalo",
+      "name": "Ison Kallahden uimaranta",
+      "name:fi": "Ison Kallahden uimaranta",
+      "natural": "beach",
+      "toilets": "yes",
+      "wheelchair": "limited"
+    }
   },
   {
     "id": 40150,
@@ -544,7 +568,13 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "name": "Kivinokan uimaranta",
+      "natural": "beach",
+      "surface": "sand",
+      "website": "https://www.hel.fi/www/helsinki/fi/kulttuuri-ja-vapaa-aika/liikunta/ulkoliikuntapaikat/maauimalat-ja-uimarannat/kivinokan-uimaranta"
+    }
   },
   {
     "id": 72033,
@@ -630,7 +660,24 @@
       "reduced_mobility": 3,
       "visually_impaired": 5
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "1",
+      "addr:postcode": "00560",
+      "addr:street": "Allastie",
+      "leisure": "sports_centre",
+      "name": "Kumpulan maauimala",
+      "name:fi": "Kumpulan maauimala",
+      "name:sv": "Gumtäkt simbassängen",
+      "operator": "Helsingin kaupunki",
+      "phone": "09 310 87477",
+      "sport": "swimming",
+      "start_date": "1952",
+      "website": "https://www.hel.fi/helsinki/fi/kulttuuri-ja-vapaa-aika/liikunta/ulkoliikuntapaikat/maauimalat-ja-uimarannat/kumpulan-maauimala",
+      "wikidata": "Q5483191",
+      "wikipedia": "fi:Kumpulan maauimala"
+    }
   },
   {
     "id": 40802,
@@ -676,7 +723,14 @@
       "reduced_mobility": 6,
       "visually_impaired": 2
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "name": "Laajasalon uimaranta",
+      "name:fi": "Laajasalon uimaranta",
+      "name:sv": "Degerö badstrand",
+      "natural": "beach",
+      "sport": "swimming"
+    }
   },
   {
     "id": 40098,
@@ -722,7 +776,12 @@
       "reduced_mobility": 5,
       "visually_impaired": 2
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "information": "board",
+      "name": "Lauttasaaren uimaranta",
+      "tourism": "information"
+    }
   },
   {
     "id": 40076,
@@ -848,7 +907,13 @@
       "reduced_mobility": 6,
       "visually_impaired": 5
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "name": "Marjaniemen uimaranta",
+      "name:fi": "Marjaniemen uimaranta",
+      "name:sv": "Marudds badstrand",
+      "natural": "beach"
+    }
   },
   {
     "id": 41594,
@@ -935,7 +1000,12 @@
       "reduced_mobility": 4,
       "visually_impaired": 3
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "name": "Munkkiniemen uimaranta",
+      "seasonal:winter": "yes",
+      "sport": "swimming"
+    }
   },
   {
     "id": 41264,
@@ -1063,7 +1133,13 @@
       "reduced_mobility": 8,
       "visually_impaired": 6
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "contact:website": "https://www.hel.fi/helsinki/fi/kulttuuri-ja-vapaa-aika/liikunta/ulkoliikuntapaikat/maauimalat-ja-uimarannat/mustikkamaan-uimaranta",
+      "name": "Mustikkamaan uimaranta",
+      "natural": "beach",
+      "sport": "swimming"
+    }
   },
   {
     "id": 41717,
@@ -1186,7 +1262,12 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "name": "Pihlajasaaren uimaranta",
+      "natural": "beach",
+      "sport": "swimming"
+    }
   },
   {
     "id": 72464,
@@ -1272,7 +1353,14 @@
       "reduced_mobility": 5,
       "visually_impaired": 2
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "name": "Pikkukosken uimaranta",
+      "name:fi": "Pikkukosken uimaranta",
+      "name:sv": "Lillforsens badstrand",
+      "natural": "beach",
+      "surface": "sand"
+    }
   },
   {
     "id": 40088,
@@ -1441,7 +1529,13 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "pitch",
+      "name": "Puotilan uimaranta / Beachvolleykenttä",
+      "sport": "beachvolleyball",
+      "surface": "sand"
+    }
   },
   {
     "id": 40606,
@@ -1528,7 +1622,15 @@
       "reduced_mobility": 7,
       "visually_impaired": 2
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "name": "Rastilan uimaranta",
+      "name:en": "Rastila beach",
+      "name:fi": "Rastilan uimaranta",
+      "name:sv": "Rastböle badstrand",
+      "natural": "beach",
+      "sport": "swimming"
+    }
   },
   {
     "id": 41188,
@@ -1691,7 +1793,13 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "name": "Seurasaaren uimala",
+      "natural": "beach",
+      "seasonal:winter": "yes",
+      "sport": "swimming"
+    }
   },
   {
     "id": 40084,
@@ -1814,7 +1922,17 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:postcode": "00190",
+      "addr:street": "Suomenlinna",
+      "name": "Suomenlinnan uimaranta",
+      "natural": "beach",
+      "surface": "sand",
+      "website": "https://www.hel.fi/www/helsinki/fi/kulttuuri-ja-vapaa-aika/liikunta/ulkoliikuntapaikat/maauimalat-ja-uimarannat/suomenlinnan-uimaranta",
+      "wheelchair": "no"
+    }
   },
   {
     "id": 41047,
@@ -1949,7 +2067,14 @@
       "reduced_mobility": 4,
       "visually_impaired": 3
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "name": "Tuorinniemen uimaranta",
+      "name:fi": "Tuorinniemen uimaranta",
+      "name:sv": "Torsnäs badstrand",
+      "natural": "beach",
+      "seasonal:winter": "yes"
+    }
   },
   {
     "id": 41331,
@@ -2037,7 +2162,13 @@
       "reduced_mobility": 5,
       "visually_impaired": 4
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "contact:website": "http://www.hel.fi/www/helsinki/fi/kulttuuri-ja-vapaa-aika/liikunta/ulkoliikuntapaikat/maauimalat-ja-uimarannat/uunisaaren-uimaranta",
+      "name": "Uunisaaren uimaranta",
+      "natural": "beach",
+      "seasonal:winter": "yes"
+    }
   },
   {
     "id": 41582,
@@ -2199,7 +2330,16 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "2b",
+      "addr:postcode": "00210",
+      "addr:street": "Itälahdenkatu",
+      "description": "Kausi 6.6. - 14.8.2023",
+      "name": "Veijarivuoren uimaranta",
+      "natural": "beach"
+    }
   },
   {
     "id": 40701,

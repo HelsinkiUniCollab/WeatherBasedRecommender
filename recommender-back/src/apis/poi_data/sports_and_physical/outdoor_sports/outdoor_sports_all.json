@@ -9637,7 +9637,13 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "fitness_station",
+      "name": "Kalasatamanpuisto / Lähiliikuntapaikka",
+      "name:fi": "Kalasatamanpuisto / Lähiliikuntapaikka",
+      "sport": "fitness"
+    }
   },
   {
     "id": 56675,
@@ -12724,7 +12730,17 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "access": "yes",
+      "leisure": "pitch",
+      "lit": "no",
+      "name": "Koivikkopuiston kenttä / Hiekkakenttä",
+      "name:fi": "Koivikkopuiston kenttä / Hiekkakenttä",
+      "name:sv": "Björkdungeparken / Bollplan",
+      "sport": "soccer",
+      "surface": "compacted"
+    }
   },
   {
     "id": 64738,
@@ -15207,7 +15223,15 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "fitness_station": "yes",
+      "leisure": "fitness_station",
+      "name": "Kumpulanlaakso / Ulkokuntoiluvälineet",
+      "name:fi": "Kumpulanlaakso / Ulkokuntoiluvälineet",
+      "name:sv": "Gumtäktsdalen / Konditionspark för utomhuskativiteter",
+      "sport": "fitness"
+    }
   },
   {
     "id": 41930,
@@ -16061,7 +16085,14 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "pitch",
+      "name": "Käpylän liikuntapuisto / Beachvolleykenttä",
+      "note": "Rantalentopallo",
+      "sport": "beachvolleyball",
+      "surface": "sand"
+    }
   },
   {
     "id": 41770,
@@ -19457,7 +19488,13 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "pitch",
+      "name": "Latokartanon liikuntapuisto / Beachvolleykenttä",
+      "sport": "beachvolleyball",
+      "surface": "sand"
+    }
   },
   {
     "id": 40944,
@@ -24676,7 +24713,16 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "access": "yes",
+      "hoops": "1",
+      "leisure": "pitch",
+      "lit": "yes",
+      "name": "Leikkipuisto Vallila / Koripallokenttä",
+      "sport": "basketball",
+      "surface": "asphalt"
+    }
   },
   {
     "id": 41290,
@@ -28423,7 +28469,11 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "disc_golf_course",
+      "name": "Munkkiniemen frisbeegolfrata"
+    }
   },
   {
     "id": 40651,
@@ -29468,7 +29518,13 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "pitch",
+      "name": "Myllynsiipi kirkkopuisto / Hiekkakenttä",
+      "sport": "soccer;ice_skating",
+      "surface": "sand"
+    }
   },
   {
     "id": 51098,
@@ -31054,7 +31110,27 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "11",
+      "addr:postcode": "00640",
+      "addr:street": "Käskynhaltijantie",
+      "leisure": "ice_rink",
+      "lit": "yes",
+      "name": "Oulunkylän tekojääkenttä",
+      "name:en": "Oulunkylä artificial ice rink",
+      "name:fi": "Oulunkylän tekojääkenttä",
+      "name:sv": "Åggelby konstisbana",
+      "seasonal": "winter",
+      "sport": "ice_skating",
+      "sport:winter": "ice_skating;ice_hockey",
+      "start_date": "1977",
+      "surface": "ice",
+      "website": "http://hel.fi/www/helsinki/fi/kulttuuri-ja-vapaa-aika/liikunta/ulkoliikuntapaikat/tekojaakentat-ja-luistelukentat/oulunkylan-liikuntapuiston-tekojaakentta",
+      "wikidata": "Q11886126",
+      "wikipedia": "fi:Oulunkylän tekojäärata"
+    }
   },
   {
     "id": 40682,
@@ -31218,7 +31294,17 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "access": "yes",
+      "leisure": "pitch",
+      "lit": "yes",
+      "name": "Oulunkylän liikuntapuisto / Minikoripallokenttä",
+      "name:fi": "Oulunkylän liikuntapuisto / Minikoripallokenttä",
+      "name:sv": "Åggelby idrottspark / Minibasketplan",
+      "sport": "basketball",
+      "surface": "asphalt"
+    }
   },
   {
     "id": 42079,
@@ -31264,7 +31350,15 @@
       "reduced_mobility": 5,
       "visually_impaired": 3
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "fitness_station": "fitness_station",
+      "leisure": "fitness_station",
+      "name": "Oulunkylän liikuntapuisto / Ulkokuntoilupaikka",
+      "name:fi": "Oulunkylän liikuntapuisto / Ulkokuntoilupaikka",
+      "name:sv": "Åggelby idrottspark / Konditionspark för utomhusaktiviteter",
+      "sport": "fitness"
+    }
   },
   {
     "id": 43205,
@@ -31387,7 +31481,21 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "access": "yes",
+      "addr:city": "Helsinki",
+      "addr:housenumber": "11",
+      "addr:postcode": "00640",
+      "addr:street": "Käskynhaltijantie",
+      "leisure": "pitch",
+      "lit": "yes",
+      "name": "Oulunkylän liikuntapuisto / Tenniskentät",
+      "name:fi": "Oulunkylän liikuntapuisto / Tenniskentät",
+      "name:sv": "Åggelby idrottspark / Tennisplaner",
+      "sport": "tennis",
+      "surface": "asphalt"
+    }
   },
   {
     "id": 40538,
@@ -37147,7 +37255,13 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "pitch",
+      "name": "Puotilan uimaranta / Beachvolleykenttä",
+      "sport": "beachvolleyball",
+      "surface": "sand"
+    }
   },
   {
     "id": 41959,
@@ -38235,7 +38349,19 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "1",
+      "addr:postcode": "00530",
+      "addr:street": "Sörnäisten rantapromenadi",
+      "building": "terrace",
+      "fee": "yes",
+      "leisure": "fitness_centre",
+      "name": "Rautaranta Outdoor Gym",
+      "sport": "fitness",
+      "website": "https://www.rautaranta.fi/"
+    }
   },
   {
     "id": 62941,
@@ -42571,7 +42697,12 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "track",
+      "name": "Suomenlinnan kenttä",
+      "url": "https://www.hel.fi/helsinki/fi/kaupunki-ja-hallinto/osallistu-ja-vaikuta/ota-yhteytta/hae-yhteystietoja/toimipistekuvaus?id=40655"
+    }
   },
   {
     "id": 45412,
@@ -43575,7 +43706,13 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "pitch",
+      "name": "Uimastadion / Beachvolleykenttä 1",
+      "sport": "beachvolleyball",
+      "surface": "sand"
+    }
   },
   {
     "id": 57407,
@@ -43616,7 +43753,13 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "pitch",
+      "name": "Uimastadion / Beachvolleykenttä 2",
+      "sport": "beachvolleyball",
+      "surface": "sand"
+    }
   },
   {
     "id": 41239,
@@ -44868,7 +45011,12 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "disc_golf_course",
+      "name": "Talin frisbeegolfpuisto",
+      "sport": "disc_golf"
+    }
   },
   {
     "id": 41605,
@@ -48269,7 +48417,14 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "pitch",
+      "name": "Vallilanlaakso / Hiekkakenttä",
+      "name:fi": "Vallilanlaakso / Hiekkakenttä",
+      "name:sv": "Vallgårddalen / Bollplan",
+      "surface": "unpaved"
+    }
   },
   {
     "id": 40709,
@@ -50623,7 +50778,11 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "park",
+      "name": "Yliskylänkaari-Kanavasillantie / Nurmikenttä"
+    }
   },
   {
     "id": 40787,
