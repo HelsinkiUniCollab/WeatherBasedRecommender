@@ -19,8 +19,8 @@ describe('Map and POI features', () => {
     // Create a copy of the mock POI data
     const clusteredMockPOIs = JSON.parse(JSON.stringify(mockPOIS));
     // Move one POI closer to another so they are clustered
-    clusteredMockPOIs[1].location.longitude = 24.952;
-    clusteredMockPOIs[1].location.latitude = 60.171;
+    clusteredMockPOIs[0].longitude = 24.951;
+    clusteredMockPOIs[0].latitude = 60.170;
     cy.intercept('GET', 'http://localhost:5000/api/poi/', clusteredMockPOIs);
     cy.visit('');
 
@@ -49,7 +49,7 @@ describe('Map and POI features', () => {
   });
 
   it('should update amount of markers when accessibility is selected', () => {
-    const wheelChairMockData = mockPOIS.slice(-2);
+    const wheelChairMockData = mockPOIS.slice(-1);
     cy.intercept('GET', 'http://localhost:5000/api/poi/wheelchair', wheelChairMockData);
     cy.get('.MuiSelect-select').click();
     cy.get('[data-value="wheelchair"]').click();
