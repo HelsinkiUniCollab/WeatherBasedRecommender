@@ -8,7 +8,7 @@ const createMarkers = (poiData, time) => {
 
   return poiData.map((poi) => {
     const tags = Object.entries(poi.weather[time]);
-    const markerIcon = createMarkerIcon(poi.weather[time].score);
+    const markerIcon = createMarkerIcon(poi.weather[time].Score);
     const marker = L.marker([poi.longitude,
       poi.latitude], { icon: markerIcon });
     marker.bindPopup(
