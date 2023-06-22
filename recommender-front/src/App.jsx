@@ -68,7 +68,7 @@ function App() {
   useEffect(() => {
     const weather = weatherData;
     const windSpeed = weather?.['Wind speed']?.value;
-    setShowAlert(windSpeed <= 17);
+    setShowAlert(windSpeed >= 17);
   }, [weatherData]);
 
   return (
