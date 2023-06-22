@@ -85,13 +85,15 @@ function App() {
               isMobile={isMobile}
             />
           </Grid>
-          <Grid item xs={12} className={`map-container${showAlert ? ' disabled' : ''}`}>
+          <Grid item xs={12} className={`alert-container${showAlert ? ' disabled' : ''}`}>
             {showAlert && (
               <Alert severity="warning" sx={{ marginBottom: '5px' }}>
-                We do not recommend going outside due to strong wind.
-                The application interface has been disabled.
+                You should avoid going outside due to strong wind.
+                We do not provide any recommendations at the moment.
               </Alert>
             )}
+          </Grid>
+          <Grid item xs={12} className={`map-container${showAlert ? ' disabled' : ''}`}>
             <MapComponent
               accessibility={accessibility}
               poiData={poiData}

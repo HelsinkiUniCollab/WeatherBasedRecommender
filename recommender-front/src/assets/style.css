@@ -16,13 +16,14 @@ body {
 
 .app-container {
   display: grid;
-  grid-template-rows: 22% 78%;
+  grid-template-rows: 22% 1% 77%;
   height: 100vh;
   overflow: hidden
 }
 
+
 .header-container {
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
   left: 50%;
@@ -34,6 +35,11 @@ body {
   justify-content: center;
   align-items: center;
   transform: translateX(-50%);
+}
+
+.alert-container  {
+  width: 100%;
+  z-index: 5;
 }
 
 .dropdown-item {
@@ -49,7 +55,7 @@ body {
 .map-container {
   width: 100%;
   position: fixed;
-  top: 22%;
+  top: 23%;
   bottom: 0;
   z-index: 2;
   /* Makes sure zoom control is visible */
