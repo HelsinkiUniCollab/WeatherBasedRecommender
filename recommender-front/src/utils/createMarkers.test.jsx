@@ -4,32 +4,26 @@ describe('createMarkers', () => {
   const poiData = [
     {
       id: '1',
-      name: { fi: 'Marker 1' },
-      location: {
-        coordinates: [123, 456],
-      },
+      name: 'Marker 1',
+      longitude: 123,
+      latitude: 456,
       weather: {
         Current: {
           Temperature: '20°C',
           Humidity: '50%',
-          Longitude: 123,
-          Latitude: 456,
         },
       },
       score: 0.5,
     },
     {
       id: '2',
-      name: { fi: 'Marker 2' },
-      location: {
-        coordinates: [789, 101],
-      },
+      name: 'Marker 2',
+      longitude: 789,
+      latitude: 101,
       weather: {
         Current: {
           Temperature: '25°C',
           Humidity: '60%',
-          Longitude: 789,
-          Latitude: 101,
         },
         score: 0.4,
       },
