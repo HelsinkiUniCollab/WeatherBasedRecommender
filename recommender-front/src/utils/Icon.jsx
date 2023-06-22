@@ -1,5 +1,5 @@
 import L from 'leaflet';
-import basestar from '../assets/markericon/basestart.png';
+import basestar from '../assets/markericon/basestar.png';
 import basemarker2 from '../assets/markericon/basemarker2.png';
 import basemarker3 from '../assets/markericon/basemarker3.png';
 import basemarker4 from '../assets/markericon/basemarker4.png';
