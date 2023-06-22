@@ -37,7 +37,20 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "6",
+      "addr:postcode": "00580",
+      "addr:street": "Kyläsaarenkuja",
+      "addr:unit": "A",
+      "fee": "yes",
+      "leisure": "sports_centre",
+      "name": "Arcadahallen",
+      "name:fi": "Arcadahallen",
+      "name:sv": "Arcadahallen",
+      "website": "https://www.arcadahallen.fi/"
+    }
   },
   {
     "id": 42077,
@@ -77,7 +90,14 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "alt_name": "Jaffa Station",
+      "name": "Arena Center Hakaniemi",
+      "short_name": "Hakaniemi AC",
+      "sport": "multi",
+      "website": "http://www.arenacenter.fi/arena-center/hakaniemi/"
+    }
   },
   {
     "id": 68256,
@@ -116,7 +136,20 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:country": "FI",
+      "addr:housenumber": "2a",
+      "addr:postcode": "00430",
+      "addr:street": "Kaarelankuja",
+      "building": "sports_centre",
+      "check_date": "2021-08-12",
+      "name": "Arena Center Kaarela",
+      "operator": "Arena Center",
+      "source": "https://www.helsinginuutiset.fi/paikalliset/1198412",
+      "website": "https://www.arenacenter.fi/arena-center-2/kaarela/"
+    }
   },
   {
     "id": 40526,
@@ -164,7 +197,22 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "2",
+      "addr:postcode": "00920",
+      "addr:street": "Alakiventie",
+      "alt_name": "Fat Pipe Center",
+      "building": "sports_centre",
+      "fee": "yes",
+      "leisure": "sports_centre",
+      "name": "Arena Center Myllypuro",
+      "old_name": "ED Station",
+      "short_name": "Myllypuro AC",
+      "sport": "floorball;bowling;padel",
+      "website": "http://www.arenacenter.fi/arena-center/myllypuro/"
+    }
   },
   {
     "id": 68255,
@@ -244,7 +292,16 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:housenumber": "3",
+      "addr:postcode": "00280",
+      "addr:street": "Nauvontie",
+      "building": "industrial",
+      "name": "Arena Center Ruskeasuo",
+      "short_name": "Ruskeasuo AC",
+      "website": "http://arenacenter.fi/ruskeasuo/"
+    }
   },
   {
     "id": 63926,
@@ -1028,7 +1085,16 @@
       "reduced_mobility": 2,
       "visually_impaired": 4
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "5",
+      "addr:postcode": "00810",
+      "addr:street": "Petter Wetterin tie",
+      "leisure": "sports_centre",
+      "name": "Herttoniemenrannan liikuntahalli",
+      "sport": "soccer;basketball;football;volleyball;gymnastics;multi"
+    }
   },
   {
     "id": 40997,
@@ -1188,7 +1254,18 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:housenumber": "1",
+      "addr:street": "Emännänpolku",
+      "building": "civic",
+      "building:levels": "1",
+      "leisure": "sports_centre",
+      "name": "Kontulan skeittihalli",
+      "roof:shape": "flat",
+      "sport": "skateboard",
+      "website": "http://luuppi.munstadi.fi/skeittihalli/info/"
+    }
   },
   {
     "id": 40164,
@@ -2049,7 +2126,22 @@
       "reduced_mobility": 3,
       "visually_impaired": 5
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Liikuntamylly",
+      "name:fi": "Liikuntamylly",
+      "name:sv": "Sportkvarnen",
+      "public_transport": "platform",
+      "ref": "H4287",
+      "shelter": "yes",
+      "waste_bin": "yes",
+      "zone:HSL": "B"
+    }
   },
   {
     "id": 41913,
@@ -3519,7 +3611,22 @@
       "reduced_mobility": 1,
       "visually_impaired": 3
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "9",
+      "addr:postcode": "00920",
+      "addr:street": "Pikajuoksijankuja",
+      "building": "hall",
+      "building:levels": "2",
+      "height:accuracy": "estimate",
+      "leisure": "sports_hall",
+      "name": "Myllypuron Pallomylly",
+      "name:sv": "Kvarnbäckens Bollkvarn",
+      "phone": "+358931087995",
+      "short_name": "Pallomylly",
+      "website": "https://www.hel.fi/helsinki/fi/kaupunki-ja-hallinto/osallistu-ja-vaikuta/ota-yhteytta/hae-yhteystietoja/toimipistekuvaus?id=40338"
+    }
   },
   {
     "id": 41329,
@@ -4339,7 +4446,18 @@
       "reduced_mobility": 2,
       "visually_impaired": 11
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "6",
+      "addr:postcode": "00630",
+      "addr:street": "Pirkkolan metsätie",
+      "fee": "yes",
+      "leisure": "sports_centre",
+      "name": "Pirkkolan palloiluhalli",
+      "name:fi": "Pirkkolan palloiluhalli",
+      "name:sv": "Britas bollhall"
+    }
   },
   {
     "id": 68808,
@@ -4378,7 +4496,19 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "8",
+      "addr:postcode": "00630",
+      "addr:street": "Pirkkolan metsätie",
+      "building": "pavilion",
+      "leisure": "sports_centre",
+      "name": "Pirkkolahalli",
+      "name:fi": "Pirkkolahalli",
+      "sport": "multi",
+      "website": "https://pirkkolahalli.fi/"
+    }
   },
   {
     "id": 41270,
@@ -5545,7 +5675,20 @@
       "reduced_mobility": 4,
       "visually_impaired": 7
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:housenumber": "8",
+      "addr:street": "Purotie",
+      "alt_name": "Tali halli",
+      "building": "yes",
+      "leisure": "sports_centre",
+      "name": "Talin jalkapallohalli",
+      "name:fi": "Talin jalkapallohalli",
+      "name:sv": "Tali fotbollshall",
+      "sport": "soccer",
+      "start_date": "1992",
+      "wikidata": "Q11896146"
+    }
   },
   {
     "id": 62776,
@@ -6527,7 +6670,28 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "21",
+      "addr:postcode": "00250",
+      "addr:street": "Mannerheimintie",
+      "advertising": "poster_box",
+      "bench": "yes",
+      "bin": "yes",
+      "highway": "bus_stop",
+      "name": "Töölön kisahalli",
+      "name:fi": "Töölön kisahalli",
+      "name:sv": "Tölö sporthall",
+      "public_transport": "platform",
+      "ref": "H1913",
+      "shelter": "yes",
+      "timetable": "yes",
+      "toilets:wheelchair": "yes",
+      "waste_basket": "yes",
+      "wheelchair": "yes",
+      "zone:HSL": "A"
+    }
   },
   {
     "id": 40237,

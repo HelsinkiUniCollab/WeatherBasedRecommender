@@ -2551,7 +2551,13 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "fitness_station",
+      "name": "Kalasatamanpuisto / Lähiliikuntapaikka",
+      "name:fi": "Kalasatamanpuisto / Lähiliikuntapaikka",
+      "sport": "fitness"
+    }
   },
   {
     "id": 57386,
@@ -4444,7 +4450,15 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "fitness_station": "yes",
+      "leisure": "fitness_station",
+      "name": "Kumpulanlaakso / Ulkokuntoiluvälineet",
+      "name:fi": "Kumpulanlaakso / Ulkokuntoiluvälineet",
+      "name:sv": "Gumtäktsdalen / Konditionspark för utomhuskativiteter",
+      "sport": "fitness"
+    }
   },
   {
     "id": 41330,
@@ -8042,7 +8056,11 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "disc_golf_course",
+      "name": "Munkkiniemen frisbeegolfrata"
+    }
   },
   {
     "id": 40061,
@@ -8729,7 +8747,15 @@
       "reduced_mobility": 5,
       "visually_impaired": 3
     },
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "fitness_station": "fitness_station",
+      "leisure": "fitness_station",
+      "name": "Oulunkylän liikuntapuisto / Ulkokuntoilupaikka",
+      "name:fi": "Oulunkylän liikuntapuisto / Ulkokuntoilupaikka",
+      "name:sv": "Åggelby idrottspark / Konditionspark för utomhusaktiviteter",
+      "sport": "fitness"
+    }
   },
   {
     "id": 41855,
@@ -10211,7 +10237,19 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "addr:city": "Helsinki",
+      "addr:housenumber": "1",
+      "addr:postcode": "00530",
+      "addr:street": "Sörnäisten rantapromenadi",
+      "building": "terrace",
+      "fee": "yes",
+      "leisure": "fitness_centre",
+      "name": "Rautaranta Outdoor Gym",
+      "sport": "fitness",
+      "website": "https://www.rautaranta.fi/"
+    }
   },
   {
     "id": 62941,
@@ -11703,7 +11741,12 @@
       ]
     },
     "accessibility_shortcoming_count": {},
-    "object_type": "unit"
+    "object_type": "unit",
+    "info": {
+      "leisure": "disc_golf_course",
+      "name": "Talin frisbeegolfpuisto",
+      "sport": "disc_golf"
+    }
   },
   {
     "id": 57372,
