@@ -48,7 +48,9 @@ function App() {
         const weatherResponse = await fetch(`${apiUrl}/api/weather`);
         const weather = await weatherResponse.json();
         setWeatherData(weather);
-        if (weather['Wind speed'].value < 17) {
+        if (weather['Wind speed'].value > 17) {
+          console.log('Wind speed alert!');
+        } else {
           const poiResponse = await fetch(`${apiUrl}/api/poi/${accessibility}`);
           const poi = await poiResponse.json();
           console.log(poi[0]);
