@@ -8,20 +8,20 @@ function AboutComponent({ open, handleOpen, handleClose }) {
         About
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>About</DialogTitle>
+        <DialogTitle><h3>About</h3></DialogTitle>
         <DialogContent>
-          <p>
-            This website uses data from the following services/apis:
-          </p>
-          <p>
-            <a href="https://palvelukartta.hel.fi/en">Servicemap</a>
-          </p>
-          <p>
-            <a href="https://www.openstreetmap.org/#map=14/60.2046/24.9633">OpenStreetMap</a>
-          </p>
-          <p>
-            <a href="https://en.ilmatieteenlaitos.fi/">Finnish meteorological institute</a>
-          </p>
+          <ul>
+            <h3>This website uses data from the following services/apis:</h3>
+            <p>
+              <a href="https://palvelukartta.hel.fi/en">Servicemap</a>
+            </p>
+            <p>
+              <a href="https://www.openstreetmap.org/#map=14/60.2046/24.9633">OpenStreetMap</a>
+            </p>
+            <p>
+              <a href="https://en.ilmatieteenlaitos.fi/">Finnish meteorological institute</a>
+            </p>
+          </ul>
         </DialogContent>
       </Dialog>
     </div>
