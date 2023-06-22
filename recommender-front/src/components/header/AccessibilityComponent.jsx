@@ -21,10 +21,10 @@ function AccessibilityComponent({ accessibility, handleChange }) {
           <Typography variant="h2">Wheelchair accessible</Typography>
         </MenuItem>
         <MenuItem value="reduced_mobility">
-          <Typography variant="h2">Reduced mobility supported</Typography>
+          <Typography variant="h2">Reduced mobility</Typography>
         </MenuItem>
         <MenuItem value="visually_impaired">
-          <Typography variant="h2">Visually impaired supported</Typography>
+          <Typography variant="h2">Visually impaired</Typography>
         </MenuItem>
       </Select>
     </FormControl>

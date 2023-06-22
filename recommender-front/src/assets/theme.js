@@ -18,42 +18,50 @@ let theme = createTheme({
     // Defines sizes for h1 and h2 in different viewports
     h1: {
       fontSize: '16px',
+      fontWeight: 'bold',
       '@media (min-width:600px)': {
-        fontSize: '20px',
+        fontSize: '18px',
         fontWeight: 'bold',
       },
       '@media (min-width:960px)': {
-        fontSize: '28zpx',
+        fontSize: '22px',
         fontWeight: 'bold',
       },
       '@media (min-width:1280px)': {
-        fontSize: '30px',
+        fontSize: '24px',
         fontWeight: 'bold',
       },
       '@media (min-width:1920px)': {
-        fontSize: '32x',
+        fontSize: '28x',
         fontWeight: 'bold',
       },
     },
     h2: {
-      fontSize: '14px',
+      fontSize: '12px',
       fontWeight: 'bold',
       '@media (min-width:600px)': {
-        fontSize: '14px',
+        fontSize: '12px',
         fontWeight: 'bold',
       },
       '@media (min-width:960px)': {
-        fontSize: '16px',
+        fontSize: '14px',
         fontWeight: 'bold',
       },
       '@media (min-width:1280px)': {
-        fontSize: '18px',
+        fontSize: '16px',
         fontWeight: 'bold',
       },
       '@media (min-width:1920px)': {
-        fontSize: '20x',
+        fontSize: '18px',
         fontWeight: 'bold',
       },
+    },
+    infotitle: {
+      fontSize: '18px',
+      fontWeight: 'bold',
+    },
+    infotext: {
+      fontSize: '14px',
     },
   },
 });
