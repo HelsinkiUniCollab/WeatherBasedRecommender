@@ -51,6 +51,7 @@ function App() {
         if (weather['Wind speed'].value < 17) {
           const poiResponse = await fetch(`${apiUrl}/api/poi/${accessibility}`);
           const poi = await poiResponse.json();
+          console.log(poi[0]);
           setPoiData(poi);
         }
       } catch (error) {
