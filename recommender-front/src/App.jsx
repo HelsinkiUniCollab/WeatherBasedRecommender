@@ -68,7 +68,7 @@ function App() {
   useEffect(() => {
     const weather = weatherData;
     const windSpeed = weather?.['Wind speed']?.value;
-    setShowAlert(windSpeed >= 17);
+    setShowAlert(windSpeed <= 17);
   }, [weatherData]);
 
   return (
@@ -100,7 +100,7 @@ function App() {
             {showAlert && (
               <Alert severity="warning" sx={{ marginBottom: '5px' }}>
                 You should avoid going outside due to strong wind.
-                We do not provide any recommendations at the moment.
+                We do not provide any recommendations and all the controls are disabled.
               </Alert>
             )}
           </Grid>

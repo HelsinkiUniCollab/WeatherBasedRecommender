@@ -10,13 +10,13 @@ body {
 
 #map {
   width: 100vw;
-  height: calc(100vh - 23%); 
+  height: calc(100vh - 30%); 
   /* Makes sure leaflet copyright is shown*/
 }
 
 .app-container {
   display: grid;
-  grid-template-rows: 22% 1% 77%;
+  grid-template-rows: 23% 77%;
   height: 100vh;
   overflow: hidden
 }
