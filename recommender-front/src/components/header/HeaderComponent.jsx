@@ -3,9 +3,11 @@ import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import AccessibilityComponent from './AccessibilityComponent';
+import AboutComponent from './AboutComponent';
 
 function HeaderComponent({
-  accessibility, handleChange, times, sliderValue, onChange, isMobile,
+  accessibility, handleChange, times, sliderValue, onChange, isMobile, open, handleOpen,
+  handleClose,
 }) {
   const hours = [];
   if (times) {
@@ -30,6 +32,9 @@ function HeaderComponent({
       </Grid>
       <Grid item xs={5} sm={5} md={5} lg={5} className="dropdown-item" key="dropdown">
         <AccessibilityComponent accessibility={accessibility} handleChange={handleChange} />
+      </Grid>
+      <Grid item xs={5} sm={5} md={5} lg={5} className="dropdown-item" key="dropdown">
+        <AboutComponent open={open} handleOpen={handleOpen} handleClose={handleClose} />
       </Grid>
       {isMobile ? (
         <Grid item xs={10} sm={10} className="slider-item" key="slider-mobile">

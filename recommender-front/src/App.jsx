@@ -19,6 +19,7 @@ function App() {
   const [poiData, setPoiData] = useState([]);
   const [times, setTimes] = useState(0);
   const [selectedValue, setSelectedValue] = useState(0);
+  const [open, setOpen] = useState(false);
 
   const handleOptionChange = (event) => {
     setAccessibility(event.target.value);
@@ -26,6 +27,14 @@ function App() {
 
   const handleSliderChange = (event) => {
     setSelectedValue(event.target.value);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   useEffect(() => {
@@ -68,6 +77,9 @@ function App() {
               times={times}
               sliderValue={selectedValue}
               onChange={handleSliderChange}
+              open={open}
+              handleOpen={handleOpen}
+              handleClose={handleClose}
               isMobile={isMobile}
             />
           </Grid>
