@@ -8,12 +8,12 @@ html, body {
 
 #map {
   width: 100vw;
-  height: calc(100vh - 22%); /* Makes sure leaflet copyright is shown*/
+  height: calc(100vh - 23%); /* Makes sure leaflet copyright is shown*/
 }
 
 .app-container {
   display: grid;
-  grid-template-rows: 22% 78%;
+  grid-template-rows: 23% 78%;
   height: 100vh; 
   overflow: hidden
 }
@@ -24,7 +24,7 @@ html, body {
   right: 0;
   left: 50%;
   width: 95%;
-  height: 22%;
+  height: 23%;
   z-index: 1;
   background-color: #ffffff;
   display: flex;
@@ -41,10 +41,15 @@ html, body {
   z-index: 4; /* Makes sure slider is visible */
 }
 
+.info-item {
+  align-self: flex-start;
+}
+
+
 .map-container {
   width: 100%;
   position: fixed;
-  top: 22%;
+  top: 23%;
   bottom: 0;
   z-index: 2; /* Makes sure zoom control is visible */
 }

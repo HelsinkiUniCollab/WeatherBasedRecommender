@@ -3,9 +3,11 @@ import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import AccessibilityComponent from './AccessibilityComponent';
+import InfoComponent from './InfoComponent';
 
 function HeaderComponent({
-  accessibility, handleChange, times, sliderValue, onChange, isMobile,
+  accessibility, handleChange, times, sliderValue, onChange, isMobile, open, handleOpen,
+  handleClose,
 }) {
   const hours = [];
   if (times) {
@@ -25,14 +27,17 @@ function HeaderComponent({
       my={1}
       key="main"
     >
-      <Grid item xs={5} sm={5} md={5} lg={5} key="title">
+      <Grid item xs={4} sm={5} md={5} lg={5} key="title">
         <Typography variant="h1">Weather-Based Recommender</Typography>
       </Grid>
       <Grid item xs={5} sm={5} md={5} lg={5} className="dropdown-item" key="dropdown">
         <AccessibilityComponent accessibility={accessibility} handleChange={handleChange} />
       </Grid>
+      <Grid item xs={2} sm={1} md={1} lg={1}>
+        <InfoComponent open={open} handleOpen={handleOpen} handleClose={handleClose} />
+      </Grid>
       {isMobile ? (
-        <Grid item xs={10} sm={10} className="slider-item" key="slider-mobile">
+        <Grid item xs={11} sm={11} className="slider-item" key="slider-mobile">
           <Typography variant="h2">Time</Typography>
           <Slider
             value={sliderValue}
@@ -43,7 +48,7 @@ function HeaderComponent({
           />
         </Grid>
       ) : (
-        <Grid item xs={11} sm={11} md={10} lg={10} className="slider-item" key="slider">
+        <Grid item xs={11} sm={11} md={11} lg={11} className="slider-item" key="slider">
           <Typography variant="h2">Time</Typography>
           <Slider
             value={sliderValue}
