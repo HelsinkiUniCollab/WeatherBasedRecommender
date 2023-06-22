@@ -1,6 +1,6 @@
 from app import app, cache
-from apis import weather
-from apis import poi
+from apis.forecast import Forecast
+from apis import manager
 from flask import jsonify
 from flask_caching import Cache
 import json
@@ -30,10 +30,10 @@ def get_forecast():
     Returns:
         Forecast for the POI's.
     '''
-    forecastgrid = weather.ForecastGrid()
-    forecastgrid.update_data()
-    poi_forecast = poi.get_closest_poi_coordinates_data(
-        forecastgrid.get_coordinates(), forecastgrid.get_data())
+    forecast = Forecast()
+    forecast.update_data()
+    poi_forecast = forecast.get_closest_poi_coordinates_data(
+        manager.get_pois())
     return json.dumps(poi_forecast)
 
 
@@ -45,7 +45,7 @@ def get_poi_data():
     Returns:
         Poi data if errors have not occurred.
     '''
-    return poi.get_pois_as_json()
+    return manager.get_pois_as_json()
 
 
 @app.route('/api/poi/<accessibility>', methods=['GET'])
@@ -56,7 +56,7 @@ def get_poi_acessible_poi_data(accessibility):
     Returns:
         Poi data if errors have not occurred.
     '''
-    return poi.get_pois_as_json(accessibility)
+    return manager.get_pois_as_json(accessibility)
 
 
 @app.errorhandler(404)
