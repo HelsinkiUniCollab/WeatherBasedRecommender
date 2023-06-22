@@ -69,7 +69,6 @@ def parse_forecast(forecast):
 
 def calculate_wind_speed_and_direction(WindU, WindV):
     wind_speed = math.sqrt(WindU**2 + WindV**2)
-
     wind_direction = math.atan2(WindU, WindV) * (180 / math.pi)
     wind_direction = (wind_direction + 360) % 360 
     return (round(wind_speed, 1), round(wind_direction, 1))
