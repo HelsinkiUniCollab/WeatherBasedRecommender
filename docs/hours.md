@@ -49,7 +49,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
 | Juuso   | -            | -             | -               | -              | -            | -              | -            | -         |
 | Isak    | -            | -             | -               | -              | -            | -              | -            | -         |
-| Sami S. | -            | -             | -               | -              | -            | -              | -            | -         |
+| Sami S. | 5 live, poi-info            | -             | -               | -              | -            | -              | -            | -         |
 | Sami M. | 3 live, fixing tests            | 2 docker package bug hunt             | 6 weather alert + eccodes troubles               | -              | -            | -              | -            | -         |
 | Pia     | -            | -             | -               | 8.5 frontend stuff              | -            | -              | -            | -         |
 | Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
