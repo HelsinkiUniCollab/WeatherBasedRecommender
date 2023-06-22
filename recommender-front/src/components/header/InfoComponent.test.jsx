@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import AboutComponent from './AboutComponent';
+import InfoComponent from './InfoComponent';
 
 jest.mock('react-leaflet', () => {
   const originalModule = jest.requireActual('react-leaflet');
@@ -10,8 +10,8 @@ jest.mock('react-leaflet', () => {
   };
 });
 
-describe('AboutComponent', () => {
+describe('InfoComponent', () => {
   test('renders without crashing', () => {
-    render(<AboutComponent />);
+    render(<InfoComponent />);
   });
 });
