@@ -11,10 +11,16 @@ function AboutComponent({ open, handleOpen, handleClose }) {
         <DialogTitle>About</DialogTitle>
         <DialogContent>
           <p>
-            This website uses data from the service map (https://palvelukartta.hel.fi/en),
+            This website uses data from the following services/apis:
           </p>
           <p>
-            Finnish meteorological center (https://en.ilmatieteenlaitos.fi/).
+            <a href="https://palvelukartta.hel.fi/en">Servicemap</a>
+          </p>
+          <p>
+            <a href="https://www.openstreetmap.org/#map=14/60.2046/24.9633">OpenStreetMap</a>
+          </p>
+          <p>
+            <a href="https://en.ilmatieteenlaitos.fi/">Finnish meteorological institute</a>
           </p>
         </DialogContent>
       </Dialog>
