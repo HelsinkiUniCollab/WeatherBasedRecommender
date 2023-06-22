@@ -50,7 +50,7 @@
 | Juuso   | -            | -             | -               | -              | -            | -              | -            | -         |
 | Isak    | -            | -             | -               | -              | -            | -              | -            | -         |
 | Sami S. | -            | -             | -               | -              | -            | -              | -            | -         |
-| Sami M. | -            | -             | -               | -              | -            | -              | -            | -         |
+| Sami M. | 3 live, fixing tests            | 2 docker package bug hunt             | 6 weather alert + eccodes troubles               | -              | -            | -              | -            | -         |
 | Pia     | -            | -             | -               | -              | -            | -              | -            | -         |
 | Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
 
