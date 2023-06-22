@@ -51,7 +51,7 @@
 | Isak    | -            | -             | -               | -              | -            | -              | -            | -         |
 | Sami S. | -            | -             | -               | -              | -            | -              | -            | -         |
 | Sami M. | 3 live, fixing tests            | 2 docker package bug hunt             | 6 weather alert + eccodes troubles               | -              | -            | -              | -            | -         |
-| Pia     | -            | -             | -               | -              | -            | -              | -            | -         |
+| Pia     | -            | -             | -               | 8.5 frontend stuff              | -            | -              | -            | -         |
 | Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
 
 |         | Monday 26.6. | Tuesday 27.6. | Wednesday 28.6. | Thursday 29.6. | Friday 30.6. | Saturday 1.7. | Sunday 2.7. | Total |
