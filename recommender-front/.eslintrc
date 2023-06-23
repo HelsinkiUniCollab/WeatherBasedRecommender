@@ -3,7 +3,12 @@
     "rules": {
         "react/prop-types": 0,
         "no-console": "off",
-        "object-curly-newline": ["error", { "consistent": true }]
+        "object-curly-newline": [
+            "error",
+            {
+                "consistent": true
+            }
+        ]
     },
     "env": {
         "browser": true,
@@ -16,6 +21,15 @@
         "HelmetProvider": true
     },
     "plugins": [
-        "react", "jest", "cypress"
-    ]
+        "react",
+        "jest",
+        "cypress"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    }
 }
