@@ -95,8 +95,8 @@ class ForecastTest(unittest.TestCase):
                                 'Humidity': '64.0 %',
                                 'Wind speed': '4.9 m/s',
                                 'Wind direction': '165.4 °',
-                                'Precipication': '0.0',
-                                'Total Cloud Cover': '23.2'}
+                                'Precipitation': '0.0 %',
+                                'Cloud amount': '23.2 %'}
 
         parsed_data = self.forecast.parse_forecast(data)
 
