@@ -52,26 +52,40 @@ class CurrentTest(unittest.TestCase):
 
     def test_find_nearest_stations_weather_data(self):
         self.current = Current()
+        missing_fields = ['Air temperature', 'Wind speed',
+                          'Precipitation', 'Cloud amount', 'Humidity']
         self.current.weather = {
             'station1': {
                 'Latitude': 60.1,
                 'Longitude': 24.6,
-                'Air temperature': '10.5 °C'
+                'Air temperature': '10.5 °C',
+                'Wind speed': '10.0 m/s',
+                'Precipitation': '10.0 %',
+                'Cloud amount': '5.0 %',
+                'Humidity': '60.0 %'
             },
             'station2': {
                 'Latitude': 60.5,
                 'Longitude': 26.0,
-                'Air temperature': '11.2 °C'
+                'Air temperature': '11.2 °C',
+                'Wind speed': '10.0 m/s',
+                'Precipitation': '10.0 %',
+                'Cloud amount': '5.0 %',
+                'Humidity': '60.0 %'
             }
         }
 
         item = PointOfInterest(longitude=24.65, latitude=60.15)
 
         expected_item = {
-            'Air temperature': '10.5 °C'
+            'Air temperature': '10.5 °C',
+            'Wind speed': '10.0 m/s',
+            'Precipitation': '10.0 %',
+            'Cloud amount': '5.0 %',
+            'Humidity': '60.0 %'
         }
         self.current.find_nearest_stations_weather_data(item)
-        self.assertEqual(item.weather["Current"], expected_item)
+        self.assertEqual(item.weather['Current'], expected_item)
 
 
 if __name__ == '__main__':

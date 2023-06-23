@@ -49,14 +49,23 @@ class Current:
         '''
         lat = poi.latitude
         lon = poi.longitude
-        smallest, nearest = float('inf'), ''
-        for station in self.weather:
-            dist = abs(self.weather[station]['Latitude'] - lat)\
-                + abs(self.weather[station]['Longitude'] - lon)
-            if dist < smallest:
-                smallest, nearest = dist, station
-            weather = copy.deepcopy(self.weather[nearest])
-            del weather['Latitude']
-            del weather['Longitude']
-            poi.weather['Current'] = weather
+        weather = copy.deepcopy(self.weather)
+        missing_fields = ['Air temperature', 'Wind speed', 'Precipitation', 'Cloud amount', 'Humidity']
+        returned = {}
+        while True:
+            smallest, nearest = float('inf'), ''
+            for station in weather:
+                dist = abs(weather[station]['Latitude'] - lat)\
+                                        + abs(weather[station]['Longitude'] - lon)
+                if dist < smallest:
+                    smallest, nearest = dist, station
+            for key, value in weather[nearest].items():
+                if key not in ['Latitude', 'Longitude']:
+                    returned.setdefault(key, value)
+                    if key in missing_fields:
+                        missing_fields.remove(key)
+            if not missing_fields:
+                break
+            del weather[nearest]
+        poi.weather['Current'] = returned
         return poi
