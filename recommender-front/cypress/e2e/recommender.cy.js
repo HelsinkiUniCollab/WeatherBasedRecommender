@@ -11,7 +11,7 @@ describe('Map and POI features', () => {
   });
 
   it('should display all POI markers on initial load', () => {
-    cy.get('.leaflet-marker-icon', { timeout: 20000 })
+    cy.get('.leaflet-marker-icon', { timeout: 10000 })
       .should('have.length', mockPOIS.length);
   });
 
