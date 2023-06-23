@@ -93,11 +93,11 @@ def iterate_items(data, categories):
     if type(data) == list:
         for item in data:
             name = item['name']['fi']
-            longitude = item['location']['coordinates'][1]
-            latitude = item['location']['coordinates'][0]
+            longitude = item['location']['coordinates'][0]
+            latitude = item['location']['coordinates'][1]
             not_accessible_for = list(
                 item['accessibility_shortcoming_count'].keys())
-            poi = PointOfInterest(name, longitude, latitude,
+            poi = PointOfInterest(name, latitude, longitude,
                                   not_accessible_for, categories)
             pois.append(poi)
     else:

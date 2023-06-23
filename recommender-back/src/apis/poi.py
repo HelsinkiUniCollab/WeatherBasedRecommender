@@ -2,11 +2,11 @@ from apis import times
 
 
 class PointOfInterest:
-    def __init__(self, name=None, longitude=None, latitude=None, not_accessible_for=None, categories=None):
+    def __init__(self, name=None, latitude=None, longitude=None, not_accessible_for=None, categories=None):
         self.sun = times.get_sun_data()
         self.name = name
-        self.longitude = longitude
         self.latitude = latitude
+        self.longitude = longitude
         self.not_accessible_for = not_accessible_for
         self.categories = categories
         self.weather = {}
