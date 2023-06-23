@@ -51,12 +51,12 @@ class Current:
         lon = poi.longitude
         smallest, nearest = float('inf'), ''
         for station in self.weather:
-            dist = abs(self.weather[station]['Longitude'] - lon)\
-                + abs(self.weather[station]['Latitude'] - lat)
+            dist = abs(self.weather[station]['Latitude'] - lat)\
+                + abs(self.weather[station]['Longitude'] - lon)
             if dist < smallest:
                 smallest, nearest = dist, station
             weather = copy.deepcopy(self.weather[nearest])
-            del weather['Longitude']
             del weather['Latitude']
+            del weather['Longitude']
             poi.weather['Current'] = weather
         return poi
