@@ -49,7 +49,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
 | Juuso   | -            | -             | -               | -              | -            | -              | -            | -         |
 | Isak    | 7            | 0,5             | -               | 5              | -            | -              | -            | 12,5         |
-| Sami S. | 5 live, poi-info            | -             | -               | -              | -            | -              | -            | -         |
+| Sami S. | 5 live, poi-info            | -             | -               | 5 live, scrum stuff, about page              | 2 fix poi-infos, _try_ to learn cypress            | -              | -            | -         |
 | Sami M. | 3 live, fixing tests            | 2 docker package bug hunt             | 6 weather alert + eccodes troubles               | -              | -            | -              | -            | -         |
 | Pia     | -            | -             | -               | 8.5 frontend stuff              | -            | -              | -            | -         |
 | Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
