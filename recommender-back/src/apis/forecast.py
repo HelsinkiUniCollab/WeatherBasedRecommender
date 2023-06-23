@@ -18,7 +18,7 @@ class Forecast:
         current, start, end = get_forecast_times()
         bbox = '24.5,60,25.5,60.5'
         timestep = 60
-        print(f'Query for new grind object at time: {current} UTC')
+        print(f'Query for the new Grid object at time: {current} UTC')
         forecast_data = download_stored_query('fmi::forecast::harmonie::surface::grid',
                                               args=[f'starttime={start}',
                                                     f'endtime={end}',
