@@ -1,8 +1,8 @@
 const mockPOIs = [
   {
     name: 'Mock POI 1',
-    longitude: 60.170,
-    latitude: 24.951,
+    latitude: 60.170,
+    longitude: 24.951,
     weather: {
       Current: {
         'Air temperature': '18.0 °C',
@@ -29,8 +29,8 @@ const mockPOIs = [
   },
   {
     name: 'Mock POI 2',
-    longitude: 60.178,
-    latitude: 24.852,
+    latitude: 60.190,
+    longitude: 24.951,
     weather: {
       Current: {
         'Air temperature': '20.0 °C',
