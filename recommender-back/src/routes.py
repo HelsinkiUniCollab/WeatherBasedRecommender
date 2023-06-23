@@ -61,7 +61,7 @@ def get_poi_acessible_poi_data(accessibility):
 
 @app.route('/api/weather', methods=['GET'])
 @cache.cached(timeout=3600)
-def get_weather_helsinki_general():
+def get_weather_helsinki_kaisaniemi():
     current = Current()
     current.get_current_weather()
     helsinki_kaisaniemi = current.weather.get("Helsinki Kaisaniemi")
