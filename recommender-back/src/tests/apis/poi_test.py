@@ -1,42 +1,75 @@
 import unittest
-from apis.poi import find_nearest_stations_weather_data
+from unittest.mock import patch
+from apis.poi import PointOfInterest
+from apis.times import get_sun_data, get_current_time
 
 
-class POITest(unittest.TestCase):
-    def test_find_nearest_stations_weather_data(self):
-        weather_data = {
-            'station1': {
-                'Latitude': 60.1,
-                'Longitude': 24.6,
-                'Air temperature': '10.5 °C'
+class PointOfInterestTest(unittest.TestCase):
+    def setUp(self):
+        self.sun = get_sun_data()
+        self.sunrise = self.sun[0]
+        self.sunset = self.sun[1]
+        self.weather = {
+            "0": {
+                "Air temperature": "25",
+                "Humidity": "60"
             },
-            'station2': {
-                'Latitude': 60.5,
-                'Longitude': 26.0,
-                'Air temperature': '11.2 °C'
-            }
-        }
-
-        item = {
-            'location': {
-                'coordinates': [24.65, 60.15]
-            }
-        }
-
-        expected_item = {
-            'location': {
-                'coordinates': [24.65, 60.15]
+            "1": {
+                "Air temperature": "30",
+                "Humidity": "80"
             },
-            'weather': {'Current': {
-                'Latitude': 60.1,
-                'Longitude': 24.6,
-                'Air temperature': '10.5 °C'
+            "2": {
+                "Air temperature": "22",
+                "Humidity": "50"
             }
         }
+
+    @patch('apis.times.get_current_time', return_value='12:00')
+    def test_calculate_Score_with_invalid_humidity(self, mocked_time):
+        self.weather["0"]["Humidity"] = "invalid"
+        poi = PointOfInterest()
+        poi.weather = self.weather
+        poi.calculate_score()
+        expected_Scores = {
+            "0": -float('inf'),
+            "1": 0.5,
+            "2": 1.0
         }
 
-        # Call the function to get the actual result
-        actual_item = find_nearest_stations_weather_data(item, weather_data)
+        for data_key, expected_Score in expected_Scores.items():
+            self.assertEqual(poi.weather[data_key]['Score'], expected_Score)
 
-        # Assert that the actual result matches the expected result
-        self.assertEqual(actual_item, expected_item)
+    @patch('apis.times.get_current_time', return_value='12:00')
+    def test_calculate_Score_with_invalid_temperature(self, mocked_time):
+        self.weather["0"]["Air temperature"] = "invalid"
+        poi = PointOfInterest()
+        poi.weather = self.weather
+        poi.calculate_score()
+        expected_Scores = {
+            "0": -float('inf'),
+            "1": 0.5,
+            "2": 1.0
+        }
+
+        for data_key, expected_Score in expected_Scores.items():
+            if get_current_time(int(data_key)) > self.sunset and get_current_time(int(data_key)) < self.sunrise:
+                self.assertEqual(poi[data_key]['Score'], 0)
+            self.assertEqual(poi.weather[data_key]['Score'], expected_Score)
+
+    @patch('apis.times.get_current_time', return_value='12:00')
+    def test_calculate_Score_within_suitable_time_range(self, mocked_time):
+        poi = PointOfInterest()
+        poi.weather = self.weather
+        poi.calculate_score()
+        expected_Scores = {
+            "0": 1.0,
+            "1": 0.5,
+            "2": 1.0
+        }
+
+        for data_key, expected_Score in expected_Scores.items():
+            self.assertEqual(poi.weather[data_key]['Score'], expected_Score)
+
+
+if __name__ == '__main__':
+    unittest.main()
