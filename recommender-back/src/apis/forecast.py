@@ -149,8 +149,8 @@ class Forecast:
             'Humidity': f'{str(humidity)} %',
             'Wind speed': f'{wind_speed} m/s',
             'Wind direction': f'{wind_direction} °',
-            'Precipication': f'{precipitation}',
-            'Total Cloud Cover': f'{cloudcoverage}',
+            'Precipitation': f'{precipitation} %',
+            'Cloud amount': f'{cloudcoverage} %',
         }
 
     def calculate_wind_speed_and_direction(self, u, v):
