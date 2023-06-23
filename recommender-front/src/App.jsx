@@ -48,7 +48,6 @@ function App() {
         const apiUrl = process.env.REACT_APP_BACKEND_URL;
         const weatherResponse = await fetch(`${apiUrl}/api/weather`);
         const weather = await weatherResponse.json();
-        console.log(weather);
         setWeatherData(weather);
         if (parseFloat(weather['Wind speed']) < 17) {
           const poiResponse = await fetch(`${apiUrl}/api/poi/${accessibility}`);
