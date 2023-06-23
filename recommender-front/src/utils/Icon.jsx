@@ -15,7 +15,7 @@ function createMarkerIcon(value) {
     iconSize: [32, 32],
     popupAnchor: [1, -16],
     iconAnchor: [16, 32],
-    className: 'custom-marker-icon',
+    className: 'leaflet-marker-icon',
   };
 
   const markerIcons = {
