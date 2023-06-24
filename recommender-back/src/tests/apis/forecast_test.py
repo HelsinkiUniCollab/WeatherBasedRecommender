@@ -94,8 +94,7 @@ class ForecastTest(unittest.TestCase):
         expected_parsed_data = {'Air temperature': '6.9 °C',
                                 'Humidity': '64.0 %',
                                 'Wind speed': '4.9 m/s',
-                                'Wind direction': '165.4 °',
-                                'Precipitation': '0.0 %',
+                                'Precipitation': '0.0 mm',
                                 'Cloud amount': '23.2 %'}
 
         parsed_data = self.forecast.parse_forecast(data)
