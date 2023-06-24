@@ -1,9 +1,10 @@
-from apis.current import Current
-from apis.poi import PointOfInterest
-import json
-import requests
 import os
 import copy
+import json
+import requests
+from requests import Timeout
+from apis.current import Current
+from apis.poi import PointOfInterest
 
 
 def get_pois_as_json(accessibility=False, category='All'):
@@ -20,7 +21,7 @@ def get_pois_as_json(accessibility=False, category='All'):
         pois = get_pois()
         current = Current()
         url = os.environ.get('REACT_APP_BACKEND_URL') + '/api/forecast'
-        response = requests.get(url)
+        response = requests.get(url, timeout=180)
         forecast_data = response.json()
         updated_data = []
         for poi in pois:
@@ -37,6 +38,12 @@ def get_pois_as_json(accessibility=False, category='All'):
     except KeyError as error:
         return {
             'message': 'An error occurred',
+            'status': 500,
+            'error': str(error)
+        }
+    except Timeout as error:
+        return {
+            'message': 'Forecast timed out',
             'status': 500,
             'error': str(error)
         }
@@ -71,10 +78,9 @@ def get_pois():
         list: List of all POIs.
 
     '''
-    categories = []
-    with open('src/static/pois.json', 'r') as file:
+    with open('src/static/pois.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
-        return iterate_items(data, categories)
+        return iterate_items(data, [])
 
 
 def iterate_items(data, categories):
@@ -90,7 +96,7 @@ def iterate_items(data, categories):
 
     '''
     pois = []
-    if type(data) == list:
+    if isinstance(data, list):
         for item in data:
             name = item['name']['fi']
             longitude = item['location']['coordinates'][0]
