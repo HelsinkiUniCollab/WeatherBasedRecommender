@@ -7,6 +7,8 @@ The purpose of this project is to develop an application that provides users wit
 
 Application can be accessed here: [Weather-Based Recommender](http://128.214.253.51:3000/)
 
+[License](/LICENSE)
+
 ## Instructions
 
 ```bash
