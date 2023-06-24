@@ -34,6 +34,7 @@ jobs:
       - name: Run coverage report
         run: |
           cd recommender-back
+          poetry run coverage run --branch -m pytest
           poetry run coverage xml
 
       - name: Coverage report to codecov
