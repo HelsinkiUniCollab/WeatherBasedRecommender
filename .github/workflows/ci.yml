@@ -31,6 +31,14 @@ jobs:
         run: |
           cd recommender-back && poetry run invoke test
 
+      - name: Run coverage report
+        run: |
+          poetry run coverage xml
+
+      - name: Coverage report to codecov
+        run: |
+          bash <(curl -s https://codecov.io/bash)
+
       - name: Run Pylint
         run: |
           cd recommender-back
