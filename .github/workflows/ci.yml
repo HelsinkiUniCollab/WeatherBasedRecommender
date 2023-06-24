@@ -62,7 +62,11 @@ jobs:
 
       - name: Run frontend tests
         run: |
-          cd recommender-front && npm test
+          cd recommender-front && npm test -- --coverage
+
+      - name: Coverage report to codecov
+        run: |
+          bash <(curl -s https://codecov.io/bash)
 
       - name: Run ESLint
         run: |
