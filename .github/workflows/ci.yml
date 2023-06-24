@@ -27,11 +27,7 @@ jobs:
           cd recommender-back
           poetry install
 
-      - name: Run backend tests
-        run: |
-          cd recommender-back && poetry run invoke test
-
-      - name: Run coverage report
+      - name: Run backend tests and coverage
         run: |
           cd recommender-back
           poetry run coverage run --branch -m pytest
@@ -60,7 +56,7 @@ jobs:
         run: |
           cd recommender-front && npm ci
 
-      - name: Run frontend tests
+      - name: Run frontend tests and coverage
         run: |
           cd recommender-front && npm test -- --coverage
 
