@@ -69,6 +69,7 @@ services:
     restart: unless-stopped
     networks:
       - ubuntu_default
+    command: sh -c "docker system prune -f"
 
   wbased-front:
     build: .
@@ -80,6 +81,7 @@ services:
     restart: unless-stopped
     networks:
       - ubuntu_default
+    command: sh -c "docker system prune -f"
 
   nginx:
     image: nginx:latest
