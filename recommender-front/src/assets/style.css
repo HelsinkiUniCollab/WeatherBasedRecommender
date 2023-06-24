@@ -69,3 +69,13 @@ body {
   display: none;
   /* disables leaflet zoom box */
 }
+
+
+/* Styles for map cluster icons */
+.custom-cluster-icon {
+  background-color: #337ab7;
+  color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}

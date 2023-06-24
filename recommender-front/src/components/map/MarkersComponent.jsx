@@ -12,7 +12,16 @@ function MarkersComponent({ poiData, time }) {
   useEffect(() => {
     if (poiData && time) {
       const markers = createMarkers(poiData, time);
-      const markerGroup = L.markerClusterGroup();
+      const markerGroup = L.markerClusterGroup({
+        iconCreateFunction(cluster) {
+          const count = cluster.getChildCount();
+          return L.divIcon({
+            html: `<div class="custom-cluster-icon">${count}</div>`,
+            className: 'custom-cluster-icon',
+            iconSize: [40, 40],
+          });
+        },
+      });
 
       markers.forEach((marker) => {
         markerGroup.addLayer(marker);
