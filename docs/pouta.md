@@ -60,7 +60,8 @@ You can remove unused containers with:
 Everytime an update is made, a new image with tag "latest" is created. This does not remove the old images, which keep piling up. Therefore, we have a cron job running remove-old-images.sh every night at 3 a.m. UTC. 
 
 ### remove-old-images.sh
-```#!/bin/bash
+```
+#!/bin/bash
 docker system prune -f
 ```
 You can edit the cron job with command in the root directory of our instance.
