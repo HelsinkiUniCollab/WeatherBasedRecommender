@@ -72,9 +72,45 @@ body {
 
 
 /* Styles for map cluster icons */
+
 .custom-cluster-icon {
-  background-color: #337ab7;
+  background-color: #6596c0;
   color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.custom-cluster-icon-red2 {
+  background-color: #a8a7a7; 
+  color: #ffffff; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.custom-cluster-icon-red1 {
+  background-color: #0f5da1; 
+  color: #000000; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  width: 40px;
+  height: 40px;
+}
+
+.custom-cluster-icon-blue1 {
+  background-color: #323acc; 
+  color: #ffffff; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.custom-cluster-icon-blue2 {
+  background-color: #8389ff; 
+  color: #000000; 
   border-radius: 50%;
   text-align: center;
   line-height: 40px;

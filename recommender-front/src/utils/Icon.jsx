@@ -10,7 +10,7 @@ import basemarker8 from '../assets/markericon/basemarker8.png';
 import basemarker9 from '../assets/markericon/basemarker9.png';
 import basemarker10 from '../assets/markericon/basemarker10.png';
 
-function createMarkerIcon(value) {
+function createMarkerIcon(score) {
   const iconOptions = {
     iconSize: [32, 32],
     popupAnchor: [1, -16],
@@ -19,23 +19,23 @@ function createMarkerIcon(value) {
   };
 
   const markerIcons = {
-    green1: L.icon({
+    blue1: L.icon({
       ...iconOptions,
       iconUrl: basestar,
     }),
-    green2: L.icon({
+    blue2: L.icon({
       ...iconOptions,
       iconUrl: basemarker2,
     }),
-    green3: L.icon({
+    blue3: L.icon({
       ...iconOptions,
       iconUrl: basemarker3,
     }),
-    green4: L.icon({
+    blue4: L.icon({
       ...iconOptions,
       iconUrl: basemarker4,
     }),
-    green5: L.icon({
+    blue5: L.icon({
       ...iconOptions,
       iconUrl: basemarker5,
     }),
@@ -63,26 +63,14 @@ function createMarkerIcon(value) {
 
   let markerIcon;
 
-  if (value < 0.1) {
+  if (score < 0.1) {
     markerIcon = markerIcons.red10;
-  } else if (value < 0.2) {
-    markerIcon = markerIcons.red9;
-  } else if (value < 0.3) {
+  } else if (score < 0.4) {
     markerIcon = markerIcons.red8;
-  } else if (value < 0.4) {
-    markerIcon = markerIcons.red7;
-  } else if (value < 0.5) {
-    markerIcon = markerIcons.red6;
-  } else if (value < 0.6) {
-    markerIcon = markerIcons.green5;
-  } else if (value < 0.7) {
-    markerIcon = markerIcons.green4;
-  } else if (value < 0.8) {
-    markerIcon = markerIcons.green3;
-  } else if (value < 0.9) {
-    markerIcon = markerIcons.green2;
+  } else if (score < 0.8) {
+    markerIcon = markerIcons.blue2;
   } else {
-    markerIcon = markerIcons.green1;
+    markerIcon = markerIcons.blue1;
   }
 
   return markerIcon;
