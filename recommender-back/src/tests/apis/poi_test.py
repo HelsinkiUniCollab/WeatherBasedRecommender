@@ -1,75 +1,44 @@
 import unittest
-from unittest.mock import patch
+from datetime import datetime
 from apis.poi import PointOfInterest
-from apis.times import get_sun_data, get_current_time
 
-
-class PointOfInterestTest(unittest.TestCase):
+class TestPointOfInterest(unittest.TestCase):
     def setUp(self):
-        self.sun = get_sun_data()
-        self.sunrise = self.sun[0]
-        self.sunset = self.sun[1]
-        self.weather = {
-            "0": {
-                "Air temperature": "25",
-                "Humidity": "60"
-            },
-            "1": {
-                "Air temperature": "30",
-                "Humidity": "80"
-            },
-            "2": {
-                "Air temperature": "22",
-                "Humidity": "50"
-            }
-        }
+        self.poi = PointOfInterest()
 
-    @patch('apis.times.get_current_time', return_value='12:00')
-    def test_calculate_Score_with_invalid_humidity(self, mocked_time):
-        self.weather["0"]["Humidity"] = "invalid"
-        poi = PointOfInterest()
-        poi.weather = self.weather
-        poi.calculate_score()
-        expected_Scores = {
-            "0": -float('inf'),
-            "1": 0.5,
-            "2": 1.0
-        }
+    def test_outdoor_score(self):
+        temperature = 23
+        wind_speed = 5
+        humidity = 0.5
+        precipitation = 20
+        clouds = 0.6
+        sunrise = datetime(2023, 6, 23, 6, 0)
+        sunset = datetime(2023, 6, 23, 18, 0)
+        cur_time = datetime(2023, 6, 23, 12, 0)
 
-        for data_key, expected_Score in expected_Scores.items():
-            self.assertEqual(poi.weather[data_key]['Score'], expected_Score)
+        expected_score = 0.5422219840451283
 
-    @patch('apis.times.get_current_time', return_value='12:00')
-    def test_calculate_Score_with_invalid_temperature(self, mocked_time):
-        self.weather["0"]["Air temperature"] = "invalid"
-        poi = PointOfInterest()
-        poi.weather = self.weather
-        poi.calculate_score()
-        expected_Scores = {
-            "0": -float('inf'),
-            "1": 0.5,
-            "2": 1.0
-        }
+        score = self.poi._outdoor_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time)
 
-        for data_key, expected_Score in expected_Scores.items():
-            if get_current_time(int(data_key)) > self.sunset and get_current_time(int(data_key)) < self.sunrise:
-                self.assertEqual(poi[data_key]['Score'], 0)
-            self.assertEqual(poi.weather[data_key]['Score'], expected_Score)
+        self.assertAlmostEqual(score, expected_score, places=6)
 
-    @patch('apis.times.get_current_time', return_value='12:00')
-    def test_calculate_Score_within_suitable_time_range(self, mocked_time):
-        poi = PointOfInterest()
-        poi.weather = self.weather
-        poi.calculate_score()
-        expected_Scores = {
-            "0": 1.0,
-            "1": 0.5,
-            "2": 1.0
-        }
+    def test_indoor_score(self):
+        temperature = 22
+        wind_speed = 2
+        humidity = 0.45
+        precipitation = 200
+        clouds = 0.8
+        sunrise = datetime(2023, 6, 23, 6, 0)
+        sunset = datetime(2023, 6, 23, 18, 0)
+        cur_time = datetime(2023, 6, 23, 20, 0)
 
-        for data_key, expected_Score in expected_Scores.items():
-            self.assertEqual(poi.weather[data_key]['Score'], expected_Score)
+        expected_score = 0.8099069327856028
 
+        score = self.poi._indoor_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time)
+
+        self.assertAlmostEqual(score, expected_score, places=6)
 
 if __name__ == '__main__':
     unittest.main()
+
+
