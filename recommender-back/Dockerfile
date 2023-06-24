@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
 COPY install_eccodes.sh /app/
 RUN chmod +x /app/install_eccodes.sh && /app/install_eccodes.sh
 
-RUN poetry run pip install eccodes==1.5.2
+RUN poetry run pip install --upgrade eccodes
 
 COPY . /app
 
