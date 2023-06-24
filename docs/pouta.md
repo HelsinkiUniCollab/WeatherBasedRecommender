@@ -55,7 +55,7 @@ You can remove unused containers with:
 
 `sudo docker container prune`
 
-## Removing old images in Pouta
+## Removing old Docker images in Pouta
 
 Everytime an update is made, a new image with tag "latest" is created. This does not remove the old images, which keep piling up. Therefore, we have a cron job running remove-old-images.sh every night at 3 a.m. UTC. 
 
@@ -64,7 +64,8 @@ Everytime an update is made, a new image with tag "latest" is created. This does
 docker system prune -f
 ```
 You can edit the cron job with command in the root directory of our instance.
-```crontab -e
+```
+crontab -e
 ```
 
 ## Current Pouta Docker configurations
