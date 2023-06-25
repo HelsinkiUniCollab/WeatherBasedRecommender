@@ -1,9 +1,9 @@
 from unittest import mock
 from unittest.mock import MagicMock
 import unittest
-from app import app
-from apis.poi import PointOfInterest
-from apis.current import Current
+from src.app import app
+from src.apis.poi import PointOfInterest
+from src.apis.current import Current
 
 
 class CurrentTest(unittest.TestCase):
@@ -12,7 +12,7 @@ class CurrentTest(unittest.TestCase):
         self.client = app.test_client()
 
     def test_get_current_weather(self):
-        with mock.patch('apis.current.download_stored_query') as mock_download:
+        with mock.patch('src.apis.current.download_stored_query') as mock_download:
             mock_response = MagicMock()
             mock_response.location_metadata = {
                 'station1': {'latitude': 60.1, 'longitude': 24.6},

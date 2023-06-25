@@ -1,6 +1,6 @@
 import unittest
 from datetime import datetime
-from apis.poi import PointOfInterest
+from src.apis.poi import PointOfInterest
 
 class TestPointOfInterest(unittest.TestCase):
     def setUp(self):
