@@ -20,7 +20,9 @@ function MarkersComponent({ poiData, time }) {
           if (cluster.getChildCount() > 0) {
             cluster.getAllChildMarkers().forEach((poiMarker) => {
               const scoreValue = parseScore(poiMarker);
-              bestScore = parseFloat(scoreValue);
+              if (scoreValue > bestScore) {
+                bestScore = parseFloat(scoreValue);
+              }
             });
           }
           const iconClass = defineClass(bestScore);
