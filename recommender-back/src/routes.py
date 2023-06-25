@@ -1,11 +1,10 @@
-from app import app, cache
-from apis.forecast import Forecast
-from apis.current import Current
-from apis import manager
+from .app import app, cache
+from .apis.forecast import Forecast
+from .apis.current import Current
+from .apis import manager
 from flask import jsonify
 from flask_caching import Cache
 import json
-
 
 @app.route('/', methods=['GET'])
 def index():
@@ -35,7 +34,9 @@ def get_forecast():
     forecast.update_data()
     poi_forecast = forecast.get_closest_poi_coordinates_data(
         manager.get_pois())
-    return json.dumps(poi_forecast)
+    result = json.dumps(poi_forecast)
+    
+    return result
 
 
 @app.route('/api/poi/', methods=['GET'])

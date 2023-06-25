@@ -1,6 +1,6 @@
 import copy
 from fmiopendata.wfs import download_stored_query
-from apis.poi import PointOfInterest
+from .poi import PointOfInterest
 
 
 class Current:

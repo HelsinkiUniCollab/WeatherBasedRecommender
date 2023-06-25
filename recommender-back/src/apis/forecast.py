@@ -1,8 +1,7 @@
 import math
 import numpy as np
-from apis.times import utc_to_finnish, get_forecast_times
+from .times import utc_to_finnish, get_forecast_times
 from fmiopendata.wfs import download_stored_query
-
 
 class Forecast:
     def __init__(self):
@@ -20,7 +19,7 @@ class Forecast:
         timestep = 60
         print(f'Query for the new Grid object at time: {current} UTC')
         forecast_data = download_stored_query('fmi::forecast::harmonie::surface::grid',
-                                              args=[f'starttime={start}',
+                                            args=[f'starttime={start}',
                                                     f'endtime={end}',
                                                     f'bbox={bbox}',
                                                     f'timestep={timestep}'])

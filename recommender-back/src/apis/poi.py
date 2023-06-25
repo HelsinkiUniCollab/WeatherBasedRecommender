@@ -1,5 +1,5 @@
 import math
-from apis import times
+from . import times
 
 
 class PointOfInterest:

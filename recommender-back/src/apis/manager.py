@@ -3,8 +3,8 @@ import copy
 import json
 import requests
 from requests import Timeout
-from apis.current import Current
-from apis.poi import PointOfInterest
+from .current import Current
+from .poi import PointOfInterest
 
 
 def get_pois_as_json(accessibility=False, category='All'):

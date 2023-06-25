@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 from datetime import datetime
 from unittest.mock import MagicMock, PropertyMock, patch
-from apis.forecast import Forecast
+from src.apis.forecast import Forecast
 
 
 class ForecastTest(unittest.TestCase):
@@ -44,7 +44,7 @@ class ForecastTest(unittest.TestCase):
         type(self.mock_grid).longitudes = PropertyMock(
             return_value=np.array([[24.6, 24.7, 24.8, 24.9, 25.0]]))
 
-    @patch('apis.forecast.download_stored_query')
+    @patch('src.apis.forecast.download_stored_query')
     def test_data_is_updated_correctly(self, mock_download_stored_query):
         mock_download_stored_query.return_value = self.grid_by_datetime
 
