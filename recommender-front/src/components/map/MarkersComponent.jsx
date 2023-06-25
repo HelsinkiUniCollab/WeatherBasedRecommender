@@ -4,6 +4,7 @@ import L from 'leaflet';
 import 'leaflet.markercluster';
 import { useMap } from 'react-leaflet';
 import createMarkers from '../../utils/MarkerUtils';
+import { parseScore, defineClass } from '../../utils/ScoreUtils';
 
 function MarkersComponent({ poiData, time }) {
   const map = useMap();
@@ -18,30 +19,11 @@ function MarkersComponent({ poiData, time }) {
           let bestScore = 0.00;
           if (cluster.getChildCount() > 0) {
             cluster.getAllChildMarkers().forEach((poiMarker) => {
-              // eslint-disable-next-line no-underscore-dangle
-              const html = poiMarker._popup._content;
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
-              const scoreElement = Array.from(doc.querySelectorAll('li strong')).find(
-                // eslint-disable-next-line comma-dangle
-                (element) => element.textContent === 'Score'
-              );
-              const scoreValue = scoreElement.nextSibling.nodeValue.trim().replace(/[^\d.]/g, '');
-              console.log(scoreValue);
+              const scoreValue = parseScore(poiMarker);
               bestScore = parseFloat(scoreValue);
             });
           }
-          console.log('Score:', bestScore);
-          let iconClass = 'custom-cluster-icon';
-          if (bestScore < 0.5) {
-            iconClass = 'custom-cluster-icon-red2';
-          } else if (bestScore < 0.7) {
-            iconClass = 'custom-cluster-icon-red1';
-          } else if (bestScore < 0.9) {
-            iconClass = 'custom-cluster-icon-blue2';
-          } else {
-            iconClass = 'custom-cluster-icon-blue1';
-          }
+          const iconClass = defineClass(bestScore);
           console.log(iconClass);
 
           return L.divIcon({

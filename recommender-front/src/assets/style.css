@@ -74,23 +74,23 @@ body {
 /* Styles for map cluster icons */
 
 .custom-cluster-icon {
-  background-color: #6596c0;
-  color: #ffffff;
+  background-color: #E6F2FF;
+  color: #000000;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
-.custom-cluster-icon-red2 {
-  background-color: #a8a7a7; 
-  color: #ffffff; 
+.custom-cluster-icon-score01 {
+  background-color: #E6F2FF; 
+  color: #000000; 
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
-.custom-cluster-icon-red1 {
-  background-color: #0f5da1; 
+.custom-cluster-icon-score02 {
+  background-color: #CCE5FF; 
   color: #000000; 
   border-radius: 50%;
   text-align: center;
@@ -100,17 +100,65 @@ body {
   height: 40px;
 }
 
-.custom-cluster-icon-blue1 {
-  background-color: #323acc; 
+.custom-cluster-icon-score03 {
+  background-color: #99CCFF; 
+  color: #000000; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.custom-cluster-icon-score04 {
+  background-color: #66B2FF; 
+  color: #000000; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.custom-cluster-icon-score05 {
+  background-color: #3399FF; 
+  color: #000000; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.custom-cluster-icon-score06 {
+  background-color: #1A8FFF; 
+  color: #000000; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.custom-cluster-icon-score07 {
+  background-color: #0073E6; 
+  color: #000000; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.custom-cluster-icon-score08 {
+  background-color: #0059B3; 
   color: #ffffff; 
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
-.custom-cluster-icon-blue2 {
-  background-color: #8389ff; 
-  color: #000000; 
+.custom-cluster-icon-score09 {
+  background-color: #003F80; 
+  color: #ffffff; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.custom-cluster-icon-score10 {
+  background-color: #00264D; 
+  color: #ffffff; 
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
