@@ -57,12 +57,11 @@ You can remove unused containers with:
 
 ## Removing old Docker images in Pouta
 
-Everytime an update is made, a new image with tag "latest" is created. This does not remove the old images, which keep piling up. Therefore, we have a cron job running remove-old-images.sh every night at 3 a.m. UTC. 
+Everytime an update is made, a new image with tag "latest" is created. This does not remove the old images, which keep piling up. Therefore, we have a cron job running docker prune every night at 3 a.m. UTC. 
 
-### remove-old-images.sh
+### crontab
 ```
-#!/bin/bash
-docker system prune -f
+0 3 * * * /snap/bin/docker system prune -a -f
 ```
 You can edit the cron job with command in the root directory of our instance.
 ```
@@ -110,10 +109,12 @@ services:
 
   watchtower:
     image: containrrr/watchtower
+    environment:
+      - WATCHTOWER_PULL_IMAGES=true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
-    command: --label-enable --interval 60
+    command: --label-enable --interval 300
     networks:
       - ubuntu_default
 
@@ -135,6 +136,7 @@ http {
       proxy_set_header Host $host;
       proxy_set_header X-Real-IP $remote_addr;
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_read_timeout 120s;
 
       # Add CORS headers
       if ($request_method = 'OPTIONS') {
