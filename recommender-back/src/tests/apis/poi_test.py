@@ -1,6 +1,6 @@
 import unittest
 from datetime import datetime
-from apis.poi import PointOfInterest
+from src.apis.poi import PointOfInterest
 
 class TestPointOfInterest(unittest.TestCase):
     def setUp(self):
@@ -16,7 +16,7 @@ class TestPointOfInterest(unittest.TestCase):
         sunset = datetime(2023, 6, 23, 18, 0)
         cur_time = datetime(2023, 6, 23, 12, 0)
 
-        expected_score = 0.5422219840451283
+        expected_score = 0.54
 
         score = self.poi._outdoor_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time)
 
@@ -32,7 +32,7 @@ class TestPointOfInterest(unittest.TestCase):
         sunset = datetime(2023, 6, 23, 18, 0)
         cur_time = datetime(2023, 6, 23, 20, 0)
 
-        expected_score = 0.8099069327856028
+        expected_score = 0.81
 
         score = self.poi._indoor_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time)
 

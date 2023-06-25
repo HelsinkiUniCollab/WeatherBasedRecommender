@@ -1,6 +1,6 @@
-from fmiopendata.wfs import download_stored_query
-from apis.poi import PointOfInterest
 import copy
+from fmiopendata.wfs import download_stored_query
+from .poi import PointOfInterest
 
 
 class Current:
@@ -23,9 +23,9 @@ class Current:
             weatherdata = {
                 'Air temperature': str(obs.data[station]['t2m']['values'][-1]) + ' °C',
                 'Wind speed': str(obs.data[station]['ws_10min']['values'][-1]) + ' m/s',
-                'Precipitation': str(obs.data[station]['ri_10min']['values'][-1]) + ' %',
+                'Humidity': str(obs.data[station]['rh']['values'][-1]) + ' %',
+                'Precipitation': str(obs.data[station]['ri_10min']['values'][-1]) + ' mm',
                 'Cloud amount': str(obs.data[station]['n_man']['values'][-1]) + ' %',
-                'Humidity': str(obs.data[station]['rh']['values'][-1]) + ' %'
             }
             for value in list(weatherdata):
                 if 'nan' in str(weatherdata[value]):
@@ -64,7 +64,7 @@ class Current:
                     returned.setdefault(key, value)
                     if key in missing_fields:
                         missing_fields.remove(key)
-            if not missing_fields:
+            if not missing_fields or not weather:
                 break
             del weather[nearest]
         poi.weather['Current'] = returned
