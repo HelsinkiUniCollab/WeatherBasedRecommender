@@ -49,7 +49,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
 | Juuso   | 2 live       | -             | -               | 7 live, meet, front icons, AQI, demo .. | 6 score improvements  | -              | -            | -         |
 | Isak    | 7            | 0,5             | -               | 5              | 3,5            | -              | -            | 16         |
-| Sami S. | 5 live, poi-info            | -             | -               | 5 live, scrum stuff, about page              | 2 fix poi-infos, _try_ to learn cypress            | -              | -            | -         |
+| Sami S. | 5 live, poi-info            | -             | -               | 5 live, scrum stuff, about page              | 2 fix poi-infos, _try_ to learn cypress            | 2.5 codecov              | -            | -         |
 | Sami M. | 3 live, fixing tests            | 2 docker package bug hunt             | 6 weather alert + eccodes troubles               | -              | -            | -              | -            | -         |
 | Pia     | -            | -             | -               | 8.5 frontend stuff              | -            | 7.5 Pouta, pullreqs, clustering              | -            | -         |
 | Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
