@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
 COPY install_eccodes.sh /app/
 RUN chmod +x /app/install_eccodes.sh && /app/install_eccodes.sh
 
-RUN poetry run pip install eccodes==1.5.2
+RUN poetry run pip install eccodes
 
 COPY . /app
 
@@ -32,4 +32,4 @@ ENV REQUEST_ORIGIN=http://localhost:3000
 
 EXPOSE 5000
 
-CMD ["poetry", "run", "flask", "run", "--host=0.0.0.0"]
+CMD ["poetry", "run", "gunicorn", "-b", ":5000", "--timeout", "300", "-w", "4", "src.app:app"]
