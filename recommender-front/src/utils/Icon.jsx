@@ -1,14 +1,14 @@
 import L from 'leaflet';
-import basestar from '../assets/markericon/basestar.png';
-import basemarker2 from '../assets/markericon/basemarker2.png';
-import basemarker3 from '../assets/markericon/basemarker3.png';
-import basemarker4 from '../assets/markericon/basemarker4.png';
-import basemarker5 from '../assets/markericon/basemarker5.png';
-import basemarker6 from '../assets/markericon/basemarker6.png';
-import basemarker7 from '../assets/markericon/basemarker7.png';
-import basemarker8 from '../assets/markericon/basemarker8.png';
-import basemarker9 from '../assets/markericon/basemarker9.png';
 import basemarker10 from '../assets/markericon/basemarker10.png';
+import basemarker09 from '../assets/markericon/basemarker09.png';
+import basemarker08 from '../assets/markericon/basemarker08.png';
+import basemarker07 from '../assets/markericon/basemarker07.png';
+import basemarker06 from '../assets/markericon/basemarker06.png';
+import basemarker05 from '../assets/markericon/basemarker05.png';
+import basemarker04 from '../assets/markericon/basemarker04.png';
+import basemarker03 from '../assets/markericon/basemarker03.png';
+import basemarker02 from '../assets/markericon/basemarker02.png';
+import basemarker01 from '../assets/markericon/basemarker01.png';
 
 function createMarkerIcon(value) {
   const iconOptions = {
@@ -19,70 +19,70 @@ function createMarkerIcon(value) {
   };
 
   const markerIcons = {
-    green1: L.icon({
-      ...iconOptions,
-      iconUrl: basestar,
-    }),
-    green2: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker2,
-    }),
-    green3: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker3,
-    }),
-    green4: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker4,
-    }),
-    green5: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker5,
-    }),
-    red6: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker6,
-    }),
-    red7: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker7,
-    }),
-    red8: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker8,
-    }),
-    red9: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker9,
-    }),
-    red10: L.icon({
+    score10: L.icon({
       ...iconOptions,
       iconUrl: basemarker10,
+    }),
+    score09: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker09,
+    }),
+    score08: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker08,
+    }),
+    score07: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker07,
+    }),
+    score06: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker06,
+    }),
+    score05: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker05,
+    }),
+    score04: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker04,
+    }),
+    score03: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker03,
+    }),
+    score02: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker02,
+    }),
+    score01: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker01,
     }),
   };
 
   let markerIcon;
 
   if (value < 0.1) {
-    markerIcon = markerIcons.red10;
+    markerIcon = markerIcons.score01;
   } else if (value < 0.2) {
-    markerIcon = markerIcons.red9;
+    markerIcon = markerIcons.score02;
   } else if (value < 0.3) {
-    markerIcon = markerIcons.red8;
+    markerIcon = markerIcons.score03;
   } else if (value < 0.4) {
-    markerIcon = markerIcons.red7;
+    markerIcon = markerIcons.score04;
   } else if (value < 0.5) {
-    markerIcon = markerIcons.red6;
+    markerIcon = markerIcons.score05;
   } else if (value < 0.6) {
-    markerIcon = markerIcons.green5;
+    markerIcon = markerIcons.score06;
   } else if (value < 0.7) {
-    markerIcon = markerIcons.green4;
+    markerIcon = markerIcons.score07;
   } else if (value < 0.8) {
-    markerIcon = markerIcons.green3;
+    markerIcon = markerIcons.score08;
   } else if (value < 0.9) {
-    markerIcon = markerIcons.green2;
+    markerIcon = markerIcons.score09;
   } else {
-    markerIcon = markerIcons.green1;
+    markerIcon = markerIcons.score10;
   }
 
   return markerIcon;

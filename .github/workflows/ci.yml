@@ -22,6 +22,11 @@ jobs:
           cd recommender-back
           pip install poetry
 
+      - name: Update Poetry
+        run: |
+          cd recommender-back
+          poetry update
+
       - name: Install dependencies
         run: |
           cd recommender-back
