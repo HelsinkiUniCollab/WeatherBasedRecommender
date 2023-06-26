@@ -62,6 +62,7 @@ You can remove unused containers with:
 version: '3.3'
 services:
   wbased-back:
+    build: .
     image: ruusukivi/wbased-back:latest
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
@@ -70,6 +71,7 @@ services:
       - ubuntu_default
 
   wbased-front:
+    build: .
     image: ruusukivi/wbased-front:latest
     labels:
       - "com.centurylinklabs.watchtower.enable=true"

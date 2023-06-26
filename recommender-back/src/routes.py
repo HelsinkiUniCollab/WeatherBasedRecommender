@@ -1,5 +1,6 @@
 from app import app, cache
 from apis.forecast import Forecast
+from apis.current import Current
 from apis import manager
 from flask import jsonify
 from flask_caching import Cache
@@ -58,6 +59,13 @@ def get_poi_acessible_poi_data(accessibility):
     '''
     return manager.get_pois_as_json(accessibility)
 
+@app.route('/api/weather', methods=['GET'])
+@cache.cached(timeout=3600)
+def get_weather_helsinki_kaisaniemi():
+    current = Current()
+    current.get_current_weather()
+    helsinki_kaisaniemi = current.weather.get("Helsinki Kaisaniemi")
+    return jsonify(helsinki_kaisaniemi)
 
 @app.errorhandler(404)
 def not_found_error(error):
