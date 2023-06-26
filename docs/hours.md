@@ -47,7 +47,7 @@
 
 |         | Monday 19.6. | Tuesday 20.6. | Wednesday 21.6. | Thursday 22.6. | Friday 23.6. | Saturday 24.6. | Sunday 25.6. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
-| Juuso   | 2 live       | -             | -               | 7 live, meet, front icons, AQI, demo .. | 6 score improvements  | -              | -            | -         |
+| Juuso   | 2 live       | -             | -               | 7 live, meet, front icons, AQI, demo .. | 6 score improvements  | -              | -            | 15         |
 | Isak    | 7            | 0,5             | -               | 5              | 3,5            | -              | -            | 16         |
 | Sami S. | 5 live, poi-info            | -             | -               | 5 live, scrum stuff, about page              | 2 fix poi-infos, _try_ to learn cypress            | 2.5 codecov              | 2.5 scrum stuff, pr            | 17         |
 | Sami M. | 3 live, fixing tests            | 2 docker package bug hunt             | 6 weather alert + eccodes troubles               | -              | -            | -              | -            | -         |
@@ -56,7 +56,7 @@
 
 |         | Monday 26.6. | Tuesday 27.6. | Wednesday 28.6. | Thursday 29.6. | Friday 30.6. | Saturday 1.7. | Sunday 2.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Juuso   | 2 simple plot | -             | -               | -              | -            | -             | -           | -     |
 | Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
