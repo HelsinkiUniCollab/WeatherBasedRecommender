@@ -51,8 +51,8 @@
 | Isak    | 7            | 0,5             | -               | 5              | 3,5            | -              | -            | 16         |
 | Sami S. | 5 live, poi-info            | -             | -               | 5 live, scrum stuff, about page              | 2 fix poi-infos, _try_ to learn cypress            | 2.5 codecov              | -            | -         |
 | Sami M. | 3 live, fixing tests            | 2 docker package bug hunt             | 6 weather alert + eccodes troubles               | -              | -            | -              | -            | -         |
-| Pia     | -            | -             | -               | 8.5 frontend stuff              | -            | 7.5 Pouta, pullreqs, clustering              | -            | -         |
-| Joni    | -            | -             | -               | -              | -            | -              | -            | -         |
+| Pia     | -            | -             | -               | 8.5 frontend stuff              | -            | 7.5 Pouta, pullreqs, clustering              | 3.5 clustering            | 19.5        |
+| Joni    | -            | -             | -               | 0,5 daily              | 5 cypress            | 6 code review, cypress, docker, license              | 6 pouta, docker, backend            | 17,5         |
 
 |         | Monday 26.6. | Tuesday 27.6. | Wednesday 28.6. | Thursday 29.6. | Friday 30.6. | Saturday 1.7. | Sunday 2.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
