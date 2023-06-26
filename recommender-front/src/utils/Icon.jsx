@@ -1,14 +1,7 @@
 import L from 'leaflet';
-import basemarker10 from '../assets/markericon/basemarker10.png';
-import basemarker09 from '../assets/markericon/basemarker09.png';
-import basemarker08 from '../assets/markericon/basemarker08.png';
-import basemarker07 from '../assets/markericon/basemarker07.png';
-import basemarker06 from '../assets/markericon/basemarker06.png';
-import basemarker05 from '../assets/markericon/basemarker05.png';
-import basemarker04 from '../assets/markericon/basemarker04.png';
-import basemarker03 from '../assets/markericon/basemarker03.png';
-import basemarker02 from '../assets/markericon/basemarker02.png';
-import basemarker01 from '../assets/markericon/basemarker01.png';
+import medium from '../assets/markericon/basemarker-medium.png';
+import low from '../assets/markericon/basemarker-low.png';
+import high from '../assets/markericon/basemarker-high.png';
 
 function createMarkerIcon(value) {
   const iconOptions = {
@@ -19,70 +12,28 @@ function createMarkerIcon(value) {
   };
 
   const markerIcons = {
-    score10: L.icon({
+    low: L.icon({
       ...iconOptions,
-      iconUrl: basemarker10,
+      iconUrl: low,
     }),
-    score09: L.icon({
+    medium: L.icon({
       ...iconOptions,
-      iconUrl: basemarker09,
+      iconUrl: medium,
     }),
-    score08: L.icon({
+    high: L.icon({
       ...iconOptions,
-      iconUrl: basemarker08,
-    }),
-    score07: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker07,
-    }),
-    score06: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker06,
-    }),
-    score05: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker05,
-    }),
-    score04: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker04,
-    }),
-    score03: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker03,
-    }),
-    score02: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker02,
-    }),
-    score01: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker01,
+      iconUrl: high,
     }),
   };
 
   let markerIcon;
 
-  if (value < 0.1) {
-    markerIcon = markerIcons.score01;
-  } else if (value < 0.2) {
-    markerIcon = markerIcons.score02;
-  } else if (value < 0.3) {
-    markerIcon = markerIcons.score03;
-  } else if (value < 0.4) {
-    markerIcon = markerIcons.score04;
-  } else if (value < 0.5) {
-    markerIcon = markerIcons.score05;
-  } else if (value < 0.6) {
-    markerIcon = markerIcons.score06;
-  } else if (value < 0.7) {
-    markerIcon = markerIcons.score07;
-  } else if (value < 0.8) {
-    markerIcon = markerIcons.score08;
+  if (value < 0.5) {
+    markerIcon = markerIcons.low;
   } else if (value < 0.9) {
-    markerIcon = markerIcons.score09;
+    markerIcon = markerIcons.medium;
   } else {
-    markerIcon = markerIcons.score10;
+    markerIcon = markerIcons.high;
   }
 
   return markerIcon;

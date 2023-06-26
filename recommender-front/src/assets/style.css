@@ -81,9 +81,33 @@ body {
   line-height: 40px;
 }
 
+.custom-cluster-icon-low {
+  background-color: #E6F2FF; 
+  color: #000000; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
 .custom-cluster-icon-score01 {
   background-color: #E6F2FF; 
   color: #000000; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.custom-cluster-icon-medium {
+  background-color: #99CCFF; 
+  color: #000000; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.custom-cluster-icon-high {
+  background-color: #00264D; 
+  color: #ffffff; 
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
