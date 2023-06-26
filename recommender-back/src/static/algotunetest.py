@@ -1,4 +1,4 @@
-# File to easily test the scoring without 
+# File to easily test the scoring without deps to anything
 # Includes basic plot structure
 
 # This file contains duplicated code of poi.py
@@ -9,7 +9,7 @@ import math as math
 from matplotlib import pyplot as plt
 
 # Outdoor
-def get_score1(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
+def get_out_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
     # Weights
     precipitation_weight = 0.35
     temperature_weight = 0.3
@@ -19,7 +19,7 @@ def get_score1(temperature, wind_speed, humidity, precipitation, clouds, sunrise
     humidity_weight = 0.02
 
 
-        # Scoring
+    # Scoring
     score = precipitation_weight * math.exp(-precipitation)
     temperature_comp = 0
     if 20 <= temperature <= 25:
@@ -39,7 +39,7 @@ def get_score1(temperature, wind_speed, humidity, precipitation, clouds, sunrise
     return score
 
 # Indoor
-def get_score2(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
+def get_in_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
     # Weights
     precipitation_weight = 0.7
     temperature_weight = 0.1
@@ -82,20 +82,20 @@ def build_chart(var_vals, scores, label):
 if __name__ == "__main__":
 
     print('Outdoor')
-    print("min", get_score1(-40, 20, 0.9, 20, 0.9,"06:00", '20:00', '23:00'))
+    print("min", get_out_score(-40, 20, 0.9, 20, 0.9,"06:00", '20:00', '23:00'))
     # expected 0.017006412949531466
-    print("max", get_score1(24, 0, 0.5, 0, 0, '06:00' , '20:00', '10:00'))
+    print("max", get_out_score(24, 0, 0.5, 0, 0, '06:00' , '20:00', '10:00'))
     # expected 1
 
     print('Indoor')
-    print("min", get_score2(24, 0, 0.5, 0, 0, '06:00' , '20:00', '10:00'))
+    print("min", get_in_score(24, 0, 0.5, 0, 0, '06:00' , '20:00', '10:00'))
     # expected 0 
-    print("max", get_score2(-40, 20, 0.9, 20, 0.9,"06:00", '20:00', '23:00'))
+    print("max", get_in_score(-40, 20, 0.9, 20, 0.9,"06:00", '20:00', '23:00'))
     # expected 0.9813988574343381
 
     # Not reaching the wanted scores bcs AQI still missing
 
     # Plot for temp outdoor
     var_vals= [*range(-40, 40)]
-    scores = [get_score1(var, 0, 0.5, 0, 0,"06:00", '20:00', '23:00') for var in var_vals]
+    scores = [get_out_score(var, 0, 0.5, 0, 0,"06:00", '20:00', '23:00') for var in var_vals]
     build_chart(var_vals, scores, "temperature")
