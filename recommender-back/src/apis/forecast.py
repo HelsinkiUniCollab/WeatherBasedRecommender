@@ -1,8 +1,7 @@
-import numpy as np
-from apis.times import utc_to_finnish, get_forecast_times
-from fmiopendata.wfs import download_stored_query
 import math
-
+import numpy as np
+from .times import utc_to_finnish, get_forecast_times
+from fmiopendata.wfs import download_stored_query
 
 class Forecast:
     def __init__(self):
@@ -20,7 +19,7 @@ class Forecast:
         timestep = 60
         print(f'Query for the new Grid object at time: {current} UTC')
         forecast_data = download_stored_query('fmi::forecast::harmonie::surface::grid',
-                                              args=[f'starttime={start}',
+                                            args=[f'starttime={start}',
                                                     f'endtime={end}',
                                                     f'bbox={bbox}',
                                                     f'timestep={timestep}'])
@@ -107,14 +106,15 @@ class Forecast:
                 if dist < smallest:
                     smallest = dist
                     nearest = [coordinate[0], coordinate[1]]
-            closest_coordinates[(
-                f'({nearest[0]}, {nearest[1]})')] = f'{lat}, {lon}'
-            for hour in data:
+            closest_coordinates[
+                f'({nearest[0]}, {nearest[1]})'] = f'{lat}, {lon}'
+            for hour, hour_data in data.items():
                 for key, value in closest_coordinates.items():
-                    forecast = data[hour][key]
-                    returned_data[hour][f'{value}'] = self.parse_forecast(
-                        forecast)
+                    forecast = hour_data[key]
+                    returned_data[hour][f'{value}'] = self.parse_forecast(forecast)
         return returned_data
+            
+
 
     def parse_forecast(self, forecast):
         '''
@@ -133,38 +133,37 @@ class Forecast:
             elif value['Dataset'] == '2 metre relative humidity':
                 humidity = round(value['Data'], 1)
             elif value['Dataset'] == '10 metre U wind component':
-                u = value['Data']
+                u_wind = value['Data']
             elif value['Dataset'] == '10 metre V wind component':
-                v = value['Data']
+                v_wind = value['Data']
             elif value['Dataset'] == 'surface precipitation amount, rain, convective':
                 precipitation = round(value['Data'], 1)
             elif value['Dataset'] == 'Total Cloud Cover':
                 cloudcoverage = round(value['Data'], 1)
 
-        wind_speed, wind_direction = self.calculate_wind_speed_and_direction(
-            u, v)
+        wind_speed = self.calculate_wind_speed_and_direction(
+            u_wind, v_wind)
 
         return {
             'Air temperature': f'{str(temperature)} °C',
             'Humidity': f'{str(humidity)} %',
             'Wind speed': f'{wind_speed} m/s',
-            'Wind direction': f'{wind_direction} °',
-            'Precipitation': f'{precipitation} %',
+            'Precipitation': f'{precipitation} mm',
             'Cloud amount': f'{cloudcoverage} %',
         }
 
-    def calculate_wind_speed_and_direction(self, u, v):
+    def calculate_wind_speed_and_direction(self, u_wind, v_wind):
         '''
         Calculates the wind speed and direction based on the U and V components.
 
         Args:
-            u (float): U component of the wind.
-            v (float): V component of the wind.
+            u_wind (float): U component of the wind.
+            v_wind (float): V component of the wind.
 
         Returns:
             tuple: A tuple containing the wind speed and direction.
         '''
-        wind_speed = math.sqrt(u**2 + v**2)
-        wind_direction = math.atan2(u, v) * (180 / math.pi)
+        wind_speed = math.sqrt(u_wind**2 + v_wind**2)
+        wind_direction = math.atan2(u_wind, v_wind) * (180 / math.pi)
         wind_direction = (wind_direction + 360) % 360
-        return (round(wind_speed, 1), round(wind_direction, 1))
+        return round(wind_speed, 1)

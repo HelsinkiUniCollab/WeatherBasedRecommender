@@ -1,3 +1,4 @@
+<<<<<<< HEAD:recommender-back/src/static/scoring_plot_local.py
 # File to easily test the scoring without deps to anything
 # Includes basic plot structure
 
@@ -11,60 +12,81 @@ from matplotlib import pyplot as plt
 # Outdoor
 def get_out_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
     # Weights
+=======
+import math
+
+
+def get_score1(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
+    '''
+    Calculates the score for an outdoor scenario based on weather conditions.
+    '''
+>>>>>>> main:recommender-back/src/apis/algotunetest.py
     precipitation_weight = 0.35
     temperature_weight = 0.3
-    day_time_weight = 0.2
     clouds_weight = 0.04
     wind_speed_weight = 0.04
+<<<<<<< HEAD:recommender-back/src/static/scoring_plot_local.py
     humidity_weight = 0.02
 
 
     # Scoring
+=======
+>>>>>>> main:recommender-back/src/apis/algotunetest.py
     score = precipitation_weight * math.exp(-precipitation)
     temperature_comp = 0
     if 20 <= temperature <= 25:
         temperature_comp = 1
-    elif 20 > temperature:
+    elif temperature < 20:
         temperature_comp = math.exp(-0.1 * (20 - temperature))
-    elif temperature > 25:
+    else:
         temperature_comp = math.exp(0.1 * (25 - temperature))
     score += temperature_weight * temperature_comp
     if sunrise <= cur_time <= sunset:
+        day_time_weight = 0.2
         score += day_time_weight
-    #score += air_weight * math.exp(0.5 * 1- air)
+    # score += air_weight * math.exp(0.5 * 1- air)
     score += clouds_weight * math.exp(-clouds)
     score += wind_speed_weight * math.exp(-wind_speed)
     if 0.4 <= humidity <= 0.55:
+        humidity_weight = 0.02
+
         score += humidity_weight
     return score
 
+<<<<<<< HEAD:recommender-back/src/static/scoring_plot_local.py
 # Indoor
 def get_in_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
     # Weights
+=======
+
+def get_score2(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
+    '''
+    Calculates the score for an indoor scenario based on weather conditions.
+    '''
+>>>>>>> main:recommender-back/src/apis/algotunetest.py
     precipitation_weight = 0.7
     temperature_weight = 0.1
-    day_time_weight = 0.06
     clouds_weight = 0.04
     wind_speed_weight = 0.03
-    humidity_weight = 0.02
-
-
     # Scoring
     score = precipitation_weight * (1 - math.exp(-10 * precipitation))
     temperature_comp = 0
     if 20 <= temperature <= 25:
         temperature_comp = 0
-    elif 20 > temperature:
+    elif temperature < 20:
         temperature_comp = 1 - math.exp(-0.04 * (20 - temperature))
-    elif temperature > 25:
+    else:
         temperature_comp = 1 - math.exp(0.2 * (25 - temperature))
     score += temperature_weight * temperature_comp
     if sunrise > cur_time or cur_time > sunset:
+        day_time_weight = 0.06
         score += day_time_weight
-    #score += air_weight * (1 - math.exp(0.5 * 1- air))
+    # score += air_weight * (1 - math.exp(0.5 * 1- air))
     score += clouds_weight * (1 - math.exp(-3 * clouds))
     score += wind_speed_weight * (1 - math.exp(-0.3 * wind_speed))
-    if 0.4 > humidity or humidity > 0.55:
+    if humidity < 0.4 or humidity > 0.55:
+        humidity_weight = 0.02
+
         score += humidity_weight
     return score
 
@@ -82,17 +104,27 @@ def build_chart(var_vals, scores, label):
 if __name__ == "__main__":
 
     print('Outdoor')
+<<<<<<< HEAD:recommender-back/src/static/scoring_plot_local.py
     print("min", get_out_score(-40, 20, 0.9, 20, 0.9,"06:00", '20:00', '23:00'))
     # expected 0.017006412949531466
     print("max", get_out_score(24, 0, 0.5, 0, 0, '06:00' , '20:00', '10:00'))
+=======
+    print("min", get_score1(-40, 20, 0.9, 20, 0.9, "06:00", '20:00', '23:00'))
+    # expected 0.017006412949531466
+    print("max", get_score1(24, 0, 0.5, 0, 0, '06:00', '20:00', '10:00'))
+>>>>>>> main:recommender-back/src/apis/algotunetest.py
     # expected 1
-
     print('Indoor')
+<<<<<<< HEAD:recommender-back/src/static/scoring_plot_local.py
     print("min", get_in_score(24, 0, 0.5, 0, 0, '06:00' , '20:00', '10:00'))
     # expected 0 
     print("max", get_in_score(-40, 20, 0.9, 20, 0.9,"06:00", '20:00', '23:00'))
+=======
+    print("min", get_score2(24, 0, 0.5, 0, 0, '06:00', '20:00', '10:00'))
+    # expected 0
+    print("max", get_score2(-40, 20, 0.9, 20, 0.9, "06:00", '20:00', '23:00'))
+>>>>>>> main:recommender-back/src/apis/algotunetest.py
     # expected 0.9813988574343381
-
     # Not reaching the wanted scores bcs AQI still missing
 
     # Plot for temp outdoor

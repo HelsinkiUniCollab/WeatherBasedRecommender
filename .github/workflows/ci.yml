@@ -22,14 +22,25 @@ jobs:
           cd recommender-back
           pip install poetry
 
+      - name: Update Poetry
+        run: |
+          cd recommender-back
+          poetry update
+
       - name: Install dependencies
         run: |
           cd recommender-back
           poetry install
 
-      - name: Run backend tests
+      - name: Run backend tests and coverage
         run: |
-          cd recommender-back && poetry run invoke test
+          cd recommender-back
+          poetry run coverage run --branch -m pytest
+          poetry run coverage xml
+
+      - name: Coverage report to codecov
+        run: |
+          bash <(curl -s https://codecov.io/bash)
 
       - name: Run Pylint
         run: |
@@ -50,9 +61,13 @@ jobs:
         run: |
           cd recommender-front && npm ci
 
-      - name: Run frontend tests
+      - name: Run frontend tests and coverage
         run: |
-          cd recommender-front && npm test
+          cd recommender-front && npm test -- --coverage
+
+      - name: Coverage report to codecov
+        run: |
+          bash <(curl -s https://codecov.io/bash)
 
       - name: Run ESLint
         run: |

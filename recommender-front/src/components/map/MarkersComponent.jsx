@@ -4,6 +4,7 @@ import L from 'leaflet';
 import 'leaflet.markercluster';
 import { useMap } from 'react-leaflet';
 import createMarkers from '../../utils/MarkerUtils';
+import { parseScore, defineClass } from '../../utils/ScoreUtils';
 
 function MarkersComponent({ poiData, time }) {
   const map = useMap();
@@ -12,7 +13,28 @@ function MarkersComponent({ poiData, time }) {
   useEffect(() => {
     if (poiData && time) {
       const markers = createMarkers(poiData, time);
-      const markerGroup = L.markerClusterGroup();
+      const markerGroup = L.markerClusterGroup({
+        iconCreateFunction(cluster) {
+          const count = cluster.getChildCount();
+          let bestScore = 0.00;
+          if (cluster.getChildCount() > 0) {
+            cluster.getAllChildMarkers().forEach((poiMarker) => {
+              const scoreValue = parseScore(poiMarker);
+              if (scoreValue > bestScore) {
+                bestScore = parseFloat(scoreValue);
+              }
+            });
+          }
+          const iconClass = defineClass(bestScore);
+          console.log(iconClass);
+
+          return L.divIcon({
+            html: `<div class="${iconClass}">${count}</div>`,
+            className: 'custom-cluster-icon',
+            iconSize: [40, 40],
+          });
+        },
+      });
 
       markers.forEach((marker) => {
         markerGroup.addLayer(marker);

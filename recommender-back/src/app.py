@@ -1,6 +1,9 @@
 from flask import Flask
 from flask_caching import Cache
 from flask_cors import CORS
+from dotenv import load_dotenv
+
+load_dotenv()
 
 config = {
     "DEBUG": True,
@@ -14,4 +17,4 @@ CORS(app)
 cache = Cache(config={'CACHE_TYPE': 'SimpleCache'})
 cache.init_app(app)
 
-import routes
+from src import routes
