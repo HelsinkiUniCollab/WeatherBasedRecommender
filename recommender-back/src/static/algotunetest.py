@@ -1,6 +1,12 @@
-# File to easily test the scoring without deps
+# File to easily test the scoring without 
+# Includes basic plot structure
 
+# This file contains duplicated code of poi.py
+
+import pandas as pd
+import seaborn as sns
 import math as math
+from matplotlib import pyplot as plt
 
 # Outdoor
 def get_score1(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
@@ -62,6 +68,16 @@ def get_score2(temperature, wind_speed, humidity, precipitation, clouds, sunrise
         score += humidity_weight
     return score
 
+def build_chart(var_vals, scores, label):
+    var_df= pd.DataFrame({"var" : var_vals, "score" : scores})
+    fig, ax= plt.subplots(figsize=(4, 4))
+    sns.lineplot(data=var_df, x="var", y="score", ax=ax)
+    ax.set_xlabel(label, fontsize=15)
+    ax.set_ylabel("score", fontsize=15)
+    ax.tick_params(labelsize=15)
+    plt.tight_layout()
+    plt.show()
+
 
 if __name__ == "__main__":
 
@@ -78,3 +94,8 @@ if __name__ == "__main__":
     # expected 0.9813988574343381
 
     # Not reaching the wanted scores bcs AQI still missing
+
+    # Plot for temp outdoor
+    var_vals= [*range(-40, 40)]
+    scores = [get_score1(var, 0, 0.5, 0, 0,"06:00", '20:00', '23:00') for var in var_vals]
+    build_chart(var_vals, scores, "temperature")
