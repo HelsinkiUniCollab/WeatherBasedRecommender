@@ -4,13 +4,13 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import AccessibilityComponent from './AccessibilityComponent';
 import InfoComponent from './InfoComponent';
-import parseSilderLabels from '../../utils/HeaderUtils';
+import parseSliderLabels from '../../utils/HeaderUtils';
 
 function HeaderComponent({
   accessibility, handleChange, times, sliderValue, onChange, isMobile, open, handleOpen,
   handleClose,
 }) {
-  const hours = parseSilderLabels(times);
+  const hours = parseSliderLabels(times);
   return (
     <Grid
       container
