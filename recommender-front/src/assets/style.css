@@ -81,40 +81,16 @@ body {
   line-height: 40px;
 }
 
-.custom-cluster-icon-low {
-  background-color: #E6F2FF; 
-  color: #000000; 
-  border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-}
-
 .custom-cluster-icon-score01 {
-  background-color: #E6F2FF; 
+  background-color: #F2F2F2; 
   color: #000000; 
-  border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-}
-
-.custom-cluster-icon-medium {
-  background-color: #99CCFF; 
-  color: #000000; 
-  border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-}
-
-.custom-cluster-icon-high {
-  background-color: #00264D; 
-  color: #ffffff; 
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
 .custom-cluster-icon-score02 {
-  background-color: #CCE5FF; 
+  background-color: #E6E6E6; 
   color: #000000; 
   border-radius: 50%;
   text-align: center;
@@ -125,7 +101,7 @@ body {
 }
 
 .custom-cluster-icon-score03 {
-  background-color: #99CCFF; 
+  background-color: #D9D9D9; 
   color: #000000; 
   border-radius: 50%;
   text-align: center;
@@ -133,7 +109,7 @@ body {
 }
 
 .custom-cluster-icon-score04 {
-  background-color: #66B2FF; 
+  background-color: #C6C6C6; 
   color: #000000; 
   border-radius: 50%;
   text-align: center;
@@ -141,7 +117,7 @@ body {
 }
 
 .custom-cluster-icon-score05 {
-  background-color: #3399FF; 
+  background-color: #B0B0B0; 
   color: #000000; 
   border-radius: 50%;
   text-align: center;
@@ -149,7 +125,7 @@ body {
 }
 
 .custom-cluster-icon-score06 {
-  background-color: #1A8FFF; 
+  background-color: #FFF7D4; 
   color: #000000; 
   border-radius: 50%;
   text-align: center;
@@ -157,7 +133,7 @@ body {
 }
 
 .custom-cluster-icon-score07 {
-  background-color: #0073E6; 
+  background-color: #FFEDAD; 
   color: #000000; 
   border-radius: 50%;
   text-align: center;
@@ -165,24 +141,24 @@ body {
 }
 
 .custom-cluster-icon-score08 {
-  background-color: #0059B3; 
-  color: #ffffff; 
+  background-color: #FFDF7D; 
+  color: #000000; 
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
 .custom-cluster-icon-score09 {
-  background-color: #003F80; 
-  color: #ffffff; 
+  background-color: #FFD34C; 
+  color: #000000;  
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
 .custom-cluster-icon-score10 {
-  background-color: #00264D; 
-  color: #ffffff; 
+  background-color: #FF9B00; 
+  color: #000000; 
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
