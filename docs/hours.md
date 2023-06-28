@@ -60,5 +60,5 @@
 | Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Pia     | 1 clustering finetuning            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | 1 clustering finetuning            | 7 meetings, clustering, tests, demo            | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
