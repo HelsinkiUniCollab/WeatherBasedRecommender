@@ -12,6 +12,18 @@ jest.mock('react-leaflet', () => {
 
 describe('HeaderComponent', () => {
   test('renders without crashing', () => {
-    render(<HeaderComponent />);
+    const mockProps = {
+      accessibility: 'wheelchair',
+      handleChange: jest.fn(),
+      times: [],
+      sliderValue: 0,
+      onChange: jest.fn(),
+      open: false,
+      handleOpen: jest.fn(),
+      handleClose: jest.fn(),
+      isMobile: false,
+    };
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    render(<HeaderComponent {...mockProps} />);
   });
 });

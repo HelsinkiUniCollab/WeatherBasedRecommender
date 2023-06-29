@@ -12,6 +12,11 @@ jest.mock('react-leaflet', () => {
 
 describe('AccessibilityComponent', () => {
   test('renders without crashing', () => {
-    render(<AccessibilityComponent />);
+    const mockProps = {
+      accessibility: 'wheelchair',
+    };
+
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    render(<AccessibilityComponent {...mockProps} />);
   });
 });

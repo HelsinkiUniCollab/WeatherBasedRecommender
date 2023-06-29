@@ -7,7 +7,16 @@ jest.mock('react-leaflet', () => ({
   useMap: jest.fn(),
 }));
 
+jest.mock('../../utils/MarkerUtils', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
+
 describe('MarkersComponent', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('renders without error', () => {
     const poiData = [];
     const time = '';
