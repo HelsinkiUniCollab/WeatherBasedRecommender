@@ -61,7 +61,6 @@ class Forecast:
                         coordinates_data[key].append(
                             {'Dataset': dataset_name, 'Unit': unit, 'Data': data_value})
             data[time_str] = coordinates_data
-        print(data)
         return data
 
     def get_coordinates(self):
