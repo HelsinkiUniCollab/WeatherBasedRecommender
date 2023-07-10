@@ -72,6 +72,44 @@ class ForecastTest(unittest.TestCase):
         self.assertListEqual(
             list(self.forecast.data_levels), expected_data_levels)
 
+    @patch('src.apis.forecast.download_stored_query')
+    def test_get_data_returns_data_correctly(self, mock_download_stored_query):
+        mock_download_stored_query.return_value = self.grid_by_datetime
+        self.forecast.update_data()
+        data = self.forecast.get_data()
+
+        expected_data = {
+            '2023-06-19 08:00:00': {
+                '(60.1, 24.6)': [
+                    {'Dataset': 'Mean sea level pressure', 'Unit': 'Pa', 'Data': 10300},
+                    {'Dataset': '2 metre temperature', 'Unit': 'K', 'Data': 288.2},
+                    {'Dataset': '10 metre wind speed', 'Unit': 'm s**-1', 'Data': 1.23}
+                ],
+                '(60.2, 24.7)': [
+                    {'Dataset': 'Mean sea level pressure', 'Unit': 'Pa', 'Data': 10500},
+                    {'Dataset': '2 metre temperature', 'Unit': 'K', 'Data': 287.3},
+                    {'Dataset': '10 metre wind speed', 'Unit': 'm s**-1', 'Data': 1.7}
+                ],
+                '(60.3, 24.8)': [
+                    {'Dataset': 'Mean sea level pressure', 'Unit': 'Pa', 'Data': 10600},
+                    {'Dataset': '2 metre temperature', 'Unit': 'K', 'Data': 283.5},
+                    {'Dataset': '10 metre wind speed', 'Unit': 'm s**-1', 'Data': 1.43}
+                ],
+                '(60.4, 24.9)': [
+                    {'Dataset': 'Mean sea level pressure', 'Unit': 'Pa', 'Data': 10700},
+                    {'Dataset': '2 metre temperature', 'Unit': 'K', 'Data': 291.4},
+                    {'Dataset': '10 metre wind speed', 'Unit': 'm s**-1', 'Data': 1.42}
+                ],
+                '(60.5, 25.0)': [
+                    {'Dataset': 'Mean sea level pressure', 'Unit': 'Pa', 'Data': 10800},
+                    {'Dataset': '2 metre temperature', 'Unit': 'K', 'Data': 287.7},
+                    {'Dataset': '10 metre wind speed', 'Unit': 'm s**-1', 'Data': 1.77}
+                ]
+            }
+        }
+
+        self.assertEqual(data, expected_data)
+
     def test_get_coordinates_returns_correct_list_of_pairs(self):
         self.forecast.coordinates = np.dstack(
             (self.mock_grid.latitudes, self.mock_grid.longitudes))
