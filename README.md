@@ -28,6 +28,7 @@ To run the frontend and backend services individually, refer to the instructions
 ## Documentation
 
 * [Working hours](/docs/hours.md)
+* [Roles](/docs/roles.md)
 * [Definition of Done](/docs/dod.md)
 * [Git Workflow](/docs/git-workflow.md)
 * [Production Environment](/docs/pouta.md)
