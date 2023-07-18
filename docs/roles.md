@@ -72,9 +72,9 @@ The team has four rotating roles:
 - scrum master: Pia
 
 ## Sprint 2
-- chairman: Isak
-- demo coordinator: Juuso
-- secretary: Sami M
+- chairman: Joni
+- demo coordinator: Isak
+- secretary: Pia
 - scrum master: Sami S
 
 ## Sprint 3
