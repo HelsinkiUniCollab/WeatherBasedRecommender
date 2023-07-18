@@ -60,7 +60,7 @@
 | Isak    | -            | 4,5             | 7,5               | -              | -            | -             | -           | 12     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Pia     | 1 clustering finetuning            | 7 meetings, clustering, tests, demo            | 2 demo, tests               | -              | -            | -             | -           | -     |
+| Pia     | 1 clustering finetuning            | 7 meetings, clustering, tests, demo            | 2 demo, tests               | -              | -            | -             | -           | 10    |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 |         | Monday 10.7. | Tuesday 11.7. | Wednesday 12.7. | Thursday 13.7. | Friday 14.7. | Saturday 15.7. | Sunday 16.7. | Total |
@@ -78,7 +78,7 @@
 | Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | -            | 2 scrum master stuff            | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 |         | Monday 24.7. | Tuesday 25.7. | Wednesday 26.7. | Thursday 27.7. | Friday 28.7. | Saturday 29.7. | Sunday 30.7. | Total |
