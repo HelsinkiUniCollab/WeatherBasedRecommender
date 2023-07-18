@@ -77,3 +77,10 @@ The team has four rotating roles:
 - secretary: Sami M
 - scrum master: Sami S
 
+## Sprint 3
+- chairman: Sami M
+- demo coordinator: Joni
+- secretary: Isak
+- scrum master: Pia
+
+
