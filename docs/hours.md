@@ -59,7 +59,7 @@
 | Juuso   | 2 simple plot | -             | 2 demo         | -              | -            | -             | -           | 4     |
 | Isak    | -            | 4,5             | 7,5               | -              | -            | -             | -           | 12     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | -            | 3 meetings             | 2 demo work               | -              | 2 demo live            | -             | 0.5 fore test           | 7.5     |
 | Pia     | 1 clustering finetuning            | 7 meetings, clustering, tests, demo            | 2 demo, tests               | -              | -            | -             | -           | 10    |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
