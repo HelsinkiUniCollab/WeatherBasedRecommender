@@ -1,6 +1,6 @@
+import unittest
 from unittest import mock
 from unittest.mock import MagicMock
-import unittest
 from src.app import app
 from src.apis.poi import PointOfInterest
 from src.apis.current import Current
@@ -10,6 +10,7 @@ class CurrentTest(unittest.TestCase):
     def setUp(self):
         app.testing = True
         self.client = app.test_client()
+        self.item = PointOfInterest(longitude=24.65, latitude=60.15)
 
     def test_get_current_weather(self):
         with mock.patch('src.apis.current.download_stored_query') as mock_download:
@@ -52,8 +53,6 @@ class CurrentTest(unittest.TestCase):
 
     def test_find_nearest_stations_weather_data(self):
         self.current = Current()
-        missing_fields = ['Air temperature', 'Wind speed',
-                          'Precipitation', 'Cloud amount', 'Humidity']
         self.current.weather = {
             'station1': {
                 'Latitude': 60.1,
@@ -75,8 +74,6 @@ class CurrentTest(unittest.TestCase):
             }
         }
 
-        item = PointOfInterest(longitude=24.65, latitude=60.15)
-
         expected_item = {
             'Air temperature': '10.5 °C',
             'Wind speed': '10.0 m/s',
@@ -84,9 +81,38 @@ class CurrentTest(unittest.TestCase):
             'Cloud amount': '5.0 %',
             'Humidity': '60.0 %'
         }
-        self.current.find_nearest_stations_weather_data(item)
-        self.assertEqual(item.weather['Current'], expected_item)
+        self.current.find_nearest_stations_weather_data(self.item)
+        self.assertEqual(self.item.weather['Current'], expected_item)
 
+    def test_find_nearest_stations_weather_data_with_missing_fields(self):
+        self.current = Current()
 
-if __name__ == '__main__':
-    unittest.main()
+        self.current.weather = {
+            'station1': {
+                'Latitude': 60.1,
+                'Longitude': 24.6,
+                'Air temperature': '10.5 °C',
+                'Precipitation': '10.0 %',
+                'Cloud amount': '5.0 %',
+                'Humidity': '60.0 %'
+            },
+            'station2': {
+                'Latitude': 60.5,
+                'Longitude': 26.0,
+                'Wind speed': '10.0 m/s',
+                'Precipitation': '10.0 %',
+                'Cloud amount': '5.0 %',
+                'Humidity': '60.0 %'
+            }
+        }
+
+        expected_item = {
+        'Air temperature': '10.5 °C',
+        'Wind speed': '10.0 m/s',
+        'Precipitation': '10.0 %',
+        'Cloud amount': '5.0 %',
+        'Humidity': '60.0 %'
+        }
+
+        self.current.find_nearest_stations_weather_data(self.item)
+        self.assertEqual(self.item.weather['Current'], expected_item)
