@@ -48,7 +48,7 @@ Method: GET
 Description: Shows 'Hello from the backend!' with statuscode 200
 ```
 
-### Endpoint for Weather and Forecast data
+### Endpoint for forecast data
 ```bash
 URL: /api/forecast
 Method: GET
@@ -68,7 +68,7 @@ Description: Response contains the all the point-of-interest data as JSON
 ```
 
 ## Example flow of @app.route/api/poi route
-```
+```bash
 |
 |-- Call 'get_poi_data' Flask route
 |   |
@@ -108,7 +108,7 @@ Description: Response contains the all the point-of-interest data as JSON
 
 ## Example flow of @app.route/api/forecast route
 
-```
+```bash
 |
 |-- Call 'get_forecast' Flask route
 |

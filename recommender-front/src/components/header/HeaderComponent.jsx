@@ -4,20 +4,13 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import AccessibilityComponent from './AccessibilityComponent';
 import InfoComponent from './InfoComponent';
+import parseSliderLabels from '../../utils/HeaderUtils';
 
 function HeaderComponent({
   accessibility, handleChange, times, sliderValue, onChange, isMobile, open, handleOpen,
   handleClose,
 }) {
-  const hours = [];
-  if (times) {
-    for (let i = 0; i <= times.length; i += 1) {
-      const value = i;
-      const label = times[i] ? times[i].split(':')[0] : '';
-      hours.push({ value, label });
-    }
-    hours[0] = { value: 0, label: 'Now' };
-  }
+  const hours = parseSliderLabels(times);
   return (
     <Grid
       container

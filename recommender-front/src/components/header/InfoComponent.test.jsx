@@ -12,6 +12,6 @@ jest.mock('react-leaflet', () => {
 
 describe('InfoComponent', () => {
   test('renders without crashing', () => {
-    render(<InfoComponent />);
+    render(<InfoComponent open={false} onClose={jest.fn()} />);
   });
 });

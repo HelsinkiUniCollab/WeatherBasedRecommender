@@ -26,7 +26,6 @@ function MarkersComponent({ poiData, time }) {
             });
           }
           const iconClass = defineClass(bestScore);
-          console.log(iconClass);
 
           return L.divIcon({
             html: `<div class="${iconClass}">${count}</div>`,

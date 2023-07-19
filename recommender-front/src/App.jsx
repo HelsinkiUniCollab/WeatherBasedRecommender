@@ -3,7 +3,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Grid from '@mui/material/Grid';
-import Alert from '@mui/material/Alert';
+import WeatherAlert from './components/warning/WeatherAlert';
 import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
 import 'leaflet/dist/leaflet.css';
@@ -101,12 +101,7 @@ function App() {
             />
           </Grid>
           <Grid item xs={12} className={`map-container${showAlert ? ' disabled' : ''}`}>
-            {showAlert && (
-              <Alert severity="warning" sx={{ marginBottom: '5px' }}>
-                You should avoid going outside due to strong wind.
-                We do not provide any recommendations and all the controls are disabled.
-              </Alert>
-            )}
+            <WeatherAlert showAlert={showAlert} />
             <MapComponent
               accessibility={accessibility}
               poiData={poiData}

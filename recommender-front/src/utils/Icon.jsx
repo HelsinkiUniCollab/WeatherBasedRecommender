@@ -19,45 +19,45 @@ function createMarkerIcon(value) {
   };
 
   const markerIcons = {
-    score10: L.icon({
+    score01: L.icon({
       ...iconOptions,
-      iconUrl: basemarker10,
-    }),
-    score09: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker09,
-    }),
-    score08: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker08,
-    }),
-    score07: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker07,
-    }),
-    score06: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker06,
-    }),
-    score05: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker05,
-    }),
-    score04: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker04,
-    }),
-    score03: L.icon({
-      ...iconOptions,
-      iconUrl: basemarker03,
+      iconUrl: basemarker01,
     }),
     score02: L.icon({
       ...iconOptions,
       iconUrl: basemarker02,
     }),
-    score01: L.icon({
+    score03: L.icon({
       ...iconOptions,
-      iconUrl: basemarker01,
+      iconUrl: basemarker03,
+    }),
+    score04: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker04,
+    }),
+    score05: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker05,
+    }),
+    score06: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker06,
+    }),
+    score07: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker07,
+    }),
+    score08: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker08,
+    }),
+    score09: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker09,
+    }),
+    score10: L.icon({
+      ...iconOptions,
+      iconUrl: basemarker10,
     }),
   };
 

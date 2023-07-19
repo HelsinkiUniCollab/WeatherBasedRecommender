@@ -47,14 +47,86 @@
 
 |         | Monday 19.6. | Tuesday 20.6. | Wednesday 21.6. | Thursday 22.6. | Friday 23.6. | Saturday 24.6. | Sunday 25.6. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | -------------- | ------------ | --------- |
-| Juuso   | 2 live       | -             | -               | 7 live, meet, front icons, AQI, demo .. | 6 score improvements  | -              | -            | -         |
-| Isak    | 7            | 0,5             | -               | 5              | 3,5            | -              | -            | 16         |
+| Juuso   | 2 live       | -             | -               | 7 live, meet, front icons, AQI, demo .. | 6 score improvements  | -              | -            | 15         |
+| Isak    | 7            | 0,5             | -               | 5              | 3,5            | -              | 2,5            | 18,5         |
 | Sami S. | 5 live, poi-info            | -             | -               | 5 live, scrum stuff, about page              | 2 fix poi-infos, _try_ to learn cypress            | 2.5 codecov              | 2.5 scrum stuff, pr            | 17         |
-| Sami M. | 3 live, fixing tests            | 2 docker package bug hunt             | 6 weather alert + eccodes troubles               | -              | -            | -              | -            | -         |
+| Sami M. | 3 live, fixing tests            | 2 docker package bug hunt             | 6 weather alert + eccodes troubles               | 0.45 daily              | 3 Weather alert for refactored code, cypress issue hunt            | -              | -            | 14.5         |
 | Pia     | -            | -             | -               | 8.5 frontend stuff              | -            | 7.5 Pouta, pullreqs, clustering              | 3.5 clustering            | 19.5        |
 | Joni    | -            | -             | -               | 0,5 daily              | 5 cypress            | 6 code review, cypress, docker, license              | 6 pouta, docker, backend            | 17,5         |
 
 |         | Monday 26.6. | Tuesday 27.6. | Wednesday 28.6. | Thursday 29.6. | Friday 30.6. | Saturday 1.7. | Sunday 2.7. | Total |
+| ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
+| Juuso   | 2 simple plot | -             | 2 demo         | -              | -            | -             | -           | 4     |
+| Isak    | -            | 4,5             | 7,5               | -              | -            | -             | -           | 12     |
+| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | -            | 3 meetings             | 2 demo work               | -              | 2 demo live            | -             | 0.5 fore test           | 7.5     |
+| Pia     | 1 clustering finetuning            | 7 meetings, clustering, tests, demo            | 2 demo, tests               | -              | -            | -             | -           | 10    |
+| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+
+|         | Monday 10.7. | Tuesday 11.7. | Wednesday 12.7. | Thursday 13.7. | Friday 14.7. | Saturday 15.7. | Sunday 16.7. | Total |
+| ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
+| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Isak    | 1,5            | -             | -               | -              | -            | -             | -           | 1,5     |
+| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+
+|         | Monday 17.7. | Tuesday 18.7. | Wednesday 19.7. | Thursday 20.7. | Friday 21.7. | Saturday 22.7. | Sunday 23.7. | Total |
+| ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
+| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | -            | 2 scrum master stuff            | -               | -              | -            | -             | -           | -     |
+| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+
+|         | Monday 24.7. | Tuesday 25.7. | Wednesday 26.7. | Thursday 27.7. | Friday 28.7. | Saturday 29.7. | Sunday 30.7. | Total |
+| ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
+| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+
+|         | Monday 31.7. | Tuesday 1.8. | Wednesday 2.8. | Thursday 3.8. | Friday 4.8. | Saturday 5.8. | Sunday 6.8. | Total |
+| ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
+| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+
+|         | Monday 7.8. | Tuesday 8.8. | Wednesday 9.8. | Thursday 10.8. | Friday 11.8. | Saturday 12.8. | Sunday 13.8. | Total |
+| ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
+| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+
+|         | Monday 14.8. | Tuesday 15.8. | Wednesday 16.8. | Thursday 17.8. | Friday 18.8. | Saturday 19.8. | Sunday 20.8. | Total |
+| ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
+| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+
+|         | Monday 21.8. | Tuesday 22.8. | Wednesday 23.8. | Thursday 24.8. | Friday 25.8. | Saturday 26.8. | Sunday 27.8. | Total |
+| ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
+| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+
+|         | Monday 28.8. | Tuesday 29.8. | Wednesday 30.8. | Thursday 31.8. | Friday 1.9. | Saturday 2.9. | Sunday 3.9. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
 | Isak    | -            | -             | -               | -              | -            | -             | -           | -     |

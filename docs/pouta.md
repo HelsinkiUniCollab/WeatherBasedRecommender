@@ -60,11 +60,11 @@ You can remove unused containers with:
 Everytime an update is made, a new image with tag "latest" is created. This does not remove the old images, which keep piling up. Therefore, we have a cron job running docker prune every night at 3 a.m. UTC. 
 
 ### crontab
-```
+```bash
 0 3 * * * /snap/bin/docker system prune -a -f
 ```
 You can edit the cron job with command in the root directory of our instance.
-```
+```bash
 crontab -e
 ```
 
@@ -155,8 +155,8 @@ http {
     }
   }
 }
-
 ```
+
 **wbased-back**: This is the backend service built using the Docker image `ruusukivi/wbased-back:latest`. It has the `watchtower` label to enable automatic updates. The service is set to restart unless manually stopped and it's connected to the network `ubuntu_default`.
 
 **wbased-front**: This is the frontend service built using the Docker image `ruusukivi/wbased-front:latest`. It also has the `watchtower` label for automatic updates. This service is exposed on port `3000` and it's set to restart unless manually stopped. It's also connected to the network `ubuntu_default`.

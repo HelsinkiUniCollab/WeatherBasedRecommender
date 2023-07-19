@@ -1,4 +1,3 @@
-<<<<<<< HEAD:recommender-back/src/static/scoring_plot_local.py
 # File to easily test the scoring without deps to anything
 # Includes basic plot structure
 
@@ -12,26 +11,14 @@ from matplotlib import pyplot as plt
 # Outdoor
 def get_out_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
     # Weights
-=======
-import math
-
-
-def get_score1(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
-    '''
-    Calculates the score for an outdoor scenario based on weather conditions.
-    '''
->>>>>>> main:recommender-back/src/apis/algotunetest.py
     precipitation_weight = 0.35
     temperature_weight = 0.3
     clouds_weight = 0.04
     wind_speed_weight = 0.04
-<<<<<<< HEAD:recommender-back/src/static/scoring_plot_local.py
     humidity_weight = 0.02
 
 
     # Scoring
-=======
->>>>>>> main:recommender-back/src/apis/algotunetest.py
     score = precipitation_weight * math.exp(-precipitation)
     temperature_comp = 0
     if 20 <= temperature <= 25:
@@ -53,17 +40,9 @@ def get_score1(temperature, wind_speed, humidity, precipitation, clouds, sunrise
         score += humidity_weight
     return score
 
-<<<<<<< HEAD:recommender-back/src/static/scoring_plot_local.py
 # Indoor
 def get_in_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
     # Weights
-=======
-
-def get_score2(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
-    '''
-    Calculates the score for an indoor scenario based on weather conditions.
-    '''
->>>>>>> main:recommender-back/src/apis/algotunetest.py
     precipitation_weight = 0.7
     temperature_weight = 0.1
     clouds_weight = 0.04
@@ -104,26 +83,14 @@ def build_chart(var_vals, scores, label):
 if __name__ == "__main__":
 
     print('Outdoor')
-<<<<<<< HEAD:recommender-back/src/static/scoring_plot_local.py
     print("min", get_out_score(-40, 20, 0.9, 20, 0.9,"06:00", '20:00', '23:00'))
     # expected 0.017006412949531466
     print("max", get_out_score(24, 0, 0.5, 0, 0, '06:00' , '20:00', '10:00'))
-=======
-    print("min", get_score1(-40, 20, 0.9, 20, 0.9, "06:00", '20:00', '23:00'))
-    # expected 0.017006412949531466
-    print("max", get_score1(24, 0, 0.5, 0, 0, '06:00', '20:00', '10:00'))
->>>>>>> main:recommender-back/src/apis/algotunetest.py
     # expected 1
     print('Indoor')
-<<<<<<< HEAD:recommender-back/src/static/scoring_plot_local.py
     print("min", get_in_score(24, 0, 0.5, 0, 0, '06:00' , '20:00', '10:00'))
     # expected 0 
     print("max", get_in_score(-40, 20, 0.9, 20, 0.9,"06:00", '20:00', '23:00'))
-=======
-    print("min", get_score2(24, 0, 0.5, 0, 0, '06:00', '20:00', '10:00'))
-    # expected 0
-    print("max", get_score2(-40, 20, 0.9, 20, 0.9, "06:00", '20:00', '23:00'))
->>>>>>> main:recommender-back/src/apis/algotunetest.py
     # expected 0.9813988574343381
     # Not reaching the wanted scores bcs AQI still missing
 
