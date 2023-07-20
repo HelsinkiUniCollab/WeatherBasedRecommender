@@ -78,7 +78,7 @@
 | Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami S. | -            | 1 sprint planning             | 4 pull reqs, backend tests               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Pia     | -            | 2 scrum master stuff            | -               | -              | -            | -             | -           | -     |
+| Pia     | -            | 2 scrum master stuff            | -               | 6 live              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 |         | Monday 24.7. | Tuesday 25.7. | Wednesday 26.7. | Thursday 27.7. | Friday 28.7. | Saturday 29.7. | Sunday 30.7. | Total |
