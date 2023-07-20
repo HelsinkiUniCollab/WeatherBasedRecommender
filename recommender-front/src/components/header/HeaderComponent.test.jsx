@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import HeaderComponent from './HeaderComponent';
-import LoadingIndicatorComponent from './LoadingIndicatorComponent';
 
 jest.mock('react-leaflet', () => {
   const originalModule = jest.requireActual('react-leaflet');
