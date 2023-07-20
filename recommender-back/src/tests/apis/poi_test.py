@@ -1,4 +1,5 @@
 import unittest
+import json
 from unittest.mock import patch
 from datetime import datetime
 from src.apis.times import get_current_time
@@ -27,6 +28,12 @@ class TestPointOfInterest(unittest.TestCase):
         expected_score = 0.32
         score = self.poi._outdoor_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time)
         self.assertAlmostEqual(score, expected_score, places=6)
+        
+        temperature = 45
+        
+        expected_score = 0.28
+        score = self.poi._outdoor_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time)
+        self.assertAlmostEqual(score, expected_score, places=6)
 
     def test_indoor_score(self):
         temperature = 22
@@ -45,6 +52,12 @@ class TestPointOfInterest(unittest.TestCase):
         temperature = 7
         
         expected_score = 0.85
+        score = self.poi._indoor_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time)
+        self.assertAlmostEqual(score, expected_score, places=6)
+        
+        temperature = 45
+        
+        expected_score = 0.91
         score = self.poi._indoor_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time)
         self.assertAlmostEqual(score, expected_score, places=6)
 
@@ -87,6 +100,23 @@ class TestPointOfInterest(unittest.TestCase):
             score = test_poi.weather['12:00']['Score']
 
             self.assertAlmostEqual(score, expected_score, places=6)
+      
+    def test_json_in_correct_form(self):
+        weather = {'12:00':{'Wind speed':'5.0 m/s','Precipitation':'20 mm','Cloud amount':'0.6 %',
+                'Air temperature':'23.0 *C','Humidity':'0.5 %'}}
+
+        sun = ('06:00','18:00')
+        categories = ['Open air pools and beaches']
+
+        test_poi = PointOfInterest(name= 'Test POI', latitude=21, longitude=61, categories=categories)
+        test_poi.weather = weather
+        test_poi.sun = sun
+        expected_json = {"name": 'Test POI', "weather": {"12:00": {"Wind speed": "5.0 m/s", "Precipitation": "20 mm", "Cloud amount": "0.6 %", "Air temperature": "23.0 *C", "Humidity": "0.5 %"}}, "latitude": 21, "longitude": 61}
+
+        test_json = test_poi.get_json()
+        print(test_json)
+        
+        self.assertEqual(test_json, expected_json)
 
 if __name__ == '__main__':
     unittest.main()
