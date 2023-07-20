@@ -3,6 +3,7 @@ import numpy as np
 from datetime import datetime
 from unittest.mock import MagicMock, PropertyMock, patch
 from src.apis.forecast import Forecast
+from src.apis.poi import PointOfInterest
 
 
 class ForecastTest(unittest.TestCase):
@@ -27,13 +28,29 @@ class ForecastTest(unittest.TestCase):
                     '2 metre temperature': {
                         'units': 'K',
                         'data': np.array([[288.2, 287.3, 283.5, 291.4, 287.7]])
-                    }
+                    },
+                    '2 metre relative humidity': {
+                        'units': '%',
+                        'data': np.array([[51, 52, 53, 54, 55]])
+                    },
                 },
                 10: {
-                    '10 metre wind speed': {
+                    '10 metre U wind component': {
                         'units': 'm s**-1',
-                        'data': np.array([[1.23, 1.7, 1.43, 1.42, 1.77]])
-                    }
+                        'data': np.array([[7, 9, 3, 2, 5]])
+                    },
+                    '10 metre V wind component': {
+                        'units': 'm s**-1',
+                        'data': np.array([[-1, -2, -3, 3, -2]])
+                    },
+                    'surface precipitation amount, rain, convective': {
+                        'units': 'kg m**-2',
+                        'data': np.array([[2, 3, 4, 5, 6]])
+                    },
+                    'Total Cloud Cover': {
+                        'units': '%',
+                        'data': np.array([[23, 24, 25, 26, 27]])
+                    },
                 }
             }
         })
@@ -83,30 +100,75 @@ class ForecastTest(unittest.TestCase):
                 '(60.1, 24.6)': [
                     {'Dataset': 'Mean sea level pressure', 'Unit': 'Pa', 'Data': 10300},
                     {'Dataset': '2 metre temperature', 'Unit': 'K', 'Data': 288.2},
-                    {'Dataset': '10 metre wind speed', 'Unit': 'm s**-1', 'Data': 1.23}
+                    {'Dataset': '2 metre relative humidity', 'Unit': '%', 'Data': 51},
+                    {'Dataset': '10 metre U wind component', 'Unit': 'm s**-1', 'Data': 7},
+                    {'Dataset': '10 metre V wind component', 'Unit': 'm s**-1', 'Data': -1},
+                    {'Dataset': 'surface precipitation amount, rain, convective', 'Unit': 'kg m**-2', 'Data': 2},
+                    {'Dataset': 'Total Cloud Cover', 'Unit': '%', 'Data': 23}
                 ],
                 '(60.2, 24.7)': [
                     {'Dataset': 'Mean sea level pressure', 'Unit': 'Pa', 'Data': 10500},
                     {'Dataset': '2 metre temperature', 'Unit': 'K', 'Data': 287.3},
-                    {'Dataset': '10 metre wind speed', 'Unit': 'm s**-1', 'Data': 1.7}
+                    {'Dataset': '2 metre relative humidity', 'Unit': '%', 'Data': 52},
+                    {'Dataset': '10 metre U wind component', 'Unit': 'm s**-1', 'Data': 9},
+                    {'Dataset': '10 metre V wind component', 'Unit': 'm s**-1', 'Data': -2},
+                    {'Dataset': 'surface precipitation amount, rain, convective', 'Unit': 'kg m**-2', 'Data': 3},
+                    {'Dataset': 'Total Cloud Cover', 'Unit': '%', 'Data': 24}
                 ],
                 '(60.3, 24.8)': [
                     {'Dataset': 'Mean sea level pressure', 'Unit': 'Pa', 'Data': 10600},
                     {'Dataset': '2 metre temperature', 'Unit': 'K', 'Data': 283.5},
-                    {'Dataset': '10 metre wind speed', 'Unit': 'm s**-1', 'Data': 1.43}
+                    {'Dataset': '2 metre relative humidity', 'Unit': '%', 'Data': 53},
+                    {'Dataset': '10 metre U wind component', 'Unit': 'm s**-1', 'Data': 3},
+                    {'Dataset': '10 metre V wind component', 'Unit': 'm s**-1', 'Data': -3},
+                    {'Dataset': 'surface precipitation amount, rain, convective', 'Unit': 'kg m**-2', 'Data': 4},
+                    {'Dataset': 'Total Cloud Cover', 'Unit': '%', 'Data': 25}
                 ],
                 '(60.4, 24.9)': [
                     {'Dataset': 'Mean sea level pressure', 'Unit': 'Pa', 'Data': 10700},
                     {'Dataset': '2 metre temperature', 'Unit': 'K', 'Data': 291.4},
-                    {'Dataset': '10 metre wind speed', 'Unit': 'm s**-1', 'Data': 1.42}
+                    {'Dataset': '2 metre relative humidity', 'Unit': '%', 'Data': 54},
+                    {'Dataset': '10 metre U wind component', 'Unit': 'm s**-1', 'Data': 2},
+                    {'Dataset': '10 metre V wind component', 'Unit': 'm s**-1', 'Data': 3},
+                    {'Dataset': 'surface precipitation amount, rain, convective', 'Unit': 'kg m**-2', 'Data': 5},
+                    {'Dataset': 'Total Cloud Cover', 'Unit': '%', 'Data': 26}
                 ],
                 '(60.5, 25.0)': [
                     {'Dataset': 'Mean sea level pressure', 'Unit': 'Pa', 'Data': 10800},
                     {'Dataset': '2 metre temperature', 'Unit': 'K', 'Data': 287.7},
-                    {'Dataset': '10 metre wind speed', 'Unit': 'm s**-1', 'Data': 1.77}
+                    {'Dataset': '2 metre relative humidity', 'Unit': '%', 'Data': 55},
+                    {'Dataset': '10 metre U wind component', 'Unit': 'm s**-1', 'Data': 5},
+                    {'Dataset': '10 metre V wind component', 'Unit': 'm s**-1', 'Data': -2},
+                    {'Dataset': 'surface precipitation amount, rain, convective', 'Unit': 'kg m**-2', 'Data': 6},
+                    {'Dataset': 'Total Cloud Cover', 'Unit': '%', 'Data': 27}
                 ]
             }
         }
+
+        self.assertEqual(data, expected_data)
+
+    @patch('src.apis.forecast.download_stored_query')
+    def test_closest_poi_coordinate_data_is_fetched_correctly(self, mock_download_stored_query):
+        mock_download_stored_query.return_value = self.grid_by_datetime
+        self.forecast.update_data()
+
+        poi = PointOfInterest()
+        poi.latitude = 60.15
+        poi.longitude = 24.65
+
+        data = self.forecast.get_closest_poi_coordinates_data([poi])
+
+        expected_data = {
+            '2023-06-19 08:00:00': {
+                '60.15, 24.65': {
+                    'Air temperature': '15.1 °C',
+                    'Cloud amount': '23 %',
+                    'Humidity': '51 %',
+                    'Precipitation': '2 mm',
+                    'Wind speed': '7.1 m/s'
+            }
+        }
+    }
 
         self.assertEqual(data, expected_data)
 
