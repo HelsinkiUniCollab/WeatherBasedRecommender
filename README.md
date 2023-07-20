@@ -1,5 +1,6 @@
 
-![WeatherBasedRecommender(2)](https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/assets/101641412/c1dbd7bf-5cd4-4f6e-998d-25105d1b8b69)
+
+![ezgif-4-af3762fc40](https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/assets/101641412/fd68b750-12f0-4746-8067-dc073afa5ffe)
 
 [![CI](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/ci.yml/badge.svg)](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/ci.yml)
 [![CD](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/cd.yml/badge.svg?branch=main)](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/cd.yml)
