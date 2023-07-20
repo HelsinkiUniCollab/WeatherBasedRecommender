@@ -11,6 +11,7 @@ class PointOfInterest:
         self.not_accessible_for = not_accessible_for
         self.categories = categories
         self.weather = {}
+        self.categorytype = None
 
     def calculate_score(self):
         '''
@@ -33,9 +34,11 @@ class PointOfInterest:
                 humidity = float(data.get('Humidity').split(' ')[0]) * 0.01
 
                 if category in outdoor_categories:
+                    self.categorytype = "Outdoor"
                     data['Score'] = self._outdoor_score(temperature, wind_speed, humidity,
                                                         precipitation, clouds, sunrise, sunset, cur_time)
                 elif category in indoor_categories:
+                    self.categorytype = "Indoor"
                     data['Score'] = self._indoor_score(temperature, wind_speed, humidity,
                                                        precipitation, clouds, sunrise, sunset, cur_time)
 
@@ -105,4 +108,5 @@ class PointOfInterest:
         Returns a JSON representation of the POI.
         '''
         return {'name': self.name, 'weather': self.weather,
-                'latitude': self.latitude, 'longitude': self.longitude}
+                'latitude': self.latitude, 'longitude': self.longitude,
+                'category': self.categories[-1], 'catetype': self.categorytype}

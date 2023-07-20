@@ -13,6 +13,7 @@ const createMarkers = (poiData, time) => {
       poi.longitude], { icon: markerIcon });
     marker.bindPopup(
       `<h3>${poi.name}</h3>
+       <h4>${poi.catetype} / ${poi.category} </h4>
         <ul>
         ${tags.map(([key, value]) => `<li><strong>${key}</strong>: ${value}</li>`).join('')}
         </ul>`,
