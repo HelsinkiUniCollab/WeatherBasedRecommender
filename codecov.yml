@@ -16,9 +16,9 @@ coverage:
 # --------------
 # which folders/files to ignore
 ignore:
-  - */tests/.*
+  - "/tests/*"
   #tested with Cypress tests
-  - /recommender-front/src/components/MarkersComponent.jsx 
+  - "/recommender-front/src/components/MarkersComponent.jsx" 
  
 # Pull request comments:
 # ----------------------
