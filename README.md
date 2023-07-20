@@ -1,4 +1,6 @@
-# Weather-Based Recommender
+
+![image](https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/assets/101641412/319fd929-2ab4-4e13-964b-ae23c8d2e32f)
+
 
 [![CI](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/ci.yml/badge.svg)](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/ci.yml)
 [![CD](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/cd.yml/badge.svg?branch=main)](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/cd.yml)
