@@ -80,8 +80,26 @@ def get_pois():
     '''
     with open('src/static/pois.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
-        return iterate_items(data, [])
+        pois = iterate_items(data, [])
+        return filter_duplicates(pois)
 
+def filter_duplicates(pois):
+    '''
+    Filters duplicates from POI -list. Some POIs belong to multiple categories which can lead to duplicates.add()
+
+    Args:
+        pois (list): List of POIs iterated from file.
+
+    Returns:
+        list: Dictionary converted to list containing filtered POIs.
+
+    '''
+    uniques = {}
+    for poi in pois:
+        name = poi.name
+        if name not in uniques:
+            uniques[name] = poi
+    return list(uniques.values())
 
 def iterate_items(data, categories):
     '''
