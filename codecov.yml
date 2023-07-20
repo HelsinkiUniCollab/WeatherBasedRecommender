@@ -18,7 +18,7 @@ coverage:
 ignore:
   - "/tests/*"
   #tested with Cypress tests
-  - "/recommender-front/src/components/MarkersComponent.jsx" 
+  - "**/MarkersComponent.jsx" 
  
 # Pull request comments:
 # ----------------------
