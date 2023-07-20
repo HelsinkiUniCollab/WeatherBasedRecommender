@@ -3,12 +3,13 @@ import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import AccessibilityComponent from './AccessibilityComponent';
+import LoadingIndicatorComponent from './LoadingIndicatorComponent';
 import InfoComponent from './InfoComponent';
 import parseSliderLabels from '../../utils/HeaderUtils';
 
 function HeaderComponent({
   accessibility, handleChange, times, sliderValue, onChange, isMobile, open, handleOpen,
-  handleClose,
+  handleClose, poiData,
 }) {
   const hours = parseSliderLabels(times);
   return (
@@ -32,24 +33,30 @@ function HeaderComponent({
       {isMobile ? (
         <Grid item xs={11} sm={11} className="slider-item" key="slider-mobile">
           <Typography variant="h2">Time</Typography>
-          <Slider
-            value={sliderValue}
-            onChange={onChange}
-            min={0}
-            max={10}
-            marks={hours}
-          />
+          {poiData.length === 0 ? <LoadingIndicatorComponent />
+            : (
+              <Slider
+                value={sliderValue}
+                onChange={onChange}
+                min={0}
+                max={10}
+                marks={hours}
+              />
+            )}
         </Grid>
       ) : (
         <Grid item xs={11} sm={11} md={11} lg={11} className="slider-item" key="slider">
           <Typography variant="h2">Time</Typography>
-          <Slider
-            value={sliderValue}
-            onChange={onChange}
-            min={0}
-            max={24}
-            marks={hours}
-          />
+          {poiData.length === 0 ? <LoadingIndicatorComponent />
+            : (
+              <Slider
+                value={sliderValue}
+                onChange={onChange}
+                min={0}
+                max={24}
+                marks={hours}
+              />
+            )}
         </Grid>
       )}
     </Grid>

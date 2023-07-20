@@ -22,6 +22,7 @@ describe('HeaderComponent', () => {
       handleOpen: jest.fn(),
       handleClose: jest.fn(),
       isMobile: false,
+      poiData: [],
     };
     // eslint-disable-next-line react/jsx-props-no-spreading
     render(<HeaderComponent {...mockProps} />);
