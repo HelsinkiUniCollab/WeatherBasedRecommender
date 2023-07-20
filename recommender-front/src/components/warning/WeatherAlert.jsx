@@ -11,7 +11,7 @@ const fullscreenAlertStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: 'rgba(0, 0, 0, 0.8)', // You can adjust the background color and transparency here
+  backgroundColor: 'rgba(0, 0, 0, 0.8)',
 };
 
 function WeatherAlert({ showAlert }) {
