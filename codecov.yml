@@ -17,6 +17,8 @@ coverage:
 # which folders/files to ignore
 ignore:
   - "/tests/*"
+  - "assets"
+  - "**/App.jsx"
   #tested with Cypress tests
   - "**/MarkersComponent.jsx" 
  
