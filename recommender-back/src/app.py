@@ -16,5 +16,3 @@ CORS(app)
 
 cache = Cache(config={'CACHE_TYPE': 'SimpleCache'})
 cache.init_app(app)
-
-from src import routes
