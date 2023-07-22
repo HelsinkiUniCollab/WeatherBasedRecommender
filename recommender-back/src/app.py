@@ -1,7 +1,9 @@
+import os
 from flask import Flask
 from flask_caching import Cache
 from flask_cors import CORS
 from dotenv import load_dotenv
+from pymongo import MongoClient
 
 load_dotenv()
 
@@ -16,5 +18,19 @@ CORS(app)
 
 cache = Cache(config={'CACHE_TYPE': 'SimpleCache'})
 cache.init_app(app)
+
+def get_db():
+    try:
+        mongo_uri = os.environ.get('DEVELOPMENT_DB_URI')
+        print('connecting to', mongo_uri)
+        client = MongoClient(mongo_uri)
+        db = client.get_database('development') 
+        print('connected to MongoDB')
+        return db
+    except Exception as e:
+        print('Error connecting to MongoDB:', str(e))
+        return None
+    
+db = get_db()
 
 from src import routes
