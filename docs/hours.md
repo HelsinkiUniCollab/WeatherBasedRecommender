@@ -60,7 +60,7 @@
 | Isak    | -            | 4,5             | 7,5               | -              | -            | -             | -           | 12     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | 3 meetings             | 2 demo work               | -              | 2 demo live            | -             | 0.5 fore test           | 7.5     |
-| Pia     | 1 clustering finetuning            | 7 meetings, clustering, tests, demo            | 2 demo, tests               | -              | -            | -             | -           | 10    |
+| Pia     | 1 clustering finetuning            | 7 meetings, clustering, tests, demo            | 2 demo, tests               | -              | 2 demo live              | -             | -           | 12    |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 |         | Monday 10.7. | Tuesday 11.7. | Wednesday 12.7. | Thursday 13.7. | Friday 14.7. | Saturday 15.7. | Sunday 16.7. | Total |
