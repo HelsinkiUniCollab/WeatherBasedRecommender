@@ -56,7 +56,7 @@
 
 |         | Monday 26.6. | Tuesday 27.6. | Wednesday 28.6. | Thursday 29.6. | Friday 30.6. | Saturday 1.7. | Sunday 2.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | 2 simple plot | -             | 2 demo         | -              | -            | -             | -           | 4     |
+| Juuso   | 2 simple plot | -             | 2 demo         | -              | -            | 2 demo live   | -           | 6     |
 | Isak    | -            | 4,5             | 7,5               | -              | -            | -             | -           | 12     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | 3 meetings             | 2 demo work               | -              | 2 demo live            | -             | 0.5 fore test           | 7.5     |
@@ -74,7 +74,7 @@
 
 |         | Monday 17.7. | Tuesday 18.7. | Wednesday 19.7. | Thursday 20.7. | Friday 21.7. | Saturday 22.7. | Sunday 23.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Juuso   | -            | 1 sprint planning | 2 test        | 5 live         | -            | -             | 2 daily/aqi/logo  | 10     |
 | Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami S. | -            | 1 sprint planning             | 4 pull reqs, backend tests               | 5 live              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
