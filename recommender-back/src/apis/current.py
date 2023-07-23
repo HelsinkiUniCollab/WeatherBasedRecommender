@@ -2,7 +2,6 @@ import copy
 from fmiopendata.wfs import download_stored_query
 from .poi import PointOfInterest
 
-
 class Current:
     def __init__(self):
         self.weather = None
