@@ -1,10 +1,12 @@
 import math
 import numpy as np
 from .times import utc_to_finnish, get_forecast_times
-from fmiopendata.wfs import download_stored_query
+from ..config import Config
+from ..services.forecastdatafetcher import ForecastDataFetcher
 
 class Forecast:
-    def __init__(self):
+    def __init__(self, fetcher: ForecastDataFetcher):
+        self.fetcher = fetcher
         self.data = None
         self.valid_times = None
         self.data_levels = None
@@ -15,22 +17,15 @@ class Forecast:
         Updates the forecast data by fetching the latest data from the API.
         '''
         current, start, end = get_forecast_times()
-        bbox = '24.5,60,25.5,60.5'
-        timestep = 60
-        parameters = 'Temperature,Humidity,WindUMS,WindVMS,PrecipitationAmount,TotalCloudCover'
-        args = [f'starttime={start}',
-                                                    f'endtime={end}',
-                                                    f'bbox={bbox}',
-                                                    f'timestep={timestep}',
-                                                    f'parameters={parameters}']
         print(f'Query for the new Grid object at time: {current} UTC')
-        forecast_data = download_stored_query('fmi::forecast::harmonie::surface::grid',
-                                            args=[f'starttime={start}',
-                                                    f'endtime={end}',
-                                                    f'bbox={bbox}',
-                                                    f'timestep={timestep}',
-                                                    f'parameters={parameters}']
-                                                    )
+        forecast_data = self.fetcher.get_forecast_data(
+            start,
+            end,
+            Config.BBOX,
+            Config.TIMESTEP,
+            Config.PARAMETERS
+            )
+
         latest_forecast = max(forecast_data.data.keys())
         self.data = forecast_data.data[latest_forecast]
         self.data.parse(delete=True)
