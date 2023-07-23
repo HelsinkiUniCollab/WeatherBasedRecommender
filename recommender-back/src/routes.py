@@ -4,6 +4,9 @@ from .app import app, cache
 from .apis.forecast import Forecast
 from .apis.current import Current
 from .apis import manager
+from .services.forecastdatafetcher import ForecastDataFetcher
+
+weather_fetcher = ForecastDataFetcher()
 
 @app.route('/', methods=['GET'])
 def index():
@@ -29,7 +32,7 @@ def get_forecast():
     Returns:
         Forecast for the POI's.
     '''
-    forecast = Forecast()
+    forecast = Forecast(weather_fetcher)
     forecast.update_data()
     pois = manager.get_pois()
     poi_forecast = forecast.get_closest_poi_coordinates_data(pois)

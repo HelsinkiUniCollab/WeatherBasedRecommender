@@ -4,11 +4,11 @@ from datetime import datetime
 from unittest.mock import MagicMock, PropertyMock, patch
 from src.apis.forecast import Forecast
 from src.apis.poi import PointOfInterest
-
+from src.services.forecastdatafetcher import ForecastDataFetcher
 
 class ForecastTest(unittest.TestCase):
     def setUp(self):
-        self.forecast = Forecast()
+        self.forecast = Forecast(ForecastDataFetcher())
         self.grid_by_datetime = MagicMock()
         self.mock_grid = MagicMock()
 
@@ -61,7 +61,7 @@ class ForecastTest(unittest.TestCase):
         type(self.mock_grid).longitudes = PropertyMock(
             return_value=np.array([[24.6, 24.7, 24.8, 24.9, 25.0]]))
 
-    @patch('src.apis.forecast.download_stored_query')
+    @patch('src.services.forecastdatafetcher.ForecastDataFetcher.get_forecast_data')
     def test_data_is_updated_correctly(self, mock_download_stored_query):
         mock_download_stored_query.return_value = self.grid_by_datetime
 
@@ -89,7 +89,7 @@ class ForecastTest(unittest.TestCase):
         self.assertListEqual(
             list(self.forecast.data_levels), expected_data_levels)
 
-    @patch('src.apis.forecast.download_stored_query')
+    @patch('src.services.forecastdatafetcher.ForecastDataFetcher.get_forecast_data')
     def test_get_data_returns_data_correctly(self, mock_download_stored_query):
         mock_download_stored_query.return_value = self.grid_by_datetime
         self.forecast.update_data()
@@ -147,7 +147,7 @@ class ForecastTest(unittest.TestCase):
 
         self.assertEqual(data, expected_data)
 
-    @patch('src.apis.forecast.download_stored_query')
+    @patch('src.services.forecastdatafetcher.ForecastDataFetcher.get_forecast_data')
     def test_closest_poi_coordinate_data_is_fetched_correctly(self, mock_download_stored_query):
         mock_download_stored_query.return_value = self.grid_by_datetime
         self.forecast.update_data()
