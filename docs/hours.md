@@ -61,7 +61,7 @@
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | 3 meetings             | 2 demo work               | -              | 2 demo live            | -             | 0.5 fore test           | 7.5     |
 | Pia     | 1 clustering finetuning            | 7 meetings, clustering, tests, demo            | 2 demo, tests               | -              | 2 demo live              | -             | -           | 12    |
-| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | 2 cypress    | 3 meeting     | 2 demo          | -              | 2 demo live  | -             | -           | 9     |
 
 |         | Monday 10.7. | Tuesday 11.7. | Wednesday 12.7. | Thursday 13.7. | Friday 14.7. | Saturday 15.7. | Sunday 16.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
@@ -79,7 +79,7 @@
 | Sami S. | -            | 1 sprint planning             | 4 pull reqs, backend tests               | 5 live              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Pia     | -            | 2 scrum master stuff            | -               | 6 live              | -            | 2,5 mongo            | 4,5 mongo           | -     |
-| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | -            | 1 sprint meeting | -               | 6 live      | 2 backend    | 3 backend     | 6 backend   | 18     |
 
 |         | Monday 24.7. | Tuesday 25.7. | Wednesday 26.7. | Thursday 27.7. | Friday 28.7. | Saturday 29.7. | Sunday 30.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
