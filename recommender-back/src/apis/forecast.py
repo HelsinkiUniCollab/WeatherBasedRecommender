@@ -17,21 +17,26 @@ class Forecast:
         current, start, end = get_forecast_times()
         bbox = '24.5,60,25.5,60.5'
         timestep = 60
+        parameters = 'Temperature,Humidity,WindUMS,WindVMS,PrecipitationAmount,TotalCloudCover'
+        args = [f'starttime={start}',
+                                                    f'endtime={end}',
+                                                    f'bbox={bbox}',
+                                                    f'timestep={timestep}',
+                                                    f'parameters={parameters}']
         print(f'Query for the new Grid object at time: {current} UTC')
         forecast_data = download_stored_query('fmi::forecast::harmonie::surface::grid',
                                             args=[f'starttime={start}',
                                                     f'endtime={end}',
                                                     f'bbox={bbox}',
-                                                    f'timestep={timestep}'])
-
+                                                    f'timestep={timestep}',
+                                                    f'parameters={parameters}']
+                                                    )
         latest_forecast = max(forecast_data.data.keys())
         self.data = forecast_data.data[latest_forecast]
         self.data.parse(delete=True)
-
         self.valid_times = self.data.data.keys()
         earliest_step = min(self.valid_times)
         self.data_levels = self.data.data[earliest_step].keys()
-
         self.coordinates = np.dstack(
             (self.data.latitudes, self.data.longitudes))
 
@@ -70,16 +75,14 @@ class Forecast:
         Returns:
             list: List of coordinate pairs.
         '''
-        unique_coords = []
+        unique_coords = set()
 
-        flattened_coords = [
-            coord for sublist in self.coordinates for coord in sublist]
+        flattened_coords = [tuple(coord) for sublist in self.coordinates for coord in sublist]
 
         for coord in flattened_coords:
-            if list(coord) not in unique_coords:
-                unique_coords.append(list(coord))
+            unique_coords.add(coord)
 
-        return unique_coords
+        return list(unique_coords)
 
     def get_closest_poi_coordinates_data(self, pois):
         '''
@@ -101,20 +104,19 @@ class Forecast:
             lat = poi.latitude
             lon = poi.longitude
             for coordinate in coordinates:
-                dist = abs(coordinate[0] - lat)\
-                    + abs(coordinate[1] - lon)
+                dist = abs(coordinate[0] - lat) + abs(coordinate[1] - lon)
                 if dist < smallest:
                     smallest = dist
                     nearest = [coordinate[0], coordinate[1]]
-            closest_coordinates[
-                f'({nearest[0]}, {nearest[1]})'] = f'{lat}, {lon}'
-            for hour, hour_data in data.items():
-                for key, value in closest_coordinates.items():
-                    forecast = hour_data[key]
-                    returned_data[hour][f'{value}'] = self.parse_forecast(forecast)
-        return returned_data
+            closest_coordinates[(lat, lon)] = nearest
             
-
+        for hour, hour_data in data.items():
+            for poi_coord, nearest in closest_coordinates.items():
+                nearest_str = f'({nearest[0]}, {nearest[1]})'
+                if nearest_str in hour_data:
+                    forecast = hour_data[nearest_str]
+                    returned_data[hour][f'{poi_coord[0]}, {poi_coord[1]}'] = self.parse_forecast(forecast)
+        return returned_data
 
     def parse_forecast(self, forecast):
         '''
@@ -143,7 +145,6 @@ class Forecast:
 
         wind_speed = self.calculate_wind_speed_and_direction(
             u_wind, v_wind)
-
         return {
             'Air temperature': f'{str(temperature)} °C',
             'Humidity': f'{str(humidity)} %',
