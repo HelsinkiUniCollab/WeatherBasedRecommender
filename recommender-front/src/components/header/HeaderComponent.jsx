@@ -5,6 +5,8 @@ import Grid from '@mui/material/Grid';
 import AccessibilityComponent from './AccessibilityComponent';
 import InfoComponent from './InfoComponent';
 import parseSliderLabels from '../../utils/HeaderUtils';
+import logo from '../../assets/WeatherBasedRecommender.svg';
+import '../../assets/style.css';
 
 function HeaderComponent({
   accessibility, handleChange, times, sliderValue, onChange, isMobile, open, handleOpen,
@@ -21,7 +23,7 @@ function HeaderComponent({
       key="main"
     >
       <Grid item xs={4} sm={5} md={5} lg={5} key="title">
-        <Typography variant="h1">Weather-Based Recommender</Typography>
+        <img src={logo} alt="Weather-Based Recommender" className="logo" />
       </Grid>
       <Grid item xs={5} sm={5} md={5} lg={5} className="dropdown-item" key="dropdown">
         <AccessibilityComponent accessibility={accessibility} handleChange={handleChange} />

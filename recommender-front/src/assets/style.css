@@ -163,3 +163,14 @@ body {
   text-align: center;
   line-height: 40px;
 }
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 100px;
+  }
+}
