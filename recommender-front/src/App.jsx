@@ -98,6 +98,7 @@ function App() {
               handleOpen={handleOpen}
               handleClose={handleClose}
               isMobile={isMobile}
+              poiData={poiData}
             />
           </Grid>
           <Grid item xs={12} className={`map-container${showAlert ? ' disabled' : ''}`}>
