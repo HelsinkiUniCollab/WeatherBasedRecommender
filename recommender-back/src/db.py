@@ -10,6 +10,9 @@ def get_db():
         print(' * Connecting to', mongo_uri)
         client = MongoClient(mongo_uri)
         db = client.get_database('development') 
+        collection_name = 'pois' 
+        if collection_name not in db.list_collection_names():
+            db.create_collection(collection_name)
         print(' * Connected to MongoDB')
         return db, client
     except Exception as e:
