@@ -22,10 +22,14 @@ cache.init_app(app)
 def get_db():
     try:
         mongo_uri = os.environ.get('DEVELOPMENT_DB_URI')
-        print('connecting to', mongo_uri)
+        print(' * Connecting to', mongo_uri)
         client = MongoClient(mongo_uri)
         db = client.get_database('development') 
-        print('connected to MongoDB')
+        print(' * Connected to MongoDB')
+        collection = db['pois']
+        test = collection.find_one()
+        print(test)
+        client.close()
         return db
     except Exception as e:
         print('Error connecting to MongoDB:', str(e))
