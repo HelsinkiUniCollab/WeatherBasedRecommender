@@ -25,6 +25,6 @@ class Poi:
         db, client = get_db()
         collection = db['pois']
         all_documents = collection.find()
-        for document in all_documents:
-           print(document)
+        pois = list(all_documents)
         close_db(client)
+        return pois

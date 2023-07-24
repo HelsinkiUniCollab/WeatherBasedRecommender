@@ -7,7 +7,7 @@ mongo_uri = os.environ.get('DEVELOPMENT_DB_URI')
 
 def get_db():
     try:
-        print(' * Connecting to', mongo_uri)
+        print(' * Connecting to MongoDB')
         client = MongoClient(mongo_uri)
         db = client.get_database('development') 
         collection_name = 'pois'

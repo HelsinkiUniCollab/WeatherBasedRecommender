@@ -3,7 +3,6 @@ from flask import Flask
 from flask_caching import Cache
 from flask_cors import CORS
 from dotenv import load_dotenv
-from .models import Poi
 
 load_dotenv()
 
@@ -18,8 +17,5 @@ CORS(app)
 
 cache = Cache(config={'CACHE_TYPE': 'SimpleCache'})
 cache.init_app(app)
-
-# Testing database connection
-Poi.get_all()
 
 from src import routes

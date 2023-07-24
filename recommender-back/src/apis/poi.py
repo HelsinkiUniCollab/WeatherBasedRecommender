@@ -18,28 +18,30 @@ class PointOfInterest:
         Chooses which algorithm to use in scoring.
         Must be manually handled to adjust when adding new points of interest.
         '''
-        indoor_categories = ['Sport halls']
+        #indoor_categories = ['Sport halls']
         outdoor_categories = ['Open air pools and beaches',
-                              'Athletic fields and venues', 'Neighbourhood sports facilities and parks']
+                              'Athletic fields and venues', 
+                              'Neighbourhood sports areas',
+                              'Fitness training parks']
         sunrise = self.sun[0]
         sunset = self.sun[1]
 
-        for category in self.categories:
-            for timeinterval, data in enumerate(self.weather.values()):
-                cur_time = times.get_current_time(timeinterval)
-                wind_speed = float(data.get('Wind speed').split(' ')[0])
-                precipitation = float(data.get('Precipitation').split(' ')[0])
-                clouds = float(data.get('Cloud amount').split(' ')[0]) * 0.01
-                temperature = float(data.get('Air temperature').split(' ')[0])
-                humidity = float(data.get('Humidity').split(' ')[0]) * 0.01
+        category = self.categories[-1]
+        for timeinterval, data in enumerate(self.weather.values()):
+            cur_time = times.get_current_time(timeinterval)
+            wind_speed = float(data.get('Wind speed').split(' ')[0])
+            precipitation = float(data.get('Precipitation').split(' ')[0])
+            clouds = float(data.get('Cloud amount').split(' ')[0]) * 0.01
+            temperature = float(data.get('Air temperature').split(' ')[0])
+            humidity = float(data.get('Humidity').split(' ')[0]) * 0.01
 
-                if category in outdoor_categories:
-                    self.categorytype = "Outdoor"
-                    data['Score'] = self._outdoor_score(temperature, wind_speed, humidity,
+            if category in outdoor_categories:
+                self.categorytype = "Outdoor"
+                data['Score'] = self._outdoor_score(temperature, wind_speed, humidity,
                                                         precipitation, clouds, sunrise, sunset, cur_time)
-                elif category in indoor_categories:
-                    self.categorytype = "Indoor"
-                    data['Score'] = self._indoor_score(temperature, wind_speed, humidity,
+            else: #category in indoor_categories:
+                self.categorytype = "Indoor"
+                data['Score'] = self._indoor_score(temperature, wind_speed, humidity,
                                                        precipitation, clouds, sunrise, sunset, cur_time)
 
     def _outdoor_score(self, temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
