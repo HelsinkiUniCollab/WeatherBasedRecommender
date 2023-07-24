@@ -1,10 +1,12 @@
 from .db import get_db, close_db
 
 class Poi:
-    def __init__(self, name, latitude, longitude):
+    def __init__(self, name, latitude, longitude, accessibility, categories):
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
+        self.accessibility = accessibility
+        self.categories = categories
 
     def save(self):
         db, client = get_db()
@@ -12,7 +14,9 @@ class Poi:
         collection.insert_one({
             'name': self.name,
             'latitude': self.latitude,
-            'longitude': self.longitude
+            'longitude': self.longitude,
+            'not_accessible_for': self.accessibility,
+            'categories': self.categories
         })
         close_db(client)
 

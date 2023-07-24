@@ -20,8 +20,6 @@ cache = Cache(config={'CACHE_TYPE': 'SimpleCache'})
 cache.init_app(app)
 
 # Testing database connection
-Poi.save(Poi("Test Poi1", 100, 100))
-Poi.save(Poi("Test Poi2", 120, 120))
 Poi.get_all()
 
 from src import routes
