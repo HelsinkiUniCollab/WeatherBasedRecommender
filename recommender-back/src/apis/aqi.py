@@ -1,3 +1,4 @@
+import numpy as np
 from netCDF4 import Dataset
 from datetime import datetime, timedelta
 from fmiopendata.grid import download_and_parse
@@ -50,14 +51,15 @@ class AQI:
         data = {}
         for datetime in datetimes:
             time_str = datetime.strftime('%Y-%m-%d %H:%M:%S')
-            aqi = datetimes[datetime]
+            aqi_object = datetimes[datetime]
             coordinate_data = {}
             for lat, lon in zip(self.latitudes, self.longitudes):
+                lat_index = np.where(self.latitudes == lat)[0][0]
+                lon_index = np.where(self.longitudes == lon)[0][0]
                 coord_pairs = str((lat, lon))
                 if coord_pairs not in coordinate_data:
                     coordinate_data[coord_pairs] = []
-                coordinate_data[coord_pairs].append(
-                            {'Air Quality Index': aqi.data[int(lat)][int(lon)]})
+                coordinate_data[coord_pairs].append({'Air Quality Index': aqi_object.data[lat_index, lon_index]})
             data[time_str] = coordinate_data
 
         return data
@@ -71,4 +73,5 @@ class AQI:
 if __name__ == "__main__":
     aqi = AQI()
     aqi.download_netcdf()
-    #data = aqi._to_json('filepath here')
+    #data = aqi._to_json('your_file_path_here')
+    #print(data)
