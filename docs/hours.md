@@ -76,8 +76,8 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | -            | 1 sprint planning | 2 test        | 5 live         | -            | -             | 2 daily/aqi/logo  | 10     |
 | Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami S. | -            | 1 sprint planning             | 4 pull reqs, backend tests               | 5 live              | -            | -             | -           | -     |
-| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami S. | -            | 1 sprint planning             | 4 pull reqs, backend tests               | 5 live              | -            | -             | 4 mongodb, pull reqs           | 14     |
+| Sami M. | -            | 1 sprint planning             | 3 test fore/current/times               | 5 live              | -            | -             | 5 research netcdf, aqi skeleton           | 14     |
 | Pia     | -            | 2 scrum master stuff            | -               | 6 live              | -            | 2,5 mongo            | 4,5 mongo           | -     |
 | Joni    | -            | 1 sprint meeting | -               | 6 live      | 2 backend    | 3 backend     | 6 backend   | 18     |
 
