@@ -75,7 +75,7 @@
 |         | Monday 17.7. | Tuesday 18.7. | Wednesday 19.7. | Thursday 20.7. | Friday 21.7. | Saturday 22.7. | Sunday 23.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | -            | 1 sprint planning | 2 test        | 5 live         | -            | -             | 2 daily/aqi/logo  | 10     |
-| Isak    | 1,5            | -             | -               | 1              | -            | -             | -           | 4     |
+| Isak    | 1,5            | 1             | 1               | 1              | 1            | 1             | -           | 8     |
 | Sami S. | -            | 1 sprint planning             | 4 pull reqs, backend tests               | 5 live              | -            | -             | 4 mongodb, pull reqs           | 14     |
 | Sami M. | -            | 1 sprint planning             | 3 test fore/current/times               | 5 live              | -            | -             | 5 research netcdf, aqi skeleton           | 14     |
 | Pia     | -            | 2 scrum master stuff            | -               | 6 live              | -            | 2,5 mongo            | 4,5 mongo           | -     |
@@ -84,7 +84,7 @@
 |         | Monday 24.7. | Tuesday 25.7. | Wednesday 26.7. | Thursday 27.7. | Friday 28.7. | Saturday 29.7. | Sunday 30.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
-| Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Isak    | -            | 1,5             | -               | -              | -            | -             | -           | 1,5     |
 | Sami S. | 5.5 mongodb            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | 6 research netcdf more / parse data / convert json            | -             | -               | -              | -            | -             | -           | -     |
 | Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
