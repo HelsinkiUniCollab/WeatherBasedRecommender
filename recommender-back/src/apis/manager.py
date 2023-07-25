@@ -7,8 +7,9 @@ from .current import Current
 from .poi import PointOfInterest
 from ..services.forecastdatafetcher import ForecastDataFetcher
 
-def get_pois_as_json(accessibility=False, category='All'):
-    '''
+
+def get_pois_as_json(accessibility=False, category="All"):
+    """
     Retrieves points of interest (POIs) from a JSON file and enriches them with current weather data.
 
     Returns:
@@ -16,20 +17,19 @@ def get_pois_as_json(accessibility=False, category='All'):
 
     Raises:
         KeyError: If an error occurs while processing the data.
-    '''
+    """
     try:
         pois = get_pois()
         weather_fetcher = ForecastDataFetcher()
         current = Current(weather_fetcher)
-        url = os.environ.get('REACT_APP_BACKEND_URL') + '/api/forecast'
+        url = os.environ.get("REACT_APP_BACKEND_URL") + "/api/forecast"
         response = requests.get(url, timeout=180)
         forecast_data = response.json()
         updated_data = []
         for poi in pois:
             if category not in poi.categories:
                 continue
-            poi: PointOfInterest = current.find_nearest_stations_weather_data(
-                poi)
+            poi: PointOfInterest = current.find_nearest_stations_weather_data(poi)
             poi = find_nearest_coordinate_forecast_data(poi, forecast_data)
             poi.calculate_score()
             if accessibility in poi.not_accessible_for:
@@ -37,39 +37,43 @@ def get_pois_as_json(accessibility=False, category='All'):
             updated_data.append(poi.get_json())
         return json.dumps(updated_data)
     except KeyError as error:
-        return {
-            'message': 'An error occurred',
-            'status': 500,
-            'error': str(error)
-        }
+        return {"message": "An error occurred", "status": 500, "error": str(error)}
     except Timeout as error:
-        return {
-            'message': 'Forecast timed out',
-            'status': 500,
-            'error': str(error)
-        }
+        return {"message": "Forecast timed out", "status": 500, "error": str(error)}
 
 
 def find_nearest_coordinate_forecast_data(poi: PointOfInterest, forecast_data):
-    '''
+    """
     Retrieves all points of interest (POIs) from JSON files and merges them together.
 
     Args:
-        category (list): List of categories of POIs to retrieve. If None, default categories will be used.
+        category (list): List of categories of POIs to retrieve.
+        If None, default categories will be used.
 
     Returns:
         list: List of all POIs.
-    '''
-    lat = poi.latitude
-    lon = poi.longitude
-    for hour in forecast_data:
-        data = forecast_data[hour]
-        poi.weather[f'{hour[11:16]}'] = data[f'{lat}, {lon}']
+    """
+    try:
+        lat = poi.latitude
+        lon = poi.longitude
+        for hour in forecast_data:
+            data = forecast_data[hour]
+            time_key = f"{hour[11:16]}"
+            coord_key = f"{lat}, {lon}"
+
+            if forecast_data is None or coord_key not in data:
+                return poi
+
+            poi.weather[time_key] = data[coord_key]
+    except TypeError:
+        print("Failed to find nearest coordinate forecast data. TypeError occurred.")
+        return poi
+
     return poi
 
 
 def get_pois():
-    '''
+    """
     Retrieves all points of interest (POIs) from JSON files and merges them together.
 
     Args:
@@ -78,14 +82,15 @@ def get_pois():
     Returns:
         list: List of all POIs.
 
-    '''
-    with open('src/static/pois.json', 'r', encoding='utf-8') as file:
+    """
+    with open("src/static/pois.json", "r", encoding="utf-8") as file:
         data = json.load(file)
         pois = iterate_items(data, [])
         return filter_duplicates(pois)
 
+
 def filter_duplicates(pois):
-    '''
+    """
     Filters duplicates from POI -list. Some POIs belong to multiple categories which can lead to duplicates.add()
 
     Args:
@@ -94,7 +99,7 @@ def filter_duplicates(pois):
     Returns:
         list: Dictionary converted to list containing filtered POIs.
 
-    '''
+    """
     uniques = {}
     for poi in pois:
         name = poi.name
@@ -102,8 +107,9 @@ def filter_duplicates(pois):
             uniques[name] = poi
     return list(uniques.values())
 
+
 def iterate_items(data, categories):
-    '''
+    """
     Recursively iterates over the data and constructs a list of PointOfInterest objects.
 
     Args:
@@ -113,17 +119,17 @@ def iterate_items(data, categories):
     Returns:
         list: List of PointOfInterest objects constructed from the data.
 
-    '''
+    """
     pois = []
     if isinstance(data, list):
         for item in data:
-            name = item['name']['fi']
-            longitude = item['location']['coordinates'][0]
-            latitude = item['location']['coordinates'][1]
-            not_accessible_for = list(
-                item['accessibility_shortcoming_count'].keys())
-            poi = PointOfInterest(name, latitude, longitude,
-                                  not_accessible_for, categories)
+            name = item["name"]["fi"]
+            longitude = item["location"]["coordinates"][0]
+            latitude = item["location"]["coordinates"][1]
+            not_accessible_for = list(item["accessibility_shortcoming_count"].keys())
+            poi = PointOfInterest(
+                name, latitude, longitude, not_accessible_for, categories
+            )
             pois.append(poi)
     else:
         for key, item in data.items():
