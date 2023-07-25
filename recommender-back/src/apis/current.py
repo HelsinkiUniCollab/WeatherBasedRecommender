@@ -51,13 +51,11 @@ class Current:
             aqidata = {
                 'Air quality': str(obs.data[station]['AQINDEX_PT1H_avg']['values'][-1]) + ' AQI'
             }
-            for value in list(aqidata):
-                if 'nan' in str(aqidata[value]):
-                    aqidata.pop(value)
-            if aqidata:
-                aqidata['Latitude'] = metadata['latitude']
-                aqidata['Longitude'] = metadata['longitude']
-                data[station] = aqidata
+            if 'nan' in str(aqidata['Air quality']):
+                continue
+            aqidata['Latitude'] = metadata['latitude']
+            aqidata['Longitude'] = metadata['longitude']
+            data[station] = aqidata
         self.aqi = data
 
     def find_nearest_stations_weather_data(self, poi: PointOfInterest):
