@@ -1,9 +1,11 @@
 import copy
-from fmiopendata.wfs import download_stored_query
 from .poi import PointOfInterest
+from ..services.forecastdatafetcher import ForecastDataFetcher
+from ..config import Config
 
 class Current:
-    def __init__(self):
+    def __init__(self, fetcher: ForecastDataFetcher):
+        self.fetcher = fetcher
         self.weather = None
         self.get_current_weather()
 
@@ -14,9 +16,7 @@ class Current:
         Returns:
             dict: A dictionary containing the current weather data for each station.
         '''
-
-        obs = download_stored_query('fmi::observations::weather::multipointcoverage',
-                                    args=['bbox=24.5,60,25.5,60.5', 'timeseries=True'])
+        obs = self.fetcher.get_current_weather_data(Config.BBOX, True)
         data = {}
         for station, metadata in obs.location_metadata.items():
             weatherdata = {

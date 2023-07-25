@@ -5,7 +5,7 @@ import requests
 from requests import Timeout
 from .current import Current
 from .poi import PointOfInterest
-
+from ..services.forecastdatafetcher import ForecastDataFetcher
 
 def get_pois_as_json(accessibility=False, category='All'):
     '''
@@ -19,7 +19,8 @@ def get_pois_as_json(accessibility=False, category='All'):
     '''
     try:
         pois = get_pois()
-        current = Current()
+        weather_fetcher = ForecastDataFetcher()
+        current = Current(weather_fetcher)
         url = os.environ.get('REACT_APP_BACKEND_URL') + '/api/forecast'
         response = requests.get(url, timeout=180)
         forecast_data = response.json()
