@@ -6,6 +6,13 @@ from times import get_forecast_times
 
 class AQI:
     def __init__(self):
+        """A class representing a single AQI object
+
+        Args:
+            url (string): url link to latest netcdf aqi file
+            latitudes (numpy array): latitude coordinates as numpy array
+            longitudes (numpy array): longitude coordinates as numpy array
+        """
         self.grid_times = self._download_and_parse_xml()
         self.data = None
         self.url = None
@@ -14,11 +21,15 @@ class AQI:
 
     # only downloads the file url from xml right now
     def download_netcdf(self):
+        """Downloads the latest netcdf aqi file
+        """
         latest_forecast = max(self.grid_times.data.keys())
         self.data = self.grid_times.data[latest_forecast]
         self.url = self._replace_bbox_in_url(self.data.url, '24.5,60,25.5,60.5')
 
     def _download_and_parse_xml(self):
+        """Downloads and parses xml file based on the given query
+        """
         _, start, end = get_forecast_times()
         query_id = 'fmi::forecast::enfuser::airquality::helsinki-metropolitan::grid'
         params = 'AQIndex'
@@ -26,6 +37,14 @@ class AQI:
         return download_and_parse(query_id, args)
 
     def _parse_netcdf(self, nc_file_path):
+        """Parses the given netcdf file
+
+        Args:
+            nc_file_path (string): location of nc (netcdf) file
+
+        Returns:
+            dict: A dictionary of datetimes keys and AQI object values
+        """
         data = Dataset(nc_file_path)
 
         self.latitudes = data.variables['lat'][:]
@@ -46,6 +65,14 @@ class AQI:
         return datetimes
 
     def _to_json(self, nc_file_path):
+        """Converts the parsed netcdf data into json form
+
+        Args:
+            nc_file_path (string): location of nc (netcdf) file
+
+        Returns:
+            json: AQI data in json format
+        """
         datetimes = self._parse_netcdf(nc_file_path)
 
         data = {}
@@ -65,6 +92,15 @@ class AQI:
         return data
 
     def _replace_bbox_in_url(self, url, new_bbox):
+        """Takes the url and replaces the bbox coordinates with new coordinates
+
+        Args:
+            url (string): url of netcdf file
+            new_bbox (string): new bbox values as a string i.e '24.5,60,25.5,60.5'
+
+        Returns:
+            string: new url with replaced bbox value
+        """
         start_index = url.find('bbox=')
         end_index = url.find('&', start_index)
         new_url = url[:start_index] + 'bbox=' + new_bbox + url[end_index:]
