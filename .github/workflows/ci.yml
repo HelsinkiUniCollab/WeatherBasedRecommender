@@ -32,9 +32,12 @@ jobs:
           cd recommender-back
           poetry install
 
-      - name: Run backend tests and coverage
+      - name: Set environment variable
         run: |
           echo "DEVELOPMENT_DB_URI=$DEVELOPMENT_DB_URI" >> $GITHUB_ENV
+
+      - name: Run backend tests and coverage
+        run: |
           cd recommender-back
           poetry run coverage run --branch -m pytest
           poetry run coverage xml
