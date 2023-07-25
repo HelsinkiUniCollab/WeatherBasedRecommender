@@ -1,10 +1,12 @@
 import unittest
+from src.apis.db import get_db, close_db
 from src.apis.manager import get_pois, find_nearest_coordinate_forecast_data
 from src.apis.poi import PointOfInterest
 
 
 class TestManger(unittest.TestCase):
     def setUp(self):
+        self.mongo_db, self.mongo_client = get_db(test_env=True)
         self.fore = {
         "2023-07-20 12:00:00": {
         "60.201231, 24.973478": {
@@ -78,20 +80,20 @@ class TestManger(unittest.TestCase):
         }
 
     def test_get_pois_returns_list(self):
-        result = get_pois()
+        result = get_pois(test=True)
         self.assertIsInstance(result, list)
 
     def test_get_pois_contains_items(self):
-        result = get_pois()
+        result = get_pois(test=True)
         self.assertTrue(len(result) > 0)
 
     def test_get_pois_all_items_are_point_of_interest_objects(self):
-        result = get_pois()
+        result = get_pois(test=True)
         for poi in result:
             self.assertIsInstance(poi, PointOfInterest)
 
     def test_get_pois_structure(self):
-        result = get_pois()
+        result = get_pois(test=True)
         for poi in result:
             self.assertTrue(hasattr(poi, 'name'))
             self.assertTrue(hasattr(poi, 'latitude'))
@@ -100,17 +102,20 @@ class TestManger(unittest.TestCase):
             self.assertTrue(hasattr(poi, 'categories'))
 
     def test_get_pois_coordinates_valid(self):
-        result = get_pois()
+        result = get_pois(test=True)
         for poi in result:
             self.assertIsInstance(poi.latitude, float)
             self.assertIsInstance(poi.longitude, float)
 
     def test_find_nearest_coordinates(self):
-        pois = get_pois()
-        for onepoi in pois:
+        result = get_pois(test=True)
+        for onepoi in result:
             res = find_nearest_coordinate_forecast_data(onepoi,self.fore)
             self.assertEqual(len(res.weather),3)
             break
+    
+    def tearDown(self):
+        close_db(self.mongo_client)
 
 if __name__ == '__main__':
     unittest.main()

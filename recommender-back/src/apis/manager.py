@@ -64,7 +64,7 @@ def find_nearest_coordinate_forecast_data(poi: PointOfInterest, forecast_data):
         poi.weather[f'{hour[11:16]}'] = data[f'{lat}, {lon}']
     return poi
 
-def get_pois():
+def get_pois(test=False):
     '''
     Converts mongoDB documents into POI -objects.
 
@@ -74,7 +74,7 @@ def get_pois():
     Returns:
         list: List of POI -objects.
     '''
-    collection = Poi.get_all()
+    collection = Poi.get_all(test)
     pois = []
     for poi in collection:
         name = poi['name']

@@ -21,8 +21,8 @@ class Poi:
         close_db(client)
 
     @staticmethod
-    def get_all():
-        db, client = get_db()
+    def get_all(test=False):
+        db, client = get_db(test)
         collection = db['pois']
         all_documents = collection.find()
         pois = list(all_documents)
