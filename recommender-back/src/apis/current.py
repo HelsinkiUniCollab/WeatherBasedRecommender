@@ -97,7 +97,7 @@ class Current:
                                             + abs(aqi[station]['Longitude'] - lon)
                     if dist < smallest:
                         smallest, nearest = dist, station
-                returned.setdefault("Air quality", aqi[nearest]["Air quality"])
+                returned.setdefault('Air quality', aqi[nearest]['Air quality'])
                 break
             del weather[nearest]
         poi.weather['Current'] = returned
