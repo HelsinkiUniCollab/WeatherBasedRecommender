@@ -97,3 +97,6 @@ venv/
 
 # mypy
 .mypy_cache/
+
+# misc
+*.swp
