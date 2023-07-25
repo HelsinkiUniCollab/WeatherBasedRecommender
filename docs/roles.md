@@ -6,6 +6,7 @@ The team has four rotating roles:
 - *demo coordinator* for the customer meeting
 - *secretary* for the customer meeting
 - *scrum master* for the sprint
+
 ## Chairman
 
 - Approx 1-2 hours of extra work
@@ -59,16 +60,23 @@ The team has four rotating roles:
 - Creates the burndown graph and adds it to the documentation
 - Prepares and documents the retrospective [here](https://miro.com/app/board/uXjVMHY7v4k=/)
 # Role rotations
-## Sprint 0
+
+## Start
 - chairman: Pia 
 - demo coordinator: -  
 - secretary: Juuso 
-- scrum master: - 
+- scrum master: Pia
 
-## Sprint 1
+## Sprint 0
 - chairman: Juuso 
 - demo coordinator: Pia
 - secretary: Sami S 
+- scrum master: Pia
+
+## Sprint 1
+- chairman: Isak 
+- demo coordinator: Juuso  
+- secretary: Sami M 
 - scrum master: Pia
 
 ## Sprint 2
@@ -83,4 +91,8 @@ The team has four rotating roles:
 - secretary: Isak
 - scrum master: Pia
 
-
+## Sprint 4
+- chairman: Sami S
+- demo coordinator: Pia (Sami M)
+- secretary: Juuso
+- scrum master: Pia
