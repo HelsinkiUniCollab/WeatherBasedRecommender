@@ -25,14 +25,16 @@ class CurrentTest(unittest.TestCase):
                     'ws_10min': {'values': ['nan']},
                     'ri_10min': {'values': ['nan']},
                     'n_man': {'values': ['nan']},
-                    'rh': {'values': ['nan']}
+                    'rh': {'values': ['nan']},
+                    'AQINDEX_PT1H_avg': {'values': ['nan']}
                 },
                 'station2': {
                     't2m': {'values': [11.2]},
                     'ws_10min': {'values': ['nan']},
                     'ri_10min': {'values': ['nan']},
                     'n_man': {'values': ['nan']},
-                    'rh': {'values': ['nan']}
+                    'rh': {'values': ['nan']},
+                    'AQINDEX_PT1H_avg': {'values': ['nan']}
                 }
             }
             mock_download.return_value = mock_response
@@ -61,7 +63,8 @@ class CurrentTest(unittest.TestCase):
                 'Wind speed': '10.0 m/s',
                 'Precipitation': '10.0 %',
                 'Cloud amount': '5.0 %',
-                'Humidity': '60.0 %'
+                'Humidity': '60.0 %',
+                'Air quality': '1.0 AQI'
             },
             'station2': {
                 'Latitude': 60.5,
@@ -70,7 +73,8 @@ class CurrentTest(unittest.TestCase):
                 'Wind speed': '10.0 m/s',
                 'Precipitation': '10.0 %',
                 'Cloud amount': '5.0 %',
-                'Humidity': '60.0 %'
+                'Humidity': '60.0 %',
+                'Air quality': '1.0 AQI'
             }
         }
 
@@ -79,7 +83,8 @@ class CurrentTest(unittest.TestCase):
             'Wind speed': '10.0 m/s',
             'Precipitation': '10.0 %',
             'Cloud amount': '5.0 %',
-            'Humidity': '60.0 %'
+            'Humidity': '60.0 %',
+            'Air quality': '1.0 AQI'
         }
         self.current.find_nearest_stations_weather_data(self.item)
         self.assertEqual(self.item.weather['Current'], expected_item)
@@ -94,7 +99,8 @@ class CurrentTest(unittest.TestCase):
                 'Air temperature': '10.5 °C',
                 'Precipitation': '10.0 %',
                 'Cloud amount': '5.0 %',
-                'Humidity': '60.0 %'
+                'Humidity': '60.0 %',
+                'Air quality': '1.0 AQI'
             },
             'station2': {
                 'Latitude': 60.5,
@@ -102,7 +108,8 @@ class CurrentTest(unittest.TestCase):
                 'Wind speed': '10.0 m/s',
                 'Precipitation': '10.0 %',
                 'Cloud amount': '5.0 %',
-                'Humidity': '60.0 %'
+                'Humidity': '60.0 %',
+                'Air quality': '1.0 AQI'
             }
         }
 
@@ -111,7 +118,8 @@ class CurrentTest(unittest.TestCase):
         'Wind speed': '10.0 m/s',
         'Precipitation': '10.0 %',
         'Cloud amount': '5.0 %',
-        'Humidity': '60.0 %'
+        'Humidity': '60.0 %',
+        'Air quality': '1.0 AQI'
         }
 
         self.current.find_nearest_stations_weather_data(self.item)
