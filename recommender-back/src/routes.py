@@ -36,9 +36,7 @@ def get_forecast():
     forecast.update_data()
     pois = manager.get_pois()
     poi_forecast = forecast.get_closest_poi_coordinates_data(pois)
-    result = json.dumps(poi_forecast)
-
-    return result
+    return json.dumps(poi_forecast)
 
 
 @app.route('/api/poi/', methods=['GET'])
