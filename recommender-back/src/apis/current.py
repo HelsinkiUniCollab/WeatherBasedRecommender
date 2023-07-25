@@ -7,7 +7,7 @@ class Current:
         self.weather = None
         self.aqi = None
         self.get_current_weather()
-        self.get_current_airquality()
+        self.get_current_air_quality()
 
     def get_current_weather(self):
         '''
@@ -21,23 +21,23 @@ class Current:
                                     args=['bbox=24.5,60,25.5,60.5', 'timeseries=True'])
         data = {}
         for station, metadata in obs.location_metadata.items():
-            weatherdata = {
+            weather = {
                 'Air temperature': str(obs.data[station]['t2m']['values'][-1]) + ' °C',
                 'Wind speed': str(obs.data[station]['ws_10min']['values'][-1]) + ' m/s',
                 'Humidity': str(obs.data[station]['rh']['values'][-1]) + ' %',
                 'Precipitation': str(obs.data[station]['ri_10min']['values'][-1]) + ' mm',
                 'Cloud amount': str(obs.data[station]['n_man']['values'][-1]) + ' %',
             }
-            for value in list(weatherdata):
-                if 'nan' in str(weatherdata[value]):
-                    weatherdata.pop(value)
-            if weatherdata:
-                weatherdata['Latitude'] = metadata['latitude']
-                weatherdata['Longitude'] = metadata['longitude']
-                data[station] = weatherdata
+            for value in list(weather):
+                if 'nan' in str(weather[value]):
+                    weather.pop(value)
+            if weather:
+                weather['Latitude'] = metadata['latitude']
+                weather['Longitude'] = metadata['longitude']
+                data[station] = weather
         self.weather = data
 
-    def get_current_airquality(self):
+    def get_current_air_quality(self):
         '''
         Retrieves the current AQI data for various stations.
 
@@ -48,14 +48,14 @@ class Current:
                                     args=['bbox=24.5,60,25.5,60.5', 'timeseries=True'])
         data = {}
         for station, metadata in obs.location_metadata.items():
-            aqidata = {
+            aqi = {
                 'Air quality': str(obs.data[station]['AQINDEX_PT1H_avg']['values'][-1]) + ' AQI'
             }
-            if 'nan' in str(aqidata['Air quality']):
+            if 'nan' in str(aqi['Air quality']):
                 continue
-            aqidata['Latitude'] = metadata['latitude']
-            aqidata['Longitude'] = metadata['longitude']
-            data[station] = aqidata
+            aqi['Latitude'] = metadata['latitude']
+            aqi['Longitude'] = metadata['longitude']
+            data[station] = aqi
         self.aqi = data
 
     def find_nearest_stations_weather_data(self, poi: PointOfInterest):
@@ -90,12 +90,13 @@ class Current:
                         missing_fields.remove(key)
             if not missing_fields or not weather:
                 smallest, nearest = float('inf'), ''
-                for station in aqi:
-                    dist = abs(aqi[station]['Latitude'] - lat)\
-                                            + abs(aqi[station]['Longitude'] - lon)
-                    if dist < smallest:
-                        smallest, nearest = dist, station
-                returned.setdefault('Air quality', aqi[nearest]['Air quality'])
+                if aqi is not None:
+                    for station in aqi:
+                        dist = abs(aqi[station]['Latitude'] - lat)\
+                                                + abs(aqi[station]['Longitude'] - lon)
+                        if dist < smallest:
+                            smallest, nearest = dist, station
+                    returned.setdefault('Air quality', aqi[nearest]['Air quality'])
                 break
             del weather[nearest]
         poi.weather['Current'] = returned
