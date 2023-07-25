@@ -9,16 +9,12 @@ def get_db(test_env=False):
     try:
         print(' * Connecting to MongoDB')
         if test_env:
-            collection_name = 'test_pois'
             client = MongoClient(mongo_uri)
             db = client.get_database('test_db')
         else:
-            collection_name = 'pois'
             client = MongoClient(mongo_uri)
             db = client.get_database('development')
         db['pois'].create_index('name', unique=True)
-        if collection_name not in db.list_collection_names():
-            db.create_collection(collection_name)
         print(' * Connected to MongoDB')
         return db, client
     except Exception as e:
@@ -28,4 +24,3 @@ def get_db(test_env=False):
 def close_db(client):
     client.close()
     print(' * Connection closed to MongoDB')
-    
