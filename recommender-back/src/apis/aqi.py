@@ -75,6 +75,7 @@ class AQI:
             datetimes[current_datetime] = aqi_obj
 
         self.datetimes = datetimes
+        self.dataset.close()
 
     def _to_json(self):
         """Converts the parsed netcdf data into JSON format
@@ -90,11 +91,11 @@ class AQI:
             for lat, lon in zip(self.latitudes, self.longitudes):
                 lat_index = np.where(self.latitudes == lat)[0][0]
                 lon_index = np.where(self.longitudes == lon)[0][0]
-                coord_pairs = f"{lat}, {lon}"
+                coord_pairs = (lat, lon)
                 if coord_pairs not in coordinate_data:
                     coordinate_data[coord_pairs] = []
                 coordinate_data[coord_pairs].append({'Air Quality Index': 
-                                                     aqi_object.data[lat_index, lon_index]})
+                                                     str(aqi_object.data[lat_index, lon_index])})
             data[time_str] = coordinate_data
 
         self.json = data
@@ -120,7 +121,7 @@ class AQI:
     def get_coordinates(self):
         unique_coords = []
         for hour_data in self.json.values():
-            for coord_str in hour_data.keys():
-                lat, lon = map(float, coord_str.split(", "))
-                unique_coords.append((lat, lon))
+            for coord_tuple in hour_data.keys():
+                lat, lon = coord_tuple
+                unique_coords.append((float(lat), float(lon)))
         return unique_coords
