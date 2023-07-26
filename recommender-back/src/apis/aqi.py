@@ -1,8 +1,10 @@
 import numpy as np
+import tempfile 
 from netCDF4 import Dataset
 from datetime import datetime, timedelta
 from fmiopendata.grid import download_and_parse
-from times import get_forecast_times
+from fmiopendata.utils import download_to_file
+from .times import get_forecast_times
 
 class AQI:
     def __init__(self):
@@ -13,19 +15,34 @@ class AQI:
             latitudes (numpy array): latitude coordinates as numpy array
             longitudes (numpy array): longitude coordinates as numpy array
         """
-        self.grid_times = self._download_and_parse_xml()
         self.data = None
+        self.json = None
+        self.dataset = None
+        self.file = None
         self.url = None
+        self.datetimes = None
         self.latitudes = None
         self.longitudes = None
 
-    # only downloads the file url from xml right now
-    def download_netcdf(self):
-        """Downloads the latest netcdf aqi file
+    def download_netcdf_and_store(self):
+        """Downloads netcdf file, parses it and stores the data in the object.
+           The temporary file is deleted afterwards.
         """
-        latest_forecast = max(self.grid_times.data.keys())
-        self.data = self.grid_times.data[latest_forecast]
+        grid_times = self._download_and_parse_xml()
+        latest_forecast = max(grid_times.data.keys())
+        self.data = grid_times.data[latest_forecast]
         self.url = self._replace_bbox_in_url(self.data.url, '24.5,60,25.5,60.5')
+
+        if self.file is not None:
+            return
+
+        with tempfile.NamedTemporaryFile(delete=True) as temp_file:
+            self.file = temp_file.name
+            print('Downloading AQI data')
+            download_to_file(self.url, self.file)
+            print('Finished download. Parsing...')
+            self.dataset = Dataset(self.file)
+            self._parse_netcdf()
 
     def _download_and_parse_xml(self):
         """Downloads and parses xml file based on the given query
@@ -36,21 +53,16 @@ class AQI:
         args = [f'starttime={start}', f'endtime={end}', f'parameters={params}']
         return download_and_parse(query_id, args)
 
-    def _parse_netcdf(self, nc_file_path):
+    def _parse_netcdf(self):
         """Parses the given netcdf file
-
-        Args:
-            nc_file_path (string): location of nc (netcdf) file
 
         Returns:
             dict: A dictionary of datetimes keys and AQI object values
         """
-        data = Dataset(nc_file_path)
-
-        self.latitudes = data.variables['lat'][:]
-        self.longitudes = data.variables['lon'][:]
-        time = data.variables['time'][:]
-        aqi = data.variables['index_of_airquality_194']
+        self.latitudes = self.dataset.variables['lat'][:]
+        self.longitudes = self.dataset.variables['lon'][:]
+        time = self.dataset.variables['time'][:]
+        aqi = self.dataset.variables['index_of_airquality_194']
 
         datetimes = {}
         current_time = datetime.now() + timedelta(hours=1)
@@ -62,37 +74,36 @@ class AQI:
             aqi_obj.data = aqi_index
             datetimes[current_datetime] = aqi_obj
 
-        return datetimes
+        self.datetimes = datetimes
 
-    def _to_json(self, nc_file_path):
-        """Converts the parsed netcdf data into json form
-
-        Args:
-            nc_file_path (string): location of nc (netcdf) file
+    def _to_json(self):
+        """Converts the parsed netcdf data into JSON format
 
         Returns:
-            json: AQI data in json format
+            dict: AQI data in JSON format
         """
-        datetimes = self._parse_netcdf(nc_file_path)
-
         data = {}
-        for datetime in datetimes:
+        for datetime in self.datetimes:
             time_str = datetime.strftime('%Y-%m-%d %H:%M:%S')
-            aqi_object = datetimes[datetime]
+            aqi_object = self.datetimes[datetime]
             coordinate_data = {}
             for lat, lon in zip(self.latitudes, self.longitudes):
                 lat_index = np.where(self.latitudes == lat)[0][0]
                 lon_index = np.where(self.longitudes == lon)[0][0]
-                coord_pairs = str((lat, lon))
+                coord_pairs = f"{lat}, {lon}"
                 if coord_pairs not in coordinate_data:
                     coordinate_data[coord_pairs] = []
-                coordinate_data[coord_pairs].append({'Air Quality Index': aqi_object.data[lat_index, lon_index]})
+                coordinate_data[coord_pairs].append({'Air Quality Index': 
+                                                     aqi_object.data[lat_index, lon_index]})
             data[time_str] = coordinate_data
+
+        self.json = data
 
         return data
 
     def _replace_bbox_in_url(self, url, new_bbox):
         """Takes the url and replaces the bbox coordinates with new coordinates
+           This was done because the bbox arguement did not seem to work as args 
 
         Args:
             url (string): url of netcdf file
@@ -106,8 +117,10 @@ class AQI:
         new_url = url[:start_index] + 'bbox=' + new_bbox + url[end_index:]
         return new_url
 
-if __name__ == "__main__":
-    aqi = AQI()
-    aqi.download_netcdf()
-    #data = aqi._to_json('your_file_path_here')
-    #print(data)
+    def get_coordinates(self):
+        unique_coords = []
+        for hour_data in self.json.values():
+            for coord_str in hour_data.keys():
+                lat, lon = map(float, coord_str.split(", "))
+                unique_coords.append((lat, lon))
+        return unique_coords
