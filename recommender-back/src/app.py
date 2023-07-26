@@ -36,7 +36,7 @@ scheduler.add_job(
     func="src.services.tasks:get_current_weather_data",
     trigger="interval",
     minutes=20,
-    next_run_time=datetime.datetime.now(),
+    next_run_time=datetime.datetime.now() + datetime.timedelta(seconds=10),
 )
 
 scheduler.add_job(
