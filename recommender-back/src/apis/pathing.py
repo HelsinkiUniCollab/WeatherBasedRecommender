@@ -87,4 +87,4 @@ if __name__ == "__main__":
     route_coordinates = green_paths.route_coordinates
 
     # Plotting just for testing
-    green_paths.draw_route_line()
+    #green_paths.draw_route_line()
