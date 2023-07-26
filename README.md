@@ -48,6 +48,10 @@ To run the frontend and backend services individually, refer to the instructions
   * [Burndown Chart](https://user-images.githubusercontent.com/1563603/246382227-caa3c55d-8ae1-4ff1-adc4-37d175eda30c.png)
 * [Sprint 2 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/8)
   * [Burndown Chart](https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/assets/70194087/99774edb-e132-4ed0-831b-e9b7d638ef05)
+* [Sprint 3 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/9)
+  * [Burndown Chart](https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/assets/1563603/82793050-3a47-4eb5-afba-fa1915a7f434)
+* [Sprint 4 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/10)
+
 
 
 
