@@ -24,20 +24,22 @@ class CurrentTest(unittest.TestCase):
                 "station2": {"latitude": 60.2, "longitude": 24.7},
             }
             mock_response.data = {
-                "station1": {
-                    "t2m": {"values": [10.5]},
-                    "ws_10min": {"values": ["nan"]},
-                    "ri_10min": {"values": ["nan"]},
-                    "n_man": {"values": ["nan"]},
-                    "rh": {"values": ["nan"]},
+                'station1': {
+                    't2m': {'values': [10.5]},
+                    'ws_10min': {'values': ['nan']},
+                    'ri_10min': {'values': ['nan']},
+                    'n_man': {'values': ['nan']},
+                    'rh': {'values': ['nan']},
+                    'AQINDEX_PT1H_avg': {'values': ['nan']}
                 },
-                "station2": {
-                    "t2m": {"values": [11.2]},
-                    "ws_10min": {"values": ["nan"]},
-                    "ri_10min": {"values": ["nan"]},
-                    "n_man": {"values": ["nan"]},
-                    "rh": {"values": ["nan"]},
-                },
+                'station2': {
+                    't2m': {'values': [11.2]},
+                    'ws_10min': {'values': ['nan']},
+                    'ri_10min': {'values': ['nan']},
+                    'n_man': {'values': ['nan']},
+                    'rh': {'values': ['nan']},
+                    'AQINDEX_PT1H_avg': {'values': ['nan']}
+                }
             }
             mock_download.return_value = mock_response
             self.current = Current(self.fetcher)
@@ -58,32 +60,35 @@ class CurrentTest(unittest.TestCase):
     def test_find_nearest_stations_weather_data(self):
         self.current = Current(self.fetcher)
         self.current.weather = {
-            "station1": {
-                "Latitude": 60.1,
-                "Longitude": 24.6,
-                "Air temperature": "10.5 °C",
-                "Wind speed": "10.0 m/s",
-                "Precipitation": "10.0 %",
-                "Cloud amount": "5.0 %",
-                "Humidity": "60.0 %",
+            'station1': {
+                'Latitude': 60.1,
+                'Longitude': 24.6,
+                'Air temperature': '10.5 °C',
+                'Wind speed': '10.0 m/s',
+                'Precipitation': '10.0 %',
+                'Cloud amount': '5.0 %',
+                'Humidity': '60.0 %',
+                'Air quality': '1.0 AQI'
             },
-            "station2": {
-                "Latitude": 60.5,
-                "Longitude": 26.0,
-                "Air temperature": "11.2 °C",
-                "Wind speed": "10.0 m/s",
-                "Precipitation": "10.0 %",
-                "Cloud amount": "5.0 %",
-                "Humidity": "60.0 %",
-            },
+            'station2': {
+                'Latitude': 60.5,
+                'Longitude': 26.0,
+                'Air temperature': '11.2 °C',
+                'Wind speed': '10.0 m/s',
+                'Precipitation': '10.0 %',
+                'Cloud amount': '5.0 %',
+                'Humidity': '60.0 %',
+                'Air quality': '1.0 AQI'
+            }
         }
 
         expected_item = {
-            "Air temperature": "10.5 °C",
-            "Wind speed": "10.0 m/s",
-            "Precipitation": "10.0 %",
-            "Cloud amount": "5.0 %",
-            "Humidity": "60.0 %",
+            'Air temperature': '10.5 °C',
+            'Wind speed': '10.0 m/s',
+            'Precipitation': '10.0 %',
+            'Cloud amount': '5.0 %',
+            'Humidity': '60.0 %',
+            'Air quality': '1.0 AQI'
         }
         self.current.find_nearest_stations_weather_data(self.item)
         self.assertEqual(self.item.weather["Current"], expected_item)
@@ -92,30 +97,33 @@ class CurrentTest(unittest.TestCase):
         self.current = Current(self.fetcher)
 
         self.current.weather = {
-            "station1": {
-                "Latitude": 60.1,
-                "Longitude": 24.6,
-                "Air temperature": "10.5 °C",
-                "Precipitation": "10.0 %",
-                "Cloud amount": "5.0 %",
-                "Humidity": "60.0 %",
+            'station1': {
+                'Latitude': 60.1,
+                'Longitude': 24.6,
+                'Air temperature': '10.5 °C',
+                'Precipitation': '10.0 %',
+                'Cloud amount': '5.0 %',
+                'Humidity': '60.0 %',
+                'Air quality': '1.0 AQI'
             },
-            "station2": {
-                "Latitude": 60.5,
-                "Longitude": 26.0,
-                "Wind speed": "10.0 m/s",
-                "Precipitation": "10.0 %",
-                "Cloud amount": "5.0 %",
-                "Humidity": "60.0 %",
-            },
+            'station2': {
+                'Latitude': 60.5,
+                'Longitude': 26.0,
+                'Wind speed': '10.0 m/s',
+                'Precipitation': '10.0 %',
+                'Cloud amount': '5.0 %',
+                'Humidity': '60.0 %',
+                'Air quality': '1.0 AQI'
+            }
         }
 
         expected_item = {
-            "Air temperature": "10.5 °C",
-            "Wind speed": "10.0 m/s",
-            "Precipitation": "10.0 %",
-            "Cloud amount": "5.0 %",
-            "Humidity": "60.0 %",
+        'Air temperature': '10.5 °C',
+        'Wind speed': '10.0 m/s',
+        'Precipitation': '10.0 %',
+        'Cloud amount': '5.0 %',
+        'Humidity': '60.0 %',
+        'Air quality': '1.0 AQI'
         }
 
         self.current.find_nearest_stations_weather_data(self.item)
