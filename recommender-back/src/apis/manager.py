@@ -5,7 +5,7 @@ import requests
 from requests import Timeout
 from .current import Current
 from .poi import PointOfInterest
-from ..services.forecastdatafetcher import ForecastDataFetcher
+from ..services.forecastdatafetcher import DataFetcher
 
 
 def get_pois_as_json(accessibility=False, category="All"):
@@ -20,7 +20,7 @@ def get_pois_as_json(accessibility=False, category="All"):
     """
     try:
         pois = get_pois()
-        weather_fetcher = ForecastDataFetcher()
+        weather_fetcher = DataFetcher()
         current = Current(weather_fetcher)
         url = os.environ.get("REACT_APP_BACKEND_URL") + "/api/forecast"
         response = requests.get(url, timeout=180)
@@ -67,7 +67,6 @@ def find_nearest_coordinate_forecast_data(poi: PointOfInterest, forecast_data):
             poi.weather[time_key] = data[coord_key]
     except TypeError:
         print("Failed to find nearest coordinate forecast data. TypeError occurred.")
-        return poi
 
     return poi
 

@@ -4,11 +4,12 @@ import errno
 import numpy as np
 from .times import utc_to_finnish, get_forecast_times
 from ..config import Config
-from ..services.forecastdatafetcher import ForecastDataFetcher
+from ..services.forecastdatafetcher import DataFetcher
+
 
 
 class Forecast:
-    def __init__(self, fetcher: ForecastDataFetcher):
+    def __init__(self, fetcher: DataFetcher):
         self.fetcher = fetcher
         self.data = None
         self.valid_times = None
@@ -22,7 +23,6 @@ class Forecast:
         """
         current, start, end = get_forecast_times()
         print(f"Query for the new Grid object at time: {current} UTC")
-
         forecast_data = self.get_latest_forecast(start, end)
         latest_forecast = max(forecast_data.data.keys())
 
@@ -34,11 +34,9 @@ class Forecast:
     def get_latest_forecast(self, start, end):
         """
         Retrieves the latest forecast data within the specified time range.
-
         Args:
             start (datetime): The start time for the data retrieval.
             end (datetime): The end time for the data retrieval.
-
         Returns:
             Grid: The forecast grid data within the specified time range.
         """
@@ -49,7 +47,6 @@ class Forecast:
     def parse_forecast_data(self):
         """
         Parses the forecast data with retry attempts on failure.
-
         Raises:
             ConnectionResetError: If a ConnectionResetError occurs during parsing after maximum number of retry attempts.
         """
@@ -81,6 +78,7 @@ class Forecast:
         self.valid_times = self.data.data.keys()
         earliest_step = min(self.valid_times)
         self.data_levels = self.data.data[earliest_step].keys()
+        self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
         self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
 
     def get_data(self):

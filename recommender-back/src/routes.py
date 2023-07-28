@@ -9,9 +9,9 @@ from flask import jsonify
 from .app import app, cache
 from .apis.current import Current
 from .apis import manager
-from .services.forecastdatafetcher import ForecastDataFetcher
+from .services.forecastdatafetcher import DataFetcher
 
-weather_fetcher = ForecastDataFetcher()
+weather_fetcher = DataFetcher()
 
 
 @app.route("/", methods=["GET"])

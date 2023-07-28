@@ -14,10 +14,10 @@ and updates it in cache.
 from src.apis.forecast import Forecast
 from src.apis import manager
 from src.apis.current import Current
-from src.services.forecastdatafetcher import ForecastDataFetcher
+from src.services.forecastdatafetcher import DataFetcher
 from src.app import cache
 
-weather_fetcher = ForecastDataFetcher()
+weather_fetcher = DataFetcher()
 
 
 def get_current_weather_data():
