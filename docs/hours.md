@@ -88,7 +88,7 @@
 | Sami S. | 5.5 mongodb            | 3.5 mongodb, customer meeting             | 1.5 mongodb connection to github actions               | -              | -            | -             | -           | -     |
 | Sami M. | 6 research netcdf more / parse data / convert json            | -             | -               | -              | -            | -             | -           | -     |
 | Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
-| Joni    | -            | 8 meeting + backend automation | -               | -              | -            | -             | -           | -     |
+| Joni    | -            | 8 meeting + backend automation | 4 backend pr    | 1 reading pr | -            | -             | -           | -     |
 
 |         | Monday 31.7. | Tuesday 1.8. | Wednesday 2.8. | Thursday 3.8. | Friday 4.8. | Saturday 5.8. | Sunday 6.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
