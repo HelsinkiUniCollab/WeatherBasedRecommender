@@ -13,12 +13,12 @@ class Current:
         self.get_current_air_quality()
 
     def get_current_weather(self):
-        '''
+        """
         Retrieves the current weather data for various stations.
 
         Returns:
             dict: A dictionary containing the current weather data for each station.
-        '''
+        """
 
         obs = self.fetcher.get_current_weather_data(Config.BBOX, True)
         data = {}
@@ -32,21 +32,21 @@ class Current:
                 'Cloud amount': str(obs.data[station]['n_man']['values'][-1]) + ' %',
             }
             for value in list(weatherdata):
-                if 'nan' in str(weatherdata[value]):
+                if "nan" in str(weatherdata[value]):
                     weatherdata.pop(value)
             if weatherdata:
-                weatherdata['Latitude'] = metadata['latitude']
-                weatherdata['Longitude'] = metadata['longitude']
+                weatherdata["Latitude"] = metadata["latitude"]
+                weatherdata["Longitude"] = metadata["longitude"]
                 data[station] = weatherdata
         self.weather = data
 
     def get_current_air_quality(self):
-        '''
+        """
         Retrieves the current AQI data for various stations.
 
         Returns:
             dict: A dictionary containing the current weather data for each station.
-        '''
+        """
         obs = self.fetcher.get_current_air_quality_data(Config.BBOX, True)
         data = {}
         for station, metadata in obs.location_metadata.items():
@@ -61,7 +61,7 @@ class Current:
         self.aqi = data
 
     def find_nearest_stations_weather_data(self, poi: PointOfInterest):
-        '''
+        """
         Finds the nearest weather station to a given point of interest (POI) and adds its weather data to the POI,
         also adds the Air Quality Index data.
 
@@ -71,7 +71,7 @@ class Current:
         Returns:
             PointOfInterest: The modified POI with weather information.
 
-        '''
+        """
         lat = poi.latitude
         lon = poi.longitude
         weather = copy.deepcopy(self.weather)
@@ -85,7 +85,7 @@ class Current:
         returned = {}
         aqi = copy.deepcopy(self.aqi)
         while True:
-            smallest, nearest = float('inf'), ''
+            smallest, nearest = float("inf"), ""
             for station in weather:
                 dist = abs(weather[station]['Latitude'] - lat) + abs(
                     weather[station]['Longitude'] - lon
@@ -93,7 +93,7 @@ class Current:
                 if dist < smallest:
                     smallest, nearest = dist, station
             for key, value in weather[nearest].items():
-                if key not in ['Latitude', 'Longitude']:
+                if key not in ["Latitude", "Longitude"]:
                     returned.setdefault(key, value)
                     if key in missing_fields:
                         missing_fields.remove(key)
@@ -109,5 +109,5 @@ class Current:
                         'Air quality', aqi[nearest]['Air quality'])
                 break
             del weather[nearest]
-        poi.weather['Current'] = returned
+        poi.weather["Current"] = returned
         return poi

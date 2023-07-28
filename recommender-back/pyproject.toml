@@ -21,6 +21,8 @@ python-dotenv = "^1.0.0"
 requests = "^2.31.0"
 gunicorn = "^20.1"
 coverage = "^7.2.7"
+flask-apscheduler = "^1.12.4"
+matplotlib = "^3.7.2"
 
 
 [tool.poetry.group.dev.dependencies]

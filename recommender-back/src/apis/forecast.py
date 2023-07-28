@@ -7,6 +7,7 @@ from ..config import Config
 from ..services.forecastdatafetcher import DataFetcher
 
 
+
 class Forecast:
     def __init__(self, fetcher: DataFetcher):
         self.fetcher = fetcher

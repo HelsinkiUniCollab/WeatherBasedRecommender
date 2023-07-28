@@ -7,6 +7,7 @@ from src.apis.poi import PointOfInterest
 from src.services.forecastdatafetcher import DataFetcher
 
 
+
 class ForecastTest(unittest.TestCase):
     def setUp(self):
         self.forecast = Forecast(DataFetcher())
