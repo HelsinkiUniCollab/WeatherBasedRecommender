@@ -1,24 +1,26 @@
 import copy
-from fmiopendata.wfs import download_stored_query
 from .poi import PointOfInterest
+from ..services.forecastdatafetcher import DataFetcher
+from ..config import Config
+
 
 class Current:
-    def __init__(self):
+    def __init__(self, fetcher: DataFetcher):
+        self.fetcher = fetcher
         self.weather = None
         self.aqi = None
         self.get_current_weather()
         self.get_current_air_quality()
 
     def get_current_weather(self):
-        '''
+        """
         Retrieves the current weather data for various stations.
 
         Returns:
             dict: A dictionary containing the current weather data for each station.
-        '''
+        """
 
-        obs = download_stored_query('fmi::observations::weather::multipointcoverage',
-                                    args=['bbox=24.5,60,25.5,60.5', 'timeseries=True'])
+        obs = self.fetcher.get_current_weather_data(Config.BBOX, True)
         data = {}
         for station, metadata in obs.location_metadata.items():
             weather = {
@@ -38,28 +40,17 @@ class Current:
         self.weather = data
 
     def get_current_air_quality(self):
-        '''
+        """
         Retrieves the current AQI data for various stations.
 
         Returns:
             dict: A dictionary containing the current weather data for each station.
-        '''
-        obs = download_stored_query('urban::observations::airquality::hourly::multipointcoverage',
-                                    args=['bbox=24.5,60,25.5,60.5', 'timeseries=True'])
-        data = {}
-        for station, metadata in obs.location_metadata.items():
-            aqi = {
-                'Air quality': str(obs.data[station]['AQINDEX_PT1H_avg']['values'][-1]) + ' AQI'
-            }
-            if 'nan' in str(aqi['Air quality']):
-                continue
-            aqi['Latitude'] = metadata['latitude']
-            aqi['Longitude'] = metadata['longitude']
-            data[station] = aqi
-        self.aqi = data
+        """
+        aqi = self.fetcher.get_current_air_quality(Config.BBOX, True)
+        self.aqi = aqi
 
     def find_nearest_stations_weather_data(self, poi: PointOfInterest):
-        '''
+        """
         Finds the nearest weather station to a given point of interest (POI) and adds its weather data to the POI,
         also adds the Air Quality Index data.
 
@@ -69,7 +60,7 @@ class Current:
         Returns:
             PointOfInterest: The modified POI with weather information.
 
-        '''
+        """
         lat = poi.latitude
         lon = poi.longitude
         weather = copy.deepcopy(self.weather)
@@ -77,14 +68,15 @@ class Current:
         missing_fields = ['Air temperature', 'Wind speed', 'Precipitation', 'Cloud amount', 'Humidity']
         returned = {}
         while True:
-            smallest, nearest = float('inf'), ''
+            smallest, nearest = float("inf"), ""
             for station in weather:
-                dist = abs(weather[station]['Latitude'] - lat)\
-                                        + abs(weather[station]['Longitude'] - lon)
+                dist = abs(weather[station]["Latitude"] - lat) + abs(
+                    weather[station]["Longitude"] - lon
+                )
                 if dist < smallest:
                     smallest, nearest = dist, station
             for key, value in weather[nearest].items():
-                if key not in ['Latitude', 'Longitude']:
+                if key not in ["Latitude", "Longitude"]:
                     returned.setdefault(key, value)
                     if key in missing_fields:
                         missing_fields.remove(key)
@@ -99,5 +91,5 @@ class Current:
                     returned.setdefault('Air quality', aqi[nearest]['Air quality'])
                 break
             del weather[nearest]
-        poi.weather['Current'] = returned
+        poi.weather["Current"] = returned
         return poi
