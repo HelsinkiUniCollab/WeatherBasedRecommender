@@ -85,7 +85,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
 | Isak    | -            | 3,5             | -               | -              | 1,5            | -             | -           | 5     |
-| Sami S. | 5.5 mongodb            | 3.5 mongodb, customer meeting             | 1.5 mongodb connection to github actions               | -              | -            | -             | -           | -     |
+| Sami S. | 5.5 mongodb            | 3.5 mongodb, customer meeting             | 1.5 mongodb connection to github actions               | -              | 3 pull reqs, conflict resolving            | -             | -           | -     |
 | Sami M. | 6 research netcdf more / parse data / convert json            | -             | -               | -              | -            | -             | -           | -     |
 | Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | 8 meeting + backend automation | 4 backend pr    | 1 reading pr | -            | -             | -           | -     |
