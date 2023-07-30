@@ -55,6 +55,10 @@ You can remove unused containers with:
 
 `sudo docker container prune`
 
+If you need at some point remove all containers and images use:
+`sudo docker rm -f $(docker ps -a -q)`
+`sudo docker rmi -f $(docker images -a -q)`
+
 ## Removing old Docker images in Pouta
 
 Everytime an update is made, a new image with tag "latest" is created. This does not remove the old images, which keep piling up. Therefore, we have a cron job running docker prune every night at 3 a.m. UTC. 
