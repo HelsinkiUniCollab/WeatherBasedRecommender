@@ -3,14 +3,7 @@ from . import times
 
 
 class PointOfInterest:
-    def __init__(
-        self,
-        name=None,
-        latitude=None,
-        longitude=None,
-        not_accessible_for=None,
-        categories=None,
-    ):
+    def __init__(self, name=None, latitude=None, longitude=None, not_accessible_for=None, categories=None):
         self.sun = times.get_sun_data()
         self.name = name
         self.latitude = latitude
@@ -21,70 +14,41 @@ class PointOfInterest:
         self.categorytype = None
 
     def calculate_score(self):
-        """
+        '''
         Chooses which algorithm to use in scoring.
         Must be manually handled to adjust when adding new points of interest.
-        """
-        indoor_categories = ["Sport halls"]
-        outdoor_categories = [
-            "Open air pools and beaches",
-            "Athletic fields and venues",
-            "Neighbourhood sports facilities and parks",
-        ]
+        '''
+        indoor_categories = ['Sport halls']
+        outdoor_categories = ['Open air pools and beaches',
+                              'Athletic fields and venues', 'Neighbourhood sports facilities and parks']
         sunrise = self.sun[0]
         sunset = self.sun[1]
 
         for category in self.categories:
             for timeinterval, data in enumerate(self.weather.values()):
                 cur_time = times.get_current_time(timeinterval)
-                wind_speed = float(data.get("Wind speed").split(" ")[0])
-                precipitation = float(data.get("Precipitation").split(" ")[0])
-                clouds = float(data.get("Cloud amount").split(" ")[0]) * 0.01
-                temperature = float(data.get("Air temperature").split(" ")[0])
-                humidity = float(data.get("Humidity").split(" ")[0]) * 0.01
+                wind_speed = float(data.get('Wind speed').split(' ')[0])
+                precipitation = float(data.get('Precipitation').split(' ')[0])
+                clouds = float(data.get('Cloud amount').split(' ')[0]) * 0.01
+                temperature = float(data.get('Air temperature').split(' ')[0])
+                humidity = float(data.get('Humidity').split(' ')[0]) * 0.01
 
                 if category in outdoor_categories:
                     self.categorytype = "Outdoor"
-                    data["Score"] = self._outdoor_score(
-                        temperature,
-                        wind_speed,
-                        humidity,
-                        precipitation,
-                        clouds,
-                        sunrise,
-                        sunset,
-                        cur_time,
-                    )
+                    data['Score'] = self._outdoor_score(temperature, wind_speed, humidity,
+                                                        precipitation, clouds, sunrise, sunset, cur_time)
                 elif category in indoor_categories:
                     self.categorytype = "Indoor"
-                    data["Score"] = self._indoor_score(
-                        temperature,
-                        wind_speed,
-                        humidity,
-                        precipitation,
-                        clouds,
-                        sunrise,
-                        sunset,
-                        cur_time,
-                    )
+                    data['Score'] = self._indoor_score(temperature, wind_speed, humidity,
+                                                       precipitation, clouds, sunrise, sunset, cur_time)
 
-    def _outdoor_score(
-        self,
-        temperature,
-        wind_speed,
-        humidity,
-        precipitation,
-        clouds,
-        sunrise,
-        sunset,
-        cur_time,
-    ):
-        """
+    def _outdoor_score(self, temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
+        '''
         Calculates the score for an outdoor point of interest based on weather conditions.
-
+        
         Returns:
             float: The calculated score for the outdoor point of interest.
-        """
+        '''
         precipitation_weight = 0.35
         temperature_weight = 0.3
         clouds_weight = 0.04
@@ -111,17 +75,7 @@ class PointOfInterest:
             score += humidity_weight
         return round(score, 2)
 
-    def _indoor_score(
-        self,
-        temperature,
-        wind_speed,
-        humidity,
-        precipitation,
-        clouds,
-        sunrise,
-        sunset,
-        cur_time,
-    ):
+    def _indoor_score(self, temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
         # Weights
         precipitation_weight = 0.7
         temperature_weight = 0.1
@@ -150,14 +104,9 @@ class PointOfInterest:
         return round(score, 2)
 
     def get_json(self):
-        """
+        '''
         Returns a JSON representation of the POI.
-        """
-        return {
-            "name": self.name,
-            "weather": self.weather,
-            "latitude": self.latitude,
-            "longitude": self.longitude,
-            "category": self.categories[-1],
-            "catetype": self.categorytype,
-        }
+        '''
+        return {'name': self.name, 'weather': self.weather,
+                'latitude': self.latitude, 'longitude': self.longitude,
+                'category': self.categories[-1], 'catetype': self.categorytype}
