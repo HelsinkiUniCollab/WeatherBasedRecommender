@@ -47,8 +47,7 @@ def find_nearest_coordinate_forecast_data(poi: PointOfInterest, forecast_data):
     Retrieves all points of interest (POIs) from JSON files and merges them together.
 
     Args:
-        category (list): List of categories of POIs to retrieve.
-        If None, default categories will be used.
+        category (list): List of categories of POIs to retrieve. If None, default categories will be used.
 
     Returns:
         list: List of all POIs.
