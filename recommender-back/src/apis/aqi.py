@@ -42,15 +42,18 @@ class AQI:
             download_to_file(self.url, self.file)
             print('Finished download. Parsing...')
             self.dataset = Dataset(self.file)
+            print(self.dataset.variables['index_of_airquality_194'][:])
             self._parse_netcdf()
 
     def _download_and_parse_xml(self):
         """Downloads and parses xml file based on the given query
         """
         _, start, end = get_forecast_times()
+        start_str_rounded = start[:14] + "00:00Z"
+        end_str_rounded = end[:14] + "00:00Z"
         query_id = 'fmi::forecast::enfuser::airquality::helsinki-metropolitan::grid'
         params = 'AQIndex'
-        args = [f'starttime={start}', f'endtime={end}', f'parameters={params}']
+        args = [f'starttime={start_str_rounded}', f'endtime={end_str_rounded}', f'parameters={params}']
         return download_and_parse(query_id, args)
 
     def _parse_netcdf(self):
@@ -61,18 +64,18 @@ class AQI:
         """
         self.latitudes = self.dataset.variables['lat'][:]
         self.longitudes = self.dataset.variables['lon'][:]
-        time = self.dataset.variables['time'][:]
+        time = self.dataset.variables['time'][:-1]
         aqi = self.dataset.variables['index_of_airquality_194']
 
         datetimes = {}
-        current_time = datetime.now() + timedelta(hours=1)
+        forecast_time = datetime.now() + timedelta(hours=1)
         for times in time:
-            current_datetime = current_time + timedelta(hours=int(times))
-            current_datetime = current_datetime.replace(minute=0, second=0, microsecond=0)
-            aqi_index = aqi[int(times)]
+            forecast_datetime = forecast_time + timedelta(hours=int(times))
+            forecast_datetime = forecast_datetime.replace(minute=0, second=0, microsecond=0)
+            aqi_data = aqi[int(times)]
             aqi_obj = AQI()
-            aqi_obj.data = aqi_index
-            datetimes[current_datetime] = aqi_obj
+            aqi_obj.data = aqi_data
+            datetimes[forecast_datetime] = aqi_obj
 
         self.datetimes = datetimes
         self.dataset.close()
@@ -87,15 +90,20 @@ class AQI:
         for datetime in self.datetimes:
             time_str = datetime.strftime('%Y-%m-%d %H:%M:%S')
             aqi_object = self.datetimes[datetime]
+
             coordinate_data = {}
             for lat, lon in zip(self.latitudes, self.longitudes):
                 lat_index = np.where(self.latitudes == lat)[0][0]
                 lon_index = np.where(self.longitudes == lon)[0][0]
                 coord_pairs = (lat, lon)
-                if coord_pairs not in coordinate_data:
-                    coordinate_data[coord_pairs] = []
-                coordinate_data[coord_pairs].append({'Air Quality Index': 
-                                                     str(aqi_object.data[lat_index, lon_index])})
+                aqi_value = aqi_object.data[lat_index, lon_index]
+
+                if aqi_value != 0:
+                    if coord_pairs not in coordinate_data:
+                        coordinate_data[coord_pairs] = []
+                        coordinate_data[coord_pairs].append({'Air Quality Index': 
+                                                            str(aqi_value)})
+
             data[time_str] = coordinate_data
 
         self.json = data

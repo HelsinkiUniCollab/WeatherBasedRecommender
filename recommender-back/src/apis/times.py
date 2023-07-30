@@ -60,6 +60,6 @@ def get_forecast_times():
     '''
     current_time = dt.datetime.now(dt.timezone.utc)
     start_time = current_time.strftime('%Y-%m-%dT%H:%M:%SZ')
-    end_time = (current_time + dt.timedelta(days=1)
+    end_time = (current_time + dt.timedelta(days=1, hours=1)
                 ).strftime('%Y-%m-%dT%H:%M:%SZ')
     return current_time, start_time, end_time

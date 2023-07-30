@@ -1,6 +1,7 @@
 import json
 from flask import jsonify
 from .app import app, cache
+from .apis.aqi import AQI
 from .apis.forecast import Forecast
 from .apis.current import Current
 from .apis import manager
@@ -20,6 +21,7 @@ def index():
     }
     return jsonify(data)
 
+
 @app.route('/api/forecast', methods=['GET'])
 @cache.cached(timeout=3600)
 def get_forecast():
@@ -31,8 +33,15 @@ def get_forecast():
     '''
     forecast = Forecast()
     forecast.update_data()
+
+    aqi = AQI()
+    aqi.download_netcdf_and_store()
+    aqi_data = aqi._to_json()
+    aqi_coords = aqi.get_coordinates()
+
     pois = manager.get_pois()
-    poi_forecast = forecast.get_closest_poi_coordinates_data(pois)
+    poi_forecast = forecast.get_closest_poi_coordinates_data(pois, aqi_data, aqi_coords)
+
     result = json.dumps(poi_forecast)
 
     return result
@@ -59,6 +68,7 @@ def get_poi_acessible_poi_data(accessibility):
     '''
     return manager.get_pois_as_json(accessibility)
 
+
 @app.route('/api/weather', methods=['GET'])
 @cache.cached(timeout=3600)
 def get_weather_helsinki_kaisaniemi():
@@ -66,6 +76,7 @@ def get_weather_helsinki_kaisaniemi():
     current.get_current_weather()
     helsinki_kaisaniemi = current.weather.get("Helsinki Kaisaniemi")
     return jsonify(helsinki_kaisaniemi)
+
 
 @app.errorhandler(404)
 def not_found_error(error):

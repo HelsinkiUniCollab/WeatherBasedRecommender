@@ -84,7 +84,7 @@ class Forecast:
 
         return list(unique_coords)
 
-    def get_closest_poi_coordinates_data(self, pois):
+    def get_closest_poi_coordinates_data(self, pois, aqi_data, aqi_coords):
         '''
         Finds the nearest coordinates forecast data for all of the POI's coordinates.
 
@@ -97,7 +97,9 @@ class Forecast:
         data = self.get_data()
         coordinates = self.get_coordinates()
         returned_data = {hour: {} for hour in data}
-        closest_coordinates = {}
+        closest_coordinates_fore = {}
+        closest_coodinates_aqi = {}
+
         for poi in pois:
             smallest = float('inf')
             nearest = []
@@ -108,14 +110,37 @@ class Forecast:
                 if dist < smallest:
                     smallest = dist
                     nearest = [coordinate[0], coordinate[1]]
-            closest_coordinates[(lat, lon)] = nearest
-            
+            closest_coordinates_fore[(lat, lon)] = nearest
+
+        for poi in pois:
+            smallest = float('inf')
+            nearest = []
+            lat = poi.latitude
+            lon = poi.longitude
+            for coordinate in aqi_coords:
+                dist = abs(coordinate[0] - lat) + abs(coordinate[1] - lon)
+                if dist < smallest:
+                    smallest = dist
+                    nearest = [coordinate[0], coordinate[1]]
+            closest_coodinates_aqi[(lat, lon)] = nearest
+
         for hour, hour_data in data.items():
-            for poi_coord, nearest in closest_coordinates.items():
+            print('hour fore:', hour)
+            for poi_coord, nearest in closest_coordinates_fore.items():
                 nearest_str = f'({nearest[0]}, {nearest[1]})'
                 if nearest_str in hour_data:
                     forecast = hour_data[nearest_str]
                     returned_data[hour][f'{poi_coord[0]}, {poi_coord[1]}'] = self.parse_forecast(forecast)
+
+        for hour, hour_data in aqi_data.items():
+            print('hour aqi:', hour)
+            for poi_coord, nearest in closest_coodinates_aqi.items():
+                nearest_str = (nearest[0], nearest[1])
+                if nearest_str in hour_data:
+                    aqi_value = hour_data[nearest_str][0]['Air Quality Index']
+                    if f'{poi_coord[0]}, {poi_coord[1]}' in returned_data[hour]:
+                        returned_data[hour][f'{poi_coord[0]}, {poi_coord[1]}']['Air Quality Index'] = aqi_value
+
         return returned_data
 
     def parse_forecast(self, forecast):
