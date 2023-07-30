@@ -56,17 +56,17 @@
 
 |         | Monday 26.6. | Tuesday 27.6. | Wednesday 28.6. | Thursday 29.6. | Friday 30.6. | Saturday 1.7. | Sunday 2.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | 2 simple plot | -             | 2 demo         | -              | -            | -             | -           | 4     |
+| Juuso   | 2 simple plot | -             | 2 demo         | -              | -            | 2 demo live   | -           | 6     |
 | Isak    | -            | 4,5             | 7,5               | -              | -            | -             | -           | 12     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | 3 meetings             | 2 demo work               | -              | 2 demo live            | -             | 0.5 fore test           | 7.5     |
 | Pia     | 1 clustering finetuning            | 7 meetings, clustering, tests, demo            | 2 demo, tests               | -              | 2 demo live              | -             | -           | 12    |
-| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | 2 cypress    | 3 meeting     | 2 demo          | -              | 2 demo live  | -             | -           | 9     |
 
 |         | Monday 10.7. | Tuesday 11.7. | Wednesday 12.7. | Thursday 13.7. | Friday 14.7. | Saturday 15.7. | Sunday 16.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
-| Isak    | 1,5            | -             | -               | -              | -            | -             | -           | 1,5     |
+| Isak    | 1,5          | -             | -               | -              | -            | -             | -           | -     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
@@ -74,21 +74,21 @@
 
 |         | Monday 17.7. | Tuesday 18.7. | Wednesday 19.7. | Thursday 20.7. | Friday 21.7. | Saturday 22.7. | Sunday 23.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
-| Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami S. | -            | 1 sprint planning             | 4 pull reqs, backend tests               | 5 live              | -            | -             | -           | -     |
-| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Juuso   | -            | 1 sprint planning | 2 test        | 5 live         | -            | -             | 2 daily/aqi/logo  | 10     |
+| Isak    | 1,5            | 1             | 1               | 1              | 1            | 1             | -           | 8     |
+| Sami S. | -            | 1 sprint planning             | 4 pull reqs, backend tests               | 5 live              | -            | -             | 4 mongodb, pull reqs           | 14     |
+| Sami M. | -            | 1 sprint planning             | 3 test fore/current/times               | 5 live              | -            | -             | 5 research netcdf, aqi skeleton           | 14     |
 | Pia     | -            | 2 scrum master stuff            | -               | 6 live              | -            | 2,5 mongo            | 4,5 mongo           | -     |
-| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | -            | 1 sprint meeting | -               | 6 live      | 2 backend    | 3 backend     | 6 backend   | 18     |
 
 |         | Monday 24.7. | Tuesday 25.7. | Wednesday 26.7. | Thursday 27.7. | Friday 28.7. | Saturday 29.7. | Sunday 30.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
-| Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Isak    | -            | 3,5             | -               | -              | 1,5            | -             | -           | 5     |
+| Sami S. | 5.5 mongodb            | 3.5 mongodb, customer meeting             | 1.5 mongodb connection to github actions               | -              | 3 pull reqs, conflict resolving            | 2 start working on greenpaths             | -           | -     |
+| Sami M. | 6 research netcdf more / parse data / convert json            | -             | -               | -              | -            | -             | -           | -     |
 | Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
-| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | -            | 8 meeting + backend automation | 4 backend pr    | 1 reading pr | -            | -             | -           | -     |
 
 |         | Monday 31.7. | Tuesday 1.8. | Wednesday 2.8. | Thursday 3.8. | Friday 4.8. | Saturday 5.8. | Sunday 6.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
