@@ -83,7 +83,7 @@
 
 |         | Monday 24.7. | Tuesday 25.7. | Wednesday 26.7. | Thursday 27.7. | Friday 28.7. | Saturday 29.7. | Sunday 30.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Juuso   | -            | 2 meetings      | 5 greenpaths, merges            | -              | -            | -             | -           | 7     |
 | Isak    | -            | 3,5             | -               | -              | 1,5            | -             | -           | 5     |
 | Sami S. | 5.5 mongodb            | 3.5 mongodb, customer meeting             | 1.5 mongodb connection to github actions               | -              | 3 pull reqs, conflict resolving            | 2 start working on greenpaths             | -           | 15.5     |
 | Sami M. | 6 research netcdf more / parse data / convert json            | -             | -               | -              | -            | -             | -           | -     |
