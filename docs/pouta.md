@@ -19,7 +19,7 @@ You can then access [cPouta Dashboard](https://pouta.csc.fi/dashboard/project/in
 
 2. Make sure that you are in .ssh -folder  `(/home/{user}/.ssh)` and open the connection from your terminal with command:
 
-`ssh -i .ssh/pouta.key ubuntu@128.214.253.51`
+`ssh -i pouta.key ubuntu@128.214.253.51`
 
 
 ## How to update Ubuntu in Pouta instance
