@@ -97,9 +97,3 @@ venv/
 
 # mypy
 .mypy_cache/
-
-# VSCode settings
-.vscode/
-
-# misc
-*.swp

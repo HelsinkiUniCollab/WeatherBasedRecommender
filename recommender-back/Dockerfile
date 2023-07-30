@@ -32,6 +32,4 @@ ENV REQUEST_ORIGIN=http://localhost:3000
 
 EXPOSE 5000
 
-COPY gunicorn_config.py /app/gunicorn_config.py
-
-CMD ["poetry", "run", "gunicorn", "-c", "/app/gunicorn_config.py", "src.app:app"]
+CMD ["poetry", "run", "gunicorn", "-b", ":5000", "--timeout", "300", "-w", "4", "src.app:app"]
