@@ -1,12 +1,7 @@
-"""
-This module defines the routes for the application's Flask server.
-It includes endpoints for fetching forecast data, point of interest (POI) data, 
-accessible POI data and current weather data for Helsinki Kaisaniemi. 
-Additionally, it contains error handlers for 404 (Not Found) and 500 (Internal Server Error) errors.
-"""
-
+import json
 from flask import jsonify
 from .app import app, cache
+from .apis.forecast import Forecast
 from .apis.current import Current
 from .apis import manager
 from .services.forecastdatafetcher import DataFetcher
@@ -28,6 +23,7 @@ def index():
 
 
 @app.route("/api/forecast", methods=["GET"])
+@cache.cached(timeout=3600)
 def get_forecast():
     """
     Handler for the '/api/forecast' endpoint.
@@ -35,11 +31,11 @@ def get_forecast():
     Returns:
         Forecast for the POI's.
     """
-    poi_forecast = cache.get("forecast_data")
-    if not poi_forecast:
-        return jsonify({"message": "Forecast data not available yet"})
-
-    return jsonify(poi_forecast)
+    forecast = Forecast(weather_fetcher)
+    forecast.update_data()
+    pois = manager.get_pois()
+    poi_forecast = forecast.get_closest_poi_coordinates_data(pois)
+    return json.dumps(poi_forecast)
 
 
 @app.route("/api/poi/", methods=["GET"])
@@ -65,15 +61,11 @@ def get_poi_acessible_poi_data(accessibility):
 
 
 @app.route("/api/weather", methods=["GET"])
+@cache.cached(timeout=3600)
 def get_weather_helsinki_kaisaniemi():
-    """
-    Handler for the /api/weather endpoint.
-
-    Returns:
-        Current weather data for Helsinki Kaisaniemi.
-    """
-    current = cache.get("current_weather_data")
-    helsinki_kaisaniemi = current.get("Helsinki Kaisaniemi")
+    current = Current(weather_fetcher)
+    current.get_current_weather()
+    helsinki_kaisaniemi = current.weather.get("Helsinki Kaisaniemi")
     return jsonify(helsinki_kaisaniemi)
 
 
