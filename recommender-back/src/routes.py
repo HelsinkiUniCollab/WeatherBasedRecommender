@@ -69,7 +69,6 @@ def get_path():
     except ValueError:
         return jsonify({"error": "Invalid coordinates"}), 400
 
-    
     green_paths = GreenPathsAPI(start_coords, end_coords)
     route_coordinates = green_paths.route_coordinates
 

@@ -68,13 +68,3 @@ class GreenPathsAPI:
         plt.ylabel("Latitude")
         plt.plot(longitude, latitude, marker='o', color='blue')
         plt.show()
-
-if __name__ == "__main__":
-    # From exa to hietalahti
-    start_coords = (60.172808, 24.909591)
-    end_coords = (60.204516, 24.962033)
-    green_paths = GreenPathsAPI(start_coords, end_coords)
-    route_coordinates = green_paths.route_coordinates
-
-    # Plotting just for testing
-    green_paths.draw_route_line()
