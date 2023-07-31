@@ -1,6 +1,7 @@
 import numpy as np
 import tempfile
 import pytz
+import requests
 from netCDF4 import Dataset
 from datetime import datetime, timedelta
 from fmiopendata.grid import download_and_parse
@@ -40,6 +41,7 @@ class AQI:
             self._download_to_file(netcdf_url, netcdf_file_name)
             print('Finished downloading AQI data. Parsing the data...')
             self.dataset = Dataset(netcdf_file_name)
+            print(self.dataset.variables['index_of_airquality_194'][:])
             self._parse_netcdf()
 
     def _download_and_parse_xml(self):
@@ -144,14 +146,13 @@ class AQI:
         return unique_coords
 
     def _download_to_file(self, url, file_name):
-        """Downloads the data to given file
+        """Downloads the file content
 
         Args:
-            url (string): url of containing the file
-            file_name (name): name of the file
-
-        Returns:
-            tuple: out (file location) http (http request message)
+            url (string): url of the file to be downloaded
+            file_name (string): name of the file
         """
-        out, http = urlretrieve(url, filename=file_name)
-        return out, http
+        with open(file_name, 'wb') as file:
+            response = requests.get(url, stream=True)
+            for chunk in response.iter_content(chunk_size=8192):
+                file.write(chunk)
