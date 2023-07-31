@@ -1,5 +1,6 @@
 import numpy as np
 import tempfile
+import pytz
 from netCDF4 import Dataset
 from datetime import datetime, timedelta
 from fmiopendata.grid import download_and_parse
@@ -12,7 +13,9 @@ class AQI:
         """A class representing a single AQI object
 
         Args:
-            url (string): url link to latest netcdf aqi file
+            json (string): parsed aqi data in json format
+            dataset (netcdf): netcdf dataset containing the aqi data
+            datetimes (dict): dictionary containing datetimes and aqi objects
             latitudes (numpy array): latitude coordinates as numpy array
             longitudes (numpy array): longitude coordinates as numpy array
         """
@@ -37,7 +40,6 @@ class AQI:
             self._download_to_file(netcdf_url, netcdf_file_name)
             print('Finished downloading AQI data. Parsing the data...')
             self.dataset = Dataset(netcdf_file_name)
-            print(self.dataset.variables['index_of_airquality_194'][:])
             self._parse_netcdf()
 
     def _download_and_parse_xml(self):
@@ -62,8 +64,12 @@ class AQI:
         time = self.dataset.variables['time'][:-1]
         aqi = self.dataset.variables['index_of_airquality_194']
 
+        finland_tz = pytz.timezone('Europe/Helsinki')
+        server_time = datetime.now()
+        converted = server_time.astimezone(finland_tz)
+        forecast_time = converted + timedelta(hours=1)
+
         datetimes = {}
-        forecast_time = datetime.now() + timedelta(hours=1)
         for times in time:
             forecast_datetime = forecast_time + timedelta(hours=int(times))
             forecast_datetime = forecast_datetime.replace(minute=0, second=0, microsecond=0)
