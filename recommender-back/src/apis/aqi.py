@@ -40,9 +40,8 @@ class AQI:
             self.file = temp_file.name
             print('Downloading AQI data')
             download_to_file(self.url, self.file)
-            print('Finished download. Parsing...')
+            print('Download finished. Parsing data...')
             self.dataset = Dataset(self.file)
-            print(self.dataset.variables['index_of_airquality_194'][:])
             self._parse_netcdf()
 
     def _download_and_parse_xml(self):
@@ -81,7 +80,8 @@ class AQI:
         self.dataset.close()
 
     def _to_json(self):
-        """Converts the parsed netcdf data into JSON format
+        """Converts the parsed netcdf data into JSON format. Any zero aqi values are skipped
+           so that the final coordinates will never contain any zeros.
 
         Returns:
             dict: AQI data in JSON format
@@ -102,7 +102,7 @@ class AQI:
                     if coord_pairs not in coordinate_data:
                         coordinate_data[coord_pairs] = []
                         coordinate_data[coord_pairs].append({'Air Quality Index': 
-                                                            str(aqi_value)})
+                                                             str(aqi_value)})
 
             data[time_str] = coordinate_data
 
@@ -127,9 +127,16 @@ class AQI:
         return new_url
 
     def get_coordinates(self):
-        unique_coords = []
-        for hour_data in self.json.values():
+        """Fetches all coordinates by their respective hours
+
+        Returns:
+            dict: hourly coordinates in form of key: hour value: coord_list
+        """
+        unique_coords = {}
+        for hour, hour_data in self.json.items():
+            coords_list = []
             for coord_tuple in hour_data.keys():
                 lat, lon = coord_tuple
-                unique_coords.append((float(lat), float(lon)))
+                coords_list.append((float(lat), float(lon)))
+            unique_coords[hour] = coords_list
         return unique_coords

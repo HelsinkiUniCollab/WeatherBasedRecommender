@@ -23,7 +23,7 @@ def get_pois_as_json(accessibility=False, category="All"):
         weather_fetcher = DataFetcher()
         current = Current(weather_fetcher)
         url = os.environ.get("REACT_APP_BACKEND_URL") + "/api/forecast"
-        response = requests.get(url, timeout=180)
+        response = requests.get(url, timeout=600)
         forecast_data = response.json()
         updated_data = []
         for poi in pois:
