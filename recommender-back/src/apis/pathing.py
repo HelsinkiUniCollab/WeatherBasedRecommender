@@ -21,7 +21,7 @@ class GreenPathsAPI:
         url = f"https://www.greenpaths.fi/paths/{self.travel_mode}/{self.routing_mode}/{self.start_coords[0]},{self.start_coords[1]}/{self.end_coords[0]},{self.end_coords[1]}"
         try:
             response = requests.get(url)
-            response.raise_for_status()  # Raises a HTTPError if the response status isn't 200
+            response.raise_for_status()
             return response.json()
         except requests.exceptions.RequestException as e:
             print(f"Failed to fetch data from the API: {e}")
