@@ -2,6 +2,7 @@ import numpy as np
 import tempfile
 import pytz
 import requests
+import time
 from netCDF4 import Dataset
 from ..config import Config
 from datetime import datetime, timedelta
@@ -13,12 +14,14 @@ class AQI:
         """A class representing a single AQI object
 
         Args:
-            json (string): parsed aqi data in json format
+            data (numpy array): aqi data as numpy array
+            json (string): full parsed aqi data in json format
             dataset (netcdf): netcdf dataset containing the aqi data
             datetimes (dict): dictionary containing datetimes and aqi objects
             latitudes (numpy array): latitude coordinates as numpy array
             longitudes (numpy array): longitude coordinates as numpy array
         """
+        self.data = None
         self.json = None
         self.dataset = None
         self.datetimes = None
@@ -37,10 +40,9 @@ class AQI:
         with tempfile.NamedTemporaryFile(delete=True) as temp_file:
             netcdf_file_name = temp_file.name
             print('Downloading AQI data')
-            self._download_to_file(netcdf_url, netcdf_file_name)
+            self._download_to_file(netcdf_url, netcdf_file_name, 5)
             print('Finished downloading AQI data. Parsing the data...')
             self.dataset = Dataset(netcdf_file_name)
-            print(self.dataset.variables['index_of_airquality_194'][:])
             self._parse_netcdf()
 
     def _download_and_parse_xml(self):
@@ -63,7 +65,7 @@ class AQI:
         self.latitudes = self.dataset.variables['lat'][:]
         self.longitudes = self.dataset.variables['lon'][:]
         time = self.dataset.variables['time'][:-1]
-        aqi = self.dataset.variables['index_of_airquality_194']
+        aqi = self.dataset.variables['index_of_airquality_194'][:]
 
         finland_tz = pytz.timezone('Europe/Helsinki')
         server_time = datetime.now()
@@ -144,14 +146,24 @@ class AQI:
             unique_coords[hour] = coords_list
         return unique_coords
 
-    def _download_to_file(self, url, file_name):
+    def _download_to_file(self, url, file_name, max_retries):
         """Downloads the file content
 
         Args:
             url (string): url of the file to be downloaded
             file_name (string): name of the file
+            max_retries (int): maximum number of retries
         """
-        with open(file_name, 'wb') as file:
-            response = requests.get(url, stream=True)
-            for chunk in response.iter_content(chunk_size=8192):
-                file.write(chunk)
+        for retry_attempt in range(max_retries-1):
+             try:
+                with open(file_name, 'wb') as file:
+                    response = requests.get(url, stream=True)
+                    for chunk in response.iter_content(chunk_size=8192):
+                        file.write(chunk)
+                    return
+             except (requests.RequestException, ConnectionResetError) as e:
+                print(f"Download attempt {retry_attempt + 1} failed with error: {str(e)}")
+                if retry_attempt < max_retries:
+                    print(f'Retrying...')
+                else:
+                    print(f"Maximum retries reached. Download failed.")

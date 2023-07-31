@@ -156,6 +156,8 @@ class Forecast:
                     ] = self.parse_forecast(forecast)
 
         for datetime, coordinates_list in closest_coodinates_aqi.items():
+            if datetime not in aqi_data:
+                continue
             for poi_coord in coordinates_list:
                 nearest_str = (poi_coord['nearest'][0], poi_coord['nearest'][1])
                 if nearest_str in aqi_data[datetime]:
