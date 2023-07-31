@@ -3,6 +3,12 @@ import requests
 class GreenPathsAPI:
     """
     A class for fetching route information from the Green Paths API and plotting the route on a map.
+        Parameters:
+        start_coords (tuple): Tuple containing the latitude and longitude of the starting point.
+        end_coords (tuple): Tuple containing the latitude and longitude of the ending point.
+        travel_mode (str, optional): Mode of travel, can be 'walk' or 'bike'. Defaults to 'walk'.
+        routing_mode (str, optional): Routing mode, can be 'fast', 'short', 'clean', 'quiet', or 'safe' (for bikes).
+            Defaults to 'fast'.
     """
     def __init__(self, start_coords, end_coords, travel_mode="walk", routing_mode="fast"):
         self.start_coords = start_coords
