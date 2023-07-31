@@ -3,11 +3,10 @@ import tempfile
 import pytz
 import requests
 from netCDF4 import Dataset
+from ..config import Config
 from datetime import datetime, timedelta
 from fmiopendata.grid import download_and_parse
-from urllib.request import urlretrieve
 from .times import get_forecast_times
-from ..config import Config
 
 class AQI:
     def __init__(self):
