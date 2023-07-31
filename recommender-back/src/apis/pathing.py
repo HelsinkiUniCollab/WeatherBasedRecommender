@@ -1,5 +1,4 @@
 import requests
-import matplotlib.pyplot as plt
 
 class GreenPathsAPI:
     """
@@ -17,23 +16,22 @@ class GreenPathsAPI:
         """
         Fetches route data from the Green Paths API.
         Returns:
-            dict: JSON response containing route information.
+            dict: JSON response containing route information or None if an error occurred.
         """
         url = f"https://www.greenpaths.fi/paths/{self.travel_mode}/{self.routing_mode}/{self.start_coords[0]},{self.start_coords[1]}/{self.end_coords[0]},{self.end_coords[1]}"
-        response = requests.get(url)
-
-        if response.status_code == 200:
+        try:
+            response = requests.get(url)
+            response.raise_for_status()  # Raises a HTTPError if the response status isn't 200
             return response.json()
-        else:
-            print("Failed to fetch data from the API.")
+        except requests.exceptions.RequestException as e:
+            print(f"Failed to fetch data from the API: {e}")
             return None
 
     def extract_path_coordinates(self):
         """
         Extracts the latitude and longitude coordinates of the route from the API response.
         Returns:
-            list: List of tuples containing latitude and longitude coordinates of the route.
-            / or empty list
+            list: List of tuples containing latitude and longitude coordinates of the route or empty list if no data.
         """
         path_coordinates = []
 
@@ -50,21 +48,3 @@ class GreenPathsAPI:
                 path_coordinates.extend(geometry.get("coordinates"))
 
         return path_coordinates
-
-    def draw_route_line(self):
-        """
-        Plots the route line on a map using Matplotlib.
-        """
-        if not self.route_coordinates:
-            print("No route coordinates available.")
-            return
-
-        longitude, latitude = zip(*self.route_coordinates)
-
-        # Plotting 
-        plt.figure(figsize=(10, 6))
-        plt.title("Route Line")
-        plt.xlabel("Longitude")
-        plt.ylabel("Latitude")
-        plt.plot(longitude, latitude, marker='o', color='blue')
-        plt.show()
