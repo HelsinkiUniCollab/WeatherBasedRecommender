@@ -1,10 +1,11 @@
 import numpy as np
-import tempfile 
+import tempfile
 from netCDF4 import Dataset
 from datetime import datetime, timedelta
 from fmiopendata.grid import download_and_parse
-from fmiopendata.utils import download_to_file
+from urllib.request import urlretrieve
 from .times import get_forecast_times
+from ..config import Config
 
 class AQI:
     def __init__(self):
@@ -15,11 +16,8 @@ class AQI:
             latitudes (numpy array): latitude coordinates as numpy array
             longitudes (numpy array): longitude coordinates as numpy array
         """
-        self.data = None
         self.json = None
         self.dataset = None
-        self.file = None
-        self.url = None
         self.datetimes = None
         self.latitudes = None
         self.longitudes = None
@@ -30,18 +28,16 @@ class AQI:
         """
         grid_times = self._download_and_parse_xml()
         latest_forecast = max(grid_times.data.keys())
-        self.data = grid_times.data[latest_forecast]
-        self.url = self._replace_bbox_in_url(self.data.url, '24.5,60,25.5,60.5')
-
-        if self.file is not None:
-            return
+        latest_grid = grid_times.data[latest_forecast]
+        netcdf_url = self._replace_bbox_in_url(latest_grid.url, Config.BBOX)
 
         with tempfile.NamedTemporaryFile(delete=True) as temp_file:
-            self.file = temp_file.name
+            netcdf_file_name = temp_file.name
             print('Downloading AQI data')
-            download_to_file(self.url, self.file)
-            print('Download finished. Parsing data...')
-            self.dataset = Dataset(self.file)
+            self._download_to_file(netcdf_url, netcdf_file_name)
+            print('Finished downloading AQI data. Parsing the data...')
+            self.dataset = Dataset(netcdf_file_name)
+            print(self.dataset.variables['index_of_airquality_194'][:])
             self._parse_netcdf()
 
     def _download_and_parse_xml(self):
@@ -79,7 +75,7 @@ class AQI:
         self.datetimes = datetimes
         self.dataset.close()
 
-    def _to_json(self):
+    def to_json(self):
         """Converts the parsed netcdf data into JSON format. Any zero aqi values are skipped
            so that the final coordinates will never contain any zeros.
 
@@ -116,7 +112,7 @@ class AQI:
 
         Args:
             url (string): url of netcdf file
-            new_bbox (string): new bbox values as a string i.e '24.5,60,25.5,60.5'
+            new_bbox (string): new bbox values as a string
 
         Returns:
             string: new url with replaced bbox value
@@ -140,3 +136,16 @@ class AQI:
                 coords_list.append((float(lat), float(lon)))
             unique_coords[hour] = coords_list
         return unique_coords
+
+    def _download_to_file(self, url, file_name):
+        """Downloads the data to given file
+
+        Args:
+            url (string): url of containing the file
+            file_name (name): name of the file
+
+        Returns:
+            tuple: out (file location) http (http request message)
+        """
+        out, http = urlretrieve(url, filename=file_name)
+        return out, http

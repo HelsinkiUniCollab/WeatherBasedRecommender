@@ -37,7 +37,7 @@ def get_forecast():
 
     aqi = AQI()
     aqi.download_netcdf_and_store()
-    aqi_data = aqi._to_json()
+    aqi_data = aqi.to_json()
     aqi_coords = aqi.get_coordinates()
 
     pois = manager.get_pois()
