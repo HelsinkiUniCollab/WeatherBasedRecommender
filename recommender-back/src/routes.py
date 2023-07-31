@@ -71,7 +71,7 @@ def get_path():
 
     green_paths = GreenPathsAPI(start_coords, end_coords)
     route_coordinates = green_paths.route_coordinates
-    
+
     if not route_coordinates:
         return jsonify({"error": "Could not fetch route data"}), 500
 
