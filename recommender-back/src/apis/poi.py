@@ -9,6 +9,7 @@ class PointOfInterest:
         self.latitude = latitude
         self.longitude = longitude
         self.not_accessible_for = not_accessible_for
+        self.categories = []
         self.categories = categories
         self.weather = {}
         self.categorytype = None

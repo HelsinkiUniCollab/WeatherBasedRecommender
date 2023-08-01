@@ -1,4 +1,7 @@
-from .db import get_db, close_db
+from .db import get_db
+
+db = get_db()
+pois_collection = db['pois']  
 
 class Poi:
     def __init__(self, name, latitude, longitude, accessibility, categories):
@@ -9,22 +12,15 @@ class Poi:
         self.categories = categories
 
     def save(self):
-        db, client = get_db()
-        collection = db['pois']
-        collection.insert_one({
+        pois_collection.insert_one({
             'name': self.name,
             'latitude': self.latitude,
             'longitude': self.longitude,
             'not_accessible_for': self.accessibility,
             'categories': self.categories
         })
-        close_db(client)
 
-    @staticmethod
     def get_all(test=False):
-        db, client = get_db(test)
-        collection = db['pois']
-        all_documents = collection.find()
+        all_documents = pois_collection.find()
         pois = list(all_documents)
-        close_db(client)
         return pois

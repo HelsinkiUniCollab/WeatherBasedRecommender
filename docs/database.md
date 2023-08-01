@@ -4,7 +4,17 @@ We use two databases for this project: **development** and **production**.
 
 - **Development Database:**
   - Connection String: `mongodb+srv://helsinkiunicollab:<password>@development.qebxr8j.mongodb.net/?retryWrites=true&w=majority`
-  
+
+  Development database has two collections: development and test. 
+  Development collection is used When Flask App is run with:
+```bash 
+  $poetry run invoke start
+```
+  Test collection is used When Flask App is run with:
+```bash 
+  $poetry run invoke test
+```
+
 - **Production Database:**
   - Connection String: `mongodb+srv://helsinkiunicollab:<password>@production.djrvu6z.mongodb.net/?retryWrites=true&w=majority`
 

@@ -2,10 +2,12 @@ import os
 import json
 import requests
 from requests import Timeout
-from .models import Poi
 from .current import Current
 from .poi import PointOfInterest
+from .models import Poi
+from .db import get_collection
 from ..services.forecastdatafetcher import DataFetcher
+from ..services.poi_init import init_pois
 
 
 def get_pois_as_json(accessibility=False):
@@ -27,8 +29,7 @@ def get_pois_as_json(accessibility=False):
         forecast_data = response.json()
         updated_data = []
         for poi in pois:
-            poi: PointOfInterest = current.find_nearest_stations_weather_data(
-                poi)
+            poi: PointOfInterest = current.find_nearest_stations_weather_data(poi)
             poi = find_nearest_coordinate_forecast_data(poi, forecast_data)
             poi.calculate_score()
             if accessibility in poi.not_accessible_for:
@@ -78,15 +79,14 @@ def get_pois(test=False):
     Returns:
         list: List of POI -objects.
     """
+    collection = get_collection()
+    if collection.count_documents({}) == 0:
+        print('Start POI initialization')
+        init_pois()
     collection = Poi.get_all(test)
     pois = []
     for poi in collection:
-        name = poi['name']
-        latitude = poi['latitude']
-        longitude = poi['longitude']
-        not_accessible_for = poi['not_accessible_for']
-        categories = poi['categories']
-        poi = PointOfInterest(name, latitude, longitude,
-                                  not_accessible_for, categories)
+        poi = PointOfInterest(poi['name'], poi['latitude'], poi['longitude'],
+                                  poi['not_accessible_for'], poi['categories'])
         pois.append(poi)
     return pois
