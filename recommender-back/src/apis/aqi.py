@@ -2,7 +2,8 @@ import numpy as np
 import tempfile
 import pytz
 import requests
-import time
+import defusedxml.ElementTree as ET
+from urllib.parse import urlencode
 from netCDF4 import Dataset
 from ..config import Config
 from datetime import datetime, timedelta
@@ -32,30 +33,32 @@ class AQI:
         """Downloads netcdf file, parses it and stores the data in the object.
            The temporary file is deleted afterwards.
         """
-        grid_times = self._download_and_parse_xml()
-        latest_forecast = max(grid_times.data.keys())
-        latest_grid = grid_times.data[latest_forecast]
-        netcdf_url = self._replace_bbox_in_url(latest_grid.url, Config.BBOX)
+        netcdf_file_url = self._get_and_parse_xml()
 
         with tempfile.NamedTemporaryFile(delete=True) as temp_file:
             netcdf_file_name = temp_file.name
             print('Downloading AQI data')
-            self._download_to_file(netcdf_url, netcdf_file_name, 5)
+            self._download_to_file(netcdf_file_url, netcdf_file_name, 5)
             print('Finished downloading AQI data. Parsing the data...')
             self.dataset = Dataset(netcdf_file_name)
             self._parse_netcdf()
 
-    def _download_and_parse_xml(self):
+    def _get_and_parse_xml(self):
         """Downloads and parses xml file based on the given query
         """
-        _, start, end = get_forecast_times()
-        start_str_rounded = start[:14] + "00:00Z"
-        end_str_rounded = end[:14] + "00:00Z"
-        query_id = 'fmi::forecast::enfuser::airquality::helsinki-metropolitan::grid'
-        params = 'AQIndex'
-        args = [f'starttime={start_str_rounded}', f'endtime={end_str_rounded}', f'parameters={params}']
-        return download_and_parse(query_id, args)
+        _, start_time, end_time = get_forecast_times()
+        args = {'starttime': start_time, 'endtime': end_time, 'parameters': Config.AQI_PARAMS, 'bbox': Config.BBOX}
 
+        url = Config.FMI_QUERY_URL + Config.AQI_QUERY + "&" + urlencode(args)
+        req = requests.get(url)
+        content = req.content
+        xml = ET.fromstring(content)
+        file_reference = xml.findall(Config.FILEREF_MEMBER)
+
+        latest_file_url = file_reference[-1].text
+
+        return latest_file_url
+    
     def _parse_netcdf(self):
         """Parses the given netcdf file
 
@@ -114,22 +117,6 @@ class AQI:
         self.json = data
 
         return data
-
-    def _replace_bbox_in_url(self, url, new_bbox):
-        """Takes the url and replaces the bbox coordinates with new coordinates
-           This was done because the bbox arguement did not seem to work as args 
-
-        Args:
-            url (string): url of netcdf file
-            new_bbox (string): new bbox values as a string
-
-        Returns:
-            string: new url with replaced bbox value
-        """
-        start_index = url.find('bbox=')
-        end_index = url.find('&', start_index)
-        new_url = url[:start_index] + 'bbox=' + new_bbox + url[end_index:]
-        return new_url
 
     def get_coordinates(self):
         """Fetches all coordinates by their respective hours
