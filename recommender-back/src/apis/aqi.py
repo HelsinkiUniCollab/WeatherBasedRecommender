@@ -81,7 +81,7 @@ class AQI:
         """
         self.latitudes = self.dataset.variables['lat'][:]
         self.longitudes = self.dataset.variables['lon'][:]
-        time = self.dataset.variables['time'][:-1]
+        time = self.dataset.variables['time'][:]
         aqi = self.dataset.variables['index_of_airquality_194'][:]
 
         forecast_time = server_time_to_finnish() + timedelta(hours=1)
@@ -99,8 +99,7 @@ class AQI:
         self.dataset.close()
 
     def to_json(self):
-        """Converts the parsed netcdf data into JSON format. Any zero aqi values are skipped
-           so that the final coordinates will never contain any zeros.
+        """Converts the parsed netcdf data into JSON format
 
         Returns:
             dict: AQI data in JSON format
@@ -117,32 +116,30 @@ class AQI:
                 coord_pairs = (lat, lon)
                 aqi_value = aqi_object.data[lat_index, lon_index]
 
-                if aqi_value != 0:
-                    if coord_pairs not in coordinate_data:
-                        coordinate_data[coord_pairs] = []
-                        coordinate_data[coord_pairs].append({'Air Quality Index': 
-                                                             str(aqi_value)})
+                if coord_pairs not in coordinate_data:
+                    coordinate_data[coord_pairs] = []
+                    coordinate_data[coord_pairs].append({'Air Quality Index': 
+                                                         str(aqi_value)})
 
             data[time_str] = coordinate_data
 
         return data
 
     def get_coordinates(self, data):
-        """Fetches all coordinates by their respective hours
+        """Gets all data point coordinates
 
         Args:
-            data(string): aqi data with coordinates in json format
+            data (string): air quality data containing coords in json format
 
         Returns:
-            dict: hourly coordinates in form of key: hour value: coord_list
+            list: all possible coordinate pairs as a list of tuples
         """
-        unique_coords = {}
-        for hour, hour_data in data.items():
-            coords_list = []
-            for coord_tuple in hour_data.keys():
-                lat, lon = coord_tuple
-                coords_list.append((float(lat), float(lon)))
-            unique_coords[hour] = coords_list
+        unique_coords = []
+        for hour_data in data.values():
+            for coord_pair in hour_data.keys():
+                if coord_pair not in unique_coords:
+                    lat, lon = coord_pair
+                    unique_coords.append((float(lat), float(lon)))
         return unique_coords
 
     def _download_to_file(self, url, file_name, max_retries):
