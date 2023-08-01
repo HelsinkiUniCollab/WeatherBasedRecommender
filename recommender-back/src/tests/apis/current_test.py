@@ -5,6 +5,7 @@ from src.app import app
 from src.apis.poi import PointOfInterest
 from src.apis.current import Current
 from src.services.forecastdatafetcher import DataFetcher
+import json
 
 
 class CurrentTest(unittest.TestCase):
@@ -14,6 +15,19 @@ class CurrentTest(unittest.TestCase):
         self.item = PointOfInterest(longitude=24.65, latitude=60.15)
         self.fetcher = DataFetcher()
 
+    def test_get_simulated_pois_as_json(self):
+        response = self.client.get('/api/simulator?air_temperature=10&wind_speed=5&humidity=10&precipitation=5&cloud_amount=10&air_quality=2')
+        data = json.loads(response.text)
+        tested = data[0]['weather']['Weather']
+        del tested["Score"]
+        equals = {'Air temperature': "10",
+                'Wind speed': "5",
+                'Humidity': "10", 
+                'Precipitation': "5", 
+                'Cloud amount': "10",
+                'Air quality': "2"}
+        self.assertEqual(tested, equals)
+        
     def test_get_current_weather(self):
         with mock.patch(
             "src.services.forecastdatafetcher.DataFetcher.get_current_weather_data"
