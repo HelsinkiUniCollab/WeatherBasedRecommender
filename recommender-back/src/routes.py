@@ -1,8 +1,9 @@
 import json
-from flask import jsonify
+from flask import jsonify, request
 from .app import app, cache
 from .apis.forecast import Forecast
 from .apis.current import Current
+from .apis.pathing import GreenPathsAPI
 from .apis import manager
 from .services.forecastdatafetcher import DataFetcher
 
@@ -48,7 +49,6 @@ def get_poi_data():
     """
     return manager.get_pois_as_json()
 
-
 @app.route("/api/poi/<accessibility>", methods=["GET"])
 def get_poi_acessible_poi_data(accessibility):
     """
@@ -68,6 +68,33 @@ def get_weather_helsinki_kaisaniemi():
     helsinki_kaisaniemi = current.weather.get("Helsinki Kaisaniemi")
     return jsonify(helsinki_kaisaniemi)
 
+@app.route('/api/path', methods=['GET'])
+def get_path():
+    """
+    Handler for the '/api/path' endpoint.
+
+    Returns:
+        Poi data if errors have not occurred.
+    """
+    start_coords = request.args.get('start', None)
+    end_coords = request.args.get('end', None)
+
+    if not start_coords or not end_coords:
+        return jsonify({"error": "Missing start or end coordinates"}), 400
+
+    try:
+        start_coords = tuple(map(float, start_coords.split(',')))
+        end_coords = tuple(map(float, end_coords.split(',')))
+    except ValueError:
+        return jsonify({"error": "Invalid coordinates"}), 400
+
+    green_paths = GreenPathsAPI(start_coords, end_coords)
+    route_coordinates = green_paths.route_coordinates
+
+    if not route_coordinates:
+        return jsonify({"error": "Could not fetch route data"}), 500
+
+    return jsonify(route_coordinates), 200
 
 @app.errorhandler(404)
 def not_found_error(error):

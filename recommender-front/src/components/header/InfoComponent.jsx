@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, Dialog, DialogContent, DialogTitle } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import InfoIcon from '@mui/icons-material/Info';
 import Typography from '@mui/material/Typography';
 
@@ -10,7 +12,12 @@ function InfoComponent({ open, handleOpen, handleClose }) {
         <InfoIcon />
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle><Typography variant="infotitle">Info</Typography></DialogTitle>
+        <DialogTitle>
+          <Typography variant="infotitle">Info</Typography>
+          <IconButton onClick={handleClose} style={{ position: 'absolute', top: '0', right: '0' }}>
+            <CloseIcon />
+          </IconButton>
+        </DialogTitle>
         <DialogContent>
           <Typography variant="infotext">This website uses data from the following services & APIs:</Typography>
           <ul>
