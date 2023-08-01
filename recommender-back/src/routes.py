@@ -68,7 +68,7 @@ def get_weather_helsinki_kaisaniemi():
     helsinki_kaisaniemi = current.weather.get("Helsinki Kaisaniemi")
     return jsonify(helsinki_kaisaniemi)
 
-@app.route('/path', methods=['GET'])
+@app.route('/api/path', methods=['GET'])
 def get_path():
     """
     Handler for the '/api/path' endpoint.
