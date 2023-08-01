@@ -40,6 +40,17 @@ class Current:
                 data[station] = weatherdata
         self.weather = data
 
+    def get_current_weather_warning(self, station):
+        '''
+        Retrieves the wind speed for one station and calculates if it's too high.
+
+        Returns:
+            boolean: If the wind speed is too high.
+        '''
+        weather = self.weather.get(station)
+        wind_speed = weather['Wind speed'].split(' ')[0]
+        return float(wind_speed) > 17
+
     def get_current_air_quality(self):
         '''
         Retrieves the current AQI data for various stations.
@@ -59,6 +70,19 @@ class Current:
             aqi['Longitude'] = metadata['longitude']
             data[station] = aqi
         self.aqi = data
+
+    def find_nearest_stations_aqi(self, aqi, lat, lon):
+        '''
+        Calculates the closest stations index in the list of AQI-stations,
+        and returns the index of it.
+        '''
+        smallest, nearest = float('inf'), ''
+        for station in aqi:
+            dist = abs(aqi[station]['Latitude'] - lat)\
+                + abs(aqi[station]['Longitude'] - lon)
+            if dist < smallest:
+                smallest, nearest = dist, station
+        return nearest
 
     def find_nearest_stations_weather_data(self, poi: PointOfInterest):
         '''
@@ -100,11 +124,7 @@ class Current:
             if not missing_fields or not weather:
                 smallest, nearest = float('inf'), ''
                 if len(aqi) > 0:
-                    for station in aqi:
-                        dist = abs(aqi[station]['Latitude'] - lat)\
-                            + abs(aqi[station]['Longitude'] - lon)
-                        if dist < smallest:
-                            smallest, nearest = dist, station
+                    nearest = self.find_nearest_stations_aqi(aqi, lat, lon)
                     returned.setdefault(
                         'Air quality', aqi[nearest]['Air quality'])
                 break
