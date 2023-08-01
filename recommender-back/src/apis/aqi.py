@@ -7,7 +7,6 @@ from urllib.parse import urlencode
 from netCDF4 import Dataset
 from ..config import Config
 from datetime import datetime, timedelta
-from fmiopendata.grid import download_and_parse
 from .times import get_forecast_times
 
 class AQI:
