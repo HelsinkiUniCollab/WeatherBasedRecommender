@@ -94,7 +94,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | 4 Pathing , catching up | -             | -               | -              | -            | -             | -           | -     |
 | Isak    | 1            | 5             | -               | -              | -            | -             | -           | -     |
-| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami S. | 1.5            | 6.5 live, learning react, greenpath front             | -               | -              | -            | -             | -           | -     |
 | Sami M. | 6 More aqi data fixes, fixing tests            | 1 refactor aqi + parse xml             | -               | -              | -            | -             | -           | -     |
 | Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
