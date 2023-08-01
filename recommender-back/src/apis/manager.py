@@ -55,14 +55,14 @@ def find_nearest_coordinate_forecast_data(poi: PointOfInterest, forecast_data):
     try:
         lat = poi.latitude
         lon = poi.longitude
+        coord_key = f"{lat}, {lon}"
+
         for hour in forecast_data:
             data = forecast_data[hour]
-            time_key = f"{hour[11:16]}"
-            coord_key = f"{lat}, {lon}"
-
             if forecast_data is None or coord_key not in data:
                 return poi
 
+            time_key = f"{hour[11:16]}"
             poi.weather[time_key] = data[coord_key]
     except TypeError:
         print("Failed to find nearest coordinate forecast data. TypeError occurred.")
