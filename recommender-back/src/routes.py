@@ -38,7 +38,7 @@ def get_forecast():
     aqi = AQI()
     aqi.download_netcdf_and_store()
     aqi_data = aqi.to_json()
-    aqi_coords = aqi.get_coordinates()
+    aqi_coords = aqi.get_coordinates(aqi_data)
 
     pois = manager.get_pois()
     poi_forecast = forecast.get_closest_poi_coordinates_data(pois, aqi_data, aqi_coords)

@@ -1,12 +1,11 @@
 import numpy as np
 import tempfile
-import pytz
 import requests
 import defusedxml.ElementTree as ET
 from urllib.parse import urlencode
 from netCDF4 import Dataset
 from ..config import Config
-from datetime import datetime, timedelta
+from datetime import timedelta
 from .times import get_forecast_times, server_time_to_finnish
 
 class AQI:
@@ -22,7 +21,6 @@ class AQI:
             longitudes (numpy array): longitude coordinates as numpy array
         """
         self.data = None
-        self.json = None
         self.dataset = None
         self.datetimes = None
         self.latitudes = None
@@ -32,7 +30,7 @@ class AQI:
         """Downloads netcdf file, parses it and stores the data in the object.
            The temporary file is deleted afterwards.
         """
-        netcdf_file_url = self._get_and_parse_xml()
+        netcdf_file_url = self._parse_xml()
 
         with tempfile.NamedTemporaryFile(delete=True) as temp_file:
             netcdf_file_name = temp_file.name
@@ -42,17 +40,14 @@ class AQI:
             self.dataset = Dataset(netcdf_file_name)
             self._parse_netcdf()
 
-    def _get_and_parse_xml(self):
-        """Finds and parses xml file based on the given query
+    def _parse_xml(self):
+        """Parses the fmi open data xml file
 
         Returns:
             string: url link of latest queried netcdf file
         """
-        _, start_time, end_time = get_forecast_times()
 
-        args = {'starttime': start_time, 'endtime': end_time, 'parameters': Config.AQI_PARAMS, 'bbox': Config.BBOX}
-
-        url = Config.FMI_QUERY_URL + Config.AQI_QUERY + "&" + urlencode(args)
+        url = self._get_xml_url()
         req = requests.get(url)
         content = req.content
         xml = ET.fromstring(content)
@@ -60,6 +55,23 @@ class AQI:
         latest_file_url = file_reference[-1].text
 
         return latest_file_url
+    
+    def _get_xml_url(self):
+        """Fetches the xml file url based on query
+
+        Returns:
+            string: xml file url
+        """
+        _, start_time, end_time = get_forecast_times()
+
+        args = {'starttime': start_time, 
+                'endtime': end_time, 
+                'parameters': Config.AQI_PARAMS, 
+                'bbox': Config.BBOX}
+
+        xml_url = Config.FMI_QUERY_URL + Config.AQI_QUERY + "&" + urlencode(args)
+
+        return xml_url
     
     def _parse_netcdf(self):
         """Parses the given netcdf file
@@ -113,18 +125,19 @@ class AQI:
 
             data[time_str] = coordinate_data
 
-        self.json = data
-
         return data
 
-    def get_coordinates(self):
+    def get_coordinates(self, data):
         """Fetches all coordinates by their respective hours
+
+        Args:
+            data(string): aqi data with coordinates in json format
 
         Returns:
             dict: hourly coordinates in form of key: hour value: coord_list
         """
         unique_coords = {}
-        for hour, hour_data in self.json.items():
+        for hour, hour_data in data.items():
             coords_list = []
             for coord_tuple in hour_data.keys():
                 lat, lon = coord_tuple
