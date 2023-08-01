@@ -1,4 +1,6 @@
 import datetime as dt
+import pytz
+from datetime import datetime
 from suntime import Sun
 from dateutil import tz
 
@@ -49,6 +51,19 @@ def utc_to_finnish(datetime):
     set_utc = datetime.replace(tzinfo=tz.UTC)
     get_timezone = tz.gettz('Europe/Helsinki')
     return set_utc.astimezone(get_timezone)
+
+
+def server_time_to_finnish():
+    '''
+    Converts server timezone into finnish timezone
+
+    Returns:
+        string: converted server time to finnish
+    '''
+    finland_tz = pytz.timezone('Europe/Helsinki')
+    server_time = datetime.now()
+    converted = server_time.astimezone(finland_tz)
+    return converted
 
 
 def get_forecast_times():

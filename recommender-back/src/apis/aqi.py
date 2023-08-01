@@ -7,7 +7,7 @@ from urllib.parse import urlencode
 from netCDF4 import Dataset
 from ..config import Config
 from datetime import datetime, timedelta
-from .times import get_forecast_times
+from .times import get_forecast_times, server_time_to_finnish
 
 class AQI:
     def __init__(self):
@@ -43,12 +43,13 @@ class AQI:
             self._parse_netcdf()
 
     def _get_and_parse_xml(self):
-        """Downloads and parses xml file based on the given query
+        """Finds and parses xml file based on the given query
 
         Returns:
             string: url link of latest queried netcdf file
         """
         _, start_time, end_time = get_forecast_times()
+
         args = {'starttime': start_time, 'endtime': end_time, 'parameters': Config.AQI_PARAMS, 'bbox': Config.BBOX}
 
         url = Config.FMI_QUERY_URL + Config.AQI_QUERY + "&" + urlencode(args)
@@ -56,7 +57,6 @@ class AQI:
         content = req.content
         xml = ET.fromstring(content)
         file_reference = xml.findall(Config.FILEREF_MEMBER)
-
         latest_file_url = file_reference[-1].text
 
         return latest_file_url
@@ -72,10 +72,7 @@ class AQI:
         time = self.dataset.variables['time'][:-1]
         aqi = self.dataset.variables['index_of_airquality_194'][:]
 
-        finland_tz = pytz.timezone('Europe/Helsinki')
-        server_time = datetime.now()
-        converted = server_time.astimezone(finland_tz)
-        forecast_time = converted + timedelta(hours=1)
+        forecast_time = server_time_to_finnish() + timedelta(hours=1)
 
         datetimes = {}
         for times in time:
