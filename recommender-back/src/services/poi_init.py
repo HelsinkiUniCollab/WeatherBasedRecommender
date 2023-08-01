@@ -2,7 +2,7 @@ import os
 import json
 import copy
 from ..apis.poi import PointOfInterest
-from ..apis.models import Poi
+from ..db.models import Poi
 
 def init_pois():
     '''

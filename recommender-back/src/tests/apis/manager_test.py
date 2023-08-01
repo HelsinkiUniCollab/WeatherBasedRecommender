@@ -1,12 +1,12 @@
 import unittest
-from src.apis.db import get_db, close_db
+from src.db.db import get_db
 from src.apis.manager import get_pois, find_nearest_coordinate_forecast_data
 from src.apis.poi import PointOfInterest
 
 
 class TestManger(unittest.TestCase):
     def setUp(self):
-        self.mongo_db, self.mongo_client = get_db(test_env=True)
+        self.mongo_db = get_db(test_env=True)
         self.fore = {
         "2023-07-20 12:00:00": {
         "60.201231, 24.973478": {
@@ -113,9 +113,6 @@ class TestManger(unittest.TestCase):
             res = find_nearest_coordinate_forecast_data(onepoi,self.fore)
             self.assertEqual(len(res.weather),3)
             break
-    
-    def tearDown(self):
-        close_db(self.mongo_client)
 
 if __name__ == '__main__':
     unittest.main()

@@ -4,8 +4,8 @@ import requests
 from requests import Timeout
 from .current import Current
 from .poi import PointOfInterest
-from .models import Poi
-from .db import get_collection
+from ..db.models import Poi
+from ..db.db import get_collection
 from ..services.forecastdatafetcher import DataFetcher
 from ..services.poi_init import init_pois
 
@@ -74,7 +74,7 @@ def get_pois(test=False):
     Fetches and converts mongoDB documents into POI -objects.
 
     Args:
-        data (list): A list of all poi documents.
+        test (bool): A flag to indicate if the test environment is used.
 
     Returns:
         list: List of POI -objects.
@@ -83,10 +83,10 @@ def get_pois(test=False):
     if collection.count_documents({}) == 0:
         print('Start POI initialization')
         init_pois()
-    collection = Poi.get_all(test)
+    all_documents = collection.find({})
     pois = []
-    for poi in collection:
+    for poi in all_documents:
         poi = PointOfInterest(poi['name'], poi['latitude'], poi['longitude'],
-                                  poi['not_accessible_for'], poi['categories'])
+                              poi['not_accessible_for'], poi['categories'])
         pois.append(poi)
     return pois
