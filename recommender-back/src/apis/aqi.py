@@ -164,5 +164,6 @@ class AQI:
                 print(f"Download attempt {retry_attempt + 1} failed with error: {str(e)}")
                 if retry_attempt < max_retries:
                     print(f'Retrying...')
+                    print('Downloading AQI data')
                 else:
                     print(f"Maximum retries reached. Download failed.")
