@@ -45,6 +45,9 @@ class AQI:
 
     def _get_and_parse_xml(self):
         """Downloads and parses xml file based on the given query
+
+        Returns:
+            string: url link of latest queried netcdf file
         """
         _, start_time, end_time = get_forecast_times()
         args = {'starttime': start_time, 'endtime': end_time, 'parameters': Config.AQI_PARAMS, 'bbox': Config.BBOX}
