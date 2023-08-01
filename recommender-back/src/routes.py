@@ -98,8 +98,7 @@ def get_path():
     green_paths = GreenPathsAPI(start_coords, end_coords)
     if route_coordinates := green_paths.route_coordinates:
         return jsonify(route_coordinates), 200
-    else:
-        return jsonify({"error": "Could not fetch route data"}), 500
+    return jsonify({"error": "Could not fetch route data"}), 500
 
 
 @app.errorhandler(404)
