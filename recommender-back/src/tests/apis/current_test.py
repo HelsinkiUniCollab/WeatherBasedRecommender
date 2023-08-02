@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 from src.app import app
 from src.apis.poi import PointOfInterest
 from src.apis.current import Current
-from src.services.forecastdatafetcher import DataFetcher
+from src.services.data_fetcher import DataFetcher
 
 
 class CurrentTest(unittest.TestCase):
@@ -24,7 +24,7 @@ class CurrentTest(unittest.TestCase):
 
     def test_get_current_weather(self):
         with mock.patch(
-            "src.services.forecastdatafetcher.DataFetcher.get_current_weather_data"
+            "src.services.data_fetcher.DataFetcher.get_current_weather_data"
         ) as mock_download:
             mock_response = MagicMock()
             mock_response.location_metadata = {

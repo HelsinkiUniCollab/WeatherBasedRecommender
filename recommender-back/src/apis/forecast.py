@@ -3,7 +3,7 @@ import time
 import numpy as np
 from .times import utc_to_finnish, get_forecast_times
 from ..config import Config
-from ..services.forecastdatafetcher import DataFetcher
+from ..services.data_fetcher import DataFetcher
 
 
 class Forecast:

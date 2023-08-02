@@ -5,7 +5,7 @@ import requests
 from requests import Timeout
 from .current import Current
 from .poi import PointOfInterest
-from ..services.forecastdatafetcher import DataFetcher
+from ..services.data_fetcher import DataFetcher
 
 
 def get_pois_as_json(accessibility=False, category="All"):
