@@ -1,7 +1,7 @@
 import copy
 import math
 from .poi import PointOfInterest
-from ..services.forecastdatafetcher import DataFetcher
+from ..services.data_fetcher import DataFetcher
 from ..config import Config
 
 
@@ -66,8 +66,9 @@ class Current:
         '''
         Retrieves the Air Quality Index data for the last 24 hours within specified area
         '''
-        data = self.fetcher.get_current_air_quality_data(Config.BBOX, True, Config.AIRQUALITY_PARAMETERS)
-        return  data
+        return self.fetcher.get_current_air_quality_data(
+            Config.BBOX, True, Config.AIRQUALITY_PARAMETERS
+        )
 
     def parse_latest_aqi_data(self, raw_aqi_data: dict):
         '''
@@ -79,13 +80,11 @@ class Current:
         latest_aqi_data = {}
         for station, metadata in raw_aqi_data.location_metadata.items():
             values = raw_aqi_data.data[station]['AQINDEX_PT1H_avg']['values']
-            latest_aqi_value = next((v for v in reversed(values) if not math.isnan(v)), 'nan')  # Find latest non-nan value
-
+            latest_aqi_value = next((v for v in reversed(values) if not math.isnan(v)), 'nan')
             if latest_aqi_value == 'nan':
                 continue
-
             aqi = {
-                'Air quality': str(latest_aqi_value) + ' AQI',
+                'Air quality': f'{str(latest_aqi_value)} AQI',
                 'Latitude': metadata['latitude'],
                 'Longitude': metadata['longitude'],
             }
