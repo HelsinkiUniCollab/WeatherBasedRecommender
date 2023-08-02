@@ -5,4 +5,4 @@ class Config:
     AIRQUALITY_PARAMETERS = 'AQINDEX_PT1H_avg'
     CACHE_TYPE = 'redis'
     CACHE_REDIS_URL = 'redis://redis:6379/0'
-    
+    CELERY_URL = 'redis://localhost:6379'
