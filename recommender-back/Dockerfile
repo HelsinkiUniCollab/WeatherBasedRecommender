@@ -26,6 +26,8 @@ RUN chmod +x /app/install_eccodes.sh && /app/install_eccodes.sh
 
 RUN poetry run pip install eccodes
 
+RUN poetry run pip install celery
+
 COPY . /app
 
 ENV FLASK_APP=src/app:app

@@ -6,10 +6,8 @@ from .apis.current import Current
 from .apis.pathing import GreenPathsAPI
 from .apis import manager
 from .services.data_fetcher import DataFetcher
-from .services.tasks import fetch_data
 
 weather_fetcher = DataFetcher()
-forecast = Forecast(weather_fetcher)
 
 @app.route("/", methods=["GET"])
 def index():
@@ -33,7 +31,8 @@ def get_forecast():
     Returns:
         Forecast for the POI's.
     """
-    fetch_data.delay(weather_fetcher)
+    forecast = Forecast(weather_fetcher)
+    forecast.update_data()
     pois = manager.get_pois()
     poi_forecast = forecast.get_closest_poi_coordinates_data(pois)
     return json.dumps(poi_forecast)

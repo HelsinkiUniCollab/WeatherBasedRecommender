@@ -10,6 +10,25 @@ services:
    - 5000:5000
   #command:
    #flask run --host=0.0.0.0
+
+ celeryworker:
+  build:
+    context: ./recommender-back/
+    dockerfile: Dockerfile
+  command: ["celery", "-A", "src.app:celery", "worker", "--loglevel=info"]
+  depends_on:
+    - backend
+    - redis
+
+ celerybeat:
+  build:
+   context: ./recommender-back/
+   dockerfile: Dockerfile
+  command: ["celery", "-A", "src.app:celery", "beat"]
+  depends_on:
+   - backend
+   - redis
+   - celeryworker
  
  frontend:
   build:
