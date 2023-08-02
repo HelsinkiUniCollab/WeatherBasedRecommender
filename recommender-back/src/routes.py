@@ -5,7 +5,7 @@ from .apis.forecast import Forecast
 from .apis.current import Current
 from .apis.pathing import GreenPathsAPI
 from .apis import manager
-from .services.forecastdatafetcher import DataFetcher
+from .services.data_fetcher import DataFetcher
 
 weather_fetcher = DataFetcher()
 
