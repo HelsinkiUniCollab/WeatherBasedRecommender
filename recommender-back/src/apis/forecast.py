@@ -3,7 +3,7 @@ import time
 import numpy as np
 from .times import utc_to_finnish, get_forecast_times
 from ..config import Config
-from ..services.forecastdatafetcher import DataFetcher
+from ..services.data_fetcher import DataFetcher
 
 
 class Forecast:
@@ -120,15 +120,11 @@ class Forecast:
         Returns:
             list: List of coordinate pairs.
         """
-        unique_coords = set()
-
         flattened_coords = [
             tuple(coord) for sublist in self.coordinates for coord in sublist
         ]
 
-        for coord in flattened_coords:
-            unique_coords.add(coord)
-
+        unique_coords = set(flattened_coords)
         return list(unique_coords)
 
     def get_closest_poi_coordinates_data(self, pois):

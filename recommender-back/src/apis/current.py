@@ -1,7 +1,7 @@
 import copy
 import math
 from .poi import PointOfInterest
-from ..services.forecastdatafetcher import DataFetcher
+from ..services.data_fetcher import DataFetcher
 from ..config import Config
 
 
@@ -41,6 +41,17 @@ class Current:
                 data[station] = weatherdata
         self.weather = data
 
+    def get_current_weather_warning(self, station):
+        '''
+        Retrieves the wind speed for one station and calculates if it's too high.
+
+        Returns:
+            boolean: If the wind speed is too high.
+        '''
+        weather = self.weather.get(station)
+        wind_speed = weather['Wind speed'].split(' ')[0]
+        return float(wind_speed) > 17
+
     def get_current_air_quality(self):
         '''
         Retrieves the current AQI data for various stations.
@@ -55,8 +66,9 @@ class Current:
         '''
         Retrieves the Air Quality Index data for the last 24 hours within specified area
         '''
-        data = self.fetcher.get_current_air_quality_data(Config.BBOX, True, Config.AIRQUALITY_PARAMETERS)
-        return  data
+        return self.fetcher.get_current_air_quality_data(
+            Config.BBOX, True, Config.AIRQUALITY_PARAMETERS
+        )
 
     def parse_latest_aqi_data(self, raw_aqi_data: dict):
         '''
@@ -68,18 +80,29 @@ class Current:
         latest_aqi_data = {}
         for station, metadata in raw_aqi_data.location_metadata.items():
             values = raw_aqi_data.data[station]['AQINDEX_PT1H_avg']['values']
-            latest_aqi_value = next((v for v in reversed(values) if not math.isnan(v)), 'nan')  # Find latest non-nan value
-
+            latest_aqi_value = next((v for v in reversed(values) if not math.isnan(v)), 'nan')
             if latest_aqi_value == 'nan':
                 continue
-
             aqi = {
-                'Air quality': str(latest_aqi_value) + ' AQI',
+                'Air quality': f'{str(latest_aqi_value)} AQI',
                 'Latitude': metadata['latitude'],
                 'Longitude': metadata['longitude'],
             }
             latest_aqi_data[station] = aqi
         return latest_aqi_data
+
+    def find_nearest_stations_aqi(self, aqi, lat, lon):
+        '''
+        Calculates the closest stations index in the list of AQI-stations,
+        and returns the index of it.
+        '''
+        smallest, nearest = float('inf'), ''
+        for station in aqi:
+            dist = abs(aqi[station]['Latitude'] - lat)\
+                + abs(aqi[station]['Longitude'] - lon)
+            if dist < smallest:
+                smallest, nearest = dist, station
+        return nearest
 
     def find_nearest_stations_weather_data(self, poi: PointOfInterest):
         '''
@@ -121,11 +144,7 @@ class Current:
             if not missing_fields or not weather:
                 smallest, nearest = float('inf'), ''
                 if len(aqi) > 0:
-                    for station in aqi:
-                        dist = abs(aqi[station]['Latitude'] - lat)\
-                            + abs(aqi[station]['Longitude'] - lon)
-                        if dist < smallest:
-                            smallest, nearest = dist, station
+                    nearest = self.find_nearest_stations_aqi(aqi, lat, lon)
                     returned.setdefault(
                         'Air quality', aqi[nearest]['Air quality'])
                 break
