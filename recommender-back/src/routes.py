@@ -64,7 +64,6 @@ def get_poi_acessible_poi_data(accessibility):
 @cache.cached(timeout=3600)
 def get_weather_helsinki_kaisaniemi():
     current = Current(weather_fetcher)
-    current.get_current_weather()
     helsinki_kaisaniemi = current.weather.get("Helsinki Kaisaniemi")
     return jsonify(helsinki_kaisaniemi)
 

@@ -53,9 +53,8 @@ class DataFetcher:
                 f'timeseries={timeseries}',
             ],
         )
-    
 
-    def get_current_air_quality_data(self, bbox: str, timeseries: bool) -> Dict:
+    def get_current_air_quality_data(self, bbox: str, timeseries: bool, parameters: str) -> Dict:
         '''
         Fetches current weather data for a specified area and timeseries.
         Args:
@@ -69,5 +68,6 @@ class DataFetcher:
             args=[
                 f'bbox={bbox}',
                 f'timeseries={timeseries}',
+                f'parameters={parameters}',
             ],
         )
