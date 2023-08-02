@@ -1,4 +1,5 @@
 import copy
+import math
 from .poi import PointOfInterest
 from ..services.forecastdatafetcher import DataFetcher
 from ..config import Config
@@ -58,18 +59,38 @@ class Current:
         Returns:
             dict: A dictionary containing the current weather data for each station.
         '''
-        obs = self.fetcher.get_current_air_quality_data(Config.BBOX, True)
-        data = {}
-        for station, metadata in obs.location_metadata.items():
-            aqi = {
-                'Air quality': str(obs.data[station]['AQINDEX_PT1H_avg']['values'][-1]) + ' AQI'
-            }
-            if 'nan' in str(aqi['Air quality']):
+        raw_aqi_data = self.get_latest_air_quality()
+        self.aqi = self.parse_latest_aqi_data(raw_aqi_data)
+
+    def get_latest_air_quality(self):
+        '''
+        Retrieves the Air Quality Index data for the last 24 hours within specified area
+        '''
+        data = self.fetcher.get_current_air_quality_data(Config.BBOX, True, Config.AIRQUALITY_PARAMETERS)
+        return  data
+
+    def parse_latest_aqi_data(self, raw_aqi_data: dict):
+        '''
+        Finds latest aqi value and coordinates that is not nan for each station.
+
+        Returns:
+            dict: A dictionary containing stations and their aqi and coordinates.
+        '''
+        latest_aqi_data = {}
+        for station, metadata in raw_aqi_data.location_metadata.items():
+            values = raw_aqi_data.data[station]['AQINDEX_PT1H_avg']['values']
+            latest_aqi_value = next((v for v in reversed(values) if not math.isnan(v)), 'nan')  # Find latest non-nan value
+
+            if latest_aqi_value == 'nan':
                 continue
-            aqi['Latitude'] = metadata['latitude']
-            aqi['Longitude'] = metadata['longitude']
-            data[station] = aqi
-        self.aqi = data
+
+            aqi = {
+                'Air quality': str(latest_aqi_value) + ' AQI',
+                'Latitude': metadata['latitude'],
+                'Longitude': metadata['longitude'],
+            }
+            latest_aqi_data[station] = aqi
+        return latest_aqi_data
 
     def find_nearest_stations_aqi(self, aqi, lat, lon):
         '''
