@@ -81,7 +81,7 @@ def get_path():
     Handler for the '/api/path' endpoint.
 
     Returns:
-        POI-data if errors have not occurred.
+        Coordinates for the route based on request parameters.
     """
     start_coords = request.args.get('start', None)
     end_coords = request.args.get('end', None)
