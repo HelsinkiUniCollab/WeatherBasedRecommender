@@ -19,6 +19,11 @@ body {
   /* Makes sure leaflet copyright is shown*/
 }
 
+.leaftlet-map {
+  width: 100%;
+  height: 100%;
+}
+
 /* Styles for the app container */
 .app-container {
   display: grid;
@@ -27,6 +32,16 @@ body {
   overflow: hidden;
 }
 
+.simulator-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* This will create two equally wide columns */
+  height: 100vh;
+  width: 100vw;
+}
+
+.simulator-map-container {
+  width: 50vw;
+}
 
 /* Styles for the header container */
 .header-container {
@@ -169,6 +184,15 @@ body {
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
+}
+
+.simulator-form-component {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+  background-color: #ffffff;
+  padding: 10px;
 }
 
 @media (max-width: 600px) {
