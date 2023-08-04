@@ -5,7 +5,7 @@ import '../assets/style.css';
 
 function SimulatorPage() {
   const [simulatedWeatherData, setSimulatedWeatherData] = useState({
-    air_temperature: '5',
+    air_temperature: '',
     wind_speed: '',
     humidity: '',
     precipitation: '',
