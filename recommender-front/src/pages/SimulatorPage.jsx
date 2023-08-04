@@ -22,7 +22,7 @@ function SimulatorPage() {
           precipitation, cloudAmount, airQuality } = simulatedWeatherData;
         if (!airTemperature || !windSpeed || !humidity
            || !precipitation || !cloudAmount || !airQuality) {
-          console.log('One or more parameter values are empty.');
+          console.log('One or more parameter values are empty');
           return;
         }
         const poiResponse = await fetch(`${apiUrl}/api/simulator?air_temperature=${airTemperature}&wind_speed=${windSpeed}&humidity=${humidity}&precipitation=${precipitation}&cloud_amount=${cloudAmount}&air_quality=${airQuality}`);

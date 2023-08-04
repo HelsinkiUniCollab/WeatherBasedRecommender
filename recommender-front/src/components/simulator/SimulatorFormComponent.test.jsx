@@ -5,11 +5,11 @@ import SimulatorFormComponent from './SimulatorFormComponent';
 describe('SimulatorFormComponent', () => {
   it('renders the SimulatorFormComponent and checks form interactions', () => {
     const mockHandleInputChange = jest.fn();
-    const { getByLabelText } = render(<SimulatorFormComponent
+    const { getByPlaceholderText } = render(<SimulatorFormComponent
       handleInputChange={mockHandleInputChange}
     />);
 
-    const airTemperatureInput = getByLabelText('Air Temperature');
+    const airTemperatureInput = getByPlaceholderText('Air Temperature (°C)');
     fireEvent.change(airTemperatureInput, { target: { value: '20' } });
 
     expect(mockHandleInputChange).toHaveBeenCalled();
