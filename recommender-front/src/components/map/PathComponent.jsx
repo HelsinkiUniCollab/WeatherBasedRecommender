@@ -1,28 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { Marker, Popup } from 'react-leaflet';
 
-function PathComponent({ handleSetOrigin, handleSetDestination }) {
-  const [originCoordinates, setOriginCoordinates] = useState([]);
-  const [destinationCoordinates, setDestinationCoordinates] = useState([]);
+function UserLocationMarker({ handleSetOrigin }) {
+  const [position, setPosition] = useState(null);
+  const markerRef = useRef(null);
 
-  const handleMapClick = (e) => {
-    if (originCoordinates && !destinationCoordinates) {
-      // Set destination coordinates
-      setDestinationCoordinates([e]);
-      handleSetDestination(2);
-    } else {
-      // Set origin coordinates
-      setOriginCoordinates([3]);
-      handleSetOrigin(4);
+  const handleMarkerDragEnd = () => {
+    if (markerRef.current) {
+      console.log('clicked');
+      const marker = markerRef.current;
+      const pos = marker.getLatLng();
+      setPosition([pos.lat, pos.lng]);
+      handleSetOrigin(position[0], position[1]);
     }
   };
 
-  return (
-    <div>
-      <button type="button" onClick={handleMapClick}>
-        {originCoordinates ? 'Set destination' : 'Set origin'}
-      </button>
-    </div>
+  return position === null ? null : (
+    <Marker
+      position={position}
+      draggable
+      ref={markerRef}
+    >
+      <Popup>
+        <button type="button" onClick={() => handleMarkerDragEnd()}>Set Origin</button>
+      </Popup>
+    </Marker>
   );
 }
 
-export default PathComponent;
+export default UserLocationMarker;

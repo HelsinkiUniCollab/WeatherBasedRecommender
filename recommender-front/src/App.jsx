@@ -23,6 +23,8 @@ function App() {
   const [selectedValue, setSelectedValue] = useState(0);
   const [open, setOpen] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [userPosition, setUserPosition] = useState([60.2049, 24.9649]);
+  const [destination, setDestination] = useState([]);
 
   const handleOptionChange = (event) => {
     setAccessibility(event.target.value);
@@ -38,6 +40,16 @@ function App() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleSetOrigin = (latitude, longitude) => {
+    setUserPosition([latitude, longitude]);
+    console.log('Setting origin:', latitude, longitude);
+  };
+
+  const handleSetDestination = (latitude, longitude) => {
+    setDestination([latitude, longitude]);
+    console.log('Setting destination', latitude, longitude);
   };
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -108,6 +120,8 @@ function App() {
               poiData={poiData}
               time={times[selectedValue]}
               isMobile={isMobile}
+              handleSetOrigin={handleSetOrigin}
+              handleSetDestination={handleSetDestination}
             />
           </Grid>
         </Grid>
