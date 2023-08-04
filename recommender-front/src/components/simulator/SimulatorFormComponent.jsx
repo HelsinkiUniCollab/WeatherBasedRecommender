@@ -15,12 +15,30 @@ function SimulatorFormComponent({ handleInputChange }) {
   return (
     <div>
       <form style={formStyle}>
-        <input type="text" name="air_temperature" onChange={handleInputChange} placeholder="Air Temperature" />
-        <input type="text" name="wind_speed" onChange={handleInputChange} placeholder="Wind Speed" />
-        <input type="text" name="humidity" onChange={handleInputChange} placeholder="Humidity" />
-        <input type="text" name="precipitation" onChange={handleInputChange} placeholder="Precipitation" />
-        <input type="text" name="cloud_amount" onChange={handleInputChange} placeholder="Cloud Amount" />
-        <input type="text" name="air_quality" onChange={handleInputChange} placeholder="Air Quality" />
+        <label htmlFor="air_temperature">
+          Air Temperature
+          <input id="air_temperature" type="text" name="air_temperature" placeholder="Air Temperature" onChange={handleInputChange} />
+        </label>
+        <label htmlFor="wind_speed">
+          Wind Speed
+          <input id="wind_speed" type="text" name="wind_speed" placeholder="Wind Speed" onChange={handleInputChange} />
+        </label>
+        <label htmlFor="humidity">
+          Humidity
+          <input id="humidity" type="text" name="humidity" placeholder="Humidity" onChange={handleInputChange} />
+        </label>
+        <label htmlFor="precipitation">
+          Precipitation
+          <input id="precipitation" type="text" name="precipitation" placeholder="Precipitation" onChange={handleInputChange} />
+        </label>
+        <label htmlFor="cloud_amount">
+          Cloud Amount
+          <input id="cloud_amount" type="text" name="cloud_amount" placeholder="Cloud Amount" onChange={handleInputChange} />
+        </label>
+        <label htmlFor="air_quality">
+          Air Quality
+          <input id="air_quality" type="text" name="air_quality" placeholder="Air Quality" onChange={handleInputChange} />
+        </label>
       </form>
     </div>
 
