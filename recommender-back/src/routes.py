@@ -61,6 +61,24 @@ def get_poi_acessible_poi_data(accessibility):
     return manager.get_pois_as_json(accessibility)
 
 
+@app.route("/api/simulator", methods=["GET"])
+def get_simulated_poi_data():
+    """
+    Handler for the '/api/poi' endpoint.
+
+    Returns:
+        Poi data if errors have not occurred.
+    """
+    air_temperature = request.args.get('air_temperature')
+    wind_speed = request.args.get('wind_speed')
+    humidity = request.args.get('humidity')
+    precipitation = request.args.get('precipitation')
+    cloud_amount = request.args.get('cloud_amount')
+    air_quality = request.args.get('air_quality')
+    return manager.get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
+                                              precipitation, cloud_amount, air_quality)
+
+
 @app.route("/api/warning", methods=["GET"])
 @cache.cached(timeout=3600)
 def get_weather_warning():

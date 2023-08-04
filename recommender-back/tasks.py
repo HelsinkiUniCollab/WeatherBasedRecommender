@@ -6,7 +6,7 @@ def start(ctx):
 
 @task
 def test(ctx):
-    ctx.run("poetry run pytest src/tests", pty=True)
+    ctx.run("poetry run pytest -s src/tests", pty=True)
 
 @task
 def pylint(ctx):

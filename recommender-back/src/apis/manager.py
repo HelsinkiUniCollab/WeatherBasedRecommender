@@ -8,6 +8,32 @@ from .poi import PointOfInterest
 from ..services.data_fetcher import DataFetcher
 
 
+def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
+                                              precipitation, cloud_amount, air_quality):
+    """
+    Retrieves points of interest (POIs) from a JSON file and enriches them with simulated weather data.
+
+    Returns:
+        str: JSON string containing the POIs with calculated scores.
+
+    Raises:
+        KeyError: If an error occurs while processing the data.
+    """
+    try:
+        pois = get_pois()
+        updated_data = []
+        for poi in pois:
+            poi.set_simulated_weather(air_temperature, wind_speed, humidity,
+                                            precipitation, cloud_amount, air_quality)
+            poi.calculate_score()
+            updated_data.append(poi.get_json())
+        return json.dumps(updated_data)
+    except KeyError as error:
+        return {"message": "An error occurred", "status": 500, "error": str(error)}
+    except Timeout as error:
+        return {"message": "Forecast timed out", "status": 500, "error": str(error)}
+
+
 def get_pois_as_json(accessibility=False, category="All"):
     """
     Retrieves points of interest (POIs) from a JSON file and enriches them with current weather data.

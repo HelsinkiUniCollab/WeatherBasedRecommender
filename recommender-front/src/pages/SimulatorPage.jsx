@@ -5,7 +5,7 @@ import '../assets/style.css';
 
 function SimulatorPage() {
   const [simulatedWeatherData, setSimulatedWeatherData] = useState({
-    air_temperature: '',
+    air_temperature: '5',
     wind_speed: '',
     humidity: '',
     precipitation: '',
@@ -18,13 +18,7 @@ function SimulatorPage() {
     async function fetchData() {
       try {
         const apiUrl = process.env.REACT_APP_BACKEND_URL;
-        const poiResponse = await fetch(`${apiUrl}/api/
-        simulator?air_temperature=${simulatedWeatherData.air_temperature}
-        &wind_speed=${simulatedWeatherData.wind_speed}
-        &humidity=${simulatedWeatherData.humidity}
-        &precipitation=${simulatedWeatherData.precipitation}
-        &cloud_amount=${simulatedWeatherData.cloud_amount}
-        &air_quality=${simulatedWeatherData.air_quality}`);
+        const poiResponse = await fetch(`${apiUrl}/api/simulator?air_temperature=${simulatedWeatherData.air_temperature}&wind_speed=${simulatedWeatherData.wind_speed}&humidity=${simulatedWeatherData.humidity}&precipitation=${simulatedWeatherData.precipitation}&cloud_amount=${simulatedWeatherData.cloud_amount}&air_quality=${simulatedWeatherData.air_quality}`);
         const poi = await poiResponse.json();
         setPoiData(poi);
       } catch (error) {
@@ -49,9 +43,9 @@ function SimulatorPage() {
       <div className="simulator-map-container">
         <MapComponent
           poiData={poiData}
+          time="Weather"
         />
       </div>
-
     </div>
   );
 }
