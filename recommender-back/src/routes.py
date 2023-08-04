@@ -75,6 +75,8 @@ def get_simulated_poi_data():
     precipitation = request.args.get('precipitation')
     cloud_amount = request.args.get('cloud_amount')
     air_quality = request.args.get('air_quality')
+    if '' in [air_temperature, wind_speed, humidity, precipitation, cloud_amount, air_quality]:
+        return False
     return manager.get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
                                               precipitation, cloud_amount, air_quality)
 
