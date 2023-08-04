@@ -111,8 +111,8 @@ class PointOfInterest:
         self.weather = {
             "Weather": {
                 "Air temperature": f"{air_temperature} °C",
-                "Wind speed": f"{wind_speed} %",
-                "Humidity": f"{humidity} m/s",
+                "Wind speed": f"{wind_speed} m/s",
+                "Humidity": f"{humidity} %",
                 "Precipitation": f"{precipitation} mm",
                 "Cloud amount": f"{cloud_amount} %",
                 "Air quality": air_quality,

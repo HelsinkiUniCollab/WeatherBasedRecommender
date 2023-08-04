@@ -2,17 +2,20 @@ import React, { useState, useEffect } from 'react';
 import MapComponent from '../components/map/MapComponent';
 import SimulatorFormComponent from '../components/simulator/SimulatorFormComponent';
 import '../assets/style.css';
+import WeatherAlert from '../components/warning/WeatherAlert';
 
 function SimulatorPage() {
   const [simulatedWeatherData, setSimulatedWeatherData] = useState({
-    airTemperature: '',
-    windSpeed: '',
-    humidity: '',
-    precipitation: '',
-    cloudAmount: '',
-    airQuality: '',
+    airTemperature: '10',
+    windSpeed: '4',
+    humidity: '20',
+    precipitation: '0',
+    cloudAmount: '0',
+    airQuality: '2',
   });
   const [poiData, setPoiData] = useState([]);
+
+  const windSpeedOverThreshold = simulatedWeatherData.windSpeed > 17;
 
   useEffect(() => {
     async function fetchData() {
@@ -47,8 +50,12 @@ function SimulatorPage() {
 
   return (
     <div className="simulator-container">
+      <WeatherAlert showAlert={windSpeedOverThreshold} />
       <div className="simulator-form-component">
-        <SimulatorFormComponent handleInputChange={handleInputChange} />
+        <SimulatorFormComponent
+          handleInputChange={handleInputChange}
+          simulatedWeatherData={simulatedWeatherData}
+        />
       </div>
       <div className="simulator-map-container">
         <MapComponent
