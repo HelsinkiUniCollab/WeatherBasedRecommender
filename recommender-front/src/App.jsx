@@ -3,9 +3,11 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Grid from '@mui/material/Grid';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import WeatherAlert from './components/warning/WeatherAlert';
 import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
+import SimulatorPage from './SimulatorPage';
 import 'leaflet/dist/leaflet.css';
 import '@fontsource/roboto/300.css';
 import theme from './assets/theme';
@@ -84,39 +86,49 @@ function App() {
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
           />
         </Helmet>
-        <Grid container>
-          <Grid
-            item
-            xs={12}
-            className={`header-container${showAlert ? ' disabled' : ''}`}
-          >
-            <HeaderComponent
-              accessibility={accessibility}
-              handleChange={handleOptionChange}
-              times={times}
-              sliderValue={selectedValue}
-              onChange={handleSliderChange}
-              open={open}
-              handleOpen={handleOpen}
-              handleClose={handleClose}
-              isMobile={isMobile}
-              poiData={poiData}
+        <Router>
+          <Routes>
+            <Route
+              path="/"
+              element={(
+                <Grid container>
+                  <Grid
+                    item
+                    xs={12}
+                    className={`header-container${showAlert ? ' disabled' : ''}`}
+                  >
+                    <HeaderComponent
+                      accessibility={accessibility}
+                      handleChange={handleOptionChange}
+                      times={times}
+                      sliderValue={selectedValue}
+                      onChange={handleSliderChange}
+                      open={open}
+                      handleOpen={handleOpen}
+                      handleClose={handleClose}
+                      isMobile={isMobile}
+                      poiData={poiData}
+                    />
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    className={`map-container${showAlert ? ' disabled' : ''}`}
+                  >
+                    <WeatherAlert showAlert={showAlert} />
+                    <MapComponent
+                      accessibility={accessibility}
+                      poiData={poiData}
+                      time={times[selectedValue]}
+                      isMobile={isMobile}
+                    />
+                  </Grid>
+                </Grid>
+                    )}
             />
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            className={`map-container${showAlert ? ' disabled' : ''}`}
-          >
-            <WeatherAlert showAlert={showAlert} />
-            <MapComponent
-              accessibility={accessibility}
-              poiData={poiData}
-              time={times[selectedValue]}
-              isMobile={isMobile}
-            />
-          </Grid>
-        </Grid>
+            <Route path="/admin" element={<SimulatorPage />} />
+          </Routes>
+        </Router>
       </HelmetProvider>
     </ThemeProvider>
   );
