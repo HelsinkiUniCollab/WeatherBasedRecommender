@@ -93,7 +93,7 @@
 |         | Monday 31.7. | Tuesday 1.8. | Wednesday 2.8. | Thursday 3.8. | Friday 4.8. | Saturday 5.8. | Sunday 6.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | 4 Pathing , catching up | -             | -               | -              | -            | -             | -           | -     |
-| Isak    | 1            | 6,5             | 1,5               | -              | -            | -             | -           | 9     |
+| Isak    | 1            | 6,5             | 1,5               | -              | 6,5            | -             | -           | 15,5     |
 | Sami S. | 1.5            | 6.5 live, learning react, greenpath front             | 3 more react               | 2 greenpath              | -            | -             | -           | -     |
 | Sami M. | 6 More aqi data fixes, fixing tests            | 1 refactor aqi + parse xml             | -               | -              | -            | -             | -           | -     |
 | Pia     | 3,5 mongo           | 5,5 mongo, live            | -               | -              | 6 mongo, daily            | -             | -           | -     |
