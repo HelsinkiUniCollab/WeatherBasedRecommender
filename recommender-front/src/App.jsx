@@ -23,7 +23,7 @@ function App() {
   const [selectedValue, setSelectedValue] = useState(0);
   const [open, setOpen] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [userPosition, setUserPosition] = useState([60.2049, 24.9649]);
+  const [userPosition, setUserPosition] = useState(null);
   const [destination, setDestination] = useState([]);
 
   const handleOptionChange = (event) => {
@@ -121,6 +121,7 @@ function App() {
               time={times[selectedValue]}
               isMobile={isMobile}
               handleSetOrigin={handleSetOrigin}
+              userPosition={userPosition}
               handleSetDestination={handleSetDestination}
             />
           </Grid>

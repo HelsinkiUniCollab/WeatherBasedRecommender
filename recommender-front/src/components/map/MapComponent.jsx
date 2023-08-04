@@ -5,7 +5,7 @@ import UserLocationMarker from './PathComponent';
 import LocateButton from './LocateButtonComponent';
 import '../../assets/style.css';
 
-function MapComponent({ poiData, time, handleSetOrigin, handleSetDestination }) {
+function MapComponent({ poiData, time, handleSetOrigin, userPosition, handleSetDestination }) {
   const position = [60.2049, 24.9649];
   const minZoom = 12;
   const maxZoom = 18;
@@ -31,6 +31,7 @@ function MapComponent({ poiData, time, handleSetOrigin, handleSetDestination }) 
         handleSetOrigin={handleSetOrigin}
       />
       <UserLocationMarker
+        userPosition={userPosition}
         handleSetOrigin={handleSetOrigin}
       />
       <MarkersComponent

@@ -1,23 +1,20 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Marker, Popup } from 'react-leaflet';
 
-function UserLocationMarker({ handleSetOrigin }) {
-  const [position, setPosition] = useState(null);
+function UserLocationMarker({ handleSetOrigin, userPosition }) {
   const markerRef = useRef(null);
 
   const handleMarkerDragEnd = () => {
     if (markerRef.current) {
-      console.log('clicked');
       const marker = markerRef.current;
       const pos = marker.getLatLng();
-      setPosition([pos.lat, pos.lng]);
-      handleSetOrigin(position[0], position[1]);
+      handleSetOrigin(pos.lat, pos.lng);
     }
   };
 
-  return position === null ? null : (
+  return userPosition === null ? null : (
     <Marker
-      position={position}
+      position={userPosition}
       draggable
       ref={markerRef}
     >

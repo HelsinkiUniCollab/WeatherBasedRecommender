@@ -20,7 +20,6 @@ function LocateButton({ handleSetOrigin }) {
   });
 
   const handleClick = () => {
-    console.log('Clicked!');
     map.locate();
   };
 
