@@ -15,7 +15,8 @@ body {
 
 #map {
   width: 100vw;
-  height: calc(100vh);
+  height: calc(78vh);
+  position: relative;
   /* Makes sure leaflet copyright is shown*/
 }
 
@@ -45,7 +46,7 @@ body {
 
 /* Styles for the header container */
 .header-container {
-  position: sticky;
+  position: relative;
   top: 0;
   right: 0;
   left: 0;
@@ -80,6 +81,8 @@ body {
 /* Remove zoom from the map container */
 .map-container {
   zoom: 1;
+  position: relative;
+
 }
 
 .disabled {
