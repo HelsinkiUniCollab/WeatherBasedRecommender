@@ -1,4 +1,5 @@
 import React from 'react';
+import Typography from '@mui/material/Typography';
 
 function SimulatorFormComponent({ handleInputChange }) {
   const formStyle = {
@@ -15,33 +16,30 @@ function SimulatorFormComponent({ handleInputChange }) {
   return (
     <div>
       <form style={formStyle}>
-        <label htmlFor="air_temperature">
-          Air Temperature
-          <input id="air_temperature" type="text" name="air_temperature" placeholder="Air Temperature" onChange={handleInputChange} />
-        </label>
-        <label htmlFor="wind_speed">
-          Wind Speed
-          <input id="wind_speed" type="text" name="wind_speed" placeholder="Wind Speed" onChange={handleInputChange} />
-        </label>
-        <label htmlFor="humidity">
-          Humidity
-          <input id="humidity" type="text" name="humidity" placeholder="Humidity" onChange={handleInputChange} />
-        </label>
-        <label htmlFor="precipitation">
-          Precipitation
-          <input id="precipitation" type="text" name="precipitation" placeholder="Precipitation" onChange={handleInputChange} />
-        </label>
-        <label htmlFor="cloud_amount">
-          Cloud Amount
-          <input id="cloud_amount" type="text" name="cloud_amount" placeholder="Cloud Amount" onChange={handleInputChange} />
-        </label>
-        <label htmlFor="air_quality">
-          Air Quality
-          <input id="air_quality" type="text" name="air_quality" placeholder="Air Quality" onChange={handleInputChange} />
-        </label>
+        <Typography>Air Temperature</Typography>
+        <input id="airTemperature" type="text" name="airTemperature" placeholder="Air Temperature (°C)" onChange={handleInputChange} />
+        <Typography>Wind Speed</Typography>
+
+        <input id="windSpeed" type="text" name="windSpeed" placeholder="Wind Speed (m/s)" onChange={handleInputChange} />
+
+        <Typography>Humidity</Typography>
+
+        <input id="humidity" type="text" name="humidity" placeholder="Humidity (%)" onChange={handleInputChange} />
+
+        <Typography>Precipitation</Typography>
+
+        <input id="precipitation" type="text" name="precipitation" placeholder="Precipitation (%)" onChange={handleInputChange} />
+
+        <Typography>Cloud Amount</Typography>
+
+        <input id="cloudAmount" type="text" name="cloudAmount" placeholder="Cloud Amount (%)" onChange={handleInputChange} />
+
+        <Typography>Air Quality</Typography>
+
+        <input id="airQuality" type="text" name="airQuality" placeholder="Air Quality Index" onChange={handleInputChange} />
+
       </form>
     </div>
-
   );
 }
 

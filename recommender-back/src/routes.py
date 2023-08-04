@@ -76,7 +76,7 @@ def get_simulated_poi_data():
     cloud_amount = request.args.get('cloud_amount')
     air_quality = request.args.get('air_quality')
     if '' in [air_temperature, wind_speed, humidity, precipitation, cloud_amount, air_quality]:
-        return False
+        return jsonify({"error": "Missing parameters"}), 400
     return manager.get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
                                               precipitation, cloud_amount, air_quality)
 
