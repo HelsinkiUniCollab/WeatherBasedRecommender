@@ -5,12 +5,12 @@ import '../assets/style.css';
 
 function SimulatorPage() {
   const [simulatedWeatherData, setSimulatedWeatherData] = useState({
-    air_temperature: '',
-    wind_speed: '',
+    airTemperature: '',
+    windSpeed: '',
     humidity: '',
     precipitation: '',
-    cloud_amount: '',
-    air_quality: '',
+    cloudAmount: '',
+    airQuality: '',
   });
   const [poiData, setPoiData] = useState([]);
 
@@ -18,7 +18,14 @@ function SimulatorPage() {
     async function fetchData() {
       try {
         const apiUrl = process.env.REACT_APP_BACKEND_URL;
-        const poiResponse = await fetch(`${apiUrl}/api/simulator?air_temperature=${simulatedWeatherData.air_temperature}&wind_speed=${simulatedWeatherData.wind_speed}&humidity=${simulatedWeatherData.humidity}&precipitation=${simulatedWeatherData.precipitation}&cloud_amount=${simulatedWeatherData.cloud_amount}&air_quality=${simulatedWeatherData.air_quality}`);
+        const { airTemperature, windSpeed, humidity,
+          precipitation, cloudAmount, airQuality } = simulatedWeatherData;
+        if (!airTemperature || !windSpeed || !humidity
+           || !precipitation || !cloudAmount || !airQuality) {
+          console.log('One or more parameter values are empty.');
+          return;
+        }
+        const poiResponse = await fetch(`${apiUrl}/api/simulator?air_temperature=${airTemperature}&wind_speed=${windSpeed}&humidity=${humidity}&precipitation=${precipitation}&cloud_amount=${cloudAmount}&air_quality=${airQuality}`);
         const poi = await poiResponse.json();
         setPoiData(poi);
       } catch (error) {
@@ -29,10 +36,13 @@ function SimulatorPage() {
   }, [simulatedWeatherData]);
 
   const handleInputChange = (event) => {
-    setSimulatedWeatherData({
-      ...simulatedWeatherData,
-      [event.target.name]: event.target.value,
-    });
+    const { name, value } = event.target;
+    if (/^-?\d*\.?\d*$/.test(value)) {
+      setSimulatedWeatherData((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
   };
 
   return (
