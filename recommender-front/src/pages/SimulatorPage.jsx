@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import MapComponent from './components/map/MapComponent';
-import SimulatorFormComponent from './components/simulator/SimulatorFormComponent';
-import './assets/style.css';
+import MapComponent from '../components/map/MapComponent';
+import SimulatorFormComponent from '../components/simulator/SimulatorFormComponent';
+import '../assets/style.css';
 
 function SimulatorPage() {
   const [simulatedWeatherData, setSimulatedWeatherData] = useState({
@@ -18,7 +18,13 @@ function SimulatorPage() {
     async function fetchData() {
       try {
         const apiUrl = process.env.REACT_APP_BACKEND_URL;
-        const poiResponse = await fetch(`${apiUrl}/api/simulator?air_temperature=${simulatedWeatherData.air_temperature}&wind_speed=${simulatedWeatherData.wind_speed}&humidity=${simulatedWeatherData.humidity}&precipitation=${simulatedWeatherData.precipitation}&cloud_amount=${simulatedWeatherData.cloud_amount}&air_quality=${simulatedWeatherData.air_quality}`);
+        const poiResponse = await fetch(`${apiUrl}/api/
+        simulator?air_temperature=${simulatedWeatherData.air_temperature}
+        &wind_speed=${simulatedWeatherData.wind_speed}
+        &humidity=${simulatedWeatherData.humidity}
+        &precipitation=${simulatedWeatherData.precipitation}
+        &cloud_amount=${simulatedWeatherData.cloud_amount}
+        &air_quality=${simulatedWeatherData.air_quality}`);
         const poi = await poiResponse.json();
         setPoiData(poi);
       } catch (error) {
