@@ -75,7 +75,7 @@
 |         | Monday 17.7. | Tuesday 18.7. | Wednesday 19.7. | Thursday 20.7. | Friday 21.7. | Saturday 22.7. | Sunday 23.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | -            | 1 sprint planning | 2 test        | 5 live         | -            | -             | 2 daily/aqi/logo  | 10     |
-| Isak    | 1,5            | 1             | 1               | 1              | 1            | 1             | -           | 8     |
+| Isak    | 1,5            | 1             | 1               | 1              | 1            | 3             | -           | 10     |
 | Sami S. | -            | 1 sprint planning             | 4 pull reqs, backend tests               | 5 live              | -            | -             | 4 mongodb, pull reqs           | 14     |
 | Sami M. | -            | 1 sprint planning             | 3 test fore/current/times               | 5 live              | -            | -             | 5 research netcdf, aqi skeleton           | 14     |
 | Pia     | -            | 2 scrum master stuff            | -               | 6 live              | -            | 2,5 mongo            | 4,5 mongo           | -     |
@@ -84,7 +84,7 @@
 |         | Monday 24.7. | Tuesday 25.7. | Wednesday 26.7. | Thursday 27.7. | Friday 28.7. | Saturday 29.7. | Sunday 30.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | -            | 2 meetings      | 5 greenpaths, merges            | -              | -            | -             | -           | 7     |
-| Isak    | -            | 3,5             | -               | -              | 1,5            | 2             | 4,5           | 11,5     |
+| Isak    | -            | 3,5             | -               | -              | 1,5            | 2             | 5           | 12     |
 | Sami S. | 5.5 mongodb            | 3.5 mongodb, customer meeting             | 1.5 mongodb connection to github actions               | -              | 3 pull reqs, conflict resolving            | 2 start working on greenpaths             | -           | 15.5     |
 | Sami M. | 6 research netcdf more / parse data / convert json            | 2 meetings             | 6.5 download / get coords / refactor aqi               | -              | -            | -             | 6 fix production and aqi work           | 20.5     |
 | Pia     | -            | 1  meeting          | 2 backlog              | -              | 5 mongo           | -             | 6 prod, mongo           | 14    |
