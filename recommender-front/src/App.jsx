@@ -91,7 +91,7 @@ function App() {
             <Route
               path="/"
               element={(
-                <Grid container>
+                <Grid container overflow="hidden">
                   <Grid
                     item
                     xs={12}
