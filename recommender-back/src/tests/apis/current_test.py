@@ -4,8 +4,7 @@ from unittest.mock import MagicMock
 from src.app import app
 from src.apis.poi import PointOfInterest
 from src.apis.current import Current
-from src.services.forecastdatafetcher import DataFetcher
-import json
+from src.services.data_fetcher import DataFetcher
 
 
 class CurrentTest(unittest.TestCase):
@@ -14,10 +13,18 @@ class CurrentTest(unittest.TestCase):
         self.client = app.test_client()
         self.item = PointOfInterest(longitude=24.65, latitude=60.15)
         self.fetcher = DataFetcher()
+        self.expected_item = {
+            'Air temperature': '10.5 °C',
+            'Wind speed': '10.0 m/s',
+            'Precipitation': '10.0 %',
+            'Cloud amount': '5.0 %',
+            'Humidity': '60.0 %',
+            'Air quality': '1.0 AQI'
+        }
 
     def test_get_current_weather(self):
         with mock.patch(
-            'src.services.forecastdatafetcher.DataFetcher.get_current_weather_data'
+            "src.services.data_fetcher.DataFetcher.get_current_weather_data"
         ) as mock_download:
             mock_response = MagicMock()
             mock_response.location_metadata = {
@@ -58,6 +65,23 @@ class CurrentTest(unittest.TestCase):
             }
             self.assertEqual(self.current.weather, expected_data)
 
+    def test_weather_warning(self):
+        self.current = Current(self.fetcher)
+        self.current.weather = {
+            'station1': {
+                'Air temperature': '10.5 °C',
+                'Wind speed': '18.0 m/s',
+                'Precipitation': '10.0 %'
+            },
+            'station2': {
+                'Air temperature': '10.5 °C',
+                'Wind speed': '10.0 m/s',
+                'Precipitation': '10.0 %'
+            }
+        }
+        self.assertTrue(self.current.get_current_weather_warning('station1'))
+        self.assertFalse(self.current.get_current_weather_warning('station2'))
+
     def test_find_nearest_stations_weather_data(self):
         self.current = Current(self.fetcher)
         self.current.weather = {
@@ -83,20 +107,11 @@ class CurrentTest(unittest.TestCase):
             }
         }
 
-        expected_item = {
-            'Air temperature': '10.5 °C',
-            'Wind speed': '10.0 m/s',
-            'Precipitation': '10.0 %',
-            'Cloud amount': '5.0 %',
-            'Humidity': '60.0 %',
-            'Air quality': '1.0 AQI'
-        }
         self.current.find_nearest_stations_weather_data(self.item)
-        self.assertEqual(self.item.weather['Current'], expected_item)
+        self.assertEqual(self.item.weather["Current"], self.expected_item)
 
     def test_find_nearest_stations_weather_data_with_missing_fields(self):
         self.current = Current(self.fetcher)
-
         self.current.weather = {
             'station1': {
                 'Latitude': 60.1,
@@ -118,14 +133,5 @@ class CurrentTest(unittest.TestCase):
             }
         }
 
-        expected_item = {
-            'Air temperature': '10.5 °C',
-            'Wind speed': '10.0 m/s',
-            'Precipitation': '10.0 %',
-            'Cloud amount': '5.0 %',
-            'Humidity': '60.0 %',
-            'Air quality': '1.0 AQI'
-        }
-
         self.current.find_nearest_stations_weather_data(self.item)
-        self.assertEqual(self.item.weather['Current'], expected_item)
+        self.assertEqual(self.item.weather["Current"], self.expected_item)

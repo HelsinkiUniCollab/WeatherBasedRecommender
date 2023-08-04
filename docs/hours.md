@@ -65,7 +65,7 @@
 
 |         | Monday 10.7. | Tuesday 11.7. | Wednesday 12.7. | Thursday 13.7. | Friday 14.7. | Saturday 15.7. | Sunday 16.7. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Juuso   |              | -             | -               | -              | -            | -             | -           | -     |
 | Isak    | 1,5          | -             | -               | -              | -            | -             | -           | -     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
@@ -86,17 +86,17 @@
 | Juuso   | -            | 2 meetings      | 5 greenpaths, merges            | -              | -            | -             | -           | 7     |
 | Isak    | -            | 3,5             | -               | -              | 1,5            | 2             | 4,5           | 11,5     |
 | Sami S. | 5.5 mongodb            | 3.5 mongodb, customer meeting             | 1.5 mongodb connection to github actions               | -              | 3 pull reqs, conflict resolving            | 2 start working on greenpaths             | -           | 15.5     |
-| Sami M. | 6 research netcdf more / parse data / convert json            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | 6 research netcdf more / parse data / convert json            | 2 meetings             | 6.5 download / get coords / refactor aqi               | -              | -            | -             | 6 fix production and aqi work           | 20.5     |
 | Pia     | -            | 1  meeting          | 2 backlog              | -              | 5 mongo           | -             | 6 prod, mongo           | 14    |
 | Joni    | -            | 8 meeting + backend automation | 4 backend pr    | 1 reading pr | -            | -             | -           | -     |
 
 |         | Monday 31.7. | Tuesday 1.8. | Wednesday 2.8. | Thursday 3.8. | Friday 4.8. | Saturday 5.8. | Sunday 6.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
-| Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Juuso   | 4 Pathing , catching up | -             | -               | -              | -            | -             | -           | -     |
+| Isak    | 1            | 6,5             | 1,5               | -              | -            | -             | -           | 9     |
+| Sami S. | 1.5            | 6.5 live, learning react, greenpath front             | 3 more react               | 2 greenpath              | -            | -             | -           | -     |
+| Sami M. | 6 More aqi data fixes, fixing tests            | 1 refactor aqi + parse xml             | -               | -              | -            | -             | -           | -     |
+| Pia     | 3,5 mongo           | 5,5 mongo, live            | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 |         | Monday 7.8. | Tuesday 8.8. | Wednesday 9.8. | Thursday 10.8. | Friday 11.8. | Saturday 12.8. | Sunday 13.8. | Total |

@@ -1,8 +1,6 @@
 import unittest
-import json
 from unittest.mock import patch
 from datetime import datetime
-from src.apis.times import get_current_time
 from src.apis.poi import PointOfInterest
 
 class TestPointOfInterest(unittest.TestCase):

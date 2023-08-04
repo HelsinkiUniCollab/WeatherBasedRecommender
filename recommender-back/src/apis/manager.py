@@ -5,7 +5,7 @@ import requests
 from requests import Timeout
 from .current import Current
 from .poi import PointOfInterest
-from ..services.forecastdatafetcher import DataFetcher
+from ..services.data_fetcher import DataFetcher
 
 
 def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
