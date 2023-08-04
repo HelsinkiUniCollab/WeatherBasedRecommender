@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import WeatherAlert from './components/warning/WeatherAlert';
 import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
+import PathUtil from './utils/PathComponent';
 import 'leaflet/dist/leaflet.css';
 import '@fontsource/roboto/300.css';
 import theme from './assets/theme';
@@ -45,11 +46,13 @@ function App() {
   const handleSetOrigin = (latitude, longitude) => {
     setUserPosition([latitude, longitude]);
     console.log('Setting origin:', latitude, longitude);
+    // handleSendCoordinates(userPosition, destination);
   };
 
   const handleSetDestination = (latitude, longitude) => {
     setDestination([latitude, longitude]);
     console.log('Setting destination', latitude, longitude);
+    // handleSendCoordinates(userPosition, destination);
   };
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -98,6 +101,9 @@ function App() {
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
           />
         </Helmet>
+        <PathUtil
+        origin={userPosition}
+        destination={destination}/>
         <Grid container>
           <Grid item xs={12} className={`header-container${showAlert ? ' disabled' : ''}`}>
             <HeaderComponent
