@@ -16,7 +16,7 @@ def init_pois():
 
     '''
     try:
-        print('Initiliazing POIs to MongoDB')
+        print(' * Initiliazing POIs to MongoDB')
         file_path = os.path.join(os.path.dirname(__file__), '..', 'static', 'pois.json')
         with open(file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
@@ -25,19 +25,16 @@ def init_pois():
                 Poi.save(Poi(poi.name, poi.latitude, poi.longitude, poi.not_accessible_for, poi.categories))
         return pois
     except FileNotFoundError:
-        print('Error: pois.json not found.')
+        print(' * Error: pois.json not found.')
     except Exception as e:
-        print(f'Error occurred while initializing POIs: {e}')
+        print(f' * Error occurred while initializing POIs: {e}')
 
 def filter_duplicates(pois):
     uniques = {}
     for poi in pois:
         name = poi.name
-        category = [poi.categories[-1][-1]]
-        if name in uniques:
-            category.append(uniques[name].categories[-1])
-        poi.categories = category
-        uniques[name] = poi
+        if name not in uniques:
+            uniques[name] = poi
     return list(uniques.values())
 
 def iterate_items(data, categories):

@@ -69,7 +69,7 @@ def find_nearest_coordinate_forecast_data(poi: PointOfInterest, forecast_data):
 
     return poi
 
-def get_pois(test=False):
+def get_pois():
     """
     Fetches and converts mongoDB documents into POI -objects.
 
@@ -80,8 +80,8 @@ def get_pois(test=False):
         list: List of POI -objects.
     """
     collection = get_collection()
+    print(collection.name)
     if collection.count_documents({}) == 0:
-        print('Start POI initialization')
         init_pois()
     all_documents = collection.find({})
     pois = []
