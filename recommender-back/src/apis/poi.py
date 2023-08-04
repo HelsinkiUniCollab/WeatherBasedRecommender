@@ -108,14 +108,16 @@ class PointOfInterest:
         '''
         Sets simulated weather data to test score calculations.
         '''
-        self.weather = {"Weather": {
-            "Air temperature": air_temperature,
-            "Wind speed": wind_speed,
-            "Humidity": humidity,
-            "Precipitation": precipitation,
-            "Cloud amount": cloud_amount,
-            "Air quality": air_quality
-        }}
+        self.weather = {
+            "Weather": {
+                "Air temperature": f"{air_temperature} °C",
+                "Wind speed": f"{wind_speed} %",
+                "Humidity": f"{humidity} m/s",
+                "Precipitation": f"{precipitation} mm",
+                "Cloud amount": f"{cloud_amount} %",
+                "Air quality": air_quality,
+            }
+        }
 
     def get_json(self):
         '''
