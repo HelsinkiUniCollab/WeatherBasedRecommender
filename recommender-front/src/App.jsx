@@ -86,7 +86,7 @@ function App() {
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
           />
         </Helmet>
-        <Grid container>
+        <Grid container overflow="hidden">
           <Grid item xs={12} className={`header-container${showAlert ? ' disabled' : ''}`}>
             <HeaderComponent
               accessibility={accessibility}
