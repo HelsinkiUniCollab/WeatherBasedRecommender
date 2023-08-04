@@ -55,8 +55,7 @@ def iterate_items(data, categories):
             name = item['name']['fi']
             longitude = item['location']['coordinates'][0]
             latitude = item['location']['coordinates'][1]
-            not_accessible_for = list(
-                item['accessibility_shortcoming_count'].keys())
+            not_accessible_for = list(item['accessibility_shortcoming_count'].keys())
             poi = PointOfInterest(name, latitude, longitude,
                                   not_accessible_for, categories)
             pois.append(poi)

@@ -4,13 +4,11 @@ import requests
 from requests import Timeout
 from .current import Current
 from .poi import PointOfInterest
-from ..db.models import Poi
+from ..services.data_fetcher import DataFetcher
 from ..db.db import get_collection
-from ..services.forecastdatafetcher import DataFetcher
 from ..services.poi_init import init_pois
 
-
-def get_pois_as_json(accessibility=False):
+def get_pois_as_json(accessibility=False, category="All"):
     """
     Retrieves points of interest (POIs) from MongoDB and enriches them with current weather data.
 
@@ -29,6 +27,8 @@ def get_pois_as_json(accessibility=False):
         forecast_data = response.json()
         updated_data = []
         for poi in pois:
+            if category not in poi.categories:
+                continue
             poi: PointOfInterest = current.find_nearest_stations_weather_data(poi)
             poi = find_nearest_coordinate_forecast_data(poi, forecast_data)
             poi.calculate_score()
@@ -55,14 +55,14 @@ def find_nearest_coordinate_forecast_data(poi: PointOfInterest, forecast_data):
     try:
         lat = poi.latitude
         lon = poi.longitude
+        coord_key = f"{lat}, {lon}"
+
         for hour in forecast_data:
             data = forecast_data[hour]
-            time_key = f"{hour[11:16]}"
-            coord_key = f"{lat}, {lon}"
-
             if forecast_data is None or coord_key not in data:
                 return poi
 
+            time_key = f"{hour[11:16]}"
             poi.weather[time_key] = data[coord_key]
     except TypeError:
         print("Failed to find nearest coordinate forecast data. TypeError occurred.")
@@ -80,13 +80,12 @@ def get_pois():
         list: List of POI -objects.
     """
     collection = get_collection()
-    print(collection.name)
     if collection.count_documents({}) == 0:
         init_pois()
     all_documents = collection.find({})
     pois = []
     for poi in all_documents:
         poi = PointOfInterest(poi['name'], poi['latitude'], poi['longitude'],
-                              poi['not_accessible_for'], poi['categories'])
+                            poi['not_accessible_for'], poi['categories'])
         pois.append(poi)
     return pois

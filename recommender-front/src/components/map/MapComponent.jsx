@@ -20,6 +20,7 @@ function MapComponent({ poiData, time }) {
       maxZoom={maxZoom}
       maxBounds={bounds}
       maxBoundsViscosity={viscosity}
+      className="leaflet-map"
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

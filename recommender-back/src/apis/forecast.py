@@ -1,10 +1,9 @@
 import math
 import time
-import errno
 import numpy as np
 from .times import utc_to_finnish, get_forecast_times
 from ..config import Config
-from ..services.forecastdatafetcher import DataFetcher
+from ..services.data_fetcher import DataFetcher
 
 
 class Forecast:
@@ -40,7 +39,7 @@ class Forecast:
             Grid: The forecast grid data within the specified time range.
         """
         return self.fetcher.get_forecast_data(
-            start, end, Config.BBOX, Config.TIMESTEP, Config.PARAMETERS
+            start, end, Config.BBOX, Config.TIMESTEP, Config.FORECAST_PARAMETERS
         )
 
     def parse_forecast_data(self):
@@ -56,18 +55,21 @@ class Forecast:
             try:
                 self.data.parse(delete=True)
                 break
-            except ConnectionResetError as error:
-                if error.errno != errno.ECONNRESET:
-                    # Not the error we are looking for, re-raise
-                    raise
-                print(f"ConnectionResetError during parsing: {error}")
+            except (ConnectionResetError, TimeoutError) as error:
+                print(f"Error during parsing: {error}")
                 if attempt < max_retries - 1:
                     time.sleep(retry_delay)
                     print(f"Retrying parsing ({attempt + 1} out of {max_retries})...")
                 else:
-                    print(
-                        f"Parsing failed after {max_retries} attempts due to ConnectionResetError."
-                    )
+                    print(f"Parsing failed after {max_retries} attempts due to {type(error).__name__}.")
+                    raise
+            except Exception as error:  # Generic exception handler
+                print(f"Unexpected error during parsing: {error}")
+                if attempt < max_retries - 1:
+                    time.sleep(retry_delay)
+                    print(f"Retrying parsing ({attempt + 1} out of {max_retries})...")
+                else:
+                    print(f"Parsing failed after {max_retries} attempts due to unexpected error.")
                     raise
 
     def update_forecast_properties(self):
@@ -118,15 +120,11 @@ class Forecast:
         Returns:
             list: List of coordinate pairs.
         """
-        unique_coords = set()
-
         flattened_coords = [
             tuple(coord) for sublist in self.coordinates for coord in sublist
         ]
 
-        for coord in flattened_coords:
-            unique_coords.add(coord)
-
+        unique_coords = set(flattened_coords)
         return list(unique_coords)
 
     def get_closest_poi_coordinates_data(self, pois):

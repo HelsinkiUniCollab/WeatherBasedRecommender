@@ -1,17 +1,17 @@
 import React from 'react';
 import Alert from '@mui/material/Alert';
+import Typography from '@mui/material/Typography';
 
 const fullscreenAlertStyle = {
   position: 'absolute',
   top: 0,
-  left: 0,
-  right: 0,
+  left: 50,
+  right: 50,
   bottom: 0,
   zIndex: 9999,
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: 'rgba(0, 0, 0, 0.8)',
 };
 
 function WeatherAlert({ showAlert }) {
@@ -21,9 +21,13 @@ function WeatherAlert({ showAlert }) {
 
   return (
     <div style={fullscreenAlertStyle}>
-      <Alert severity="warning" sx={{ fontSize: '80px', color: '#000' }}>
-        You should avoid going outside due to strong wind.
-        We do not provide any recommendations and all the controls are disabled.
+      <Alert severity="warning" sx={{ fontSize: '40px', color: '#000000', backgroundColor: 'white' }}>
+        <Typography variant="h1">
+          <center>
+            You should avoid going outside due to strong wind.
+            We do not provide any recommendations and all the controls are disabled.
+          </center>
+        </Typography>
       </Alert>
     </div>
   );
