@@ -1,28 +1,18 @@
 # Databases
 
-We use two databases for this project: **development** and **production**.
+Mongo DB Atlas is used for storing basic information (name, longitude, latitude, categories and accessibility) about Point of Interests (POIs). If database is lost, the POIS are recovered automatically from a static json file. There are to Atlas accounts in use: **development** and **production**.
 
-- **Development Database:**
+- **Development**
   - Connection String: `mongodb+srv://helsinkiunicollab:<password>@development.qebxr8j.mongodb.net/?retryWrites=true&w=majority`
 
-  Development database has two collections: development and test. 
-  Development collection is used When Flask App is run with:
-```bash 
-  $poetry run invoke start
-```
-  Test collection is used When Flask App is run with:
-```bash 
-  $poetry run invoke test
-```
-
-- **Production Database:**
+- **Production**
   - Connection String: `mongodb+srv://helsinkiunicollab:<password>@production.djrvu6z.mongodb.net/?retryWrites=true&w=majority`
 
 ## Accessing the Databases
 
 To access the databases, you need credentials. The username for both databases is `helsinkiunicollab`. Please ask a team member for the respective passwords.
 
-To securely store the passwords, add them to your environment variables by creating a `.env` file in the project root directory. 
+To securely store the passwords, add them to as environment variables DEVELOPMENT_DB_URI and PRODUCTION_DB_URI in an `.env` file in the project root directory. 
 
 ## Cluster and IP Restrictions
 
@@ -32,7 +22,7 @@ There are no IP restrictions on the clusters, so they can be accessed from any I
 
 ## MongoDB Atlas Admin Access
 
-For administrative access to each database on MongoDB Atlas, an account connected to Pia's email is used. Please reach out to Pia to obtain the necessary credentials if needed. These credentials are not the same the databases use.
+For administrative access to each database on MongoDB Atlas, an account connected to Pia's email is used. Please reach out to obtain the necessary credentials if needed. These credentials are not the same the databases use.
 
 ## PyMongo
 
