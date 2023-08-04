@@ -86,11 +86,11 @@ class TestManger(unittest.TestCase):
         data = json.loads(response.text)
         tested = data[0]['weather']['Weather']
         del tested['Score']
-        equals = {'Air temperature': '10',
-                  'Wind speed': '5',
-                  'Humidity': '10',
-                  'Precipitation': '5',
-                  'Cloud amount': '10',
+        equals = {'Air temperature': '10 °C',
+                  'Wind speed': '5 %',
+                  'Humidity': '10 m/s',
+                  'Precipitation': '5 mm',
+                  'Cloud amount': '10 %',
                   'Air quality': '2'}
         self.assertEqual(tested, equals)
 
