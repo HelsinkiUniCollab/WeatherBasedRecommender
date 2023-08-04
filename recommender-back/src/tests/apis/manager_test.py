@@ -87,8 +87,8 @@ class TestManger(unittest.TestCase):
         tested = data[0]['weather']['Weather']
         del tested['Score']
         equals = {'Air temperature': '10 °C',
-                  'Wind speed': '5 %',
-                  'Humidity': '10 m/s',
+                  'Wind speed': '5 m/s',
+                  'Humidity': '10 %',
                   'Precipitation': '5 mm',
                   'Cloud amount': '10 %',
                   'Air quality': '2'}
