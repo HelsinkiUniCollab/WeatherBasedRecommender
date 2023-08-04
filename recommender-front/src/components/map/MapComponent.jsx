@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import MarkersComponent from './MarkersComponent';
-import UserLocationMarker from './PathComponent';
+import UserLocationMarker from './UserLocationComponent';
 import LocateButton from './LocateButtonComponent';
 import '../../assets/style.css';
 

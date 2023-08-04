@@ -24,7 +24,7 @@ function App() {
   const [open, setOpen] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [userPosition, setUserPosition] = useState(null);
-  const [destination, setDestination] = useState([]);
+  const [destination, setDestination] = useState(null);
 
   const handleOptionChange = (event) => {
     setAccessibility(event.target.value);
