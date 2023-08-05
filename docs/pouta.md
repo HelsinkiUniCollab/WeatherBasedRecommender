@@ -122,6 +122,9 @@ services:
     networks:
       - ubuntu_default
 
+  redis:
+    image: redis:latest
+
 networks:
   ubuntu_default:
     external: true
