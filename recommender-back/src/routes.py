@@ -24,7 +24,7 @@ def index():
 
 
 @app.route("/api/forecast", methods=["GET"])
-@cache.cached(timeout=3600)
+@cache.cached()
 def get_forecast():
     """
     Handler for the '/api/forecast' endpoint.
@@ -82,7 +82,7 @@ def get_simulated_poi_data():
 
 
 @app.route("/api/warning", methods=["GET"])
-@cache.cached(timeout=3600)
+@cache.cached()
 def get_weather_warning():
     """
     Handler for the '/api/warning' endpoint. 
