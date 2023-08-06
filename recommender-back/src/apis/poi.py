@@ -14,7 +14,7 @@ class PointOfInterest:
         self.weather = {}
         self.categorytype = None
 
-    def calculate_score(self):
+    def calculate_score(self, cur_time=None, sunrise=None, sunset=None):
         '''
         Chooses which algorithm to use in scoring.
         Must be manually handled to adjust when adding new points of interest.
@@ -22,12 +22,14 @@ class PointOfInterest:
         indoor_categories = ['Sport halls']
         outdoor_categories = ['Open air pools and beaches',
                               'Athletic fields and venues', 'Neighbourhood sports facilities and parks']
-        sunrise = self.sun[0]
-        sunset = self.sun[1]
+        if sunrise is None and sunset is None:
+            sunrise, sunset = self.sun
 
         for category in self.categories:
             for timeinterval, data in enumerate(self.weather.values()):
-                cur_time = times.get_current_time(timeinterval)
+                if cur_time is None:
+                    cur_time = times.get_current_time(timeinterval)
+                print(cur_time)
                 wind_speed = float(data.get('Wind speed').split(' ')[0])
                 precipitation = float(data.get('Precipitation').split(' ')[0])
                 clouds = float(data.get('Cloud amount').split(' ')[0]) * 0.01
