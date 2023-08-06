@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import axios from 'axios';
 
 function PathUtil({ origin, destination, setRouteCoordinates }) {
-  const handleSendCoords = async () => {
+  const handleSendCoords = useCallback(async () => {
     try {
       const response = await axios.get('/path', {
         params: {
@@ -15,7 +15,7 @@ function PathUtil({ origin, destination, setRouteCoordinates }) {
     } catch (error) {
       console.error('Error sending coordinates:', error);
     }
-  };
+  }, [origin, destination, setRouteCoordinates]);
 
   useEffect(() => {
     if (origin && destination) {
