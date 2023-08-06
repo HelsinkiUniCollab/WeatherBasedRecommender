@@ -1,11 +1,10 @@
 import unittest
-from src.db.db import get_db
+from src.db.db import get_collection
 from src.apis.manager import get_pois, find_nearest_coordinate_forecast_data
 from src.apis.poi import PointOfInterest
 
 class TestManger(unittest.TestCase):
     def setUp(self):
-        self.db = get_db()['pois']
         self.fore = {
         "2023-07-20 12:00:00": {
         "60.201231, 24.973478": {
@@ -111,7 +110,6 @@ class TestManger(unittest.TestCase):
         result = get_pois()
         for onepoi in result:
             res = find_nearest_coordinate_forecast_data(onepoi,self.fore)
-            print(res)
             self.assertEqual(len(res.weather),3)
             break
 

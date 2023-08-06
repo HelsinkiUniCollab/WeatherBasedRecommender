@@ -3,7 +3,10 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 
 load_dotenv()
-mongo_uri = os.environ.get('DEVELOPMENT_DB_URI')
+if 'MONGO_URI' in os.environ:
+        mongo_uri = os.environ['MONGO_URI']
+else:
+    mongo_uri = os.environ.get('DEVELOPMENT_DB_URI')
 print(' * Connecting to MongoDB')
 
 def get_db():
