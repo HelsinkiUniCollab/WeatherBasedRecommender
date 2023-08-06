@@ -22,8 +22,8 @@ class Forecast:
         current, start, end = get_forecast_times()
         print(f"Query for the new Grid object at time: {current} UTC")
         forecast_data = self.get_latest_forecast(start, end)
+        
         latest_forecast = max(forecast_data.data.keys())
-
         if not self.data or latest_forecast > max(self.data.keys()):
             self.data = forecast_data.data[latest_forecast]
             self.parse_forecast_data()
@@ -188,6 +188,7 @@ class Forecast:
                 cloudcoverage = round(value["Data"], 1)
 
         wind_speed = self.calculate_wind_speed_and_direction(u_wind, v_wind)
+
         return {
             "Air temperature": f"{str(temperature)} °C",
             "Humidity": f"{str(humidity)} %",

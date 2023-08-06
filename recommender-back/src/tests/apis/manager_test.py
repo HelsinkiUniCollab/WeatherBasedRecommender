@@ -2,7 +2,8 @@ import unittest
 from src.db.db import get_collection
 from src.apis.manager import get_pois, find_nearest_coordinate_forecast_data
 from src.apis.poi import PointOfInterest
-
+from src.app import app
+import json
 
 class TestManger(unittest.TestCase):
     def setUp(self):

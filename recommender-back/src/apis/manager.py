@@ -82,7 +82,6 @@ def find_nearest_coordinate_forecast_data(poi: PointOfInterest, forecast_data):
         lat = poi.latitude
         lon = poi.longitude
         coord_key = f"{lat}, {lon}"
-
         for hour in forecast_data:
             data = forecast_data[hour]
             if forecast_data is None or coord_key not in data:
