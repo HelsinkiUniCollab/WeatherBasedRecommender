@@ -61,7 +61,7 @@ def get_poi_acessible_poi_data(accessibility):
     return manager.get_pois_as_json(accessibility)
 
 
-@app.route("/api/simulator", methods=["GET"])
+@app.route("/api/simulator", methods=["POST"])
 def get_simulated_poi_data():
     """
     Handler for the '/api/poi' endpoint.
@@ -69,16 +69,21 @@ def get_simulated_poi_data():
     Returns:
         Poi data if errors have not occurred.
     """
-    air_temperature = request.args.get('air_temperature')
-    wind_speed = request.args.get('wind_speed')
-    humidity = request.args.get('humidity')
-    precipitation = request.args.get('precipitation')
-    cloud_amount = request.args.get('cloud_amount')
-    air_quality = request.args.get('air_quality')
-    if '' in [air_temperature, wind_speed, humidity, precipitation, cloud_amount, air_quality]:
+
+    data = request.get_json()
+    air_temperature = data.get('air_temperature')
+    wind_speed = data.get('wind_speed')
+    humidity = data.get('humidity')
+    precipitation = data.get('precipitation')
+    cloud_amount = data.get('cloud_amount')
+    air_quality = data.get('air_quality')
+    current_time = data.get('current_time')
+    sunrise = data.get('sunrise')
+    sunset = data.get('sunset')
+    if '' in [air_temperature, wind_speed, humidity, precipitation, cloud_amount, air_quality, current_time, sunrise, sunset]:
         return jsonify({"error": "Missing parameters"}), 400
     return manager.get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
-                                              precipitation, cloud_amount, air_quality)
+                                              precipitation, cloud_amount, air_quality, current_time, sunrise, sunset)
 
 
 @app.route("/api/warning", methods=["GET"])

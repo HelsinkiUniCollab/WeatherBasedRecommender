@@ -205,6 +205,17 @@ body {
   padding: 10px;
 }
 
+.night-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  pointer-events: none;
+}
+
 @media (max-width: 600px) {
   .header-container {
     /* Adjust the height for smaller screens */

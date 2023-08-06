@@ -2,7 +2,16 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import CustomTextField from './CustomTextField';
 
-function SimulatorFormComponent({ handleInputChange, simulatedWeatherData }) {
+function SimulatorFormComponent({
+  handleInputChange,
+  simulatedWeatherData,
+  handleTimeChange,
+  currentTime,
+  handleSunriseChange,
+  sunrise,
+  handleSunsetChange,
+  sunset,
+}) {
   const formStyle = {
     bottom: '10px',
     left: '10px',
@@ -64,6 +73,27 @@ function SimulatorFormComponent({ handleInputChange, simulatedWeatherData }) {
           value={simulatedWeatherData.airQuality}
           handleInputChange={handleInputChange}
           helperText="1-5"
+        />
+        <Typography>Current Time</Typography>
+        <CustomTextField
+          name="currentTime"
+          placeholder="Current Time"
+          value={currentTime}
+          handleInputChange={handleTimeChange}
+        />
+        <Typography>Sunrise</Typography>
+        <CustomTextField
+          name="sunrise"
+          placeholder="Sunrise"
+          value={sunrise}
+          handleInputChange={handleSunriseChange}
+        />
+        <Typography>Sunset</Typography>
+        <CustomTextField
+          name="sunset"
+          placeholder="Sunset"
+          value={sunset}
+          handleInputChange={handleSunsetChange}
         />
       </form>
     </div>
