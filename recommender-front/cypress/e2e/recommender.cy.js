@@ -58,6 +58,7 @@ describe('Map and POI features', () => {
   });
 
   it('should show the weather alert when /api/warning returns true', () => {
+    cy.visit('');
     cy.intercept('GET', 'http://localhost:5000/api/warning', JSON.stringify(true));
     cy.contains('You should avoid going outside due to strong wind.').should('be.visible');
   });
