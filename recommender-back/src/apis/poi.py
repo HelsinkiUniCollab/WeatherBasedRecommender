@@ -46,7 +46,7 @@ class PointOfInterest:
     def _outdoor_score(self, temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time):
         '''
         Calculates the score for an outdoor point of interest based on weather conditions.
-        
+
         Returns:
             float: The calculated score for the outdoor point of interest.
         '''
@@ -103,6 +103,22 @@ class PointOfInterest:
 
             score += humidity_weight
         return round(score, 2)
+
+    def set_simulated_weather(self, air_temperature, wind_speed, humidity,
+                              precipitation, cloud_amount, air_quality):
+        '''
+        Sets simulated weather data to test score calculations.
+        '''
+        self.weather = {
+            "Weather": {
+                "Air temperature": f"{air_temperature} °C",
+                "Wind speed": f"{wind_speed} m/s",
+                "Humidity": f"{humidity} %",
+                "Precipitation": f"{precipitation} mm",
+                "Cloud amount": f"{cloud_amount} %",
+                "Air quality": air_quality,
+            }
+        }
 
     def get_json(self):
         '''

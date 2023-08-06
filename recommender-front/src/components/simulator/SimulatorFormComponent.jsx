@@ -1,6 +1,8 @@
 import React from 'react';
+import Typography from '@mui/material/Typography';
+import CustomTextField from './CustomTextField';
 
-function SimulatorFormComponent({ handleInputChange }) {
+function SimulatorFormComponent({ handleInputChange, simulatedWeatherData }) {
   const formStyle = {
     position: 'absolute',
     bottom: '10px',
@@ -9,21 +11,63 @@ function SimulatorFormComponent({ handleInputChange }) {
     padding: '10px',
     borderRadius: '5px',
     display: 'grid',
-    gap: '10px',
+    gap: '5px',
+    width: '120px',
   };
 
   return (
     <div>
       <form style={formStyle}>
-        <input type="text" name="air_temperature" onChange={handleInputChange} placeholder="Air Temperature" />
-        <input type="text" name="wind_speed" onChange={handleInputChange} placeholder="Wind Speed" />
-        <input type="text" name="humidity" onChange={handleInputChange} placeholder="Humidity" />
-        <input type="text" name="precipitation" onChange={handleInputChange} placeholder="Precipitation" />
-        <input type="text" name="cloud_amount" onChange={handleInputChange} placeholder="Cloud Amount" />
-        <input type="text" name="air_quality" onChange={handleInputChange} placeholder="Air Quality" />
+        <Typography>Air Temperature</Typography>
+        <CustomTextField
+          name="airTemperature"
+          placeholder="Air Temperature (°C)"
+          value={simulatedWeatherData.airTemperature}
+          handleInputChange={handleInputChange}
+          helperText="°C"
+        />
+        <Typography>Wind Speed</Typography>
+        <CustomTextField
+          name="windSpeed"
+          placeholder="Wind Speed (m/s)"
+          value={simulatedWeatherData.windSpeed}
+          handleInputChange={handleInputChange}
+          helperText="m/s"
+        />
+        <Typography>Humidity</Typography>
+        <CustomTextField
+          name="humidity"
+          placeholder="Humidity (%)"
+          value={simulatedWeatherData.humidity}
+          handleInputChange={handleInputChange}
+          helperText="%"
+        />
+        <Typography>Precipitation</Typography>
+        <CustomTextField
+          name="precipitation"
+          placeholder="Precipitation (%)"
+          value={simulatedWeatherData.precipitation}
+          handleInputChange={handleInputChange}
+          helperText="%"
+        />
+        <Typography>Cloud Amount</Typography>
+        <CustomTextField
+          name="cloudAmount"
+          placeholder="Cloud Amount (%)"
+          value={simulatedWeatherData.cloudAmount}
+          handleInputChange={handleInputChange}
+          helperText="%"
+        />
+        <Typography>Air Quality</Typography>
+        <CustomTextField
+          name="airQuality"
+          placeholder="Air Quality Index"
+          value={simulatedWeatherData.airQuality}
+          handleInputChange={handleInputChange}
+          helperText="1-5"
+        />
       </form>
     </div>
-
   );
 }
 

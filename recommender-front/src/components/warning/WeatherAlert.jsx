@@ -5,8 +5,6 @@ import Typography from '@mui/material/Typography';
 const fullscreenAlertStyle = {
   position: 'absolute',
   top: 0,
-  left: 50,
-  right: 50,
   bottom: 0,
   zIndex: 9999,
   display: 'flex',
@@ -15,13 +13,19 @@ const fullscreenAlertStyle = {
 };
 
 function WeatherAlert({ showAlert }) {
+  const alertStyle = {
+    ...fullscreenAlertStyle,
+    left: '50%',
+    transform: 'translateX(-50%)',
+  };
+
   if (!showAlert) {
     return null;
   }
 
   return (
-    <div style={fullscreenAlertStyle}>
-      <Alert severity="warning" sx={{ fontSize: '40px', color: '#000000', backgroundColor: 'white' }}>
+    <div style={alertStyle}>
+      <Alert severity="warning" sx={{ fontSize: '40px', color: '#000000', backgroundColor: 'white', width: '100%' }}>
         <Typography variant="h1">
           <center>
             You should avoid going outside due to strong wind.

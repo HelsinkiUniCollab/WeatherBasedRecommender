@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import WeatherAlert from './components/warning/WeatherAlert';
 import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
-import SimulatorPage from './SimulatorPage';
+import SimulatorPage from './pages/SimulatorPage';
 import 'leaflet/dist/leaflet.css';
 import '@fontsource/roboto/300.css';
 import theme from './assets/theme';
@@ -91,7 +91,7 @@ function App() {
             <Route
               path="/"
               element={(
-                <Grid container>
+                <Grid container overflow="hidden">
                   <Grid
                     item
                     xs={12}

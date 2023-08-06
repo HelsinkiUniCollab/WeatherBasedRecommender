@@ -28,8 +28,8 @@ class CurrentTest(unittest.TestCase):
         ) as mock_download:
             mock_response = MagicMock()
             mock_response.location_metadata = {
-                "station1": {"latitude": 60.1, "longitude": 24.6},
-                "station2": {"latitude": 60.2, "longitude": 24.7},
+                'station1': {'latitude': 60.1, 'longitude': 24.6},
+                'station2': {'latitude': 60.2, 'longitude': 24.7},
             }
             mock_response.data = {
                 'station1': {
@@ -52,15 +52,15 @@ class CurrentTest(unittest.TestCase):
             mock_download.return_value = mock_response
             self.current = Current(self.fetcher)
             expected_data = {
-                "station1": {
-                    "Air temperature": "10.5 °C",
-                    "Latitude": 60.1,
-                    "Longitude": 24.6,
+                'station1': {
+                    'Air temperature': '10.5 °C',
+                    'Latitude': 60.1,
+                    'Longitude': 24.6,
                 },
-                "station2": {
-                    "Air temperature": "11.2 °C",
-                    "Latitude": 60.2,
-                    "Longitude": 24.7,
+                'station2': {
+                    'Air temperature': '11.2 °C',
+                    'Latitude': 60.2,
+                    'Longitude': 24.7,
                 },
             }
             self.assertEqual(self.current.weather, expected_data)
