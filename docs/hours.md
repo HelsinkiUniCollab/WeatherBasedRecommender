@@ -96,7 +96,7 @@
 | Isak    | 1            | 6,5             | 1,5               | -              | 6,5            | -             | -           | 15,5     |
 | Sami S. | 1.5            | 6.5 live, learning react, greenpath front             | 3 more react               | 2 greenpath              | 4.5 greenpath            | -             | -           | 17.5     |
 | Sami M. | 6 More aqi data fixes, fixing tests            | 1 refactor aqi + parse xml             | -               | -              | -            | -             | -           | -     |
-| Pia     | 3,5 mongo           | 5,5 mongo, live            | -               | -              | 6 mongo, daily            | -             | -           | -     |
+| Pia     | 3,5 mongo           | 5,5 mongo, live            | -               | -              | 6 mongo, daily            | -             | 1,5 mongo          | 16,5    |
 | Joni    | -            | 3 aqi refactor | 6 background loading | 4 backend refactor | 4 simulator front | 2 redis cache | -           | -     |
 
 |         | Monday 7.8. | Tuesday 8.8. | Wednesday 9.8. | Thursday 10.8. | Friday 11.8. | Saturday 12.8. | Sunday 13.8. | Total |
