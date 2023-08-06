@@ -69,7 +69,6 @@ def get_simulated_poi_data():
     Returns:
         Poi data if errors have not occurred.
     """
-
     data = request.get_json()
     air_temperature = data.get('air_temperature')
     wind_speed = data.get('wind_speed')

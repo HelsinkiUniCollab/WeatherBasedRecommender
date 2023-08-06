@@ -29,7 +29,6 @@ class PointOfInterest:
             for timeinterval, data in enumerate(self.weather.values()):
                 if cur_time is None:
                     cur_time = times.get_current_time(timeinterval)
-                print(cur_time)
                 wind_speed = float(data.get('Wind speed').split(' ')[0])
                 precipitation = float(data.get('Precipitation').split(' ')[0])
                 clouds = float(data.get('Cloud amount').split(' ')[0]) * 0.01
