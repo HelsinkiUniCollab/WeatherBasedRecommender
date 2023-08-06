@@ -26,6 +26,7 @@ function App() {
   const [showAlert, setShowAlert] = useState(false);
   const [userPosition, setUserPosition] = useState(null);
   const [destination, setDestination] = useState(null);
+  const [routeCoordinates, setRouteCoordinates] = useState([]);
 
   const handleOptionChange = (event) => {
     setAccessibility(event.target.value);
@@ -102,8 +103,10 @@ function App() {
           />
         </Helmet>
         <PathUtil
-        origin={userPosition}
-        destination={destination}/>
+          origin={userPosition}
+          destination={destination}
+          setRouteCoordinates={setRouteCoordinates}
+        />
         <Grid container>
           <Grid item xs={12} className={`header-container${showAlert ? ' disabled' : ''}`}>
             <HeaderComponent
@@ -129,6 +132,7 @@ function App() {
               handleSetOrigin={handleSetOrigin}
               userPosition={userPosition}
               handleSetDestination={handleSetDestination}
+              routeCoordinates={routeCoordinates}
             />
           </Grid>
         </Grid>

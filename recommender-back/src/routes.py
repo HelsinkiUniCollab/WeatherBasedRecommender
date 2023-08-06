@@ -93,7 +93,8 @@ def get_path():
 
     if not route_coordinates:
         return jsonify({"error": "Could not fetch route data"}), 500
-
+    
+    print('Succesfully fetched route coordinates')
     return jsonify(route_coordinates), 200
 
 @app.errorhandler(404)
