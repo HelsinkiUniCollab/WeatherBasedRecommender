@@ -11,8 +11,6 @@ services:
    - ./recommender-back/.env
   ports:
    - 5000:5000
-  #command:
-   #flask run --host=0.0.0.0
  
  frontend:
   build:
