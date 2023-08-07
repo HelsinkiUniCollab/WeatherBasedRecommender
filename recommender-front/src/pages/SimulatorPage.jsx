@@ -24,7 +24,7 @@ function SimulatorPage() {
         const { airTemperature, windSpeed, humidity,
           precipitation, cloudAmount, airQuality } = simulatedWeatherData;
         if (!airTemperature || !windSpeed || !humidity
-           || !precipitation || !cloudAmount || !airQuality) {
+          || !precipitation || !cloudAmount || !airQuality) {
           console.log('One or more parameter values are empty');
           return;
         }
@@ -57,7 +57,7 @@ function SimulatorPage() {
           simulatedWeatherData={simulatedWeatherData}
         />
       </div>
-      <div className="simulator-map-container">
+      <div id="simulator-map" className="simulator-map-container">
         <MapComponent
           poiData={poiData}
           time="Weather"
