@@ -112,7 +112,6 @@ class TestPointOfInterest(unittest.TestCase):
         expected_json = {"name": 'Test POI', "weather": {"12:00": {"Wind speed": "5.0 m/s", "Precipitation": "20 mm", "Cloud amount": "0.6 %", "Air temperature": "23.0 *C", "Humidity": "0.5 %"}}, "latitude": 21, "longitude": 61, "category": "Open air pools and beaches", "catetype": None}
 
         test_json = test_poi.get_json()
-        print(test_json)
         
         self.assertEqual(test_json, expected_json)
 
