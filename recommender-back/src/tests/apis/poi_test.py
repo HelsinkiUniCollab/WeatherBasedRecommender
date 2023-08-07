@@ -43,19 +43,19 @@ class TestPointOfInterest(unittest.TestCase):
         sunset = datetime(2023, 6, 23, 18, 0)
         cur_time = datetime(2023, 6, 23, 20, 0)
 
-        expected_score = 0.81
+        expected_score = 0.75
         score = self.poi._indoor_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time)
         self.assertAlmostEqual(score, expected_score, places=6)
         
         temperature = 7
         
-        expected_score = 0.85
+        expected_score = 0.79
         score = self.poi._indoor_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time)
         self.assertAlmostEqual(score, expected_score, places=6)
         
         temperature = 45
         
-        expected_score = 0.91
+        expected_score = 0.85
         score = self.poi._indoor_score(temperature, wind_speed, humidity, precipitation, clouds, sunrise, sunset, cur_time)
         self.assertAlmostEqual(score, expected_score, places=6)
 
@@ -72,7 +72,7 @@ class TestPointOfInterest(unittest.TestCase):
             test_poi.weather = weather
             test_poi.sun = sun
 
-            expected_score = 0.79
+            expected_score = 0.73
 
             test_poi.calculate_score()
             score = test_poi.weather['20:00']['Score']

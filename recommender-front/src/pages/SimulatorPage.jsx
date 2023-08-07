@@ -86,7 +86,8 @@ function SimulatorPage() {
   };
 
   const handleTimeChange = (event) => {
-    setCurrentTime(event.target.value);
+    const timeString = event.target.value;
+    setCurrentTime(timeString);
   };
 
   const handleSunriseChange = (event) => {
