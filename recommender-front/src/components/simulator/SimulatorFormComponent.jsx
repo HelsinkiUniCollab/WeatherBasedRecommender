@@ -21,6 +21,9 @@ function SimulatorFormComponent({
     display: 'grid',
     gap: '5px',
     width: '120px',
+    height: '70vh',
+    maxHeight: '7vh',
+    overFlowy: 'auto',
   };
 
   return (
