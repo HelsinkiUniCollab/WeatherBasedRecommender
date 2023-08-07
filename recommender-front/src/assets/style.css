@@ -208,6 +208,8 @@ body {
   z-index: 1000;
   background-color: #ffffff;
   padding: 10px;
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
 .fullscreen {
@@ -246,7 +248,7 @@ body {
   pointer-events: none;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .header-container {
     min-height: 60px;
     flex-direction: column;
