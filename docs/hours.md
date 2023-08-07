@@ -88,16 +88,16 @@
 | Sami S. | 5.5 mongodb            | 3.5 mongodb, customer meeting             | 1.5 mongodb connection to github actions               | -              | 3 pull reqs, conflict resolving            | 2 start working on greenpaths             | -           | 15.5     |
 | Sami M. | 6 research netcdf more / parse data / convert json            | 2 meetings             | 6.5 download / get coords / refactor aqi               | -              | -            | -             | 6 fix production and aqi work           | 20.5     |
 | Pia     | -            | 1  meeting          | 2 backlog              | -              | 5 mongo           | -             | 6 prod, mongo           | 14    |
-| Joni    | -            | 8 meeting + backend automation | 4 backend pr    | 1 reading pr | -            | -             | -           | -     |
+| Joni    | -            | 8 meeting + backend automation | 4 backend pr    | 1 reading pr | -            | -             | -           | 13    |
 
 |         | Monday 31.7. | Tuesday 1.8. | Wednesday 2.8. | Thursday 3.8. | Friday 4.8. | Saturday 5.8. | Sunday 6.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | 4 Pathing , catching up | -             | -               | -              | -            | -             | -           | -     |
+| Juuso   | 4 Pathing , catching up | 5 live         | 0.5 merges   | 4 learning front     | 5 daily,merges,front      | -             | 2 combining path front/back  | 20.5     |
 | Isak    | 1            | 6,5             | 1,5               | -              | 6,5            | -             | -           | 15,5     |
 | Sami S. | 1.5            | 6.5 live, learning react, greenpath front             | 3 more react               | 2 greenpath              | 4.5 greenpath            | -             | -           | 17.5     |
 | Sami M. | 6 More aqi data fixes, fixing tests            | 1 refactor aqi + parse xml             | -               | -              | -            | -             | -           | -     |
-| Pia     | 3,5 mongo           | 5,5 mongo, live            | -               | -              | 6 mongo, daily            | -             | -           | -     |
-| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | 3,5 mongo           | 5,5 mongo, live            | -               | -              | 6 mongo, daily            | -             | 1,5 mongo          | 16,5    |
+| Joni    | -            | 3 aqi refactor | 6 background loading | 4 backend refactor | 4 simulator front | 2 redis cache | -           | -     |
 
 |         | Monday 7.8. | Tuesday 8.8. | Wednesday 9.8. | Thursday 10.8. | Friday 11.8. | Saturday 12.8. | Sunday 13.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
