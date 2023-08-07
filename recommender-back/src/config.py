@@ -3,3 +3,5 @@ class Config:
     TIMESTEP = 60
     FORECAST_PARAMETERS = 'Temperature,Humidity,WindUMS,WindVMS,PrecipitationAmount,TotalCloudCover'
     AIRQUALITY_PARAMETERS = 'AQINDEX_PT1H_avg'
+    CACHE_TYPE = 'redis'
+    CACHE_REDIS_URL = 'redis://redis:6379/0'
