@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Button from '@mui/material/Button';
+import MyLocationIcon from '@mui/icons-material/MyLocation';
 import { useMapEvents } from 'react-leaflet';
 
 function LocateButton({ handleSetOrigin }) {
+  const [locating, setLocating] = useState(false);
+
   const buttonStyle = {
     position: 'absolute',
     bottom: '60px',
@@ -16,16 +20,25 @@ function LocateButton({ handleSetOrigin }) {
     locationfound(e) {
       map.flyTo(e.latlng, map.getZoom());
       handleSetOrigin(e.latlng.lat, e.latlng.lng);
+      setLocating(false);
+    },
+    locationerror() {
+      setLocating(false);
     },
   });
 
   const handleClick = () => {
-    map.locate();
+    if (!locating) {
+      setLocating(true);
+      map.locate();
+    }
   };
 
   return (
     <div style={buttonStyle}>
-      <button type="button" onClick={handleClick}>Locate me!</button>
+      <Button variant="text" onClick={handleClick} disabled={locating}>
+        <MyLocationIcon />
+      </Button>
     </div>
   );
 }
