@@ -7,9 +7,14 @@ from .config import Config
 
 load_dotenv()
 
+if os.environ.get('CACHE_MODE') == 'simple':
+    CACHE_TYPE = 'SimpleCache'
+else:
+    CACHE_TYPE = 'redis'
+
 config = {
     "DEBUG": True,
-    "CACHE_TYPE": Config.CACHE_TYPE,
+    "CACHE_TYPE": CACHE_TYPE,
     "CACHE_REDIS_URL": Config.CACHE_REDIS_URL,
     "CACHE_DEFAULT_TIMEOUT": 3600
 }
