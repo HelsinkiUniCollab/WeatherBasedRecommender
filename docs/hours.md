@@ -105,7 +105,7 @@
 | Isak    | 0,5            | -             | -               | -              | -            | -             | -           | -     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 |         | Monday 14.8. | Tuesday 15.8. | Wednesday 16.8. | Thursday 17.8. | Friday 18.8. | Saturday 19.8. | Sunday 20.8. | Total |
