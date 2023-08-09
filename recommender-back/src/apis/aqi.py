@@ -113,7 +113,7 @@ class AQI:
             for lat, lon in zip(self.latitudes, self.longitudes):
                 lat_index = np.where(self.latitudes == lat)[0][0]
                 lon_index = np.where(self.longitudes == lon)[0][0]
-                coord_pairs = (lat, lon)
+                coord_pairs = f"({lat}, {lon})"
                 aqi_value = aqi_object.data[lat_index, lon_index]
 
                 if coord_pairs not in coordinate_data:
@@ -138,7 +138,7 @@ class AQI:
         for hour_data in data.values():
             for coord_pair in hour_data.keys():
                 if coord_pair not in unique_coords:
-                    lat, lon = coord_pair
+                    lat, lon = coord_pair.strip("()").split(", ")
                     unique_coords.append((float(lat), float(lon)))
         return unique_coords
 

@@ -155,7 +155,7 @@ class Forecast:
 
         for hour, hour_data in aqi_data.items():
             for poi_coord, nearest in closest_coodinates_aqi.items():
-                nearest_str = (nearest[0], nearest[1])
+                nearest_str = f"({nearest[0]}, {nearest[1]})"
                 if nearest_str in hour_data:
                     aqi_value = hour_data[nearest_str][0]['Air Quality Index']
                     if f'{poi_coord[0]}, {poi_coord[1]}' in returned_data[hour]:

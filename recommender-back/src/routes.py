@@ -1,5 +1,8 @@
 import json
+import requests
+import os
 from flask import jsonify, request
+from flask_caching import timeout
 from .app import app, cache
 from .apis.aqi import AQI
 from .apis.forecast import Forecast
@@ -37,8 +40,9 @@ def get_forecast():
     forecast.update_data()
 
     aqi = AQI()
-    aqi.download_netcdf_and_store()
-    aqi_data = aqi.to_json()
+    aqi_data_url = os.environ.get("REACT_APP_BACKEND_URL") + "/api/aqi/"
+    response = requests.get(aqi_data_url, timeout=1200)
+    aqi_data = response.json()
     aqi_coords = aqi.get_coordinates(aqi_data)
 
     pois = manager.get_pois()
@@ -46,6 +50,23 @@ def get_forecast():
 
     result = json.dumps(poi_forecast)
 
+    return result
+
+
+@app.route("/api/aqi/", methods=["GET"])
+@timeout(86400)
+@cache.cached()
+def get_aqi_forecast():
+    """
+    Handler for the '/api/aqi' endpoint.
+
+    Returns:
+        string: Aqi forecast for the POI's in json format
+    """
+    aqi = AQI()
+    aqi.download_netcdf_and_store()
+    aqi_data = aqi.to_json()
+    result = json.dumps(aqi_data)
     return result
 
 
