@@ -18,11 +18,11 @@ function PathUtil({ origin, destination, setRouteCoordinates }) {
   }, [origin, destination, setRouteCoordinates]);
 
   useEffect(() => {
-    if (origin && destination) {
+    if (origin && destination && origin.length === 2 && destination.length === 2) {
       console.log('Sending coordinates to the backend:');
       handleSendCoords();
     } else {
-      console.log('Either origin or destination is missing.');
+      console.log('Either origin or destination is missing or invalid.');
     }
   }, [origin, destination, handleSendCoords]);
 
