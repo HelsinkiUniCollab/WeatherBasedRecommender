@@ -58,7 +58,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | 2 simple plot | -             | 2 demo         | -              | -            | 2 demo live   | -           | 6     |
 | Isak    | -            | 4,5             | 7,5               | -              | -            | -             | -           | 12     |
-| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami S. | -            | 3 meetings             | 1.5 demo              | -              | 2 demo live            | -             | -           | 6.5     |
 | Sami M. | -            | 3 meetings             | 2 demo work               | -              | 2 demo live            | -             | 0.5 fore test           | 7.5     |
 | Pia     | 1 clustering finetuning            | 7 meetings, clustering, tests, demo            | 2 demo, tests               | -              | 2 demo live              | -             | -           | 12    |
 | Joni    | 2 cypress    | 3 meeting     | 2 demo          | -              | 2 demo live  | -             | -           | 9     |
@@ -105,7 +105,7 @@
 | Isak    | 0,5            | -             | -               | -              | -            | -             | -           | -     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 |         | Monday 14.8. | Tuesday 15.8. | Wednesday 16.8. | Thursday 17.8. | Friday 18.8. | Saturday 19.8. | Sunday 20.8. | Total |
