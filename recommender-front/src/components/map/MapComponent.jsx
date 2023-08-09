@@ -1,9 +1,11 @@
 import React from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
+import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
 import MarkersComponent from './MarkersComponent';
 import '../../assets/style.css';
 
-function MapComponent({ poiData, time }) {
+function MapComponent({ poiData, time, headerHidden, toggleHeader }) {
   const position = [60.2049, 24.9649];
   const minZoom = 12;
   const maxZoom = 18;
@@ -11,23 +13,28 @@ function MapComponent({ poiData, time }) {
   const viscosity = 1;
 
   return (
-    <MapContainer
-      id="map"
-      center={position}
-      scrollWheelZoom={false}
-      zoom={minZoom}
-      minZoom={minZoom}
-      maxZoom={maxZoom}
-      maxBounds={bounds}
-      maxBoundsViscosity={viscosity}
-      className="leaflet-map"
-    >
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      <MarkersComponent poiData={poiData} time={time} />
-    </MapContainer>
+    <div className={`map-container${headerHidden ? ' fullscreen' : ''}`}>
+      <button type="button" className="toggle-header-button" onClick={toggleHeader}>
+        {headerHidden ? <FullscreenIcon /> : <FullscreenExitIcon />}
+      </button>
+      <MapContainer
+        id="map"
+        center={position}
+        scrollWheelZoom={false}
+        zoom={minZoom}
+        minZoom={minZoom}
+        maxZoom={maxZoom}
+        maxBounds={bounds}
+        maxBoundsViscosity={viscosity}
+        className="leaflet-map"
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        <MarkersComponent poiData={poiData} time={time} />
+      </MapContainer>
+    </div>
   );
 }
 

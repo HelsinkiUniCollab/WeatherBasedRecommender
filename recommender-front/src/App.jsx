@@ -25,6 +25,11 @@ function App() {
   const [open, setOpen] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [warning, setWarning] = useState(false);
+  const [headerHidden, setHeaderHidden] = useState(false);
+
+  const toggleHeader = () => {
+    setHeaderHidden(!headerHidden);
+  };
 
   const handleOptionChange = (event) => {
     setAccessibility(event.target.value);
@@ -91,11 +96,11 @@ function App() {
             <Route
               path="/"
               element={(
-                <Grid container overflow="hidden">
+                <Grid container overflow="hidden" className="app-container">
                   <Grid
                     item
                     xs={12}
-                    className={`header-container${showAlert ? ' disabled' : ''}`}
+                    className={`header-container${showAlert || headerHidden ? ' disabled' : ''}`}
                   >
                     <HeaderComponent
                       accessibility={accessibility}
@@ -113,7 +118,7 @@ function App() {
                   <Grid
                     item
                     xs={12}
-                    className={`map-container${showAlert ? ' disabled' : ''}`}
+                    className={`map-container${showAlert ? ' disabled' : ''}${headerHidden ? ' fullscreen' : ''}`}
                   >
                     <WeatherAlert showAlert={showAlert} />
                     <MapComponent
@@ -121,6 +126,8 @@ function App() {
                       poiData={poiData}
                       time={times[selectedValue]}
                       isMobile={isMobile}
+                      headerHidden={headerHidden}
+                      toggleHeader={toggleHeader}
                     />
                   </Grid>
                 </Grid>
