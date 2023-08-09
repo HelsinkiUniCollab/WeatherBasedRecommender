@@ -2,7 +2,7 @@ name: Poll /api/forecast
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 * * * *"
 
 jobs:
   poll-aqi:
