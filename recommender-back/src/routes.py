@@ -12,6 +12,7 @@ from .apis import manager
 from .services.data_fetcher import DataFetcher
 
 weather_fetcher = DataFetcher()
+environment = os.environ.get("ENVIRONMENT", "development")
 
 
 @app.route("/", methods=["GET"])
@@ -31,7 +32,7 @@ def index():
 @cache.cached()
 def get_forecast():
     """
-    Handler for the '/api/forecast' endpoint.
+    Handler for the '/api/forecast' endpoint. Caching 1 hour.
 
     Returns:
         Forecast for the POI's.
@@ -39,11 +40,15 @@ def get_forecast():
     forecast = Forecast(weather_fetcher)
     forecast.update_data()
 
-    aqi = AQI()
-    aqi_data_url = os.environ.get("REACT_APP_BACKEND_URL") + "/api/aqi/"
-    response = requests.get(aqi_data_url, timeout=1200)
-    aqi_data = response.json()
-    aqi_coords = aqi.get_coordinates(aqi_data)
+    aqi_data =  None
+    aqi_coords = None
+
+    if environment != "development":
+        aqi = AQI()
+        aqi_data_url = os.environ.get("REACT_APP_BACKEND_URL") + "/api/aqi/"
+        response = requests.get(aqi_data_url, timeout=1200)
+        aqi_data = response.json()
+        aqi_coords = aqi.get_coordinates(aqi_data)
 
     pois = manager.get_pois()
     poi_forecast = forecast.get_closest_poi_coordinates_data(pois, aqi_data, aqi_coords)
@@ -57,7 +62,7 @@ def get_forecast():
 @cache.cached(timeout=Config.AQI_CACHE_TO)
 def get_aqi_forecast():
     """
-    Handler for the '/api/aqi' endpoint.
+    Handler for the '/api/aqi' endpoint. Caching 24 hours.
 
     Returns:
         string: Aqi forecast for the POI's in json format

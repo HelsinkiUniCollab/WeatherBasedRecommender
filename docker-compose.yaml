@@ -5,6 +5,8 @@ services:
   build:
    context: ./recommender-back/
    dockerfile: Dockerfile
+  env_file:
+   - ./recommender-back/.env
   environment:
    REQUEST_ORIGIN: http://localhost:3000
   ports:

@@ -140,7 +140,6 @@ class Forecast:
         data = self.get_data()
         coordinates = self.get_coordinates()
         closest_coordinates_fore = self.calculate_shortest_weather(pois, coordinates)
-        closest_coodinates_aqi = self.calculate_shortest_aqi(pois, aqi_coords)
 
         returned_data = {hour: {} for hour in data}
 
@@ -153,15 +152,17 @@ class Forecast:
                         f"{poi_coord[0]}, {poi_coord[1]}"
                     ] = self.parse_forecast(forecast)
 
-        for datetime, coordinates_list in closest_coodinates_aqi.items():
-            if datetime not in aqi_data:
-                continue
-            for poi_coord in coordinates_list:
-                nearest_str = f"({poi_coord['nearest'][0]}, {poi_coord['nearest'][1]})"
-                if nearest_str in aqi_data[datetime]:
-                    aqi_value = aqi_data[datetime][nearest_str][0]['Air Quality Index']
-                    poi_location = f"{poi_coord['poi_coordinate'][0]}, {poi_coord['poi_coordinate'][1]}"
-                    returned_data[datetime][poi_location]['Air quality'] = f'{aqi_value} AQI'
+        if aqi_data:
+            closest_coodinates_aqi = self.calculate_shortest_aqi(pois, aqi_coords)
+            for datetime, coordinates_list in closest_coodinates_aqi.items():
+                if datetime not in aqi_data:
+                    continue
+                for poi_coord in coordinates_list:
+                    nearest_str = f"({poi_coord['nearest'][0]}, {poi_coord['nearest'][1]})"
+                    if nearest_str in aqi_data[datetime]:
+                        aqi_value = aqi_data[datetime][nearest_str][0]['Air Quality Index']
+                        poi_location = f"{poi_coord['poi_coordinate'][0]}, {poi_coord['poi_coordinate'][1]}"
+                        returned_data[datetime][poi_location]['Air quality'] = f'{aqi_value} AQI'
 
         return returned_data
 
