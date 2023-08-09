@@ -1,0 +1,13 @@
+name: Poll /api/aqi
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+
+jobs:
+  poll-aqi:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Poll /api/aqi/
+        run: curl -sSf http://128.214.253.51/api/aqi/ || exit 1
