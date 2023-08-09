@@ -4,36 +4,70 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
-  /* Hides scrollbars */
+  /* Overflow should not be set to hidden to allow content scrolling */
+}
+
+/* Reset zoom and max-zoom */
+@viewport {
+  zoom: 1;
+  max-zoom: 1;
 }
 
 #map {
   width: 100vw;
-  height: calc(100vh - 23%);
+  height: calc(78vh);
+  position: relative;
   /* Makes sure leaflet copyright is shown*/
 }
 
-.app-container {
-  display: grid;
-  grid-template-rows: 23% 78%;
-  height: 100vh;
-  overflow: hidden
+.leaftlet-map {
+  width: 100%;
+  height: 100%;
 }
 
+/* Styles for the app container */
+.app-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  /* Updated to allow the header to take its content's height */
+  height: 100vh;
+  overflow: hidden;
+}
+
+.simulator-container #map {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* This will create two equally wide columns */
+  height: 99vh;
+  width: 100vw;
+}
+
+.simulator-map-container {
+  width: 50vw;
+}
+
+.simulator-form-component {
+  margin: 40px 40px 40px 2px;
+}
+
+/* Styles for the header container */
 .header-container {
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
-  left: 50%;
-  width: 95%;
-  height: 23%;
+  left: 0;
+  width: 100%;
   z-index: 1;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateX(-50%);
+}
+
+/* Adjust the logo size based on screen size */
+.logo {
+  width: 130px;
+  height: auto;
 }
 
 .dropdown-item {
@@ -51,13 +85,11 @@ body {
 }
 
 
+/* Remove zoom from the map container */
 .map-container {
-  width: 100%;
-  position: fixed;
-  top: 23%;
-  bottom: 0;
-  z-index: 2;
-  /* Makes sure zoom control is visible */
+  zoom: 1;
+  position: relative;
+
 }
 
 .disabled {
@@ -82,16 +114,16 @@ body {
 }
 
 .custom-cluster-icon-score01 {
-  background-color: #F2F2F2; 
-  color: #000000; 
+  background-color: #F2F2F2;
+  color: #000000;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
 .custom-cluster-icon-score02 {
-  background-color: #E6E6E6; 
-  color: #000000; 
+  background-color: #E6E6E6;
+  color: #000000;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
@@ -101,76 +133,93 @@ body {
 }
 
 .custom-cluster-icon-score03 {
-  background-color: #D9D9D9; 
-  color: #000000; 
+  background-color: #D9D9D9;
+  color: #000000;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
 .custom-cluster-icon-score04 {
-  background-color: #C6C6C6; 
-  color: #000000; 
+  background-color: #C6C6C6;
+  color: #000000;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
 .custom-cluster-icon-score05 {
-  background-color: #B0B0B0; 
-  color: #000000; 
+  background-color: #B0B0B0;
+  color: #000000;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
 .custom-cluster-icon-score06 {
-  background-color: #FFF7D4; 
-  color: #000000; 
+  background-color: #FFF7D4;
+  color: #000000;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
 .custom-cluster-icon-score07 {
-  background-color: #FFEDAD; 
-  color: #000000; 
+  background-color: #FFEDAD;
+  color: #000000;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
 .custom-cluster-icon-score08 {
-  background-color: #FFDF7D; 
-  color: #000000; 
+  background-color: #FFDF7D;
+  color: #000000;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
 .custom-cluster-icon-score09 {
-  background-color: #FFD34C; 
-  color: #000000;  
+  background-color: #FFD34C;
+  color: #000000;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
 .custom-cluster-icon-score10 {
-  background-color: #FF9B00; 
-  color: #000000; 
+  background-color: #FF9B00;
+  color: #000000;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
 
-.logo {
-  width: 130px;
-  height: auto;
+.simulator-form-component {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+  background-color: #ffffff;
+  padding: 10px;
 }
 
 @media (max-width: 600px) {
+  .header-container {
+    /* Adjust the height for smaller screens */
+    min-height: 60px;
+  }
+
+  /* Adjust the logo size for smaller screens */
   .logo {
     width: 100px;
+    /* Adjust the size as needed */
+  }
+
+  /* Stack elements vertically on smaller screens */
+  .header-container {
+    flex-direction: column;
+    align-items: center;
   }
 }

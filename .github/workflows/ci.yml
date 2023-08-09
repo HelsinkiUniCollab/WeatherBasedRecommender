@@ -33,6 +33,8 @@ jobs:
           poetry install
 
       - name: Run backend tests and coverage
+        env:
+          DEVELOPMENT_DB_URI: ${{ secrets.DEVELOPMENT_DB_URI }}
         run: |
           cd recommender-back
           poetry run coverage run --branch -m pytest

@@ -96,3 +96,9 @@ The team has four rotating roles:
 - demo coordinator: Pia (Sami M)
 - secretary: Juuso
 - scrum master: Pia
+
+## Sprint 5
+- chairman: Juuso 
+- demo coordinator: Sami M
+- secretary: Joni
+- scrum master: Pia

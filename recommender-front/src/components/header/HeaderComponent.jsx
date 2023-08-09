@@ -22,6 +22,7 @@ function HeaderComponent({
       alignItems="center"
       my={1}
       key="main"
+      className="header-container"
     >
       <Grid item xs={4} sm={5} md={5} lg={5} key="title">
         <img src={logo} alt="Weather-Based Recommender" className="logo" />
@@ -32,36 +33,21 @@ function HeaderComponent({
       <Grid item xs={2} sm={1} md={1} lg={1}>
         <InfoComponent open={open} handleOpen={handleOpen} handleClose={handleClose} />
       </Grid>
-      {isMobile ? (
-        <Grid item xs={11} sm={11} className="slider-item" key="slider-mobile">
-          <Typography variant="h2">Time</Typography>
-          {poiData.length === 0 ? <LoadingIndicatorComponent />
-            : (
-              <Slider
-                value={sliderValue}
-                onChange={onChange}
-                min={0}
-                max={10}
-                marks={hours}
-              />
-            )}
-        </Grid>
-      ) : (
-        <Grid item xs={11} sm={11} md={11} lg={11} className="slider-item" key="slider">
-          <Typography variant="h2">Time</Typography>
-          {poiData.length === 0 ? <LoadingIndicatorComponent />
-            : (
-              <Slider
-                value={sliderValue}
-                onChange={onChange}
-                min={0}
-                max={24}
-                marks={hours}
-              />
-            )}
-        </Grid>
-      )}
+      <Grid item xs={11} sm={11} md={11} lg={11} className="slider-item" key="slider">
+        <Typography variant="h2">Time</Typography>
+        {poiData.length === 0 ? <LoadingIndicatorComponent />
+          : (
+            <Slider
+              value={sliderValue}
+              onChange={onChange}
+              min={0}
+              max={isMobile ? 10 : 24}
+              marks={hours}
+            />
+          )}
+      </Grid>
     </Grid>
   );
 }
+
 export default HeaderComponent;
