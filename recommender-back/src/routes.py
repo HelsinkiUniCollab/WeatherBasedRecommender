@@ -38,14 +38,15 @@ def get_forecast():
         Forecast for the POI's.
     """
     forecast = Forecast(weather_fetcher)
-    forecast.update_data()
+    fore_query_time = forecast.update_data()
+    fore_query_time_str = fore_query_time.strftime('%Y-%m-%d %H:%M:%S')
 
     aqi_data =  None
     aqi_coords = None
 
     if environment != "development":
         aqi = AQI()
-        aqi_data_url = os.environ.get("REACT_APP_BACKEND_URL") + "/api/aqi/"
+        aqi_data_url = os.environ.get("REACT_APP_BACKEND_URL") + f"/api/aqi/?forecast_q_time={fore_query_time_str}"
         response = requests.get(aqi_data_url, timeout=1200)
         aqi_data = response.json()
         aqi_coords = aqi.get_coordinates(aqi_data)
@@ -67,8 +68,9 @@ def get_aqi_forecast():
     Returns:
         string: Aqi forecast for the POI's in json format
     """
+    forecast_q_time = request.args.get("forecast_q_time")
     aqi = AQI()
-    aqi.download_netcdf_and_store()
+    aqi.download_netcdf_and_store(forecast_q_time)
     aqi_data = aqi.to_json()
     result = json.dumps(aqi_data)
     return result

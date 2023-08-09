@@ -29,6 +29,8 @@ class Forecast:
             self.parse_forecast_data()
             self.update_forecast_properties()
 
+        return current
+
     def get_latest_forecast(self, start, end):
         """
         Retrieves the latest forecast data within the specified time range.
