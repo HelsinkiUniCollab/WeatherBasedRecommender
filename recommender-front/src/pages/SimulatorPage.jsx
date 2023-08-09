@@ -4,6 +4,7 @@ import SimulatorFormComponent from '../components/simulator/SimulatorFormCompone
 import '../assets/style.css';
 import WeatherAlert from '../components/warning/WeatherAlert';
 import useDebounce from '../utils/DebounceUtil';
+import formatTimeValue from '../utils/TimeUtils';
 
 function SimulatorPage() {
   const [simulatedWeatherData, setSimulatedWeatherData] = useState({
@@ -14,8 +15,8 @@ function SimulatorPage() {
     cloudAmount: '0',
     airQuality: '2',
   });
-  const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-  const [sunrise, setSunrise] = useState('6:00');
+  const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }));
+  const [sunrise, setSunrise] = useState('06:00');
   const [sunset, setSunset] = useState('22:00');
   const [poiData, setPoiData] = useState([]);
   const [isNightTime, setIsNightTime] = useState(false);
@@ -72,7 +73,6 @@ function SimulatorPage() {
     } else {
       setIsNightTime(false);
     }
-    console.log(isNightTime);
   }, [currentTime, sunrise, sunset]);
 
   const handleInputChange = (event) => {
@@ -85,17 +85,19 @@ function SimulatorPage() {
     }
   };
 
-  const handleTimeChange = (event) => {
-    const timeString = event.target.value;
-    setCurrentTime(timeString);
+  const handleTimeChange = (event, value) => {
+    const formattedTime = formatTimeValue(value);
+    setCurrentTime(formattedTime);
   };
 
-  const handleSunriseChange = (event) => {
-    setSunrise(event.target.value);
+  const handleSunriseChange = (event, value) => {
+    const formattedSunrise = formatTimeValue(value);
+    setSunrise(formattedSunrise);
   };
 
-  const handleSunsetChange = (event) => {
-    setSunset(event.target.value);
+  const handleSunsetChange = (event, value) => {
+    const formattedSunset = formatTimeValue(value);
+    setSunset(formattedSunset);
   };
 
   return (

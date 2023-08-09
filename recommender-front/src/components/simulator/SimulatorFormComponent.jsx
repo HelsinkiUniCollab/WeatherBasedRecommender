@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import CustomTextField from './CustomTextField';
+import TimePickerComponent from './TimePickerComponent';
 
 function SimulatorFormComponent({
   handleInputChange,
@@ -20,9 +21,9 @@ function SimulatorFormComponent({
     borderRadius: '5px',
     display: 'grid',
     gap: '5px',
-    width: '120px',
-    height: '70vh',
-    maxHeight: '7vh',
+    width: '140px',
+    height: '65vh',
+    maxHeight: '65vh',
     overFlowy: 'auto',
   };
 
@@ -78,25 +79,19 @@ function SimulatorFormComponent({
           helperText="1-5"
         />
         <Typography>Current Time</Typography>
-        <CustomTextField
-          name="currentTime"
-          placeholder="Current Time"
-          value={currentTime}
-          handleInputChange={handleTimeChange}
+        <TimePickerComponent
+          time={currentTime}
+          onTimeChange={handleTimeChange}
         />
         <Typography>Sunrise</Typography>
-        <CustomTextField
-          name="sunrise"
-          placeholder="Sunrise"
-          value={sunrise}
-          handleInputChange={handleSunriseChange}
+        <TimePickerComponent
+          time={sunrise}
+          onTimeChange={handleSunriseChange}
         />
         <Typography>Sunset</Typography>
-        <CustomTextField
-          name="sunset"
-          placeholder="Sunset"
-          value={sunset}
-          handleInputChange={handleSunsetChange}
+        <TimePickerComponent
+          time={sunset}
+          onTimeChange={handleSunsetChange}
         />
       </form>
     </div>

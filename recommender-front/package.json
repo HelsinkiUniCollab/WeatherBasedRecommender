@@ -7,7 +7,7 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.2",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.5",
+    "@mui/material": "^5.14.4",
     "@mui/system": "^5.13.5",
     "cypress": "^12.14.0",
     "eslint": "^8.41.0",
