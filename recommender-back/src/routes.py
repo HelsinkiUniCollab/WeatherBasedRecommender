@@ -1,8 +1,8 @@
 import json
 import requests
 import os
+from .config import Config
 from flask import jsonify, request
-from flask_caching import timeout
 from .app import app, cache
 from .apis.aqi import AQI
 from .apis.forecast import Forecast
@@ -54,8 +54,7 @@ def get_forecast():
 
 
 @app.route("/api/aqi/", methods=["GET"])
-@timeout(86400)
-@cache.cached()
+@cache.cached(timeout=Config.AQI_CACHE_TO)
 def get_aqi_forecast():
     """
     Handler for the '/api/aqi' endpoint.
