@@ -1,10 +1,9 @@
 import mockPOIS from '../mockData';
-import mockWeatherData from '../mockWeather';
 
 describe('Map and POI features', () => {
   beforeEach(() => {
     cy.intercept('GET', 'http://localhost:5000/api/poi/', mockPOIS);
-    cy.intercept('GET', 'http://localhost:5000/api/weather', mockWeatherData);
+    cy.intercept('GET', 'http://localhost:5000/api/warning', JSON.stringify(false));
     cy.visit('');
   });
 
@@ -56,5 +55,38 @@ describe('Map and POI features', () => {
     cy.get('[data-value="wheelchair"]').click();
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
       .should('have.length', wheelChairMockData.length);
+  });
+
+  it('should show the weather alert when /api/warning returns true', () => {
+    cy.visit('');
+    cy.intercept('GET', 'http://localhost:5000/api/warning', JSON.stringify(true));
+    cy.contains('You should avoid going outside due to strong wind.').should('be.visible');
+  });
+});
+
+describe('SimulatorPage', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/admin');
+  });
+
+  it('should load the page', () => {
+    cy.url().should('include', '/admin');
+  });
+
+  it('should render the map component', () => {
+    cy.get('.simulator-map-container').should('be.visible');
+  });
+
+  it('should render the simulator form', () => {
+    cy.get('.simulator-form-component').should('be.visible');
+  });
+
+  it('should show the weather alert when windSpeed is over threshold', () => {
+    cy.get('input[name="windSpeed"]').clear().type('420');
+    cy.contains('You should avoid going outside due to strong wind.').should('be.visible');
+  });
+
+  it('should allow input change in the SimulatorFormComponent', () => {
+    cy.get('input[name="airTemperature"]').clear().type('20').should('have.value', '20');
   });
 });

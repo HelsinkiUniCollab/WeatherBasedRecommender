@@ -23,6 +23,8 @@ cat > ./recommender-back/.env << EOF
 # This file contains environment-specific configuration values for the Python backend.
 
 REACT_APP_BACKEND_URL=http://localhost:5000
+DEVELOPMENT_DB_URI="$1"
+CACHE_MODE="simple"
 
 # Include the 'recommender-back' directory in the PYTHONPATH.
 PYTHONPATH="${PYTHONPATH}:${SCRIPT_DIR}/recommender-back"

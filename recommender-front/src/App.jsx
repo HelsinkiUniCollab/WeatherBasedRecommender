@@ -3,10 +3,12 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Grid from '@mui/material/Grid';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import WeatherAlert from './components/warning/WeatherAlert';
 import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
 import PathUtil from './utils/PathComponent';
+import SimulatorPage from './pages/SimulatorPage';
 import 'leaflet/dist/leaflet.css';
 import '@fontsource/roboto/300.css';
 import theme from './assets/theme';
@@ -19,7 +21,6 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 function App() {
   const [accessibility, setAccessibility] = useState('');
   const [poiData, setPoiData] = useState([]);
-  const [weatherData, setWeatherData] = useState({});
   const [times, setTimes] = useState(0);
   const [selectedValue, setSelectedValue] = useState(0);
   const [open, setOpen] = useState(false);
@@ -27,6 +28,12 @@ function App() {
   const [userPosition, setUserPosition] = useState(null);
   const [destination, setDestination] = useState(null);
   const [routeCoordinates, setRouteCoordinates] = useState([]);
+  const [warning, setWarning] = useState(false);
+  const [headerHidden, setHeaderHidden] = useState(false);
+
+  const toggleHeader = () => {
+    setHeaderHidden(!headerHidden);
+  };
 
   const handleOptionChange = (event) => {
     setAccessibility(event.target.value);
@@ -62,10 +69,10 @@ function App() {
     async function fetchData() {
       try {
         const apiUrl = process.env.REACT_APP_BACKEND_URL;
-        const weatherResponse = await fetch(`${apiUrl}/api/weather`);
-        const weather = await weatherResponse.json();
-        setWeatherData(weather);
-        if (parseFloat(weather['Wind speed']) < 17) {
+        const warningResponse = await fetch(`${apiUrl}/api/warning`);
+        const alert = await warningResponse.json();
+        setWarning(alert);
+        if (!alert) {
           const poiResponse = await fetch(`${apiUrl}/api/poi/${accessibility}`);
           const poi = await poiResponse.json();
           setPoiData(poi);
@@ -76,6 +83,7 @@ function App() {
     }
     fetchData();
   }, [accessibility]);
+
   useEffect(() => {
     if (poiData.length > 0) {
       setTimes(Object.keys(poiData[0].weather));
@@ -83,13 +91,10 @@ function App() {
   }, [poiData]);
 
   useEffect(() => {
-    const weather = weatherData;
-    const windSpeedString = weather?.['Wind speed'];
-    if (windSpeedString) {
-      const windSpeed = parseFloat(windSpeedString.replace(' m/s', ''));
-      setShowAlert(windSpeed >= 17);
+    if (warning) {
+      setShowAlert(true);
     }
-  }, [weatherData]);
+  }, [warning]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -107,35 +112,54 @@ function App() {
           destination={destination}
           setRouteCoordinates={setRouteCoordinates}
         />
-        <Grid container>
-          <Grid item xs={12} className={`header-container${showAlert ? ' disabled' : ''}`}>
-            <HeaderComponent
-              accessibility={accessibility}
-              handleChange={handleOptionChange}
-              times={times}
-              sliderValue={selectedValue}
-              onChange={handleSliderChange}
-              open={open}
-              handleOpen={handleOpen}
-              handleClose={handleClose}
-              isMobile={isMobile}
-              poiData={poiData}
+        <Router>
+          <Routes>
+            <Route
+              path="/"
+              element={(
+                <Grid container overflow="hidden" className="app-container">
+                  <Grid
+                    item
+                    xs={12}
+                    className={`header-container${showAlert || headerHidden ? ' disabled' : ''}`}
+                  >
+                    <HeaderComponent
+                      accessibility={accessibility}
+                      handleChange={handleOptionChange}
+                      times={times}
+                      sliderValue={selectedValue}
+                      onChange={handleSliderChange}
+                      open={open}
+                      handleOpen={handleOpen}
+                      handleClose={handleClose}
+                      isMobile={isMobile}
+                      poiData={poiData}
+                    />
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    className={`map-container${showAlert ? ' disabled' : ''}${headerHidden ? ' fullscreen' : ''}`}
+                  >
+                    <WeatherAlert showAlert={showAlert} />
+                    <MapComponent
+                      accessibility={accessibility}
+                      poiData={poiData}
+                      time={times[selectedValue]}
+                      isMobile={isMobile}
+                      handleSetOrigin={handleSetOrigin}
+                      userPosition={userPosition}
+                      handleSetDestination={handleSetDestination}
+                      routeCoordinates={routeCoordinates}
+                      toggleHeader={toggleHeader}
+                    />
+                  </Grid>
+                </Grid>
+                    )}
             />
-          </Grid>
-          <Grid item xs={12} className={`map-container${showAlert ? ' disabled' : ''}`}>
-            <WeatherAlert showAlert={showAlert} />
-            <MapComponent
-              accessibility={accessibility}
-              poiData={poiData}
-              time={times[selectedValue]}
-              isMobile={isMobile}
-              handleSetOrigin={handleSetOrigin}
-              userPosition={userPosition}
-              handleSetDestination={handleSetDestination}
-              routeCoordinates={routeCoordinates}
-            />
-          </Grid>
-        </Grid>
+            <Route path="/admin" element={<SimulatorPage />} />
+          </Routes>
+        </Router>
       </HelmetProvider>
     </ThemeProvider>
   );

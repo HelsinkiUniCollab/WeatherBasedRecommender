@@ -5,7 +5,7 @@ from .apis.forecast import Forecast
 from .apis.current import Current
 from .apis.pathing import GreenPathsAPI
 from .apis import manager
-from .services.forecastdatafetcher import DataFetcher
+from .services.data_fetcher import DataFetcher
 
 weather_fetcher = DataFetcher()
 
@@ -24,7 +24,7 @@ def index():
 
 
 @app.route("/api/forecast", methods=["GET"])
-@cache.cached(timeout=3600)
+@cache.cached()
 def get_forecast():
     """
     Handler for the '/api/forecast' endpoint.
@@ -49,24 +49,51 @@ def get_poi_data():
     """
     return manager.get_pois_as_json()
 
+
 @app.route("/api/poi/<accessibility>", methods=["GET"])
 def get_poi_acessible_poi_data(accessibility):
     """
     Handler for the '/api/poi' endpoint.
 
     Returns:
-        Poi data if errors have not occurred.
+        POI-data if errors have not occurred.
     """
     return manager.get_pois_as_json(accessibility)
 
 
-@app.route("/api/weather", methods=["GET"])
-@cache.cached(timeout=3600)
-def get_weather_helsinki_kaisaniemi():
+@app.route("/api/simulator", methods=["GET"])
+def get_simulated_poi_data():
+    """
+    Handler for the '/api/poi' endpoint.
+
+    Returns:
+        Poi data if errors have not occurred.
+    """
+    air_temperature = request.args.get('air_temperature')
+    wind_speed = request.args.get('wind_speed')
+    humidity = request.args.get('humidity')
+    precipitation = request.args.get('precipitation')
+    cloud_amount = request.args.get('cloud_amount')
+    air_quality = request.args.get('air_quality')
+    if '' in [air_temperature, wind_speed, humidity, precipitation, cloud_amount, air_quality]:
+        return jsonify({"error": "Missing parameters"}), 400
+    return manager.get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
+                                              precipitation, cloud_amount, air_quality)
+
+
+@app.route("/api/warning", methods=["GET"])
+@cache.cached()
+def get_weather_warning():
+    """
+    Handler for the '/api/warning' endpoint. 
+
+    Returns:
+        Boolean according to if there is weather warning.
+    """
     current = Current(weather_fetcher)
-    current.get_current_weather()
-    helsinki_kaisaniemi = current.weather.get("Helsinki Kaisaniemi")
-    return jsonify(helsinki_kaisaniemi)
+    warning = current.get_current_weather_warning("Helsinki Kaisaniemi")
+    return jsonify(warning)
+
 
 @app.route('/path', methods=['GET'])
 def get_path():
@@ -74,7 +101,7 @@ def get_path():
     Handler for the '/api/path' endpoint.
 
     Returns:
-        Poi data if errors have not occurred.
+        Coordinates for the route based on request parameters.
     """
     start_coords = request.args.get('start', None)
     end_coords = request.args.get('end', None)
@@ -89,13 +116,9 @@ def get_path():
         return jsonify({"error": "Invalid coordinates"}), 400
 
     green_paths = GreenPathsAPI(start_coords, end_coords)
-    route_coordinates = green_paths.route_coordinates
-
-    if not route_coordinates:
-        return jsonify({"error": "Could not fetch route data"}), 500
-    
-    print('Succesfully fetched route coordinates')
-    return jsonify(route_coordinates), 200
+    if route_coordinates := green_paths.route_coordinates:
+        return jsonify(route_coordinates), 200
+    return jsonify({"error": "Could not fetch route data"}), 500
 
 @app.errorhandler(404)
 def not_found_error(error):

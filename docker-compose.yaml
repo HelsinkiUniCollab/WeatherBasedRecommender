@@ -7,10 +7,12 @@ services:
    dockerfile: Dockerfile
   environment:
    REQUEST_ORIGIN: http://localhost:3000
+  env_file:
+    - ./recommender-back/.env
   ports:
    - 5000:5000
-  command:
-   flask run --host=0.0.0.0
+  #command:
+   #flask run --host=0.0.0.0
  
  frontend:
   build:
@@ -20,3 +22,8 @@ services:
    - ./recommender-front/.env.local
   ports:
    - 3000:3000
+
+ redis:
+  image: redis:latest
+  ports:
+   - 6379:6379

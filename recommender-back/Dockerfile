@@ -3,6 +3,9 @@ FROM python:3.8-slim-buster
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+ENV MONGO_URI=${MONGO_URI}
+ENV REQUEST_ORIGIN=http://localhost:3000
+
 WORKDIR /app
 
 COPY pyproject.toml poetry.lock*  /app/
@@ -18,7 +21,8 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     libaec-dev \
-    gfortran
+    gfortran \
+    && apt-get clean
 
 COPY install_eccodes.sh /app/
 RUN chmod +x /app/install_eccodes.sh && /app/install_eccodes.sh
@@ -28,7 +32,6 @@ RUN poetry run pip install eccodes
 COPY . /app
 
 ENV FLASK_APP=src/app:app
-ENV REQUEST_ORIGIN=http://localhost:3000
 
 EXPOSE 5000
 

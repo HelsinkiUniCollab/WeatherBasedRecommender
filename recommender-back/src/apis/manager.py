@@ -1,16 +1,42 @@
 import os
-import copy
 import json
 import requests
 from requests import Timeout
 from .current import Current
 from .poi import PointOfInterest
-from ..services.forecastdatafetcher import DataFetcher
+from ..services.data_fetcher import DataFetcher
+from ..db.db import get_collection
+from ..services.poi_init import init_pois
+
+def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
+                                              precipitation, cloud_amount, air_quality):
+    """
+    Retrieves points of interest (POIs) from a JSON file and enriches them with simulated weather data.
+
+    Returns:
+        str: JSON string containing the POIs with calculated scores.
+
+    Raises:
+        KeyError: If an error occurs while processing the data.
+    """
+    try:
+        pois = get_pois()
+        updated_data = []
+        for poi in pois:
+            poi.set_simulated_weather(air_temperature, wind_speed, humidity,
+                                            precipitation, cloud_amount, air_quality)
+            poi.calculate_score()
+            updated_data.append(poi.get_json())
+        return json.dumps(updated_data)
+    except KeyError as error:
+        return {"message": "An error occurred", "status": 500, "error": str(error)}
+    except Timeout as error:
+        return {"message": "Forecast timed out", "status": 500, "error": str(error)}
 
 
 def get_pois_as_json(accessibility=False, category="All"):
     """
-    Retrieves points of interest (POIs) from a JSON file and enriches them with current weather data.
+    Retrieves points of interest (POIs) from MongoDB and enriches them with current weather data.
 
     Returns:
         str: JSON string containing the POIs with weather information.
@@ -55,83 +81,36 @@ def find_nearest_coordinate_forecast_data(poi: PointOfInterest, forecast_data):
     try:
         lat = poi.latitude
         lon = poi.longitude
+        coord_key = f"{lat}, {lon}"
         for hour in forecast_data:
             data = forecast_data[hour]
-            time_key = f"{hour[11:16]}"
-            coord_key = f"{lat}, {lon}"
-
             if forecast_data is None or coord_key not in data:
                 return poi
 
+            time_key = f"{hour[11:16]}"
             poi.weather[time_key] = data[coord_key]
     except TypeError:
         print("Failed to find nearest coordinate forecast data. TypeError occurred.")
 
     return poi
 
-
 def get_pois():
     """
-    Retrieves all points of interest (POIs) from JSON files and merges them together.
+    Fetches and converts mongoDB documents into POI -objects.
 
     Args:
-        category (list): List of categories of POIs to retrieve. If None, default categories will be used.
+        test (bool): A flag to indicate if the test environment is used.
 
     Returns:
-        list: List of all POIs.
-
+        list: List of POI -objects.
     """
-    with open("src/static/pois.json", "r", encoding="utf-8") as file:
-        data = json.load(file)
-        pois = iterate_items(data, [])
-        return filter_duplicates(pois)
-
-
-def filter_duplicates(pois):
-    """
-    Filters duplicates from POI -list. Some POIs belong to multiple categories which can lead to duplicates.add()
-
-    Args:
-        pois (list): List of POIs iterated from file.
-
-    Returns:
-        list: Dictionary converted to list containing filtered POIs.
-
-    """
-    uniques = {}
-    for poi in pois:
-        name = poi.name
-        if name not in uniques:
-            uniques[name] = poi
-    return list(uniques.values())
-
-
-def iterate_items(data, categories):
-    """
-    Recursively iterates over the data and constructs a list of PointOfInterest objects.
-
-    Args:
-        data (list or dict): The data to iterate over.
-        categories (list): The list of categories associated with the current data level.
-
-    Returns:
-        list: List of PointOfInterest objects constructed from the data.
-
-    """
+    collection = get_collection()
+    if collection.count_documents({}) == 0:
+        init_pois()
+    all_documents = collection.find({})
     pois = []
-    if isinstance(data, list):
-        for item in data:
-            name = item["name"]["fi"]
-            longitude = item["location"]["coordinates"][0]
-            latitude = item["location"]["coordinates"][1]
-            not_accessible_for = list(item["accessibility_shortcoming_count"].keys())
-            poi = PointOfInterest(
-                name, latitude, longitude, not_accessible_for, categories
-            )
-            pois.append(poi)
-    else:
-        for key, item in data.items():
-            categories.append(key)
-            pois.extend(iterate_items(item, copy.deepcopy(categories)))
-            categories.pop()
+    for poi in all_documents:
+        poi = PointOfInterest(poi['name'], poi['latitude'], poi['longitude'],
+                            poi['not_accessible_for'], poi['categories'])
+        pois.append(poi)
     return pois

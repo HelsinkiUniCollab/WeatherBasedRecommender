@@ -1,6 +1,6 @@
 from unittest import TestCase
 from unittest.mock import patch
-from src.services.forecastdatafetcher import DataFetcher
+from src.services.data_fetcher import DataFetcher
 
 
 class TestDataFetcher(TestCase):
@@ -13,7 +13,7 @@ class TestDataFetcher(TestCase):
         self.parameters = "parameters"
         self.timeseries = "timeseries"
 
-    @patch("src.services.forecastdatafetcher.download_stored_query")
+    @patch("src.services.data_fetcher.download_stored_query")
     def test_get_forecast_data(self, mock_download):
         mock_download.return_value = "mock forecast data"
 
@@ -33,7 +33,7 @@ class TestDataFetcher(TestCase):
         )
         self.assertEqual(result, "mock forecast data")
 
-    @patch("src.services.forecastdatafetcher.download_stored_query")
+    @patch("src.services.data_fetcher.download_stored_query")
     def test_get_current_weather_data(self, mock_download):
         mock_download.return_value = "mock weather data"
 
