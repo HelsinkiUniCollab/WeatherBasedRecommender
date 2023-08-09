@@ -90,3 +90,32 @@ describe('SimulatorPage', () => {
     cy.get('input[name="airTemperature"]').clear().type('20').should('have.value', '20');
   });
 });
+
+describe('TimePickerComponent', () => {
+  // visit the page or component where TimePickerComponent is rendered
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/admin');
+  });
+
+  it('should select an hour correctly', () => {
+    cy.get('[data-testid="current-time-hour-selector"] div[role="button"]').first().click();
+    cy.get('li[data-value="10"]').click();
+    cy.get('[name="current-time-hour"]').should('have.value', '10');
+  });
+
+  it('should select a minute correctly', () => {
+    cy.get('[data-testid="current-time-minute-selector"] div[role="button"]').first().click();
+    cy.get('li[data-value="10"]').click();
+    cy.get('[name="current-time-minute"]').should('have.value', '10');
+  });
+
+  it('should display correct default sunrise', () => {
+    cy.get('[name="sunrise-hour"]').should('have.value', '06');
+    cy.get('[name="sunrise-minute"]').should('have.value', '00');
+  });
+
+  it('should display correct default sunset', () => {
+    cy.get('[name="sunset-hour"]').should('have.value', '22');
+    cy.get('[name="sunset-minute"]').should('have.value', '00');
+  });
+});

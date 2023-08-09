@@ -82,16 +82,19 @@ function SimulatorFormComponent({
         <TimePickerComponent
           time={currentTime}
           onTimeChange={handleTimeChange}
+          namePrefix="current-time"
         />
         <Typography>Sunrise</Typography>
         <TimePickerComponent
           time={sunrise}
           onTimeChange={handleSunriseChange}
+          namePrefix="sunrise"
         />
         <Typography>Sunset</Typography>
         <TimePickerComponent
           time={sunset}
           onTimeChange={handleSunsetChange}
+          namePrefix="sunset"
         />
       </form>
     </div>
