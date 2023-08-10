@@ -74,7 +74,6 @@ function App() {
 
   useEffect(() => {
     if (selectedCategories.length > 0 && selectedCategories[0] !== 'All') {
-      console.log(selectedCategories);
       const filteredData = allPoiData.filter((poi) => selectedCategories.includes(poi.category));
       setPoiData(filteredData);
     } else {
