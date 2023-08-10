@@ -103,8 +103,8 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | 1            | 5 live,map,path  | -               | -              | -            | -             | -           | -     |
 | Isak    | 0,5            | 2             | 2,5               | 1              | -            | -             | -           | 6     |
-| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami M. | -            | -             | 9 aqi fixing and suggestions...               | -              | -            | -             | -           | -     |
+| Sami S. | -            | 2 meeting             | -               | -              | -            | -             | -           | -     |
+| Sami M. | -            | -             | 9 aqi fixing and suggestions...               | 2 greenpath test fixing, research location stuff              | -            | -             | -           | -     |
 | Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
