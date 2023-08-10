@@ -3,7 +3,7 @@ const parseScore = (poiMarker) => {
   const html = poiMarker._popup._content;
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, 'text/html');
-  const scoreElement = Array.from(doc.querySelectorAll('li strong')).find(
+  const scoreElement = Array.from(doc.querySelectorAll('li')).find(
     (element) => element.textContent === 'Score',
   );
   const scoreValueElement = scoreElement?.nextSibling;
