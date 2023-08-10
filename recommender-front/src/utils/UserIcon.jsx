@@ -1,5 +1,5 @@
 import L from 'leaflet';
-import userlocation from '.../assets/markericon/userlocation.png';
+import userlocation from '../assets/markericon/userlocation.png';
 
 function UserIcon() {
   const iconOptions = {
@@ -14,8 +14,7 @@ function UserIcon() {
     iconUrl: userlocation,
   });
 
-  let markerIcon;
-  markerIcon = userIcon
+  const markerIcon = userIcon;
 
   return markerIcon;
 }

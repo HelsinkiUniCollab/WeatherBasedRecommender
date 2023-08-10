@@ -53,6 +53,5 @@ describe('createMarkers', () => {
     expect(popupContent).toContain('<h3>Marker 1</h3>');
     expect(popupContent).toContain('<li><strong>Temperature</strong>: 20°C</li>');
     expect(popupContent).toContain('<li><strong>Humidity</strong>: 50%</li>');
-
   });
 });
