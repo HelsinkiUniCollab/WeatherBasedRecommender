@@ -26,6 +26,7 @@ const mockPOIs = [
         Score: 1.0,
       },
     },
+    category: 'Sport halls',
   },
   {
     name: 'Mock POI 2',
@@ -54,6 +55,7 @@ const mockPOIs = [
         Score: 0.3,
       },
     },
+    category: 'Open air pools and beaches',
   },
 ];
 

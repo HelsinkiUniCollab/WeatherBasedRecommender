@@ -15,7 +15,7 @@ body {
 
 #map {
   width: 100vw;
-  height: calc(78vh);
+  height: calc(70vh);
   position: relative;
   /* Makes sure leaflet copyright is shown*/
 }
