@@ -36,23 +36,25 @@ function MapComponent({
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution={
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }
         />
         <LocateButton
           handleSetOrigin={handleSetOrigin}
         />
-        <UserLocationMarker
-          userPosition={userPosition}
-          handleSetOrigin={handleSetOrigin}
-        />
+        {userPosition && (
+          <UserLocationMarker
+            userPosition={userPosition}
+            handleSetOrigin={handleSetOrigin}
+          />
+        )}
         <MarkersComponent
           poiData={poiData}
           time={time}
           handleSetDestination={handleSetDestination}
         />
         {routeCoordinates && (
-        <Polyline positions={routeCoordinates.map((coord) => [coord[1], coord[0]])} />
+          <Polyline positions={routeCoordinates.map((coord) => [coord[1], coord[0]])} />
         )}
       </MapContainer>
     </div>
