@@ -101,7 +101,7 @@
 
 |         | Monday 7.8. | Tuesday 8.8. | Wednesday 9.8. | Thursday 10.8. | Friday 11.8. | Saturday 12.8. | Sunday 13.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | 1            | 5 live,map,path  | -               | -              | -            | -             | -           | -     |
+| Juuso   | 1            | 5 live,map,path  | 2 greenpaths , aqi lookup | 5 merges,path fixes,.. | -            | -             | -           | -     |
 | Isak    | 0,5            | 2             | 2,5               | 1              | -            | -             | -           | 6     |
 | Sami S. | -            | 2 meeting             | -               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | 9 aqi fixing and suggestions...               | 2 greenpath test fixing, research location stuff              | -            | -             | -           | -     |
