@@ -3,7 +3,7 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
 function PreferenceSelector({ selectedCategories, onCategoryChange }) {
-  const allCategories = ['Sport halls', 'Open air pools and beaches', 'Athletic fields and venues', 'Neighbourhood sports facilities and parks'];
+  const allCategories = ['Sport halls', 'Open air pools and beaches', 'Athletic fields and venues', 'Neighbourhood sports areas', 'Fitness training parks'];
 
   const isAllChecked = selectedCategories.includes('All');
 
