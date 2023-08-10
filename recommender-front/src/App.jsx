@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -30,6 +30,7 @@ function App() {
   const [routeCoordinates, setRouteCoordinates] = useState([]);
   const [warning, setWarning] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
+  const hasSetOriginRef = useRef(false);
 
   const toggleHeader = () => {
     setHeaderHidden(!headerHidden);
@@ -52,9 +53,11 @@ function App() {
   };
 
   const handleSetOrigin = (latitude, longitude) => {
-    setUserPosition([latitude, longitude]);
-    console.log('Setting origin:', latitude, longitude);
-    // handleSendCoordinates(userPosition, destination);
+    if (!hasSetOriginRef.current) {
+      setUserPosition([latitude, longitude]);
+      console.log('Setting origin:', latitude, longitude);
+      hasSetOriginRef.current = true;
+    }
   };
 
   const handleSetDestination = (latitude, longitude) => {

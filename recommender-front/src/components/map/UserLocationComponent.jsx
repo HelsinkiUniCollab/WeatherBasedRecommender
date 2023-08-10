@@ -11,11 +11,11 @@ function UserLocationMarker({ handleSetOrigin, userPosition }) {
   });
 
   useEffect(() => {
-    if (userPosition) {
+    if (userPosition && !userPosition.some((coord) => coord == null)) {
       console.log('Setting origin with position:', userPosition);
       handleSetOrigin(userPosition[0], userPosition[1]);
     }
-  }, [handleSetOrigin, userPosition]);
+  }, []);
 
   return userPosition === null ? null : (
     <Marker
