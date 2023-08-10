@@ -2,8 +2,8 @@ import L from 'leaflet';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import createMarkerIcon from './Icon';
+import DestinationButton from '../components/buttons/DestinationButton';
 
 const createMarkers = (poiData, time, handleSetDestination) => {
   if (!poiData || !time) {
@@ -40,13 +40,9 @@ const createMarkers = (poiData, time, handleSetDestination) => {
           ))}
         </ul>
         <center>
-          <Button
-            size="small"
-            variant="contained"
+          <DestinationButton
             onClick={() => handleSetDestination(poi.latitude, poi.longitude)}
-          >
-            Set destination
-          </Button>
+          />
         </center>
       </div>
     );
