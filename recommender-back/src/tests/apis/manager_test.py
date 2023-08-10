@@ -80,7 +80,7 @@ class TestManger(unittest.TestCase):
             }
         }
 
-    def test_get_simulated_pois_as_json(self):
+    '''def test_get_simulated_pois_as_json(self):
         response = self.client.get(
             '/api/simulator?air_temperature=10&wind_speed=5&humidity=10&precipitation=5&cloud_amount=10&air_quality=2')
         data = json.loads(response.text)
@@ -92,6 +92,36 @@ class TestManger(unittest.TestCase):
                   'Precipitation': '5 mm',
                   'Cloud amount': '10 %',
                   'Air quality': '2'}
+        self.assertEqual(tested, equals)'''
+    def test_get_simulated_pois_as_json(self):
+        # Define parameters
+        params = {
+            "air_temperature": 10,
+            "wind_speed": 5,
+            "humidity": 10,
+            "precipitation": 5,
+            "cloud_amount": 10,
+            "air_quality": 2,
+            "current_time": '16:00',
+            'sunrise': '6:00',
+            'sunset': '22:00',
+        }
+
+        # Make POST request and get response
+        response = self.client.post(
+            '/api/simulator', 
+            json=params,
+        )
+
+        data = json.loads(response.text)
+        tested = data[0]['weather']['Weather']
+        del tested['Score']
+        equals = {'Air temperature': '10 °C',
+                'Wind speed': '5 m/s',
+                'Humidity': '10 %',
+                'Precipitation': '5 mm',
+                'Cloud amount': '10 %',
+                'Air quality': 2}
         self.assertEqual(tested, equals)
 
     def test_get_pois_returns_list(self):
