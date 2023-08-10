@@ -47,10 +47,12 @@ describe('createMarkers', () => {
     const markers = createMarkers(poiData, time);
 
     const marker = markers[0];
-    const popupContent = marker.getPopup().getContent();
+    const popupDiv = marker.getPopup().getContent();
+    const popupContent = popupDiv.outerHTML;
 
     expect(popupContent).toContain('<h3>Marker 1</h3>');
     expect(popupContent).toContain('<li><strong>Temperature</strong>: 20°C</li>');
     expect(popupContent).toContain('<li><strong>Humidity</strong>: 50%</li>');
+
   });
 });
