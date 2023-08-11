@@ -1,8 +1,18 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import CustomTextField from './CustomTextField';
+import TimePickerComponent from './TimePickerComponent';
 
-function SimulatorFormComponent({ handleInputChange, simulatedWeatherData }) {
+function SimulatorFormComponent({
+  handleInputChange,
+  simulatedWeatherData,
+  handleTimeChange,
+  currentTime,
+  handleSunriseChange,
+  sunrise,
+  handleSunsetChange,
+  sunset,
+}) {
   const formStyle = {
     bottom: '10px',
     left: '10px',
@@ -11,7 +21,10 @@ function SimulatorFormComponent({ handleInputChange, simulatedWeatherData }) {
     borderRadius: '5px',
     display: 'grid',
     gap: '5px',
-    width: '120px',
+    width: '140px',
+    height: '65vh',
+    maxHeight: '65vh',
+    overFlowy: 'auto',
   };
 
   return (
@@ -64,6 +77,24 @@ function SimulatorFormComponent({ handleInputChange, simulatedWeatherData }) {
           value={simulatedWeatherData.airQuality}
           handleInputChange={handleInputChange}
           helperText="1-5"
+        />
+        <Typography>Current Time</Typography>
+        <TimePickerComponent
+          time={currentTime}
+          onTimeChange={handleTimeChange}
+          namePrefix="current-time"
+        />
+        <Typography>Sunrise</Typography>
+        <TimePickerComponent
+          time={sunrise}
+          onTimeChange={handleSunriseChange}
+          namePrefix="sunrise"
+        />
+        <Typography>Sunset</Typography>
+        <TimePickerComponent
+          time={sunset}
+          onTimeChange={handleSunsetChange}
+          namePrefix="sunset"
         />
       </form>
     </div>

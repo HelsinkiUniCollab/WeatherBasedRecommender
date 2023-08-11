@@ -9,10 +9,10 @@ services:
    - ./recommender-back/.env
   environment:
    REQUEST_ORIGIN: http://localhost:3000
+  env_file:
+    - ./recommender-back/.env
   ports:
    - 5000:5000
-  #command:
-   #flask run --host=0.0.0.0
  
  frontend:
   build:

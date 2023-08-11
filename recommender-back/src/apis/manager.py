@@ -9,7 +9,7 @@ from ..db.db import get_collection
 from ..services.poi_init import init_pois
 
 def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
-                                              precipitation, cloud_amount, air_quality):
+                                              precipitation, cloud_amount, air_quality, current_time, sunrise, sunset):
     """
     Retrieves points of interest (POIs) from a JSON file and enriches them with simulated weather data.
 
@@ -25,7 +25,7 @@ def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
         for poi in pois:
             poi.set_simulated_weather(air_temperature, wind_speed, humidity,
                                             precipitation, cloud_amount, air_quality)
-            poi.calculate_score()
+            poi.calculate_score(current_time, sunrise, sunset)
             updated_data.append(poi.get_json())
         return json.dumps(updated_data)
     except KeyError as error:

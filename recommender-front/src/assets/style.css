@@ -15,7 +15,7 @@ body {
 
 #map {
   width: 100vw;
-  height: calc(78vh);
+  height: calc(70vh);
   position: relative;
   /* Makes sure leaflet copyright is shown*/
 }
@@ -90,6 +90,11 @@ body {
   zoom: 1;
   position: relative;
 
+}
+
+.header-container.disabled {
+  height: 0;
+  overflow: hidden;
 }
 
 .disabled {
@@ -203,23 +208,61 @@ body {
   z-index: 1000;
   background-color: #ffffff;
   padding: 10px;
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
-@media (max-width: 600px) {
+.fullscreen {
+  height: 100vh;
+}
+
+.map-container.fullscreen #map{
+  height: 100vh; 
+  width: 100%; 
+}
+
+
+.toggle-header-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000; /* Make sure the button is above other elements */
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #333; 
+}
+
+
+.night-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 600px) {
   .header-container {
-    /* Adjust the height for smaller screens */
     min-height: 60px;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* Adjust the logo size for smaller screens */
   .logo {
     width: 100px;
-    /* Adjust the size as needed */
   }
 
-  /* Stack elements vertically on smaller screens */
-  .header-container {
-    flex-direction: column;
-    align-items: center;
+  .header-container.disabled {
+      height: 0;
+      min-height: 0;
+      overflow: hidden;
   }
 }

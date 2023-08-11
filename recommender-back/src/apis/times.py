@@ -78,3 +78,20 @@ def get_forecast_times():
     end_time = (current_time + dt.timedelta(days=1, hours=1)
                 ).strftime('%Y-%m-%dT%H:%M:%SZ')
     return current_time, start_time, end_time
+
+def time_from_string(time_str):
+    '''
+    Converts a given time string or datetime.datetime object into a datetime.time object.
+
+    Args:
+        time_str (Union[str, datetime.datetime]): The time representation, either as a string formatted as "%H:%M" or as a datetime.datetime object.
+
+    Returns:
+        datetime.time: The time extracted from the input.
+
+    Raises:
+        ValueError: If the provided string is not formatted correctly.
+    '''
+    if isinstance(time_str, dt.datetime):
+        return time_str.time()
+    return dt.datetime.strptime(time_str, "%H:%M").time()

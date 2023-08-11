@@ -18,8 +18,8 @@ Application can be accessed here: [Weather-Based Recommender](http://128.214.253
 # Give permissions for a script to specify the backend URL
 $ chmod +x generate_local_env.sh
 
-# Run the script and generate a local backend URL
-$ ./generate_local_env.sh
+# Replace the ellipsis inside the single quotes with your MongoDB development URL and run the script
+$ ./generate_local_env.sh '...' 
 
 # Start the frontend and backend services on ports 5000 and 3000, respectively
 $ docker compose up

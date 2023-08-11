@@ -1,8 +1,10 @@
 import unittest
+from unittest.mock import patch
 from src.db.db import get_collection
-from src.apis.manager import get_pois, find_nearest_coordinate_forecast_data
+from src.apis.manager import get_pois, find_nearest_coordinate_forecast_data, get_pois_as_json
 from src.apis.poi import PointOfInterest
 from src.app import app
+from src.tests.mock_data import MOCK_POIS
 import json
 
 class TestManger(unittest.TestCase):
@@ -81,24 +83,45 @@ class TestManger(unittest.TestCase):
         }
 
     def test_get_simulated_pois_as_json(self):
-        response = self.client.get(
-            '/api/simulator?air_temperature=10&wind_speed=5&humidity=10&precipitation=5&cloud_amount=10&air_quality=2')
+        params = {
+            "air_temperature": 10,
+            "wind_speed": 5,
+            "humidity": 10,
+            "precipitation": 5,
+            "cloud_amount": 10,
+            "air_quality": 2,
+            "current_time": '16:00',
+            'sunrise': '6:00',
+            'sunset': '22:00',
+        }
+
+        response = self.client.post(
+            '/api/simulator', 
+            json=params,
+        )
+
         data = json.loads(response.text)
         tested = data[0]['weather']['Weather']
         del tested['Score']
         equals = {'Air temperature': '10 °C',
-                  'Wind speed': '5 m/s',
-                  'Humidity': '10 %',
-                  'Precipitation': '5 mm',
-                  'Cloud amount': '10 %',
-                  'Air quality': '2'}
+                'Wind speed': '5 m/s',
+                'Humidity': '10 %',
+                'Precipitation': '5 mm',
+                'Cloud amount': '10 %',
+                'Air quality': 2}
         self.assertEqual(tested, equals)
 
-    def test_get_pois_returns_list(self):
+    @patch('src.db.db.get_collection')
+    def test_get_pois_returns_list(self, mock_get_collection):
+        mock_get_collection.return_value.find.return_value = MOCK_POIS
+        
         result = get_pois()
+        
         self.assertIsInstance(result, list)
 
-    def test_get_pois_contains_items(self):
+    @patch('src.db.db.get_collection')
+    def test_get_pois_contains_items(self, mock_get_collection):
+        mock_get_collection.return_value.find.return_value = MOCK_POIS
         result = get_pois()
         self.assertTrue(len(result) > 0)
 
@@ -128,7 +151,6 @@ class TestManger(unittest.TestCase):
             res = find_nearest_coordinate_forecast_data(onepoi, self.fore)
             self.assertEqual(len(res.weather), 3)
             break
-
 
 if __name__ == '__main__':
     unittest.main()
