@@ -1,6 +1,6 @@
 import L from 'leaflet';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import Typography from '@mui/material/Typography';
 import createMarkerIcon from './Icon';
 import DestinationButton from '../components/buttons/DestinationButton';
@@ -47,9 +47,9 @@ const createMarkers = (poiData, time, handleSetDestination) => {
       </div>
     );
 
-    const divElement = document.createElement('div'); // Create a placeholder DOM element
-    ReactDOM.render(container, divElement); // Render the JSX component into the DOM element
-
+    const divElement = document.createElement('div');
+    const root = ReactDOM.createRoot(divElement);
+    root.render(container);
     marker.bindPopup(divElement).openPopup();
 
     return marker;
