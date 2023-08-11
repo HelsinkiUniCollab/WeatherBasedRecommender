@@ -1,4 +1,3 @@
-import mockPOIs from '../mockData';
 import mockPOIS from '../mockData';
 import mockROUTE from '../mockRoute';
 
