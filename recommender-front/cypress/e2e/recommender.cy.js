@@ -1,3 +1,4 @@
+import mockPOIs from '../mockData';
 import mockPOIS from '../mockData';
 import mockROUTE from '../mockRoute';
 
@@ -50,12 +51,12 @@ describe('Map and POI features', () => {
   });
 
   it('should update amount of markers when accessibility is selected', () => {
-    const wheelChairMockData = mockPOIS.slice(-1);
-    cy.intercept('GET', 'http://localhost:5000/api/poi/wheelchair', wheelChairMockData);
+    const filteredMockPOIs = mockPOIS.filter((poi) => !poi.not_accessible_for.includes('wheelchair'));
+
     cy.get('.MuiSelect-select').click();
     cy.get('[data-value="wheelchair"]').click();
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
-      .should('have.length', wheelChairMockData.length);
+      .should('have.length', filteredMockPOIs.length);
   });
 
   it('should show the weather alert when /api/warning returns true', () => {
@@ -159,6 +160,18 @@ describe('PreferenceSelector component', () => {
     cy.get('input[name="allCheckbox"]').check();
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
       .should('have.length', mockPOIS.length);
+  });
+
+  it('should show only Sport halls and wheelchair accessible markers when both filters are selected', () => {
+    const filteredMockPOIs = mockPOIs.filter((poi) => !poi.not_accessible_for.includes('wheelchair')
+      && poi.category === 'sport halls');
+
+    cy.get('input[name="Sport hallsCheckbox"]').check();
+    cy.get('.MuiSelect-select').click();
+    cy.get('[data-value="wheelchair"]').click();
+
+    cy.get('.leaflet-marker-icon', { timeout: 10000 })
+      .should('have.length', filteredMockPOIs.length);
   });
 });
 

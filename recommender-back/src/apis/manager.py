@@ -33,7 +33,7 @@ def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
         return {"message": "Forecast timed out", "status": 500, "error": str(error)}
 
 
-def get_pois_as_json(accessibility=False, category="All"):
+def get_pois_as_json(category="All"):
     """
     Retrieves points of interest (POIs) from MongoDB and enriches them with current weather data.
 
@@ -64,8 +64,6 @@ def get_pois_as_json(accessibility=False, category="All"):
             poi: PointOfInterest = current.find_nearest_stations_weather_data(poi)
             poi = find_nearest_coordinate_forecast_data(poi, forecast_data)
             poi.calculate_score()
-            if accessibility in poi.not_accessible_for:
-                continue
             updated_data.append(poi.get_json())
         return json.dumps(updated_data)
     except KeyError as error:

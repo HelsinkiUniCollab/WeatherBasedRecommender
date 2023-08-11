@@ -132,4 +132,5 @@ class PointOfInterest:
         '''
         return {'name': self.name, 'weather': self.weather,
                 'latitude': self.latitude, 'longitude': self.longitude,
-                'category': self.categories[-1], 'catetype': self.categorytype}
+                'category': self.categories[-1], 'catetype': self.categorytype,
+                'not_accessible_for': self.not_accessible_for}
