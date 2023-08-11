@@ -139,7 +139,7 @@ describe('PreferenceSelector component', () => {
 
   it('should show only Sport halls markers when the "Sport halls" category is selected', () => {
     const sportHallsMockData = mockPOIS.filter((poi) => poi.category === 'Sport halls');
-    cy.get('[data-testid="menu-button"]').click();
+
     cy.get('input[name="Sport hallsCheckbox"]').check();
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
       .should('have.length', sportHallsMockData.length);
