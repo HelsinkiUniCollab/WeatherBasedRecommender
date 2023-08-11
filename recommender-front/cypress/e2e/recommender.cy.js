@@ -162,7 +162,7 @@ describe('PreferenceSelector component', () => {
   });
 
   it('should show only Sport halls and wheelchair accessible markers when both filters are selected', () => {
-    const filteredMockPOIs = mockPOIs.filter((poi) => !poi.not_accessible_for.includes('wheelchair')
+    const filteredMockPOIs = mockPOIS.filter((poi) => !poi.not_accessible_for.includes('wheelchair')
       && poi.category === 'sport halls');
 
     cy.get('input[name="Sport hallsCheckbox"]').check();
