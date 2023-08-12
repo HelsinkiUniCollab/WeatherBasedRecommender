@@ -4,7 +4,7 @@ import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
 import MarkersComponent from './MarkersComponent';
 import UserLocationMarker from './UserLocationComponent';
-import LocateButton from './LocateButtonComponent';
+import LocateButton from '../buttons/LocateButton';
 import '../../assets/style.css';
 
 function MapComponent({
