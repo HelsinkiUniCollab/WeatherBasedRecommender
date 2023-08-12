@@ -1,15 +1,17 @@
-const parseScore = (poiMarker) => {
-  // eslint-disable-next-line no-underscore-dangle
-  const html = poiMarker._popup._content;
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, 'text/html');
-  const scoreElement = Array.from(doc.querySelectorAll('li')).find(
-    (element) => element.textContent === 'Score',
-  );
-  const scoreValueElement = scoreElement?.nextSibling;
-  const scoreValue = scoreValueElement?.nodeValue.trim().replace(/[^\d.]/g, '');
-
-  return scoreValue ? parseFloat(scoreValue) : null;
+const parseScore = async (poiMarker) => {
+  setTimeout(() => {
+    // eslint-disable-next-line no-underscore-dangle
+    const html = poiMarker._popup._content.innerHTML;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const scoreElement = Array.from(doc.querySelectorAll('body ul li span strong')).find(
+      (element) => element.textContent === 'Score',
+    );
+    const scoreValueElement = scoreElement?.nextSibling;
+    const scoreValue = scoreValueElement?.nodeValue.trim().replace(/[^\d.]/g, '');
+    console.log('parseScore returned:', scoreValue);
+    return scoreValue ? parseFloat(scoreValue) : null;
+  }, 1000);
 };
 
 const defineClass = (bestScore) => {

@@ -18,7 +18,7 @@ const createMarkers = (poiData, time, handleSetDestination) => {
     });
 
     const container = (
-      <div>
+      <>
         <Typography variant="h5">{poi.name}</Typography>
         <Typography variant="h8">
           {poi.catetype}
@@ -44,13 +44,13 @@ const createMarkers = (poiData, time, handleSetDestination) => {
             onClick={() => handleSetDestination(poi.latitude, poi.longitude)}
           />
         </center>
-      </div>
+      </>
     );
 
     const divElement = document.createElement('div');
     const root = ReactDOM.createRoot(divElement);
     root.render(container);
-    marker.bindPopup(divElement).openPopup();
+    marker.bindPopup(divElement);
 
     return marker;
   });
