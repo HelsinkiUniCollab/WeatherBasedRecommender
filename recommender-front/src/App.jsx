@@ -9,6 +9,7 @@ import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
 import PathUtil from './utils/PathComponent';
 import SimulatorPage from './pages/SimulatorPage';
+import PreferenceSelector from './components/selector/PreferenceSelector';
 import 'leaflet/dist/leaflet.css';
 import '@fontsource/roboto/300.css';
 import theme from './assets/theme';
@@ -20,6 +21,7 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
 function App() {
   const [accessibility, setAccessibility] = useState('');
+  const [allPoiData, setAllPoiData] = useState([]);
   const [poiData, setPoiData] = useState([]);
   const [times, setTimes] = useState(0);
   const [selectedValue, setSelectedValue] = useState(0);
@@ -31,6 +33,7 @@ function App() {
   const [warning, setWarning] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
   const hasSetOriginRef = useRef(false);
+  const [selectedCategories, setSelectedCategories] = useState(['All']);
 
   const toggleHeader = () => {
     setHeaderHidden(!headerHidden);
@@ -78,6 +81,7 @@ function App() {
         if (!alert) {
           const poiResponse = await fetch(`${apiUrl}/api/poi/${accessibility}`);
           const poi = await poiResponse.json();
+          setAllPoiData(poi);
           setPoiData(poi);
         }
       } catch (error) {
@@ -86,6 +90,15 @@ function App() {
     }
     fetchData();
   }, [accessibility]);
+
+  useEffect(() => {
+    if (selectedCategories.length > 0 && selectedCategories[0] !== 'All') {
+      const filteredData = allPoiData.filter((poi) => selectedCategories.includes(poi.category));
+      setPoiData(filteredData);
+    } else {
+      setPoiData(allPoiData);
+    }
+  }, [selectedCategories, allPoiData]);
 
   useEffect(() => {
     if (poiData.length > 0) {
@@ -155,6 +168,10 @@ function App() {
                       handleSetDestination={handleSetDestination}
                       routeCoordinates={routeCoordinates}
                       toggleHeader={toggleHeader}
+                    />
+                    <PreferenceSelector
+                      selectedCategories={selectedCategories}
+                      onCategoryChange={setSelectedCategories}
                     />
                   </Grid>
                 </Grid>

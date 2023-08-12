@@ -23,7 +23,7 @@ jobs:
       - name: Setup .env file for frontend
         run: echo "REACT_APP_BACKEND_URL=${{ secrets.REACT_APP_BACKEND_URL }}" > ./recommender-front/.env.local
       - name: Setup .env file for backend
-        run: echo "REACT_APP_BACKEND_URL=${{ secrets.REACT_APP_BACKEND_URL }}" > ./recommender-back/.env
+        run: echo "REACT_APP_BACKEND_URL=${{ secrets.REACT_APP_BACKEND_URL }}" > ./recommender-back/.env && echo "MONGO_URI=${{ secrets.MONGO_URI }}" >> ./recommender-back/.env
       - name: Build and push frontend
         uses: docker/build-push-action@v2
         with:

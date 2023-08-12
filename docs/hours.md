@@ -78,7 +78,7 @@
 | Isak    | 1,5            | 1             | 1               | 1              | 1            | 3             | -           | 10     |
 | Sami S. | -            | 1 sprint planning             | 4 pull reqs, backend tests               | 5 live              | -            | -             | 4 mongodb, pull reqs           | 14     |
 | Sami M. | -            | 1 sprint planning             | 3 test fore/current/times               | 5 live              | -            | -             | 5 research netcdf, aqi skeleton           | 14     |
-| Pia     | -            | 2 scrum master stuff            | -               | 6 live              | -            | 2,5 mongo            | 4,5 mongo           | -     |
+| Pia     | -            | 2 scrum master stuff            | -               | 6 live              | -            | 2,5 mongo            | 4,5 mongo           | 15    |
 | Joni    | -            | 1 sprint meeting | -               | 6 live      | 2 backend    | 3 backend     | 6 backend   | 18     |
 
 |         | Monday 24.7. | Tuesday 25.7. | Wednesday 26.7. | Thursday 27.7. | Friday 28.7. | Saturday 29.7. | Sunday 30.7. | Total |
@@ -97,16 +97,16 @@
 | Sami S. | 1.5            | 6.5 live, learning react, greenpath front             | 3 more react               | 2 greenpath              | 4.5 greenpath            | -             | -           | 17.5     |
 | Sami M. | 6 More aqi data fixes, fixing tests            | 1 refactor aqi + parse xml             | -               | -              | 0.5 daily            | 1h simulator css styling             | -           | 8.5     |
 | Pia     | 3,5 mongo           | 5,5 mongo, live            | -               | -              | 6 mongo, daily            | -             | 1,5 mongo          | 16,5    |
-| Joni    | -            | 3 aqi refactor | 6 background loading | 4 backend refactor | 4 simulator front | 2 redis cache | -           | -     |
+| Joni    | -            | 3 aqi refactor | 6 background loading | 4 backend refactor | 4 simulator front | 2 redis cache | -           | 19     |
 
 |         | Monday 7.8. | Tuesday 8.8. | Wednesday 9.8. | Thursday 10.8. | Friday 11.8. | Saturday 12.8. | Sunday 13.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | 1            | 5 live,map,path  | -               | -              | -            | -             | -           | -     |
-| Isak    | 0,5            | 2             | 2,5               | 1              | -            | -             | -           | 6     |
-| Sami S. | -            | 2 meeting             | -               | -              | -            | -             | -           | -     |
+| Juuso   | 1            | 5 live,map,path  | 2 greenpaths , aqi lookup | 5 merges,path fixes,.. | -            | -             | -           | -     |
+| Isak    | 0,5            | 2             | 2,5               | 2              | 1            | -             | -           | 8     |
+| Sami S. | -            | 2 meeting             | -               | 4.5 catching up, more react, greenpath troubleshooting               | 2 AQI review, greenpath            | -             | -           | -     |
 | Sami M. | -            | -             | 9 aqi fixing and suggestions...               | 2 greenpath test fixing, research location stuff              | -            | -             | -           | -     |
-| Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | -              | -            | -             | -           | -     |
-| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | 3 on-boarding Denis            | -            | -             | -           | -     |
+| Joni    | 1            | 2 meeting     | 3 simulator pr  | 5 frontend filtering + tests | 2 AQI review  | -             | -           | -     |
 
 |         | Monday 14.8. | Tuesday 15.8. | Wednesday 16.8. | Thursday 17.8. | Friday 18.8. | Saturday 19.8. | Sunday 20.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
