@@ -36,7 +36,7 @@ function LocateButton({ handleSetOrigin }) {
 
   return (
     <div style={buttonStyle}>
-      <Button variant="text" onClick={handleClick} disabled={locating}>
+      <Button variant="text" data-testid="locate-button" onClick={handleClick} disabled={locating}>
         <MyLocationIcon />
       </Button>
     </div>
