@@ -19,6 +19,7 @@ function UserLocationMarker({ handleSetOrigin, userPosition }) {
 
   return userPosition === null ? null : (
     <Marker
+      data-testid="usermarker"
       icon={placeholderMarker}
       position={userPosition}
     />
