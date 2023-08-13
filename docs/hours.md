@@ -97,16 +97,16 @@
 | Sami S. | 1.5            | 6.5 live, learning react, greenpath front             | 3 more react               | 2 greenpath              | 4.5 greenpath            | -             | -           | 17.5     |
 | Sami M. | 6 More aqi data fixes, fixing tests            | 1 refactor aqi + parse xml             | -               | -              | 0.5 daily            | 1h simulator css styling             | -           | 8.5     |
 | Pia     | 3,5 mongo           | 5,5 mongo, live            | -               | -              | 6 mongo, daily            | -             | 1,5 mongo          | 16,5    |
-| Joni    | -            | 3 aqi refactor | 6 background loading | 4 backend refactor | 4 simulator front | 2 redis cache | -           | -     |
+| Joni    | -            | 3 aqi refactor | 6 background loading | 4 backend refactor | 4 simulator front | 2 redis cache | -           | 19     |
 
 |         | Monday 7.8. | Tuesday 8.8. | Wednesday 9.8. | Thursday 10.8. | Friday 11.8. | Saturday 12.8. | Sunday 13.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | 1            | 5 live,map,path  | 2 greenpaths , aqi lookup | 5 merges,path fixes,.. | -            | -             | -           | -     |
-| Isak    | 0,5            | 2             | 2,5               | 1              | -            | -             | -           | 6     |
-| Sami S. | -            | 2 meeting             | -               | 4.5 catching up, more react, greenpath troubleshooting               | -            | -             | -           | -     |
+| Isak    | 0,5            | 2             | 2,5               | 2              | 1            | -             | -           | 8     |
+| Sami S. | -            | 2 meeting             | -               | 4.5 catching up, more react, greenpath troubleshooting               | 2 AQI review, greenpath            | 5 learning react-leaflet testing, troubleshooting clustering             | -           | -     |
 | Sami M. | -            | -             | 9 aqi fixing and suggestions...               | 2 greenpath test fixing, research location stuff              | -            | -             | -           | -     |
-| Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | 3 on-boarding Denis            | -            | -             | -           | -     |
-| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | 3 on-boarding Denis            | 0.5 daily            | -             | -           | -     |
+| Joni    | 1            | 2 meeting     | 3 simulator pr  | 5 frontend filtering + tests | 2 AQI review  | -             | -           | -     |
 
 |         | Monday 14.8. | Tuesday 15.8. | Wednesday 16.8. | Thursday 17.8. | Friday 18.8. | Saturday 19.8. | Sunday 20.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
