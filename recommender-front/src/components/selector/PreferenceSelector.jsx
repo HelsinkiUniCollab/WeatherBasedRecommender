@@ -39,6 +39,7 @@ function PreferenceSelector({ selectedCategories, onCategoryChange }) {
   return (
     <div className="preference-selector-container">
       <IconButton
+        data-testid="menu-button"
         aria-controls="category-menu"
         aria-haspopup="true"
         onClick={handleMenuClick}
