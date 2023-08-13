@@ -19,10 +19,10 @@ def get_db():
         print(' * Error connecting to MongoDB:', str(e))
         return None
     
-def get_collection():
+def get_collection(name):
     try:
         db = get_db()
-        collection=db['pois']
+        collection=db[name]
         return collection          
     except Exception as e:
         print(' * Error getting collection in MongoDB:', str(e))

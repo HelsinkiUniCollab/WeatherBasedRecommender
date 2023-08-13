@@ -61,6 +61,7 @@ def get_pois_as_json(accessibility=False, category="All"):
             if accessibility in poi.not_accessible_for:
                 continue
             updated_data.append(poi.get_json())
+        save_score_history(updated_data)
         return json.dumps(updated_data)
     except KeyError as error:
         return {"message": "An error occurred", "status": 500, "error": str(error)}
@@ -104,7 +105,7 @@ def get_pois():
     Returns:
         list: List of POI -objects.
     """
-    collection = get_collection()
+    collection = get_collection('pois')
     if collection.count_documents({}) == 0:
         init_pois()
     all_documents = collection.find({})
@@ -114,3 +115,18 @@ def get_pois():
                             poi['not_accessible_for'], poi['categories'])
         pois.append(poi)
     return pois
+
+def save_score_history(data):
+    """
+    Fetches scores for pois and savest the data poi by poi to MongoDB.
+
+    Raises:
+        KeyError: If an error occurs while processing and saving the data.
+    """
+    try:
+        print("Saving score history")
+        collection = get_collection('scorehistory')
+        collection.insert_many(data)
+    except KeyError as error:
+        return {"message": "An error occurred", "status": 500, "error": str(error)}
+    
