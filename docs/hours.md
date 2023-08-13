@@ -103,9 +103,9 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | 1            | 5 live,map,path  | 2 greenpaths , aqi lookup | 5 merges,path fixes,.. | -            | -             | -           | -     |
 | Isak    | 0,5            | 2             | 2,5               | 2              | 1            | -             | -           | 8     |
-| Sami S. | -            | 2 meeting             | -               | 4.5 catching up, more react, greenpath troubleshooting               | 2 AQI review, greenpath            | -             | -           | -     |
-| Sami M. | -            | -             | 9 aqi fixing and suggestions...               | 2 greenpath test fixing, research location stuff              | -            | -             | -           | -     |
-| Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | 3 on-boarding Denis            | -            | -             | -           | -     |
+| Sami S. | -            | 2 meeting             | -               | 4.5 catching up, more react, greenpath troubleshooting               | 2 AQI review, greenpath            | 5 learning react-leaflet testing, troubleshooting clustering             | -           | -     |
+| Sami M. | -            | -             | 9 aqi fixing and suggestions...               | 2 greenpath test fixing, research location stuff              | 3 greenpath clustering bug hunt            | -             | 2 rework selector           | 16     |
+| Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | 3 on-boarding Denis            | 0.5 daily            | -             | 3 aqi, mongo           | 9.5     |
 | Joni    | 1            | 2 meeting     | 3 simulator pr  | 5 frontend filtering + tests | 2 AQI review  | -             | -           | -     |
 
 |         | Monday 14.8. | Tuesday 15.8. | Wednesday 16.8. | Thursday 17.8. | Friday 18.8. | Saturday 19.8. | Sunday 20.8. | Total |

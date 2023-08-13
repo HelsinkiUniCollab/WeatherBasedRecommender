@@ -131,27 +131,29 @@ describe('PreferenceSelector component', () => {
   });
 
   it('should deselect the "All" checkbox when another category is selected', () => {
+    cy.get('[data-testid="menu-button"]').click();
     cy.get('input[name="Sport hallsCheckbox"]').check();
-    cy.get('input[name="allCheckbox"]').should('not.be.checked');
+    cy.get('input[name="allCheckbox"]').should('be.not.be.checked');
   });
 
   it('should show only Sport halls markers when the "Sport halls" category is selected', () => {
     const sportHallsMockData = mockPOIS.filter((poi) => poi.category === 'Sport halls');
-
+    cy.get('[data-testid="menu-button"]').click();
     cy.get('input[name="Sport hallsCheckbox"]').check();
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
       .should('have.length', sportHallsMockData.length);
   });
 
   it('should select the "All" checkbox and deselect others when "All" is selected', () => {
+    cy.get('[data-testid="menu-button"]').click();
     cy.get('input[name="Sport hallsCheckbox"]').check();
     cy.get('input[name="allCheckbox"]').check();
-
     cy.get('input[name="Sport hallsCheckbox"]').should('not.be.checked');
     cy.get('input[name="allCheckbox"]').should('be.checked');
   });
 
   it('should show all markers when the "All" category is re-selected', () => {
+    cy.get('[data-testid="menu-button"]').click();
     cy.get('input[name="Sport hallsCheckbox"]').check();
     cy.get('input[name="allCheckbox"]').check();
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
