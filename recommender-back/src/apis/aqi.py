@@ -2,6 +2,7 @@ import numpy as np
 import tempfile
 import requests
 import defusedxml.ElementTree as ET
+import time
 from urllib.parse import urlencode
 from netCDF4 import Dataset
 from ..config import Config
@@ -34,9 +35,7 @@ class AQI:
 
         with tempfile.NamedTemporaryFile(delete=True) as temp_file:
             netcdf_file_name = temp_file.name
-            print('Downloading AQI data')
             self._download_to_file(netcdf_file_url, netcdf_file_name, 5)
-            print('Finished downloading AQI data. Parsing the data...')
             self.dataset = Dataset(netcdf_file_name)
             self._parse_netcdf(forecast_q_time)
 
@@ -53,9 +52,8 @@ class AQI:
         xml = ET.fromstring(content)
         file_reference = xml.findall(Config.FILEREF_MEMBER)
         latest_file_url = file_reference[-1].text
-
         return latest_file_url
-    
+
     def _get_xml_url(self):
         """Fetches the xml file url based on query
 
@@ -63,16 +61,13 @@ class AQI:
             string: xml file url
         """
         _, start_time, end_time = get_forecast_times()
-
-        args = {'starttime': start_time, 
-                'endtime': end_time, 
-                'parameters': Config.AQI_PARAMS, 
-                'bbox': Config.BBOX}
-
+        args = {'starttime': start_time,
+                'endtime': end_time,
+                'parameters': Config.AQI_PARAMS,
+                'bbox': Config.BBOX_FORECAST}
         xml_url = Config.FMI_QUERY_URL + Config.AQI_QUERY + "&" + urlencode(args)
-
         return xml_url
-    
+
     def _parse_netcdf(self, forecast_q_time):
         """Parses the given netcdf file
 
@@ -125,7 +120,7 @@ class AQI:
             data[time_str] = coordinate_data
 
         return data
-    
+
     def get_coordinates(self, data):
         """Fetches all coordinates by their respective hours
 
@@ -145,24 +140,28 @@ class AQI:
         return unique_coords
 
     def _download_to_file(self, url, file_name, max_retries):
-        """Downloads the file content
+            """Downloads the file content
 
-        Args:
-            url (string): url of the file to be downloaded
-            file_name (string): name of the file
-            max_retries (int): maximum number of retries
-        """
-        for retry_attempt in range(max_retries-1):
-             try:
-                with open(file_name, 'wb') as file:
-                    response = requests.get(url, stream=True)
-                    for chunk in response.iter_content(chunk_size=8192):
-                        file.write(chunk)
-                    return
-             except (requests.RequestException, ConnectionResetError) as e:
-                print(f"Download attempt {retry_attempt + 1} failed with error: {str(e)}")
-                if retry_attempt < max_retries:
-                    print(f'Retrying...')
+            Args:
+                url (string): url of the file to be downloaded
+                file_name (string): name of the file
+                max_retries (int): maximum number of retries
+            """
+            for retry_attempt in range(max_retries-1):
+                try:
+                    start_time = time.time()
                     print('Downloading AQI data')
-                else:
-                    print(f"Maximum retries reached. Download failed.")
+                    with open(file_name, 'wb') as file:
+                        response = requests.get(url, stream=True)
+                        for chunk in response.iter_content(chunk_size=10*1024*1024):
+                            file.write(chunk)
+                        print('Finished downloading. Parsing data...')
+                        end_time = time.time()
+                        print(f'{end_time - start_time} seconds')
+                        return
+                except (requests.RequestException, ConnectionResetError) as e:
+                    print(f"Download attempt {retry_attempt + 1} failed with error: {str(e)}")
+                    if retry_attempt < max_retries:
+                        print(f'Retrying...')
+                    else:
+                        print(f"Maximum retries reached. Download failed.")

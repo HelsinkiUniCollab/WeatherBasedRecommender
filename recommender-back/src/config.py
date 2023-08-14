@@ -1,5 +1,6 @@
 class Config:
-    BBOX = '24.5,60,25.5,60.5'
+    BBOX = '24.857,60.133,25.266,60.278'
+    BBOX_FORECAST = '24.707740,60.080957,25.266838,60.262597'
     TIMESTEP = 60
     PARAMETERS = 'Temperature,Humidity,WindUMS,WindVMS,PrecipitationAmount,TotalCloudCover'
     AQI_PARAMS = 'AQIndex'
