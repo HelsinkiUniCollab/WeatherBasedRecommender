@@ -12,14 +12,16 @@ function MarkersComponent({ poiData, time, handleSetDestination }) {
 
   useEffect(() => {
     if (poiData && time) {
-      const markers = createMarkers(poiData, time, handleSetDestination);
+      const markerData = createMarkers(poiData, time, handleSetDestination);
+      const markers = markerData.map(([marker, score]) => marker);
+      const scoreMap = new Map(markerData);
       const markerGroup = L.markerClusterGroup({
         iconCreateFunction(cluster) {
           const count = cluster.getChildCount();
           let bestScore = 0.00;
           if (cluster.getChildCount() > 0) {
             cluster.getAllChildMarkers().forEach((poiMarker) => {
-              const scoreValue = parseScore(poiMarker);
+              const scoreValue = scoreMap.get(poiMarker);
               if (scoreValue > bestScore) {
                 bestScore = parseFloat(scoreValue);
               }

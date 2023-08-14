@@ -47,12 +47,16 @@ const createMarkers = (poiData, time, handleSetDestination) => {
       </>
     );
 
+    const scoreTag = tags.find(([key, value]) => key === 'Score');
+    const scoreValue = scoreTag ? scoreTag[1] : null;
+    const score = parseFloat(scoreValue);
+
     const divElement = document.createElement('div');
     const root = ReactDOM.createRoot(divElement);
     root.render(container);
     marker.bindPopup(divElement);
 
-    return marker;
+    return [marker, score];
   });
 };
 
