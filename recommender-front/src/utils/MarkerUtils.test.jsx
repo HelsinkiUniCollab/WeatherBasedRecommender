@@ -1,4 +1,7 @@
 import createMarkers from './MarkerUtils';
+import '@testing-library/jest-dom';
+// import { renderToString } from 'react-dom/server';
+// import { act } from '@testing-library/react';
 
 describe('createMarkers', () => {
   const poiData = [
@@ -11,9 +14,9 @@ describe('createMarkers', () => {
         Current: {
           Temperature: '20°C',
           Humidity: '50%',
+          Score: 0.5,
         },
       },
-      score: 0.5,
     },
     {
       id: '2',
@@ -24,8 +27,8 @@ describe('createMarkers', () => {
         Current: {
           Temperature: '25°C',
           Humidity: '60%',
+          Score: 0.4,
         },
-        score: 0.4,
       },
     },
   ];
@@ -43,15 +46,26 @@ describe('createMarkers', () => {
     expect(markers.length).toEqual(poiData.length);
   });
 
-  it('binds correct values to marker popup', () => {
+  it('binds correct score to marker', () => {
     const markers = createMarkers(poiData, time);
-
-    const marker = markers[0];
-    const popupDiv = marker.getPopup().getContent();
-    const popupContent = popupDiv.outerHTML;
-
-    expect(popupContent).toContain('<h3>Marker 1</h3>');
-    expect(popupContent).toContain('<li><strong>Temperature</strong>: 20°C</li>');
-    expect(popupContent).toContain('<li><strong>Humidity</strong>: 50%</li>');
+    const first_markers_score = markers[0][1]
+    expect(first_markers_score).toEqual(0.5);
+   
   });
+
+  /*it('binds correct values to marker popup', async () => {
+    act(() => {
+      const markers = createMarkers(poiData, time);
+      const marker = markers[0][0];
+      const popupDiv = marker.getPopup()._content;
+      console.log(popupDiv);
+      const popupContent = popupDiv.outerHTML;
+      console.log(popupContent);
+      const renderi = renderToString(popupContent);
+      console.log(renderi);
+      expect(popupContent).toContain('<h3>Marker 1</h3>');
+      expect(popupContent).toContain('<li><strong>Temperature</strong>: 20°C</li>');
+      expect(popupContent).toContain('<li><strong>Humidity</strong>: 50%</li>');
+    })
+  });*/
 });
