@@ -129,7 +129,7 @@ class Forecast:
         unique_coords = set(flattened_coords)
         return list(unique_coords)
 
-    def get_closest_poi_coordinates_data(self, pois, aqi_data, aqi_coords):
+    def get_closest_poi_coordinates_data(self, pois, aqi_data):
         """
         Finds the nearest coordinates forecast data for all of the POI's coordinates.
 
@@ -155,15 +155,10 @@ class Forecast:
                     ] = self.parse_forecast(forecast)
 
         if aqi_data:
-            closest_coodinates_aqi = self.calculate_shortest_aqi(pois, aqi_coords)
-            for datetime, coordinates_list in closest_coodinates_aqi.items():
-                for poi_coord in coordinates_list:
-                    nearest_str = f"({poi_coord['nearest'][0]}, {poi_coord['nearest'][1]})"
-                    if nearest_str in aqi_data[datetime]:
-                        aqi_value = aqi_data[datetime][nearest_str][0]['Air Quality Index']
-                        poi_location = f"{poi_coord['poi_coordinate'][0]}, {poi_coord['poi_coordinate'][1]}"
-                        if poi_location in returned_data[datetime]:
-                            returned_data[datetime][poi_location]['Air quality'] = f'{aqi_value} AQI'
+            for datetime, poi_coords in aqi_data.items():
+                for poi_coord, air_quality in poi_coords.items():
+                    aqi_value = air_quality['Air Quality Index']
+                    returned_data[datetime][poi_coord]['Air quality'] = f'{aqi_value} AQI'
 
         return returned_data
 
@@ -231,45 +226,12 @@ class Forecast:
         for poi in pois:
             smallest = float("inf")
             nearest = []
-            lat = poi.latitude
-            lon = poi.longitude
+            lat = float(poi.latitude)
+            lon = float(poi.longitude)
             for coordinate in fore_coordinates:
                 dist = abs(coordinate[0] - lat) + abs(coordinate[1] - lon)
                 if dist < smallest:
                     smallest = dist
                     nearest = [coordinate[0], coordinate[1]]
             closest_coordinates[(lat, lon)] = nearest
-        return closest_coordinates
-
-    def calculate_shortest_aqi(self, pois, aqi_coordinates):
-        """Calculates the nearest aqi forecast data for a given poi
-
-        Args:
-            pois (list): List of POI objects.
-            aqi_coordinates (dict): hour-coordinate_list dictionary of aqi data
-
-        Returns:
-            dict: nearest coordinates for given poi by hour
-        """
-        closest_coordinates = {}
-
-        for poi in pois:
-            lat_poi, lon_poi = poi.latitude, poi.longitude
-            smallest_distances = {time: float("inf") for time in aqi_coordinates}
-            nearest_coordinates = {time: None for time in aqi_coordinates}
-
-            for time, coords_list in aqi_coordinates.items():
-                for lat, lon in coords_list:
-                    dist = abs(lat - lat_poi) + abs(lon - lon_poi)
-                    if dist < smallest_distances[time]:
-                        smallest_distances[time] = dist
-                        nearest_coordinates[time] = (lat, lon)
-
-            for time in aqi_coordinates:
-                if time not in closest_coordinates:
-                    closest_coordinates[time] = []
-
-                nearest = nearest_coordinates[time]
-                closest_coordinates[time].append({'poi_coordinate': [lat_poi, lon_poi], 'nearest': [nearest[0], nearest[1]]})
-
         return closest_coordinates
