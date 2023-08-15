@@ -4,7 +4,7 @@ import L from 'leaflet';
 import 'leaflet.markercluster';
 import { useMap } from 'react-leaflet';
 import createMarkers from '../../utils/MarkerUtils';
-import { parseScore, defineClass } from '../../utils/ScoreUtils';
+import { defineClass } from '../../utils/ScoreUtils';
 
 function MarkersComponent({ poiData, time, handleSetDestination }) {
   const map = useMap();
@@ -13,7 +13,7 @@ function MarkersComponent({ poiData, time, handleSetDestination }) {
   useEffect(() => {
     if (poiData && time) {
       const markerData = createMarkers(poiData, time, handleSetDestination);
-      const markers = markerData.map(([marker, score]) => marker);
+      const markers = markerData.map(([marker]) => marker);
       const scoreMap = new Map(markerData);
       const markerGroup = L.markerClusterGroup({
         iconCreateFunction(cluster) {

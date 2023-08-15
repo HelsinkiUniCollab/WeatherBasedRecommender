@@ -47,7 +47,7 @@ const createMarkers = (poiData, time, handleSetDestination) => {
       </>
     );
 
-    const scoreTag = tags.find(([key, value]) => key === 'Score');
+    const scoreTag = tags.find(([key]) => key === 'Score');
     const scoreValue = scoreTag ? scoreTag[1] : null;
     const score = parseFloat(scoreValue);
 
