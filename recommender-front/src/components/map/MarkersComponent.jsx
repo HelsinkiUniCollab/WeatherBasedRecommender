@@ -4,7 +4,7 @@ import L from 'leaflet';
 import 'leaflet.markercluster';
 import { useMap } from 'react-leaflet';
 import createMarkers from '../../utils/MarkerUtils';
-import { defineClass } from '../../utils/ScoreUtils';
+import defineClass from '../../utils/ScoreUtils';
 
 function MarkersComponent({ poiData, time, handleSetDestination }) {
   const map = useMap();
