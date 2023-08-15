@@ -48,9 +48,9 @@ describe('createMarkers', () => {
 
   it('binds correct score to marker', () => {
     const markers = createMarkers(poiData, time);
-    const firstMarkersScore = markers[0][1]
+    const firstMarkersScore = markers[0][1];
+
     expect(firstMarkersScore).toEqual(0.5);
-   
   });
 
   /* it('binds correct values to marker popup', async () => {

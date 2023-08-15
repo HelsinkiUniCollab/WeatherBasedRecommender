@@ -13,10 +13,10 @@ jest.mock('leaflet', () => ({
 
 describe('LocateButton', () => {
   it('renders without crashing', () => {
-      render(
-        <MapContainer>
-          <LocateButton />
-        </MapContainer>,
-      );
+    render(
+      <MapContainer>
+        <LocateButton />
+      </MapContainer>,
+    );
   });
 });
