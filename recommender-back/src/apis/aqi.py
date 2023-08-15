@@ -3,12 +3,11 @@ import tempfile
 import requests
 import defusedxml.ElementTree as ET
 import time
-from datetime import datetime
 from urllib.parse import urlencode
 from netCDF4 import Dataset
 from ..config import Config
 from datetime import timedelta
-from .times import get_forecast_times
+from .times import get_forecast_times, forecast_q_time_to_finnish
 
 class AQI:
     def __init__(self):
@@ -28,7 +27,7 @@ class AQI:
         self.latitudes = None
         self.longitudes = None
 
-    def download_netcdf_and_store(self):
+    def download_netcdf_and_store(self, forecast_q_time):
         """Downloads netcdf file, parses it and stores the data in the object.
            The temporary file is deleted afterwards.
         """
@@ -38,7 +37,7 @@ class AQI:
             netcdf_file_name = temp_file.name
             self._download_to_file(netcdf_file_url, netcdf_file_name, 5)
             self.dataset = Dataset(netcdf_file_name)
-            self._parse_netcdf()
+            self._parse_netcdf(forecast_q_time)
 
     def _parse_xml(self):
         """Parses the fmi open data xml file
@@ -46,7 +45,6 @@ class AQI:
         Returns:
             string: url link of latest queried netcdf file
         """
-
         url = self._get_xml_url()
         req = requests.get(url)
         content = req.content
@@ -69,7 +67,7 @@ class AQI:
         xml_url = Config.FMI_QUERY_URL + Config.AQI_QUERY + "&" + urlencode(args)
         return xml_url
 
-    def _parse_netcdf(self):
+    def _parse_netcdf(self, forecast_q_time):
         """Parses the given netcdf file
 
         Returns:
@@ -80,58 +78,54 @@ class AQI:
         time = self.dataset.variables['time'][:]
         aqi = self.dataset.variables['index_of_airquality_194'][:]
 
-        forecast_time = datetime.now() + timedelta(hours=1)
+        forecast_time = forecast_q_time_to_finnish(forecast_q_time) + timedelta(hours=1)
 
         datetimes = {}
         for times in time:
             forecast_datetime = forecast_time + timedelta(hours=int(times))
             forecast_datetime = forecast_datetime.replace(minute=0, second=0, microsecond=0)
             aqi_data = aqi[int(times)]
+
+            zero_lat, zero_lon = np.where(aqi_data == 0)
+            copy_latitudes = np.copy(self.latitudes)
+            copy_longitudes = np.copy(self.longitudes)
+            filtered_latitudes = np.delete(copy_latitudes, zero_lat)
+            filtered_longitudes = np.delete(copy_longitudes, zero_lon)
+
             aqi_obj = AQI()
             aqi_obj.data = aqi_data
+            aqi_obj.latitudes = filtered_latitudes
+            aqi_obj.longitudes = filtered_longitudes
             datetimes[forecast_datetime] = aqi_obj
 
         self.datetimes = datetimes
         self.dataset.close()
 
     def to_json(self, pois):
-        """Converts the parsed netcdf data into JSON format and calculates nearest AQI values for POIs
+            """Converts the parsed netcdf data into JSON format and calculates nearest AQI values for POIs
 
-        Args:
-            pois (list): List of POI objects.
+            Args:
+                pois (list): List of POI objects.
 
-        Returns:
-            dict: AQI data in JSON format with nearest AQI values for POIs
-        """
-        data = {}
-        for datetime in self.datetimes:
-            time_str = datetime.strftime('%Y-%m-%d %H:%M:%S')
-            aqi_object = self.datetimes[datetime]
+            Returns:
+                dict: AQI data in JSON format with nearest AQI values for POIs
+            """
+            data = {}
+            for datetime in self.datetimes:
+                time_str = datetime.strftime('%Y-%m-%d %H:%M:%S')
+                aqi_object = self.datetimes[datetime]
 
-            nearest_aqi_values = {}
-            for poi in pois:
-                lat_poi, lon_poi = float(poi.latitude), float(poi.longitude)
-                lat_index = np.abs(self.latitudes - lat_poi).argmin()
-                lon_index = np.abs(self.longitudes - lon_poi).argmin()
-                aqi_value = aqi_object.data[lat_index, lon_index]
+                nearest_aqi_values = {}
+                for poi in pois:
+                    lat_poi, lon_poi = float(poi.latitude), float(poi.longitude)
+                    lat_index, lon_index = self._find_nearest_indexes(aqi_object, lat_poi, lon_poi)
+                    aqi_value = aqi_object.data[lat_index, lon_index]
+                    poi_coords = f'{lat_poi}, {lon_poi}'
+                    nearest_aqi_values[poi_coords] = {'Air Quality Index': str(aqi_value)}
 
-                if aqi_value == 0:
-                    valid_indices = np.where(aqi_object.data != 0)
-                    if valid_indices[0].size == 0:
-                        aqi_value = 0
-                    else:
-                        distances = np.sqrt((self.latitudes[valid_indices] - lat_poi)**2 
-                                            + 
-                                            (self.longitudes[valid_indices] - lon_poi)**2)
-                        nearest_valid_index = np.argmin(distances)
-                        aqi_value = aqi_object.data[valid_indices][nearest_valid_index]
+                data[time_str] = nearest_aqi_values
 
-                poi_coords = f'{lat_poi}, {lon_poi}'
-                nearest_aqi_values[poi_coords] = {'Air Quality Index': str(aqi_value)}
-
-            data[time_str] = nearest_aqi_values
-
-        return data
+            return data
 
     def _download_to_file(self, url, file_name, max_retries):
             """Downloads the file content
@@ -159,3 +153,22 @@ class AQI:
                         print(f'Retrying...')
                     else:
                         print(f"Maximum retries reached. Download failed.")
+
+    def _find_nearest_indexes(self, aqi, target_lat, target_lon):
+        """
+        Finds the nearest indices in the AQI data
+        grid corresponding to given target poi latitude and longitude.
+
+        Args:
+            aqi (object): An instance of the AQI object.
+            target_lat (float): The target poi latitude coordinate.
+            target_lon (float): The target poi longitude coordinate.
+
+        Returns:
+            tuple: Indices of the nearest latitude and longitude in the AQI data grid.
+        """
+        sq_diff_lat = (aqi.latitudes - target_lat) ** 2
+        sq_diff_lon = (aqi.longitudes - target_lon) ** 2
+        lat_index = sq_diff_lat.argmin()
+        lon_index = sq_diff_lon.argmin()
+        return lat_index, lon_index
