@@ -4,10 +4,10 @@ import { MapContainer } from 'react-leaflet';
 import UserLocationMarker from './UserLocationComponent';
 
 jest.mock('leaflet', () => ({
-    ...jest.requireActual('leaflet'),
-    map: () => ({
-      remove: jest.fn(),
-    }),
+  ...jest.requireActual('leaflet'),
+  map: () => ({
+    remove: jest.fn(),
+  }),
 }));
 
 describe('UserLocationMarker', () => {
@@ -21,7 +21,7 @@ describe('UserLocationMarker', () => {
           userPosition={mockPosition}
           handleSetOrigin={mockHandleSetOrigin}
         />
-      </MapContainer>
+      </MapContainer>,
     );
   });
 });

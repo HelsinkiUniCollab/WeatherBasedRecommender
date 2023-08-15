@@ -48,12 +48,12 @@ describe('createMarkers', () => {
 
   it('binds correct score to marker', () => {
     const markers = createMarkers(poiData, time);
-    const first_markers_score = markers[0][1]
-    expect(first_markers_score).toEqual(0.5);
+    const firstMarkersScore = markers[0][1]
+    expect(firstMarkersScore).toEqual(0.5);
    
   });
 
-  /*it('binds correct values to marker popup', async () => {
+  /* it('binds correct values to marker popup', async () => {
     act(() => {
       const markers = createMarkers(poiData, time);
       const marker = markers[0][0];
@@ -67,5 +67,5 @@ describe('createMarkers', () => {
       expect(popupContent).toContain('<li><strong>Temperature</strong>: 20°C</li>');
       expect(popupContent).toContain('<li><strong>Humidity</strong>: 50%</li>');
     })
-  });*/
+  }); */
 });
