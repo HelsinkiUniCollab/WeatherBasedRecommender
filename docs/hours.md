@@ -112,7 +112,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
 | Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami S. | 4.5 greenpath cluster fixing            | 3.5 greenpath test fixing             | -               | -              | -            | -             | -           | -     |
+| Sami S. | 4.5 greenpath cluster fixing            | 3.5 greenpath test fixing             | 5 greenpath tests (axios mocking proved to be quite difficult)               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
