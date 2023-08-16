@@ -195,7 +195,11 @@ describe('User location and routing feature', () => {
     cy.intercept('GET', '**/path?start=*&end=*', { body: mockRoute }).as('getRoute');
 
     cy.get('[data-cy="set-destination-button"]').click();
+
+    cy.wait('@getRoute');
+
     cy.get('.leaflet-popup-close-button > span').click();
+    
     cy.get('#map').find('path.leaflet-interactive').should('exist');
   });
 
