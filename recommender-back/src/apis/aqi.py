@@ -8,6 +8,7 @@ from netCDF4 import Dataset
 from ..config import Config
 from datetime import timedelta
 from .times import get_forecast_times, forecast_q_time_to_finnish
+from scipy.spatial import cKDTree
 
 class AQI:
     def __init__(self):
@@ -24,8 +25,7 @@ class AQI:
         self.data = None
         self.dataset = None
         self.datetimes = None
-        self.latitudes = None
-        self.longitudes = None
+        self.coords_kdtree = None
 
     def download_netcdf_and_store(self, forecast_q_time):
         """Downloads netcdf file, parses it and stores the data in the object.
@@ -75,21 +75,34 @@ class AQI:
         """
         latitudes = self.dataset.variables['lat'][:]
         longitudes = self.dataset.variables['lon'][:]
-        time = self.dataset.variables['time'][:]
+        times = self.dataset.variables['time'][:]
         aqi = self.dataset.variables['index_of_airquality_194'][:]
 
         forecast_time = forecast_q_time_to_finnish(forecast_q_time) + timedelta(hours=1)
 
         datetimes = {}
-        for times in time:
-            forecast_datetime = forecast_time + timedelta(hours=int(times))
+        for time in times:
+            forecast_datetime = forecast_time + timedelta(hours=int(time))
             forecast_datetime = forecast_datetime.replace(minute=0, second=0, microsecond=0)
-            aqi_data = aqi[int(times)]
+            aqi_data = aqi[int(time)]
+
+            non_zero_lat_indices, non_zero_lon_indices = np.where(aqi_data != 0)
+
+            filtered_coords = (
+                np.column_stack(
+                (
+                    latitudes[non_zero_lat_indices],
+                    longitudes[non_zero_lon_indices]
+                )
+            )
+        )   
+
+            coords_kdtree = cKDTree(filtered_coords)
+            filtered_aqi = aqi_data[non_zero_lat_indices, non_zero_lon_indices]
 
             aqi_obj = AQI()
-            aqi_obj.data = aqi_data
-            aqi_obj.latitudes = latitudes
-            aqi_obj.longitudes = longitudes
+            aqi_obj.data = filtered_aqi
+            aqi_obj.coords_kdtree = coords_kdtree
             datetimes[forecast_datetime] = aqi_obj
 
         self.datetimes = datetimes
@@ -97,7 +110,6 @@ class AQI:
 
     def to_json(self, pois):
             """Converts the parsed netcdf data into JSON format and calculates nearest AQI values for POIs.
-               Zero values are skipped and the next nearest value is chosen instead.
 
             Args:
                 pois (list): List of POI objects.
@@ -110,25 +122,13 @@ class AQI:
                 time_str = datetime.strftime('%Y-%m-%d %H:%M:%S')
                 aqi_object = self.datetimes[datetime]
 
-                visited = set()
                 nearest_aqi_values = {}
-
                 for poi in pois:
                     lat_poi, lon_poi = float(poi.latitude), float(poi.longitude)
-
-                    while True:
-                        lat_index, lon_index = self._find_nearest_indexes(aqi_object, lat_poi, lon_poi)
-                        lat_lon_index_pair = (lat_index, lon_index)
-                        aqi_value = aqi_object.data[lat_index, lon_index]
-
-                        if aqi_value == 0:
-                            visited.add(lat_lon_index_pair)
-                            continue
-                        else:
-                            if lat_lon_index_pair not in visited:
-                                poi_coords = f'{lat_poi}, {lon_poi}'
-                                nearest_aqi_values[poi_coords] = {'Air Quality Index': str(aqi_value)}
-                                break
+                    _, closest_index = aqi_object.coords_kdtree.query([lat_poi, lon_poi])
+                    aqi_value = aqi_object.data[closest_index]
+                    poi_coords = f'{lat_poi}, {lon_poi}'
+                    nearest_aqi_values[poi_coords] = {'Air Quality Index': str(aqi_value)}
 
                 data[time_str] = nearest_aqi_values
 
@@ -160,22 +160,3 @@ class AQI:
                         print(f'Retrying...')
                     else:
                         print(f"Maximum retries reached. Download failed.")
-
-    def _find_nearest_indexes(self, aqi, target_lat, target_lon):
-        """
-        Finds the nearest indices in the AQI data
-        grid corresponding to given target poi latitude and longitude.
-
-        Args:
-            aqi (object): An instance of the AQI object.
-            target_lat (float): The target poi latitude coordinate.
-            target_lon (float): The target poi longitude coordinate.
-
-        Returns:
-            tuple: Indices of the nearest latitude and longitude in the AQI data grid.
-        """
-        sq_diff_lat = (aqi.latitudes - target_lat) ** 2
-        sq_diff_lon = (aqi.longitudes - target_lon) ** 2
-        lat_index = np.argmin(sq_diff_lat)
-        lon_index = np.argmin(sq_diff_lon)
-        return lat_index, lon_index
