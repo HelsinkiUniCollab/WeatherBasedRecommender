@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM python:3.9-slim-buster
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -27,7 +27,6 @@ RUN apt-get update && apt-get install -y \
 COPY install_eccodes.sh /app/
 RUN chmod +x /app/install_eccodes.sh && /app/install_eccodes.sh
 
-RUN poetry run pip install eccodes
 RUN poetry run pip install netCDF4
 
 COPY . /app
