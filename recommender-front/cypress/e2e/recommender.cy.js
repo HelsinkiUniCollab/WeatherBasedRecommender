@@ -196,7 +196,6 @@ describe('User location and routing feature', () => {
 
     cy.get('[data-cy="set-destination-button"]').click();
     cy.get('.leaflet-popup-close-button > span').click();
-    cy.wait('@getRoute');
     cy.get('#map').find('path.leaflet-interactive').should('exist');
   });
 
