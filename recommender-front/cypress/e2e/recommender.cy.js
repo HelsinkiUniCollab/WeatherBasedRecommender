@@ -187,7 +187,6 @@ describe('User location and routing feature', () => {
 
     cy.get('[data-testid="locate-button"]').should('be.visible').click();
 
-    cy.get('.leaflet-marker-icon').first().click();
 
     cy.get('.leaflet-marker-icon').eq(1).click();
 
