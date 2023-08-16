@@ -95,7 +95,7 @@ class AQI:
                     longitudes[non_zero_lon_indices]
                 )
             )
-        )   
+        )
 
             coords_kdtree = cKDTree(filtered_coords)
             filtered_aqi = aqi_data[non_zero_lat_indices, non_zero_lon_indices]
