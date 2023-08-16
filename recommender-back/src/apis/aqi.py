@@ -63,7 +63,7 @@ class AQI:
         args = {'starttime': start_time,
                 'endtime': end_time,
                 'parameters': Config.AQI_PARAMS,
-                'bbox': Config.BBOX_FORECAST}
+                'bbox': Config.BBOX_AQI}
         xml_url = Config.FMI_QUERY_URL + Config.AQI_QUERY + "&" + urlencode(args)
         return xml_url
 
