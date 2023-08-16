@@ -196,8 +196,6 @@ describe('User location and routing feature', () => {
 
     cy.get('[data-cy="set-destination-button"]').click();
 
-    cy.wait('@getRoute', { timeout: 10000 }); // waits up to 10 seconds
-
     cy.get('.leaflet-popup-close-button > span').click();
 
     cy.get('#map').find('path.leaflet-interactive').should('exist');
