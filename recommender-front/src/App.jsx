@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import WeatherAlert from './components/warning/WeatherAlert';
 import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
+import PathUtil from './utils/PathComponent';
 import SimulatorPage from './pages/SimulatorPage';
 import PreferenceSelector from './components/selector/PreferenceSelector';
 import 'leaflet/dist/leaflet.css';
@@ -26,8 +27,12 @@ function App() {
   const [selectedValue, setSelectedValue] = useState(0);
   const [open, setOpen] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [userPosition, setUserPosition] = useState(null);
+  const [destination, setDestination] = useState(null);
+  const [routeCoordinates, setRouteCoordinates] = useState([]);
   const [warning, setWarning] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
+  const hasSetOriginRef = useRef(false);
   const [selectedCategories, setSelectedCategories] = useState(['All']);
 
   const toggleHeader = () => {
@@ -48,6 +53,20 @@ function App() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleSetOrigin = (latitude, longitude) => {
+    if (!hasSetOriginRef.current) {
+      setUserPosition([latitude, longitude]);
+      console.log('Setting origin:', latitude, longitude);
+      hasSetOriginRef.current = true;
+    }
+  };
+
+  const handleSetDestination = (latitude, longitude) => {
+    setDestination([latitude, longitude]);
+    console.log('Setting destination', latitude, longitude);
+    // handleSendCoordinates(userPosition, destination);
   };
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -104,6 +123,11 @@ function App() {
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
           />
         </Helmet>
+        <PathUtil
+          origin={userPosition}
+          destination={destination}
+          setRouteCoordinates={setRouteCoordinates}
+        />
         <Router>
           <Routes>
             <Route
@@ -139,7 +163,10 @@ function App() {
                       poiData={poiData}
                       time={times[selectedValue]}
                       isMobile={isMobile}
-                      headerHidden={headerHidden}
+                      handleSetOrigin={handleSetOrigin}
+                      userPosition={userPosition}
+                      handleSetDestination={handleSetDestination}
+                      routeCoordinates={routeCoordinates}
                       toggleHeader={toggleHeader}
                     />
                     <PreferenceSelector
