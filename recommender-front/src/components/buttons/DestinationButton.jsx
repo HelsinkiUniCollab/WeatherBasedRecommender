@@ -7,6 +7,7 @@ function DestinationButton({ onClick }) {
       size="small"
       variant="contained"
       onClick={onClick}
+      data-cy="set-destination-button"
     >
       Set destination
     </Button>
