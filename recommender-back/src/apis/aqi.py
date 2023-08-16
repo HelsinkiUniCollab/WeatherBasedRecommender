@@ -176,6 +176,6 @@ class AQI:
         """
         sq_diff_lat = (aqi.latitudes - target_lat) ** 2
         sq_diff_lon = (aqi.longitudes - target_lon) ** 2
-        lat_index = sq_diff_lat.argmin()
-        lon_index = sq_diff_lon.argmin()
+        lat_index = np.argmin(sq_diff_lat)
+        lon_index = np.argmin(sq_diff_lon)
         return lat_index, lon_index
