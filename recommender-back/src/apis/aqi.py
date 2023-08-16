@@ -73,8 +73,8 @@ class AQI:
         Returns:
             dict: A dictionary of datetimes keys and AQI object values
         """
-        self.latitudes = self.dataset.variables['lat'][:]
-        self.longitudes = self.dataset.variables['lon'][:]
+        latitudes = self.dataset.variables['lat'][:]
+        longitudes = self.dataset.variables['lon'][:]
         time = self.dataset.variables['time'][:]
         aqi = self.dataset.variables['index_of_airquality_194'][:]
 
@@ -86,23 +86,18 @@ class AQI:
             forecast_datetime = forecast_datetime.replace(minute=0, second=0, microsecond=0)
             aqi_data = aqi[int(times)]
 
-            zero_lat, zero_lon = np.where(aqi_data == 0)
-            copy_latitudes = np.copy(self.latitudes)
-            copy_longitudes = np.copy(self.longitudes)
-            filtered_latitudes = np.delete(copy_latitudes, zero_lat)
-            filtered_longitudes = np.delete(copy_longitudes, zero_lon)
-
             aqi_obj = AQI()
             aqi_obj.data = aqi_data
-            aqi_obj.latitudes = filtered_latitudes
-            aqi_obj.longitudes = filtered_longitudes
+            aqi_obj.latitudes = latitudes
+            aqi_obj.longitudes = longitudes
             datetimes[forecast_datetime] = aqi_obj
 
         self.datetimes = datetimes
         self.dataset.close()
 
     def to_json(self, pois):
-            """Converts the parsed netcdf data into JSON format and calculates nearest AQI values for POIs
+            """Converts the parsed netcdf data into JSON format and calculates nearest AQI values for POIs.
+               Zero values are skipped and the next nearest value is chosen instead.
 
             Args:
                 pois (list): List of POI objects.
@@ -115,13 +110,25 @@ class AQI:
                 time_str = datetime.strftime('%Y-%m-%d %H:%M:%S')
                 aqi_object = self.datetimes[datetime]
 
+                visited = set()
                 nearest_aqi_values = {}
+
                 for poi in pois:
                     lat_poi, lon_poi = float(poi.latitude), float(poi.longitude)
-                    lat_index, lon_index = self._find_nearest_indexes(aqi_object, lat_poi, lon_poi)
-                    aqi_value = aqi_object.data[lat_index, lon_index]
-                    poi_coords = f'{lat_poi}, {lon_poi}'
-                    nearest_aqi_values[poi_coords] = {'Air Quality Index': str(aqi_value)}
+
+                    while True:
+                        lat_index, lon_index = self._find_nearest_indexes(aqi_object, lat_poi, lon_poi)
+                        lat_lon_index_pair = (lat_index, lon_index)
+                        aqi_value = aqi_object.data[lat_index, lon_index]
+
+                        if aqi_value == 0:
+                            visited.add(lat_lon_index_pair)
+                            continue
+                        else:
+                            if lat_lon_index_pair not in visited:
+                                poi_coords = f'{lat_poi}, {lon_poi}'
+                                nearest_aqi_values[poi_coords] = {'Air Quality Index': str(aqi_value)}
+                                break
 
                 data[time_str] = nearest_aqi_values
 
