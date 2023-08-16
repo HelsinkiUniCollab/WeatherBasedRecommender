@@ -21,7 +21,7 @@ describe('PathUtil', () => {
         setRouteCoordinates={mockSetRouteCoordinates}
       />,
     );
-
+    // eslint-disable-next-line no-promise-executor-return
     await new Promise((resolve) => setTimeout(resolve, 0));
 
     expect(mockSetRouteCoordinates).toHaveBeenCalled();
