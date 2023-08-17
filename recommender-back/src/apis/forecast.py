@@ -82,7 +82,6 @@ class Forecast:
         earliest_step = min(self.valid_times)
         self.data_levels = self.data.data[earliest_step].keys()
         self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
-        self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
 
     def get_data(self):
         """
