@@ -16,11 +16,9 @@ class AQI:
 
         Args:
             data (numpy array): aqi data as numpy array
-            json (string): full parsed aqi data in json format
             dataset (netcdf): netcdf dataset containing the aqi data
             datetimes (dict): dictionary containing datetimes and aqi objects
-            latitudes (numpy array): latitude coordinates as numpy array
-            longitudes (numpy array): longitude coordinates as numpy array
+            coord_kdtree (cKDTree): kdtree containing all possible lat, lon pairs
         """
         self.data = None
         self.dataset = None
