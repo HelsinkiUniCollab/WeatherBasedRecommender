@@ -113,7 +113,7 @@
 | Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
 | Isak    | 1            | -             | 0,5               | 2,5              | -            | -             | -           | 4     |
 | Sami S. | 4.5 greenpath cluster fixing            | 3.5 greenpath test fixing             | 5 greenpath tests (axios mocking proved to be quite difficult)               | -              | -            | -             | -           | -     |
-| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | 0.5 daily            | 5 rework aqi             | -               | 1 daily              | -            | -             | -           | -     |
 | Pia     | 0.5 daily            | -             | -               | 1 daily              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
