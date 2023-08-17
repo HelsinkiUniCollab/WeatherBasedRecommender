@@ -12,8 +12,6 @@ from .apis import manager
 from .services.data_fetcher import DataFetcher
 
 weather_fetcher = DataFetcher()
-environment = os.environ.get("ENVIRONMENT", "development")
-
 
 @app.route("/", methods=["GET"])
 def index():
@@ -43,10 +41,9 @@ def get_forecast():
 
     aqi_data =  None
 
-    if environment != "development":
-        aqi_data_url = os.environ.get("REACT_APP_BACKEND_URL") + f"/api/aqi/?forecast_q_time={fore_query_time_str}"
-        response = requests.get(aqi_data_url, timeout=1200)
-        aqi_data = response.json()
+    aqi_data_url = os.environ.get("REACT_APP_BACKEND_URL") + f"/api/aqi/?forecast_q_time={fore_query_time_str}"
+    response = requests.get(aqi_data_url, timeout=1200)
+    aqi_data = response.json()
 
     pois = manager.get_pois()
     poi_forecast = forecast.get_closest_poi_coordinates_data(pois, aqi_data)
