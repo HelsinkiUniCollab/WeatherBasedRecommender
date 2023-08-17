@@ -1,4 +1,5 @@
 import createMarkers from './MarkerUtils';
+import '@testing-library/jest-dom';
 
 describe('createMarkers', () => {
   const poiData = [
@@ -11,9 +12,9 @@ describe('createMarkers', () => {
         Current: {
           Temperature: '20°C',
           Humidity: '50%',
+          Score: 0.5,
         },
       },
-      score: 0.5,
     },
     {
       id: '2',
@@ -24,8 +25,8 @@ describe('createMarkers', () => {
         Current: {
           Temperature: '25°C',
           Humidity: '60%',
+          Score: 0.4,
         },
-        score: 0.4,
       },
     },
   ];
@@ -43,14 +44,10 @@ describe('createMarkers', () => {
     expect(markers.length).toEqual(poiData.length);
   });
 
-  it('binds correct values to marker popup', () => {
+  it('binds correct score to marker', () => {
     const markers = createMarkers(poiData, time);
+    const firstMarkersScore = markers[0][1];
 
-    const marker = markers[0];
-    const popupContent = marker.getPopup().getContent();
-
-    expect(popupContent).toContain('<h3>Marker 1</h3>');
-    expect(popupContent).toContain('<li><strong>Temperature</strong>: 20°C</li>');
-    expect(popupContent).toContain('<li><strong>Humidity</strong>: 50%</li>');
+    expect(firstMarkersScore).toEqual(0.5);
   });
 });

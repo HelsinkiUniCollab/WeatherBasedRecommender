@@ -134,7 +134,7 @@ def get_weather_warning():
     return jsonify(warning)
 
 
-@app.route('/api/path', methods=['GET'])
+@app.route('/path', methods=['GET'])
 def get_path():
     """
     Handler for the '/api/path' endpoint.
@@ -158,7 +158,6 @@ def get_path():
     if route_coordinates := green_paths.route_coordinates:
         return jsonify(route_coordinates), 200
     return jsonify({"error": "Could not fetch route data"}), 500
-
 
 @app.errorhandler(404)
 def not_found_error(error):

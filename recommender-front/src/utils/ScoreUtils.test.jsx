@@ -1,30 +1,4 @@
-import { parseScore, defineClass } from './ScoreUtils';
-
-describe('parseScore', () => {
-  it('should parse score value correctly', () => {
-    const poiMarker = {
-      _popup: {
-        _content: '<li><strong>Score</strong>: 0.89</li>',
-      },
-    };
-
-    const result = parseScore(poiMarker);
-
-    expect(result).toEqual(0.89);
-  });
-
-  it('should return null if score value is not found', () => {
-    const poiMarker = {
-      _popup: {
-        _content: '<li><strong>Rating</strong>: 4.5</li>',
-      },
-    };
-
-    const result = parseScore(poiMarker);
-
-    expect(result).toBeNull();
-  });
-});
+import defineClass from './ScoreUtils';
 
 describe('defineClass', () => {
   it('should return correct class for scores below 0.1', () => {

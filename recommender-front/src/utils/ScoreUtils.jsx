@@ -1,17 +1,3 @@
-const parseScore = (poiMarker) => {
-  // eslint-disable-next-line no-underscore-dangle
-  const html = poiMarker._popup._content;
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, 'text/html');
-  const scoreElement = Array.from(doc.querySelectorAll('li strong')).find(
-    (element) => element.textContent === 'Score',
-  );
-  const scoreValueElement = scoreElement?.nextSibling;
-  const scoreValue = scoreValueElement?.nodeValue.trim().replace(/[^\d.]/g, '');
-
-  return scoreValue ? parseFloat(scoreValue) : null;
-};
-
 const defineClass = (bestScore) => {
   if (bestScore < 0.1) {
     return 'custom-cluster-icon-score01';
@@ -35,4 +21,4 @@ const defineClass = (bestScore) => {
   return 'custom-cluster-icon-score10';
 };
 
-export { parseScore, defineClass };
+export default defineClass;

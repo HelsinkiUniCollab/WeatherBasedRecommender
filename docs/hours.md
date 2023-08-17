@@ -101,7 +101,7 @@
 
 |         | Monday 7.8. | Tuesday 8.8. | Wednesday 9.8. | Thursday 10.8. | Friday 11.8. | Saturday 12.8. | Sunday 13.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | 1            | 5 live,map,path  | 2 greenpaths , aqi lookup | 5 merges,path fixes,.. | -            | -             | -           | -     |
+| Juuso   | 1            | 5 live,map,path  | 2 greenpaths , aqi lookup | 5 merges,path fixes,.. | 1            | -             | 2 merges path bugs   | 16     |
 | Isak    | 0,5            | 2             | 2,5               | 2              | 1            | -             | -           | 8     |
 | Sami S. | -            | 2 meeting             | -               | 4.5 catching up, more react, greenpath troubleshooting               | 2 AQI review, greenpath            | 5 learning react-leaflet testing, troubleshooting clustering             | 4 trying to fix clustering/tests..           | 17.5     |
 | Sami M. | -            | -             | 9 aqi fixing and suggestions...               | 2 greenpath test fixing, research location stuff              | 3 greenpath clustering bug hunt            | -             | 2 rework selector           | 16     |
@@ -112,7 +112,7 @@
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
 | Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
 | Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami S. | 4.5 greenpath cluster fixing            | 3.5 greenpath test fixing             | 5 greenpath tests (axios mocking proved to be quite difficult)               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
 | Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
