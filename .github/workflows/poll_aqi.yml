@@ -1,0 +1,13 @@
+name: Poll /api/forecast
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+
+jobs:
+  poll-aqi:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Poll /api/forecast
+        run: curl -sSf http://128.214.253.51/api/forecast || exit 1

@@ -1,6 +1,10 @@
 import json
+import requests
+import os
+from .config import Config
 from flask import jsonify, request
 from .app import app, cache
+from .apis.aqi import AQI
 from .apis.forecast import Forecast
 from .apis.current import Current
 from .apis.pathing import GreenPathsAPI
@@ -8,6 +12,7 @@ from .apis import manager
 from .services.data_fetcher import DataFetcher
 
 weather_fetcher = DataFetcher()
+environment = os.environ.get("ENVIRONMENT", "development")
 
 
 @app.route("/", methods=["GET"])
@@ -27,16 +32,46 @@ def index():
 @cache.cached()
 def get_forecast():
     """
-    Handler for the '/api/forecast' endpoint.
+    Handler for the '/api/forecast' endpoint. Caching 1 hour.
 
     Returns:
         Forecast for the POI's.
     """
     forecast = Forecast(weather_fetcher)
-    forecast.update_data()
+    fore_query_time = forecast.update_data()
+    fore_query_time_str = fore_query_time.strftime('%Y-%m-%d %H:%M:%S')
+
+    aqi_data =  None
+
+    if environment != "development":
+        aqi_data_url = os.environ.get("REACT_APP_BACKEND_URL") + f"/api/aqi/?forecast_q_time={fore_query_time_str}"
+        response = requests.get(aqi_data_url, timeout=1200)
+        aqi_data = response.json()
+
     pois = manager.get_pois()
-    poi_forecast = forecast.get_closest_poi_coordinates_data(pois)
-    return json.dumps(poi_forecast)
+    poi_forecast = forecast.get_closest_poi_coordinates_data(pois, aqi_data)
+
+    result = json.dumps(poi_forecast)
+
+    return result
+
+
+@app.route("/api/aqi/", methods=["GET"])
+@cache.cached(timeout=Config.AQI_CACHE_TO)
+def get_aqi_forecast():
+    """
+    Handler for the '/api/aqi' endpoint. Caching 24 hours.
+
+    Returns:
+        string: Aqi forecast for the POI's in json format
+    """
+    forecast_q_time = request.args.get("forecast_q_time")
+    aqi = AQI()
+    aqi.download_netcdf_and_store(forecast_q_time)
+    pois = manager.get_pois()
+    aqi_data = aqi.to_json(pois)
+    result = json.dumps(aqi_data)
+    return result
 
 
 @app.route("/api/poi/", methods=["GET"])

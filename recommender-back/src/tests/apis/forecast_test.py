@@ -221,7 +221,9 @@ class ForecastTest(unittest.TestCase):
         poi.latitude = 60.15
         poi.longitude = 24.65
 
-        data = self.forecast.get_closest_poi_coordinates_data([poi])
+        aqi_data = {}
+
+        data = self.forecast.get_closest_poi_coordinates_data([poi], aqi_data)
 
         expected_data = {
             "2023-06-19 08:00:00": {
