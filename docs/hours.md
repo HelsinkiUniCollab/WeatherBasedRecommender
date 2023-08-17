@@ -114,7 +114,7 @@
 | Isak    | 1            | -             | 0,5               | 2,5              | -            | -             | -           | 4     |
 | Sami S. | 4.5 greenpath cluster fixing            | 3.5 greenpath test fixing             | 5 greenpath tests (axios mocking proved to be quite difficult)               | -              | -            | -             | -           | -     |
 | Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | 0.5 daily            | -             | -               | 1 daily              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 |         | Monday 21.8. | Tuesday 22.8. | Wednesday 23.8. | Thursday 24.8. | Friday 25.8. | Saturday 26.8. | Sunday 27.8. | Total |
