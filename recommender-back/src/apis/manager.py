@@ -49,9 +49,11 @@ def get_pois_as_json(accessibility=False, category="All"):
         current = Current(weather_fetcher)
         url_fore = os.environ.get("REACT_APP_BACKEND_URL") + "/api/forecast"
         response_fore = requests.get(url_fore, timeout=1200)
+        response_fore.raise_for_status()
         forecast_data = response_fore.json()
         url_aqi = os.environ.get("REACT_APP_BACKEND_URL") + "/api/aqi/"
         response_aqi = requests.get(url_aqi, timeout=1200)
+        response_aqi.raise_for_status()
         aqi_data = response_aqi.json()
         forecast_data = _add_aqi_to_forecast(forecast_data, aqi_data)
         updated_data = []

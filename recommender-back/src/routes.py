@@ -51,9 +51,8 @@ def get_aqi_forecast():
     Returns:
         string: Aqi forecast for the POI's in json format
     """
-    forecast_query_time = get_cache("forecast_query_time")
     aqi = AQI()
-    aqi.download_netcdf_and_store(forecast_query_time)
+    aqi.download_netcdf_and_store()
     pois = manager.get_pois()
     aqi_data = aqi.to_json(pois)
     result = json.dumps(aqi_data)
