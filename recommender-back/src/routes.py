@@ -10,6 +10,7 @@ from .apis.current import Current
 from .apis.pathing import GreenPathsAPI
 from .apis import manager
 from .services.data_fetcher import DataFetcher
+from .cache_manager import get_cache
 
 weather_fetcher = DataFetcher()
 
@@ -36,20 +37,10 @@ def get_forecast():
         Forecast for the POI's.
     """
     forecast = Forecast(weather_fetcher)
-    fore_query_time = forecast.update_data()
-    fore_query_time_str = fore_query_time.strftime('%Y-%m-%d %H:%M:%S')
-
-    aqi_data =  None
-
-    aqi_data_url = os.environ.get("REACT_APP_BACKEND_URL") + f"/api/aqi/?forecast_q_time={fore_query_time_str}"
-    response = requests.get(aqi_data_url, timeout=1200)
-    aqi_data = response.json()
-
+    forecast.update_data()
     pois = manager.get_pois()
-    poi_forecast = forecast.get_closest_poi_coordinates_data(pois, aqi_data)
-
+    poi_forecast = forecast.get_closest_poi_coordinates_data(pois)
     result = json.dumps(poi_forecast)
-
     return result
 
 
@@ -62,9 +53,9 @@ def get_aqi_forecast():
     Returns:
         string: Aqi forecast for the POI's in json format
     """
-    forecast_q_time = request.args.get("forecast_q_time")
+    forecast_query_time = get_cache("forecast_query_time")
     aqi = AQI()
-    aqi.download_netcdf_and_store(forecast_q_time)
+    aqi.download_netcdf_and_store(forecast_query_time)
     pois = manager.get_pois()
     aqi_data = aqi.to_json(pois)
     result = json.dumps(aqi_data)

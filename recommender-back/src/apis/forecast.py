@@ -4,6 +4,7 @@ import numpy as np
 from .times import utc_to_finnish, get_forecast_times
 from ..config import Config
 from ..services.data_fetcher import DataFetcher
+from ..cache_manager import set_cache
 
 
 class Forecast:
@@ -22,14 +23,15 @@ class Forecast:
         current, start, end = get_forecast_times()
         print(f"Query for the new Grid object at time: {current} UTC")
         forecast_data = self.get_latest_forecast(start, end)
-        
+
         latest_forecast = max(forecast_data.data.keys())
         if not self.data or latest_forecast > max(self.data.keys()):
             self.data = forecast_data.data[latest_forecast]
             self.parse_forecast_data()
             self.update_forecast_properties()
 
-        return current
+        fore_query_time_str = current.strftime('%Y-%m-%d %H:%M:%S')
+        set_cache("forecast_query_time", fore_query_time_str)
 
     def get_latest_forecast(self, start, end):
         """
@@ -128,7 +130,7 @@ class Forecast:
         unique_coords = set(flattened_coords)
         return list(unique_coords)
 
-    def get_closest_poi_coordinates_data(self, pois, aqi_data):
+    def get_closest_poi_coordinates_data(self, pois):
         """
         Finds the nearest coordinates forecast data for all of the POI's coordinates.
 
@@ -152,12 +154,6 @@ class Forecast:
                     returned_data[hour][
                         f"{poi_coord[0]}, {poi_coord[1]}"
                     ] = self.parse_forecast(forecast)
-
-        if aqi_data:
-            for datetime, poi_coords in aqi_data.items():
-                for poi_coord, air_quality in poi_coords.items():
-                    aqi_value = air_quality['Air Quality Index']
-                    returned_data[datetime][poi_coord]['Air quality'] = f'{aqi_value} AQI'
 
         return returned_data
 
