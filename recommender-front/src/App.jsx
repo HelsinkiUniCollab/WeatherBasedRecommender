@@ -9,7 +9,6 @@ import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
 import PathUtil from './utils/PathComponent';
 import SimulatorPage from './pages/SimulatorPage';
-import PreferenceSelector from './components/selector/PreferenceSelector';
 import 'leaflet/dist/leaflet.css';
 import '@fontsource/roboto/300.css';
 import theme from './assets/theme';
@@ -150,6 +149,8 @@ function App() {
                       handleClose={handleClose}
                       isMobile={isMobile}
                       poiData={poiData}
+                      selectedCategories={selectedCategories}
+                      setSelectedCategories={setSelectedCategories}
                     />
                   </Grid>
                   <Grid
@@ -168,10 +169,6 @@ function App() {
                       handleSetDestination={handleSetDestination}
                       routeCoordinates={routeCoordinates}
                       toggleHeader={toggleHeader}
-                    />
-                    <PreferenceSelector
-                      selectedCategories={selectedCategories}
-                      onCategoryChange={setSelectedCategories}
                     />
                   </Grid>
                 </Grid>
