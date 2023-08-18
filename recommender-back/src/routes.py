@@ -1,6 +1,4 @@
 import json
-import requests
-import os
 from .config import Config
 from flask import jsonify, request
 from .app import app, cache

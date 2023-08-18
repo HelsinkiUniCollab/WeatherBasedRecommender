@@ -6,7 +6,6 @@ from .current import Current
 from .poi import PointOfInterest
 from ..services.data_fetcher import DataFetcher
 from ..db.db import get_collection
-from ..services.poi_init import init_pois
 
 def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
                                               precipitation, cloud_amount, air_quality, current_time, sunrise, sunset):
@@ -109,8 +108,6 @@ def get_pois():
         list: List of POI -objects.
     """
     collection = get_collection()
-    if collection.count_documents({}) == 0:
-        init_pois()
     all_documents = collection.find({})
     pois = []
     for poi in all_documents:
