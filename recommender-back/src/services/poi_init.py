@@ -3,6 +3,7 @@ import json
 import copy
 from ..apis.poi import PointOfInterest
 from ..db.models import Poi
+from ..db.db import get_collection
 
 def init_pois():
     '''
@@ -65,3 +66,8 @@ def iterate_items(data, categories):
             pois.extend(iterate_items(item, copy.deepcopy(categories)))
             categories.pop()
     return pois
+
+def initialize_collection():
+    collection = get_collection()
+    if collection.count_documents({}) == 0:
+        init_pois()
