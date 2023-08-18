@@ -110,7 +110,7 @@
 
 |         | Monday 14.8. | Tuesday 15.8. | Wednesday 16.8. | Thursday 17.8. | Friday 18.8. | Saturday 19.8. | Sunday 20.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Juuso   | 1            | 1             | 8 cypress,path to prod,etc  | 2 daily,debug     | 4 path to http, bugs  | -             | -           | -     |
 | Isak    | 1            | -             | 0,5               | 2,5              | -            | -             | -           | 4     |
 | Sami S. | 4.5 greenpath cluster fixing            | 3.5 greenpath test fixing             | 5 greenpath tests (axios mocking proved to be quite difficult)               | -              | -            | -             | -           | -     |
 | Sami M. | 0.5 daily            | 5 rework aqi             | -               | 1 daily              | -            | -             | -           | -     |
