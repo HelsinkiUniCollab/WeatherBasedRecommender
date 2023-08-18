@@ -80,7 +80,8 @@ class Current:
         latest_aqi_data = {}
         for station, metadata in raw_aqi_data.location_metadata.items():
             values = raw_aqi_data.data[station]['AQINDEX_PT1H_avg']['values']
-            latest_aqi_value = next((v for v in reversed(values) if not math.isnan(v)), 'nan')
+            latest_aqi_value = next(
+                (v for v in reversed(values) if not math.isnan(v)), 'nan')
             if latest_aqi_value == 'nan':
                 continue
             aqi = {

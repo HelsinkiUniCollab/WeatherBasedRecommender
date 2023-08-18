@@ -13,6 +13,7 @@ from .services.data_fetcher import DataFetcher
 
 weather_fetcher = DataFetcher()
 
+
 @app.route("/", methods=["GET"])
 def index():
     """
@@ -38,19 +39,14 @@ def get_forecast():
     forecast = Forecast(weather_fetcher)
     fore_query_time = forecast.update_data()
     fore_query_time_str = fore_query_time.strftime('%Y-%m-%d %H:%M:%S')
-
-    aqi_data =  None
-
-    aqi_data_url = os.environ.get("REACT_APP_BACKEND_URL") + f"/api/aqi/?forecast_q_time={fore_query_time_str}"
+    aqi_data = None
+    aqi_data_url = os.environ.get(
+        "REACT_APP_BACKEND_URL") + f"/api/aqi/?forecast_q_time={fore_query_time_str}"
     response = requests.get(aqi_data_url, timeout=1200)
     aqi_data = response.json()
-
     pois = manager.get_pois()
     poi_forecast = forecast.get_closest_poi_coordinates_data(pois, aqi_data)
-
-    result = json.dumps(poi_forecast)
-
-    return result
+    return json.dumps(poi_forecast)
 
 
 @app.route("/api/aqi/", methods=["GET"])
@@ -67,8 +63,7 @@ def get_aqi_forecast():
     aqi.download_netcdf_and_store(forecast_q_time)
     pois = manager.get_pois()
     aqi_data = aqi.to_json(pois)
-    result = json.dumps(aqi_data)
-    return result
+    return json.dumps(aqi_data)
 
 
 @app.route("/api/poi/", methods=["GET"])
@@ -155,6 +150,7 @@ def get_path():
     if route_coordinates := green_paths.route_coordinates:
         return jsonify(route_coordinates), 200
     return jsonify({"error": "Could not fetch route data"}), 500
+
 
 @app.errorhandler(404)
 def not_found_error(error):

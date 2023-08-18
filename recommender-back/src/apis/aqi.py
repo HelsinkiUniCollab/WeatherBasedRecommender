@@ -10,6 +10,7 @@ from datetime import timedelta
 from .times import get_forecast_times, forecast_q_time_to_finnish
 from scipy.spatial import cKDTree
 
+
 class AQI:
     def __init__(self):
         """A class representing a single AQI object
@@ -48,8 +49,7 @@ class AQI:
         content = req.content
         xml = ET.fromstring(content)
         file_reference = xml.findall(Config.FILEREF_MEMBER)
-        latest_file_url = file_reference[-1].text
-        return latest_file_url
+        return file_reference[-1].text
 
     def _get_xml_url(self):
         """Fetches the xml file url based on query
@@ -62,8 +62,7 @@ class AQI:
                 'endtime': end_time,
                 'parameters': Config.AQI_PARAMS,
                 'bbox': Config.BBOX_AQI}
-        xml_url = Config.FMI_QUERY_URL + Config.AQI_QUERY + "&" + urlencode(args)
-        return xml_url
+        return Config.FMI_QUERY_URL + Config.AQI_QUERY + "&" + urlencode(args)
 
     def _parse_netcdf(self, forecast_q_time):
         """Parses the given netcdf file
@@ -76,24 +75,27 @@ class AQI:
         times = self.dataset.variables['time'][:]
         aqi = self.dataset.variables['index_of_airquality_194'][:]
 
-        forecast_time = forecast_q_time_to_finnish(forecast_q_time) + timedelta(hours=1)
+        forecast_time = forecast_q_time_to_finnish(
+            forecast_q_time) + timedelta(hours=1)
 
         datetimes = {}
         for time in times:
             forecast_datetime = forecast_time + timedelta(hours=int(time))
-            forecast_datetime = forecast_datetime.replace(minute=0, second=0, microsecond=0)
+            forecast_datetime = forecast_datetime.replace(
+                minute=0, second=0, microsecond=0)
             aqi_data = aqi[int(time)]
 
-            non_zero_lat_indices, non_zero_lon_indices = np.where(aqi_data != 0)
+            non_zero_lat_indices, non_zero_lon_indices = np.where(
+                aqi_data != 0)
 
             filtered_coords = (
                 np.column_stack(
-                (
-                    latitudes[non_zero_lat_indices],
-                    longitudes[non_zero_lon_indices]
+                    (
+                        latitudes[non_zero_lat_indices],
+                        longitudes[non_zero_lon_indices]
+                    )
                 )
             )
-        )
 
             coords_kdtree = cKDTree(filtered_coords)
             filtered_aqi = aqi_data[non_zero_lat_indices, non_zero_lon_indices]
@@ -107,54 +109,57 @@ class AQI:
         self.dataset.close()
 
     def to_json(self, pois):
-            """Converts the parsed netcdf data into JSON format and calculates nearest AQI values for POIs.
+        """Converts the parsed netcdf data into JSON format and calculates nearest AQI values for POIs.
 
-            Args:
-                pois (list): List of POI objects.
+        Args:
+            pois (list): List of POI objects.
 
-            Returns:
-                dict: AQI data in JSON format with nearest AQI values for POIs
-            """
-            data = {}
-            for datetime in self.datetimes:
-                time_str = datetime.strftime('%Y-%m-%d %H:%M:%S')
-                aqi_object = self.datetimes[datetime]
+        Returns:
+            dict: AQI data in JSON format with nearest AQI values for POIs
+        """
+        data = {}
+        for datetime in self.datetimes:
+            time_str = datetime.strftime('%Y-%m-%d %H:%M:%S')
+            aqi_object = self.datetimes[datetime]
 
-                nearest_aqi_values = {}
-                for poi in pois:
-                    lat_poi, lon_poi = float(poi.latitude), float(poi.longitude)
-                    _, closest_index = aqi_object.coords_kdtree.query([lat_poi, lon_poi])
-                    aqi_value = aqi_object.data[closest_index]
-                    poi_coords = f'{lat_poi}, {lon_poi}'
-                    nearest_aqi_values[poi_coords] = {'Air Quality Index': str(aqi_value)}
+            nearest_aqi_values = {}
+            for poi in pois:
+                lat_poi, lon_poi = float(poi.latitude), float(poi.longitude)
+                _, closest_index = aqi_object.coords_kdtree.query(
+                    [lat_poi, lon_poi])
+                aqi_value = aqi_object.data[closest_index]
+                poi_coords = f'{lat_poi}, {lon_poi}'
+                nearest_aqi_values[poi_coords] = {
+                    'Air Quality Index': str(aqi_value)}
 
-                data[time_str] = nearest_aqi_values
+            data[time_str] = nearest_aqi_values
 
-            return data
+        return data
 
     def _download_to_file(self, url, file_name, max_retries):
-            """Downloads the file content
+        """Downloads the file content
 
             Args:
                 url (string): url of the file to be downloaded
                 file_name (string): name of the file
                 max_retries (int): maximum number of retries
             """
-            for retry_attempt in range(max_retries-1):
-                try:
-                    start_time = time.time()
-                    print('Downloading AQI data')
-                    with open(file_name, 'wb') as file:
-                        response = requests.get(url, stream=True)
-                        for chunk in response.iter_content(chunk_size=10*1024*1024):
-                            file.write(chunk)
-                        print('Finished downloading. Parsing data...')
-                        end_time = time.time()
-                        print(f'{end_time - start_time} seconds')
-                        return
-                except (requests.RequestException, ConnectionResetError) as e:
-                    print(f"Download attempt {retry_attempt + 1} failed with error: {str(e)}")
-                    if retry_attempt < max_retries:
-                        print(f'Retrying...')
-                    else:
-                        print(f"Maximum retries reached. Download failed.")
+        for retry_attempt in range(max_retries-1):
+            try:
+                start_time = time.time()
+                print('Downloading AQI data')
+                with open(file_name, 'wb') as file:
+                    response = requests.get(url, stream=True)
+                    for chunk in response.iter_content(chunk_size=10*1024*1024):
+                        file.write(chunk)
+                    print('Finished downloading. Parsing data...')
+                    end_time = time.time()
+                    print(f'{end_time - start_time} seconds')
+                    return
+            except (requests.RequestException, ConnectionResetError) as error:
+                print(
+                    f"Download attempt {retry_attempt + 1} failed with error: {str(error)}")
+                if retry_attempt < max_retries:
+                    print('Retrying...')
+                else:
+                    print("Maximum retries reached. Download failed.")

@@ -4,6 +4,7 @@ import copy
 from ..apis.poi import PointOfInterest
 from ..db.models import Poi
 
+
 def init_pois():
     '''
     Retrieves all points of interest (POIs) from JSON files and merges them together.
@@ -17,17 +18,20 @@ def init_pois():
     '''
     try:
         print(' * Initiliazing POIs to MongoDB')
-        file_path = os.path.join(os.path.dirname(__file__), '..', 'static', 'pois.json')
+        file_path = os.path.join(os.path.dirname(
+            __file__), '..', 'static', 'pois.json')
         with open(file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
             pois = filter_duplicates(iterate_items(data, []))
             for poi in pois:
-                Poi.save(Poi(poi.name, poi.latitude, poi.longitude, poi.not_accessible_for, poi.categories))
+                Poi.save(Poi(poi.name, poi.latitude, poi.longitude,
+                         poi.not_accessible_for, poi.categories))
         return pois
     except FileNotFoundError:
         print(' * Error: pois.json not found.')
-    except Exception as e:
-        print(f' * Error occurred while initializing POIs: {e}')
+    except Exception as error:
+        print(f' * Error occurred while initializing POIs: {error}')
+
 
 def filter_duplicates(pois):
     uniques = {}
@@ -36,6 +40,7 @@ def filter_duplicates(pois):
         if name not in uniques:
             uniques[name] = poi
     return list(uniques.values())
+
 
 def iterate_items(data, categories):
     '''
@@ -55,7 +60,8 @@ def iterate_items(data, categories):
             name = item['name']['fi']
             longitude = item['location']['coordinates'][0]
             latitude = item['location']['coordinates'][1]
-            not_accessible_for = list(item['accessibility_shortcoming_count'].keys())
+            not_accessible_for = list(
+                item['accessibility_shortcoming_count'].keys())
             poi = PointOfInterest(name, latitude, longitude,
                                   not_accessible_for, categories)
             pois.append(poi)

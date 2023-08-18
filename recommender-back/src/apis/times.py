@@ -62,8 +62,7 @@ def forecast_q_time_to_finnish(fore_q_time):
     '''
     finland_tz = pytz.timezone('Europe/Helsinki')
     fore_q_time_datetime = datetime.strptime(fore_q_time, '%Y-%m-%d %H:%M:%S')
-    fore_q_time_finnish = fore_q_time_datetime.replace(tzinfo=pytz.utc).astimezone(finland_tz)
-    return fore_q_time_finnish
+    return fore_q_time_datetime.replace(tzinfo=pytz.utc).astimezone(finland_tz)
 
 
 def get_forecast_times():
@@ -78,6 +77,7 @@ def get_forecast_times():
     end_time = (current_time + dt.timedelta(days=1, hours=1)
                 ).strftime('%Y-%m-%dT%H:%M:%SZ')
     return current_time, start_time, end_time
+
 
 def time_from_string(time_str):
     '''
