@@ -16,7 +16,7 @@ config = {
     "DEBUG": True,
     "CACHE_TYPE": CACHE_TYPE,
     "CACHE_REDIS_URL": Config.CACHE_REDIS_URL,
-    "CACHE_DEFAULT_TIMEOUT": 3600
+    "CACHE_DEFAULT_TIMEOUT": 180
 }
 
 app = Flask(__name__)

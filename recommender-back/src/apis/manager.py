@@ -48,9 +48,13 @@ def get_pois_as_json(accessibility=False, category="All"):
         pois = get_pois()
         weather_fetcher = DataFetcher()
         current = Current(weather_fetcher)
-        url = os.environ.get("REACT_APP_BACKEND_URL") + "/api/forecast"
-        response = requests.get(url, timeout=1200)
-        forecast_data = response.json()
+        url_fore = os.environ.get("REACT_APP_BACKEND_URL") + "/api/forecast"
+        response_fore = requests.get(url_fore, timeout=1200)
+        forecast_data = response_fore.json()
+        url_aqi = os.environ.get("REACT_APP_BACKEND_URL") + "/api/aqi/"
+        response_aqi = requests.get(url_aqi, timeout=1200)
+        aqi_data = response_aqi.json()
+        forecast_data = _add_aqi_to_forecast(forecast_data, aqi_data)
         updated_data = []
         for poi in pois:
             if category not in poi.categories:
@@ -114,3 +118,10 @@ def get_pois():
                             poi['not_accessible_for'], poi['categories'])
         pois.append(poi)
     return pois
+
+def _add_aqi_to_forecast(forecast_data, aqi_data):
+    for datetime, poi_coords in aqi_data.items():
+        for poi_coord, air_quality in poi_coords.items():
+            aqi_value = air_quality['Air Quality Index']
+            forecast_data[datetime][poi_coord]['Air quality'] = f'{aqi_value} AQI'
+    return forecast_data
