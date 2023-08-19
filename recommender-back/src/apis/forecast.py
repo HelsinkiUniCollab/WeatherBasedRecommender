@@ -4,7 +4,6 @@ import numpy as np
 from .times import utc_to_finnish, get_forecast_times
 from ..config import Config
 from ..services.data_fetcher import DataFetcher
-from ..cache_manager import set_cache
 
 
 class Forecast:
@@ -30,8 +29,6 @@ class Forecast:
             self.parse_forecast_data()
             self.update_forecast_properties()
 
-        fore_query_time_str = current.strftime('%Y-%m-%d %H:%M:%S')
-        set_cache("forecast_query_time", fore_query_time_str)
 
     def get_latest_forecast(self, start, end):
         """
