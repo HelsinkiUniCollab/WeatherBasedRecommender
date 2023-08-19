@@ -66,6 +66,11 @@ def forecast_q_time_to_finnish(fore_q_time):
     return fore_q_time_finnish
 
 def server_time_to_finnish():
+    """Converts server datetime object time to match finnish timezone
+
+    Returns:
+        datetime: new datetime object with times converted to finnish
+    """
     server_time = datetime.now()
     finland_tz = pytz.timezone('Europe/Helsinki')
     finnish_time = server_time.astimezone(finland_tz)
