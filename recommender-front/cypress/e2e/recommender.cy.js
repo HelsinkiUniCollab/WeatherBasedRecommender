@@ -22,7 +22,7 @@ describe('Map and POI features', () => {
     const clusteredMockPOIs = JSON.parse(JSON.stringify(mockPOIs));
     // Move one POI closer to another so they are clustered
     clusteredMockPOIs[0].latitude = 60.190;
-    cy.intercept('GET', 'http://localhost:5000/api/poi/', clusteredMockPOIs);
+    cy.intercept('GET', 'http://localhost:5000/api/poi', clusteredMockPOIs);
     cy.visit('');
 
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
@@ -122,7 +122,7 @@ describe('TimePickerComponent', () => {
 
 describe('PreferenceSelector component', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://localhost:5000/api/poi/', mockPOIs);
+    cy.intercept('GET', 'http://localhost:5000/api/poi', mockPOIs);
     cy.intercept('GET', 'http://localhost:5000/api/warning', JSON.stringify(false));
     cy.visit('');
   });
@@ -183,7 +183,7 @@ describe('User location and routing feature', () => {
   const longitude = 24.935450;
 
   beforeEach(() => {
-    cy.intercept('GET', 'http://localhost:5000/api/poi/', mockPOIs);
+    cy.intercept('GET', 'http://localhost:5000/api/poi', mockPOIs);
     cy.intercept('GET', 'http://localhost:5000/api/warning', JSON.stringify(false));
     cy.window().then((win) => {
       cy.stub(win.navigator.geolocation, 'getCurrentPosition', (callback) => callback({ coords: { latitude, longitude } }));
