@@ -12,7 +12,7 @@ COPY pyproject.toml poetry.lock*  /app/
 
 RUN pip install poetry \
   && poetry config virtualenvs.create false \
-  && poetry install --no-dev --no-interaction --no-ansi
+  && poetry install --only main --no-interaction --no-ansi
 
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
 COPY install_eccodes.sh /app/
 RUN chmod +x /app/install_eccodes.sh && /app/install_eccodes.sh
 
-RUN poetry run pip install netCDF4
+RUN poetry run pip install netCDF4 cachetools scipy
 
 COPY . /app
 
