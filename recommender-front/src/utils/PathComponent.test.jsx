@@ -11,8 +11,9 @@ describe('PathUtil', () => {
     const mockSetRouteCoordinates = jest.fn();
     const origin = [60.2049, 24.9649];
     const destination = [60.35, 25.355];
+    const mockData = [[60.2049, 24.9649],[60.35, 25.355]]
 
-    axios.get.mockResolvedValue({ data: 'mockData' });
+    axios.get.mockResolvedValue({ data: mockData });
 
     render(
       <PathUtil
