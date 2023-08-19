@@ -28,7 +28,6 @@ COPY install_eccodes.sh /app/
 RUN chmod +x /app/install_eccodes.sh && /app/install_eccodes.sh
 
 RUN poetry run pip install netCDF4
-RUN poetry run pip install cachetools
 
 COPY . /app
 

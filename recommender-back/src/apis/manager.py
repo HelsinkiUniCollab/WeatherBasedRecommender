@@ -55,6 +55,7 @@ def get_pois_as_json(accessibility=False, category="All"):
         response_aqi = requests.get(url_aqi, timeout=1200)
         response_aqi.raise_for_status()
         aqi_data = response_aqi.json()
+        aqi_data = _replace_datetime_in_aqi_data(forecast_data, aqi_data)
         forecast_data = _add_aqi_to_forecast(forecast_data, aqi_data)
         updated_data = []
         for poi in pois:
@@ -120,7 +121,24 @@ def get_pois():
 
 def _add_aqi_to_forecast(forecast_data, aqi_data):
     for datetime, poi_coords in aqi_data.items():
-        for poi_coord, air_quality in poi_coords.items():
-            aqi_value = air_quality['Air Quality Index']
-            forecast_data[datetime][poi_coord]['Air quality'] = f'{aqi_value} AQI'
+        if datetime in forecast_data:
+            for poi_coord, air_quality in poi_coords.items():
+                aqi_value = air_quality['Air Quality Index']
+                forecast_data[datetime][poi_coord]['Air quality'] = f'{aqi_value} AQI'
     return forecast_data
+
+def _replace_datetime_in_aqi_data(forecast_data, aqi_data):
+    """Replaces the date in aqidata to compensate for different caching times
+
+    Args:
+        forecast_data (str): forecast_data in json formant
+        aqi_data (str): aqi_data in json format
+
+    Returns:
+        str: aqi_data with updated datetimes
+    """
+    updated_aqi_data = {}
+    for forecast_datetime, _ in forecast_data.items():
+        for aqi_datetime, _ in aqi_data.items():
+            updated_aqi_data[aqi_datetime] = aqi_data[forecast_datetime]
+    return updated_aqi_data

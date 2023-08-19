@@ -7,9 +7,8 @@ from urllib.parse import urlencode
 from netCDF4 import Dataset
 from ..config import Config
 from datetime import timedelta
-from .times import get_forecast_times, forecast_q_time_to_finnish
+from .times import get_forecast_times, server_time_to_finnish
 from scipy.spatial import cKDTree
-from ..cache_manager import get_cache
 
 class AQI:
     def __init__(self):
@@ -77,9 +76,7 @@ class AQI:
         times = self.dataset.variables['time'][:]
         aqi = self.dataset.variables['index_of_airquality_194'][:]
 
-        forecast_query_time = get_cache("forecast_query_time")
-
-        forecast_time = forecast_q_time_to_finnish(forecast_query_time) + timedelta(hours=1)
+        forecast_time = server_time_to_finnish() + timedelta(hours=1)
 
         datetimes = {}
         for time in times:
@@ -108,6 +105,7 @@ class AQI:
 
         self.datetimes = datetimes
         self.dataset.close()
+
 
     def to_json(self, pois):
             """Converts the parsed netcdf data into JSON format and calculates nearest AQI values for POIs.
@@ -148,12 +146,11 @@ class AQI:
                     start_time = time.time()
                     print('Downloading AQI data')
                     with open(file_name, 'wb') as file:
-                        response = requests.get(url, stream=True)
+                        response = requests.get(url, stream=True, timeout=240)
                         for chunk in response.iter_content(chunk_size=10*1024*1024):
                             file.write(chunk)
-                        print('Finished downloading. Parsing data...')
                         end_time = time.time()
-                        print(f'{end_time - start_time} seconds')
+                        print(f'Finished downloading in {end_time - start_time} seconds. Parsing data...')
                         return
                 except (requests.RequestException, ConnectionResetError) as e:
                     print(f"Download attempt {retry_attempt + 1} failed with error: {str(e)}")
