@@ -66,34 +66,46 @@ function App() {
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const apiUrl = process.env.REACT_APP_BACKEND_URL;
-        const warningResponse = await fetch(`${apiUrl}/api/warning`);
-        const alert = await warningResponse.json();
-        setWarning(alert);
-        if (!alert) {
-          const poiResponse = await fetch(`${apiUrl}/api/poi/${accessibility}`);
-          const poi = await poiResponse.json();
-          setAllPoiData(poi);
-          setPoiData(poi);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+  const filterPoiData = (data, access, categories) => {
+    let filteredData = data;
+
+    // Filter by accessibility
+    if (access) {
+      filteredData = filteredData.filter((poi) => !poi.not_accessible_for.includes(access));
     }
-    fetchData();
-  }, [accessibility]);
+
+    // Filter by categories
+    if (categories.length > 0 && categories[0] !== 'All') {
+      filteredData = filteredData.filter((poi) => categories.includes(poi.category));
+    }
+
+    setPoiData(filteredData);
+  };
+
+  async function fetchData() {
+    try {
+      const apiUrl = process.env.REACT_APP_BACKEND_URL;
+      const warningResponse = await fetch(`${apiUrl}/api/warning`);
+      const alert = await warningResponse.json();
+      setWarning(alert);
+      if (!alert) {
+        const poiResponse = await fetch(`${apiUrl}/api/poi`);
+        const poi = await poiResponse.json();
+        setAllPoiData(poi);
+        filterPoiData(poi, accessibility, selectedCategories);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
 
   useEffect(() => {
-    if (selectedCategories.length > 0 && selectedCategories[0] !== 'All') {
-      const filteredData = allPoiData.filter((poi) => selectedCategories.includes(poi.category));
-      setPoiData(filteredData);
-    } else {
-      setPoiData(allPoiData);
-    }
-  }, [selectedCategories, allPoiData]);
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    filterPoiData(allPoiData, accessibility, selectedCategories);
+  }, [accessibility, allPoiData, selectedCategories]);
 
   useEffect(() => {
     if (poiData.length > 0) {

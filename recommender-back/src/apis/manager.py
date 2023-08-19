@@ -64,8 +64,6 @@ def get_pois_as_json(accessibility=False, category="All"):
             poi: PointOfInterest = current.find_nearest_stations_weather_data(poi)
             poi = find_nearest_coordinate_forecast_data(poi, forecast_data)
             poi.calculate_score()
-            if accessibility in poi.not_accessible_for:
-                continue
             updated_data.append(poi.get_json())
         return json.dumps(updated_data)
     except KeyError as error:
