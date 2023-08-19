@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
 COPY install_eccodes.sh /app/
 RUN chmod +x /app/install_eccodes.sh && /app/install_eccodes.sh
 
-RUN poetry run pip install netCDF4 cachetools scipy
+RUN poetry run pip install netCDF4
 
 COPY . /app
 
