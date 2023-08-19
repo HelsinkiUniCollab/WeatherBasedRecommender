@@ -27,6 +27,7 @@ const mockPOIs = [
       },
     },
     category: 'Sport halls',
+    not_accessible_for: ['wheelchair'],
   },
   {
     name: 'Mock POI 2',
