@@ -3,7 +3,7 @@ import mockROUTE from '../mockRoute';
 
 describe('Map and POI features', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://localhost:5000/api/poi/', mockPOIs);
+    cy.intercept('GET', 'http://localhost:5000/api/poi', mockPOIs);
     cy.intercept('GET', 'http://localhost:5000/api/warning', JSON.stringify(false));
     cy.visit('');
   });
