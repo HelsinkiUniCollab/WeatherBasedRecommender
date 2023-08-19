@@ -150,7 +150,7 @@ class AQI:
                         for chunk in response.iter_content(chunk_size=10*1024*1024):
                             file.write(chunk)
                         end_time = time.time()
-                        print(f'Finished downloading in {end_time - start_time}. Parsing data...')
+                        print(f'Finished downloading in {end_time - start_time} seconds. Parsing data...')
                         return
                 except (requests.RequestException, ConnectionResetError) as e:
                     print(f"Download attempt {retry_attempt + 1} failed with error: {str(e)}")
