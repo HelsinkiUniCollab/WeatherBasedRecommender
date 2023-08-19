@@ -120,7 +120,8 @@ def get_pois():
 
 def _add_aqi_to_forecast(forecast_data, aqi_data):
     for datetime, poi_coords in aqi_data.items():
-        for poi_coord, air_quality in poi_coords.items():
-            aqi_value = air_quality['Air Quality Index']
-            forecast_data[datetime][poi_coord]['Air quality'] = f'{aqi_value} AQI'
+        if datetime in forecast_data:
+            for poi_coord, air_quality in poi_coords.items():
+                aqi_value = air_quality['Air Quality Index']
+                forecast_data[datetime][poi_coord]['Air quality'] = f'{aqi_value} AQI'
     return forecast_data

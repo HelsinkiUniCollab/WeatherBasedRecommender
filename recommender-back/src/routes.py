@@ -8,7 +8,6 @@ from .apis.current import Current
 from .apis.pathing import GreenPathsAPI
 from .apis import manager
 from .services.data_fetcher import DataFetcher
-from .cache_manager import get_cache
 
 weather_fetcher = DataFetcher()
 
