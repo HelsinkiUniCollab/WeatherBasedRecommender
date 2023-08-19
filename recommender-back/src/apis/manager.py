@@ -118,6 +118,15 @@ def get_pois():
     return pois
 
 def _add_aqi_to_forecast(forecast_data, aqi_data):
+    """Adds air quality index data to forecast data
+
+    Args:
+        forecast_data (dict): forecast data
+        aqi_data (dict): aqi data
+
+    Returns:
+        dict: forecast_data with air quality index values
+    """
     for datetime, poi_coords in aqi_data.items():
         if datetime in forecast_data:
             for poi_coord, air_quality in poi_coords.items():
@@ -126,17 +135,20 @@ def _add_aqi_to_forecast(forecast_data, aqi_data):
     return forecast_data
 
 def _replace_datetime_in_aqi_data(forecast_data, aqi_data):
-    """Replaces the date in aqidata to compensate for different caching times
+    """Replaces the datetime in aqi_data to compensate for different caching times
+        between aqi_data and forecast_data
 
     Args:
-        forecast_data (str): forecast_data in json formant
-        aqi_data (str): aqi_data in json format
+        forecast_data (dict): forecast_data
+        aqi_data (dict): aqi_data
 
     Returns:
-        str: aqi_data with updated datetimes
+        dict: aqi_data with updated datetimes
     """
+    aqi_dates = list(aqi_data.keys())
     updated_aqi_data = {}
-    for forecast_datetime, _ in forecast_data.items():
-        for aqi_datetime, _ in aqi_data.items():
-            updated_aqi_data[aqi_datetime] = aqi_data[forecast_datetime]
+    for fore_date, _ in forecast_data.items():
+        if aqi_dates:
+            aqi_date = aqi_dates.pop(0)
+            updated_aqi_data[fore_date] = aqi_data[aqi_date]
     return updated_aqi_data
