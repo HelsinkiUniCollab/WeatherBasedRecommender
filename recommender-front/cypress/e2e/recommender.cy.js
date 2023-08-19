@@ -13,6 +13,7 @@ describe('Map and POI features', () => {
   });
 
   it('should display all POI markers on initial load', () => {
+    cy.wait(5000);
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
       .should('have.length', mockPOIS.length);
   });
@@ -163,17 +164,14 @@ describe('PreferenceSelector component', () => {
 });
 
 describe('User location and routing feature', () => {
-
   const latitude = 60.169520;
   const longitude = 24.935450;
-  
+
   beforeEach(() => {
     cy.intercept('GET', 'http://localhost:5000/api/poi/', mockPOIS);
     cy.intercept('GET', 'http://localhost:5000/api/warning', JSON.stringify(false));
     cy.window().then((win) => {
-      cy.stub(win.navigator.geolocation, 'getCurrentPosition', (callback) => {
-        return callback({ coords: { latitude, longitude } });
-      });
+      cy.stub(win.navigator.geolocation, 'getCurrentPosition', (callback) => callback({ coords: { latitude, longitude } }));
     });
     cy.visit('http://localhost:3000');
   });
