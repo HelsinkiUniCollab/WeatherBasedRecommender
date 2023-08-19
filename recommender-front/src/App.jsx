@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -32,7 +32,6 @@ function App() {
   const [routeCoordinates, setRouteCoordinates] = useState([]);
   const [warning, setWarning] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
-  const hasSetOriginRef = useRef(false);
   const [selectedCategories, setSelectedCategories] = useState(['All']);
 
   const toggleHeader = () => {
@@ -56,17 +55,13 @@ function App() {
   };
 
   const handleSetOrigin = (latitude, longitude) => {
-    if (!hasSetOriginRef.current) {
-      setUserPosition([latitude, longitude]);
-      console.log('Setting origin:', latitude, longitude);
-      hasSetOriginRef.current = true;
-    }
+    setUserPosition([latitude, longitude]);
+    console.log('Setting origin:', latitude, longitude);
   };
 
   const handleSetDestination = (latitude, longitude) => {
     setDestination([latitude, longitude]);
     console.log('Setting destination', latitude, longitude);
-    // handleSendCoordinates(userPosition, destination);
   };
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
