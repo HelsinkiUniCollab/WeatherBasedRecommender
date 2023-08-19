@@ -179,7 +179,7 @@ describe('User location and routing feature', () => {
   });
 
   it('should locate the user, open a POI and set a destination, draw the polyline', () => {
-    cy.get('[data-testid="locate-button"]').should('be.visible');
+    cy.get('[data-testid="locate-button"]').should('be.visible').click();
     cy.get('.leaflet-marker-icon').eq(1).click();
     cy.get('.leaflet-popup-content');
     cy.intercept('GET', '**/path?start=*&end=*', { body: mockROUTE }).as('getRoute');
