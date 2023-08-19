@@ -67,15 +67,7 @@ def get_poi_data():
         Poi data if errors have not occurred.
     """
     return manager.get_pois_as_json()
-
-@app.route("/api/poi/<accessibility>", methods=["GET"])
-def get_poi_acessible_poi_data(accessibility):
-    """
-    Handler for the '/api/poi' endpoint.
-    Returns:
-        POI-data if errors have not occurred.
-    """
-    return manager.get_pois_as_json(accessibility)
+    
 
 
 @app.route("/api/simulator", methods=["POST"])
