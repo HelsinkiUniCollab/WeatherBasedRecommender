@@ -1,5 +1,6 @@
 import requests
 
+
 class GreenPathsAPI:
     """
     A class for fetching route information from the Green Paths API and plotting the route on a map.
@@ -10,6 +11,7 @@ class GreenPathsAPI:
         routing_mode (str, optional): Routing mode, can be 'fast', 'short', 'clean', 'quiet', or 'safe' (for bikes).
             Defaults to 'fast'.
     """
+
     def __init__(self, start_coords, end_coords, travel_mode="walk", routing_mode="fast"):
         self.start_coords = start_coords
         self.end_coords = end_coords
@@ -29,8 +31,8 @@ class GreenPathsAPI:
             response = requests.get(url)
             response.raise_for_status()
             return response.json()
-        except requests.exceptions.RequestException as e:
-            print(f"Failed to fetch data from the API: {e}")
+        except requests.exceptions.RequestException as error:
+            print(f"Failed to fetch data from the API: {error}")
             return None
 
     def extract_path_coordinates(self):
@@ -52,5 +54,4 @@ class GreenPathsAPI:
             geometry = feature.get("geometry", {})
             if geometry.get("type") == "LineString" and geometry.get("coordinates"):
                 path_coordinates.extend(geometry.get("coordinates"))
-
         return path_coordinates

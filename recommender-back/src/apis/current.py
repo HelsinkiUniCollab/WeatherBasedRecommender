@@ -72,7 +72,7 @@ class Current:
 
     def parse_latest_aqi_data(self, raw_aqi_data: dict):
         '''
-        Finds latest aqi value and coordinates that is not nan for each station.
+        Finds latest AQI value and coordinates that is not 'nan' for each station.
 
         Returns:
             dict: A dictionary containing stations and their aqi and coordinates.

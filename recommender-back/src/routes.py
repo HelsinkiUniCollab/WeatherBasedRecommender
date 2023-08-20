@@ -48,7 +48,7 @@ def get_aqi_forecast():
     Handler for the '/api/aqi' endpoint. Caching 24 hours.
 
     Returns:
-        string: Aqi forecast for the POI's in json format
+        string: AQI forecast for the POI's in JSON format
     """
     aqi = AQI()
     aqi.download_netcdf_and_store()
@@ -63,7 +63,7 @@ def get_poi_data():
     Handler for the '/api/poi' endpoint.
 
     Returns:
-        Poi data if errors have not occurred.
+        POI's data if errors have not occurred.
     """
     return manager.get_pois_as_json()
     
@@ -75,7 +75,7 @@ def get_simulated_poi_data():
     Handler for the '/api/poi' endpoint.
 
     Returns:
-        Poi data if errors have not occurred.
+        POI's data if errors have not occurred.
     """
     data = request.get_json()
     air_temperature = data.get('air_temperature')

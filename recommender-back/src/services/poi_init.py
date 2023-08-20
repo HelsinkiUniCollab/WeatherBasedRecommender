@@ -35,6 +35,15 @@ def init_pois():
 
 
 def filter_duplicates(pois):
+    '''
+    Filters duplicate points of interest (POIs) from a list.
+
+    Args:
+        pois (list): List of POIs.
+
+    Returns:
+        list: List of unique POIs.
+    '''
     uniques = {}
     for poi in pois:
         name = poi.name
@@ -74,6 +83,11 @@ def iterate_items(data, categories):
     return pois
 
 def initialize_collection():
+    '''
+    Initializes the collection of points of interest (POIs) in MongoDB if it's empty.
+
+    This function checks if the collection is empty and initializes it using the 'init_pois' function if needed.
+    '''
     collection = get_collection()
     if collection.count_documents({}) == 0:
         init_pois()
