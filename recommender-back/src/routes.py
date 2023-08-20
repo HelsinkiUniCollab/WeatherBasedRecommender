@@ -37,11 +37,10 @@ def get_forecast():
     forecast.update_data()
     pois = manager.get_pois()
     poi_forecast = forecast.get_closest_poi_coordinates_data(pois)
-    result = json.dumps(poi_forecast)
-    return result
+    return json.dumps(poi_forecast)
 
 
-@app.route("/api/aqi/", methods=["GET"])
+@app.route("/api/aqi", methods=["GET"])
 @cache.cached(timeout=Config.AQI_CACHE_TO)
 def get_aqi_forecast():
     """
@@ -54,8 +53,7 @@ def get_aqi_forecast():
     aqi.download_netcdf_and_store()
     pois = manager.get_pois()
     aqi_data = aqi.to_json(pois)
-    result = json.dumps(aqi_data)
-    return result
+    return json.dumps(aqi_data)
 
 
 @app.route("/api/poi/", methods=["GET"])
@@ -108,7 +106,7 @@ def get_weather_warning():
     return jsonify(warning)
 
 
-@app.route('/path', methods=['GET'])
+@app.route('/api/path', methods=['GET'])
 def get_path():
     """
     Handler for the '/api/path' endpoint.
@@ -131,7 +129,7 @@ def get_path():
     green_paths = GreenPathsAPI(start_coords, end_coords)
     if route_coordinates := green_paths.route_coordinates:
         coords = [[coord[1], coord[0]] for coord in route_coordinates]
-        return jsonify(coords), 200
+        return json.dumps(coords)
     return jsonify({"error": "Could not fetch route data"}), 500
 
 @app.errorhandler(404)
