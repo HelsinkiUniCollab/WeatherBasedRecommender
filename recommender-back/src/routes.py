@@ -58,7 +58,7 @@ def get_aqi_forecast():
     return result
 
 
-@app.route("/api/poi/", methods=["GET"])
+@app.route("/api/poi", methods=["GET"])
 def get_poi_data():
     """
     Handler for the '/api/poi' endpoint.
