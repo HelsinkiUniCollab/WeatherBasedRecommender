@@ -9,7 +9,7 @@ function PathUtil({ origin, destination, setRouteCoordinates }) {
         end: destination.join(','),
       });
 
-      const response = await fetch(`${apiUrl}/path?${queryParams}`);
+      const response = await fetch(`${apiUrl}/api/path?${queryParams}`);
       const routeCoordinates = await response.json();
 
       await setRouteCoordinates(routeCoordinates);

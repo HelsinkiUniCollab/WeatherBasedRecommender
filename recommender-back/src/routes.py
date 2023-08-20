@@ -37,8 +37,7 @@ def get_forecast():
     forecast.update_data()
     pois = manager.get_pois()
     poi_forecast = forecast.get_closest_poi_coordinates_data(pois)
-    result = json.dumps(poi_forecast)
-    return result
+    return json.dumps(poi_forecast)
 
 
 @app.route("/api/aqi", methods=["GET"])
@@ -54,8 +53,7 @@ def get_aqi_forecast():
     aqi.download_netcdf_and_store()
     pois = manager.get_pois()
     aqi_data = aqi.to_json(pois)
-    result = json.dumps(aqi_data)
-    return result
+    return json.dumps(aqi_data)
 
 
 @app.route("/api/poi/", methods=["GET"])
@@ -108,7 +106,7 @@ def get_weather_warning():
     return jsonify(warning)
 
 
-@app.route('/path', methods=['GET'])
+@app.route('/api/path', methods=['GET'])
 def get_path():
     """
     Handler for the '/api/path' endpoint.
