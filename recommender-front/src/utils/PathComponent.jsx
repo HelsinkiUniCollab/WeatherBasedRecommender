@@ -4,7 +4,10 @@ import axios from 'axios';
 function PathUtil({ origin, destination, setRouteCoordinates }) {
   const handleSendCoords = useCallback(async () => {
     try {
-      const response = await axios.get('/path', {
+      const axiosInstance = axios.create({
+        baseURL: process.env.REACT_APP_BACKEND_URL,
+      });
+      const response = await axiosInstance.get('/path', {
         params: {
           start: origin.join(','),
           end: destination.join(','),
