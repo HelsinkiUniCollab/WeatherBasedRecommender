@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from .config import Config
 from .services.poi_init import initialize_collection
 
+
 load_dotenv()
 initialize_collection()
 

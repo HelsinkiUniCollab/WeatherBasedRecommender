@@ -7,7 +7,7 @@ from ..db.db import get_collection
 
 def init_pois():
     '''
-    Retrieves all points of interest (POIs) from JSON files and merges them together.
+    Retrieves all points of interest (POIs) from JSON file and merges them together.
 
     Args:
         category (list): List of categories of POIs to retrieve. If None, default categories will be used.
@@ -68,6 +68,6 @@ def iterate_items(data, categories):
     return pois
 
 def initialize_collection():
-    collection = get_collection()
+    collection = get_collection('pois')
     if collection.count_documents({}) == 0:
         init_pois()

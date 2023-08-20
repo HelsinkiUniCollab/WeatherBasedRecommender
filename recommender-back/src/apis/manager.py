@@ -6,6 +6,7 @@ from .current import Current
 from .poi import PointOfInterest
 from ..services.data_fetcher import DataFetcher
 from ..db.db import get_collection
+from ..services.log_scores import save_score_history
 
 def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
                                               precipitation, cloud_amount, air_quality, current_time, sunrise, sunset):
@@ -65,7 +66,7 @@ def get_pois_as_json(accessibility=False, category="All"):
             poi = find_nearest_coordinate_forecast_data(poi, forecast_data)
             poi.calculate_score()
             updated_data.append(poi.get_json())
-        save_score_history(json.dumps(updated_data))
+        save_score_history(json.dumps(updated_data), 'scorehistory')
         return json.dumps(updated_data)
     except KeyError as error:
         return {"message": "An error occurred", "status": 500, "error": str(error)}
@@ -101,15 +102,12 @@ def find_nearest_coordinate_forecast_data(poi: PointOfInterest, forecast_data):
 
 def get_pois():
     """
-    Fetches and converts mongoDB documents into POI -objects.
-
-    Args:
-        test (bool): A flag to indicate if the test environment is used.
+    Fetches and converts mongoDB documents into PointOfInterest objects.
 
     Returns:
         list: List of POI -objects.
     """
-    collection = get_collection()
+    collection = get_collection('pois')
     all_documents = collection.find({})
     pois = []
     for poi in all_documents:
@@ -153,3 +151,4 @@ def _replace_datetime_in_aqi_data(forecast_data, aqi_data):
             aqi_date = aqi_dates.pop(0)
             updated_aqi_data[fore_date] = aqi_data[aqi_date]
     return updated_aqi_data
+

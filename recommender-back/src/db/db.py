@@ -7,7 +7,6 @@ if 'MONGO_URI' in os.environ:
         mongo_uri = os.environ['MONGO_URI']
 else:
     mongo_uri = os.environ.get('DEVELOPMENT_DB_URI')
-print(' * Connecting to MongoDB')
 
 def get_db():
     try:
@@ -25,6 +24,6 @@ def get_collection(name):
         collection=db[name]
         return collection          
     except Exception as e:
-        print(' * Error getting collection in MongoDB:', str(e))
+        print(' * Error getting collection from MongoDB:', str(e))
         return None
 
