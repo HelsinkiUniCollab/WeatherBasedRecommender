@@ -113,7 +113,7 @@
 | Juuso   | 1            | 1             | 8 cypress,path to prod,etc  | 2 daily,debug     | 4 path to http, bugs  | -             | -           | -     |
 | Isak    | 1            | -             | 0,5               | 2,5              | -            | 2,5             | 2           | 8,5     |
 | Sami S. | 4.5 greenpath cluster fixing            | 3.5 greenpath test fixing             | 5 greenpath tests (axios mocking proved to be quite difficult)               | 1 daily              | 2 cypress fix, pull req            | 2 greenpath fixing..             | -           | -     |
-| Sami M. | 0.5 daily            | 5 rework aqi             | -               | 1 daily              | 5 try cachtools for aqi, fix mongo issues            | 5 bug hunting, prs, aqi fixed finally? :D             | -           | -     |
+| Sami M. | 0.5 daily            | 5 rework aqi             | -               | 1 daily              | 5 try cachtools for aqi, fix mongo issues            | 5 bug hunting, prs, aqi fixed finally? :D             | 1 daily, prs           | 17.5     |
 | Pia     | 0.5 daily            | -             | -               | 1 daily              | -            | -             | 5 mongo, daily, pouta           | 6.5     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
