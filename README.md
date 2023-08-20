@@ -33,7 +33,7 @@ To get the MongoDB development URL, read more [here](/docs/database.md). To run 
 * [Working hours](/docs/hours.md)
 * [Team roles](/docs/roles.md)
 * [Definition of Done](/docs/dod.md)
-* [Git Workflow](/docs/git-workflow.md)
+* [Git Workflow](/docs/workflow.md)
 * [Production Environment](/docs/pouta.md)
 * [Databases](/docs/database.md)
 * [Code Quality](/docs/code_quality.md)
