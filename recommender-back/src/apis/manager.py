@@ -47,9 +47,9 @@ def get_pois_as_json(category="All"):
         weather_fetcher = DataFetcher()
         current = Current(weather_fetcher)
         forecast_data = InternalApiService.fetch_forecast()
-        #aqi_data = InternalApiService.fetch_aqi()
-        #aqi_data = _replace_datetime_in_aqi_data(forecast_data, aqi_data)
-        #forecast_data = _add_aqi_to_forecast(forecast_data, aqi_data)
+        aqi_data = InternalApiService.fetch_aqi()
+        aqi_data = _replace_datetime_in_aqi_data(forecast_data, aqi_data)
+        forecast_data = _add_aqi_to_forecast(forecast_data, aqi_data)
         updated_data = []
         for poi in pois:
             if category not in poi.categories:
