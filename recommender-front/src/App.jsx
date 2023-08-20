@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -31,7 +31,6 @@ function App() {
   const [routeCoordinates, setRouteCoordinates] = useState([]);
   const [warning, setWarning] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
-  const hasSetOriginRef = useRef(false);
   const [selectedCategories, setSelectedCategories] = useState(['All']);
 
   const toggleHeader = () => {
@@ -55,49 +54,57 @@ function App() {
   };
 
   const handleSetOrigin = (latitude, longitude) => {
-    if (!hasSetOriginRef.current) {
-      setUserPosition([latitude, longitude]);
-      console.log('Setting origin:', latitude, longitude);
-      hasSetOriginRef.current = true;
-    }
+    setUserPosition([latitude, longitude]);
+    console.log('Setting origin:', latitude, longitude);
   };
 
   const handleSetDestination = (latitude, longitude) => {
     setDestination([latitude, longitude]);
     console.log('Setting destination', latitude, longitude);
-    // handleSendCoordinates(userPosition, destination);
   };
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const apiUrl = process.env.REACT_APP_BACKEND_URL;
-        const warningResponse = await fetch(`${apiUrl}/api/warning`);
-        const alert = await warningResponse.json();
-        setWarning(alert);
-        if (!alert) {
-          const poiResponse = await fetch(`${apiUrl}/api/poi/${accessibility}`);
-          const poi = await poiResponse.json();
-          setAllPoiData(poi);
-          setPoiData(poi);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+  const filterPoiData = (data, access, categories) => {
+    let filteredData = data;
+
+    // Filter by accessibility
+    if (access) {
+      filteredData = filteredData.filter((poi) => !poi.not_accessible_for.includes(access));
     }
-    fetchData();
-  }, [accessibility]);
+
+    // Filter by categories
+    if (categories.length > 0 && categories[0] !== 'All') {
+      filteredData = filteredData.filter((poi) => categories.includes(poi.category));
+    }
+
+    setPoiData(filteredData);
+  };
+
+  async function fetchData() {
+    try {
+      const apiUrl = process.env.REACT_APP_BACKEND_URL;
+      const warningResponse = await fetch(`${apiUrl}/api/warning`);
+      const alert = await warningResponse.json();
+      setWarning(alert);
+      if (!alert) {
+        const poiResponse = await fetch(`${apiUrl}/api/poi`);
+        const poi = await poiResponse.json();
+        setAllPoiData(poi);
+        filterPoiData(poi, accessibility, selectedCategories);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
 
   useEffect(() => {
-    if (selectedCategories.length > 0 && selectedCategories[0] !== 'All') {
-      const filteredData = allPoiData.filter((poi) => selectedCategories.includes(poi.category));
-      setPoiData(filteredData);
-    } else {
-      setPoiData(allPoiData);
-    }
-  }, [selectedCategories, allPoiData]);
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    filterPoiData(allPoiData, accessibility, selectedCategories);
+  }, [accessibility, allPoiData, selectedCategories]);
 
   useEffect(() => {
     if (poiData.length > 0) {

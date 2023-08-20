@@ -2,10 +2,10 @@
 
 The team has four rotating roles:
 
-- *chairman* for the customer meeting
-- *demo coordinator* for the customer meeting
-- *secretary* for the customer meeting
-- *scrum master* for the sprint
+- Chairman
+- Demo Coordinator
+- Secretary
+- Scrum Master
 
 ## Chairman
 
@@ -17,88 +17,88 @@ The team has four rotating roles:
 - *Books room* also for the retrospective and sprint planning session, which are typically held after the customer meeting
 - *Sends all the invitations for course instructor as well*
 
-## Demo coordinator
+## Demo Coordinator
 
 - Approx 1-2 hours of extra work
 - *Plans the demo* and ensures that it effectively showcases what the team has accomplished during the sprint
 - *Rehearses the demo* beforehand to ensure a smooth and polished presentation 
 - Arrives early and *ensure that everything works in the meeting room*
 
-## Secretary for the customer meeting
+## Secretary for the Customer Meeting
 
 - Approx 1-2 hours of extra work
 - *Makes notes* on the discussions and decisions taken during the meeting 
 - *Posts the memo* on our Discord channel
 
-## Scrum master
+## Scrum Master
 
 - Approx 5 - 10 hours of extra work
-### In sprint planning
+### In the Sprint Planning
 
 - Supports team to recognize what work needs to be done in next sprint based on customer meeting
 - Utilizes the Miro board in the planning and documents there
 - Makes sure that the team has decided the face-to-face working days for the sprint
 
-### After sprint planning 
+### After the Sprint Planning 
 
-- Closes the milestone for previous sprint and create a new [milestone](https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/milestones)
+- Closes the milestone for previous sprint and create a new [Milestone](https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/milestones)
 - Creates a view for the new sprint in the backlog
 - Moves all the stories from the previous sprint to Accepted by customer state or back to backlog if customer did not accept
-- Sets up the sprint backlog with epics and stories needed - see [epic template](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/4?pane=issue&itemId=29332437)
+- Sets up the sprint backlog with epics and stories needed - see [Epic Template](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/4?pane=issue&itemId=29332437)
 - Makes sure that the epics and stories in the backlog are detailed enough and tagged for the new sprint with proper milestone tag
 - Makes sure that the backlog is [DEEP](https://www.romanpichler.com/blog/make-the-product-backlog-deep/)
 - Adds a story for preparing next sprint and for Pouta maintance check
 
-### During sprint
+### During the Sprint
 
 - Makes sure that things are proceeding as planned and sprint backlog is always up-to-date
 - Helps the team to remember all the needed things
 - Makes sure that dailys are kept as planned
 
-### At the end of the sprint
+### At the end of the Sprint
 
 - Creates the burndown graph and adds it to the documentation
 - Prepares and documents the retrospective [here](https://miro.com/app/board/uXjVMHY7v4k=/)
-# Role rotations
+# Role Rotations
 
 ## Start
-- chairman: Pia 
-- demo coordinator: -  
-- secretary: Juuso 
-- scrum master: Pia
+- Chairman: Pia 
+- Demo Coordinator: -  
+- Secretary: Juuso 
+- Scrum Master: Pia
 
 ## Sprint 0
-- chairman: Juuso 
-- demo coordinator: Pia
-- secretary: Sami S 
-- scrum master: Pia
+- Chairman: Juuso 
+- Demo Coordinator: Pia
+- Secretary: Sami S 
+- Scrum Master: Pia
 
 ## Sprint 1
-- chairman: Isak 
-- demo coordinator: Juuso  
-- secretary: Sami M 
-- scrum master: Pia
+- Chairman: Isak 
+- Demo Coordinator: Juuso  
+- Secretary: Sami M 
+- Scrum Master: Pia
 
 ## Sprint 2
-- chairman: Joni
-- demo coordinator: Isak
-- secretary: Pia
-- scrum master: Sami S
+- Chairman: Joni
+- Demo Coordinator: Isak
+- Secretary: Pia
+- Scrum Master: Sami S
 
 ## Sprint 3
-- chairman: Sami M
-- demo coordinator: Joni
-- secretary: Isak
-- scrum master: Pia
+- Chairman: Sami M
+- Demo Coordinator: Joni
+- Secretary: Isak
+- Scrum Master: Pia
 
 ## Sprint 4
-- chairman: Sami S
-- demo coordinator: Pia (Sami M)
-- secretary: Juuso
-- scrum master: Pia
+- Chairman: Sami S
+- Demo Coordinator: Pia (Sami M)
+- Secretary: Juuso
+- Scrum Master: Pia
 
 ## Sprint 5
-- chairman: Juuso 
-- demo coordinator: Sami M
-- secretary: Joni
-- scrum master: Pia
+- Chairman: Juuso 
+- Demo Coordinator: Sami M
+- Secretary: Joni
+- Scrum Master: Pia

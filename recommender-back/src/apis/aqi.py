@@ -7,7 +7,7 @@ from urllib.parse import urlencode
 from netCDF4 import Dataset
 from ..config import Config
 from datetime import timedelta
-from .times import get_forecast_times, forecast_q_time_to_finnish
+from .times import get_forecast_times, server_time_to_finnish
 from scipy.spatial import cKDTree
 
 
@@ -26,7 +26,7 @@ class AQI:
         self.datetimes = None
         self.coords_kdtree = None
 
-    def download_netcdf_and_store(self, forecast_q_time):
+    def download_netcdf_and_store(self):
         """Downloads netcdf file, parses it and stores the data in the object.
            The temporary file is deleted afterwards.
         """
@@ -36,7 +36,7 @@ class AQI:
             netcdf_file_name = temp_file.name
             self._download_to_file(netcdf_file_url, netcdf_file_name, 5)
             self.dataset = Dataset(netcdf_file_name)
-            self._parse_netcdf(forecast_q_time)
+            self._parse_netcdf()
 
     def _parse_xml(self):
         """Parses the fmi open data xml file
@@ -64,7 +64,7 @@ class AQI:
                 'bbox': Config.BBOX_AQI}
         return Config.FMI_QUERY_URL + Config.AQI_QUERY + "&" + urlencode(args)
 
-    def _parse_netcdf(self, forecast_q_time):
+    def _parse_netcdf(self):
         """Parses the given netcdf file
 
         Returns:
@@ -75,8 +75,7 @@ class AQI:
         times = self.dataset.variables['time'][:]
         aqi = self.dataset.variables['index_of_airquality_194'][:]
 
-        forecast_time = forecast_q_time_to_finnish(
-            forecast_q_time) + timedelta(hours=1)
+        forecast_time = server_time_to_finnish() + timedelta(hours=1)
 
         datetimes = {}
         for time in times:
@@ -107,6 +106,7 @@ class AQI:
 
         self.datetimes = datetimes
         self.dataset.close()
+
 
     def to_json(self, pois):
         """Converts the parsed netcdf data into JSON format and calculates nearest AQI values for POIs.
@@ -144,22 +144,20 @@ class AQI:
                 file_name (string): name of the file
                 max_retries (int): maximum number of retries
             """
-        for retry_attempt in range(max_retries-1):
-            try:
-                start_time = time.time()
-                print('Downloading AQI data')
-                with open(file_name, 'wb') as file:
-                    response = requests.get(url, stream=True)
-                    for chunk in response.iter_content(chunk_size=10*1024*1024):
-                        file.write(chunk)
-                    print('Finished downloading. Parsing data...')
-                    end_time = time.time()
-                    print(f'{end_time - start_time} seconds')
-                    return
-            except (requests.RequestException, ConnectionResetError) as error:
-                print(
-                    f"Download attempt {retry_attempt + 1} failed with error: {str(error)}")
-                if retry_attempt < max_retries:
-                    print('Retrying...')
-                else:
-                    print("Maximum retries reached. Download failed.")
+            for retry_attempt in range(max_retries-1):
+                try:
+                    start_time = time.time()
+                    print('Downloading AQI data')
+                    with open(file_name, 'wb') as file:
+                        response = requests.get(url, stream=True, timeout=240)
+                        for chunk in response.iter_content(chunk_size=10*1024*1024):
+                            file.write(chunk)
+                        end_time = time.time()
+                        print(f'Finished downloading in {end_time - start_time} seconds. Parsing data...')
+                        return
+                except (requests.RequestException, ConnectionResetError) as e:
+                    print(f"Download attempt {retry_attempt + 1} failed with error: {str(e)}")
+                    if retry_attempt < max_retries:
+                        print(f'Retrying...')
+                    else:
+                        print(f"Maximum retries reached. Download failed.")

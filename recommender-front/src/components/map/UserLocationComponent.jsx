@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Marker } from 'react-leaflet';
 import L from 'leaflet';
 
@@ -10,18 +10,20 @@ function UserLocationMarker({ handleSetOrigin, userPosition }) {
     iconAnchor: [16, 32],
   });
 
-  useEffect(() => {
-    if (userPosition && !userPosition.some((coord) => coord == null)) {
-      console.log('Setting origin with position:', userPosition);
-      handleSetOrigin(userPosition[0], userPosition[1]);
-    }
-  }, []);
+  const handleDragEnd = (event) => {
+    const newPosition = event.target.getLatLng();
+    handleSetOrigin(newPosition.lat, newPosition.lng);
+  };
 
   return userPosition === null ? null : (
     <Marker
       data-testid="usermarker"
       icon={placeholderMarker}
       position={userPosition}
+      draggable
+      eventHandlers={{
+        dragend: handleDragEnd,
+      }}
     />
   );
 }

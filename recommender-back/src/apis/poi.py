@@ -1,8 +1,14 @@
-import math
 from . import times
+from ..services.scoring.outdoor_scorer import OutdoorScorer
+from ..services.scoring.indoor_scorer import IndoorScorer
 
 
 class PointOfInterest:
+    INDOOR_CATEGORIES = ['Sport halls']
+    OUTDOOR_CATEGORIES = ['Open air pools and beaches',
+                          'Athletic fields and venues',
+                          'Neighbourhood sports facilities and parks']
+    
     def __init__(self, name=None, latitude=None, longitude=None, not_accessible_for=None, categories=None):
         self.sun = times.get_sun_data()
         self.name = name
@@ -13,18 +19,24 @@ class PointOfInterest:
         self.categories = categories
         self.weather = {}
         self.categorytype = None
+        self.scorers = {
+            "Indoor": IndoorScorer(),
+            "Outdoor": OutdoorScorer()
+        }
+
+    def _extract_weather_data(self, data):
+        return {
+            'wind_speed': float(data.get('Wind speed').split(' ')[0]),
+            'precipitation': float(data.get('Precipitation').split(' ')[0]),
+            'clouds': float(data.get('Cloud amount').split(' ')[0]) * 0.01,
+            'temperature': float(data.get('Air temperature').split(' ')[0]),
+            'humidity': float(data.get('Humidity').split(' ')[0]) * 0.01
+        }
 
     def calculate_score(self, cur_time=None, sunrise=None, sunset=None):
-        '''
-        Chooses which algorithm to use in scoring.
-        Must be manually handled to adjust when adding new points of interest.
-        '''
-        indoor_categories = ['Sport halls']
-        outdoor_categories = ['Open air pools and beaches',
-                              'Athletic fields and venues', 'Neighbourhood sports facilities and parks']
         if sunrise is None and sunset is None:
             sunrise, sunset = self.sun
-        
+
         sunrise_time = times.time_from_string(sunrise)
         sunset_time = times.time_from_string(sunset)
 
@@ -32,83 +44,25 @@ class PointOfInterest:
             for timeinterval, data in enumerate(self.weather.values()):
                 if cur_time is None:
                     cur_time = times.get_current_time(timeinterval)
+
                 current_time = times.time_from_string(cur_time)
-                wind_speed = float(data.get('Wind speed').split(' ')[0])
-                precipitation = float(data.get('Precipitation').split(' ')[0])
-                clouds = float(data.get('Cloud amount').split(' ')[0]) * 0.01
-                temperature = float(data.get('Air temperature').split(' ')[0])
-                humidity = float(data.get('Humidity').split(' ')[0]) * 0.01
+                weather_data = self._extract_weather_data(data)
 
-                if category in outdoor_categories:
+                scorer = None
+                if category in PointOfInterest.OUTDOOR_CATEGORIES:
                     self.categorytype = "Outdoor"
-                    data['Score'] = self._outdoor_score(temperature, wind_speed, humidity,
-                                                        precipitation, clouds, sunrise_time, sunset_time, current_time)
-                elif category in indoor_categories:
+                    scorer = self.scorers["Outdoor"]
+                elif category in PointOfInterest.INDOOR_CATEGORIES:
                     self.categorytype = "Indoor"
-                    data['Score'] = self._indoor_score(temperature, wind_speed, humidity,
-                                                       precipitation, clouds, sunrise_time, sunset_time, current_time)
+                    scorer = self.scorers["Indoor"]
 
-    def _outdoor_score(self, temperature, wind_speed, humidity, precipitation, clouds, sunrise_time, sunset_time, current_time):
-        '''
-        Calculates the score for an outdoor point of interest based on weather conditions.
+                if scorer:
+                    data['Score'] = scorer.score(
+                        weather_data['temperature'], weather_data['wind_speed'],
+                        weather_data['humidity'], weather_data['precipitation'],
+                        weather_data['clouds'], sunrise_time, sunset_time, current_time
+                    )
 
-        Returns:
-            float: The calculated score for the outdoor point of interest.
-        '''
-        precipitation_weight = 0.35
-        temperature_weight = 0.3
-        clouds_weight = 0.04
-        wind_speed_weight = 0.04
-        # Scoring
-        score = precipitation_weight * math.exp(-precipitation)
-        temperature_comp = 0
-        
-        if 20 <= temperature <= 25:
-            temperature_comp = 1
-        elif temperature < 20:
-            temperature_comp = math.exp(-0.1 * (20 - temperature))
-        else:
-            temperature_comp = math.exp(0.1 * (25 - temperature))
-        score += temperature_weight * temperature_comp
-        if sunrise_time <= current_time <= sunset_time:
-            day_time_weight = 0.2
-            score += day_time_weight
-        # score += air_weight * math.exp(0.5 * 1- air)
-        score += clouds_weight * math.exp(-clouds)
-        score += wind_speed_weight * math.exp(-wind_speed)
-        if 0.4 <= humidity <= 0.55:
-            humidity_weight = 0.02
-
-            score += humidity_weight
-        return round(score, 2)
-
-    def _indoor_score(self, temperature, wind_speed, humidity, precipitation, clouds, sunrise_time, sunset_time, current_time):
-        # Weights
-        precipitation_weight = 0.7
-        temperature_weight = 0.1
-        clouds_weight = 0.04
-        wind_speed_weight = 0.03
-        # Scoring
-        score = precipitation_weight * (1 - math.exp(-10 * precipitation))
-        temperature_comp = 0
-        if 20 <= temperature <= 25:
-            temperature_comp = 0
-        elif temperature < 20:
-            temperature_comp = 1 - math.exp(-0.04 * (20 - temperature))
-        else:
-            temperature_comp = 1 - math.exp(0.2 * (25 - temperature))
-        score += temperature_weight * temperature_comp
-        if sunrise_time <= current_time <= sunset_time:
-            day_time_weight = 0.06
-            score += day_time_weight
-        # score += air_weight * (1 - math.exp(0.5 * 1- air))
-        score += clouds_weight * (1 - math.exp(-3 * clouds))
-        score += wind_speed_weight * (1 - math.exp(-0.3 * wind_speed))
-        if humidity < 0.4 or humidity > 0.55:
-            humidity_weight = 0.02
-
-            score += humidity_weight
-        return round(score, 2)
 
     def set_simulated_weather(self, air_temperature, wind_speed, humidity,
                               precipitation, cloud_amount, air_quality):
@@ -132,4 +86,5 @@ class PointOfInterest:
         '''
         return {'name': self.name, 'weather': self.weather,
                 'latitude': self.latitude, 'longitude': self.longitude,
-                'category': self.categories[-1], 'catetype': self.categorytype}
+                'category': self.categories[-1], 'catetype': self.categorytype,
+                'not_accessible_for': self.not_accessible_for}

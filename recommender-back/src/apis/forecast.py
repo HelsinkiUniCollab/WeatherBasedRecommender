@@ -29,7 +29,6 @@ class Forecast:
             self.parse_forecast_data()
             self.update_forecast_properties()
 
-        return current
 
     def get_latest_forecast(self, start, end):
         """
@@ -134,7 +133,7 @@ class Forecast:
         unique_coords = set(flattened_coords)
         return list(unique_coords)
 
-    def get_closest_poi_coordinates_data(self, pois, aqi_data):
+    def get_closest_poi_coordinates_data(self, pois):
         """
         Finds the nearest coordinates forecast data for all of the POI's coordinates.
 
@@ -159,12 +158,6 @@ class Forecast:
                     returned_data[hour][
                         f"{poi_coord[0]}, {poi_coord[1]}"
                     ] = self.parse_forecast(forecast)
-
-        if aqi_data:
-            for datetime, poi_coords in aqi_data.items():
-                for poi_coord, air_quality in poi_coords.items():
-                    aqi_value = air_quality['Air Quality Index']
-                    returned_data[datetime][poi_coord]['Air quality'] = f'{aqi_value} AQI'
 
         return returned_data
 

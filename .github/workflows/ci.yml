@@ -67,7 +67,7 @@ jobs:
         run: |
           cd recommender-front && npm test -- --coverage
 
-      - name: Coverage report to codecov
+      - name: Coverage report to Codecov
         run: |
           bash <(curl -s https://codecov.io/bash)
 
