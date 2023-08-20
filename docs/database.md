@@ -14,7 +14,7 @@ There are two Atlas accounts in use, **development** and **production**. Refer t
 
 To access the databases, you need credentials. The username for both databases is `helsinkiunicollab`. Please ask a team member for the respective passwords.
 
-To securely store the passwords, add them to as environment variables DEVELOPMENT_DB_URI and MONGO_URI in an `.env` file in the project root directory. You can do that using the script, instructions given in the [README.md](/README.md).
+To securely store the passwords, add them to as environment variable `DEVELOPMENT_DB_URI` in an `.env` file in the project root directory. You can do that using the script, instructions given in the [README.md](/README.md).
 
 ## Cluster and IP Restrictions
 
