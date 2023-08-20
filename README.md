@@ -18,23 +18,24 @@ Application can be accessed here: [Weather-Based Recommender](http://128.214.253
 # Give permissions for a script to specify the backend URL
 $ chmod +x generate_local_env.sh
 
-# Replace the ellipsis inside the single quotes with your MongoDB development URL and run the script
+# Replace the ellipsis inside the single quotes with your MongoDB development URL
 $ ./generate_local_env.sh '...' 
 
 # Start the frontend and backend services on ports 5000 and 3000, respectively
 $ docker compose up
 ```
 
-To run the frontend and backend services individually, refer to the instructions provided in the [frontend](/recommender-front/README.md) and [backend](/recommender-back/README.md) README's respectively.
+To get the MongoDB development URL, read more [here](/docs/database.md). To run the frontend and backend services individually, refer to the instructions provided in the [frontend](/recommender-front/README.md) and [backend](/recommender-back/README.md) README's respectively.
 
 ## Documentation
 
+* [CI/CD Pipeline](/docs/ci-cd.md)
 * [Working hours](/docs/hours.md)
 * [Team roles](/docs/roles.md)
 * [Definition of Done](/docs/dod.md)
 * [Git Workflow](/docs/git-workflow.md)
 * [Production Environment](/docs/pouta.md)
-* [CI/CD Pipeline](/docs/ci-cd.md)
+* [Databases](/docs/database.md)
 * [Code Quality](/docs/code_quality.md)
 
 ### Backlogs 
