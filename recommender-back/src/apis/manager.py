@@ -1,10 +1,9 @@
-import os
 import json
-import requests
 from requests import Timeout
 from .current import Current
 from .poi import PointOfInterest
 from ..services.data_fetcher import DataFetcher
+from ..services.api_fetcher import InternalApiService
 from ..db.db import get_collection
 
 def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
@@ -33,7 +32,7 @@ def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
         return {"message": "Forecast timed out", "status": 500, "error": str(error)}
 
 
-def get_pois_as_json(accessibility=False, category="All"):
+def get_pois_as_json(category="All"):
     """
     Retrieves points of interest (POIs) from MongoDB and enriches them with current weather data.
 
@@ -47,16 +46,10 @@ def get_pois_as_json(accessibility=False, category="All"):
         pois = get_pois()
         weather_fetcher = DataFetcher()
         current = Current(weather_fetcher)
-        url_fore = os.environ.get("REACT_APP_BACKEND_URL") + "/api/forecast"
-        response_fore = requests.get(url_fore, timeout=1200)
-        response_fore.raise_for_status()
-        forecast_data = response_fore.json()
-        url_aqi = os.environ.get("REACT_APP_BACKEND_URL") + "/api/aqi/"
-        response_aqi = requests.get(url_aqi, timeout=1200)
-        response_aqi.raise_for_status()
-        aqi_data = response_aqi.json()
-        aqi_data = _replace_datetime_in_aqi_data(forecast_data, aqi_data)
-        forecast_data = _add_aqi_to_forecast(forecast_data, aqi_data)
+        forecast_data = InternalApiService.fetch_forecast()
+        #aqi_data = InternalApiService.fetch_aqi()
+        #aqi_data = _replace_datetime_in_aqi_data(forecast_data, aqi_data)
+        #forecast_data = _add_aqi_to_forecast(forecast_data, aqi_data)
         updated_data = []
         for poi in pois:
             if category not in poi.categories:
