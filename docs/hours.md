@@ -106,7 +106,7 @@
 | Sami S. | -            | 2 meeting             | -               | 4.5 catching up, more react, greenpath troubleshooting               | 2 AQI review, greenpath            | 5 learning react-leaflet testing, troubleshooting clustering             | 4 trying to fix clustering/tests..           | 17.5     |
 | Sami M. | -            | -             | 9 aqi fixing and suggestions...               | 2 greenpath test fixing, research location stuff              | 3 greenpath clustering bug hunt            | -             | 2 rework selector           | 16     |
 | Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | 3 on-boarding Denis            | 0.5 daily            | -             | 3 aqi, mongo           | 9.5     |
-| Joni    | 1            | 2 meeting     | 3 simulator pr  | 5 frontend filtering + tests | 2 AQI review  | -             | -           | -     |
+| Joni    | 1            | 2 meeting     | 3 simulator pr  | 5 frontend filtering + tests | 2 AQI review  | -             | accessibility 2 | 15    |
 
 |         | Monday 14.8. | Tuesday 15.8. | Wednesday 16.8. | Thursday 17.8. | Friday 18.8. | Saturday 19.8. | Sunday 20.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
@@ -115,7 +115,7 @@
 | Sami S. | 4.5 greenpath cluster fixing            | 3.5 greenpath test fixing             | 5 greenpath tests (axios mocking proved to be quite difficult)               | 1 daily              | 2 cypress fix, pull req            | 2 greenpath fixing..             | 2 greenpath troubleshooting           | 20     |
 | Sami M. | 0.5 daily            | 5 rework aqi             | -               | 1 daily              | 5 try cachtools for aqi, fix mongo issues            | 5 bug hunting, prs, aqi fixed finally? :D             | 1 daily, prs           | 17.5     |
 | Pia     | 0.5 daily            | -             | -               | 1 daily              | -            | -             | 5 mongo, daily, pouta           | 6.5     |
-| Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
+| Joni    | 0.5 daily    | -             | -               | 1 daily        | 4 accessibility + docker   | 4 cypress     | 5 poi refactor, daily | 14.5     |
 
 |         | Monday 21.8. | Tuesday 22.8. | Wednesday 23.8. | Thursday 24.8. | Friday 25.8. | Saturday 26.8. | Sunday 27.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
