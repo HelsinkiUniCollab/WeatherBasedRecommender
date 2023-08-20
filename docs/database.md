@@ -1,20 +1,20 @@
 # Databases
 
-Mongo DB Atlas is used for storing basic information (name, longitude, latitude, categories and accessibility) about Point of Interests (POIs). If database is lost, the POIS are recovered automatically from a static json file. 
+Mongo DB Atlas is used for storing basic information (name, longitude, latitude, categories and accessibility) about the Point of Interests (POI's). If database is lost, the POI's are recovered automatically from a static JSON file. 
 
-There are two Atlas accounts in use: **development** and **production**.
+There are two Atlas accounts in use, **development** and **production**. Refer to a team member for the password, connection strings for those accounts are:
 
 - **Development**
-  - Connection String: `mongodb+srv://helsinkiunicollab:<password>@development.qebxr8j.mongodb.net/?retryWrites=true&w=majority`
+  - `mongodb+srv://helsinkiunicollab:<password>@development.qebxr8j.mongodb.net/?retryWrites=true&w=majority`
 
 - **Production**
-  - Connection String: `mongodb+srv://helsinkiunicollab:<password>@production.djrvu6z.mongodb.net/?retryWrites=true&w=majority`
+  - `mongodb+srv://helsinkiunicollab:<password>@production.djrvu6z.mongodb.net/?retryWrites=true&w=majority`
 
 ## Accessing the Databases
 
 To access the databases, you need credentials. The username for both databases is `helsinkiunicollab`. Please ask a team member for the respective passwords.
 
-To securely store the passwords, add them to as environment variables DEVELOPMENT_DB_URI and MONGO_URI in an `.env` file in the project root directory. 
+To securely store the passwords, add them to as environment variable `DEVELOPMENT_DB_URI` in an `.env` file in the project root directory. You can do that using the script, instructions given in the [README.md](/README.md).
 
 ## Cluster and IP Restrictions
 
@@ -24,7 +24,7 @@ There are no IP restrictions on the clusters, so they can be accessed from any I
 
 ## MongoDB Atlas Admin Access
 
-For administrative access to each database on MongoDB Atlas, an account connected helsinkiunicollab(a)gmail.com. Please reach out to obtain the necessary credentials if needed. These credentials are not the same the databases use.
+For administrative access to each database on MongoDB Atlas an email account is needed. Reach out to a team member to obtain the necessary credentials. These credentials are not the same the databases use.
 
 ## PyMongo
 

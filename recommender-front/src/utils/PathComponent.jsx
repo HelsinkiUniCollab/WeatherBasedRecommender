@@ -10,8 +10,7 @@ function PathUtil({ origin, destination, setRouteCoordinates }) {
           end: destination.join(','),
         },
       });
-      const coords = response.data.map((coord) => [coord[1], coord[0]]);
-      await setRouteCoordinates(coords);
+      await setRouteCoordinates(response.data);
       console.log('Success!');
     } catch (error) {
       console.error('Error sending coordinates:', error);
