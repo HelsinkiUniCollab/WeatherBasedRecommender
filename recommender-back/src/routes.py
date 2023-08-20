@@ -41,7 +41,7 @@ def get_forecast():
     return result
 
 
-@app.route("/api/aqi/", methods=["GET"])
+@app.route("/api/aqi", methods=["GET"])
 @cache.cached(timeout=Config.AQI_CACHE_TO)
 def get_aqi_forecast():
     """
