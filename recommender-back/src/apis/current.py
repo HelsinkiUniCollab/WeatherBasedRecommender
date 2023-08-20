@@ -72,7 +72,7 @@ class Current:
 
     def parse_latest_aqi_data(self, raw_aqi_data: dict):
         '''
-        Finds latest aqi value and coordinates that is not nan for each station.
+        Finds latest AQI value and coordinates that is not 'nan' for each station.
 
         Returns:
             dict: A dictionary containing stations and their aqi and coordinates.
@@ -80,7 +80,8 @@ class Current:
         latest_aqi_data = {}
         for station, metadata in raw_aqi_data.location_metadata.items():
             values = raw_aqi_data.data[station]['AQINDEX_PT1H_avg']['values']
-            latest_aqi_value = next((v for v in reversed(values) if not math.isnan(v)), 'nan')
+            latest_aqi_value = next(
+                (v for v in reversed(values) if not math.isnan(v)), 'nan')
             if latest_aqi_value == 'nan':
                 continue
             aqi = {

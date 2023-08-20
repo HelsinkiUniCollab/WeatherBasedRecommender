@@ -20,7 +20,7 @@ class Forecast:
         Fetches the latest data and updates class properties if new data is available.
         """
         current, start, end = get_forecast_times()
-        print(f"Query for the new Grid object at time: {current} UTC")
+        print(f"Query for the new Grid object at time: {current} UTC.")
         forecast_data = self.get_latest_forecast(start, end)
 
         latest_forecast = max(forecast_data.data.keys())
@@ -60,17 +60,21 @@ class Forecast:
                 print(f"Error during parsing: {error}")
                 if attempt < max_retries - 1:
                     time.sleep(retry_delay)
-                    print(f"Retrying parsing ({attempt + 1} out of {max_retries})...")
+                    print(
+                        f"Retrying parsing ({attempt + 1} out of {max_retries})...")
                 else:
-                    print(f"Parsing failed after {max_retries} attempts due to {type(error).__name__}.")
+                    print(
+                        f"Parsing failed after {max_retries} attempts due to {type(error).__name__}.")
                     raise
-            except Exception as error:  # Generic exception handler
+            except Exception as error:
                 print(f"Unexpected error during parsing: {error}")
                 if attempt < max_retries - 1:
                     time.sleep(retry_delay)
-                    print(f"Retrying parsing ({attempt + 1} out of {max_retries})...")
+                    print(
+                        f"Retrying parsing ({attempt + 1} out of {max_retries})...")
                 else:
-                    print(f"Parsing failed after {max_retries} attempts due to unexpected error.")
+                    print(
+                        f"Parsing failed after {max_retries} attempts due to unexpected error.")
                     raise
 
     def update_forecast_properties(self):
@@ -80,7 +84,8 @@ class Forecast:
         self.valid_times = self.data.data.keys()
         earliest_step = min(self.valid_times)
         self.data_levels = self.data.data[earliest_step].keys()
-        self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
+        self.coordinates = np.dstack(
+            (self.data.latitudes, self.data.longitudes))
 
     def get_data(self):
         """
@@ -108,7 +113,8 @@ class Forecast:
                         if key not in coordinates_data:
                             coordinates_data[key] = []
                         coordinates_data[key].append(
-                            {"Dataset": dataset_name, "Unit": unit, "Data": data_value}
+                            {"Dataset": dataset_name,
+                                "Unit": unit, "Data": data_value}
                         )
             data[time_str] = coordinates_data
         return data
@@ -139,7 +145,8 @@ class Forecast:
         """
         data = self.get_data()
         coordinates = self.get_coordinates()
-        closest_coordinates_fore = self.calculate_shortest_weather(pois, coordinates)
+        closest_coordinates_fore = self.calculate_shortest_weather(
+            pois, coordinates)
 
         returned_data = {hour: {} for hour in data}
 
@@ -159,10 +166,10 @@ class Forecast:
         Parses the desired data from the forecast grid.
 
         Args:
-            forecast (list): List of forecast data.
+            forecast (list): List of Forecast data.
 
         Returns:
-            dict: A dictionary containing the parsed forecast data.
+            dict: A dictionary containing the parsed Forecast data.
         """
         for value in forecast:
             if value["Dataset"] == "2 metre temperature":
@@ -205,14 +212,14 @@ class Forecast:
         return round(wind_speed, 1)
 
     def calculate_shortest_weather(self, pois, fore_coordinates):
-        """Calculates the nearest weather forecast data for a given poi
+        """Calculates the nearest weather forecast data for a given POI.
 
         Args:
             pois (list): List of POI objects.
             fore_coordinates (list): List of weather forecast coordinates as tuples
 
         Returns:
-            list: a list containing pois and their nearest forecast weather coordinate
+            list: a list containing POI's and their nearest forecast weather coordinate.
         """
         closest_coordinates = {}
         for poi in pois:

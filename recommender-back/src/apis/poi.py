@@ -8,7 +8,7 @@ class PointOfInterest:
     OUTDOOR_CATEGORIES = ['Open air pools and beaches',
                           'Athletic fields and venues',
                           'Neighbourhood sports facilities and parks']
-    
+
     def __init__(self, name=None, latitude=None, longitude=None, not_accessible_for=None, categories=None):
         self.sun = times.get_sun_data()
         self.name = name
@@ -34,6 +34,20 @@ class PointOfInterest:
         }
 
     def calculate_score(self, cur_time=None, sunrise=None, sunset=None):
+        """
+        Calculates a score for the Point of Interest based on weather and time.
+
+        Args:
+            cur_time (str, optional): Current time (HH:MM). Defaults to None.
+            sunrise (str, optional): Sunrise time (HH:MM). Defaults to None.
+            sunset (str, optional): Sunset time (HH:MM). Defaults to None.
+
+        Returns:
+            None
+
+        Calculates scores based on weather and time for the POI's categories.
+        The calculated scores are added to the POI's weather data.
+        """
         if sunrise is None and sunset is None:
             sunrise, sunset = self.sun
 
@@ -63,12 +77,23 @@ class PointOfInterest:
                         weather_data['clouds'], sunrise_time, sunset_time, current_time
                     )
 
-
     def set_simulated_weather(self, air_temperature, wind_speed, humidity,
                               precipitation, cloud_amount, air_quality):
-        '''
-        Sets simulated weather data to test score calculations.
-        '''
+        """
+        Sets simulated weather data for testing score calculations.
+
+        Args:
+            air_temperature (float): Simulated air temperature in Celsius.
+            wind_speed (float): Simulated wind speed in meters per second.
+            humidity (float): Simulated humidity level in percentage.
+            precipitation (float): Simulated precipitation amount in millimeters.
+            cloud_amount (float): Simulated cloud coverage in percentage.
+            air_quality (str): Simulated air quality information.
+
+        This method sets simulated weather data for the Point of Interest (POI) to facilitate testing
+        the score calculation functionality.
+        """
+        
         self.weather = {
             "Weather": {
                 "Air temperature": f"{air_temperature} °C",
@@ -81,9 +106,12 @@ class PointOfInterest:
         }
 
     def get_json(self):
-        '''
-        Returns a JSON representation of the POI.
-        '''
+        """
+        Returns a JSON representation of the Point of Interest.
+
+        Returns:
+            dict: A dictionary containing the POI's information in JSON format.
+        """
         return {'name': self.name, 'weather': self.weather,
                 'latitude': self.latitude, 'longitude': self.longitude,
                 'category': self.categories[-1], 'catetype': self.categorytype,

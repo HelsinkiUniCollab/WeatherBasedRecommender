@@ -9,7 +9,6 @@ import MapComponent from './components/map/MapComponent';
 import HeaderComponent from './components/header/HeaderComponent';
 import PathUtil from './utils/PathComponent';
 import SimulatorPage from './pages/SimulatorPage';
-import PreferenceSelector from './components/selector/PreferenceSelector';
 import 'leaflet/dist/leaflet.css';
 import '@fontsource/roboto/300.css';
 import theme from './assets/theme';
@@ -56,12 +55,10 @@ function App() {
 
   const handleSetOrigin = (latitude, longitude) => {
     setUserPosition([latitude, longitude]);
-    console.log('Setting origin:', latitude, longitude);
   };
 
   const handleSetDestination = (latitude, longitude) => {
     setDestination([latitude, longitude]);
-    console.log('Setting destination', latitude, longitude);
   };
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -95,7 +92,7 @@ function App() {
         filterPoiData(poi, accessibility, selectedCategories);
       }
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error fetching the Point of Interests: ', error);
     }
   }
 
@@ -157,6 +154,8 @@ function App() {
                       handleClose={handleClose}
                       isMobile={isMobile}
                       poiData={poiData}
+                      selectedCategories={selectedCategories}
+                      setSelectedCategories={setSelectedCategories}
                     />
                   </Grid>
                   <Grid
@@ -175,10 +174,6 @@ function App() {
                       handleSetDestination={handleSetDestination}
                       routeCoordinates={routeCoordinates}
                       toggleHeader={toggleHeader}
-                    />
-                    <PreferenceSelector
-                      selectedCategories={selectedCategories}
-                      onCategoryChange={setSelectedCategories}
                     />
                   </Grid>
                 </Grid>

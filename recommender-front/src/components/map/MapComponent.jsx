@@ -53,7 +53,6 @@ function MapComponent({
           time={time}
           handleSetDestination={handleSetDestination}
         />
-        {console.log('Here are the coordinates.', routeCoordinates)}
         {routeCoordinates && (
           <Polyline data-testid="map-polyline" positions={routeCoordinates} />
         )}

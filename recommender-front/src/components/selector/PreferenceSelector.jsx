@@ -48,7 +48,7 @@ function PreferenceSelector({ selectedCategories, onCategoryChange }) {
       >
         <MenuIcon />
       </IconButton>
-      <Typography variant="h6">Activity category</Typography>
+      <Typography variant="h6">Categories</Typography>
       <Menu
         id="category-menu"
         anchorEl={anchorEl}

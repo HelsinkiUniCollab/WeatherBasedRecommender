@@ -11,6 +11,7 @@ from .services.data_fetcher import DataFetcher
 
 weather_fetcher = DataFetcher()
 
+
 @app.route("/", methods=["GET"])
 def index():
     """
@@ -47,7 +48,7 @@ def get_aqi_forecast():
     Handler for the '/api/aqi' endpoint. Caching 24 hours.
 
     Returns:
-        string: Aqi forecast for the POI's in json format
+        string: AQI forecast for the POI's in JSON format
     """
     aqi = AQI()
     aqi.download_netcdf_and_store()
@@ -62,7 +63,7 @@ def get_poi_data():
     Handler for the '/api/poi' endpoint.
 
     Returns:
-        Poi data if errors have not occurred.
+        POI's data if errors have not occurred.
     """
     return manager.get_pois_as_json()
     
@@ -74,7 +75,7 @@ def get_simulated_poi_data():
     Handler for the '/api/poi' endpoint.
 
     Returns:
-        Poi data if errors have not occurred.
+        POI's data if errors have not occurred.
     """
     data = request.get_json()
     air_temperature = data.get('air_temperature')
@@ -131,6 +132,7 @@ def get_path():
         coords = [[coord[1], coord[0]] for coord in route_coordinates]
         return json.dumps(coords)
     return jsonify({"error": "Could not fetch route data"}), 500
+
 
 @app.errorhandler(404)
 def not_found_error(error):
