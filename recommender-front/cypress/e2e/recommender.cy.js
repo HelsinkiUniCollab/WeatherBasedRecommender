@@ -1,8 +1,9 @@
-import mockPOIS from '../mockData';
+import mockPOIs from '../mockData';
+import mockROUTE from '../mockRoute';
 
 describe('Map and POI features', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://localhost:5000/api/poi/', mockPOIS);
+    cy.intercept('GET', 'http://localhost:5000/api/poi', mockPOIs);
     cy.intercept('GET', 'http://localhost:5000/api/warning', JSON.stringify(false));
     cy.visit('');
   });
@@ -13,19 +14,19 @@ describe('Map and POI features', () => {
 
   it('should display all POI markers on initial load', () => {
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
-      .should('have.length', mockPOIS.length);
+      .should('have.length', mockPOIs.length);
   });
 
   it('should display clustered markers correctly', () => {
     // Create a copy of the mock POI data
-    const clusteredMockPOIs = JSON.parse(JSON.stringify(mockPOIS));
+    const clusteredMockPOIs = JSON.parse(JSON.stringify(mockPOIs));
     // Move one POI closer to another so they are clustered
     clusteredMockPOIs[0].latitude = 60.190;
-    cy.intercept('GET', 'http://localhost:5000/api/poi/', clusteredMockPOIs);
+    cy.intercept('GET', 'http://localhost:5000/api/poi', clusteredMockPOIs);
     cy.visit('');
 
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
-      .should('have.length', mockPOIS.length - 1);
+      .should('have.length', mockPOIs.length - 1);
   });
 
   it('should update the popup content when the time slider is moved', () => {
@@ -49,12 +50,12 @@ describe('Map and POI features', () => {
   });
 
   it('should update amount of markers when accessibility is selected', () => {
-    const wheelChairMockData = mockPOIS.slice(-1);
-    cy.intercept('GET', 'http://localhost:5000/api/poi/wheelchair', wheelChairMockData);
+    const filteredMockPOIs = mockPOIs.filter((poi) => !poi.not_accessible_for.includes('wheelchair'));
+
     cy.get('.MuiSelect-select').click();
     cy.get('[data-value="wheelchair"]').click();
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
-      .should('have.length', wheelChairMockData.length);
+      .should('have.length', filteredMockPOIs.length);
   });
 
   it('should show the weather alert when /api/warning returns true', () => {
@@ -121,7 +122,7 @@ describe('TimePickerComponent', () => {
 
 describe('PreferenceSelector component', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://localhost:5000/api/poi/', mockPOIS);
+    cy.intercept('GET', 'http://localhost:5000/api/poi', mockPOIs);
     cy.intercept('GET', 'http://localhost:5000/api/warning', JSON.stringify(false));
     cy.visit('');
   });
@@ -131,30 +132,71 @@ describe('PreferenceSelector component', () => {
   });
 
   it('should deselect the "All" checkbox when another category is selected', () => {
+    cy.get('[data-testid="menu-button"]').click();
     cy.get('input[name="Sport hallsCheckbox"]').check();
-    cy.get('input[name="allCheckbox"]').should('not.be.checked');
+    cy.get('input[name="allCheckbox"]').should('be.not.be.checked');
   });
 
   it('should show only Sport halls markers when the "Sport halls" category is selected', () => {
-    const sportHallsMockData = mockPOIS.filter((poi) => poi.category === 'Sport halls');
+    const sportHallsMockData = mockPOIs.filter((poi) => poi.category === 'Sport halls');
 
+    cy.get('[data-testid="menu-button"]').click();
     cy.get('input[name="Sport hallsCheckbox"]').check();
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
       .should('have.length', sportHallsMockData.length);
   });
 
   it('should select the "All" checkbox and deselect others when "All" is selected', () => {
+    cy.get('[data-testid="menu-button"]').click();
     cy.get('input[name="Sport hallsCheckbox"]').check();
     cy.get('input[name="allCheckbox"]').check();
-
     cy.get('input[name="Sport hallsCheckbox"]').should('not.be.checked');
     cy.get('input[name="allCheckbox"]').should('be.checked');
   });
 
   it('should show all markers when the "All" category is re-selected', () => {
+    cy.get('[data-testid="menu-button"]').click();
     cy.get('input[name="Sport hallsCheckbox"]').check();
     cy.get('input[name="allCheckbox"]').check();
     cy.get('.leaflet-marker-icon', { timeout: 10000 })
-      .should('have.length', mockPOIS.length);
+      .should('have.length', mockPOIs.length);
+  });
+
+  it('should show only Sport halls and wheelchair accessible markers when both filters are selected', () => {
+    const filteredMockPOIs = mockPOIs.filter((poi) => !poi.not_accessible_for.includes('wheelchair')
+      && poi.category === 'sport halls');
+
+    cy.get('[data-testid="menu-button"]').click();
+    cy.get('input[name="Sport hallsCheckbox"]').check();
+    cy.get('button[aria-label="Close"]').click();
+
+    cy.get('.MuiSelect-select').click();
+    cy.get('[data-value="wheelchair"]').click();
+
+    cy.get('.leaflet-marker-icon', { timeout: 10000 })
+      .should('have.length', filteredMockPOIs.length);
+  });
+});
+
+describe('User location and routing feature', () => {
+  const latitude = 60.169520;
+  const longitude = 24.935450;
+
+  beforeEach(() => {
+    cy.intercept('GET', 'http://localhost:5000/api/poi', mockPOIs);
+    cy.intercept('GET', 'http://localhost:5000/api/warning', JSON.stringify(false));
+    cy.window().then((win) => {
+      cy.stub(win.navigator.geolocation, 'getCurrentPosition', (callback) => callback({ coords: { latitude, longitude } }));
+    });
+    cy.visit('');
+  });
+
+  it('should locate the user, open a POI and set a destination, draw the polyline', () => {
+    cy.get('[data-testid="locate-button"]').should('be.visible').click();
+    cy.get('.leaflet-marker-icon').eq(1).click();
+    cy.get('.leaflet-popup-content');
+    cy.intercept('GET', '**/path?start=*&end=*', { body: mockROUTE }).as('getRoute');
+    cy.get('[data-cy="set-destination-button"]').click();
+    cy.get('#map').find('path.leaflet-interactive').should('exist');
   });
 });

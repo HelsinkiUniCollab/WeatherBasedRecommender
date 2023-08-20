@@ -1,6 +1,8 @@
 # Databases
 
-Mongo DB Atlas is used for storing basic information (name, longitude, latitude, categories and accessibility) about Point of Interests (POIs). If database is lost, the POIS are recovered automatically from a static json file. There are to Atlas accounts in use: **development** and **production**.
+Mongo DB Atlas is used for storing basic information (name, longitude, latitude, categories and accessibility) about Point of Interests (POIs). If database is lost, the POIS are recovered automatically from a static json file. 
+
+There are two Atlas accounts in use: **development** and **production**.
 
 - **Development**
   - Connection String: `mongodb+srv://helsinkiunicollab:<password>@development.qebxr8j.mongodb.net/?retryWrites=true&w=majority`
@@ -12,7 +14,7 @@ Mongo DB Atlas is used for storing basic information (name, longitude, latitude,
 
 To access the databases, you need credentials. The username for both databases is `helsinkiunicollab`. Please ask a team member for the respective passwords.
 
-To securely store the passwords, add them to as environment variables DEVELOPMENT_DB_URI and PRODUCTION_DB_URI in an `.env` file in the project root directory. 
+To securely store the passwords, add them to as environment variables DEVELOPMENT_DB_URI and MONGO_URI in an `.env` file in the project root directory. 
 
 ## Cluster and IP Restrictions
 
@@ -22,7 +24,7 @@ There are no IP restrictions on the clusters, so they can be accessed from any I
 
 ## MongoDB Atlas Admin Access
 
-For administrative access to each database on MongoDB Atlas, an account connected to Pia's email is used. Please reach out to obtain the necessary credentials if needed. These credentials are not the same the databases use.
+For administrative access to each database on MongoDB Atlas, an account connected helsinkiunicollab(a)gmail.com. Please reach out to obtain the necessary credentials if needed. These credentials are not the same the databases use.
 
 ## PyMongo
 

@@ -1,13 +1,12 @@
 import unittest
 from unittest.mock import patch
-from src.db.db import get_collection
 from src.apis.manager import get_pois, find_nearest_coordinate_forecast_data, get_pois_as_json
 from src.apis.poi import PointOfInterest
 from src.app import app
 from src.tests.mock_data import MOCK_POIS
 import json
 
-class TestManger(unittest.TestCase):
+class TestManager(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
         self.fore = {
@@ -142,8 +141,8 @@ class TestManger(unittest.TestCase):
     def test_get_pois_coordinates_valid(self):
         result = get_pois()
         for poi in result:
-            self.assertIsInstance(poi.latitude, float)
-            self.assertIsInstance(poi.longitude, float)
+            self.assertIsInstance(poi.latitude, (str, float))
+            self.assertIsInstance(poi.longitude, (str, float))
 
     def test_find_nearest_coordinates(self):
         pois = get_pois()

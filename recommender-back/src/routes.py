@@ -1,6 +1,8 @@
 import json
+from .config import Config
 from flask import jsonify, request
 from .app import app, cache
+from .apis.aqi import AQI
 from .apis.forecast import Forecast
 from .apis.current import Current
 from .apis.pathing import GreenPathsAPI
@@ -8,7 +10,6 @@ from .apis import manager
 from .services.data_fetcher import DataFetcher
 
 weather_fetcher = DataFetcher()
-
 
 @app.route("/", methods=["GET"])
 def index():
@@ -27,7 +28,7 @@ def index():
 @cache.cached()
 def get_forecast():
     """
-    Handler for the '/api/forecast' endpoint.
+    Handler for the '/api/forecast' endpoint. Caching 1 hour.
 
     Returns:
         Forecast for the POI's.
@@ -36,7 +37,25 @@ def get_forecast():
     forecast.update_data()
     pois = manager.get_pois()
     poi_forecast = forecast.get_closest_poi_coordinates_data(pois)
-    return json.dumps(poi_forecast)
+    result = json.dumps(poi_forecast)
+    return result
+
+
+@app.route("/api/aqi/", methods=["GET"])
+@cache.cached(timeout=Config.AQI_CACHE_TO)
+def get_aqi_forecast():
+    """
+    Handler for the '/api/aqi' endpoint. Caching 24 hours.
+
+    Returns:
+        string: Aqi forecast for the POI's in json format
+    """
+    aqi = AQI()
+    aqi.download_netcdf_and_store()
+    pois = manager.get_pois()
+    aqi_data = aqi.to_json(pois)
+    result = json.dumps(aqi_data)
+    return result
 
 
 @app.route("/api/poi/", methods=["GET"])
@@ -48,17 +67,7 @@ def get_poi_data():
         Poi data if errors have not occurred.
     """
     return manager.get_pois_as_json()
-
-
-@app.route("/api/poi/<accessibility>", methods=["GET"])
-def get_poi_acessible_poi_data(accessibility):
-    """
-    Handler for the '/api/poi' endpoint.
-
-    Returns:
-        POI-data if errors have not occurred.
-    """
-    return manager.get_pois_as_json(accessibility)
+    
 
 
 @app.route("/api/simulator", methods=["POST"])
@@ -99,7 +108,7 @@ def get_weather_warning():
     return jsonify(warning)
 
 
-@app.route('/api/path', methods=['GET'])
+@app.route('/path', methods=['GET'])
 def get_path():
     """
     Handler for the '/api/path' endpoint.
@@ -123,7 +132,6 @@ def get_path():
     if route_coordinates := green_paths.route_coordinates:
         return jsonify(route_coordinates), 200
     return jsonify({"error": "Could not fetch route data"}), 500
-
 
 @app.errorhandler(404)
 def not_found_error(error):

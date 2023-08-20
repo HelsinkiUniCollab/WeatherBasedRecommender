@@ -22,12 +22,13 @@ class Forecast:
         current, start, end = get_forecast_times()
         print(f"Query for the new Grid object at time: {current} UTC")
         forecast_data = self.get_latest_forecast(start, end)
-        
+
         latest_forecast = max(forecast_data.data.keys())
         if not self.data or latest_forecast > max(self.data.keys()):
             self.data = forecast_data.data[latest_forecast]
             self.parse_forecast_data()
             self.update_forecast_properties()
+
 
     def get_latest_forecast(self, start, end):
         """
@@ -79,7 +80,6 @@ class Forecast:
         self.valid_times = self.data.data.keys()
         earliest_step = min(self.valid_times)
         self.data_levels = self.data.data[earliest_step].keys()
-        self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
         self.coordinates = np.dstack((self.data.latitudes, self.data.longitudes))
 
     def get_data(self):
@@ -139,28 +139,19 @@ class Forecast:
         """
         data = self.get_data()
         coordinates = self.get_coordinates()
+        closest_coordinates_fore = self.calculate_shortest_weather(pois, coordinates)
+
         returned_data = {hour: {} for hour in data}
-        closest_coordinates = {}
-        for poi in pois:
-            smallest = float("inf")
-            nearest = []
-            lat = poi.latitude
-            lon = poi.longitude
-            for coordinate in coordinates:
-                dist = abs(coordinate[0] - lat) + abs(coordinate[1] - lon)
-                if dist < smallest:
-                    smallest = dist
-                    nearest = [coordinate[0], coordinate[1]]
-            closest_coordinates[(lat, lon)] = nearest
 
         for hour, hour_data in data.items():
-            for poi_coord, nearest in closest_coordinates.items():
+            for poi_coord, nearest in closest_coordinates_fore.items():
                 nearest_str = f"({nearest[0]}, {nearest[1]})"
                 if nearest_str in hour_data:
                     forecast = hour_data[nearest_str]
                     returned_data[hour][
                         f"{poi_coord[0]}, {poi_coord[1]}"
                     ] = self.parse_forecast(forecast)
+
         return returned_data
 
     def parse_forecast(self, forecast):
@@ -212,3 +203,27 @@ class Forecast:
         wind_direction = math.atan2(u_wind, v_wind) * (180 / math.pi)
         wind_direction = (wind_direction + 360) % 360
         return round(wind_speed, 1)
+
+    def calculate_shortest_weather(self, pois, fore_coordinates):
+        """Calculates the nearest weather forecast data for a given poi
+
+        Args:
+            pois (list): List of POI objects.
+            fore_coordinates (list): List of weather forecast coordinates as tuples
+
+        Returns:
+            list: a list containing pois and their nearest forecast weather coordinate
+        """
+        closest_coordinates = {}
+        for poi in pois:
+            smallest = float("inf")
+            nearest = []
+            lat = float(poi.latitude)
+            lon = float(poi.longitude)
+            for coordinate in fore_coordinates:
+                dist = abs(coordinate[0] - lat) + abs(coordinate[1] - lon)
+                if dist < smallest:
+                    smallest = dist
+                    nearest = [coordinate[0], coordinate[1]]
+            closest_coordinates[(lat, lon)] = nearest
+        return closest_coordinates

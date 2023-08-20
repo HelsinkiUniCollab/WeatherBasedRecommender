@@ -6,7 +6,6 @@ from .current import Current
 from .poi import PointOfInterest
 from ..services.data_fetcher import DataFetcher
 from ..db.db import get_collection
-from ..services.poi_init import init_pois
 
 def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
                                               precipitation, cloud_amount, air_quality, current_time, sunrise, sunset):
@@ -48,9 +47,16 @@ def get_pois_as_json(accessibility=False, category="All"):
         pois = get_pois()
         weather_fetcher = DataFetcher()
         current = Current(weather_fetcher)
-        url = os.environ.get("REACT_APP_BACKEND_URL") + "/api/forecast"
-        response = requests.get(url, timeout=180)
-        forecast_data = response.json()
+        url_fore = os.environ.get("REACT_APP_BACKEND_URL") + "/api/forecast"
+        response_fore = requests.get(url_fore, timeout=1200)
+        response_fore.raise_for_status()
+        forecast_data = response_fore.json()
+        url_aqi = os.environ.get("REACT_APP_BACKEND_URL") + "/api/aqi/"
+        response_aqi = requests.get(url_aqi, timeout=1200)
+        response_aqi.raise_for_status()
+        aqi_data = response_aqi.json()
+        aqi_data = _replace_datetime_in_aqi_data(forecast_data, aqi_data)
+        forecast_data = _add_aqi_to_forecast(forecast_data, aqi_data)
         updated_data = []
         for poi in pois:
             if category not in poi.categories:
@@ -58,8 +64,6 @@ def get_pois_as_json(accessibility=False, category="All"):
             poi: PointOfInterest = current.find_nearest_stations_weather_data(poi)
             poi = find_nearest_coordinate_forecast_data(poi, forecast_data)
             poi.calculate_score()
-            if accessibility in poi.not_accessible_for:
-                continue
             updated_data.append(poi.get_json())
         save_score_history(json.dumps(updated_data))
         return json.dumps(updated_data)
@@ -105,9 +109,7 @@ def get_pois():
     Returns:
         list: List of POI -objects.
     """
-    collection = get_collection('pois')
-    if collection.count_documents({}) == 0:
-        init_pois()
+    collection = get_collection()
     all_documents = collection.find({})
     pois = []
     for poi in all_documents:
@@ -116,18 +118,38 @@ def get_pois():
         pois.append(poi)
     return pois
 
-def save_score_history(data):
-    """
-    Fetches scores for pois and saves the json document to MongoDB.
+def _add_aqi_to_forecast(forecast_data, aqi_data):
+    """Adds air quality index data to forecast data
 
-    Raises:
-        KeyError: If an error occurs while processing and saving the data.
+    Args:
+        forecast_data (dict): forecast data
+        aqi_data (dict): aqi data
+
+    Returns:
+        dict: forecast_data with air quality index values
     """
-    try:
-        print("Saving score history")
-        collection = get_collection('scorehistory')
-        data_dict = json.loads(data)
-        collection.insert_many(data_dict)
-    except KeyError as error:
-        return {"message": "An error occurred", "status": 500, "error": str(error)}
-    
+    for datetime, poi_coords in aqi_data.items():
+        if datetime in forecast_data:
+            for poi_coord, air_quality in poi_coords.items():
+                aqi_value = air_quality['Air Quality Index']
+                forecast_data[datetime][poi_coord]['Air quality'] = f'{aqi_value} AQI'
+    return forecast_data
+
+def _replace_datetime_in_aqi_data(forecast_data, aqi_data):
+    """Replaces the datetime in aqi_data to compensate for different caching times
+        between aqi_data and forecast_data
+
+    Args:
+        forecast_data (dict): forecast_data
+        aqi_data (dict): aqi_data
+
+    Returns:
+        dict: aqi_data with updated datetimes
+    """
+    aqi_dates = list(aqi_data.keys())
+    updated_aqi_data = {}
+    for fore_date, _ in forecast_data.items():
+        if aqi_dates:
+            aqi_date = aqi_dates.pop(0)
+            updated_aqi_data[fore_date] = aqi_data[aqi_date]
+    return updated_aqi_data

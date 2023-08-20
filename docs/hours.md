@@ -101,20 +101,20 @@
 
 |         | Monday 7.8. | Tuesday 8.8. | Wednesday 9.8. | Thursday 10.8. | Friday 11.8. | Saturday 12.8. | Sunday 13.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | 1            | 5 live,map,path  | 2 greenpaths , aqi lookup | 5 merges,path fixes,.. | -            | -             | -           | -     |
-| Isak    | 0,5            | 2             | 2,5               | 2              | 1            | -             | -           | 8     |
-| Sami S. | -            | 2 meeting             | -               | 4.5 catching up, more react, greenpath troubleshooting               | 2 AQI review, greenpath            | 5 learning react-leaflet testing, troubleshooting clustering             | -           | -     |
-| Sami M. | -            | -             | 9 aqi fixing and suggestions...               | 2 greenpath test fixing, research location stuff              | -            | -             | -           | -     |
-| Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | 3 on-boarding Denis            | 0.5 daily            | -             | -           | -     |
+| Juuso   | 1            | 5 live,map,path  | 2 greenpaths , aqi lookup | 5 merges,path fixes,.. | 1            | -             | 2 merges path bugs   | 16     |
+| Isak    | 0,5            | 2             | 2,5               | 2              | 1            | -             | 4,5           | 12,5     |
+| Sami S. | -            | 2 meeting             | -               | 4.5 catching up, more react, greenpath troubleshooting               | 2 AQI review, greenpath            | 5 learning react-leaflet testing, troubleshooting clustering             | 4 trying to fix clustering/tests..           | 17.5     |
+| Sami M. | -            | -             | 9 aqi fixing and suggestions...               | 2 greenpath test fixing, research location stuff              | 3 greenpath clustering bug hunt            | -             | 2 rework selector           | 16     |
+| Pia     | 1  mongo          | 2 meeting, scrum master stuff            | -               | 3 on-boarding Denis            | 0.5 daily            | -             | 3 aqi, mongo           | 9.5     |
 | Joni    | 1            | 2 meeting     | 3 simulator pr  | 5 frontend filtering + tests | 2 AQI review  | -             | -           | -     |
 
 |         | Monday 14.8. | Tuesday 15.8. | Wednesday 16.8. | Thursday 17.8. | Friday 18.8. | Saturday 19.8. | Sunday 20.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
-| Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Juuso   | 1            | 1             | 8 cypress,path to prod,etc  | 2 daily,debug     | 4 path to http, bugs  | -             | -           | -     |
+| Isak    | 1            | -             | 0,5               | 2,5              | -            | -             | -           | 4     |
+| Sami S. | 4.5 greenpath cluster fixing            | 3.5 greenpath test fixing             | 5 greenpath tests (axios mocking proved to be quite difficult)               | 1 daily              | 2 cypress fix, pull req            | 2 greenpath fixing..             | -           | -     |
+| Sami M. | 0.5 daily            | 5 rework aqi             | -               | 1 daily              | 5 try cachtools for aqi, fix mongo issues            | 5 bug hunting, prs, aqi fixed finally? :D             | -           | -     |
+| Pia     | 0.5 daily            | -             | -               | 1 daily              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 |         | Monday 21.8. | Tuesday 22.8. | Wednesday 23.8. | Thursday 24.8. | Friday 25.8. | Saturday 26.8. | Sunday 27.8. | Total |

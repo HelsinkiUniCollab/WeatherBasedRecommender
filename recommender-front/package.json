@@ -9,6 +9,7 @@
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.14.4",
     "@mui/system": "^5.13.5",
+    "axios": "^1.4.0",
     "cypress": "^12.14.0",
     "eslint": "^8.41.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -31,6 +32,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "REACT_APP_BACKEND_URL=http://localhost:5000 react-scripts test",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .jsx",
     "lint:fix": "eslint src --ext .jsx --fix",
@@ -72,11 +74,15 @@
     "start-server-and-test": "^2.0.0"
   },
   "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    },
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-leaflet|@react-leaflet/core)/)"
+      "node_modules/(?!(react-leaflet|@react-leaflet/core)/)",
+      "node_modules/(?!axios)"
     ]
   },
   "proxy": "http://127.0.0.1:5000/"

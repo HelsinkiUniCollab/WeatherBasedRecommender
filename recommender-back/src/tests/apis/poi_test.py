@@ -105,11 +105,29 @@ class TestPointOfInterest(unittest.TestCase):
 
         sun = ('06:00','18:00')
         categories = ['Open air pools and beaches']
+        not_accessible_for = ['wheelchair']
 
         test_poi = PointOfInterest(name= 'Test POI', latitude=21, longitude=61, categories=categories)
         test_poi.weather = weather
         test_poi.sun = sun
-        expected_json = {"name": 'Test POI', "weather": {"12:00": {"Wind speed": "5.0 m/s", "Precipitation": "20 mm", "Cloud amount": "0.6 %", "Air temperature": "23.0 *C", "Humidity": "0.5 %"}}, "latitude": 21, "longitude": 61, "category": "Open air pools and beaches", "catetype": None}
+        test_poi.not_accessible_for = not_accessible_for
+        expected_json = {
+            "name": 'Test POI',
+            "weather": {
+                "12:00": {
+                    "Wind speed": "5.0 m/s",
+                    "Precipitation": "20 mm",
+                    "Cloud amount": "0.6 %",
+                    "Air temperature": "23.0 *C",
+                    "Humidity": "0.5 %"
+                    }
+                },
+            "latitude": 21,
+            "longitude": 61,
+            "category": "Open air pools and beaches",
+            "catetype": None,
+            "not_accessible_for": not_accessible_for
+        }
 
         test_json = test_poi.get_json()
         

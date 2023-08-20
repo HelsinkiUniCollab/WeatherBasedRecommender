@@ -1,7 +1,11 @@
 import L from 'leaflet';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Typography from '@mui/material/Typography';
 import createMarkerIcon from './Icon';
+import DestinationButton from '../components/buttons/DestinationButton';
 
-const createMarkers = (poiData, time) => {
+const createMarkers = (poiData, time, handleSetDestination) => {
   if (!poiData || !time) {
     return [];
   }
@@ -9,17 +13,50 @@ const createMarkers = (poiData, time) => {
   return poiData.map((poi) => {
     const tags = Object.entries(poi.weather[time]);
     const markerIcon = createMarkerIcon(poi.weather[time].Score);
-    const marker = L.marker([poi.latitude,
-      poi.longitude], { icon: markerIcon });
-    marker.bindPopup(
-      `<h3>${poi.name}</h3>
-       <h4>${poi.catetype} / ${poi.category} </h4>
+    const marker = L.marker([poi.latitude, poi.longitude], {
+      icon: markerIcon,
+    });
+
+    const container = (
+      <>
+        <Typography variant="h5">{poi.name}</Typography>
+        <Typography variant="h8">
+          {poi.catetype}
+          {' '}
+          /
+          {' '}
+          {poi.category}
+        </Typography>
         <ul>
-        ${tags.map(([key, value]) => `<li><strong>${key}</strong>: ${value}</li>`).join('')}
-        </ul>`,
+          {tags.map(([key, value]) => (
+            <li key={key}>
+              <Typography variant="infotext">
+                <strong>{key}</strong>
+                :
+                {' '}
+                {value}
+              </Typography>
+            </li>
+          ))}
+        </ul>
+        <center>
+          <DestinationButton
+            onClick={() => handleSetDestination(poi.latitude, poi.longitude)}
+          />
+        </center>
+      </>
     );
 
-    return marker;
+    const scoreTag = tags.find(([key]) => key === 'Score');
+    const scoreValue = scoreTag ? scoreTag[1] : null;
+    const score = parseFloat(scoreValue);
+
+    const divElement = document.createElement('div');
+    const root = ReactDOM.createRoot(divElement);
+    root.render(container);
+    marker.bindPopup(divElement);
+
+    return [marker, score];
   });
 };
 

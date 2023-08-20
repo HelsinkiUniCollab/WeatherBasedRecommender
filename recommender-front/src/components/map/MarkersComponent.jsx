@@ -4,22 +4,24 @@ import L from 'leaflet';
 import 'leaflet.markercluster';
 import { useMap } from 'react-leaflet';
 import createMarkers from '../../utils/MarkerUtils';
-import { parseScore, defineClass } from '../../utils/ScoreUtils';
+import defineClass from '../../utils/ScoreUtils';
 
-function MarkersComponent({ poiData, time }) {
+function MarkersComponent({ poiData, time, handleSetDestination }) {
   const map = useMap();
   const markerClusterGroup = useRef(null);
 
   useEffect(() => {
     if (poiData && time) {
-      const markers = createMarkers(poiData, time);
+      const markerData = createMarkers(poiData, time, handleSetDestination);
+      const markers = markerData.map(([marker]) => marker);
+      const scoreMap = new Map(markerData);
       const markerGroup = L.markerClusterGroup({
         iconCreateFunction(cluster) {
           const count = cluster.getChildCount();
           let bestScore = 0.00;
           if (cluster.getChildCount() > 0) {
             cluster.getAllChildMarkers().forEach((poiMarker) => {
-              const scoreValue = parseScore(poiMarker);
+              const scoreValue = scoreMap.get(poiMarker);
               if (scoreValue > bestScore) {
                 bestScore = parseFloat(scoreValue);
               }
