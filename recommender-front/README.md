@@ -1,6 +1,6 @@
 # Recommender Frontend
 
-This is the frontend of the Weather-Based Recommender application.
+This is the frontend of the Weather-Based Recommender application made with React. Before running, make sure you have generated a `.env.local` -file, instructions given in the [README.md](/README.md).
 
 ## Instructions
 
@@ -26,7 +26,10 @@ $ npm test
 $ CI=true npm test
 
 # Run the code validators
-npm run lint
+$ npm run lint
+
+# Fix most of the linting issues
+$ npm run lint -- --fix
 ```
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 

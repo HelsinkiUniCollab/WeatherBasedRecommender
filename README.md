@@ -29,12 +29,13 @@ To run the frontend and backend services individually, refer to the instructions
 
 ## Documentation
 
+* [CI/CD Pipeline](/docs/ci-cd.md)
 * [Working hours](/docs/hours.md)
 * [Team roles](/docs/roles.md)
 * [Definition of Done](/docs/dod.md)
 * [Git Workflow](/docs/git-workflow.md)
 * [Production Environment](/docs/pouta.md)
-* [CI/CD Pipeline](/docs/ci-cd.md)
+* [Databases](/docs/databases.md)
 * [Code Quality](/docs/code_quality.md)
 
 ### Backlogs 
