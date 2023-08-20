@@ -55,12 +55,10 @@ function App() {
 
   const handleSetOrigin = (latitude, longitude) => {
     setUserPosition([latitude, longitude]);
-    console.log('Setting origin:', latitude, longitude);
   };
 
   const handleSetDestination = (latitude, longitude) => {
     setDestination([latitude, longitude]);
-    console.log('Setting destination', latitude, longitude);
   };
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -94,7 +92,7 @@ function App() {
         filterPoiData(poi, accessibility, selectedCategories);
       }
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error fetching the Point of Interests: ', error);
     }
   }
 
