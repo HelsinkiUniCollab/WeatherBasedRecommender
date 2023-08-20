@@ -114,7 +114,7 @@
 | Isak    | 1            | -             | 0,5               | 2,5              | -            | 2,5             | 2           | 8,5     |
 | Sami S. | 4.5 greenpath cluster fixing            | 3.5 greenpath test fixing             | 5 greenpath tests (axios mocking proved to be quite difficult)               | 1 daily              | 2 cypress fix, pull req            | 2 greenpath fixing..             | -           | -     |
 | Sami M. | 0.5 daily            | 5 rework aqi             | -               | 1 daily              | 5 try cachtools for aqi, fix mongo issues            | 5 bug hunting, prs, aqi fixed finally? :D             | -           | -     |
-| Pia     | 0.5 daily            | -             | -               | 1 daily              | -            | -             | -           | -     |
+| Pia     | 0.5 daily            | -             | -               | 1 daily              | -            | -             | 5 mongo, daily, pouta           | 6.5     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 |         | Monday 21.8. | Tuesday 22.8. | Wednesday 23.8. | Thursday 24.8. | Friday 25.8. | Saturday 26.8. | Sunday 27.8. | Total |
