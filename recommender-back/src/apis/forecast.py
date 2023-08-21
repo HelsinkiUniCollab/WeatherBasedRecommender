@@ -40,7 +40,11 @@ class Forecast:
             Grid: The forecast grid data within the specified time range.
         """
         return self.fetcher.get_forecast_data(
-            start, end, Config.BBOX, Config.TIMESTEP, Config.FORECAST_PARAMETERS
+            start,
+            end,
+            Config.FMI_FORECAST['WEATHER']['BBOX'],
+            Config.FMI_FORECAST['WEATHER']['TIMESTEP'],
+            Config.FMI_FORECAST['WEATHER']['PARAMETERS']
         )
 
     def parse_forecast_data(self):
