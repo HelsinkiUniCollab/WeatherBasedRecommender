@@ -70,6 +70,9 @@ $ sudo docker container prune
 # Remove all of the containers and images
 $ sudo docker rm -f $(docker ps -a -q)
 $ sudo docker rmi -f $(docker images -a -q)
+
+# create ubuntu_default network it it's removed
+$ sudo docker create network ubuntu_default
 ```
 
 ## Removing old Docker images in Pouta
