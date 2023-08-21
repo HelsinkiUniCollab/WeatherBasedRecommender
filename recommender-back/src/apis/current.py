@@ -21,7 +21,7 @@ class Current:
             dict: A dictionary containing the current weather data for each station.
         '''
 
-        obs = self.fetcher.get_current_weather_data(Config.BBOX, True)
+        obs = self.fetcher.get_current_weather_data(Config.FMI_CURRENT['WEATHER']['BBOX'], True)
         data = {}
         for station, metadata in obs.location_metadata.items():
             weatherdata = {
@@ -67,7 +67,9 @@ class Current:
         Retrieves the Air Quality Index data for the last 24 hours within specified area
         '''
         return self.fetcher.get_current_air_quality_data(
-            Config.BBOX, True, Config.AIRQUALITY_PARAMETERS
+            Config.FMI_CURRENT['AIR_QUALITY']['BBOX'],
+            True,
+            Config.FMI_CURRENT['AIR_QUALITY']['PARAMETERS']
         )
 
     def parse_latest_aqi_data(self, raw_aqi_data: dict):

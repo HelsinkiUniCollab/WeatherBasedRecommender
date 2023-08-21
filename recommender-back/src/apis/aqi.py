@@ -47,7 +47,7 @@ class AQI:
         req = requests.get(url)
         content = req.content
         xml = ET.fromstring(content)
-        file_reference = xml.findall(Config.FILEREF_MEMBER)
+        file_reference = xml.findall(Config.XML['MEMBERS']['FILE_REFENCE'])
         latest_file_url = file_reference[-1].text
         return latest_file_url
 
@@ -58,11 +58,19 @@ class AQI:
             string: xml file url
         """
         _, start_time, end_time = get_forecast_times()
+
         args = {'starttime': start_time,
                 'endtime': end_time,
-                'parameters': Config.AQI_PARAMS,
-                'bbox': Config.BBOX_AQI}
-        xml_url = Config.FMI_QUERY_URL + Config.AQI_QUERY + "&" + urlencode(args)
+                'parameters': Config.FMI_FORECAST['AIR_QUALITY']['PARAMETERS'],
+                'bbox': Config.FMI_FORECAST['AIR_QUALITY']['BBOX']
+        }
+
+        xml_url = (
+            Config.FMI_GENERAL['FMI_QUERY_URL'] +
+            Config.FMI_GENERAL['FMI_QUERIES']['AQI_FORECAST_GRID_ENFUSER'] +
+            "&" + urlencode(args)
+        )
+
         return xml_url
 
     def _parse_netcdf(self):

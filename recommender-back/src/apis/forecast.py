@@ -29,7 +29,6 @@ class Forecast:
             self.parse_forecast_data()
             self.update_forecast_properties()
 
-
     def get_latest_forecast(self, start, end):
         """
         Retrieves the latest forecast data within the specified time range.
@@ -40,7 +39,11 @@ class Forecast:
             Grid: The forecast grid data within the specified time range.
         """
         return self.fetcher.get_forecast_data(
-            start, end, Config.BBOX, Config.TIMESTEP, Config.FORECAST_PARAMETERS
+            start, 
+            end, 
+            Config.FMI_FORECAST['WEATHER']['BBOX'],
+            Config.FMI_FORECAST['WEATHER']['TIMESTEP'],
+            Config.FMI_FORECAST['WEATHER']['PARAMETERS']
         )
 
     def parse_forecast_data(self):
@@ -64,7 +67,7 @@ class Forecast:
                 else:
                     print(f"Parsing failed after {max_retries} attempts due to {type(error).__name__}.")
                     raise
-            except Exception as error:  # Generic exception handler
+            except Exception as error:
                 print(f"Unexpected error during parsing: {error}")
                 if attempt < max_retries - 1:
                     time.sleep(retry_delay)

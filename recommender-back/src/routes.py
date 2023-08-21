@@ -25,7 +25,7 @@ def index():
 
 
 @app.route("/api/forecast", methods=["GET"])
-@cache.cached()
+@cache.cached(timeout=Config.CACHING['TIMEOUT']['FORECAST_WEATHER'])
 def get_forecast():
     """
     Handler for the '/api/forecast' endpoint. Caching 1 hour.
@@ -42,7 +42,7 @@ def get_forecast():
 
 
 @app.route("/api/aqi", methods=["GET"])
-@cache.cached(timeout=Config.AQI_CACHE_TO)
+@cache.cached(timeout=Config.CACHING['TIMEOUT']['FORECAST_AIRQUALITY'])
 def get_aqi_forecast():
     """
     Handler for the '/api/aqi' endpoint. Caching 24 hours.
