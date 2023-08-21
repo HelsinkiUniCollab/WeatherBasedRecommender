@@ -88,7 +88,7 @@ class TestManager(unittest.TestCase):
             "humidity": 10,
             "precipitation": 5,
             "cloud_amount": 10,
-            "air_quality": 2,
+            "air_quality": '2.0',
             "current_time": '16:00',
             'sunrise': '6:00',
             'sunset': '22:00',
@@ -107,7 +107,7 @@ class TestManager(unittest.TestCase):
                 'Humidity': '10 %',
                 'Precipitation': '5 mm',
                 'Cloud amount': '10 %',
-                'Air quality': 2}
+                'Air quality': '2.0'}
         self.assertEqual(tested, equals)
 
     @patch('src.db.db.get_collection')
