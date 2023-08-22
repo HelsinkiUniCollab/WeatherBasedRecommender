@@ -122,7 +122,7 @@
 | Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
 | Isak    | 1            | 3,5             | -               | -              | -            | -             | -           | 4,5     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | 2h Config, aqi scoring, fix tests, fore fields            | 2.5 meeting             | -               | -              | -            | -             | -           | -     |
 | Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
