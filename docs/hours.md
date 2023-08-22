@@ -123,7 +123,7 @@
 | Isak    | 1            | 3,5             | -               | -              | -            | -             | -           | 4,5     |
 | Sami S. | -            | 2.5 meeting             | -               | -              | -            | -             | -           | -     |
 | Sami M. | 2h Config, aqi scoring, fix tests, fore fields            | 2.5 meeting             | -               | -              | -            | -             | -           | -     |
-| Pia     | -            | -             | -               | -              | -            | -             | -           | -     |
+| Pia     | -            | 3,5            | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 |         | Monday 28.8. | Tuesday 29.8. | Wednesday 30.8. | Thursday 31.8. | Friday 1.9. | Saturday 2.9. | Sunday 3.9. | Total |
