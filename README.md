@@ -51,9 +51,9 @@ To get the MongoDB development URL, read more [here](/docs/database.md). To run 
   * [Burndown Chart](https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/assets/70194087/99774edb-e132-4ed0-831b-e9b7d638ef05)
 * [Sprint 3 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/9)
   * [Burndown Chart](https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/assets/1563603/82793050-3a47-4eb5-afba-fa1915a7f434)
-* [Sprint 4 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/11)
+* [Sprint 4 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/10)
   * [Burndown Chart](https://user-images.githubusercontent.com/1563603/259169990-35e11d1b-e03e-4a3c-97b9-a3edcca6b371.png)
-* [Sprint 5 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/12)
+* [Sprint 5 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/11)
   * [Burndown Chart](https://user-images.githubusercontent.com/1563603/262408124-398195a7-7e9f-49d7-b0be-09ac079ae185.png)
 
 
