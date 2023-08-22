@@ -11,6 +11,7 @@ class OutdoorScorer:
     OPTIMAL_TEMPERATURE_HIGH = 25
     HUMIDITY_LOW = 0.4
     HUMIDITY_HIGH = 0.55
+    AIR_QUALITY_WEIGHT = 0.05
 
     @staticmethod
     def temperature_score(temperature):
@@ -33,11 +34,12 @@ class OutdoorScorer:
             return OutdoorScorer.HUMIDITY_WEIGHT
         return 0
 
-    def score(self, temperature, wind_speed, humidity, precipitation, clouds, sunrise_time, sunset_time, current_time):
+    def score(self, temperature, wind_speed, humidity, precipitation, clouds, air_quality, sunrise_time, sunset_time, current_time):
         score = (OutdoorScorer.PRECIPITATION_WEIGHT * math.exp(-precipitation) +
                  OutdoorScorer.TEMPERATURE_WEIGHT * self.temperature_score(temperature) +
                  self.day_time_score(current_time, sunrise_time, sunset_time) +
                  OutdoorScorer.CLOUDS_WEIGHT * math.exp(-clouds) +
                  OutdoorScorer.WIND_SPEED_WEIGHT * math.exp(-wind_speed) +
-                 self.humidity_score(humidity))
+                 self.humidity_score(humidity) + 
+                 OutdoorScorer.AIR_QUALITY_WEIGHT * math.exp(1 - air_quality))
         return round(score, 2)

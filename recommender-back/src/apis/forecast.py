@@ -193,8 +193,8 @@ class Forecast:
 
         return {
             "Air temperature": f"{str(temperature)} °C",
-            "Humidity": f"{str(humidity)} %",
             "Wind speed": f"{wind_speed} m/s",
+            "Humidity": f"{str(humidity)} %",
             "Precipitation": f"{precipitation} mm",
             "Cloud amount": f"{cloudcoverage} %",
         }

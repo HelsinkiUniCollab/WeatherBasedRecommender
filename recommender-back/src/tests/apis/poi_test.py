@@ -9,7 +9,7 @@ class TestPointOfInterest(unittest.TestCase):
     def test_calculate_score_chooses_indoor(self):
         with patch('src.apis.times.get_current_time') as mock_get_current_time:
             weather = {'20:00':{'Wind speed':'2.0 m/s','Precipitation':'200 mm','Cloud amount':'0.6 %',
-                    'Air temperature':'22.0 *C','Humidity':'0.45 %'}}
+                    'Air temperature':'22.0 *C','Humidity':'0.45 %', 'Air quality': '5.0 AQI'}}
 
             sun = ('06:00','18:00')
             mock_get_current_time.return_value = '20:00'
@@ -19,7 +19,7 @@ class TestPointOfInterest(unittest.TestCase):
             test_poi.weather = weather
             test_poi.sun = sun
 
-            expected_score = 0.73
+            expected_score = 0.74
 
             test_poi.calculate_score()
             score = test_poi.weather['20:00']['Score']
@@ -29,7 +29,7 @@ class TestPointOfInterest(unittest.TestCase):
     def test_calculate_score_chooses_outdoor(self):
         with patch('src.apis.times.get_current_time') as mock_get_current_time:
             weather = {'12:00':{'Wind speed':'5.0 m/s','Precipitation':'20 mm','Cloud amount':'0.6 %',
-                    'Air temperature':'23.0 *C','Humidity':'0.5 %'}}
+                    'Air temperature':'23.0 *C','Humidity':'0.5 %', 'Air quality': '1.0 AQI'}}
 
             sun = ('06:00','18:00')
             mock_get_current_time.return_value = '12:00'
@@ -39,7 +39,7 @@ class TestPointOfInterest(unittest.TestCase):
             test_poi.weather = weather
             test_poi.sun = sun
 
-            expected_score = 0.54
+            expected_score = 0.59
 
             test_poi.calculate_score()
             score = test_poi.weather['12:00']['Score']

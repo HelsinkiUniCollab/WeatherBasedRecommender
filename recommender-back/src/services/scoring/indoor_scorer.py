@@ -11,6 +11,7 @@ class IndoorScorer():
     OPTIMAL_TEMPERATURE_HIGH = 25
     HUMIDITY_LOW = 0.4
     HUMIDITY_HIGH = 0.55
+    AIR_QUALITY_WEIGHT = 0.05
 
     @staticmethod
     def temperature_score(temperature):
@@ -33,11 +34,12 @@ class IndoorScorer():
             return IndoorScorer.HUMIDITY_WEIGHT
         return 0
 
-    def score(self, temperature, wind_speed, humidity, precipitation, clouds, sunrise_time, sunset_time, current_time):
+    def score(self, temperature, wind_speed, humidity, precipitation, clouds, air_quality, sunrise_time, sunset_time, current_time):
         score = (IndoorScorer.PRECIPITATION_WEIGHT * (1 - math.exp(-10 * precipitation)) +
                  IndoorScorer.TEMPERATURE_WEIGHT * self.temperature_score(temperature) +
                  self.day_time_score(current_time, sunrise_time, sunset_time) +
                  IndoorScorer.CLOUDS_WEIGHT * (1 - math.exp(-3 * clouds)) +
                  IndoorScorer.WIND_SPEED_WEIGHT * (1 - math.exp(-0.3 * wind_speed)) +
-                 self.humidity_score(humidity))
+                 self.humidity_score(humidity) +
+                 IndoorScorer.AIR_QUALITY_WEIGHT * math.exp(0.5 * (1 - air_quality)))
         return round(score, 2)
