@@ -17,7 +17,7 @@ else:
 config = {
     "DEBUG": os.environ.get('FLASK_DEBUG', 'False').lower() == 'true',
     "CACHE_TYPE": CACHE_TYPE,
-    "CACHE_REDIS_URL": Config.CACHE_REDIS_URL,
+    "CACHE_REDIS_URL": Config.CACHING['REDIS']['URL'],
     "CACHE_DEFAULT_TIMEOUT": 3600
 }
 
