@@ -33,7 +33,7 @@ describe('Map and POI features', () => {
     cy.get('.leaflet-marker-icon').first().click();
 
     cy.get('.leaflet-popup-content')
-      .find('ul li')
+      .find('center')
       .should(($lis) => {
         expect($lis.eq(0)).to.contain('20.0 °C');
       });
@@ -43,7 +43,7 @@ describe('Map and POI features', () => {
     cy.get('.leaflet-marker-icon').first().click();
 
     cy.get('.leaflet-popup-content')
-      .find('ul li')
+      .find('center')
       .should(($lis) => {
         expect($lis.eq(0)).to.contain('-5.5 °C');
       });
@@ -99,8 +99,8 @@ describe('TimePickerComponent', () => {
 
   it('should select an hour correctly', () => {
     cy.get('[data-testid="current-time-hour-selector"] div[role="button"]').first().click();
-    cy.get('li[data-value="10"]').click();
-    cy.get('[name="current-time-hour"]').should('have.value', '10');
+    cy.get('li[data-value="00"]').click();
+    cy.get('[name="current-time-hour"]').should('have.value', '00');
   });
 
   it('should select a minute correctly', () => {
