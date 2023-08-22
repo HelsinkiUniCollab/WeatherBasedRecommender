@@ -1,6 +1,7 @@
 import L from 'leaflet';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import createMarkerIcon from './Icon';
 import DestinationButton from '../components/buttons/DestinationButton';
@@ -18,33 +19,56 @@ const createMarkers = (poiData, time, handleSetDestination) => {
     });
 
     const container = (
-      <>
-        <Typography variant="h5">{poi.name}</Typography>
+      <center>
+        <Typography variant="h6"><strong>{poi.name}</strong></Typography>
         <Typography variant="h8">
-          {poi.catetype}
-          {' '}
-          /
-          {' '}
-          {poi.category}
+          <i>
+            {poi.catetype}
+            {' '}
+            /
+            {' '}
+            {poi.category}
+          </i>
         </Typography>
-        <ul>
+        <Grid
+          container
+          spacing={1}
+          style={{ marginTop: 5 }}
+          alignItems="center"
+          justifyContent="center"
+        >
           {tags.map(([key, value]) => (
-            <li key={key}>
-              <Typography variant="infotext">
-                <strong>{key}</strong>
-                :
-                {' '}
-                {value}
+            key !== 'Score' && (
+            <Grid item xs={4} key={key}>
+              <Typography variant="infotext" style={{ marginBottom: 1 }}>
+                {key}
               </Typography>
-            </li>
+              <h3>{value}</h3>
+            </Grid>
+            )
           ))}
-        </ul>
-        <center>
-          <DestinationButton
-            onClick={() => handleSetDestination(poi.latitude, poi.longitude)}
-          />
-        </center>
-      </>
+        </Grid>
+        <Grid
+          container
+          spacing={1}
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Grid item xs={4} key="Score">
+            <Typography variant="infotext" style={{ marginBottom: 1 }}>
+              Score
+              {' '}
+              <i>(0-1)</i>
+            </Typography>
+            <h3>{tags[tags.length - 1][1]}</h3>
+          </Grid>
+          <Grid item>
+            <DestinationButton
+              onClick={() => handleSetDestination(poi.latitude, poi.longitude)}
+            />
+          </Grid>
+        </Grid>
+      </center>
     );
 
     const scoreTag = tags.find(([key]) => key === 'Score');

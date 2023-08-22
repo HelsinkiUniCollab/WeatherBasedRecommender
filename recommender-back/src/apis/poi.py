@@ -103,7 +103,7 @@ class PointOfInterest:
                 "Humidity": f"{humidity} %",
                 "Precipitation": f"{precipitation} mm",
                 "Cloud amount": f"{cloud_amount} %",
-                "Air quality": air_quality,
+                "Air quality": f"{air_quality} AQI",
             }
         }
 
