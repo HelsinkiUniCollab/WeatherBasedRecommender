@@ -1,9 +1,11 @@
 import copy
 import math
+import os
 from .poi import PointOfInterest
 from ..services.data_fetcher import DataFetcher
 from ..config import Config
 
+ENVIRONMENT = os.environ.get('ENVIRONMENT')
 
 class Current:
     def __init__(self, fetcher: DataFetcher):
@@ -11,7 +13,9 @@ class Current:
         self.weather = None
         self.aqi = None
         self.get_current_weather()
-        self.get_current_air_quality()
+
+        if ENVIRONMENT == "production":
+            self.get_current_air_quality()
 
     def get_current_weather(self):
         '''
@@ -146,10 +150,10 @@ class Current:
                         missing_fields.remove(key)
             if not missing_fields or not weather:
                 smallest, nearest = float('inf'), ''
-                if len(aqi) > 0:
+                if aqi != None:
                     nearest = self.find_nearest_stations_aqi(aqi, lat, lon)
                     returned.setdefault(
-                        'Air quality', aqi[nearest]['Air quality'])
+                            'Air quality', aqi[nearest]['Air quality'])
                 break
             del weather[nearest]
         poi.weather['Current'] = returned

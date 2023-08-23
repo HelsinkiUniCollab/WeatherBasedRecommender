@@ -21,7 +21,7 @@ class IndoorScorer():
             return 1 - math.exp(-0.04 * (IndoorScorer.OPTIMAL_TEMPERATURE_LOW - temperature))
         else:
             return 1 - math.exp(0.2 * (IndoorScorer.OPTIMAL_TEMPERATURE_HIGH - temperature))
-        
+
     @staticmethod
     def day_time_score(current_time, sunrise_time, sunset_time):
         if sunrise_time <= current_time <= sunset_time:
@@ -40,6 +40,9 @@ class IndoorScorer():
                  self.day_time_score(current_time, sunrise_time, sunset_time) +
                  IndoorScorer.CLOUDS_WEIGHT * (1 - math.exp(-3 * clouds)) +
                  IndoorScorer.WIND_SPEED_WEIGHT * (1 - math.exp(-0.3 * wind_speed)) +
-                 self.humidity_score(humidity) +
-                 IndoorScorer.AIR_QUALITY_WEIGHT * math.exp(0.5 * (1 - air_quality)))
+                 self.humidity_score(humidity))
+
+        if air_quality != 0:
+            score += IndoorScorer.AIR_QUALITY_WEIGHT * math.exp(0.5 * (1 - air_quality))
+
         return round(score, 2)

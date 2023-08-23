@@ -1,10 +1,13 @@
 import json
+import os
 from requests import Timeout
 from .current import Current
 from .poi import PointOfInterest
 from ..services.data_fetcher import DataFetcher
 from ..services.api_fetcher import InternalApiService
 from ..db.db import get_collection
+
+ENVIRONMENT = os.environ.get('ENVIRONMENT')
 
 def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
                                               precipitation, cloud_amount, air_quality, current_time, sunrise, sunset):
@@ -47,9 +50,10 @@ def get_pois_as_json(category="All"):
         weather_fetcher = DataFetcher()
         current = Current(weather_fetcher)
         forecast_data = InternalApiService.fetch_forecast()
-        aqi_data = InternalApiService.fetch_aqi()
-        aqi_data = _replace_datetime_in_aqi_data(forecast_data, aqi_data)
-        forecast_data = _add_aqi_to_forecast(forecast_data, aqi_data)
+        if ENVIRONMENT == "production":
+            aqi_data = InternalApiService.fetch_aqi()
+            aqi_data = _replace_datetime_in_aqi_data(forecast_data, aqi_data)
+            forecast_data = _add_aqi_to_forecast(forecast_data, aqi_data)
         updated_data = []
         for poi in pois:
             if category not in poi.categories:

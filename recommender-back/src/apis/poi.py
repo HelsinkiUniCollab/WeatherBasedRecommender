@@ -25,14 +25,16 @@ class PointOfInterest:
         }
 
     def _extract_weather_data(self, data):
-        return {
-            'wind_speed': float(data.get('Wind speed').split(' ')[0]),
-            'precipitation': float(data.get('Precipitation').split(' ')[0]),
-            'clouds': float(data.get('Cloud amount').split(' ')[0]) * 0.01,
-            'temperature': float(data.get('Air temperature').split(' ')[0]),
-            'humidity': float(data.get('Humidity').split(' ')[0]) * 0.01,
-            'air_quality': float(data.get('Air quality').split(' ')[0]),
-        }
+        extracted_weather = {'wind_speed': float(data.get('Wind speed').split(' ')[0]),
+                            'precipitation': float(data.get('Precipitation').split(' ')[0]),
+                            'clouds': float(data.get('Cloud amount').split(' ')[0]) * 0.01,
+                            'temperature': float(data.get('Air temperature').split(' ')[0]),
+                            'humidity': float(data.get('Humidity').split(' ')[0]) * 0.01}
+
+        if data.get('Air quality'):
+            extracted_weather['air_quality'] = float(data.get('Air quality').split(' ')[0])
+
+        return extracted_weather
 
     def calculate_score(self, cur_time=None, sunrise=None, sunset=None):
         """
@@ -72,12 +74,20 @@ class PointOfInterest:
                     scorer = self.scorers["Indoor"]
 
                 if scorer:
-                    data['Score'] = scorer.score(
-                        weather_data['temperature'], weather_data['wind_speed'],
-                        weather_data['humidity'], weather_data['precipitation'],
-                        weather_data['clouds'], weather_data['air_quality'], 
-                        sunrise_time, sunset_time, current_time
-                    )
+                    if weather_data.get('air_quality'):
+                        data['Score'] = scorer.score(
+                            weather_data['temperature'], weather_data['wind_speed'],
+                            weather_data['humidity'], weather_data['precipitation'],
+                            weather_data['clouds'], weather_data['air_quality'], 
+                            sunrise_time, sunset_time, current_time
+                        )
+                    else:
+                        data['Score'] = scorer.score(
+                            weather_data['temperature'], weather_data['wind_speed'],
+                            weather_data['humidity'], weather_data['precipitation'],
+                            weather_data['clouds'], 0,
+                            sunrise_time, sunset_time, current_time
+                        )
 
     def set_simulated_weather(self, air_temperature, wind_speed, humidity,
                               precipitation, cloud_amount, air_quality):
@@ -95,7 +105,6 @@ class PointOfInterest:
         This method sets simulated weather data for the Point of Interest (POI) to facilitate testing
         the score calculation functionality.
         """
-        
         self.weather = {
             "Weather": {
                 "Air temperature": f"{air_temperature} °C",
