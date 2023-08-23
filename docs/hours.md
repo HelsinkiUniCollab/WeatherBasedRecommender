@@ -122,7 +122,7 @@
 | Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
 | Isak    | 1            | 3,5             | -               | -              | -            | -             | -           | 4,5     |
 | Sami S. | -            | 2.5 meeting             | -               | -              | -            | -             | -           | -     |
-| Sami M. | 2 Config, aqi scoring, fix tests, fore fields            | 2.5 meeting             | 3 tests, try setting up env for aqi               | -              | -            | -             | -           | -     |
+| Sami M. | 2 Config, aqi scoring, fix tests, fore fields            | 2.5 meeting             | 4 tests, env to skip aqi download in development               | -              | -            | -             | -           | -     |
 | Pia     | -            | 3,5            | -               | -              | -            | -             | -           | -     |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
