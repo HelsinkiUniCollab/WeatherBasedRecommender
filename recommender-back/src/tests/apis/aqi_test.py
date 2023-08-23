@@ -35,8 +35,8 @@ class TestAQI(unittest.TestCase):
         mock_iterator.iter_content.return_value = [b'chonk', b'chunky', b'chonky']
         mock_requests_get.return_value = mock_iterator
 
-        file_name = 'some_random_file_from_fmi_that_takes_ages_to_load.nc'
-        url = 'http://example.com/some_random_file_from_fmi_that_takes_ages_to_load.nc'
+        file_name = 'some_random_file.nc'
+        url = 'http://example.com/some_random_file.nc'
         max_retries = 3
 
         with patch('builtins.print'):
