@@ -119,7 +119,7 @@
 
 |         | Monday 21.8. | Tuesday 22.8. | Wednesday 23.8. | Thursday 24.8. | Friday 25.8. | Saturday 26.8. | Sunday 27.8. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
-| Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
+| Juuso   | 1            | 3 meeting     | -               | -              | -            | -             | -           | -     |
 | Isak    | 1            | 3,5             | -               | -              | -            | -             | -           | 4,5     |
 | Sami S. | -            | 2.5 meeting             | -               | -              | -            | -             | -           | -     |
 | Sami M. | 2 Config, aqi scoring, fix tests, fore fields            | 2.5 meeting             | 4 tests, env to skip aqi download in development               | -              | -            | -             | -           | -     |
