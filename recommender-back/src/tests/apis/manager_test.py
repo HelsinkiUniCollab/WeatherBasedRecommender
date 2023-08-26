@@ -1,6 +1,11 @@
 import unittest
 from unittest.mock import patch
-from src.apis.manager import get_pois, find_nearest_coordinate_forecast_data, get_pois_as_json
+from src.apis.manager import (
+    get_pois,
+    find_nearest_coordinate_forecast_data,
+    _add_aqi_to_forecast,
+    _replace_datetime_in_aqi_data
+)
 from src.apis.poi import PointOfInterest
 from src.app import app
 from src.tests.mock_data import MOCK_POIS
@@ -150,6 +155,42 @@ class TestManager(unittest.TestCase):
             res = find_nearest_coordinate_forecast_data(onepoi, self.fore)
             self.assertEqual(len(res.weather), 3)
             break
+    
+    def test_air_quality_is_added_to_forecast_data_correctly(self):
+        mock_aqi_data = {
+            '2023-07-20 12:00:00': {
+                '60.201231, 24.973478': {'Air Quality Index': 2.0},
+                '60.1998, 24.968672': {'Air Quality Index': 1.4},
+            },
+            '2023-07-20 13:30:00': {
+                '60.201231, 24.973478': {'Air Quality Index': 1.5},
+                '60.1998, 24.968672': {'Air Quality Index': 1.7},
+            },
+        }
+
+        updated_forecast_data = _add_aqi_to_forecast(self.fore, mock_aqi_data)
+
+        self.assertEqual(updated_forecast_data['2023-07-20 12:00:00']['60.201231, 24.973478']['Air quality'], '2.0 AQI')
+        self.assertEqual(updated_forecast_data['2023-07-20 12:00:00']['60.1998, 24.968672']['Air quality'], '1.4 AQI')
+        self.assertEqual(updated_forecast_data['2023-07-20 13:30:00']['60.201231, 24.973478']['Air quality'], '1.5 AQI')
+        self.assertEqual(updated_forecast_data['2023-07-20 13:30:00']['60.1998, 24.968672']['Air quality'], '1.7 AQI')
+
+    def test_aqi_data_datetimes_are_shifted_accordinly(self):
+        mock_aqi_data = {
+            '2023-07-20 09:00:00': {
+                '60.201231, 24.973478': {'Air Quality Index': 2.0},
+                '60.1998, 24.968672': {'Air Quality Index': 1.4},
+            },
+            '2023-07-20 10:00:00': {
+                '60.201231, 24.973478': {'Air Quality Index': 1.5},
+                '60.1998, 24.968672': {'Air Quality Index': 1.7},
+            },
+        }
+
+        updated_aqi = _replace_datetime_in_aqi_data(self.fore, mock_aqi_data)
+
+        self.assertEqual(updated_aqi['2023-07-20 12:00:00']['60.201231, 24.973478']['Air Quality Index'], 2)
+        self.assertEqual(updated_aqi['2023-07-20 13:30:00']['60.201231, 24.973478']['Air Quality Index'], 1.5)
 
 if __name__ == '__main__':
     unittest.main()
