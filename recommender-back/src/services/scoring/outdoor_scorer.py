@@ -40,6 +40,9 @@ class OutdoorScorer:
                  self.day_time_score(current_time, sunrise_time, sunset_time) +
                  OutdoorScorer.CLOUDS_WEIGHT * math.exp(-clouds) +
                  OutdoorScorer.WIND_SPEED_WEIGHT * math.exp(-wind_speed) +
-                 self.humidity_score(humidity) + 
-                 OutdoorScorer.AIR_QUALITY_WEIGHT * math.exp(1 - air_quality))
+                 self.humidity_score(humidity))
+
+        if air_quality != 0:
+            score += OutdoorScorer.AIR_QUALITY_WEIGHT * math.exp(1 - air_quality)
+
         return round(score, 2)
