@@ -7,7 +7,7 @@ Read more about the CI-CD [here](/docs/ci-cd.md).
 
 cPouta is an Infrastructure as a Service (IaaS) cloud provided by [CSC](https://www.csc.fi/).
 
-The cPouta virtual machines can be connected to external IP addresses, which then can be directly accessed on the internet. Floating IP allocated to our project is 128.214.253.51.
+The cPouta virtual machines can be connected to external IP addresses, which then can be directly accessed on the internet. Floating IP currently allocated to our project is `128.214.253.51`.
 
 In order to access cPouta cloud, you need to accept terms in [My CSC Portal](https://my.csc.fi/projects/2004807). Make sure you are in the project 2004807 page. Then scroll down and click cPouta heading in the right column. Accept the terms.
 
@@ -47,7 +47,7 @@ sudo docker ps
 ```
 
 If the app has stopped running, you can start it manually. These containers should be always running: 
-*ubuntu-nginx-1*, *ubuntu-wbased-back-1*, *ubuntu-wbased-front-1* and *ubuntu-watchtower-1*.  
+*nginx:latest*, *redis:latest*, *helsinkiunicollab/wbased-back:latest*, *helsinkiunicollab/wbased-front:latest* and *watchtower:latest*.  
 
 If the site is not responding, try restarting the containers using these two commands:
 
