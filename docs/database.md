@@ -2,7 +2,7 @@
 
 Mongo DB Atlas is used for storing basic information (name, longitude, latitude, categories and accessibility) about the Point of Interests (POI's). If database is lost, the POI's are recovered automatically from a static JSON file. 
 
-There are two Atlas accounts in use, **development** and **production**. There is no difference in set-up - we have two accounts due to fact that free Mongo Atlas tier has some limitations i.e. on the database size. Refer to a team member for the password, connection strings for those accounts are:
+There are two Atlas accounts in use, **development** and **production**. There is no difference in set-up - we have two accounts due to fact that free Mongo Atlas tier has some limitations i.e. on the database size. Refer to a team member for the password, connection strings for accounts are:
 
 - **Development**
   - `mongodb+srv://helsinkiunicollab:<password>@development.qebxr8j.mongodb.net/?retryWrites=true&w=majority`
