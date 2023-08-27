@@ -6,7 +6,7 @@
 [![CD](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/cd.yml/badge.svg?branch=main)](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/cd.yml)
 [![Codecov](https://codecov.io/github/HelsinkiUniCollab/WeatherBasedRecommender/branch/main/graph/badge.svg?token=RU4KTLCO85)](https://codecov.io/github/HelsinkiUniCollab/WeatherBasedRecommender)
 
-The purpose of this project is to develop an application that provides users with personalized recommendations for points of interest and routes in Helsinki. It takes into consideration the current and forecasted weather conditions to enhance the generated suggestions. 
+The purpose of this project is to develop an application that provides users with personalized recommendations for points of interest and routes in Helsinki. It takes into consideration the current and forecasted weather conditions to enhance the generated suggestions. Read more about [the features of the application](/docs/features.md).
 
 Application can be accessed here: [Weather-Based Recommender](http://128.214.253.51:3000/)
 
