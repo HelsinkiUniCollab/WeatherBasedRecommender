@@ -91,9 +91,9 @@ crontab -e
 
 Currently we have 5 Docker containers up and running, these are:
 
-**wbased-back**: This is the backend service built using the Docker image `ruusukivi/wbased-back:latest`. It has the `watchtower` label to enable automatic updates. The service is set to restart unless manually stopped and it's connected to the network `ubuntu_default`.
+**wbased-back**: This is the backend service built using the Docker image `helsinkiunicollab/wbased-back:latest`. It has the `watchtower` label to enable automatic updates. The service is set to restart unless manually stopped and it's connected to the network `ubuntu_default`.
 
-**wbased-front**: This is the frontend service built using the Docker image `ruusukivi/wbased-front:latest`. It also has the `watchtower` label for automatic updates. This service is exposed on port `3000` and it's set to restart unless manually stopped. It's also connected to the network `ubuntu_default`.
+**wbased-front**: This is the frontend service built using the Docker image `helsinkiunicollab/wbased-front:latest`. It also has the `watchtower` label for automatic updates. This service is exposed on port `3000` and it's set to restart unless manually stopped. It's also connected to the network `ubuntu_default`.
 
 **nginx**: This is the reverse proxy server. It uses the `nginx` image and it's configured with a custom nginx configuration file. This service is exposed on port `80` and is also connected to the network `ubuntu_default`. It's set to restart unless manually stopped. The nginx reverse proxy is set to route all requests coming to `/api/` to the backend service. This means all client requests must go through the reverse proxy, which provides an additional layer of security.
 
@@ -109,7 +109,7 @@ version: '3.3'
 services:
   wbased-back:
     build: .
-    image: ruusukivi/wbased-back:latest
+    image: helsinkiunicollab/wbased-back:latest
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     restart: unless-stopped
@@ -118,7 +118,7 @@ services:
 
   wbased-front:
     build: .
-    image: ruusukivi/wbased-front:latest
+    image: helsinkiunicollab/wbased-front:latest
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     ports:
