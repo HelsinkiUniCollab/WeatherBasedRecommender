@@ -15,8 +15,8 @@ Production deployment is done by [cd.yml](../.github//workflows/cd.yml), which d
 ## Deployment Phases
 
 Updated Docker images are pushed to Docker Hub into these repositories:
-  * [wbased-front](https://hub.docker.com/repository/docker/ruusukivi/wbased-front/general)
-  * [wbased-back](https://hub.docker.com/repository/docker/ruusukivi/wbased-back/general)
+  * [wbased-front](https://hub.docker.com/repository/docker/helsinkiunicollab/wbased-front/general)
+  * [wbased-back](https://hub.docker.com/repository/docker/helsinkiunicollab/wbased-back/general)
 
 [Watchtower](https://containrrr.dev/watchtower/) updates the new images automatically to the instance running in Pouta. No need to do anything manually unless the app is not running in Pouta. 
 
