@@ -6,7 +6,7 @@ The application is responsive, meaning that the user interface adapts to the scr
 
 Please note that when the application is launched, the data update process takes approximately 1-2 minutes. 
 
-<img src="images/map.png" alt="Map with clusters" width="300">
+<img src="images/map.png" alt="Map with clusters" width="500">
 
 ## Navigating on the Map
 
@@ -45,7 +45,7 @@ For each location, information from the nearest weather station is provided:
 In addition, the name and category of the location are displayed.
 
 
-<img src="images/poi.png" alt="Point of Interest" width="300">
+<img src="images/poi.png" alt="Point of Interest" width="500">
 
 ## Location Filtering / Personalization
 
@@ -74,16 +74,16 @@ By clicking on the icon in the bottom right corner, a character is displayed on 
 
 After selecting a starting point, the user can open information pop-up about an interesting sports facility and click the "Set destination" button. Afterward, the recommended route from the Green Paths service is drawn on the map.
 
-<img src="images/route.png)" alt="Routing" width="300">
+<img src="images/route.png" alt="Routing" width="500">
 
 ## Wind Warning
 
 If weather conditions are dangerous, the application does not recommend sports facilities. Currently, a wind warning is in effect, which is displayed if the wind speed in the Helsinki area exceeds 18 meters per second.
 
-<img src="images/wind-warning.png)" alt="Wind Warning" width="300">
+<img src="images/wind-warning.png" alt="Wind Warning" width="500">
 
 ## Simulator
 
 For administrators, a separate interface is available at http://128.214.253.51/admin to test how different weather parameters affect recommendations.
 
-<img src="images/simulator.png))" alt="Simulator" width="300">
+<img src="images/simulator.png" alt="Simulator" width="500">
