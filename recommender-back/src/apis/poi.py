@@ -25,13 +25,19 @@ class PointOfInterest:
         }
 
     def _extract_weather_data(self, data):
+        def extract_float(value, multiplier=1.0):
+            extracted_value = value.split(' ')[0]
+            if extracted_value == "-":
+                return 0.0
+            return float(extracted_value) * multiplier
+
         return {
-            'wind_speed': float(data.get('Wind speed').split(' ')[0]),
-            'precipitation': float(data.get('Precipitation').split(' ')[0]),
-            'clouds': float(data.get('Cloud amount').split(' ')[0]) * 0.01,
-            'temperature': float(data.get('Air temperature').split(' ')[0]),
-            'humidity': float(data.get('Humidity').split(' ')[0]) * 0.01,
-            'air_quality': float(data.get('Air quality').split(' ')[0]),
+            'wind_speed': extract_float(data.get('Wind speed')),
+            'precipitation': extract_float(data.get('Precipitation')),
+            'clouds': extract_float(data.get('Cloud amount'), 0.01),
+            'temperature': extract_float(data.get('Air temperature')),
+            'humidity': extract_float(data.get('Humidity'), 0.01),
+            'air_quality': extract_float(data.get('Air quality')),
         }
 
     def calculate_score(self, cur_time=None, sunrise=None, sunset=None):
