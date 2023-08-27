@@ -115,6 +115,9 @@ services:
     restart: unless-stopped
     networks:
       - ubuntu_default
+    environment:
+      FLASK_ENV: 'production'
+      MONGO_URI: <add production uri>
 
   wbased-front:
     build: .
