@@ -6,9 +6,13 @@
 [![CD](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/cd.yml/badge.svg?branch=main)](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/cd.yml)
 [![Codecov](https://codecov.io/github/HelsinkiUniCollab/WeatherBasedRecommender/branch/main/graph/badge.svg?token=RU4KTLCO85)](https://codecov.io/github/HelsinkiUniCollab/WeatherBasedRecommender)
 
-The purpose of this project is to develop an application that provides users with personalized recommendations for points of interest and routes in Helsinki. It takes into consideration the current weather conditions to enhance the generated suggestions. This application is being created as part of the software [engineering course](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti/) at the [University of Helsinki](https://www.helsinki.fi/fi).
+The purpose of this project is to develop an application that provides users with personalized recommendations for points of interest and routes in Helsinki. It takes into consideration the current and forecasted weather conditions to enhance the generated suggestions. 
 
 Application can be accessed here: [Weather-Based Recommender](http://128.214.253.51:3000/)
+
+Video introduction of the project: [Part 1](https://www.youtube.com/watch?v=XcDnT0qbQh8) | Part 2
+
+This application is being created as part of the software [engineering course](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti/) at the [University of Helsinki](https://www.helsinki.fi/fi).
 
 [License](/LICENSE)
 
@@ -29,6 +33,7 @@ To get the MongoDB development URL, read more [here](/docs/database.md). To run 
 
 ## Documentation
 
+* [Features](/docs/features.md)
 * [CI/CD Pipeline](/docs/ci-cd.md)
 * [Working hours](/docs/hours.md)
 * [Team roles](/docs/roles.md)
