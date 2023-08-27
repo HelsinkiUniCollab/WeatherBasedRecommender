@@ -124,7 +124,7 @@
 | Sami S. | -            | 2.5 meeting             | -               | -              | -            | -             | -           | -     |
 | Sami M. | 2 Config, aqi scoring, fix tests, fore fields            | 2.5 meeting             | 4 tests, env to skip aqi download in development               | -              | -            | -             | -           | -     |
 | Pia     | -            | 3,5 meeting, scrum master stuff           | -               | -              | -            | -             | 4 demo           | 7,5     |
-| Joni    | -            | 4,5 meeting + devops | -        | 0,5 pr review  | -            | -             | -           | -     |
+| Joni    | -            | 4,5 meeting + devops | -        | 0,5 pr review  | -            | -             | 4 bug fix, documentation | 9     |
 
 |         | Monday 28.8. | Tuesday 29.8. | Wednesday 30.8. | Thursday 31.8. | Friday 1.9. | Saturday 2.9. | Sunday 3.9. | Total |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- | ----------- | ----- |
