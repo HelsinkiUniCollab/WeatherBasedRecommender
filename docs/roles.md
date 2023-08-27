@@ -93,7 +93,7 @@ The team has four rotating roles:
 
 ## Sprint 4
 - Chairman: Sami S
-- Demo Coordinator: Pia (Sami M)
+- Demo Coordinator: Joni
 - Secretary: Juuso
 - Scrum Master: Pia
 
