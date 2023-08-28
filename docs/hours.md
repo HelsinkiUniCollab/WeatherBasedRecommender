@@ -122,7 +122,7 @@
 | Juuso   | 1            | 3 meeting     | -               | -              | -            | -             | -           | -     |
 | Isak    | 1            | 3,5             | -               | -              | -            | -             | -           | 4,5     |
 | Sami S. | -            | 2.5 meeting             | -               | -              | -            | -             | 1.5 demo           | 4     |
-| Sami M. | 2 Config, aqi scoring, fix tests, fore fields            | 2.5 meeting             | 4 tests, env to skip aqi download in development               | -              | -            | -             | -           | -     |
+| Sami M. | 2 Config, aqi scoring, fix tests, fore fields            | 2.5 meeting             | 4 tests, env to skip aqi download in development               | -              | -            | -             | -           | 8.5     |
 | Pia     | -            | 3,5 meeting, scrum master stuff           | -               | -              | -            | -             | 4 demo           | 7,5     |
 | Joni    | -            | 4,5 meeting + devops | -        | 0,5 pr review  | -            | -             | 4 bug fix, documentation | 9     |
 
@@ -131,6 +131,6 @@
 | Juuso   | -            | -             | -               | -              | -            | -             | -           | -     |
 | Isak    | -            | -             | -               | -              | -            | -             | -           | -     |
 | Sami S. | -            | -             | -               | -              | -            | -             | -           | -     |
-| Sami M. | -            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | 2 updating demo slides            | -             | -               | -              | -            | -             | -           | -     |
 | Pia     | -            | -             | -               | -              | 2 demo           | -             | -           | 2    |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
