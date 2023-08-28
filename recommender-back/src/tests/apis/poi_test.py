@@ -80,6 +80,30 @@ class TestPointOfInterest(unittest.TestCase):
         
         self.assertEqual(test_json, expected_json)
 
+
+    def test_extract_weather_data_with_dash(self):
+        test_data = {
+            'Wind speed': '5.0 m/s',
+            'Precipitation': '20 mm',
+            'Cloud amount': '0.6 %',
+            'Air temperature': '-',
+            'Humidity': '0.5 %',
+            'Air quality': '1.0 AQI'
+        }
+
+        expected_data = {
+            'wind_speed': 5.0,
+            'precipitation': 20.0,
+            'clouds': 0.006,
+            'temperature': 0.0,
+            'humidity': 0.005,
+            'air_quality': 1.0
+        }
+
+        extracted_data = self.poi._extract_weather_data(test_data)
+
+        self.assertEqual(extracted_data, expected_data)
+
 if __name__ == '__main__':
     unittest.main()
 
