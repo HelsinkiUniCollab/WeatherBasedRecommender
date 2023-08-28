@@ -90,6 +90,10 @@ describe('SimulatorPage', () => {
   it('should allow input change in the SimulatorFormComponent', () => {
     cy.get('input[name="airTemperature"]').clear().type('20').should('have.value', '20');
   });
+
+  it('should not throw when temperature input is dash', () => {
+    cy.get('input[name="airTemperature"]').clear().type('-').should('have.value', '-');
+  });
 });
 
 describe('TimePickerComponent', () => {
