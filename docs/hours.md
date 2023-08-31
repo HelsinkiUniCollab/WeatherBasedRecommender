@@ -131,13 +131,13 @@
 | Juuso   | 5 demo prep | -             | -               | -              | 2 demo        | -             | -           | 7     |
 | Isak    | 4            | 5,5             | 5               | -              | 2            | -             | -           | 16,5     |
 | Sami S. | 0.5 demo            | -             | -               | -              | -            | -             | -           | -     |
-| Sami M. | 2 updating demo slides            | -             | -               | -              | -            | -             | -           | -     |
+| Sami M. | 2 updating demo slides            | -             | -               | -              | 2 demo            | -             | -           | 4     |
 | Pia     | -            | -             | -               | -              | 2 demo           | -             | -           | 2    |
 | Joni    | -            | -             | -               | -              | -            | -             | -           | -     |
 
 
 |         | Juuso | Isak | Sami.S | Sami.M | Pia | Joni |
 | ------- | ------------ | ------------- | --------------- | -------------- | ------------ | ------------- |
-| Total hours: | 180.5 h | 188,5             | -               | -              | 185 h            | -             |
+| Total hours: | 180.5 h | 188,5             | -               | 191.5              | 185 h            | -             |
 
 
