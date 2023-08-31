@@ -9,7 +9,7 @@ import '../../assets/style.css';
 
 function MapComponent({
   poiData, time, handleSetOrigin, userPosition, handleSetDestination, routeCoordinates,
-  headerHidden, toggleHeader,
+  headerHidden, toggleHeader, showToggleHeaderButton = true,
 }) {
   const position = [60.2049, 24.9649];
   const minZoom = 12;
@@ -19,9 +19,11 @@ function MapComponent({
 
   return (
     <div className={`map-container${headerHidden ? ' fullscreen' : ''}`}>
-      <button type="button" className="toggle-header-button" onClick={toggleHeader}>
-        {headerHidden ? <FullscreenIcon /> : <FullscreenExitIcon />}
-      </button>
+      {showToggleHeaderButton && (
+        <button type="button" className="toggle-header-button" onClick={toggleHeader}>
+          {headerHidden ? <FullscreenIcon /> : <FullscreenExitIcon />}
+        </button>
+      )}
       <MapContainer
         id="map"
         center={position}

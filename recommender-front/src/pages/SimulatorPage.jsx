@@ -119,6 +119,7 @@ function SimulatorPage() {
         <MapComponent
           poiData={poiData}
           time="Weather"
+          showToggleHeaderButton={false}
         />
         {isNightTime && <div className="night-overlay" data-testid="night-overlay" />}
       </div>
