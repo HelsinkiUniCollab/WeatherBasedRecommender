@@ -10,7 +10,7 @@ The purpose of this project is to develop an application that provides users wit
 
 Application can be accessed here: [Weather-Based Recommender](http://128.214.253.51:3000/)
 
-Video introduction of the project: [Part 1](https://www.youtube.com/watch?v=XcDnT0qbQh8) | [Part 2](https://www.youtube.com/watch?v=uWbicdil9OU)
+[Here's](https://www.youtube.com/watch?v=uWbicdil9OU) a video introduction of the project.
 
 This application is being created as part of the software [engineering course](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti/) at the [University of Helsinki](https://www.helsinki.fi/fi).
 
