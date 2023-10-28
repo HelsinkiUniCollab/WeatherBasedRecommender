@@ -57,10 +57,10 @@ function SimulatorFormComponent({
         <Typography>Precipitation</Typography>
         <CustomTextField
           name="precipitation"
-          placeholder="Precipitation (%)"
+          placeholder="Precipitation mm)"
           value={simulatedWeatherData.precipitation}
           handleInputChange={handleInputChange}
-          helperText="%"
+          helperText="mm"
         />
         <Typography>Cloud Amount</Typography>
         <CustomTextField
