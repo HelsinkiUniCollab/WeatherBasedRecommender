@@ -89,7 +89,6 @@ body {
   align-self: flex-start;
 }
 
-
 /* Remove zoom from the map container */
 .map-container {
   zoom: 1;
@@ -111,7 +110,6 @@ body {
   display: none;
   /* disables leaflet zoom box */
 }
-
 
 /* Styles for map cluster icons */
 
