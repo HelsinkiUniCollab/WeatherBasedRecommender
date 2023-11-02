@@ -94,7 +94,7 @@ body {
 .map-container {
   zoom: 1;
   position: relative;
-
+  align-self: flex-end;
 }
 
 .header-container.disabled {
