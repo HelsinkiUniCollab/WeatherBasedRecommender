@@ -58,6 +58,7 @@ class TestPointOfInterest(unittest.TestCase):
         test_poi.weather = weather
         test_poi.sun = sun
         test_poi.not_accessible_for = not_accessible_for
+        print(test_poi)
         expected_json = {
             "name": 'Test POI',
             "weather": {
@@ -73,7 +74,8 @@ class TestPointOfInterest(unittest.TestCase):
             "longitude": 61,
             "category": "Open air pools and beaches",
             "catetype": None,
-            "not_accessible_for": not_accessible_for
+            "not_accessible_for": not_accessible_for,
+            'all_categories': categories
         }
 
         test_json = test_poi.get_json()
