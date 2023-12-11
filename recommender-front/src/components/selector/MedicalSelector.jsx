@@ -4,19 +4,24 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import Typography from '@mui/material/Typography';
 import '../../assets/style.css';
+import Typography from '@mui/material/Typography';
+import MenuIcon from '@mui/icons-material/Menu';
 
 function MedicalSelector({ selectedCategories, onCategoryChange }) {
   const allCategories = ['Mental stress', 'Obesity', 'Diabetes (Type I)', 'Diabetes (Type II)', 'Hypertension', 'Coronary heart disease', 'Bronchial asthma', 'Osteoporosis', 'Back pain', 'Pregnancy'];
+  const isNoneChecked = selectedCategories.includes('None');
+
+  const handleNoneCheckboxChange = () => {
+    onCategoryChange(isNoneChecked ? [] : ['None']);
+  };
 
   const handleCategoryCheckboxChange = (category) => {
     if (selectedCategories.includes(category)) {
       onCategoryChange(selectedCategories.filter((item) => item !== category));
     } else {
-      onCategoryChange([...selectedCategories, category]);
+      onCategoryChange([...selectedCategories.filter((item) => item !== 'None'), category]);
     }
   };
 
@@ -42,7 +47,7 @@ function MedicalSelector({ selectedCategories, onCategoryChange }) {
       >
         <MenuIcon />
       </IconButton>
-      <Typography variant="h6">Medical condition</Typography>
+      <Typography variant="h7">Health</Typography>
       <Menu
         id="category-menu"
         anchorEl={anchorEl}
@@ -59,6 +64,20 @@ function MedicalSelector({ selectedCategories, onCategoryChange }) {
         >
           <CloseIcon />
         </IconButton>
+        <MenuItem>
+          <FormControlLabel
+            control={(
+              <Checkbox
+                checked={isNoneChecked}
+                onChange={handleNoneCheckboxChange}
+                name="allCheckbox"
+                className="icon-button-selector"
+                color="primary"
+              />
+            )}
+            label="None"
+          />
+        </MenuItem>
         {allCategories.map((category) => (
           <MenuItem key={category}>
             <FormControlLabel
