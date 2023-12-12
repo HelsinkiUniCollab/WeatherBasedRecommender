@@ -77,7 +77,7 @@ describe('SimulatorPage', () => {
     global.fetch.mockRestore();
   });
 
-/*  it('shows the overlay when currentTime is past sunset', () => {
+  it('shows the overlay when currentTime is past sunset', () => {
     const { getByPlaceholderText, getByTestId } = render(<SimulatorPage />);
     const currentTimeInput = getByPlaceholderText('Current Time');
     fireEvent.change(currentTimeInput, { target: { value: '23:00' } });
@@ -91,5 +91,5 @@ describe('SimulatorPage', () => {
     fireEvent.change(currentTimeInput, { target: { value: '16:00' } });
 
     expect(queryByTestId('night-overlay')).toBeNull();
-  }); */
+  });
 });

@@ -6,8 +6,8 @@ import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import '../../assets/style.css';
 import Typography from '@mui/material/Typography';
+import '../../assets/style.css';
 
 function PreferenceSelector({ selectedCategories, onCategoryChange }) {
   const allCategories = ['Sport halls', 'Open air pools and beaches', 'Athletic fields and venues', 'Neighbourhood sports areas', 'Fitness training parks'];
@@ -48,7 +48,7 @@ function PreferenceSelector({ selectedCategories, onCategoryChange }) {
       >
         <MenuIcon />
       </IconButton>
-      <Typography variant="h7">Categories</Typography>
+      <Typography variant="h6">Categories</Typography>
       <Menu
         id="category-menu"
         anchorEl={anchorEl}
