@@ -1,5 +1,7 @@
 import React from 'react';
 import { MapContainer, TileLayer, Polyline } from 'react-leaflet';
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
+import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
 import MarkersComponent from './MarkersComponent';
 import UserLocationMarker from './UserLocationComponent';
 import LocateButton from '../buttons/LocateButton';
@@ -7,7 +9,7 @@ import '../../assets/style.css';
 
 function MapComponent({
   poiData, time, handleSetOrigin, userPosition, handleSetDestination, routeCoordinates,
-  headerHidden,
+  headerHidden, toggleHeader,
 }) {
   const position = [60.2049, 24.9649];
   const minZoom = 12;
@@ -17,6 +19,9 @@ function MapComponent({
 
   return (
     <div className={`map-container${headerHidden ? ' fullscreen' : ''}`}>
+      <button type="button" className="toggle-header-button" onClick={toggleHeader}>
+        {headerHidden ? <FullscreenIcon /> : <FullscreenExitIcon />}
+      </button>
       <MapContainer
         id="map"
         center={position}
