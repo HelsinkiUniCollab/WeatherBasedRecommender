@@ -5,6 +5,7 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 from .config import Config
 from .services.poi_init import initialize_collection
+from flask_compress import Compress
 
 load_dotenv()
 initialize_collection()
@@ -24,6 +25,7 @@ config = {
 app = Flask(__name__)
 app.config.from_mapping(config)
 CORS(app)
+Compress(app)
 
 cache = Cache(app)
 
