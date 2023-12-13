@@ -33,13 +33,13 @@ function App() {
   const [warning, setWarning] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState(['All']);
-  const [medicalCategories, setMedicalCategories] = useState([]);
+  const [medicalCategories, setMedicalCategories] = useState(['None']);
   const toggleHeader = () => {
     setHeaderHidden(!headerHidden);
   };
 
   const handleOptionChange = (event) => {
-    setAccessibility(event.target.value);
+    setAccessibility(event);
   };
 
   const handleSliderChange = (event) => {
@@ -168,7 +168,6 @@ function App() {
                     className={`header-container${showAlert || headerHidden ? ' disabled' : ''}`}
                   >
                     <HeaderComponent
-                      accessibility={accessibility}
                       handleChange={handleOptionChange}
                       times={times}
                       sliderValue={selectedValue}

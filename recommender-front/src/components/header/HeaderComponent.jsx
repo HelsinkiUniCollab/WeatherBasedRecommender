@@ -2,7 +2,6 @@ import React from 'react';
 import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import AccessibilityComponent from './AccessibilityComponent';
 import LoadingIndicatorComponent from './LoadingIndicatorComponent';
 import InfoComponent from './InfoComponent';
 import parseSliderLabels from '../../utils/HeaderUtils';
@@ -10,9 +9,10 @@ import PreferenceSelector from '../selector/PreferenceSelector';
 import logo from '../../assets/WeatherBasedRecommender.svg';
 import '../../assets/style.css';
 import MedicalSelector from '../selector/MedicalSelector';
+import AccessibilitySelector from '../selector/AccessibilitySelector';
 
 function HeaderComponent({
-  accessibility, handleChange, times, sliderValue, onChange, isMobile, open, handleOpen,
+  handleChange, times, sliderValue, onChange, isMobile, open, handleOpen,
   handleClose, poiData, selectedCategories, setSelectedCategories,
   medicalCategories, setMedicalCategories,
 }) {
@@ -56,20 +56,9 @@ function HeaderComponent({
           selectedCategories={selectedCategories}
           onCategoryChange={setSelectedCategories}
         />
-      </Grid>
-      <Grid
-        item
-        xs={5}
-        sm={5}
-        md={3}
-        lg={3}
-        order={{ lg: 3, md: 3, sm: 5, xs: 5 }}
-        className="dropdown-item"
-        key="dropdown"
-        display="flex"
-        justifyContent="center"
-      >
-        <AccessibilityComponent accessibility={accessibility} handleChange={handleChange} />
+        <AccessibilitySelector
+          onCategoryChange={handleChange}
+        />
       </Grid>
       <Grid
         item
