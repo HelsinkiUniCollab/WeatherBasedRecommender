@@ -19,11 +19,7 @@ function InfoComponent({ open, handleOpen, handleClose }) {
           </IconButton>
         </DialogTitle>
         <DialogContent>
-          <Typography variant="infotext">This website has been created as part of </Typography>
-          <Typography variant="infotext"><a href="https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti/">the software engineering course</a></Typography>
-          <Typography variant="infotext"> at </Typography>
-          <Typography variant="infotext"><a href="https://www.helsinki.fi/en">the University of Helsinki</a></Typography>
-          <Typography variant="infotext"> by the following students: Juuso Saavalainen, Pia Ruusukivi, Sami Männistö, Sami Sidoroff, Joni-Pekka Joensuu, Isak Pulkki. The website uses data from the following services & APIs:</Typography>
+          <Typography variant="infotext">The website uses data from the following services & APIs:</Typography>
           <ul>
             <li>
               <Typography variant="infotext"><a href="https://palvelukartta.hel.fi/en">Servicemap</a></Typography>
