@@ -9,10 +9,12 @@ import parseSliderLabels from '../../utils/HeaderUtils';
 import PreferenceSelector from '../selector/PreferenceSelector';
 import logo from '../../assets/WeatherBasedRecommender.svg';
 import '../../assets/style.css';
+import MedicalSelector from '../selector/MedicalSelector';
 
 function HeaderComponent({
   accessibility, handleChange, times, sliderValue, onChange, isMobile, open, handleOpen,
   handleClose, poiData, selectedCategories, setSelectedCategories,
+  medicalCategories, setMedicalCategories,
 }) {
   const hours = parseSliderLabels(times);
   return (
@@ -46,6 +48,10 @@ function HeaderComponent({
         display="flex"
         justifyContent="center"
       >
+        <MedicalSelector
+          selectedCategories={medicalCategories}
+          onCategoryChange={setMedicalCategories}
+        />
         <PreferenceSelector
           selectedCategories={selectedCategories}
           onCategoryChange={setSelectedCategories}

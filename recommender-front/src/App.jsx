@@ -17,6 +17,7 @@ import './assets/style.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+import medicalEnum from './MedicalFilter';
 
 function App() {
   const [accessibility, setAccessibility] = useState('');
@@ -32,7 +33,7 @@ function App() {
   const [warning, setWarning] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState(['All']);
-
+  const [medicalCategories, setMedicalCategories] = useState([]);
   const toggleHeader = () => {
     setHeaderHidden(!headerHidden);
   };
@@ -63,7 +64,18 @@ function App() {
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const filterPoiData = (data, access, categories) => {
+  const covertMedicalCategories = (medCategories) => {
+    const outputCategories = [];
+    for (let i = 0; i < medCategories.length; i += 1) {
+      medicalEnum[medCategories[i]].forEach((element) => outputCategories.push(element));
+    }
+    // console.log(new Set(outputCategories));
+    let tmp = new Set(outputCategories);
+    tmp = Array.from(tmp);
+    return tmp;
+  };
+
+  const filterPoiData = (data, access, categories, healthCategories) => {
     let filteredData = data;
 
     // Filter by accessibility
@@ -71,6 +83,18 @@ function App() {
       filteredData = filteredData.filter((poi) => !poi.not_accessible_for.includes(access));
     }
 
+    // Get medical categories
+    if (healthCategories.length > 0 && healthCategories[0] !== 'None') {
+      // Narrow down categories based on medical conditions
+      // console.log(filterCategories);
+      const convertedCategories = covertMedicalCategories(healthCategories);
+      // console.log(convertedCategories);
+      filteredData = filteredData.filter((poi) => {
+        const intersection = poi.all_categories.filter((element) => convertedCategories
+          .includes(element));
+        return intersection.length !== 0;
+      });
+    }
     // Filter by categories
     if (categories.length > 0 && categories[0] !== 'All') {
       filteredData = filteredData.filter((poi) => categories.includes(poi.category));
@@ -89,7 +113,7 @@ function App() {
         const poiResponse = await fetch(`${apiUrl}/api/poi`);
         const poi = await poiResponse.json();
         setAllPoiData(poi);
-        filterPoiData(poi, accessibility, selectedCategories);
+        filterPoiData(poi, accessibility, selectedCategories, medicalCategories);
       }
     } catch (error) {
       console.error('Error fetching the Point of Interests: ', error);
@@ -101,8 +125,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    filterPoiData(allPoiData, accessibility, selectedCategories);
-  }, [accessibility, allPoiData, selectedCategories]);
+    filterPoiData(allPoiData, accessibility, selectedCategories, medicalCategories);
+  }, [accessibility, allPoiData, selectedCategories, medicalCategories]);
 
   useEffect(() => {
     if (poiData.length > 0) {
@@ -156,6 +180,8 @@ function App() {
                       poiData={poiData}
                       selectedCategories={selectedCategories}
                       setSelectedCategories={setSelectedCategories}
+                      medicalCategories={medicalCategories}
+                      setMedicalCategories={setMedicalCategories}
                     />
                   </Grid>
                   <Grid

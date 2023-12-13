@@ -81,7 +81,7 @@ class PointOfInterest:
                     data['Score'] = scorer.score(
                         weather_data['temperature'], weather_data['wind_speed'],
                         weather_data['humidity'], weather_data['precipitation'],
-                        weather_data['clouds'], weather_data['air_quality'], 
+                        weather_data['clouds'], weather_data['air_quality'],
                         sunrise_time, sunset_time, current_time
                     )
 
@@ -101,7 +101,7 @@ class PointOfInterest:
         This method sets simulated weather data for the Point of Interest (POI) to facilitate testing
         the score calculation functionality.
         """
-        
+
         self.weather = {
             "Weather": {
                 "Air temperature": f"{air_temperature} °C",
@@ -123,4 +123,4 @@ class PointOfInterest:
         return {'name': self.name, 'weather': self.weather,
                 'latitude': self.latitude, 'longitude': self.longitude,
                 'category': self.categories[-1], 'catetype': self.categorytype,
-                'not_accessible_for': self.not_accessible_for}
+                'not_accessible_for': self.not_accessible_for, 'all_categories': self.categories}
