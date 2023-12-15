@@ -34,6 +34,7 @@ function App() {
   const [headerHidden, setHeaderHidden] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState(['All']);
   const [medicalCategories, setMedicalCategories] = useState(['None']);
+  let poisReceived = false;
   const toggleHeader = () => {
     setHeaderHidden(!headerHidden);
   };
@@ -105,6 +106,10 @@ function App() {
 
   async function fetchData() {
     try {
+      if (poisReceived) {
+        return;
+      }
+      poisReceived = true;
       const apiUrl = process.env.REACT_APP_BACKEND_URL;
       const warningResponse = await fetch(`${apiUrl}/api/warning`);
       const alert = await warningResponse.json();
