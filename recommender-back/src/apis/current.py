@@ -134,9 +134,8 @@ class Current:
         while True:
             smallest, nearest = float('inf'), ''
             for station in weather:
-                dist = abs(weather[station]['Latitude'] - lat) + abs(
-                    weather[station]['Longitude'] - lon
-                )
+                dist = ((weather[station]['Latitude'] - lat)**2 +
+                        (weather[station]['Longitude'] - lon)**2)**0.5
                 if dist < smallest:
                     smallest, nearest = dist, station
             for key, value in weather[nearest].items():
