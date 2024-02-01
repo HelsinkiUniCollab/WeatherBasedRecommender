@@ -57,7 +57,7 @@ function AccessibilitySelector({ onCategoryChange }) {
         >
           <CloseIcon />
         </IconButton>
-        <RadioGroup>
+        <RadioGroup defaultValue="">
           {allCategories.map((category) => (
             <MenuItem key={category.val}>
               <FormControlLabel
