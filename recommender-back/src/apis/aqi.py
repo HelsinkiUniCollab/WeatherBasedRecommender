@@ -9,6 +9,8 @@ from ..config import Config
 from datetime import timedelta
 from .times import get_forecast_times, server_time_to_finnish
 from scipy.spatial import cKDTree
+import pickle
+import os
 
 
 class AQI:
@@ -30,9 +32,12 @@ class AQI:
         """Downloads NETCDF file, parses it and stores the data in the object.
            The temporary file is deleted afterwards.
         """
+        print("download_netcdf_and_store stopped")
+        return
+
         netcdf_file_url = self._parse_xml()
 
-        with tempfile.NamedTemporaryFile(delete=True) as temp_file:
+        with tempfile.NamedTemporaryFile(delete=False) as temp_file:
             netcdf_file_name = temp_file.name
             self._download_to_file(netcdf_file_url, netcdf_file_name, 5)
             self.dataset = Dataset(netcdf_file_name)
@@ -127,6 +132,12 @@ class AQI:
         Returns:
             dict: AQI data in JSON format with nearest AQI values for POI's
         """
+        path = "aqi.pkl"
+        if os.path.isfile(path):
+            print("READ FROM FILE")
+            with open(path, 'rb') as file:
+                data = pickle.load(file)
+                return data
         data = {}
         for datetime in self.datetimes:
             time_str = datetime.strftime('%Y-%m-%d %H:%M:%S')
@@ -144,6 +155,11 @@ class AQI:
 
             data[time_str] = nearest_aqi_values
 
+        if not os.path.isfile(path):
+            with open(path, 'wb') as file:
+                print("SAVED TO FILE")
+                pickle.dump(data, file)
+
         return data
 
     def _download_to_file(self, url, file_name, max_retries):
@@ -154,6 +170,14 @@ class AQI:
                 file_name (String): name of the file
                 max_retries (int): maximum number of retries
             """
+        #print("download paused")
+        #return
+        path = "aqi.pkl"
+        if os.path.isfile(path):
+            print("The file exists")
+            return
+        else:
+            print("The file does not exist")
         for retry_attempt in range(max_retries-1):
             try:
                 start_time = time.time()

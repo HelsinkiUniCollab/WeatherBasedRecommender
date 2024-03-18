@@ -5,7 +5,7 @@ from .app import app, cache
 from .apis.aqi import AQI
 from .apis.forecast import Forecast
 from .apis.current import Current
-from .apis.pathing import GreenPathsAPI
+from .apis.pathing import GreenPathsAPI, GraphhopperAPI
 from .apis import manager
 from .services.data_fetcher import DataFetcher
 
@@ -107,6 +107,31 @@ def get_weather_warning():
     return jsonify(warning)
 
 
+@app.route('/api/circle', methods=['GET'])
+def get_cirle_path():
+    start_coords = request.args.get('start', None)
+
+    if not start_coords:
+        return jsonify({"error": "Missing coordinates"}), 400
+
+    route_len = int(request.args.get('route_len', None))
+    route_type = request.args.get('route_type', None)
+    mobility_type = request.args.get('mobility_type', None)
+
+    try:
+        start_coords = tuple(map(float, start_coords.split(',')))
+    except ValueError:
+        return jsonify({"error": "Invalid coordinates"}), 400
+
+    graphhopper = GraphhopperAPI()
+    response = graphhopper.fetch_round_path_data(start_coords, route_len, route_type, mobility_type)
+    coordinates = graphhopper.extract_path_coordinates(response)
+    if route_coordinates := coordinates:
+        coords = [[coord[1], coord[0]] for coord in route_coordinates]
+        return json.dumps(coords)
+    return jsonify({"error": "Could not fetch route data"}), 500
+
+
 @app.route('/api/path', methods=['GET'])
 def get_path():
     """
@@ -117,6 +142,8 @@ def get_path():
     """
     start_coords = request.args.get('start', None)
     end_coords = request.args.get('end', None)
+    route_type = request.args.get('route_type', None)
+    mobility_type = request.args.get('mobility_type', None)
 
     if not start_coords or not end_coords:
         return jsonify({"error": "Missing start or end coordinates"}), 400
@@ -127,8 +154,10 @@ def get_path():
     except ValueError:
         return jsonify({"error": "Invalid coordinates"}), 400
 
-    green_paths = GreenPathsAPI(start_coords, end_coords)
-    if route_coordinates := green_paths.route_coordinates:
+    graphhopper = GraphhopperAPI()
+    response = graphhopper.fetch_path_data(start_coords, end_coords, route_type, mobility_type)
+    coordinates = graphhopper.extract_path_coordinates(response)
+    if route_coordinates := coordinates:
         coords = [[coord[1], coord[0]] for coord in route_coordinates]
         return json.dumps(coords)
     return jsonify({"error": "Could not fetch route data"}), 500

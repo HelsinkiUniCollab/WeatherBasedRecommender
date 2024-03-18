@@ -34,6 +34,7 @@ function App() {
   const [headerHidden, setHeaderHidden] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState(['All']);
   const [medicalCategories, setMedicalCategories] = useState(['None']);
+  const [profile, setProfile] = useState(['None']);
   let poisReceived = false;
   const toggleHeader = () => {
     setHeaderHidden(!headerHidden);
@@ -57,6 +58,16 @@ function App() {
 
   const handleSetOrigin = (latitude, longitude) => {
     setUserPosition([latitude, longitude]);
+  };
+
+  const handleCircleRoute = (latitude, longitude) => {
+    console.log('Circle');
+    if (userPosition === null) {
+      setUserPosition([latitude, longitude]);
+      setDestination([latitude, longitude]);
+    } else {
+      setDestination([userPosition[0], userPosition[1]]);
+    }
   };
 
   const handleSetDestination = (latitude, longitude) => {
@@ -160,6 +171,7 @@ function App() {
           origin={userPosition}
           destination={destination}
           setRouteCoordinates={setRouteCoordinates}
+          settings={profile}
         />
         <Router>
           <Routes>
@@ -186,6 +198,7 @@ function App() {
                       setSelectedCategories={setSelectedCategories}
                       medicalCategories={medicalCategories}
                       setMedicalCategories={setMedicalCategories}
+                      handleProfileChange={setProfile}
                     />
                   </Grid>
                   <Grid
@@ -202,6 +215,7 @@ function App() {
                       handleSetOrigin={handleSetOrigin}
                       userPosition={userPosition}
                       handleSetDestination={handleSetDestination}
+                      handleCircleRoute={handleCircleRoute}
                       routeCoordinates={routeCoordinates}
                       toggleHeader={toggleHeader}
                     />

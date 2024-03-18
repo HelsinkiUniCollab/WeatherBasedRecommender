@@ -5,6 +5,7 @@ from .poi import PointOfInterest
 from ..services.data_fetcher import DataFetcher
 from ..services.api_fetcher import InternalApiService
 from ..db.db import get_collection
+import time
 
 def get_simulated_pois_as_json(air_temperature, wind_speed, humidity,
                                               precipitation, cloud_amount, air_quality, current_time, sunrise, sunset):
@@ -46,7 +47,9 @@ def get_pois_as_json(category="All"):
         pois = get_pois()
         weather_fetcher = DataFetcher()
         current = Current(weather_fetcher)
+        start_time = time.time()
         forecast_data = InternalApiService.fetch_forecast()
+        print(f"Time taken: {time.time() - start_time} seconds")
         aqi_data = InternalApiService.fetch_aqi()
         aqi_data = _replace_datetime_in_aqi_data(forecast_data, aqi_data)
         forecast_data = _add_aqi_to_forecast(forecast_data, aqi_data)

@@ -1,15 +1,22 @@
 import { useCallback, useEffect } from 'react';
 
-function PathUtil({ origin, destination, setRouteCoordinates }) {
+function PathUtil({ origin, destination, setRouteCoordinates, settings }) {
   const handleSendCoords = useCallback(async () => {
+    let path = '/api/path?';
+    if (origin[0] === destination[0] && origin[1] === destination[1]) {
+      path = '/api/circle?';
+    }
     try {
       const apiUrl = process.env.REACT_APP_BACKEND_URL;
       const queryParams = new URLSearchParams({
         start: origin.join(','),
         end: destination.join(','),
+        route_len: settings.route_len,
+        route_type: settings.route_type,
+        mobility_type: settings.mobility_type,
       });
 
-      const response = await fetch(`${apiUrl}/api/path?${queryParams}`);
+      const response = await fetch(`${apiUrl}${path}${queryParams}`);
       const routeCoordinates = await response.json();
 
       await setRouteCoordinates(routeCoordinates);

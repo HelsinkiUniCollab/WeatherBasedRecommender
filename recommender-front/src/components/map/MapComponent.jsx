@@ -4,10 +4,11 @@ import MarkersComponent from './MarkersComponent';
 import UserLocationMarker from './UserLocationComponent';
 import LocateButton from '../buttons/LocateButton';
 import '../../assets/style.css';
+import CircleButton from '../buttons/CircleButton';
 
 function MapComponent({
   poiData, time, handleSetOrigin, userPosition, handleSetDestination, routeCoordinates,
-  headerHidden,
+  headerHidden, handleCircleRoute,
 }) {
   const position = [60.2049, 24.9649];
   const minZoom = 12;
@@ -36,6 +37,9 @@ function MapComponent({
         />
         <LocateButton
           handleSetOrigin={handleSetOrigin}
+        />
+        <CircleButton
+          handleCircleRoute={handleCircleRoute}
         />
         {userPosition && (
           <UserLocationMarker

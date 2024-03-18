@@ -47,7 +47,7 @@ function MedicalSelector({ selectedCategories, onCategoryChange }) {
       >
         <MenuIcon />
       </IconButton>
-      <Typography variant="h7">Health</Typography>
+      <Typography variant="h7" onClick={handleMenuClick}>Health</Typography>
       <Menu
         id="category-menu"
         anchorEl={anchorEl}

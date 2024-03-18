@@ -40,7 +40,7 @@ function AccessibilitySelector({ onCategoryChange }) {
       >
         <MenuIcon />
       </IconButton>
-      <Typography variant="h7">Accessibility</Typography>
+      <Typography variant="h7" onClick={handleMenuClick}>Accessibility</Typography>
       <Menu
         id="category-menu"
         anchorEl={anchorEl}
