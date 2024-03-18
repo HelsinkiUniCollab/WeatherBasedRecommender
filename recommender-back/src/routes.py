@@ -110,7 +110,7 @@ def get_weather_warning():
 @app.route('/api/path', methods=['GET'])
 def get_path():
     """
-    Handler for the '/api/path' endpoint.
+    Handler for the '/api/path' endpoint.  
 
     Returns:
         Coordinates for the route based on request parameters.
