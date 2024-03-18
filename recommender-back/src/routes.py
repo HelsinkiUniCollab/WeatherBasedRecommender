@@ -15,7 +15,7 @@ weather_fetcher = DataFetcher()
 @app.route("/", methods=["GET"])
 def index():
     """
-    Handler for the root endpoint.
+    Handler for the root endpoint. 
 
     Returns:
         A JSON response containing a greeting message.
