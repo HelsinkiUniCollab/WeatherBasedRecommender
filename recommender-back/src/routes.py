@@ -15,7 +15,7 @@ weather_fetcher = DataFetcher()
 @app.route("/", methods=["GET"])
 def index():
     """
-    Handler for the root endpoint.
+    Handler for the root endpoint. 
 
     Returns:
         A JSON response containing a greeting message.
@@ -135,7 +135,7 @@ def get_cirle_path():
 @app.route('/api/path', methods=['GET'])
 def get_path():
     """
-    Handler for the '/api/path' endpoint.
+    Handler for the '/api/path' endpoint.  
 
     Returns:
         Coordinates for the route based on request parameters.
