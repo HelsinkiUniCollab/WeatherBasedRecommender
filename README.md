@@ -1,5 +1,3 @@
-
-
 ![ezgif-4-af3762fc40](https://github.com/HelsinkiUniCollab/WeatherBasedRecommender/assets/101641412/fd68b750-12f0-4746-8067-dc073afa5ffe)
 
 [![CI](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/ci.yml/badge.svg)](https://github.com/HelsinkiUniCollab/WeatherbasedRecommender/actions/workflows/ci.yml)
@@ -10,9 +8,9 @@ The purpose of this project is to develop an application that provides users wit
 
 Application can be accessed here: [Weather-Based Recommender](http://128.214.253.51:3000/)
 
-[Here's](https://www.youtube.com/watch?v=uWbicdil9OU) a video introduction of the project.
+[Here's](https://youtu.be/lVdYo4K1bJg) a video introduction of the project.
 
-This application is being created as part of the software [engineering course](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti/) at the [University of Helsinki](https://www.helsinki.fi/fi).
+This application is being created as part of the software engineering course at the [University of Helsinki](https://www.helsinki.fi/fi).
 
 [License](/LICENSE)
 
@@ -35,7 +33,6 @@ To get the MongoDB development URL, read more [here](/docs/database.md). To run 
 
 * [Features](/docs/features.md)
 * [CI/CD Pipeline](/docs/ci-cd.md)
-* [Working hours](/docs/hours.md)
 * [Team roles](/docs/roles.md)
 * [Definition of Done](/docs/dod.md)
 * [Git Workflow](/docs/workflow.md)
@@ -60,7 +57,3 @@ To get the MongoDB development URL, read more [here](/docs/database.md). To run 
   * [Burndown Chart](https://user-images.githubusercontent.com/1563603/259169990-35e11d1b-e03e-4a3c-97b9-a3edcca6b371.png)
 * [Sprint 5 Backlog](https://github.com/orgs/HelsinkiUniCollab/projects/1/views/11)
   * [Burndown Chart](https://user-images.githubusercontent.com/1563603/262408124-398195a7-7e9f-49d7-b0be-09ac079ae185.png)
-
-
-
-
