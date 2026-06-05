@@ -6,8 +6,6 @@
 
 The purpose of this project is to develop an application that provides users with personalized recommendations for points of interest and routes in Helsinki. It takes into consideration the current and forecasted weather conditions to enhance the generated suggestions. Read more about [the features of the application](/docs/features.md).
 
-Application can be accessed here: [Weather-Based Recommender](http://128.214.253.51:3000/)
-
 [Here's](https://youtu.be/lVdYo4K1bJg) a video introduction of the project.
 
 This application is being created as part of the software engineering course at the [University of Helsinki](https://www.helsinki.fi/fi).
